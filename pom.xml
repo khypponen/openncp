@@ -20,7 +20,6 @@
         <module>trc-sts-client</module>
         <module>tsam</module>
         <module>tsam-sync</module>
-        <module>tsam-sync-cts2</module>
         <module>transformation-manager</module>
         <module>eadc</module>
         <module>consent-manager</module>
