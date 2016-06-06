@@ -1,0 +1,929 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSDoseForm" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.2" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="10101000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral drops, solution"/>
+			<Concept code="10101000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral drops, solution (edqm)"/>
+			<Concept code="10102000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral drops, suspension"/>
+			<Concept code="10102000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral drops, suspension (edqm)"/>
+			<Concept code="10103000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral drops, emulsion"/>
+			<Concept code="10103000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral drops, emulsion (edqm)"/>
+			<Concept code="10104000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral liquid"/>
+			<Concept code="10104000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral liquid (edqm)"/>
+			<Concept code="10105000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral solution"/>
+			<Concept code="10105000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral solution (edqm)"/>
+			<Concept code="10106000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral suspension"/>
+			<Concept code="10106000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral suspension (edqm)"/>
+			<Concept code="10107000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral emulsion"/>
+			<Concept code="10107000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral emulsion (edqm)"/>
+			<Concept code="10108000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral gel"/>
+			<Concept code="10108000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral gel (edqm)"/>
+			<Concept code="10109000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral paste"/>
+			<Concept code="10109000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral paste (edqm)"/>
+			<Concept code="10110000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for oral solution"/>
+			<Concept code="10110000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for oral solution (edqm)"/>
+			<Concept code="10111000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for oral suspension"/>
+			<Concept code="10111000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for oral suspension (edqm)"/>
+			<Concept code="10112000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for oral solution"/>
+			<Concept code="10112000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for oral solution (edqm)"/>
+			<Concept code="10113000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for oral suspension"/>
+			<Concept code="10113000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for oral suspension (edqm)"/>
+			<Concept code="10114000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for oral solution"/>
+			<Concept code="10114000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for oral solution (edqm)"/>
+			<Concept code="10115000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for oral suspension"/>
+			<Concept code="10115000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for oral suspension (edqm)"/>
+			<Concept code="10116000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lyophilisate for suspension"/>
+			<Concept code="10116000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lyophilisate for suspension (edqm)"/>
+			<Concept code="10117000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Syrup"/>
+			<Concept code="10117000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Syrup (edqm)"/>
+			<Concept code="10118000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for syrup"/>
+			<Concept code="10118000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for syrup (edqm)"/>
+			<Concept code="10119000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for syrup"/>
+			<Concept code="10119000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for syrup (edqm)"/>
+			<Concept code="10120000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Soluble tablet"/>
+			<Concept code="10120000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Soluble tablet (edqm)"/>
+			<Concept code="10121000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dispersible tablet"/>
+			<Concept code="10121000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dispersible tablet (edqm)"/>
+			<Concept code="10122000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Herbal tea"/>
+			<Concept code="10122000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Herbal tea (edqm)"/>
+			<Concept code="10201000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral powder"/>
+			<Concept code="10201000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral powder (edqm)"/>
+			<Concept code="10202000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Instant herbal tea"/>
+			<Concept code="10202000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Instant herbal tea (edqm)"/>
+			<Concept code="10203000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Effervescent powder"/>
+			<Concept code="10203000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Effervescent powder (edqm)"/>
+			<Concept code="10204000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules"/>
+			<Concept code="10204000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules (edqm)"/>
+			<Concept code="10205000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Effervescent granules"/>
+			<Concept code="10205000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Effervescent granules (edqm)"/>
+			<Concept code="10206000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant granules"/>
+			<Concept code="10206000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant granules (edqm)"/>
+			<Concept code="10207000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release granules"/>
+			<Concept code="10207000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release granules (edqm)"/>
+			<Concept code="10208000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Modified-release granules"/>
+			<Concept code="10208000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Modified-release granules (edqm)"/>
+			<Concept code="10209000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cachet"/>
+			<Concept code="10209000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cachet (edqm)"/>
+			<Concept code="10210000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Capsule, hard"/>
+			<Concept code="10210000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Capsule, hard (edqm)"/>
+			<Concept code="10211000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Capsule, soft"/>
+			<Concept code="10211000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Capsule, soft (edqm)"/>
+			<Concept code="10212000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant capsule, hard"/>
+			<Concept code="10212000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant capsule, hard (edqm)"/>
+			<Concept code="10213000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant capsule, soft"/>
+			<Concept code="10213000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant capsule, soft (edqm)"/>
+			<Concept code="10214000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Chewable capsule, soft"/>
+			<Concept code="10214000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Chewable capsule, soft (edqm)"/>
+			<Concept code="10215000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release capsule, hard"/>
+			<Concept code="10215000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release capsule, hard (edqm)"/>
+			<Concept code="10216000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release capsule, soft"/>
+			<Concept code="10216000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release capsule, soft (edqm)"/>
+			<Concept code="10217000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Modified-release capsule, hard"/>
+			<Concept code="10217000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Modified-release capsule, hard (edqm)"/>
+			<Concept code="10218000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Modified-release capsule, soft"/>
+			<Concept code="10218000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Modified-release capsule, soft (edqm)"/>
+			<Concept code="10219000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet"/>
+			<Concept code="10219000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet (edqm)"/>
+			<Concept code="10220000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Coated tablet"/>
+			<Concept code="10220000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Coated tablet (edqm)"/>
+			<Concept code="10221000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Film-coated tablet"/>
+			<Concept code="10221000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Film-coated tablet (edqm)"/>
+			<Concept code="10222000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Effervescent tablet"/>
+			<Concept code="10222000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Effervescent tablet (edqm)"/>
+			<Concept code="10223000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Orodispersible tablet"/>
+			<Concept code="10223000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Orodispersible tablet (edqm)"/>
+			<Concept code="10224000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral lyophilisate"/>
+			<Concept code="10224000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral lyophilisate (edqm)"/>
+			<Concept code="10225000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant tablet"/>
+			<Concept code="10225000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant tablet (edqm)"/>
+			<Concept code="10226000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release tablet"/>
+			<Concept code="10226000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release tablet (edqm)"/>
+			<Concept code="10227000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Modified-release tablet"/>
+			<Concept code="10227000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Modified-release tablet (edqm)"/>
+			<Concept code="10228000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Chewable tablet"/>
+			<Concept code="10228000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Chewable tablet (edqm)"/>
+			<Concept code="10229000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicated chewing-gum"/>
+			<Concept code="10229000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicated chewing-gum (edqm)"/>
+			<Concept code="10230000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral gum"/>
+			<Concept code="10230000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral gum (edqm)"/>
+			<Concept code="10231000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pillules"/>
+			<Concept code="10231000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pillules (edqm)"/>
+			<Concept code="10236100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Orodispersible film"/>
+			<Concept code="10236100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Orodispersible film (edqm)"/>
+			<Concept code="10301000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gargle"/>
+			<Concept code="10301000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gargle (edqm)"/>
+			<Concept code="10302000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for gargle"/>
+			<Concept code="10302000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for gargle (edqm)"/>
+			<Concept code="10303000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gargle, powder for solution"/>
+			<Concept code="10303000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gargle, powder for solution (edqm)"/>
+			<Concept code="10304000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gargle, tablet for solution"/>
+			<Concept code="10304000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gargle, tablet for solution (edqm)"/>
+			<Concept code="10305000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal solution"/>
+			<Concept code="10305000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal solution (edqm)"/>
+			<Concept code="10306000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal suspension"/>
+			<Concept code="10306000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal suspension (edqm)"/>
+			<Concept code="10307000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal drops"/>
+			<Concept code="10307000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal drops (edqm)"/>
+			<Concept code="10308000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal spray"/>
+			<Concept code="10308000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal spray (edqm)"/>
+			<Concept code="10309000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Sublingual spray"/>
+			<Concept code="10309000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Sublingual spray (edqm)"/>
+			<Concept code="10310000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Mouthwash"/>
+			<Concept code="10310000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Mouthwash (edqm)"/>
+			<Concept code="10311000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Mouthwash, tablet for solution"/>
+			<Concept code="10311000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Mouthwash, tablet for solution (edqm)"/>
+			<Concept code="10312000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gingival solution"/>
+			<Concept code="10312000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gingival solution (edqm)"/>
+			<Concept code="10313000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal gel"/>
+			<Concept code="10313000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal gel (edqm)"/>
+			<Concept code="10314000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal paste"/>
+			<Concept code="10314000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal paste (edqm)"/>
+			<Concept code="10314005" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal ointment"/>
+			<Concept code="10314005" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal ointment (edqm)"/>
+			<Concept code="10314010" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal cream"/>
+			<Concept code="10314010" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal cream (edqm)"/>
+			<Concept code="10314011" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Buccal film"/>
+			<Concept code="10314011" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Buccal film (edqm)"/>
+			<Concept code="10315000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gingival gel"/>
+			<Concept code="10315000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gingival gel (edqm)"/>
+			<Concept code="10316000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gingival paste"/>
+			<Concept code="10316000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gingival paste (edqm)"/>
+			<Concept code="10317000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal capsule"/>
+			<Concept code="10317000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal capsule (edqm)"/>
+			<Concept code="10318000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Sublingual tablet"/>
+			<Concept code="10318000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Sublingual tablet (edqm)"/>
+			<Concept code="10319000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Muco-adhesive buccal tablet"/>
+			<Concept code="10319000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Muco-adhesive buccal tablet (edqm)"/>
+			<Concept code="10320000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Buccal tablet"/>
+			<Concept code="10320000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Buccal tablet (edqm)"/>
+			<Concept code="10321000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lozenge"/>
+			<Concept code="10321000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lozenge (edqm)"/>
+			<Concept code="10322000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Compressed lozenge"/>
+			<Concept code="10322000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Compressed lozenge (edqm)"/>
+			<Concept code="10323000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pastille"/>
+			<Concept code="10323000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pastille (edqm)"/>
+			<Concept code="10401000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Periodontal powder"/>
+			<Concept code="10401000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Periodontal powder (edqm)"/>
+			<Concept code="10402000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental gel"/>
+			<Concept code="10402000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental gel (edqm)"/>
+			<Concept code="10403000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental stick"/>
+			<Concept code="10403000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental stick (edqm)"/>
+			<Concept code="10404000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental insert"/>
+			<Concept code="10404000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental insert (edqm)"/>
+			<Concept code="10405000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental powder"/>
+			<Concept code="10405000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental powder (edqm)"/>
+			<Concept code="10406000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental solution"/>
+			<Concept code="10406000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental solution (edqm)"/>
+			<Concept code="10407000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental suspension"/>
+			<Concept code="10407000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental suspension (edqm)"/>
+			<Concept code="10408000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental emulsion"/>
+			<Concept code="10408000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental emulsion (edqm)"/>
+			<Concept code="10409000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Toothpaste"/>
+			<Concept code="10409000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Toothpaste (edqm)"/>
+			<Concept code="10410000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Periodontal gel"/>
+			<Concept code="10410000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Periodontal gel (edqm)"/>
+			<Concept code="10411000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Periodontal insert"/>
+			<Concept code="10411000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Periodontal insert (edqm)"/>
+			<Concept code="10501000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Bath additive"/>
+			<Concept code="10501000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Bath additive (edqm)"/>
+			<Concept code="10502000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cream"/>
+			<Concept code="10502000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cream (edqm)"/>
+			<Concept code="10503000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gel"/>
+			<Concept code="10503000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gel (edqm)"/>
+			<Concept code="10504000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ointment"/>
+			<Concept code="10504000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ointment (edqm)"/>
+			<Concept code="10505000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous paste"/>
+			<Concept code="10505000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous paste (edqm)"/>
+			<Concept code="10506000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicated plaster"/>
+			<Concept code="10506000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicated plaster (edqm)"/>
+			<Concept code="10507000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous foam"/>
+			<Concept code="10507000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous foam (edqm)"/>
+			<Concept code="10508000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Shampoo"/>
+			<Concept code="10508000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Shampoo (edqm)"/>
+			<Concept code="10509000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous spray, solution"/>
+			<Concept code="10509000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous spray, solution (edqm)"/>
+			<Concept code="10510000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous spray, suspension"/>
+			<Concept code="10510000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous spray, suspension (edqm)"/>
+			<Concept code="10511000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous spray, powder"/>
+			<Concept code="10511000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous spray, powder (edqm)"/>
+			<Concept code="10512000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous liquid"/>
+			<Concept code="10512000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous liquid (edqm)"/>
+			<Concept code="10513000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous solution"/>
+			<Concept code="10513000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous solution (edqm)"/>
+			<Concept code="10514000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for cutaneous solution"/>
+			<Concept code="10514000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for cutaneous solution (edqm)"/>
+			<Concept code="10515000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous suspension"/>
+			<Concept code="10515000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous suspension (edqm)"/>
+			<Concept code="10516000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous emulsion"/>
+			<Concept code="10516000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous emulsion (edqm)"/>
+			<Concept code="10517000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous powder"/>
+			<Concept code="10517000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous powder (edqm)"/>
+			<Concept code="10517500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous patch"/>
+			<Concept code="10517500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous patch (edqm)"/>
+			<Concept code="10518000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for iontophoresis"/>
+			<Concept code="10518000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for iontophoresis (edqm)"/>
+			<Concept code="10519000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Transdermal patch"/>
+			<Concept code="10519000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Transdermal patch (edqm)"/>
+			<Concept code="10520000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Collodion"/>
+			<Concept code="10520000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Collodion (edqm)"/>
+			<Concept code="10521000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicated nail lacquer"/>
+			<Concept code="10521000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicated nail lacquer (edqm)"/>
+			<Concept code="10521500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nail solution"/>
+			<Concept code="10521500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nail solution (edqm)"/>
+			<Concept code="10522000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Poultice"/>
+			<Concept code="10522000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Poultice (edqm)"/>
+			<Concept code="10523000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous stick"/>
+			<Concept code="10523000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous stick (edqm)"/>
+			<Concept code="10524000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous sponge"/>
+			<Concept code="10524000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous sponge (edqm)"/>
+			<Concept code="10525000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Impregnated dressing"/>
+			<Concept code="10525000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Impregnated dressing (edqm)"/>
+			<Concept code="10539500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Scrub"/>
+			<Concept code="10539500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Scrub (edqm)"/>
+			<Concept code="10546500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Transdermal spray, solution"/>
+			<Concept code="10546500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Transdermal spray, solution (edqm)"/>
+			<Concept code="10547000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Transdermal system"/>
+			<Concept code="10547000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Transdermal system (edqm)"/>
+			<Concept code="10548000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for skin-prick test"/>
+			<Concept code="10548000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for skin-prick test (edqm)"/>
+			<Concept code="10549000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for skin-scratch test"/>
+			<Concept code="10549000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for skin-scratch test (edqm)"/>
+			<Concept code="10550000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Plaster for provocation test"/>
+			<Concept code="10550000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Plaster for provocation test (edqm)"/>
+			<Concept code="10601000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye cream"/>
+			<Concept code="10601000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye cream (edqm)"/>
+			<Concept code="10602000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye gel"/>
+			<Concept code="10602000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye gel (edqm)"/>
+			<Concept code="10603000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye ointment"/>
+			<Concept code="10603000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye ointment (edqm)"/>
+			<Concept code="10604000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, solution"/>
+			<Concept code="10604000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, solution (edqm)"/>
+			<Concept code="10604500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, emulsion"/>
+			<Concept code="10604500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, emulsion (edqm)"/>
+			<Concept code="10605000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, suspension"/>
+			<Concept code="10605000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, suspension (edqm)"/>
+			<Concept code="10606000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, powder and solvent for solution"/>
+			<Concept code="10606000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, powder and solvent for solution (edqm)"/>
+			<Concept code="10607000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, powder and solvent for suspension"/>
+			<Concept code="10607000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, powder and solvent for suspension (edqm)"/>
+			<Concept code="10608000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, solvent for reconstitution"/>
+			<Concept code="10608000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, solvent for reconstitution (edqm)"/>
+			<Concept code="10609000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, prolonged-release"/>
+			<Concept code="10609000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, prolonged-release (edqm)"/>
+			<Concept code="10610000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye lotion"/>
+			<Concept code="10610000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye lotion (edqm)"/>
+			<Concept code="10611000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye lotion, solvent for reconstitution"/>
+			<Concept code="10611000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye lotion, solvent for reconstitution (edqm)"/>
+			<Concept code="10612000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ophthalmic insert"/>
+			<Concept code="10612000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ophthalmic insert (edqm)"/>
+			<Concept code="10613000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ophthalmic strip"/>
+			<Concept code="10613000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ophthalmic strip (edqm)"/>
+			<Concept code="10701000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear cream"/>
+			<Concept code="10701000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear cream (edqm)"/>
+			<Concept code="10702000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear gel"/>
+			<Concept code="10702000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear gel (edqm)"/>
+			<Concept code="10703000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear ointment"/>
+			<Concept code="10703000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear ointment (edqm)"/>
+			<Concept code="10704000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear drops, solution"/>
+			<Concept code="10704000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear drops, solution (edqm)"/>
+			<Concept code="10705000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear drops, suspension"/>
+			<Concept code="10705000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear drops, suspension (edqm)"/>
+			<Concept code="10706000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear drops, emulsion"/>
+			<Concept code="10706000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear drops, emulsion (edqm)"/>
+			<Concept code="10707000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear drops, powder and solvent for suspension"/>
+			<Concept code="10707000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear drops, powder and solvent for suspension (edqm)"/>
+			<Concept code="10708000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear powder"/>
+			<Concept code="10708000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear powder (edqm)"/>
+			<Concept code="10709000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear spray, solution"/>
+			<Concept code="10709000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear spray, solution (edqm)"/>
+			<Concept code="10710000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear spray, suspension"/>
+			<Concept code="10710000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear spray, suspension (edqm)"/>
+			<Concept code="10711000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear spray, emulsion"/>
+			<Concept code="10711000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear spray, emulsion (edqm)"/>
+			<Concept code="10712000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear wash, solution"/>
+			<Concept code="10712000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear wash, solution (edqm)"/>
+			<Concept code="10713000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear wash, emulsion"/>
+			<Concept code="10713000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear wash, emulsion (edqm)"/>
+			<Concept code="10714000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear tampon"/>
+			<Concept code="10714000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear tampon (edqm)"/>
+			<Concept code="10715000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear stick"/>
+			<Concept code="10715000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear stick (edqm)"/>
+			<Concept code="10801000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal cream"/>
+			<Concept code="10801000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal cream (edqm)"/>
+			<Concept code="10802000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal gel"/>
+			<Concept code="10802000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal gel (edqm)"/>
+			<Concept code="10803000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal ointment"/>
+			<Concept code="10803000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal ointment (edqm)"/>
+			<Concept code="10804000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal drops, solution"/>
+			<Concept code="10804000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal drops, solution (edqm)"/>
+			<Concept code="10805000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal drops, suspension"/>
+			<Concept code="10805000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal drops, suspension (edqm)"/>
+			<Concept code="10806000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal drops, emulsion"/>
+			<Concept code="10806000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal drops, emulsion (edqm)"/>
+			<Concept code="10807000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal powder"/>
+			<Concept code="10807000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal powder (edqm)"/>
+			<Concept code="10808000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal spray, solution"/>
+			<Concept code="10808000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal spray, solution (edqm)"/>
+			<Concept code="10809000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal spray, suspension"/>
+			<Concept code="10809000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal spray, suspension (edqm)"/>
+			<Concept code="10810000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal spray, emulsion"/>
+			<Concept code="10810000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal spray, emulsion (edqm)"/>
+			<Concept code="10811000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal wash"/>
+			<Concept code="10811000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal wash (edqm)"/>
+			<Concept code="10812000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal stick"/>
+			<Concept code="10812000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal stick (edqm)"/>
+			<Concept code="10900500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intravaginal ring"/>
+			<Concept code="10900500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intravaginal ring (edqm)"/>
+			<Concept code="10901000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal cream"/>
+			<Concept code="10901000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal cream (edqm)"/>
+			<Concept code="10902000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal gel"/>
+			<Concept code="10902000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal gel (edqm)"/>
+			<Concept code="10903000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal ointment"/>
+			<Concept code="10903000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal ointment (edqm)"/>
+			<Concept code="10904000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal foam"/>
+			<Concept code="10904000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal foam (edqm)"/>
+			<Concept code="10905000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal solution"/>
+			<Concept code="10905000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal solution (edqm)"/>
+			<Concept code="10906000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal suspension"/>
+			<Concept code="10906000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal suspension (edqm)"/>
+			<Concept code="10907000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal emulsion"/>
+			<Concept code="10907000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal emulsion (edqm)"/>
+			<Concept code="10908000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet for vaginal solution"/>
+			<Concept code="10908000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet for vaginal solution (edqm)"/>
+			<Concept code="10909000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pessary"/>
+			<Concept code="10909000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pessary (edqm)"/>
+			<Concept code="10910000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal capsule, hard"/>
+			<Concept code="10910000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal capsule, hard (edqm)"/>
+			<Concept code="10911000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal capsule, soft"/>
+			<Concept code="10911000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal capsule, soft (edqm)"/>
+			<Concept code="10912000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal tablet"/>
+			<Concept code="10912000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal tablet (edqm)"/>
+			<Concept code="10913000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Effervescent vaginal tablet"/>
+			<Concept code="10913000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Effervescent vaginal tablet (edqm)"/>
+			<Concept code="10914000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicated vaginal tampon"/>
+			<Concept code="10914000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicated vaginal tampon (edqm)"/>
+			<Concept code="10915000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal delivery system"/>
+			<Concept code="10915000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal delivery system (edqm)"/>
+			<Concept code="10916000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal sponge"/>
+			<Concept code="10916000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal sponge (edqm)"/>
+			<Concept code="11001000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal cream"/>
+			<Concept code="11001000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal cream (edqm)"/>
+			<Concept code="11002000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal gel"/>
+			<Concept code="11002000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal gel (edqm)"/>
+			<Concept code="11003000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal ointment"/>
+			<Concept code="11003000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal ointment (edqm)"/>
+			<Concept code="11004000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal foam"/>
+			<Concept code="11004000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal foam (edqm)"/>
+			<Concept code="11005000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal solution"/>
+			<Concept code="11005000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal solution (edqm)"/>
+			<Concept code="11006000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal suspension"/>
+			<Concept code="11006000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal suspension (edqm)"/>
+			<Concept code="11007000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal emulsion"/>
+			<Concept code="11007000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal emulsion (edqm)"/>
+			<Concept code="11008000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for rectal solution"/>
+			<Concept code="11008000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for rectal solution (edqm)"/>
+			<Concept code="11009000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for rectal solution"/>
+			<Concept code="11009000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for rectal solution (edqm)"/>
+			<Concept code="11010" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral drops"/>
+			<Concept code="11010" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral drops (edqm)"/>
+			<Concept code="11010000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for rectal suspension"/>
+			<Concept code="11010000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for rectal suspension (edqm)"/>
+			<Concept code="11011000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet for rectal solution"/>
+			<Concept code="11011000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet for rectal solution (edqm)"/>
+			<Concept code="11012000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet for rectal suspension"/>
+			<Concept code="11012000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet for rectal suspension (edqm)"/>
+			<Concept code="11013000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suppository"/>
+			<Concept code="11013000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suppository (edqm)"/>
+			<Concept code="11014000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal capsule"/>
+			<Concept code="11014000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal capsule (edqm)"/>
+			<Concept code="11015000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal tampon"/>
+			<Concept code="11015000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal tampon (edqm)"/>
+			<Concept code="11050" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral liquid"/>
+			<Concept code="11050" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral liquid (edqm)"/>
+			<Concept code="11101000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebuliser solution"/>
+			<Concept code="11101000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebuliser solution (edqm)"/>
+			<Concept code="11102000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebuliser suspension"/>
+			<Concept code="11102000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebuliser suspension (edqm)"/>
+			<Concept code="11103000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for nebuliser suspension"/>
+			<Concept code="11103000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for nebuliser suspension (edqm)"/>
+			<Concept code="11104000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for nebuliser solution"/>
+			<Concept code="11104000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for nebuliser solution (edqm)"/>
+			<Concept code="11105000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebuliser emulsion"/>
+			<Concept code="11105000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebuliser emulsion (edqm)"/>
+			<Concept code="11106000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pressurised inhalation, solution"/>
+			<Concept code="11106000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pressurised inhalation, solution (edqm)"/>
+			<Concept code="11107000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pressurised inhalation, suspension"/>
+			<Concept code="11107000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pressurised inhalation, suspension (edqm)"/>
+			<Concept code="11108000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pressurised inhalation, emulsion"/>
+			<Concept code="11108000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pressurised inhalation, emulsion (edqm)"/>
+			<Concept code="11109000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation powder"/>
+			<Concept code="11109000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation powder (edqm)"/>
+			<Concept code="11110000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation powder, hard capsule"/>
+			<Concept code="11110000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation powder, hard capsule (edqm)"/>
+			<Concept code="11111000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation powder, pre-dispensed"/>
+			<Concept code="11111000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation powder, pre-dispensed (edqm)"/>
+			<Concept code="11112000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, powder"/>
+			<Concept code="11112000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, powder (edqm)"/>
+			<Concept code="11113000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, capsule"/>
+			<Concept code="11113000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, capsule (edqm)"/>
+			<Concept code="11114000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, solution"/>
+			<Concept code="11114000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, solution (edqm)"/>
+			<Concept code="11115000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, tablet"/>
+			<Concept code="11115000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, tablet (edqm)"/>
+			<Concept code="11116000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, ointment"/>
+			<Concept code="11116000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, ointment (edqm)"/>
+			<Concept code="11117000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, liquid"/>
+			<Concept code="11117000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, liquid (edqm)"/>
+			<Concept code="11118000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation gas"/>
+			<Concept code="11118000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation gas (edqm)"/>
+			<Concept code="11201000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection"/>
+			<Concept code="11201000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection (edqm)"/>
+			<Concept code="11202000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension for injection"/>
+			<Concept code="11202000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension for injection (edqm)"/>
+			<Concept code="11203000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Emulsion for injection"/>
+			<Concept code="11203000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Emulsion for injection (edqm)"/>
+			<Concept code="11204000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gel for injection"/>
+			<Concept code="11204000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gel for injection (edqm)"/>
+			<Concept code="11205000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for injection"/>
+			<Concept code="11205000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for injection (edqm)"/>
+			<Concept code="11206000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for suspension for injection"/>
+			<Concept code="11206000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for suspension for injection (edqm)"/>
+			<Concept code="11207000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for solution for injection"/>
+			<Concept code="11207000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for solution for injection (edqm)"/>
+			<Concept code="11208000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for suspension for injection"/>
+			<Concept code="11208000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for suspension for injection (edqm)"/>
+			<Concept code="11209000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for solution for injection"/>
+			<Concept code="11209000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for solution for injection (edqm)"/>
+			<Concept code="11210000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for infusion"/>
+			<Concept code="11210000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for infusion (edqm)"/>
+			<Concept code="11210500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for infusion in administration system"/>
+			<Concept code="11210500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for infusion in administration system (edqm)"/>
+			<Concept code="11211000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Emulsion for infusion"/>
+			<Concept code="11211000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Emulsion for infusion (edqm)"/>
+			<Concept code="11212000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for infusion"/>
+			<Concept code="11212000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for infusion (edqm)"/>
+			<Concept code="11213000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for solution for infusion"/>
+			<Concept code="11213000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for solution for infusion (edqm)"/>
+			<Concept code="11214000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for solution for infusion"/>
+			<Concept code="11214000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for solution for infusion (edqm)"/>
+			<Concept code="11214500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lyophilisate and solvent for solution for injection"/>
+			<Concept code="11214500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lyophilisate and solvent for solution for injection (edqm)"/>
+			<Concept code="11215000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lyophilisate for solution for infusion"/>
+			<Concept code="11215000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lyophilisate for solution for infusion (edqm)"/>
+			<Concept code="11216000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solvent for parenteral use"/>
+			<Concept code="11216000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solvent for parenteral use (edqm)"/>
+			<Concept code="11217000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lyophilisate for solution for injection"/>
+			<Concept code="11217000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lyophilisate for solution for injection (edqm)"/>
+			<Concept code="11218000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lyophilisate for suspension for injection"/>
+			<Concept code="11218000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lyophilisate for suspension for injection (edqm)"/>
+			<Concept code="11301000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Implant"/>
+			<Concept code="11301000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Implant (edqm)"/>
+			<Concept code="11302000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Implantation tablet"/>
+			<Concept code="11302000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Implantation tablet (edqm)"/>
+			<Concept code="11303000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Implantation chain"/>
+			<Concept code="11303000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Implantation chain (edqm)"/>
+			<Concept code="11303500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Implantation suspension"/>
+			<Concept code="11303500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Implantation suspension (edqm)"/>
+			<Concept code="11304000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for implantation paste"/>
+			<Concept code="11304000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for implantation paste (edqm)"/>
+			<Concept code="11401000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for peritoneal dialysis"/>
+			<Concept code="11401000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for peritoneal dialysis (edqm)"/>
+			<Concept code="11402000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for haemofiltration"/>
+			<Concept code="11402000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for haemofiltration (edqm)"/>
+			<Concept code="11403000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for haemodiafiltration"/>
+			<Concept code="11403000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for haemodiafiltration (edqm)"/>
+			<Concept code="11404000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for haemodialysis"/>
+			<Concept code="11404000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for haemodialysis (edqm)"/>
+			<Concept code="11405000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for haemodialysis solution"/>
+			<Concept code="11405000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for haemodialysis solution (edqm)"/>
+			<Concept code="11501000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for intravesical use"/>
+			<Concept code="11501000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for intravesical use (edqm)"/>
+			<Concept code="11502000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Bladder irrigation"/>
+			<Concept code="11502000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Bladder irrigation (edqm)"/>
+			<Concept code="11503000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for bladder irrigation"/>
+			<Concept code="11503000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for bladder irrigation (edqm)"/>
+			<Concept code="11504000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Urethral gel"/>
+			<Concept code="11504000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Urethral gel (edqm)"/>
+			<Concept code="11505000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Urethral stick"/>
+			<Concept code="11505000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Urethral stick (edqm)"/>
+			<Concept code="11601000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endotracheopulmonary instillation, solution"/>
+			<Concept code="11601000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endotracheopulmonary instillation, solution (edqm)"/>
+			<Concept code="11602000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endotracheopulmonary instillation, powder for solution"/>
+			<Concept code="11602000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endotracheopulmonary instillation, powder for solution (edqm)"/>
+			<Concept code="11603000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endotracheopulmonary instillation, suspension"/>
+			<Concept code="11603000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endotracheopulmonary instillation, suspension (edqm)"/>
+			<Concept code="11604000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endotracheopulmonary instillation, powder and solvent for solution"/>
+			<Concept code="11604000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endotracheopulmonary instillation, powder and solvent for solution (edqm)"/>
+			<Concept code="11701000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endocervical gel"/>
+			<Concept code="11701000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endocervical gel (edqm)"/>
+			<Concept code="11702000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for endocervical gel"/>
+			<Concept code="11702000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for endocervical gel (edqm)"/>
+			<Concept code="11901000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine delivery system"/>
+			<Concept code="11901000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine delivery system (edqm)"/>
+			<Concept code="11902000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine solution"/>
+			<Concept code="11902000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine solution (edqm)"/>
+			<Concept code="11903000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine suspension"/>
+			<Concept code="11903000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine suspension (edqm)"/>
+			<Concept code="11904000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine emulsion"/>
+			<Concept code="11904000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine emulsion (edqm)"/>
+			<Concept code="11905000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine tablet"/>
+			<Concept code="11905000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine tablet (edqm)"/>
+			<Concept code="11906000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine capsule"/>
+			<Concept code="11906000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine capsule (edqm)"/>
+			<Concept code="12004000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebulisation solution"/>
+			<Concept code="12004000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebulisation solution (edqm)"/>
+			<Concept code="12100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Capsule"/>
+			<Concept code="12100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Capsule (edqm)"/>
+			<Concept code="12100500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Absorbable coated sponge"/>
+			<Concept code="12100500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Absorbable coated sponge (edqm)"/>
+			<Concept code="12101000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Denture lacquer"/>
+			<Concept code="12101000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Denture lacquer (edqm)"/>
+			<Concept code="12102000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Anticoagulant and preservative solution for blood"/>
+			<Concept code="12102000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Anticoagulant and preservative solution for blood (edqm)"/>
+			<Concept code="12103000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for blood fraction modification"/>
+			<Concept code="12103000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for blood fraction modification (edqm)"/>
+			<Concept code="12104000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Wound stick"/>
+			<Concept code="12104000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Wound stick (edqm)"/>
+			<Concept code="12105000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Radiopharmaceutical precursor"/>
+			<Concept code="12105000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Radiopharmaceutical precursor (edqm)"/>
+			<Concept code="12106000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Radionuclide generator"/>
+			<Concept code="12106000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Radionuclide generator (edqm)"/>
+			<Concept code="12107000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Kit for radiopharmaceutical preparation"/>
+			<Concept code="12107000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Kit for radiopharmaceutical preparation (edqm)"/>
+			<Concept code="12108000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastroenteral solution"/>
+			<Concept code="12108000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastroenteral solution (edqm)"/>
+			<Concept code="12109000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dispersion"/>
+			<Concept code="12109000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dispersion (edqm)"/>
+			<Concept code="12109500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Fibrin sealant-powder and solvent for fibrin sealant"/>
+			<Concept code="12109500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Fibrin sealant-powder and solvent for fibrin sealant (edqm)"/>
+			<Concept code="12110000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastroenteral suspension"/>
+			<Concept code="12110000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastroenteral suspension (edqm)"/>
+			<Concept code="12111000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastroenteral emulsion"/>
+			<Concept code="12111000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastroenteral emulsion (edqm)"/>
+			<Concept code="12112000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for organ preservation"/>
+			<Concept code="12112000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for organ preservation (edqm)"/>
+			<Concept code="12113000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Irrigation solution"/>
+			<Concept code="12113000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Irrigation solution (edqm)"/>
+			<Concept code="12114000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Stomach irrigation"/>
+			<Concept code="12114000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Stomach irrigation (edqm)"/>
+			<Concept code="12115000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Sealant"/>
+			<Concept code="12115000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Sealant (edqm)"/>
+			<Concept code="12115500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution of perfusion of organs"/>
+			<Concept code="12115500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution of perfusion of organs (edqm)"/>
+			<Concept code="12116000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for sealant"/>
+			<Concept code="12116000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for sealant (edqm)"/>
+			<Concept code="12117000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Impregnated pad"/>
+			<Concept code="12117000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Impregnated pad (edqm)"/>
+			<Concept code="12118000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Living tissue equivalent"/>
+			<Concept code="12118000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Living tissue equivalent (edqm)"/>
+			<Concept code="12119000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicated sponge"/>
+			<Concept code="12119000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicated sponge (edqm)"/>
+			<Concept code="12120" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant capsule"/>
+			<Concept code="12120" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant capsule (edqm)"/>
+			<Concept code="12120000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intestinal gel"/>
+			<Concept code="12120000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intestinal gel (edqm)"/>
+			<Concept code="12130000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicated thread"/>
+			<Concept code="12130000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicated thread (edqm)"/>
+			<Concept code="12131000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for provocation test"/>
+			<Concept code="12131000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for provocation test (edqm)"/>
+			<Concept code="12150" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release capsule"/>
+			<Concept code="12150" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release capsule (edqm)"/>
+			<Concept code="12200" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet"/>
+			<Concept code="12200" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet (edqm)"/>
+			<Concept code="12301000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicinal gas, compressed"/>
+			<Concept code="12301000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicinal gas, compressed (edqm)"/>
+			<Concept code="12302000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicinal gas, cryogenic"/>
+			<Concept code="12302000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicinal gas, cryogenic (edqm)"/>
+			<Concept code="12303000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicinal gas, liquefied"/>
+			<Concept code="12303000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Medicinal gas, liquefied (edqm)"/>
+			<Concept code="13050" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal liquid"/>
+			<Concept code="13050" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal liquid (edqm)"/>
+			<Concept code="13220" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lozenge"/>
+			<Concept code="13220" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Lozenge (edqm)"/>
+			<Concept code="14050" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental liquid"/>
+			<Concept code="14050" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental liquid (edqm)"/>
+			<Concept code="15090" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous spray"/>
+			<Concept code="15090" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous spray (edqm)"/>
+			<Concept code="15130" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous liquid"/>
+			<Concept code="15130" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous liquid (edqm)"/>
+			<Concept code="16040" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops"/>
+			<Concept code="16040" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops (edqm)"/>
+			<Concept code="17040" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear drops"/>
+			<Concept code="17040" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear drops (edqm)"/>
+			<Concept code="17090" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear spray"/>
+			<Concept code="17090" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear spray (edqm)"/>
+			<Concept code="17120" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear wash"/>
+			<Concept code="17120" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear wash (edqm)"/>
+			<Concept code="18040" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal drops"/>
+			<Concept code="18040" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal drops (edqm)"/>
+			<Concept code="18080" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal spray"/>
+			<Concept code="18080" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal spray (edqm)"/>
+			<Concept code="19050" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal liquid"/>
+			<Concept code="19050" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal liquid (edqm)"/>
+			<Concept code="19100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal capsule"/>
+			<Concept code="19100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal capsule (edqm)"/>
+			<Concept code="20050" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Enema"/>
+			<Concept code="20050" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Enema (edqm)"/>
+			<Concept code="21010" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebuliser liquid"/>
+			<Concept code="21010" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebuliser liquid (edqm)"/>
+			<Concept code="21060" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pressurised inhalation"/>
+			<Concept code="21060" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pressurised inhalation (edqm)"/>
+			<Concept code="21100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation powder"/>
+			<Concept code="21100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation powder (edqm)"/>
+			<Concept code="21140" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour"/>
+			<Concept code="21140" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour (edqm)"/>
+			<Concept code="22010" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Injection"/>
+			<Concept code="22010" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Injection (edqm)"/>
+			<Concept code="22050" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for injection"/>
+			<Concept code="22050" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for injection (edqm)"/>
+			<Concept code="22090" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Sterile concentrate"/>
+			<Concept code="22090" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Sterile concentrate (edqm)"/>
+			<Concept code="22100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Infusion"/>
+			<Concept code="22100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Infusion (edqm)"/>
+			<Concept code="22120" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for infusion"/>
+			<Concept code="22120" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for infusion (edqm)"/>
+			<Concept code="26010" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endotracheopulmonary instillation"/>
+			<Concept code="26010" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endotracheopulmonary instillation (edqm)"/>
+			<Concept code="29020" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine liquid"/>
+			<Concept code="29020" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine liquid (edqm)"/>
+			<Concept code="30047500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pouch"/>
+			<Concept code="30047500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pouch (edqm)"/>
+			<Concept code="31030" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Blood fraction modifier"/>
+			<Concept code="31030" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Blood fraction modifier (edqm)"/>
+			<Concept code="31080" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastroenteral liquid"/>
+			<Concept code="31080" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastroenteral liquid (edqm)"/>
+			<Concept code="50001000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Chewable/dispersible tablet"/>
+			<Concept code="50001000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Chewable/dispersible tablet (edqm)"/>
+			<Concept code="50001250" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Coated granules in sachet"/>
+			<Concept code="50001250" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Coated granules in sachet (edqm)"/>
+			<Concept code="50001500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and diluent for solution for infusion"/>
+			<Concept code="50001500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and diluent for solution for infusion (edqm)"/>
+			<Concept code="50002000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for concentrate for solution for infusion"/>
+			<Concept code="50002000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for concentrate for solution for infusion (edqm)"/>
+			<Concept code="50003000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for cutaneous solution"/>
+			<Concept code="50003000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for cutaneous solution (edqm)"/>
+			<Concept code="50004000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for cutaneous use"/>
+			<Concept code="50004000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for cutaneous use (edqm)"/>
+			<Concept code="50005000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for injection"/>
+			<Concept code="50005000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for injection (edqm)"/>
+			<Concept code="50006000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for solution for infusion"/>
+			<Concept code="50006000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for solution for infusion (edqm)"/>
+			<Concept code="50007000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for solution for injection"/>
+			<Concept code="50007000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for solution for injection (edqm)"/>
+			<Concept code="50008000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for suspension for injection"/>
+			<Concept code="50008000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate and solvent for suspension for injection (edqm)"/>
+			<Concept code="50009000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for cutaneous spray, emulsion"/>
+			<Concept code="50009000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for cutaneous spray, emulsion (edqm)"/>
+			<Concept code="50009300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for dispersion for infusion"/>
+			<Concept code="50009300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for dispersion for infusion (edqm)"/>
+			<Concept code="50009500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for emulsion for infusion"/>
+			<Concept code="50009500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for emulsion for infusion (edqm)"/>
+			<Concept code="50010000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for oral solution"/>
+			<Concept code="50010000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for oral solution (edqm)"/>
+			<Concept code="50011000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for oral/rectal solution"/>
+			<Concept code="50011000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for oral/rectal solution (edqm)"/>
+			<Concept code="50012000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for peritoneal dialysis solution"/>
+			<Concept code="50012000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for peritoneal dialysis solution (edqm)"/>
+			<Concept code="50013000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for solution for intravesical use"/>
+			<Concept code="50013000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for solution for intravesical use (edqm)"/>
+			<Concept code="50013500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for spray emulsion"/>
+			<Concept code="50013500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for spray emulsion (edqm)"/>
+			<Concept code="50014000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for suspension for infusion"/>
+			<Concept code="50014000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for suspension for infusion (edqm)"/>
+			<Concept code="50015000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous and nasal ointment"/>
+			<Concept code="50015000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous and nasal ointment (edqm)"/>
+			<Concept code="50015300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous/oromucosal/oral solution"/>
+			<Concept code="50015300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous/oromucosal/oral solution (edqm)"/>
+			<Concept code="50015400" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous/oromucosal spray"/>
+			<Concept code="50015400" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous/oromucosal spray (edqm)"/>
+			<Concept code="50015500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous spray, emulsion"/>
+			<Concept code="50015500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous spray, emulsion (edqm)"/>
+			<Concept code="50016000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous spray, ointment"/>
+			<Concept code="50016000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous spray, ointment (edqm)"/>
+			<Concept code="50017000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental paste"/>
+			<Concept code="50017000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental paste (edqm)"/>
+			<Concept code="50018000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear/eye drops, solution"/>
+			<Concept code="50018000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear/eye drops, solution (edqm)"/>
+			<Concept code="50019000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear/eye oinment"/>
+			<Concept code="50019000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear/eye oinment (edqm)"/>
+			<Concept code="50020000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear/eye/nose drops, solution"/>
+			<Concept code="50020000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ear/eye/nose drops, solution (edqm)"/>
+			<Concept code="50020500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Effervescent buccal tablet"/>
+			<Concept code="50020500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Effervescent buccal tablet (edqm)"/>
+			<Concept code="50021000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Emulsion for injection/infusion"/>
+			<Concept code="50021000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Emulsion for injection/infusion (edqm)"/>
+			<Concept code="50021500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Emulsion and suspension for emulsion for injection"/>
+			<Concept code="50021500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Emulsion and suspension for emulsion for injection (edqm)"/>
+			<Concept code="50022000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endosinusial wash, suspension"/>
+			<Concept code="50022000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endosinusial wash, suspension (edqm)"/>
+			<Concept code="50023000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, solution in single-dose container"/>
+			<Concept code="50023000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Eye drops, solution in single-dose container (edqm)"/>
+			<Concept code="50023500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Film coated gastro-resistant tablet"/>
+			<Concept code="50023500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Film coated gastro-resistant tablet (edqm)"/>
+			<Concept code="50024000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gargle/mouthwash"/>
+			<Concept code="50024000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gargle/mouthwash (edqm)"/>
+			<Concept code="50025000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant coated tablet"/>
+			<Concept code="50025000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant coated tablet (edqm)"/>
+			<Concept code="50026000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant granules for oral suspension"/>
+			<Concept code="50026000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant granules for oral suspension (edqm)"/>
+			<Concept code="50026250" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant prolonged-release tablet"/>
+			<Concept code="50026250" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastro-resistant prolonged-release tablet (edqm)"/>
+			<Concept code="50026500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules and solvent for oral suspension"/>
+			<Concept code="50026500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules and solvent for oral suspension (edqm)"/>
+			<Concept code="50027000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules and solvent for suspension for injection"/>
+			<Concept code="50027000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules and solvent for suspension for injection (edqm)"/>
+			<Concept code="50028000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for oral and rectal suspension"/>
+			<Concept code="50028000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for oral and rectal suspension (edqm)"/>
+			<Concept code="50029000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for oral drops, solution"/>
+			<Concept code="50029000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for oral drops, solution (edqm)"/>
+			<Concept code="50029250" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for use in drinking water"/>
+			<Concept code="50029250" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for use in drinking water (edqm)"/>
+			<Concept code="50029500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for vaginal solution"/>
+			<Concept code="50029500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Granules for vaginal solution (edqm)"/>
+			<Concept code="50029600" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Hard capsule with gastro-resistant pellets"/>
+			<Concept code="50029600" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Hard capsule with gastro-resistant pellets (edqm)"/>
+			<Concept code="50029700" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Herbal tea in bag"/>
+			<Concept code="50029700" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Herbal tea in bag (edqm)"/>
+			<Concept code="50030000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation powder, tablet"/>
+			<Concept code="50030000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation powder, tablet (edqm)"/>
+			<Concept code="50031000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, effervescent tablet"/>
+			<Concept code="50031000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, effervescent tablet (edqm)"/>
+			<Concept code="50032000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, emulsion"/>
+			<Concept code="50032000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, emulsion (edqm)"/>
+			<Concept code="50033000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, impregnated pad"/>
+			<Concept code="50033000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation vapour, impregnated pad (edqm)"/>
+			<Concept code="50033300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine foam"/>
+			<Concept code="50033300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine foam (edqm)"/>
+			<Concept code="50033500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intravitreal implant in applicator"/>
+			<Concept code="50033500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intravitreal implant in applicator (edqm)"/>
+			<Concept code="50034000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Liquefied gas for dental use"/>
+			<Concept code="50034000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Liquefied gas for dental use (edqm)"/>
+			<Concept code="50035000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Modified-release film-coated tablet"/>
+			<Concept code="50035000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Modified-release film-coated tablet (edqm)"/>
+			<Concept code="50036000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Modified-release granules for oral suspension"/>
+			<Concept code="50036000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Modified-release granules for oral suspension (edqm)"/>
+			<Concept code="50036100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Muco-adhesive buccal prolonged-release tablet"/>
+			<Concept code="50036100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Muco-adhesive buccal prolonged-release tablet (edqm)"/>
+			<Concept code="50036500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal/oromucosal solution"/>
+			<Concept code="50036500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal/oromucosal solution (edqm)"/>
+			<Concept code="50037000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal spray and oromucosal solution"/>
+			<Concept code="50037000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal spray and oromucosal solution (edqm)"/>
+			<Concept code="50037250" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal spray, solution in single-dose container"/>
+			<Concept code="50037250" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal spray, solution in single-dose container (edqm)"/>
+			<Concept code="50037750" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral drops, liquid"/>
+			<Concept code="50037750" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral drops, liquid (edqm)"/>
+			<Concept code="50038000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral/rectal suspension"/>
+			<Concept code="50038000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral/rectal suspension (edqm)"/>
+			<Concept code="50038500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral solution/concentrate for nebuliser solution"/>
+			<Concept code="50038500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral solution/concentrate for nebuliser solution (edqm)"/>
+			<Concept code="50039000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal patch"/>
+			<Concept code="50039000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal patch (edqm)"/>
+			<Concept code="50039300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal powder in pouch"/>
+			<Concept code="50039300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal powder in pouch (edqm)"/>
+			<Concept code="50039500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal/laryngopharyngeal solution"/>
+			<Concept code="50039500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal/laryngopharyngeal solution (edqm)"/>
+			<Concept code="50040000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal/laryngopharyngeal solution/spray"/>
+			<Concept code="50040000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal/laryngopharyngeal solution/spray (edqm)"/>
+			<Concept code="50041000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pillules in single-dose container"/>
+			<Concept code="50041000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pillules in single-dose container (edqm)"/>
+			<Concept code="50041500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solution for solution for injection"/>
+			<Concept code="50041500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solution for solution for injection (edqm)"/>
+			<Concept code="50042000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for concentrate for solution for infusion"/>
+			<Concept code="50042000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for concentrate for solution for infusion (edqm)"/>
+			<Concept code="50043000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for concentrate for solution for infusion"/>
+			<Concept code="50043000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for concentrate for solution for infusion (edqm)"/>
+			<Concept code="50044000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for cutaneous solution"/>
+			<Concept code="50044000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for cutaneous solution (edqm)"/>
+			<Concept code="50044500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for dispersion for injection"/>
+			<Concept code="50044500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for dispersion for injection (edqm)"/>
+			<Concept code="50045000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for endosinusial solution"/>
+			<Concept code="50045000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for endosinusial solution (edqm)"/>
+			<Concept code="50045500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for epilesional solution"/>
+			<Concept code="50045500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for epilesional solution (edqm)"/>
+			<Concept code="50046000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for gingival gel"/>
+			<Concept code="50046000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for gingival gel (edqm)"/>
+			<Concept code="50047000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for instillation solution for intraocular use"/>
+			<Concept code="50047000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for instillation solution for intraocular use (edqm)"/>
+			<Concept code="50047500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for intravesical solution"/>
+			<Concept code="50047500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for intravesical solution (edqm)"/>
+			<Concept code="50047700" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for nebuliser solution"/>
+			<Concept code="50047700" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for nebuliser solution (edqm)"/>
+			<Concept code="50048000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for prolonged-release suspension for injection"/>
+			<Concept code="50048000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for prolonged-release suspension for injection (edqm)"/>
+			<Concept code="50048250" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for solution for injection in pre-filled syringe"/>
+			<Concept code="50048250" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for solution for injection in pre-filled syringe (edqm)"/>
+			<Concept code="50048300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for suspension for injection in pre-filled syringe"/>
+			<Concept code="50048300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for suspension for injection in pre-filled syringe (edqm)"/>
+			<Concept code="50048500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and suspension for suspension for injection"/>
+			<Concept code="50048500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and suspension for suspension for injection (edqm)"/>
+			<Concept code="50048600" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder, dispersion and solvent for concentrate for dispersion for injection"/>
+			<Concept code="50048600" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder, dispersion and solvent for concentrate for dispersion for injection (edqm)"/>
+			<Concept code="50048750" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for concentrate for dispersion for infusion"/>
+			<Concept code="50048750" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for concentrate for dispersion for infusion (edqm)"/>
+			<Concept code="50049000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for concentrate for haemodialysis solution,"/>
+			<Concept code="50049000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for concentrate for haemodialysis solution, (edqm)"/>
+			<Concept code="50049100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for concentrate for intravesical suspension"/>
+			<Concept code="50049100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for concentrate for intravesical suspension (edqm)"/>
+			<Concept code="50049250" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for concentrate for solution for injection/infusion"/>
+			<Concept code="50049250" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for concentrate for solution for injection/infusion (edqm)"/>
+			<Concept code="50049270" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for dental solution"/>
+			<Concept code="50049270" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for dental solution (edqm)"/>
+			<Concept code="50049300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for epilesional solution"/>
+			<Concept code="50049300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for epilesional solution (edqm)"/>
+			<Concept code="50049500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for implantation suspension"/>
+			<Concept code="50049500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for implantation suspension (edqm)"/>
+			<Concept code="50050000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for intravesical solution"/>
+			<Concept code="50050000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for intravesical solution (edqm)"/>
+			<Concept code="50051000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for intravesical suspension"/>
+			<Concept code="50051000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for intravesical suspension (edqm)"/>
+			<Concept code="50051100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for mouth wash"/>
+			<Concept code="50051100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for mouth wash (edqm)"/>
+			<Concept code="50052000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for oral/rectal suspension"/>
+			<Concept code="50052000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for oral/rectal suspension (edqm)"/>
+			<Concept code="50053000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for injection or infusion"/>
+			<Concept code="50053000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for injection or infusion (edqm)"/>
+			<Concept code="50053500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for injection/infusion"/>
+			<Concept code="50053500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for injection/infusion (edqm)"/>
+			<Concept code="50054000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for intravesical use"/>
+			<Concept code="50054000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for intravesical use (edqm)"/>
+			<Concept code="50055000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for nasal spray"/>
+			<Concept code="50055000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for nasal spray (edqm)"/>
+			<Concept code="50055500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release film-coated tablet"/>
+			<Concept code="50055500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release film-coated tablet (edqm)"/>
+			<Concept code="50056000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release granules for oral suspension"/>
+			<Concept code="50056000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prolonged-release granules for oral suspension (edqm)"/>
+			<Concept code="50056500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Radiopharmaceutical precursor, solution"/>
+			<Concept code="50056500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Radiopharmaceutical precursor, solution (edqm)"/>
+			<Concept code="50057000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for haemodialysis/haemofiltration"/>
+			<Concept code="50057000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for haemodialysis/haemofiltration (edqm)"/>
+			<Concept code="50058000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for infusion and oral solution"/>
+			<Concept code="50058000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for infusion and oral solution (edqm)"/>
+			<Concept code="50059000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection/concentrate for solution for infusion"/>
+			<Concept code="50059000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection/concentrate for solution for infusion (edqm)"/>
+			<Concept code="50060000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection/infusion"/>
+			<Concept code="50060000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection/infusion (edqm)"/>
+			<Concept code="50060100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection in cartridge"/>
+			<Concept code="50060100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection in cartridge (edqm)"/>
+			<Concept code="50060200" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection in pre-filled pen"/>
+			<Concept code="50060200" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection in pre-filled pen (edqm)"/>
+			<Concept code="50060300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection in pre-filled syringe"/>
+			<Concept code="50060300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection in pre-filled syringe (edqm)"/>
+			<Concept code="50060400" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection in pre-filled syringe with automatic needle guard"/>
+			<Concept code="50060400" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection in pre-filled syringe with automatic needle guard (edqm)"/>
+			<Concept code="50060500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection/infusion in pre-filled syringe"/>
+			<Concept code="50060500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for injection/infusion in pre-filled syringe (edqm)"/>
+			<Concept code="50061000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for intraperitoneal use"/>
+			<Concept code="50061000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for intraperitoneal use (edqm)"/>
+			<Concept code="50061300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for use in drinking water"/>
+			<Concept code="50061300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for use in drinking water (edqm)"/>
+			<Concept code="50061500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for sealant"/>
+			<Concept code="50061500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solution for sealant (edqm)"/>
+			<Concept code="50061600" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solvent for nasal use"/>
+			<Concept code="50061600" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solvent for nasal use (edqm)"/>
+			<Concept code="50062000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension and effervescent granules for oral suspension"/>
+			<Concept code="50062000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension and effervescent granules for oral suspension (edqm)"/>
+			<Concept code="50062500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension and solution for spray"/>
+			<Concept code="50062500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension and solution for spray (edqm)"/>
+			<Concept code="50063000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension for infusion"/>
+			<Concept code="50063000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension for infusion (edqm)"/>
+			<Concept code="50063100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension for injection in cartridge"/>
+			<Concept code="50063100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension for injection in cartridge (edqm)"/>
+			<Concept code="50063200" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension for injection in pre-filled pen"/>
+			<Concept code="50063200" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension for injection in pre-filled pen (edqm)"/>
+			<Concept code="50063300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension for injection in pre-filled syringe"/>
+			<Concept code="50063300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension for injection in pre-filled syringe (edqm)"/>
+			<Concept code="50063500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension for use in drinking water"/>
+			<Concept code="50063500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Suspension for use in drinking water (edqm)"/>
+			<Concept code="50064000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet and solvent for rectal suspension"/>
+			<Concept code="50064000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet and solvent for rectal suspension (edqm)"/>
+			<Concept code="50065000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet and powder for oral solution"/>
+			<Concept code="50065000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet and powder for oral solution (edqm)"/>
+			<Concept code="50066000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet for oral suspension"/>
+			<Concept code="50066000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet for oral suspension (edqm)"/>
+			<Concept code="50070000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral suspension for use in drinking water"/>
+			<Concept code="50070000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral suspension for use in drinking water (edqm)"/>
+			<Concept code="50071000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for dental gel"/>
+			<Concept code="50071000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for dental gel (edqm)"/>
+			<Concept code="50072000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for use in drinking water"/>
+			<Concept code="50072000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for use in drinking water (edqm)"/>
+			<Concept code="50073000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for intraocular irrigation"/>
+			<Concept code="50073000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder for solution for intraocular irrigation (edqm)"/>
+			<Concept code="50074000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solvent for solution for intraocular irrigation"/>
+			<Concept code="50074000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solvent for solution for intraocular irrigation (edqm)"/>
+			<Concept code="50076000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solvent for solution for infusion"/>
+			<Concept code="50076000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Solvent for solution for infusion (edqm)"/>
+			<Concept code="50077000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dispersion for injection"/>
+			<Concept code="50077000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dispersion for injection (edqm)"/>
+			<Concept code="50078000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gas and solvent for dispersion for injection/infusion"/>
+			<Concept code="50078000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gas and solvent for dispersion for injection/infusion (edqm)"/>
+			<Concept code="50079000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for solution for injection/infusion"/>
+			<Concept code="50079000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Concentrate for solution for injection/infusion (edqm)"/>
+			<Concept code="50080000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for solution for injection/infusion"/>
+			<Concept code="50080000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Powder and solvent for solution for injection/infusion (edqm)"/>
+			<Concept code="50081000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation solution"/>
+			<Concept code="50081000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation solution (edqm)"/>
+			<Concept code="50082000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral drops, powder for suspension"/>
+			<Concept code="50082000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral drops, powder for suspension (edqm)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-W3CDTD XHTML 1.0 TransitionalEN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<body>
+
+        <f:view locale="#{facesContext.externalContext.requestLocale}" />
+
+        <h:form>
+
+                <ui:include src="patient.xhtml" />
+                <ui:include src="confirmation.xhtml" />
+
+                <p:panel>
+                        <p:commandButton id="submitButton" 
+                                value="#{msg['trca.confirm']}"
+                                ajax="false"
+								widgetVar="saveButton" onclick="saveButton.disable()"                                 
+                                action="#{myBean.submitConfirmation}">
+                                <f:setPropertyActionListener value="#{confirmationBean.purposeOfUse}"
+                                        target="#{myBean.purposeOfUseGeneric}" />
+                        </p:commandButton>
+                        
+                        <p:commandButton id="cancelButton" 
+                                value="#{msg['trca.cancel']}" 
+                                ajax="false"
+                                action="/view1.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal" />
+                </p:panel>
+        </h:form>
+</body>
+</html>

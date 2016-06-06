@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://clientconnector.protocolterminator.openncp.epsos/" xmlns:tns="http://clientconnector.protocolterminator.openncp.epsos/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="queryDocuments" type="tns:queryDocuments"/>
+
+  <xs:element name="queryDocumentsResponse" type="tns:queryDocumentsResponse"/>
+
+  <xs:element name="queryPatient" type="tns:queryPatient"/>
+
+  <xs:element name="queryPatientResponse" type="tns:queryPatientResponse"/>
+
+  <xs:element name="retrieveDocument" type="tns:retrieveDocument"/>
+
+  <xs:element name="retrieveDocumentResponse" type="tns:retrieveDocumentResponse"/>
+
+  <xs:element name="sayHello" type="tns:sayHello"/>
+
+  <xs:element name="sayHelloResponse" type="tns:sayHelloResponse"/>
+
+  <xs:element name="submitDocument" type="tns:submitDocument"/>
+
+  <xs:element name="submitDocumentResponse" type="tns:submitDocumentResponse"/>
+
+  <xs:complexType name="queryPatient">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:queryPatientRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="queryPatientRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:epsosServiceRequest">
+        <xs:sequence>
+          <xs:element name="patientDemographics" type="tns:patientDemographics" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="epsosServiceRequest">
+    <xs:sequence>
+      <xs:element name="countryCode" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="patientId">
+    <xs:sequence>
+      <xs:element name="root" type="xs:string" minOccurs="0"/>
+      <xs:element name="extension" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="patientDemographics">
+    <xs:sequence>
+      <xs:element name="administrativeGender" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="country" type="xs:string" minOccurs="0"/>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="familyName" type="xs:string" minOccurs="0"/>
+      <xs:element name="givenName" type="xs:string" minOccurs="0"/>
+      <xs:element name="postalCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="streetAddress" type="xs:string" minOccurs="0"/>
+      <xs:element name="telephone" type="xs:string" minOccurs="0"/>
+      <xs:element name="patientId" type="tns:patientId" minOccurs="0" maxOccurs="unbounded"/>
+
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="queryPatientResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:patientDemographics" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="retrieveDocument">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:retrieveDocumentRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="retrieveDocumentRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:epsosServiceRequest">
+        <xs:sequence>
+          <xs:element name="homeCommunityId" type="xs:string" minOccurs="0"/>
+          <xs:element name="documentId" type="tns:documentId" minOccurs="0"/>
+          <xs:element name="classCode" type="tns:genericDocumentCode" minOccurs="0"/>
+          <xs:element name="targetLanguage" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="documentId">
+        <xs:sequence>
+          <xs:element name="repositoryUniqueId" type="xs:string" minOccurs="0"/>
+          <xs:element name="documentUniqueId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="retrieveDocumentResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:epsosDocument" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="epsosDocument">
+    <xs:sequence>
+      <xs:element name="author" type="xs:string" minOccurs="0"/>
+      <xs:element name="classCode" type="tns:genericDocumentCode" minOccurs="0"/>
+      <xs:element name="creationDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="formatCode" type="tns:genericDocumentCode" minOccurs="0"/>
+      <xs:element name="mimeType" type="xs:string" minOccurs="0"/>
+      <xs:element name="title" type="xs:string" minOccurs="0"/>
+      <xs:element name="uuid" type="xs:string" minOccurs="0"/>
+      <xs:element name="hcid" type="xs:string" minOccurs="0"/>
+      <xs:element name="repositoryId" type="xs:string" minOccurs="0"/>
+      <xs:element name="base64Binary" type="xs:base64Binary" minOccurs="0"/>
+      <xs:element name="associatedDocuments" type="tns:epsosDocument" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="documentMetaDataAssociation">
+    <xs:complexContent>
+      <xs:extension base="tns:epsosDocument">
+        <xs:sequence>
+          <xs:element name="associationType" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="genericDocumentCode">
+    <xs:sequence>
+      <xs:element name="nodeRepresentation" type="xs:string" minOccurs="0"/>
+      <xs:element name="schema" type="xs:string" minOccurs="0"/>
+      <xs:element name="value" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="submitDocument">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:submitDocumentRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="submitDocumentRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:epsosServiceRequest">
+        <xs:sequence>
+          <xs:element name="document" type="tns:epsosDocument" minOccurs="0"/>
+          <xs:element name="patientDemographics" type="tns:patientDemographics" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="submitDocumentResponse">
+    <xs:sequence>
+      <xs:element name="responseStatus" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sayHello">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sayHelloResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="queryDocuments">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:queryDocumentRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="queryDocumentRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:epsosServiceRequest">
+        <xs:sequence>
+          <xs:element name="patientId" type="tns:patientId" minOccurs="0"/>
+          <xs:element name="classCode" type="tns:genericDocumentCode" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="queryDocumentsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:epsosDocument" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

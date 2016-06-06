@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?><TrustServiceStatusList xmlns="http://uri.etsi.org/02231/v2#" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://uri.etsi.org/TrstSvc/SvcInfoExt/eSigDir-1999-93-EC-TrustedList/#" xmlns:ns4="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns5="http://uri.etsi.org/02231/v2/additionaltypes#" Id="NCPConfiguration-AT" TSLTag="http://uri.etsi.org/02231">
+<SchemeInformation>
+<TSLVersionIdentifier>3</TSLVersionIdentifier>
+<TSLSequenceNumber>1</TSLSequenceNumber>
+<TSLType>http://uri.etsi.org/TrstSvc/TSLType/generic</TSLType>
+<SchemeOperatorName>
+<Name xml:lang="it"/>
+</SchemeOperatorName>
+<SchemeOperatorAddress>
+<PostalAddresses>
+<PostalAddress xml:lang="it">
+<StreetAddress>RadezktyStrasse, 1</StreetAddress>
+<Locality>Wien</Locality>
+<PostalCode>1030</PostalCode>
+<CountryName>Austria</CountryName>
+</PostalAddress>
+</PostalAddresses>
+<ElectronicAddress>
+<URI>massimiliano.masi@bmg.gv.at</URI>
+</ElectronicAddress>
+</SchemeOperatorAddress>
+<SchemeName>
+<Name xml:lang="it">NCP-Service Status List: Austria(AT)</Name>
+</SchemeName>
+<SchemeInformationURI>
+<URI xml:lang="GR">http://www.epsos.eu/docs/SecPol.pdf</URI>
+<URI xml:lang="GR">http://www.epsos.eu/docs/fwa.pdf</URI>
+</SchemeInformationURI>
+<StatusDeterminationApproach>http://uri.etsi.org/TrstSvc/TSLType/StatusDetn/eSigDir-1999-93-EC-TrustedList/appropriate</StatusDeterminationApproach>
+<SchemeTypeCommunityRules>
+<URI>http://www.epsos.eu</URI>
+</SchemeTypeCommunityRules>
+<SchemeTerritory>AT</SchemeTerritory>
+<PolicyOrLegalNotice>
+<TSLPolicy xml:lang="GR">http://www.epsos.eu/docs/fwa.pdf</TSLPolicy>
+</PolicyOrLegalNotice>
+<HistoricalInformationPeriod>0</HistoricalInformationPeriod>
+<ListIssueDateTime>2016-02-16T14:52:58.000Z</ListIssueDateTime>
+<NextUpdate>
+<dateTime>2016-03-16T14:52:58.000Z</dateTime>
+</NextUpdate>
+</SchemeInformation>
+<TrustServiceProviderList>
+<TrustServiceProvider>
+<TSPInformation>
+<TSPName>
+<Name xml:lang="it">NCP-A</Name>
+</TSPName>
+<TSPTradeName>
+<Name xml:lang="it">NCP-A</Name>
+</TSPTradeName>
+<TSPAddress>
+<PostalAddresses>
+<PostalAddress xml:lang="it">
+<StreetAddress>RadezktyStrasse, 1</StreetAddress>
+<Locality>Wien</Locality>
+<StateOrProvince/>
+<PostalCode>1030</PostalCode>
+<CountryName>Austria</CountryName>
+</PostalAddress>
+</PostalAddresses>
+<ElectronicAddress>
+<URI>massimiliano.masi@bmg.gv.at</URI>
+</ElectronicAddress>
+</TSPAddress>
+</TSPInformation>
+<TSPServices>
+<TSPService>
+<ServiceInformation>
+<ServiceTypeIdentifier>http://uri.epsos.eu/Svc/Svctype/NCP</ServiceTypeIdentifier>
+<ServiceName>
+<Name xml:lang="it">NCP Gateway</Name>
+</ServiceName>
+<ServiceDigitalIdentity>
+<DigitalId>
+<X509Certificate>MIIDJDCCAo2gAwIBAgICAnAwDQYJKoZIhvcNAQENBQAwOjELMAkGA1UEBhMCRlIxEzARBgNVBAoMCklIRSBFdXJvcGUxFjAUBgNVBAMMDUlIRSBFdXJvcGUgQ0EwHhcNMTUxMTI2MTEwMTUwWhcNMjUxMTI2MTEwMTUwWjBWMQswCQYDVQQGEwJBRjEMMAoGA1UECgwDTW9IMRMwEQYDVQQDDAphdC1vcGVubmNwMRUwEwYDVQQqDAxNYXNzaW1pbGlhbm8xDTALBgNVBAUTBE1hc2kwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAN7tgV+ZF//z/Nv+pN5/6VllAoRqvRAfdIikaITeFydZ0ouV18QfcnzBFrQRKawF5Obt1X6+PU+CFS4fXrZqpfq8VSpljlVVGKGsJPUwBMWPKU/YLFkvbnfcPEzb9iyLv6xLkR4ED9Zuu+qcpMTbeB4pTryqx3EifSf72ieN+9KHAgMBAAGjggEbMIIBFzA9BgNVHR8ENjA0MDKgMKAuhixodHRwOi8vZ2F6ZWxsZS5paGUubmV0L3BraS9jcmwvNjQzL2NhY3JsLmNybDA7BglghkgBhvhCAQQELhYsaHR0cDovL2dhemVsbGUuaWhlLm5ldC9wa2kvY3JsLzY0My9jYWNybC5jcmwwOwYJYIZIAYb4QgEDBC4WLGh0dHA6Ly9nYXplbGxlLmloZS5uZXQvcGtpL2NybC82NDMvY2FjcmwuY3JsMB8GA1UdIwQYMBaAFOwzDhPIIl6i4WuvQ3t6XdJ3cx1+MB0GA1UdDgQWBBTpvwwap+aTxd/sTvu057ju5BmGKzAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIGwDANBgkqhkiG9w0BAQ0FAAOBgQADs6ZpCl+L56G+4xzLlBifrK7JMcFunEbL3oXATmFoKdN24mHH09+mBJj9jfAoYL1uP9Y65cjBD2g4jv8gNAnI/Y/uNdYA6Fv8479BDJC67nvUBp0Znu7V1gUMhaLcCfLYLXfr7FgvuDpdhShHbelQkehNWlqKxsSauq7X1jZTeg==</X509Certificate>
+</DigitalId>
+</ServiceDigitalIdentity>
+<ServiceStatus>http://uri.etsi.org/TrstSvc/Svcstatus/inaccord</ServiceStatus>
+<StatusStartingTime>2016-02-16T15:52:58.000+01:00</StatusStartingTime>
+<ServiceSupplyPoints>
+<ServiceSupplyPoint>http://fake</ServiceSupplyPoint>
+</ServiceSupplyPoints>
+</ServiceInformation>
+</TSPService>
+</TSPServices>
+</TrustServiceProvider>
+<TrustServiceProvider>
+<TSPInformation>
+<TSPName>
+<Name xml:lang="it">NCP-B</Name>
+</TSPName>
+<TSPTradeName>
+<Name xml:lang="it">NCP-B</Name>
+</TSPTradeName>
+</TSPInformation>
+<TSPServices>
+<TSPService>
+<ServiceInformation>
+<ServiceTypeIdentifier>http://uri.epsos.eu/Svc/Svctype/NCP</ServiceTypeIdentifier>
+<ServiceName>
+<Name xml:lang="it">NCP Gateway</Name>
+</ServiceName>
+<ServiceDigitalIdentity>
+<DigitalId>
+<X509Certificate>MIIDJDCCAo2gAwIBAgICAnAwDQYJKoZIhvcNAQENBQAwOjELMAkGA1UEBhMCRlIxEzARBgNVBAoMCklIRSBFdXJvcGUxFjAUBgNVBAMMDUlIRSBFdXJvcGUgQ0EwHhcNMTUxMTI2MTEwMTUwWhcNMjUxMTI2MTEwMTUwWjBWMQswCQYDVQQGEwJBRjEMMAoGA1UECgwDTW9IMRMwEQYDVQQDDAphdC1vcGVubmNwMRUwEwYDVQQqDAxNYXNzaW1pbGlhbm8xDTALBgNVBAUTBE1hc2kwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAN7tgV+ZF//z/Nv+pN5/6VllAoRqvRAfdIikaITeFydZ0ouV18QfcnzBFrQRKawF5Obt1X6+PU+CFS4fXrZqpfq8VSpljlVVGKGsJPUwBMWPKU/YLFkvbnfcPEzb9iyLv6xLkR4ED9Zuu+qcpMTbeB4pTryqx3EifSf72ieN+9KHAgMBAAGjggEbMIIBFzA9BgNVHR8ENjA0MDKgMKAuhixodHRwOi8vZ2F6ZWxsZS5paGUubmV0L3BraS9jcmwvNjQzL2NhY3JsLmNybDA7BglghkgBhvhCAQQELhYsaHR0cDovL2dhemVsbGUuaWhlLm5ldC9wa2kvY3JsLzY0My9jYWNybC5jcmwwOwYJYIZIAYb4QgEDBC4WLGh0dHA6Ly9nYXplbGxlLmloZS5uZXQvcGtpL2NybC82NDMvY2FjcmwuY3JsMB8GA1UdIwQYMBaAFOwzDhPIIl6i4WuvQ3t6XdJ3cx1+MB0GA1UdDgQWBBTpvwwap+aTxd/sTvu057ju5BmGKzAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIGwDANBgkqhkiG9w0BAQ0FAAOBgQADs6ZpCl+L56G+4xzLlBifrK7JMcFunEbL3oXATmFoKdN24mHH09+mBJj9jfAoYL1uP9Y65cjBD2g4jv8gNAnI/Y/uNdYA6Fv8479BDJC67nvUBp0Znu7V1gUMhaLcCfLYLXfr7FgvuDpdhShHbelQkehNWlqKxsSauq7X1jZTeg==</X509Certificate>
+</DigitalId>
+</ServiceDigitalIdentity>
+<ServiceStatus>http://uri.etsi.org/TrstSvc/Svcstatus/inaccord</ServiceStatus>
+<StatusStartingTime>2016-02-16T15:52:58.000+01:00</StatusStartingTime>
+<ServiceSupplyPoints>
+<ServiceSupplyPoint>http://fake</ServiceSupplyPoint>
+</ServiceSupplyPoints>
+</ServiceInformation>
+</TSPService>
+</TSPServices>
+</TrustServiceProvider>
+</TrustServiceProviderList>
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="xmldsig-6bbff8be-2611-4e99-96f3-bd8b177c6c46">
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+<ds:Reference URI="#NCPConfiguration-AT">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>ihJKpiwAnWyJx3QP2Cu7UoSo+RQ=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference Type="http://uri.etsi.org/01903#SignedProperties" URI="#xmldsig-6bbff8be-2611-4e99-96f3-bd8b177c6c46-xades">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>MRZr6Um+Gp0kavmbxqvxHWEn6YpWhGVLf5Yf87isOk0=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue Id="xmldsig-6bbff8be-2611-4e99-96f3-bd8b177c6c46-signature-value">xPCuznkOH8hcLVXYSJzYDKrW6Fc35SKKNdN9rLK60e0x9n2zylKRcffI5ysr8TRvl88oDv4H4YOf
+DDq/aELAw69tnHi2ZBzfJloMEBU+5Nzog0gtzCZ+JSWQNGOPwkhQsLLZdw4XODFpYKCdvOkwxPdg
+/8s7KLL6BHh7yOHXziY=</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:X509Data>
+<ds:X509Certificate>MIIDJDCCAo2gAwIBAgICAnAwDQYJKoZIhvcNAQENBQAwOjELMAkGA1UEBhMCRlIxEzARBgNVBAoM
+CklIRSBFdXJvcGUxFjAUBgNVBAMMDUlIRSBFdXJvcGUgQ0EwHhcNMTUxMTI2MTEwMTUwWhcNMjUx
+MTI2MTEwMTUwWjBWMQswCQYDVQQGEwJBRjEMMAoGA1UECgwDTW9IMRMwEQYDVQQDDAphdC1vcGVu
+bmNwMRUwEwYDVQQqDAxNYXNzaW1pbGlhbm8xDTALBgNVBAUTBE1hc2kwgZ8wDQYJKoZIhvcNAQEB
+BQADgY0AMIGJAoGBAN7tgV+ZF//z/Nv+pN5/6VllAoRqvRAfdIikaITeFydZ0ouV18QfcnzBFrQR
+KawF5Obt1X6+PU+CFS4fXrZqpfq8VSpljlVVGKGsJPUwBMWPKU/YLFkvbnfcPEzb9iyLv6xLkR4E
+D9Zuu+qcpMTbeB4pTryqx3EifSf72ieN+9KHAgMBAAGjggEbMIIBFzA9BgNVHR8ENjA0MDKgMKAu
+hixodHRwOi8vZ2F6ZWxsZS5paGUubmV0L3BraS9jcmwvNjQzL2NhY3JsLmNybDA7BglghkgBhvhC
+AQQELhYsaHR0cDovL2dhemVsbGUuaWhlLm5ldC9wa2kvY3JsLzY0My9jYWNybC5jcmwwOwYJYIZI
+AYb4QgEDBC4WLGh0dHA6Ly9nYXplbGxlLmloZS5uZXQvcGtpL2NybC82NDMvY2FjcmwuY3JsMB8G
+A1UdIwQYMBaAFOwzDhPIIl6i4WuvQ3t6XdJ3cx1+MB0GA1UdDgQWBBTpvwwap+aTxd/sTvu057ju
+5BmGKzAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIGwDANBgkqhkiG9w0BAQ0FAAOBgQADs6Zp
+Cl+L56G+4xzLlBifrK7JMcFunEbL3oXATmFoKdN24mHH09+mBJj9jfAoYL1uP9Y65cjBD2g4jv8g
+NAnI/Y/uNdYA6Fv8479BDJC67nvUBp0Znu7V1gUMhaLcCfLYLXfr7FgvuDpdhShHbelQkehNWlqK
+xsSauq7X1jZTeg==</ds:X509Certificate>
+<ds:X509IssuerSerial>
+<ds:X509IssuerName>CN=IHE Europe CA, O=IHE Europe, C=FR</ds:X509IssuerName>
+<ds:X509SerialNumber>624</ds:X509SerialNumber>
+</ds:X509IssuerSerial>
+</ds:X509Data>
+<ds:KeyValue>
+<ds:RSAKeyValue>
+<ds:Modulus>3u2BX5kX//P82/6k3n/pWWUChGq9EB90iKRohN4XJ1nSi5XXxB9yfMEWtBEprAXk5u3Vfr49T4IV
+Lh9etmql+rxVKmWOVVUYoawk9TAExY8pT9gsWS9ud9w8TNv2LIu/rEuRHgQP1m676pykxNt4HilO
+vKrHcSJ9J/vaJ4370oc=</ds:Modulus>
+<ds:Exponent>AQAB</ds:Exponent>
+</ds:RSAKeyValue>
+</ds:KeyValue>
+</ds:KeyInfo>
+<ds:Object>
+<QualifyingProperties xmlns="http://uri.etsi.org/01903/v1.3.2#" Id="xmldsig-6bbff8be-2611-4e99-96f3-bd8b177c6c46-xades" Target="#xmldsig-6bbff8be-2611-4e99-96f3-bd8b177c6c46" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#">
+<SignedProperties Id="xmldsig-6bbff8be-2611-4e99-96f3-bd8b177c6c46-xades">
+<SignedSignatureProperties>
+<SigningTime>2016-02-16T14:55:06.281Z</SigningTime>
+<SigningCertificate>
+<Cert>
+<CertDigest>
+<ns2:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ns2:DigestValue>fmBNJ3w4eDlcqNZo1MO4BWDHuHfeATszkq50eLxo748=</ns2:DigestValue>
+</CertDigest>
+<IssuerSerial>
+<ns2:X509IssuerName>CN=IHE Europe CA, O=IHE Europe, C=FR</ns2:X509IssuerName>
+<ns2:X509SerialNumber>624</ns2:X509SerialNumber>
+</IssuerSerial>
+</Cert>
+</SigningCertificate>
+</SignedSignatureProperties>
+</SignedProperties>
+</QualifyingProperties>
+</ds:Object>
+</ds:Signature>
+</TrustServiceStatusList>

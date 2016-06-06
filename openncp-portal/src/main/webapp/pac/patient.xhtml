@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-W3CDTD XHTML 1.0 TransitionalEN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<body>
+		<p:panel header="#{msg['navi.report.summary']}">
+			<table>
+				<tr>
+					<td><b><h:outputText value="#{msg['patient.data.givenname']}" /></b></td>
+					<td>&nbsp;</td>
+					<td><h:outputText value="#{pacBean.selectedPatient.name}" /></td>
+				</tr>
+				<tr>
+					<td><b><h:outputText value="#{msg['patient.data.surname']}" /></b></td>
+					<td>&nbsp;</td>
+					<td><h:outputText value="#{pacBean.selectedPatient.familyName}" /></td>
+				</tr>
+				<tr>
+					<td><b><h:outputText value="#{msg['patient.data.street.address']}" /></b></td>
+					<td>&nbsp;</td>
+					<td><h:outputText value="#{pacBean.selectedPatient.address}" /></td>
+				</tr>
+				<tr>
+					<td><b><h:outputText value="#{msg['patient.data.code']}" /></b></td>
+					<td>&nbsp;</td>
+					<td><h:outputText value="#{pacBean.selectedPatient.postalCode}" /></td>
+				</tr>
+				<tr>
+					<td><b><h:outputText value="#{msg['patient.data.city']}" /></b></td>
+					<td>&nbsp;</td>
+					<td><h:outputText value="#{pacBean.selectedPatient.city}" /></td>
+				</tr>
+				<tr>
+					<td><b><h:outputText value="#{msg['patient.data.country']}" /></b></td>
+					<td>&nbsp;</td>
+					<td><h:outputText value="#{pacBean.selectedPatient.country}" /></td>
+				</tr>
+			</table>
+		</p:panel>
+		
+		</body>
+		</html>

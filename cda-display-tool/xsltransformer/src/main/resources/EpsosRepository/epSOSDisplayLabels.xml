@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<epSOSDisplayLabelsInformation>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='1'>
+<displayName lang='en'>Active Ingredient</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='2'>
+<displayName lang='en'>Active Problem</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='3'>
+<displayName lang='en'>Address</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='4'>
+<displayName lang='en'>Advise to the dispenser</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='5'>
+<displayName lang='en'>Agent</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='6'>
+<displayName lang='en'>at</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='7'>
+<displayName lang='en'>Author (HCP)</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='8'>
+<displayName lang='en'>Authoring Device</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='9'>
+<displayName lang='en'>Brand Name</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='10'>
+<displayName lang='en'>Clinical Manifestation</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='11'>
+<displayName lang='en'>Closed/Inactive Problem</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='12'>
+<displayName lang='en'>Contact Information</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='13'>
+<displayName lang='en'>Country</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='14'>
+<displayName lang='en'>Country A Medicinal Product Code</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='15'>
+<displayName lang='en'>Creation Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='16'>
+<displayName lang='en'>Custodian</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='17'>
+<displayName lang='en'>Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='99'>
+<displayName lang='en'>Physical Findings</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='18'>
+<displayName lang='en'>Date To</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='19'>
+<displayName lang='en'>Date of Birth</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='20'>
+<displayName lang='en'>Date of Prescription</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='21'>
+<displayName lang='en'>Device/Implant</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='22'>
+<displayName lang='en'>Dispense</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='23'>
+<displayName lang='en'>Dispensed Package Size</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='24'>
+<displayName lang='en'>Dispensed Product</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='25'>
+<displayName lang='en'>Dose Form</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='26'>
+<displayName lang='en'>End Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='27'>
+<displayName lang='en'>Every</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='28'>
+<displayName lang='en'>Facility ID</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='29'>
+<displayName lang='en'>Facility Name</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='30'>
+<displayName lang='en'>Family Name</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='31'>
+<displayName lang='en'>for</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='32'>
+<displayName lang='en'>Frequency of Intakes</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='33'>
+<displayName lang='en'>Gender</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='34'>
+<displayName lang='en'>Given Name</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='35'>
+<displayName lang='en'>Guardian</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='36'>
+<displayName lang='en'>Implant Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='37'>
+<displayName lang='en'>Instructions to patient</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='38'>
+<displayName lang='en'>Is substitution of brand name allowed?</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='39'>
+<displayName lang='en'>Last Update</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='40'>
+<displayName lang='en'>Legal Authenticator</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='41'>
+<displayName lang='en'>National Insurance Number</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='42'>
+<displayName lang='en'>No</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='43'>
+<displayName lang='en'>Number of packages</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='44'>
+<displayName lang='en'>Observation Type</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='45'>
+<displayName lang='en'>Onset Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='46'>
+<displayName lang='en'>Organisation Identifier</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='47'>
+<displayName lang='en'>Organisation Name</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='48'>
+<displayName lang='en'>Other Active Ingredients</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='49'>
+<displayName lang='en'>Other Contacts</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='50'>
+<displayName lang='en'>Package Size</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='51'>
+<displayName lang='en'>Patient</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='52'>
+<displayName lang='en'>Patient IDs</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='53'>
+<displayName lang='en'>per unit</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='54'>
+<displayName lang='en'>Preferred HCP/Legal organization to contact</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='55'>
+<displayName lang='en'>Prefix</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='56'>
+<displayName lang='en'>Prescriber</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='57'>
+<displayName lang='en'>Prescriber details</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='58'>
+<displayName lang='en'>Prescription ID</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='59'>
+<displayName lang='en'>Prescription Item Details</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='60'>
+<displayName lang='en'>Prescription Item ID</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='61'>
+<displayName lang='en'>Prescription Items List</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='62'>
+<displayName lang='en'>Procedure</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='63'>
+<displayName lang='en'>Procedure Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='64'>
+<displayName lang='en'>Profession</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='65'>
+<displayName lang='en'>Reaction Type</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='66'>
+<displayName lang='en'>Regional/National Health ID</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='67'>
+<displayName lang='en'>Route of Administration</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='68'>
+<displayName lang='en'>See details</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='69'>
+<displayName lang='en'>Specialty</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='70'>
+<displayName lang='en'>Strength</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='71'>
+<displayName lang='en'>Substitute</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='72'>
+<displayName lang='en'>The Active Problem section is missing !</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='73'>
+<displayName lang='en'>The Allergies, adverse reactions, alerts section is missing !</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='74'>
+<displayName lang='en'>The Medical Devices and implants section is missing !</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='75'>
+<displayName lang='en'>The Medication Summary section is missing !</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='76'>
+<displayName lang='en'>The History of Procedures section is missing !</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='77'>
+<displayName lang='en'>unit(s)</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='78'>
+<displayName lang='en'>Units per intake</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='79'>
+<displayName lang='en'>Vaccination</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='80'>
+<displayName lang='en'>Vaccination Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='81'>
+<displayName lang='en'>Yes</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='82'>
+<displayName lang='en'>I have identified the patient-data subject</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='83'>
+<displayName lang='en'>I confirm that the patient –data subject has consented to the following statement: ‘I agree that my ePrescription may be transferred to a registered Health Professional in [COUNTRY B] for the purposes of providing me with medical care and/or medication’</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='84'>
+<displayName lang='en'>Observation Value</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='85'>
+<displayName lang='en'>Date From</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.46' epsosName='epSOSDisplayLabel' code='107'>
+<displayName lang='en'>I confirm that the patient –data subject has consented to the following statement: ‘I agree that my Patient Summary may be transferred to a registered Health Professional in [COUNTRY B] for the purposes of providing me with medical care and/or medication’</displayName>
+</epSOSDisplayLabelsEntry>
+</epSOSDisplayLabelsInformation>

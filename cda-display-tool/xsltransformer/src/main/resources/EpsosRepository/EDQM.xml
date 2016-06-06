@@ -1,0 +1,1812 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<EDQMInformation>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50001000'>
+<displayName lang='en'>Chewable/dispersible tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50001250'>
+<displayName lang='en'>Coated granules in sachet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50001500'>
+<displayName lang='en'>Concentrate and diluent for solution for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50002000'>
+<displayName lang='en'>Concentrate and solvent for concentrate for solution for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50003000'>
+<displayName lang='en'>Concentrate and solvent for cutaneous solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50004000'>
+<displayName lang='en'>Concentrate and solvent for cutaneous use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50005000'>
+<displayName lang='en'>Concentrate and solvent for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50006000'>
+<displayName lang='en'>Concentrate and solvent for solution for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50007000'>
+<displayName lang='en'>Concentrate and solvent for solution for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50008000'>
+<displayName lang='en'>Concentrate and solvent for suspension for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50009000'>
+<displayName lang='en'>Concentrate for cutaneous spray, emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50009300'>
+<displayName lang='en'>Concentrate for dispersion for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50009500'>
+<displayName lang='en'>Concentrate for emulsion for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50010000'>
+<displayName lang='en'>Concentrate for oral solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50011000'>
+<displayName lang='en'>Concentrate for oral/rectal solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50012000'>
+<displayName lang='en'>Concentrate for peritoneal dialysis solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50013000'>
+<displayName lang='en'>Concentrate for solution for intravesical use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50013500'>
+<displayName lang='en'>Concentrate for spray emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50014000'>
+<displayName lang='en'>Concentrate for suspension for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50015000'>
+<displayName lang='en'>Cutaneous and nasal ointment</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50015300'>
+<displayName lang='en'>Cutaneous/oromucosal/oral solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50015400'>
+<displayName lang='en'>Cutaneous/oromucosal spray</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50015500'>
+<displayName lang='en'>Cutaneous spray, emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50016000'>
+<displayName lang='en'>Cutaneous spray, ointment</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50017000'>
+<displayName lang='en'>Dental paste</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50018000'>
+<displayName lang='en'>Ear/eye drops, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50019000'>
+<displayName lang='en'>Ear/eye oinment</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50020000'>
+<displayName lang='en'>Ear/eye/nose drops, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50020500'>
+<displayName lang='en'>Effervescent buccal tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50021000'>
+<displayName lang='en'>Emulsion for injection/infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50021500'>
+<displayName lang='en'>Emulsion and suspension for emulsion for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50022000'>
+<displayName lang='en'>Endosinusial wash, suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50023000'>
+<displayName lang='en'>Eye drops, solution in single-dose container</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50023500'>
+<displayName lang='en'>Film coated gastro-resistant tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50024000'>
+<displayName lang='en'>Gargle/mouthwash</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50025000'>
+<displayName lang='en'>Gastro-resistant coated tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50026000'>
+<displayName lang='en'>Gastro-resistant granules for oral suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50026250'>
+<displayName lang='en'>Gastro-resistant prolonged-release tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50026500'>
+<displayName lang='en'>Granules and solvent for oral suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50027000'>
+<displayName lang='en'>Granules and solvent for suspension for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50028000'>
+<displayName lang='en'>Granules for oral and rectal suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50029000'>
+<displayName lang='en'>Granules for oral drops, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50029250'>
+<displayName lang='en'>Granules for use in drinking water</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50029500'>
+<displayName lang='en'>Granules for vaginal solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50029600'>
+<displayName lang='en'>Hard capsule with gastro-resistant pellets</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50029700'>
+<displayName lang='en'>Herbal tea in bag</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50030000'>
+<displayName lang='en'>Inhalation powder, tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50031000'>
+<displayName lang='en'>Inhalation vapour, effervescent tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50032000'>
+<displayName lang='en'>Inhalation vapour, emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50033000'>
+<displayName lang='en'>Inhalation vapour, impregnated pad</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50033300'>
+<displayName lang='en'>Intrauterine foam</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50033500'>
+<displayName lang='en'>Intravitreal implant in applicator</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50034000'>
+<displayName lang='en'>Liquefied gas for dental use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50035000'>
+<displayName lang='en'>Modified-release film-coated tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50036000'>
+<displayName lang='en'>Modified-release granules for oral suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50036100'>
+<displayName lang='en'>Muco-adhesive buccal prolonged-release tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50036500'>
+<displayName lang='en'>Nasal/oromucosal solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50037000'>
+<displayName lang='en'>Nasal spray and oromucosal solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50037250'>
+<displayName lang='en'>Nasal spray, solution in single-dose container</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50037750'>
+<displayName lang='en'>Oral drops, liquid</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50038000'>
+<displayName lang='en'>Oral/rectal suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50038500'>
+<displayName lang='en'>Oral solution/concentrate for nebuliser solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50039000'>
+<displayName lang='en'>Oromucosal patch</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50039300'>
+<displayName lang='en'>Oromucosal powder in pouch</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50039500'>
+<displayName lang='en'>Oromucosal/laryngopharyngeal solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50040000'>
+<displayName lang='en'>Oromucosal/laryngopharyngeal solution/spray</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50041000'>
+<displayName lang='en'>Pillules in single-dose container</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50041500'>
+<displayName lang='en'>Powder and solution for solution for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50042000'>
+<displayName lang='en'>Powder and solvent for concentrate for solution for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50043000'>
+<displayName lang='en'>Powder for concentrate for solution for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50044000'>
+<displayName lang='en'>Powder and solvent for cutaneous solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50044500'>
+<displayName lang='en'>Powder and solvent for dispersion for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50045000'>
+<displayName lang='en'>Powder and solvent for endosinusial solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50045500'>
+<displayName lang='en'>Powder and solvent for epilesional solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50046000'>
+<displayName lang='en'>Powder and solvent for gingival gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50047000'>
+<displayName lang='en'>Powder and solvent for instillation solution for intraocular use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50047500'>
+<displayName lang='en'>Powder and solvent for intravesical solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50047700'>
+<displayName lang='en'>Powder and solvent for nebuliser solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50048000'>
+<displayName lang='en'>Powder and solvent for prolonged-release suspension for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50048250'>
+<displayName lang='en'>Powder and solvent for solution for injection in pre-filled syringe</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50048300'>
+<displayName lang='en'>Powder and solvent for suspension for injection in pre-filled syringe</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50048500'>
+<displayName lang='en'>Powder and suspension for suspension for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50048600'>
+<displayName lang='en'>Powder, dispersion and solvent for concentrate for dispersion for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50048750'>
+<displayName lang='en'>Powder for concentrate for dispersion for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50049000'>
+<displayName lang='en'>Powder for concentrate for haemodialysis solution,</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50049100'>
+<displayName lang='en'>Powder for concentrate for intravesical suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50049250'>
+<displayName lang='en'>Powder for concentrate for solution for injection/infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50049270'>
+<displayName lang='en'>Powder for dental solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50049300'>
+<displayName lang='en'>Powder for epilesional solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50049500'>
+<displayName lang='en'>Powder for implantation suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50050000'>
+<displayName lang='en'>Powder for intravesical solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50051000'>
+<displayName lang='en'>Powder for intravesical suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50051100'>
+<displayName lang='en'>Powder for mouth wash</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50052000'>
+<displayName lang='en'>Powder for oral/rectal suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50053000'>
+<displayName lang='en'>Powder for solution for injection or infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50053500'>
+<displayName lang='en'>Powder for solution for injection/infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50054000'>
+<displayName lang='en'>Powder for solution for intravesical use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50055000'>
+<displayName lang='en'>Powder for solution for nasal spray</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50055500'>
+<displayName lang='en'>Prolonged-release film-coated tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50056000'>
+<displayName lang='en'>Prolonged-release granules for oral suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50056500'>
+<displayName lang='en'>Radiopharmaceutical precursor, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50057000'>
+<displayName lang='en'>Solution for haemodialysis/haemofiltration</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50058000'>
+<displayName lang='en'>Solution for infusion and oral solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50059000'>
+<displayName lang='en'>Solution for injection/concentrate for solution for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50060000'>
+<displayName lang='en'>Solution for injection/infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50060100'>
+<displayName lang='en'>Solution for injection in cartridge</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50060200'>
+<displayName lang='en'>Solution for injection in pre-filled pen</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50060300'>
+<displayName lang='en'>Solution for injection in pre-filled syringe</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50060400'>
+<displayName lang='en'>Solution for injection in pre-filled syringe with automatic needle guard</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50060500'>
+<displayName lang='en'>Solution for injection/infusion in pre-filled syringe</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50061000'>
+<displayName lang='en'>Solution for intraperitoneal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50061300'>
+<displayName lang='en'>Solution for use in drinking water</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50061500'>
+<displayName lang='en'>Solution for sealant</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50061600'>
+<displayName lang='en'>Solvent for nasal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50062000'>
+<displayName lang='en'>Suspension and effervescent granules for oral suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50062500'>
+<displayName lang='en'>Suspension and solution for spray</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50063000'>
+<displayName lang='en'>Suspension for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50063100'>
+<displayName lang='en'>Suspension for injection in cartridge</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50063200'>
+<displayName lang='en'>Suspension for injection in pre-filled pen</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50063300'>
+<displayName lang='en'>Suspension for injection in pre-filled syringe</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50063500'>
+<displayName lang='en'>Suspension for use in drinking water</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50064000'>
+<displayName lang='en'>Tablet and solvent for rectal suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50065000'>
+<displayName lang='en'>Tablet and powder for oral solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50066000'>
+<displayName lang='en'>Tablet for oral suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50070000'>
+<displayName lang='en'>Oral suspension for use in drinking water</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50071000'>
+<displayName lang='en'>Powder and solvent for dental gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50072000'>
+<displayName lang='en'>Powder for use in drinking water</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50073000'>
+<displayName lang='en'>Powder for solution for intraocular irrigation</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50074000'>
+<displayName lang='en'>Solvent for solution for intraocular irrigation</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50076000'>
+<displayName lang='en'>Solvent for solution for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50077000'>
+<displayName lang='en'>Dispersion for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50078000'>
+<displayName lang='en'>Gas and solvent for dispersion for injection/infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50079000'>
+<displayName lang='en'>Concentrate for solution for injection/infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50080000'>
+<displayName lang='en'>Powder and solvent for solution for injection/infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50081000'>
+<displayName lang='en'>Inhalation solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='50082000'>
+<displayName lang='en'>Oral drops, powder for suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30000500'>
+<displayName lang='en'>Administration system</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30001000'>
+<displayName lang='en'>Ampoule</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30002000'>
+<displayName lang='en'>Applicator</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30004000'>
+<displayName lang='en'>Bag</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30006000'>
+<displayName lang='en'>Barrel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30007000'>
+<displayName lang='en'>Blister</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30008000'>
+<displayName lang='en'>Bottle</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30009000'>
+<displayName lang='en'>Box</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30010000'>
+<displayName lang='en'>Brush</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30011000'>
+<displayName lang='en'>Brush applicator</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30012000'>
+<displayName lang='en'>Cannula</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30013000'>
+<displayName lang='en'>Cap</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30014000'>
+<displayName lang='en'>Cartridge</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30015000'>
+<displayName lang='en'>Child-resistant closure</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30016000'>
+<displayName lang='en'>Cup</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30017000'>
+<displayName lang='en'>Dabbing applicator</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30019000'>
+<displayName lang='en'>Dredging applicator</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30020000'>
+<displayName lang='en'>Dredging container</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30022000'>
+<displayName lang='en'>Dropper applicator</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30023000'>
+<displayName lang='en'>Dropper container</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30023005'>
+<displayName lang='en'>Fixed cryogenic vessel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30024000'>
+<displayName lang='en'>Gas cylinder</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30025000'>
+<displayName lang='en'>High pressure transdermal delivery device</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30026000'>
+<displayName lang='en'>Implanter</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30026500'>
+<displayName lang='en'>Inhaler</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30027000'>
+<displayName lang='en'>In-ovo injection device</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30028000'>
+<displayName lang='en'>Injection needle</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30029000'>
+<displayName lang='en'>Injection syringe</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30031000'>
+<displayName lang='en'>Intramammary syringe</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30032000'>
+<displayName lang='en'>Jar</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30033000'>
+<displayName lang='en'>Measuring device</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30034000'>
+<displayName lang='en'>Measuring spoon</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30035000'>
+<displayName lang='en'>Metering pump</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30036000'>
+<displayName lang='en'>Metering valve</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30036005'>
+<displayName lang='en'>Mobile cryogenic vessel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30037000'>
+<displayName lang='en'>Mouthpiece</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30038000'>
+<displayName lang='en'>Multidose container</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30039000'>
+<displayName lang='en'>Multidose container with airless pump</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30040000'>
+<displayName lang='en'>Multipuncturer</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30041000'>
+<displayName lang='en'>Nasal applicator</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30042000'>
+<displayName lang='en'>Nebuliser</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30043000'>
+<displayName lang='en'>Needle applicator</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30044000'>
+<displayName lang='en'>Nozzle</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30045000'>
+<displayName lang='en'>Oral syringe</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30046000'>
+<displayName lang='en'>Pipette</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30047000'>
+<displayName lang='en'>Pipette applicator</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30048000'>
+<displayName lang='en'>Pour-on container</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30049000'>
+<displayName lang='en'>Pre-filled gastroenteral tube</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30050000'>
+<displayName lang='en'>Pre-filled pen</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30051000'>
+<displayName lang='en'>Pre-filled syringe</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30052000'>
+<displayName lang='en'>Pressurised container</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30053000'>
+<displayName lang='en'>Prick test applicator</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30053500'>
+<displayName lang='en'>Roll-on container</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30054000'>
+<displayName lang='en'>Sachet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30055000'>
+<displayName lang='en'>Scarifier</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30056000'>
+<displayName lang='en'>Screw cap</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30057000'>
+<displayName lang='en'>Single-dose container</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30058000'>
+<displayName lang='en'>Spatula</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30059000'>
+<displayName lang='en'>Spot-on applicator</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30060000'>
+<displayName lang='en'>Spray container</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30061000'>
+<displayName lang='en'>Spray pump</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30062000'>
+<displayName lang='en'>Spray valve</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30063000'>
+<displayName lang='en'>Stab vaccinator</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30064000'>
+<displayName lang='en'>Stopper</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30064500'>
+<displayName lang='en'>Straw</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30065000'>
+<displayName lang='en'>Strip</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30066000'>
+<displayName lang='en'>Tablet container</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30067000'>
+<displayName lang='en'>Tube</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.3' epsosName='epSOSPackage' code='30069000'>
+<displayName lang='en'>Vial</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10501000'>
+<displayName lang='en'>Bath additive</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10502000'>
+<displayName lang='en'>Cream</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10503000'>
+<displayName lang='en'>Gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10504000'>
+<displayName lang='en'>Ointment</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10505000'>
+<displayName lang='en'>Cutaneous paste</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10506000'>
+<displayName lang='en'>Medicated plaster</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10507000'>
+<displayName lang='en'>Cutaneous foam</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10508000'>
+<displayName lang='en'>Shampoo</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10509000'>
+<displayName lang='en'>Cutaneous spray, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10510000'>
+<displayName lang='en'>Cutaneous spray, suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10511000'>
+<displayName lang='en'>Cutaneous spray, powder</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10512000'>
+<displayName lang='en'>Cutaneous liquid</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10513000'>
+<displayName lang='en'>Cutaneous solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10514000'>
+<displayName lang='en'>Concentrate for cutaneous solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10515000'>
+<displayName lang='en'>Cutaneous suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10516000'>
+<displayName lang='en'>Cutaneous emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10517000'>
+<displayName lang='en'>Cutaneous powder</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10517500'>
+<displayName lang='en'>Cutaneous patch</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10518000'>
+<displayName lang='en'>Solution for iontophoresis</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10519000'>
+<displayName lang='en'>Transdermal patch</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10520000'>
+<displayName lang='en'>Collodion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10521000'>
+<displayName lang='en'>Medicated nail lacquer</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10521500'>
+<displayName lang='en'>Nail solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10522000'>
+<displayName lang='en'>Poultice</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10523000'>
+<displayName lang='en'>Cutaneous stick</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10524000'>
+<displayName lang='en'>Cutaneous sponge</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10525000'>
+<displayName lang='en'>Impregnated dressing</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10539500'>
+<displayName lang='en'>Scrub</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10546500'>
+<displayName lang='en'>Transdermal spray, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10547000'>
+<displayName lang='en'>Transdermal system</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10548000'>
+<displayName lang='en'>Solution for skin-prick test</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10549000'>
+<displayName lang='en'>Solution for skin-scratch test</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10550000'>
+<displayName lang='en'>Plaster for provocation test</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10701000'>
+<displayName lang='en'>Ear cream</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10702000'>
+<displayName lang='en'>Ear gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10703000'>
+<displayName lang='en'>Ear ointment</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10704000'>
+<displayName lang='en'>Ear drops, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10705000'>
+<displayName lang='en'>Ear drops, suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10706000'>
+<displayName lang='en'>Ear drops, emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10707000'>
+<displayName lang='en'>Ear drops, powder and solvent for suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10708000'>
+<displayName lang='en'>Ear powder</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10709000'>
+<displayName lang='en'>Ear spray, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10710000'>
+<displayName lang='en'>Ear spray, suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10711000'>
+<displayName lang='en'>Ear spray, emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10712000'>
+<displayName lang='en'>Ear wash, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10713000'>
+<displayName lang='en'>Ear wash, emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10714000'>
+<displayName lang='en'>Ear tampon</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10715000'>
+<displayName lang='en'>Ear stick</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11701000'>
+<displayName lang='en'>Endocervical gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11702000'>
+<displayName lang='en'>Powder and solvent for endocervical gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12004000'>
+<displayName lang='en'>Nebulisation solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10601000'>
+<displayName lang='en'>Eye cream</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10602000'>
+<displayName lang='en'>Eye gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10603000'>
+<displayName lang='en'>Eye ointment</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10604000'>
+<displayName lang='en'>Eye drops, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10604500'>
+<displayName lang='en'>Eye drops, emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10605000'>
+<displayName lang='en'>Eye drops, suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10606000'>
+<displayName lang='en'>Eye drops, powder and solvent for solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10607000'>
+<displayName lang='en'>Eye drops, powder and solvent for suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10608000'>
+<displayName lang='en'>Eye drops, solvent for reconstitution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10609000'>
+<displayName lang='en'>Eye drops, prolonged-release</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10610000'>
+<displayName lang='en'>Eye lotion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10611000'>
+<displayName lang='en'>Eye lotion, solvent for reconstitution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10612000'>
+<displayName lang='en'>Ophthalmic insert</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10613000'>
+<displayName lang='en'>Ophthalmic strip</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11301000'>
+<displayName lang='en'>Implant</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11302000'>
+<displayName lang='en'>Implantation tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11303000'>
+<displayName lang='en'>Implantation chain</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11303500'>
+<displayName lang='en'>Implantation suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11304000'>
+<displayName lang='en'>Powder and solvent for implantation paste</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11901000'>
+<displayName lang='en'>Intrauterine delivery system</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11902000'>
+<displayName lang='en'>Intrauterine solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11903000'>
+<displayName lang='en'>Intrauterine suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11904000'>
+<displayName lang='en'>Intrauterine emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11905000'>
+<displayName lang='en'>Intrauterine tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11906000'>
+<displayName lang='en'>Intrauterine capsule</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12301000'>
+<displayName lang='en'>Medicinal gas, compressed</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12302000'>
+<displayName lang='en'>Medicinal gas, cryogenic</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12303000'>
+<displayName lang='en'>Medicinal gas, liquefied</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12100500'>
+<displayName lang='en'>Absorbable coated sponge</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12101000'>
+<displayName lang='en'>Denture lacquer</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12102000'>
+<displayName lang='en'>Anticoagulant and preservative solution for blood</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12103000'>
+<displayName lang='en'>Solution for blood fraction modification</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12104000'>
+<displayName lang='en'>Wound stick</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12105000'>
+<displayName lang='en'>Radiopharmaceutical precursor</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12106000'>
+<displayName lang='en'>Radionuclide generator</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12107000'>
+<displayName lang='en'>Kit for radiopharmaceutical preparation</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12108000'>
+<displayName lang='en'>Gastroenteral solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12109000'>
+<displayName lang='en'>Dispersion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12109500'>
+<displayName lang='en'>Fibrin sealant-powder and solvent for fibrin sealant</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12110000'>
+<displayName lang='en'>Gastroenteral suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12111000'>
+<displayName lang='en'>Gastroenteral emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12112000'>
+<displayName lang='en'>Solution for organ preservation</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12113000'>
+<displayName lang='en'>Irrigation solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12114000'>
+<displayName lang='en'>Stomach irrigation</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12115000'>
+<displayName lang='en'>Sealant</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12115500'>
+<displayName lang='en'>Solution of perfusion of organs</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12116000'>
+<displayName lang='en'>Powder and solvent for sealant</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12117000'>
+<displayName lang='en'>Impregnated pad</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12118000'>
+<displayName lang='en'>Living tissue equivalent</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12119000'>
+<displayName lang='en'>Medicated sponge</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12120000'>
+<displayName lang='en'>Intestinal gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12130000'>
+<displayName lang='en'>Medicated thread</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12131000'>
+<displayName lang='en'>Solution for provocation test</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='30047500'>
+<displayName lang='en'>Pouch</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10801000'>
+<displayName lang='en'>Nasal cream</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10802000'>
+<displayName lang='en'>Nasal gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10803000'>
+<displayName lang='en'>Nasal ointment</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10804000'>
+<displayName lang='en'>Nasal drops, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10805000'>
+<displayName lang='en'>Nasal drops, suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10806000'>
+<displayName lang='en'>Nasal drops, emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10807000'>
+<displayName lang='en'>Nasal powder</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10808000'>
+<displayName lang='en'>Nasal spray, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10809000'>
+<displayName lang='en'>Nasal spray, suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10810000'>
+<displayName lang='en'>Nasal spray, emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10811000'>
+<displayName lang='en'>Nasal wash</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10812000'>
+<displayName lang='en'>Nasal stick</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10101000'>
+<displayName lang='en'>Oral drops, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10102000'>
+<displayName lang='en'>Oral drops, suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10103000'>
+<displayName lang='en'>Oral drops, emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10104000'>
+<displayName lang='en'>Oral liquid</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10105000'>
+<displayName lang='en'>Oral solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10106000'>
+<displayName lang='en'>Oral suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10107000'>
+<displayName lang='en'>Oral emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10108000'>
+<displayName lang='en'>Oral gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10109000'>
+<displayName lang='en'>Oral paste</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10110000'>
+<displayName lang='en'>Powder for oral solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10111000'>
+<displayName lang='en'>Powder for oral suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10112000'>
+<displayName lang='en'>Granules for oral solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10113000'>
+<displayName lang='en'>Granules for oral suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10114000'>
+<displayName lang='en'>Powder and solvent for oral solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10115000'>
+<displayName lang='en'>Powder and solvent for oral suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10116000'>
+<displayName lang='en'>Lyophilisate for suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10117000'>
+<displayName lang='en'>Syrup</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10118000'>
+<displayName lang='en'>Powder for syrup</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10119000'>
+<displayName lang='en'>Granules for syrup</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10120000'>
+<displayName lang='en'>Soluble tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10121000'>
+<displayName lang='en'>Dispersible tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10122000'>
+<displayName lang='en'>Herbal tea</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10201000'>
+<displayName lang='en'>Oral powder</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10202000'>
+<displayName lang='en'>Instant herbal tea</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10203000'>
+<displayName lang='en'>Effervescent powder</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10204000'>
+<displayName lang='en'>Granules</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10205000'>
+<displayName lang='en'>Effervescent granules</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10206000'>
+<displayName lang='en'>Gastro-resistant granules</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10207000'>
+<displayName lang='en'>Prolonged-release granules</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10208000'>
+<displayName lang='en'>Modified-release granules</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10209000'>
+<displayName lang='en'>Cachet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10210000'>
+<displayName lang='en'>Capsule, hard</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10211000'>
+<displayName lang='en'>Capsule, soft</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10212000'>
+<displayName lang='en'>Gastro-resistant capsule, hard</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10213000'>
+<displayName lang='en'>Gastro-resistant capsule, soft</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10214000'>
+<displayName lang='en'>Chewable capsule, soft</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10215000'>
+<displayName lang='en'>Prolonged-release capsule, hard</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10216000'>
+<displayName lang='en'>Prolonged-release capsule, soft</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10217000'>
+<displayName lang='en'>Modified-release capsule, hard</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10218000'>
+<displayName lang='en'>Modified-release capsule, soft</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10219000'>
+<displayName lang='en'>Tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10220000'>
+<displayName lang='en'>Coated tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10221000'>
+<displayName lang='en'>Film-coated tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10222000'>
+<displayName lang='en'>Effervescent tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10223000'>
+<displayName lang='en'>Orodispersible tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10224000'>
+<displayName lang='en'>Oral lyophilisate</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10225000'>
+<displayName lang='en'>Gastro-resistant tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10226000'>
+<displayName lang='en'>Prolonged-release tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10227000'>
+<displayName lang='en'>Modified-release tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10228000'>
+<displayName lang='en'>Chewable tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10229000'>
+<displayName lang='en'>Medicated chewing-gum</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10230000'>
+<displayName lang='en'>Oral gum</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10231000'>
+<displayName lang='en'>Pillules</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10236100'>
+<displayName lang='en'>Orodispersible film</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10301000'>
+<displayName lang='en'>Gargle</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10302000'>
+<displayName lang='en'>Concentrate for gargle</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10303000'>
+<displayName lang='en'>Gargle, powder for solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10304000'>
+<displayName lang='en'>Gargle, tablet for solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10305000'>
+<displayName lang='en'>Oromucosal solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10306000'>
+<displayName lang='en'>Oromucosal suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10307000'>
+<displayName lang='en'>Oromucosal drops</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10308000'>
+<displayName lang='en'>Oromucosal spray</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10309000'>
+<displayName lang='en'>Sublingual spray</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10310000'>
+<displayName lang='en'>Mouthwash</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10311000'>
+<displayName lang='en'>Mouthwash, tablet for solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10312000'>
+<displayName lang='en'>Gingival solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10313000'>
+<displayName lang='en'>Oromucosal gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10314000'>
+<displayName lang='en'>Oromucosal paste</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10314005'>
+<displayName lang='en'>Oromucosal ointment</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10314010'>
+<displayName lang='en'>Oromucosal cream</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10314011'>
+<displayName lang='en'>Buccal film</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10315000'>
+<displayName lang='en'>Gingival gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10316000'>
+<displayName lang='en'>Gingival paste</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10317000'>
+<displayName lang='en'>Oromucosal capsule</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10318000'>
+<displayName lang='en'>Sublingual tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10319000'>
+<displayName lang='en'>Muco-adhesive buccal tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10320000'>
+<displayName lang='en'>Buccal tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10321000'>
+<displayName lang='en'>Lozenge</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10322000'>
+<displayName lang='en'>Compressed lozenge</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10323000'>
+<displayName lang='en'>Pastille</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11201000'>
+<displayName lang='en'>Solution for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11202000'>
+<displayName lang='en'>Suspension for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11203000'>
+<displayName lang='en'>Emulsion for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11204000'>
+<displayName lang='en'>Gel for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11205000'>
+<displayName lang='en'>Powder for solution for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11206000'>
+<displayName lang='en'>Powder for suspension for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11207000'>
+<displayName lang='en'>Powder and solvent for solution for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11208000'>
+<displayName lang='en'>Powder and solvent for suspension for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11209000'>
+<displayName lang='en'>Concentrate for solution for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11210000'>
+<displayName lang='en'>Solution for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11210500'>
+<displayName lang='en'>Solution for infusion in administration system</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11211000'>
+<displayName lang='en'>Emulsion for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11212000'>
+<displayName lang='en'>Powder for solution for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11213000'>
+<displayName lang='en'>Concentrate for solution for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11214000'>
+<displayName lang='en'>Powder and solvent for solution for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11214500'>
+<displayName lang='en'>Lyophilisate and solvent for solution for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11215000'>
+<displayName lang='en'>Lyophilisate for solution for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11216000'>
+<displayName lang='en'>Solvent for parenteral use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11217000'>
+<displayName lang='en'>Lyophilisate for solution for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11218000'>
+<displayName lang='en'>Lyophilisate for suspension for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10401000'>
+<displayName lang='en'>Periodontal powder</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10402000'>
+<displayName lang='en'>Dental gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10403000'>
+<displayName lang='en'>Dental stick</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10404000'>
+<displayName lang='en'>Dental insert</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10405000'>
+<displayName lang='en'>Dental powder</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10406000'>
+<displayName lang='en'>Dental solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10407000'>
+<displayName lang='en'>Dental suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10408000'>
+<displayName lang='en'>Dental emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10409000'>
+<displayName lang='en'>Toothpaste</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10410000'>
+<displayName lang='en'>Periodontal gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10411000'>
+<displayName lang='en'>Periodontal insert</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11401000'>
+<displayName lang='en'>Solution for peritoneal dialysis</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11402000'>
+<displayName lang='en'>Solution for haemofiltration</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11403000'>
+<displayName lang='en'>Solution for haemodiafiltration</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11404000'>
+<displayName lang='en'>Solution for haemodialysis</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11405000'>
+<displayName lang='en'>Concentrate for haemodialysis solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11101000'>
+<displayName lang='en'>Nebuliser solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11102000'>
+<displayName lang='en'>Nebuliser suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11103000'>
+<displayName lang='en'>Powder for nebuliser suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11104000'>
+<displayName lang='en'>Powder for nebuliser solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11105000'>
+<displayName lang='en'>Nebuliser emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11106000'>
+<displayName lang='en'>Pressurised inhalation, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11107000'>
+<displayName lang='en'>Pressurised inhalation, suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11108000'>
+<displayName lang='en'>Pressurised inhalation, emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11109000'>
+<displayName lang='en'>Inhalation powder</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11110000'>
+<displayName lang='en'>Inhalation powder, hard capsule</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11111000'>
+<displayName lang='en'>Inhalation powder, pre-dispensed</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11112000'>
+<displayName lang='en'>Inhalation vapour, powder</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11113000'>
+<displayName lang='en'>Inhalation vapour, capsule</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11114000'>
+<displayName lang='en'>Inhalation vapour, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11115000'>
+<displayName lang='en'>Inhalation vapour, tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11116000'>
+<displayName lang='en'>Inhalation vapour, ointment</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11117000'>
+<displayName lang='en'>Inhalation vapour, liquid</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11118000'>
+<displayName lang='en'>Inhalation gas</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11501000'>
+<displayName lang='en'>Solution for intravesical use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11502000'>
+<displayName lang='en'>Bladder irrigation</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11503000'>
+<displayName lang='en'>Powder for bladder irrigation</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11504000'>
+<displayName lang='en'>Urethral gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11505000'>
+<displayName lang='en'>Urethral stick</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11001000'>
+<displayName lang='en'>Rectal cream</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11002000'>
+<displayName lang='en'>Rectal gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11003000'>
+<displayName lang='en'>Rectal ointment</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11004000'>
+<displayName lang='en'>Rectal foam</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11005000'>
+<displayName lang='en'>Rectal solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11006000'>
+<displayName lang='en'>Rectal suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11007000'>
+<displayName lang='en'>Rectal emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11008000'>
+<displayName lang='en'>Concentrate for rectal solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11009000'>
+<displayName lang='en'>Powder for rectal solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11010000'>
+<displayName lang='en'>Powder for rectal suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11011000'>
+<displayName lang='en'>Tablet for rectal solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11012000'>
+<displayName lang='en'>Tablet for rectal suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11013000'>
+<displayName lang='en'>Suppository</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11014000'>
+<displayName lang='en'>Rectal capsule</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11015000'>
+<displayName lang='en'>Rectal tampon</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11601000'>
+<displayName lang='en'>Endotracheopulmonary instillation, solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11602000'>
+<displayName lang='en'>Endotracheopulmonary instillation, powder for solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11603000'>
+<displayName lang='en'>Endotracheopulmonary instillation, suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11604000'>
+<displayName lang='en'>Endotracheopulmonary instillation, powder and solvent for solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10900500'>
+<displayName lang='en'>Intravaginal ring</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10901000'>
+<displayName lang='en'>Vaginal cream</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10902000'>
+<displayName lang='en'>Vaginal gel</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10903000'>
+<displayName lang='en'>Vaginal ointment</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10904000'>
+<displayName lang='en'>Vaginal foam</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10905000'>
+<displayName lang='en'>Vaginal solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10906000'>
+<displayName lang='en'>Vaginal suspension</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10907000'>
+<displayName lang='en'>Vaginal emulsion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10908000'>
+<displayName lang='en'>Tablet for vaginal solution</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10909000'>
+<displayName lang='en'>Pessary</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10910000'>
+<displayName lang='en'>Vaginal capsule, hard</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10911000'>
+<displayName lang='en'>Vaginal capsule, soft</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10912000'>
+<displayName lang='en'>Vaginal tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10913000'>
+<displayName lang='en'>Effervescent vaginal tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10914000'>
+<displayName lang='en'>Medicated vaginal tampon</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10915000'>
+<displayName lang='en'>Vaginal delivery system</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='10916000'>
+<displayName lang='en'>Vaginal sponge</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='15090'>
+<displayName lang='en'>Cutaneous spray</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='15130'>
+<displayName lang='en'>Cutaneous liquid</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='17040'>
+<displayName lang='en'>Ear drops</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='17090'>
+<displayName lang='en'>Ear spray</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='17120'>
+<displayName lang='en'>Ear wash</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='16040'>
+<displayName lang='en'>Eye drops</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='29020'>
+<displayName lang='en'>Intrauterine liquid</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='31030'>
+<displayName lang='en'>Blood fraction modifier</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='31080'>
+<displayName lang='en'>Gastroenteral liquid</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='18040'>
+<displayName lang='en'>Nasal drops</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='18080'>
+<displayName lang='en'>Nasal spray</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11010'>
+<displayName lang='en'>Oral drops</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='11050'>
+<displayName lang='en'>Oral liquid</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12100'>
+<displayName lang='en'>Capsule</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12120'>
+<displayName lang='en'>Gastro-resistant capsule</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12150'>
+<displayName lang='en'>Prolonged-release capsule</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='12200'>
+<displayName lang='en'>Tablet</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='13220'>
+<displayName lang='en'>Lozenge</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='13050'>
+<displayName lang='en'>Oromucosal liquid</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='22010'>
+<displayName lang='en'>Injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='22050'>
+<displayName lang='en'>Powder for injection</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='22090'>
+<displayName lang='en'>Sterile concentrate</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='22100'>
+<displayName lang='en'>Infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='22120'>
+<displayName lang='en'>Powder for infusion</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='14050'>
+<displayName lang='en'>Dental liquid</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='21010'>
+<displayName lang='en'>Nebuliser liquid</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='21060'>
+<displayName lang='en'>Pressurised inhalation</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='21100'>
+<displayName lang='en'>Inhalation powder</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='21140'>
+<displayName lang='en'>Inhalation vapour</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='20050'>
+<displayName lang='en'>Enema</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='26010'>
+<displayName lang='en'>Endotracheopulmonary instillation</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='19050'>
+<displayName lang='en'>Vaginal liquid</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.2' epsosName='epSOSDoseForm' code='19100'>
+<displayName lang='en'>Vaginal capsule</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20001000'>
+<displayName lang='en'>Auricular use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20002500'>
+<displayName lang='en'>Buccal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20003000'>
+<displayName lang='en'>Cutaneous use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20004000'>
+<displayName lang='en'>Dental use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20006000'>
+<displayName lang='en'>Endocervical use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20007000'>
+<displayName lang='en'>Endosinusial use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20008000'>
+<displayName lang='en'>Endotracheopulmonary use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20009000'>
+<displayName lang='en'>Epidural use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20010000'>
+<displayName lang='en'>Epilesional use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20011000'>
+<displayName lang='en'>Extraamniotic use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20011500'>
+<displayName lang='en'>Extracorporeal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20013000'>
+<displayName lang='en'>Gastroenteral use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20013500'>
+<displayName lang='en'>Gastric use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20014000'>
+<displayName lang='en'>Gingival use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20015000'>
+<displayName lang='en'>Hemodialysis</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20015500'>
+<displayName lang='en'>Implantation</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20020000'>
+<displayName lang='en'>Inhalation use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20021000'>
+<displayName lang='en'>Intestinal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20022000'>
+<displayName lang='en'>Intraamniotic use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20023000'>
+<displayName lang='en'>Intraarterial use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20024000'>
+<displayName lang='en'>Intraarticular use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20025000'>
+<displayName lang='en'>Intrabursal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20026000'>
+<displayName lang='en'>Intracardiac use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20026500'>
+<displayName lang='en'>Intracartilaginous use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20027000'>
+<displayName lang='en'>Intracavernous use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20027010'>
+<displayName lang='en'>Intracerebral use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20028000'>
+<displayName lang='en'>Intracervical use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20028500'>
+<displayName lang='en'>Intracisternal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20029000'>
+<displayName lang='en'>Intracoronary use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20030000'>
+<displayName lang='en'>Intradermal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20031000'>
+<displayName lang='en'>Intradiscal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20031500'>
+<displayName lang='en'>Intraepidermal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20032000'>
+<displayName lang='en'>Intralesional use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20033000'>
+<displayName lang='en'>Intralymphatic use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20035000'>
+<displayName lang='en'>Intramuscular use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20036000'>
+<displayName lang='en'>Intraocular use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20036500'>
+<displayName lang='en'>Intraosseous use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20037000'>
+<displayName lang='en'>Intrapericardial use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20038000'>
+<displayName lang='en'>Intraperitoneal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20039000'>
+<displayName lang='en'>Intrapleural use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20039500'>
+<displayName lang='en'>Intraprostatic use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20041000'>
+<displayName lang='en'>Intrasternal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20042000'>
+<displayName lang='en'>Intrathecal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20043000'>
+<displayName lang='en'>Intratumoral use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20044000'>
+<displayName lang='en'>Intrauterine use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20045000'>
+<displayName lang='en'>Intravenous use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20046000'>
+<displayName lang='en'>Intravesical use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20047000'>
+<displayName lang='en'>Intravitreal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20047500'>
+<displayName lang='en'>Iontophoresis</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20048000'>
+<displayName lang='en'>Laryngopharyngeal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20049000'>
+<displayName lang='en'>Nasal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20050000'>
+<displayName lang='en'>Nebulisation use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20051000'>
+<displayName lang='en'>Ocular use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20053000'>
+<displayName lang='en'>Oral use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20054000'>
+<displayName lang='en'>Oromucosal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20055000'>
+<displayName lang='en'>Oropharyngeal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20056000'>
+<displayName lang='en'>Paravertebral use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20057000'>
+<displayName lang='en'>Periarticular use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20058000'>
+<displayName lang='en'>Perineural use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20059000'>
+<displayName lang='en'>Periodontal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20059300'>
+<displayName lang='en'>Periosseous use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20059500'>
+<displayName lang='en'>Posterior juxtascleral use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20061000'>
+<displayName lang='en'>Rectal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20061500'>
+<displayName lang='en'>Retrobulbar use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20062000'>
+<displayName lang='en'>Route of administration not applicable</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20063000'>
+<displayName lang='en'>Skin scarification</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20065000'>
+<displayName lang='en'>Subconjunctival use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20066000'>
+<displayName lang='en'>Subcutaneous use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20067000'>
+<displayName lang='en'>Sublingual use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20067500'>
+<displayName lang='en'>Submucosal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20070000'>
+<displayName lang='en'>Transdermal use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20071000'>
+<displayName lang='en'>Urethral use</displayName>
+</EDQMEntry>
+<EDQMEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.12' epsosName='epSOSRouteofAdministration' code='20072000'>
+<displayName lang='en'>Vaginal use</displayName>
+</EDQMEntry>
+</EDQMInformation>

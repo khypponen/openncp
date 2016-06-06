@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AuditMessage>
+  <EventIdentification EventActionCode="R" EventDateTime="2014-11-13T02:28:12.102+01:00" EventOutcomeIndicator="0">
+    <EventID code="110106" codeSystem="" codeSystemName="DCM" displayName="Export"/>
+    <EventTypeCode code="ITI-43" codeSystem="" codeSystemName="IHE Transactions" displayName="Retrieve Document Set"/>
+  </EventIdentification>
+  <ActiveParticipant AlternativeUserID="&lt;319>@&lt;demo2>" NetworkAccessPointID="127.0.0.1" NetworkAccessPointTypeCode="2" UserID="1.2.3.4.5.1.1000.990.1.1.1.22" UserIsRequestor="false" UserName="">
+    <RoleIDCode code="110153" codeSystem="" codeSystemName="DCM" displayName="Source"/>
+  </ActiveParticipant>
+  <ActiveParticipant NetworkAccessPointID="194.166.33.232" NetworkAccessPointTypeCode="2" UserID="http://www.w3.org/2005/08/addressing/anonymous" UserIsRequestor="true" UserName="">
+    <RoleIDCode code="110152" codeSystem="" codeSystemName="DCM" displayName="Destination"/>
+  </ActiveParticipant>
+  <ActiveParticipant UserID="&lt;319>@&lt;demo2>" UserIsRequestor="true" UserName="">
+    <RoleIDCode code="USR" codeSystem="1.3.6.1.4.1.21998.2.1.5" codeSystemName="Tiani-Spirit Audit Participant Role ID Codes" displayName="User"/>
+  </ActiveParticipant>
+  <AuditSourceIdentification AuditEnterpriseSiteID="Tiani-Spirit" AuditSourceID="Spirit Repository ">
+    <AuditSourceTypeCode code="DOC_REPOSITORY" codeSystem="" codeSystemName="IHE Actors" displayName="IHE Document Repository"/>
+  </AuditSourceIdentification>
+  <ParticipantObjectIdentification ParticipantObjectDataLifeCycle="1" ParticipantObjectID="" ParticipantObjectTypeCode="1" ParticipantObjectTypeCodeRole="1">
+    <ParticipantObjectIDTypeCode code="2" codeSystem="" codeSystemName="RFC-3881" displayName="Patient Number"/>
+    <ParticipantObjectName/>
+  </ParticipantObjectIdentification>
+  <ParticipantObjectIdentification ParticipantObjectID="1.2.40.0.13.1.1.2117081378.20130402104335703.34529" ParticipantObjectTypeCode="2" ParticipantObjectTypeCodeRole="3">
+    <ParticipantObjectIDTypeCode code="9" codeSystem="" codeSystemName="RFC-3881" displayName="Report Number"/>
+    <ParticipantObjectName/>
+  </ParticipantObjectIdentification>
+  <ParticipantObjectIdentification ParticipantObjectDataLifeCycle="9" ParticipantObjectID="17d77343-88b5-4aad-8d37-ce68ce720060" ParticipantObjectTypeCode="2" ParticipantObjectTypeCodeRole="3">
+    <ParticipantObjectIDTypeCode code="ITI-43" codeSystem="" codeSystemName="IHE Transactions" displayName="Retrieve Document Set"/>
+    <ParticipantObjectName>Transaction ID</ParticipantObjectName>
+    <ParticipantObjectDetail type="DURATION" value="Mg=="/>
+  </ParticipantObjectIdentification>
+</AuditMessage>

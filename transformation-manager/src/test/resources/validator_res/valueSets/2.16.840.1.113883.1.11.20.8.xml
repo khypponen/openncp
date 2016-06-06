@@ -1,0 +1,15 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.8" displayName="MedicationTypeCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="373873005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Medication"/>
+			<Concept code="354078009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="IV Fluid"/>
+			<Concept code="327838005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Parenteral Nutrition"/>
+			<Concept code="108961000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Supplemental Nutrition"/>
+			<Concept code="350326008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Immunization"/>
+			<Concept code="425398004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Supplies"/>
+			<Concept code="49062001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Device"/>
+			<Concept code="40388003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Implantable Device"/>
+			<Concept code="425399007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Durable Medical Equipment"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

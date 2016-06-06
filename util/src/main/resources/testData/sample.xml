@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-fragment>
+  <administrativeGender/>
+  <city/>
+  <familyName>a1aa1</familyName>
+  <givenName>aa1a1a1</givenName>
+  <postalCode/>
+  <streetAddress/>
+  <patientId>
+    <root>1.3.6.1.4.1.26580.10</root>
+    <extension>aa1a1</extension>
+  </patientId>
+</xml-fragment>

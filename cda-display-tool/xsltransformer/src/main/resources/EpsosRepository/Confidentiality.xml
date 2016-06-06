@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<ConfidentialityInformation>
+<ConfidentialityEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.31' epsosName='epSOSConfidentiality' code='B'>
+<displayName lang='en'>business</displayName>
+</ConfidentialityEntry>
+<ConfidentialityEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.31' epsosName='epSOSConfidentiality' code='D'>
+<displayName lang='en'>clinician</displayName>
+</ConfidentialityEntry>
+<ConfidentialityEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.31' epsosName='epSOSConfidentiality' code='I'>
+<displayName lang='en'>individual</displayName>
+</ConfidentialityEntry>
+<ConfidentialityEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.31' epsosName='epSOSConfidentiality' code='L'>
+<displayName lang='en'>low</displayName>
+</ConfidentialityEntry>
+<ConfidentialityEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.31' epsosName='epSOSConfidentiality' code='N'>
+<displayName lang='en'>normal</displayName>
+</ConfidentialityEntry>
+<ConfidentialityEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.31' epsosName='epSOSConfidentiality' code='R'>
+<displayName lang='en'>restricted</displayName>
+</ConfidentialityEntry>
+<ConfidentialityEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.31' epsosName='epSOSConfidentiality' code='V'>
+<displayName lang='en'>very restricted</displayName>
+</ConfidentialityEntry>
+</ConfidentialityInformation>

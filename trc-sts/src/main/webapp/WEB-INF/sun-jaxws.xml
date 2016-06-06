@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+  <endpoint implementation="epsos.ccd.netsmart.securitymanager.sts.STSService" name="STSServiceService" url-pattern="/STSServiceService"/>
+  <endpoint implementation="epsos.ccd.netsmart.securitymanager.sts.STSServiceEID" name="STSServiceServiceEID" url-pattern="/STSServiceServiceEID"/>
+
+</endpoints>

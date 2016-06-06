@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSNullFavor" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.37" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="ASKU" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Asked, but unknown"/>
+			<Concept code="ASKU" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Asked, but unknown (NullFavor)"/>
+			<Concept code="MSK" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Masked"/>
+			<Concept code="MSK" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Masked (NullFavor)"/>
+			<Concept code="NA" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Not applicable"/>
+			<Concept code="NA" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Not applicable (NullFavor)"/>
+			<Concept code="NASK" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Not asked"/>
+			<Concept code="NASK" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Not asked (NullFavor)"/>
+			<Concept code="NAV" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Temporarily unavailable"/>
+			<Concept code="NAV" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Temporarily unavailable (NullFavor)"/>
+			<Concept code="NI" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="NoInformation"/>
+			<Concept code="NI" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="NoInformation (NullFavor)"/>
+			<Concept code="NINF" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Negative infinity"/>
+			<Concept code="NINF" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Negative infinity (NullFavor)"/>
+			<Concept code="NP" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Not present"/>
+			<Concept code="NP" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Not present (NullFavor)"/>
+			<Concept code="OTH" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Other"/>
+			<Concept code="OTH" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Other (NullFavor)"/>
+			<Concept code="PINF" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Positive infinity"/>
+			<Concept code="PINF" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Positive infinity (NullFavor)"/>
+			<Concept code="TRC" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Trace"/>
+			<Concept code="TRC" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Trace (NullFavor)"/>
+			<Concept code="UNK" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Unknown"/>
+			<Concept code="UNK" codeSystem="2.16.840.1.113883.5.1008" codeSystemName="NullFlavor" displayName="Unknown (NullFavor)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>openncp</artifactId>
+        <groupId>eu.europa.ec.joinup.ecc</groupId>
+        <version>4.0.0-SNAPSHOT</version>
+    </parent>
+    <!-- General Information -->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>eu.europa.ec.joinup.ecc</groupId>
+    <artifactId>epsos-assertion-validator</artifactId>
+    <packaging>jar</packaging>
+    <name>SRDC epSOS SAML Assertion Validator Implementation</name>
+    <organization>
+        <name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
+        <url>www.srdc.com.tr</url>
+    </organization>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <log4jVersion>1.2.17</log4jVersion>
+    </properties>
+
+    <!-- Libraries Dependencies -->
+    <dependencies>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-security-manager</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-util</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4jVersion}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Build Settings -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <optimize>true</optimize>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Environment Settings -->
+    <repositories>
+        <repository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/repositories/releases/</url>
+            <name>Sonatype repository</name>
+        </repository>
+        <repository>
+            <url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
+            <id>openSamlRep</id>
+            <name>Official OpenSaml Repository</name>
+        </repository>
+        <repository>
+            <id>joinup-releases</id>
+            <url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>joinup-snapshots</id>
+            <url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>joinup-releases</id>
+            <url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>joinup-snapshots</id>
+            <url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

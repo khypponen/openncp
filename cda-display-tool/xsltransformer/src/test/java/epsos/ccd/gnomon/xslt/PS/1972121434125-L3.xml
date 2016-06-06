@@ -1,0 +1,1264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:epsos="urn:epsos-org:ep:medication"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:v3 CDA_extended.xsd">
+
+    <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+    <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3"/>
+    <!-- epSOS Patient Summary -->
+    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+  
+    <!-- Document identifier, given from our system  -->
+    <id extension="2.1" root="1.3.182.2.3.1"/>
+    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="60591-5"
+        displayName="Patient Summary"/>
+
+    <title>Resumée patient - epSOS</title>
+    <effectiveTime value="20140423115042+0100"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="normal"
+        codeSystemName="Confidentiality"/>
+    <languageCode code="fr-LU"/>
+
+    <!-- Patient information -->
+    <recordTarget>
+        <patientRole>
+            <!-- At least one identifier must be provided -->
+            <id root="1.3.182.3.1.1.1231231.34.3" extension="7122240230"/>
+            <!-- must be a national/regional patient identifier-->
+            <id root="1.3.182.4.4" extension="1972121434125"/>
+            <!-- SSN 13-digit -->
+            <addr use="HP">
+                <streetAddressLine>Boulevard Test 31</streetAddressLine>
+                <postalCode>2540</postalCode>
+                <city>LUXEMBOURG</city>
+                <state nullFlavor="UNK"/>
+                <country>LU</country>
+            </addr>
+            <telecom value="tel:+352-23235" use="HP"/>
+            <telecom value="mailto:patient2@response.lu" use="HP"/>
+
+            <patient>
+                <name>
+                    <family>Marushka</family>
+                    <given>Testion</given>
+                </name>
+                <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"
+                    displayName="féminin" codeSystemName="HL7:AdministrativeGender"/>
+                <birthTime value="19721214"/>
+
+
+                <guardian classCode="GUARD">
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+                    <code code="SIGOTHR" codeSystem="2.16.840.1.113883.5.111"
+                        displayName="significant other"/>
+                    <addr>
+                        <streetAddressLine>Street 123</streetAddressLine>
+                        <city>Luxembourg</city>
+                        <postalCode>2540</postalCode>
+                        <state nullFlavor="NI"/>
+                        <country>LU</country>
+                    </addr>
+                    <telecom value="tel:+352-221234567" use="HP"/>
+                    <telecom value="tel:+352-91212211" use="MC"/>
+                    <telecom value="tel:+352-224567890" use="WP"/>
+                    <guardianPerson>
+                        <name>
+                            <family>Guardian-Dremens</family>
+                            <given>Jacques</given>
+                        </name>
+                    </guardianPerson>
+                </guardian>
+                <!-- 
+                    <guardian nullFlavor="NI">
+                -->
+            </patient>
+            <!--          <providerOrganization>
+                <id root="1.2.3.4.5"/>
+                <name>Test 1234</name>
+            </providerOrganization>
+-->
+            <providerOrganization nullFlavor="NI"/>
+        </patientRole>
+    </recordTarget>
+    <!-- Author information -->
+    <author>
+        <!-- optional in epSOS, we must map between local functionCodes and epSOS functionCodes, if used 
+                <functionCode code="1.2.3.4" codeSystem="1.2.3.4" displayName="123123" codeSystemName="lll"/>
+            -->
+        <time value="20140423115042+0100"/>
+        <assignedAuthor>
+            <id root="1.2.3.2.3.5.21.2" extension="012123528"/>
+            <!-- optional in epSOS and in our specification, if used then the codes must be mapped,  code of authors specialty from eSanté_AuthorSpecialty, if known
+                <code code="1.2.3.4" codeSystem="1.2.3.4" displayName="123123" codeSystemName="lll"/> 
+                -->
+            <addr nullFlavor="NI"/>
+            <!-- addr is optional -->
+            <telecom value="tel:+352-342270588" use="WP"/>
+            <!-- telecom is optional -->
+            <assignedPerson>
+                <!-- if author is human being, if authoring device, then assignedAuthoringDevice element has to be used -->
+                <name>
+                    <given>Peter</given>
+                    <family>Issler-Butcher</family>
+                    <prefix>Dr.</prefix>
+                </name>
+            </assignedPerson>
+
+            <representedOrganization>
+                <!-- can be given optional -->
+                <id root="1.3.182.3.1.1.1231231.34"/>
+                <!-- e.g. eSanteID / HPDID as unique idenitifer, is optional -->
+                <name>Better health hospital</name>
+                <telecom value="tel:+352-12345" use="WP"/>
+                <!-- telecom is optional -->
+                <telecom value="mailto:sendme2@mailto.lu" use="WP"/>
+                <addr>
+                    <!-- addr is optional -->
+                    <streetAddressLine>Rue des Tomains 1</streetAddressLine>
+                    <postalCode>2540</postalCode>
+                    <city>LUXEMBOURG</city>
+                    <state nullFlavor="NI"/>
+                    <country>LU</country>
+                </addr>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+
+
+    <!-- Custodian is mandatory -->
+    <!-- The custodian represents the organization that organizes the stewardship of the clinical document. In most cases this is the same organization as at which the document has been created.-->
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="1.3.182.3.1.1.1231231.34"/>
+                <!-- mandatory, NI/UNK as nullFlavor allowed -->
+                <name>Better health hospital</name>
+                <telecom value="tel:+352-12345" use="WP"/>
+                <addr>
+                    <!-- required if known -->
+                    <streetAddressLine>Rue des Tomains 1</streetAddressLine>
+                    <postalCode>2540</postalCode>
+                    <city>LUXEMBOURG</city>
+                    <state nullFlavor="NI"/>
+                    <country>LU</country>
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <!-- End of custodian information -->
+
+
+    <!-- legalAuthenticator is MANDATORY -->
+    <!-- The legalAuthenticator represents the legal responsible of the clinical document. In the CDA specification only individuals (e.g. health professionals) can take legal responsibility for the content of the document, on behalf of an organization. -->
+    <legalAuthenticator>
+        <time value="20140324121200+0100"/>
+        <signatureCode code="S"/>
+        <!-- constant -->
+        <assignedEntity>
+            <id root="1.3.182.4.2" extension="177123134"/>
+            <code code="1.2.3.4" codeSystem="1.2.3.4" displayName="123123" codeSystemName="lll"/>
+            <!-- optional,code for the role of legalAuthenticator from eSanté_RoleCode -->
+            <addr>
+                <streetAddressLine>Rue des Tomains 1</streetAddressLine>
+                <postalCode>2540</postalCode>
+                <city>LUXEMBOURG</city>
+                <state nullFlavor="NI"/>
+                <country>LU</country>
+            </addr>
+            <telecom value="tel:+352-12345" use="WP"/>
+            <assignedPerson>
+                <name>
+                    <given>Peter</given>
+                    <family>Issler-Butcher</family>
+                    <prefix>Dr.</prefix>
+                </name>
+            </assignedPerson>
+            <!-- representedOrganization can optionally be placed here -->
+            <representedOrganization>
+                <id root="1.3.182.3.1.1.1231231.34"/>
+                <name>Better health hospital</name>
+                <telecom value="tel:+352-12345" use="WP"/>
+                <telecom value="mailto:sendme@amail.lu" use="WP"/>
+                <addr>
+                    <streetAddressLine>Rue des Tomains 1</streetAddressLine>
+                    <postalCode>2540</postalCode>
+                    <city>LUXEMBOURG</city>
+                    <state nullFlavor="NI"/>
+                    <country>LU</country>
+                </addr>
+            </representedOrganization>
+        </assignedEntity>
+    </legalAuthenticator>
+    <!-- End of legalAuthenticator -->
+
+    <!-- other participants, participant-primary care provider -->
+    <participant typeCode="IND">
+        <!-- Target that is not substantially present in the act and which is not directly affected by the act, but which will be a focus of the record or documentation of the act. -->
+        <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+        <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88"
+            codeSystemName="HL7 ParticipationFunction"/>
+        <associatedEntity classCode="PRS">
+            <id root="1.3.182.4.1" extension="2123456789"/>
+            <addr>
+                <streetAddressLine>Rue des Test 12</streetAddressLine>
+                <postalCode>1234</postalCode>
+                <state nullFlavor="NI"/>
+                <city>Luxembourg</city>
+            </addr>
+            <telecom value="tel:+352-7150000" use="WP"/>
+            <telecom value="mailto:mymail@test.lu" use="WP"/>
+
+            <associatedPerson>
+                <name>
+                    <prefix>Docteur</prefix>
+                    <given>Jacques</given>
+                    <family>ANDRE</family>
+                </name>
+            </associatedPerson>
+            <!-- either associatedPerson or scopingOrganization (Schematron) -->
+            <!--     <scopingOrganization>
+                <id root="1.3.182.3.1.1.1231231.34"/>
+                <name>Better health hospital</name>
+                <telecom value="tel:+352-12345" use="WP"/>                
+                <addr>
+                    <streetAddressLine>Rue des Tomains 1</streetAddressLine>
+                    <postalCode>2540</postalCode>
+                    <city>LUXEMBOURG</city>
+                    <state nullFlavor="NI"/>
+                    <country>LU</country>
+                </addr>
+            </scopingOrganization>
+ -->
+        </associatedEntity>
+    </participant>
+    <!--participant-primary care provider-->
+    <documentationOf>
+        <serviceEvent>
+            <effectiveTime>
+                <high value="20140324"/>
+            </effectiveTime>
+        </serviceEvent>
+    </documentationOf>
+
+    <component>
+        <structuredBody>
+            <component>
+                <!-- Allergies section ** Allergies et intolerances -->
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.2"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+                    <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="Allergies, effets indésirables, alertes"/>
+                    <title>Allergies et autres r&#233;actions adverses</title>
+                    <text>
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <th>Code SNOMED-CT</th>
+                                    <th>Date de survenue</th>
+                                    <th>Allerg&#232;ne</th>
+                                    <th>R&#233;action</th>
+                                </tr>
+                                <tr ID="allergy-1" styleCode="New">
+                                    <td>160244002</td>
+                                    <td> </td>
+                                    <td>Pas d'allergie connue</td>
+                                    <td> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                            <id extension="97014678.20130924115042.allergy.act.1"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low nullFlavor="UNK"/>
+                                <high value="20140324"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <id extension="97014678.20130924115042.allergy.obs.1"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="418038007"
+                                        displayName="Tendance à des réactions indésirables à une substance"
+                                        codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT"/>
+                                    <text>
+                                        <reference value="#allergy-1"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value code="160244002" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT"
+                                        displayName="Pas d'allergie connue"
+                                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                        xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#allergy-1"/>
+                                        </originalText>
+                                    </value>
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <code nullFlavor="NA"/>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+                <!-- End of Allergies section -->
+            </component>
+
+            <!-- *** History of past illness ** Problemes inactivs -->
+            <!-- Vaccinations section -->
+            <component>
+                <section>
+                    <!--Section templates-->
+                    <templateId root="2.16.840.1.113883.10.20.1.6"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23"/>
+                    <code displayName="Vaccinations" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="11369-6"/> 
+                    <title>Vaccination</title>
+                    <!--Description Table-->
+                    <text>
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Code SNOMED-CT</th>
+                                    <th>Titre de maladies contre lesquelles le patient a été inoculé</th>
+                                    <th>Date de vaccination</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ID="im_med1">
+                                    <td ID="im_med1_code">421245007</td>
+                                    <td ID="im_med1_description">Vaccin anti diphtérie-coqueluche-tétanos (DTC)</td>
+                                    <td ID="im_med1_date">03.01.2012</td>
+                                </tr>
+                                <tr ID="im_med2">
+                                    <td ID="im_med2_code">116077000</td>
+                                    <td ID="im_med2_description">Vaccins anti rotavirus</td>
+                                    <td ID="im_med2_date">14.07.2013</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry>
+                        <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+                            <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+                            <id extension="immunization.1" root="1.3.182.99.16.17.710.830.1000.990.1.2.4"/>
+                            <code codeSystemName="ActCode" codeSystem="2.16.840.1.113883.5.4" code="IMMUNIZ"/>
+                            <text>
+                                <reference value="#im_med1"/>
+                            </text>
+                            <statusCode code="completed"/>
+                            <effectiveTime value="20120103"/>
+                            <consumable typeCode="CSM">
+                                <manufacturedProduct classCode="MANU">
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                    <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                                        <code displayName="Vaccin anti diphtérie-coqueluche-tétanos (DTC)"
+                                            codeSystemName="SNOMED-CT"
+                                            codeSystem="2.16.840.1.113883.6.96" code="421245007">
+
+                                            <originalText>
+                                                <reference value="#im_med1_description"/>
+                                            </originalText>
+
+                                        </code>
+                                    </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                        </substanceAdministration>
+                    </entry>
+                    <entry>
+                        <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+                            <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+                            <id extension="immunization.1" root="1.3.182.99.710.830.1000.990.1.2.4"/>
+                            <code codeSystemName="ActCode" codeSystem="2.16.840.1.113883.5.4" code="IMMUNIZ"/>
+                            <text>
+                                <reference value="#im_med1"/>
+                            </text>
+                            <statusCode code="completed"/>
+                            <effectiveTime value="20130714"/>
+                            <consumable typeCode="CSM">
+                                <manufacturedProduct classCode="MANU">
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                    <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                                        <code displayName="Vaccins anti rotavirus"
+                                            codeSystemName="SNOMED-CT"
+                                            codeSystem="2.16.840.1.113883.6.96" code="116077000">
+                                            
+                                            <originalText>
+                                                <reference value="#im_med1_description"/>
+                                            </originalText>
+                                            
+                                        </code>
+                                    </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                        </substanceAdministration>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <!-- History of past illness ** Problemes Inactifs -->
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.8"/>
+                    <code code="11348-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="Antécédents médicaux"/>
+                    <title>Liste des probl&#232;mes inactifs</title>
+                    <text>
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Code ICD-10</th>
+                                    <th>Pathologie</th>
+                                </tr>
+                                <tr ID="antmed-1">
+                                    <td>17.01.2013</td>
+                                    <td>G45</td>
+                                    <td>Accidents ischémiques cérébraux transitoires et syndromes apparentés</td>                                    
+                                </tr>
+                                <tr ID="antmed-2">
+                                    <td>20.10.2011</td>
+                                    <td>D63</td>
+                                    <td>Anémie au cours de maladies chroniques classées ailleurs</td>                                    
+                                </tr>
+                                <tr ID="antmed-3">
+                                    <td>20.10.2011</td>
+                                    <td>G47</td>
+                                    <td>Troubles du sommeil</td>                                    
+                                </tr>
+                                <tr ID="antmed-4">
+                                    <td>20.10.2011</td>
+                                    <td>N50</td>
+                                    <td>Autres affections des organes génitaux de l'homme</td>                                    
+                                </tr>
+                                <tr ID="antmed-5">
+                                    <td>20.10.2011</td>
+                                    <td>J47</td>
+                                    <td>Bronchectasie</td>                                  
+                                </tr>
+                                <tr ID="antmed-6">
+                                    <td>20.10.2011</td>
+                                    <td>Z09</td>
+                                    <td>Examen de contrôle après traitement d'affections autres que les tumeurs malignes</td>                                    
+                                </tr>
+                                <tr ID="antmed-7">
+                                    <td>20.10.2011</td>
+                                    <td>Z94</td>
+                                    <td>Présence de greffe d'organe et de tissu</td>                                    
+                                </tr>                              
+                                <tr ID="antmed-9">
+                                    <td>20.10.2011</td>
+                                    <td>E78</td>
+                                    <td>Anomalies du métabolisme des lipoprotéines et autres lipidémies</td>                                    
+                                </tr>
+                                <tr ID="antmed-10">
+                                    <td>20.10.2011</td>
+                                    <td>I10</td>
+                                    <td>Hypertension essentielle (primitive)</td>                                    
+                                </tr>
+                                <tr ID="antmed-11">
+                                    <td>20.10.2011</td>
+                                    <td>E86</td>
+                                    <td>Hypovolémie</td>                                    
+                                </tr>
+                                <tr ID="antmed-12">
+                                    <td>20.10.2011</td>
+                                    <td>N17</td>
+                                    <td>Insuffisance rénale aiguë</td>                                    
+                                </tr>
+                                <tr ID="antmed-13">
+                                    <td>20.10.2011</td>
+                                    <td>N18</td>
+                                    <td>Insuffisance rénale chronique</td>                                    
+                                </tr>
+                                <tr ID="antmed-14">
+                                    <td>20.10.2011</td>
+                                    <td>B07</td>
+                                    <td>Verrues d'origine virale</td>                                   
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20130117100000.pastillness.1"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20130117"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                    <id extension="97014678.20130117100000.pastillness.obs.1"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#antmed-1"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20130117"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="G45"
+                                        codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                        codeSystemName="ICD-10"
+                                        displayName="Accidents ischémiques cérébraux transitoires et syndromes apparentés"
+                                    />
+                                </observation>
+                            </entryRelationship>
+
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20111020100000.pastillness.2"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20111020"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                    <id extension="97014678.20111020100000.pastillness.obs.2"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#antmed-2"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20111020"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="D63"
+                                        codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                        codeSystemName="ICD-10"
+                                        displayName="Anémie au cours de maladies chroniques classées ailleurs"
+                                    />
+                                </observation>
+                            </entryRelationship>
+
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20111020100000.pastillness.3"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20111020"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                    <id extension="97014678.20111020100000.pastillness.obs.3"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#antmed-3"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20111020"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="G47"
+                                        codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                        codeSystemName="ICD-10" displayName="Troubles du sommeil"/>
+                                </observation>
+                            </entryRelationship>
+
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20111020100000.pastillness.4"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20111020"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                    <id extension="97014678.20111020100000.pastillness.obs.4"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#antmed-4"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20111020"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="N50"
+                                        codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                        codeSystemName="ICD-10"
+                                        displayName="Autres affections des organes génitaux de l'homme"
+                                    />
+                                </observation>
+                            </entryRelationship>
+
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20111020100000.pastillness.5"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20111020"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                    <id extension="97014678.20111020100000.pastillness.obs.5"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#antmed-5"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20111020"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="J47"
+                                        codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                        codeSystemName="ICD-10" displayName="Bronchectasie"/>
+                                </observation>
+                            </entryRelationship>
+
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20111020100000.pastillness.6"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20111020"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                    <id extension="97014678.20111020100000.pastillness.obs.6"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#antmed-6"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20111020"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="Z09"
+                                        codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                        codeSystemName="ICD-10"
+                                        displayName="Examen de contrôle après traitement d'affections autres que les tumeurs malignes"
+                                    />
+                                </observation>
+                            </entryRelationship>
+
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20111020100000.pastillness.7"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20111020"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                    <id extension="97014678.20111020100000.pastillness.obs.7"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#antmed-7"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20111020"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="Z94"
+                                        codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                        codeSystemName="ICD-10"
+                                        displayName="Présence de greffe d'organe et de tissu"/>
+                                </observation>
+                            </entryRelationship>
+
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20111020100000.pastillness.9"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20111020"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                    <id extension="97014678.20111020100000.pastillness.obs.9"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#antmed-9"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20111020"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="E78"
+                                        codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                        codeSystemName="ICD-10"
+                                        displayName="Anomalies du métabolisme des lipoprotéines et autres lipidémies"
+                                    />
+                                </observation>
+                            </entryRelationship>
+
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20111020100000.pastillness.10"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20111020"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                    <id extension="97014678.20111020100000.pastillness.obs.10"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#antmed-10"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20111020"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="I10"
+                                        codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                        codeSystemName="ICD-10"
+                                        displayName="Hypertension essentielle (primitive)"/>
+                                </observation>
+                            </entryRelationship>
+
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20111020100000.pastillness.11"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20111020"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                    <id extension="97014678.20111020100000.pastillness.obs.11"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#antmed-11"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20111020"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="E86"
+                                        codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                        codeSystemName="ICD-10" displayName="Hypovolémie"/>
+                                </observation>
+                            </entryRelationship>
+
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20111020100000.pastillness.12"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20111020"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                    <id extension="97014678.20111020100000.pastillness.obs.12"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#antmed-12"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20111020"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="N17"
+                                        codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                        codeSystemName="ICD-10"
+                                        displayName="Insuffisance rénale aiguë"/>
+                                </observation>
+                            </entryRelationship>
+
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20111020100000.pastillness.13"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20111020"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                    <id extension="97014678.20111020100000.pastillness.obs.13"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#antmed-13"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20111020"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="N18"
+                                        codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                        codeSystemName="ICD-10"
+                                        displayName="Insuffisance rénale chronique"/>
+                                </observation>
+                            </entryRelationship>
+
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20111020100000.pastillness.14"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20111020"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                    <id extension="97014678.20111020100000.pastillness.obs.14"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#antmed-14"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20111020"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" code="B07"
+                                        codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                        codeSystemName="ICD-10"
+                                        displayName="Verrues d'origine virale"/>
+                                </observation>
+                            </entryRelationship>
+
+                        </act>
+                    </entry>
+                </section>
+            </component>
+
+            <component>
+                <!-- Surgical procedures prior to the last 6 month section -->
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+                    <templateId root="2.16.840.1.113883.10.20.1.12"/>
+                    <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="Antécédents chirurgicaux"/>
+
+                    <title>Liste des interventions chirurgicales</title>
+                    <text>
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Code SNOMED-CT</th>
+                                    <th>Intervention</th>
+                                </tr>
+                                <tr ID="antchir-1">
+                                    <td>20.10.2011</td>
+                                    <td>392011001</td>
+                                    <td>Opération de la peau</td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <procedure classCode="PROC" moodCode="INT">
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+                            <templateId root="2.16.840.1.113883.10.20.1.25"/>
+                            <id extension="97014678.20130924115042.chir.1"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code code="392011001" codeSystem="2.16.840.1.113883.6.96"
+                                displayName="Opération de la peau">
+                                <originalText mediaType="text/xml">
+                                    <reference value="#antchir-1"/>
+                                </originalText>
+                            </code>
+                            <text>
+                                <reference value="#antchir-1"/>
+                            </text>
+                            <statusCode code="completed"/>
+                            <effectiveTime>
+                                <low value="20111020"/>
+                                <high value="20111020"/>
+                            </effectiveTime>
+                        </procedure>
+                    </entry>
+                </section>
+            </component>
+            <!-- End *** History of past illness -->
+
+            <!-- Medical problems -->
+            <component>
+                <!-- Active medical problems ** Problemes actifs -->
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.11"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+                    <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="Liste des problèmes actifs"> </code>
+
+                    <title>Liste des probl&#232;mes actifs</title>
+                    <text>
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <th>Date de survenue</th>
+                                    <th>Code SNOMED-CT</th>
+                                    <th>Pathologie</th>
+                                </tr>
+                                <tr ID="prob-1" styleCode="New">
+                                    <td> </td>
+                                    <td>160245001</td>
+                                    <td>Pas d'antécédent médical significatif</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="97014678.20130924115042.problem.1"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime>
+                                <low value="20130924"/>
+                                <high value="20130924"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <id extension="97014678.20130924115042.problem.obs.1"
+                                        root="2.16.756.5.30.4.9.1.1.9000"/>
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT" displayName="Problème"/>
+                                    <text>
+                                        <reference value="#prob-1"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20130924"/>
+                                        <high value="20130924"/>
+                                    </effectiveTime>
+                                    <value code="160245001" codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT"
+                                        displayName="Pas d'antécédent médical significatif"
+                                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                        xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#prob-1"/>
+                                        </originalText>
+                                    </value>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+
+            <component>
+                <!-- Medication Summary ** Traitment au long cours in RP -->
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.8"/>
+                    <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+                    <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="Historique de la prise médicamenteuse"/>
+
+                    <title>Historique de la prise m&#233;dicamenteuse</title>
+                    <text>
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <th>M&#233;dicament</th>
+                                    <th>Posologie</th>
+                                    <th>Date de d&#233;but</th>
+                                    <th>Date de fin</th>
+                                </tr>
+                                <tr ID="med-1" styleCode="New">
+                                    <td>Prise m&#233;dicamenteuse inconnue.</td>
+                                    <td/>
+                                    <td> </td>
+                                    <td> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                            <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                            <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                            <id extension="97014678.20130924115042.med.1"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <code code="182904002" codeSystem="2.16.840.1.113883.6.96"
+                                displayName="Drug treatment unknown"/>
+                            <text>
+                                <reference value="#med-1"/>
+                            </text>
+                            <statusCode code="completed"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low nullFlavor="UNK"/>
+                                <high nullFlavor="UNK"/>
+                            </effectiveTime>
+                            <effectiveTime xsi:type="PIVL_TS" nullFlavor="NA" operator="A"
+                                institutionSpecified="true">
+                                <period value="12" unit="h"/>
+                            </effectiveTime>
+                            <doseQuantity nullFlavor="NI"/>
+                            <consumable>
+                                <manufacturedProduct>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                    <manufacturedMaterial>
+                                        <code nullFlavor="NA">
+                                            <originalText mediaType="text/xml">
+                                                <reference value="#med-1"/>
+                                            </originalText>
+                                        </code>
+                                        <name>
+                                            <given>UNK</given>
+                                        </name>
+                                        <epsos:ingredient classCode="ACTI">
+                                            <epsos:quantity>
+                                                <epsos:numerator xsi:type="epsos:PQ"
+                                                  nullFlavor="UNK"/>
+                                                <epsos:denominator xsi:type="epsos:PQ"
+                                                  nullFlavor="UNK"/>
+                                            </epsos:quantity>
+                                            <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                                                <epsos:code nullFlavor="NA"/>
+                                            </epsos:ingredient>
+                                        </epsos:ingredient>
+                                    </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                        </substanceAdministration>
+                    </entry>
+                </section>
+            </component>
+
+            <component>
+                <!-- Medical Devices and Implants ** Dispositifs Medicaux -->
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.7"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+                    <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4"/>
+                    <code code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="Liste des dispositifs médicaux"/>
+
+                    <title>Dispositifs medicaux / Implants</title>
+                    <text>
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <th>Date</th>                                
+                                    <th>Type</th>
+                                    <th>Information d&#233;taill&#233;e</th>
+                                </tr>
+                                <tr ID="dev-1">
+                                    <td>13.09.2012</td>
+                                    <td>Cardiac valve</td>
+                                    <td>Valve homogreffe</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <supply classCode="SPLY" moodCode="EVN">
+                            <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5"/>
+                            <id extension="97014678.20120913162716.implant.1"
+                                root="2.16.756.5.30.4.9.1.1.9000"/>
+                            <text>
+                                <reference value="#dev-1"/>
+                            </text>
+                            <effectiveTime value="20120913"/>
+                            <participant typeCode="DEV">
+                                <participantRole classCode="MANU">
+                                    <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                                        <code xsi:type="CE" nullFlavor="UNK">
+                                            <originalText mediaType="text/xml">
+                                                <reference value="#dev-1"/>
+                                            </originalText>
+                                        </code>
+                                    </playingDevice>
+                                </participantRole>
+                            </participant>
+                        </supply>
+                    </entry>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

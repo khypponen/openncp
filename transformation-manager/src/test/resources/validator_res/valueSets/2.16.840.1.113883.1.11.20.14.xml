@@ -1,0 +1,13 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.14" displayName="ProblemTypeCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="64572001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Condition"/>
+			<Concept code="418799008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Symptom"/>
+			<Concept code="404684003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Finding"/>
+			<Concept code="409586006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Complaint"/>
+			<Concept code="248536006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Functional limitation"/>
+			<Concept code="55607006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Problem"/>
+			<Concept code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diagnosis"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

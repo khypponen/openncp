@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-W3CDTD XHTML 1.0 TransitionalEN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jsp/jstl/core" 
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<body>
+
+	<f:view locale="#{facesContext.externalContext.requestLocale}" />
+        <h3>#{msg['ui.flags.info']}</h3>
+	<h:form id="countryForm">
+	<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />  
+		<p:dataGrid var="country" value="#{myBean.countries}" columns="6" rows="30">
+			<p:column>
+				<p:panel header="#{country.name}" style="text-align:center">
+					<p:commandLink ajax="false"
+						actionListener="#{myBean.showForm}">
+						<f:setPropertyActionListener value="#{country.code}"
+							target="#{myBean.selectedCountry}" />
+						<p:graphicImage value="/images/flags/#{country.code}.png"
+							style="text-align:center" width="100"/>
+					</p:commandLink>
+				</p:panel>
+			</p:column>
+		</p:dataGrid>
+	</h:form>
+</body>
+</html>

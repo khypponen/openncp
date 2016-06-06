@@ -1,0 +1,11 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.6" displayName="FunctionalStatusTypeCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="282097004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ambulatory Status"/>
+			<Concept code="363871006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Mental Status"/>
+			<Concept code="129025006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Activities of Daily Living"/>
+			<Concept code="4683004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Home/Living Situation"/>
+			<Concept code="284773001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ability to Care for Self"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

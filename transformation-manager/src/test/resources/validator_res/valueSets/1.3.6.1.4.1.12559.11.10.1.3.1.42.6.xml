@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSLanguage" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.6" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="ca" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Catalan"/>
+			<Concept code="ca" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Catalan (ISO 639-1)"/>
+			<Concept code="cs" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Czech"/>
+			<Concept code="cs" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Czech (ISO 639-1)"/>
+			<Concept code="da" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Danish"/>
+			<Concept code="da" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Danish (ISO 639-1)"/>
+			<Concept code="de" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="German"/>
+			<Concept code="de" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="German (ISO 639-1)"/>
+			<Concept code="el" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Greek"/>
+			<Concept code="el" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Greek (ISO 639-1)"/>
+			<Concept code="en" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="English"/>
+			<Concept code="en" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="English (ISO 639-1)"/>
+			<Concept code="es" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Spanish; Castilian"/>
+			<Concept code="es" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Spanish; Castilian (ISO 639-1)"/>
+			<Concept code="et" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Estonian"/>
+			<Concept code="et" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Estonian (ISO 639-1)"/>
+			<Concept code="fi" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Finnish"/>
+			<Concept code="fi" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Finnish (ISO 639-1)"/>
+			<Concept code="fr" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="French"/>
+			<Concept code="fr" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="French (ISO 639-1)"/>
+			<Concept code="hu" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Hungarian"/>
+			<Concept code="hu" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Hungarian (ISO 639-1)"/>
+			<Concept code="it" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Italian"/>
+			<Concept code="it" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Italian (ISO 639-1)"/>
+			<Concept code="mt" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Maltese"/>
+			<Concept code="mt" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Maltese (ISO 639-1)"/>
+			<Concept code="nl" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Dutch; Flemish"/>
+			<Concept code="nl" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Dutch; Flemish (ISO 639-1)"/>
+			<Concept code="no" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Norwegian"/>
+			<Concept code="no" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Norwegian (ISO 639-1)"/>
+			<Concept code="pl" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Polish"/>
+			<Concept code="pl" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Polish (ISO 639-1)"/>
+			<Concept code="pt" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Portuguese"/>
+			<Concept code="pt" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Portuguese (ISO 639-1)"/>
+			<Concept code="sk" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Slovak"/>
+			<Concept code="sk" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Slovak (ISO 639-1)"/>
+			<Concept code="sl" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Slovenian"/>
+			<Concept code="sl" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Slovenian (ISO 639-1)"/>
+			<Concept code="sv" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Swedish"/>
+			<Concept code="sv" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Swedish (ISO 639-1)"/>
+			<Concept code="tr" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Turkish"/>
+			<Concept code="tr" codeSystem="1.0.639.1" codeSystemName="ISO 639-1" displayName="Turkish (ISO 639-1)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

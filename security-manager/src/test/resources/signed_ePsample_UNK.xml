@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="cda.xsl"?><ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" classCode="DOCCLIN" moodCode="EVN" xsi:schemaLocation="urn:hl7-org:v3 \\tsclient\C\SVN\epSOS\schematron\epSOS\schema\CDA_extended.xsd">
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.1"/>
+	<id root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+	<code code="57833-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Prescription for medication"/>
+	<title>Prescription for medication</title>
+	<effectiveTime value="20100701"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="se-SV"/>
+	<recordTarget contextControlCode="OP" typeCode="RCT">
+		<patientRole classCode="PAT">
+			<id extension="191212121212" root="2"/>
+			<addr>
+				<streetAddressLine>Testvägen</streetAddressLine>
+				<city>Teststad</city>
+				<postalCode>10000</postalCode>
+				<state>State</state>
+				<country>SE</country>
+			</addr>
+			<telecom use="HP" value="tel:12345678"/>
+			<telecom use="HP" value="mailto:test@test.se"/>
+			<patient>
+				<name>
+					<family>Tolvansson</family>
+					<prefix>CM</prefix>
+					<given>Tolvan</given>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" displayName="Male"/>
+				<birthTime value="19121212"/>
+				<languageCommunication>
+					<languageCode code="sv"/>
+				</languageCommunication>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author contextControlCode="OP" typeCode="AUT">
+		<functionCode code="ON" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.42.1"/>
+		<time value="20100701"/>
+		<assignedAuthor classCode="ASSIGNED">
+			<id extension="12345678" root="2"/>
+			<assignedAuthoringDevice>
+				<softwareName>Apoteken Service</softwareName>
+			</assignedAuthoringDevice>
+			<representedOrganization>
+				<id extension="12345678" root="2"/>
+				<name>Apoteken Service AB</name>
+				<addr>
+					<streetAddressLine>Ringvägen 100</streetAddressLine>
+					<city>Stockholm</city>
+					<postalCode>10000</postalCode>
+					<state nullFlavor="NA"/>
+					<country>SE</country>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian typeCode="CST">
+		<assignedCustodian classCode="ASSIGNED">
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id nullFlavor="NA"/>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<legalAuthenticator>
+		<time value="20100701"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id extension="KP00017" root="2.16.840.1.113883.19.5"/>
+			<assignedPerson nullFlavor="NI"/>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+				<name>Apotekens Service AB</name>
+				<addr>
+					<streetAddressLine>Ringvägen 100</streetAddressLine>
+					<city>Stockholm</city>
+					<postalCode>10000</postalCode>
+					<state nullFlavor="NA"/>
+					<country>SE</country>
+				</addr>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<documentationOf>
+		<serviceEvent>
+			<!-- effectiveTime/high optional, last changed-->
+			<effectiveTime>
+				<high nullFlavor="NI"/>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.8"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+					<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+					<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.1"/>
+					<!--perscription id-->
+					<id extension="12345678" root="2"/>
+					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF MEDICATION USE"/>
+					<title/>
+					<text>
+					Nån bra text som beskriver receptet och ser snygg ut i en läsare med en standard-stylesheet.
+					</text>
+					<!-- each entry is a perscribed item-->
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="INT">
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+							<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+							<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.2"/>
+							<!-- Coded as drug treatment unknown and no product is described -->
+							<code code="182904002" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.42.22" codeSystemName="epSOSCodeNoMedication" displayName="Drug treatment unknown"/>
+							<statusCode code="completed"/>
+							<effectiveTime nullFlavor="NI" xsi:type="IVL_TS"/>
+							<effectiveTime nullFlavor="NI" operator="A"/>
+							<consumable>
+								<manufacturedProduct xmlns:epsos="urn:epsos-org:ep:medication" classCode="MANU">
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND"/>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>apCU3BHBzwkSuWtYat66aWkY4qc=</DigestValue></Reference></SignedInfo><SignatureValue>JLJ9FTsOGqFbBLOcNeguS62e1BsIzmBBxp3B13KvkWa0Lc/385Eng4bxRDOuN7IKdUkYAX0vqApx
+Eyz01mypehVLDmCWu00vPmgkamxaPSs5+N/fRoKYrbA4vLrl0tybv1Jxn0acFSrG3qb6skFGTjk2
+oTQTkKI1FBVrTbyS7zE=</SignatureValue><KeyInfo><X509Data><X509SubjectName>1.2.840.113549.1.9.1=#16146a65726f75726973406e6574736d6172742e6772,cn=test ncp,ou=epsos,o=netsmart,l=athens,st=attica,c=gr</X509SubjectName><X509Certificate>MIICpDCCAg2gAwIBAgIJAKglfZKJ0lSvMA0GCSqGSIb3DQEBBQUAMIGAMQswCQYDVQQGEwJHUjEP
+MA0GA1UECBMGQXR0aWNhMREwDwYDVQQKEwhuZXRzbWFydDEOMAwGA1UECxMFZXBzb3MxGDAWBgNV
+BAMTD0plcnJ5IERpbWl0cmlvdTEjMCEGCSqGSIb3DQEJARYUamVyb3VyaXNAbmV0c21hcnQuZ3Iw
+HhcNMTAwOTA1MTQxNzU0WhcNMTEwOTA1MTQxNzU0WjCBijELMAkGA1UEBhMCR1IxDzANBgNVBAgT
+BmF0dGljYTEPMA0GA1UEBxMGYXRoZW5zMREwDwYDVQQKEwhuZXRzbWFydDEOMAwGA1UECxMFZXBz
+b3MxETAPBgNVBAMTCFRlc3QgTkNQMSMwIQYJKoZIhvcNAQkBFhRqZXJvdXJpc0BuZXRzbWFydC5n
+cjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAqTYlNwPla/KXeqzJKRLRleQQgkje4H277bkO
+UUXJ8d4MSZYqYrQkfl2DSfPNd5+H1VubdXd/WGZiDqWOJiuQo4kJZksrfrXiKpXy+NNqvJX27Unx
+sbpeXjAatTeIEoxXNPS37+kiA80MVxZ31nWLCaC8Ua1Iiuabq3Nsd9/mMt0CAwEAAaMaMBgwCQYD
+VR0TBAIwADALBgNVHQ8EBAMCBsAwDQYJKoZIhvcNAQEFBQADgYEAcyYKd/HJYUglP1Ft8y2T8JFJ
+x8YGPzLlma8t265DWoGrSJD2bWTKeo6AA6vjnWqztv9tU7a83TE06FTOWdUvYW+xTIexaGa5QRps
+fuyh1bxqo0SwETM8ZScBP6n9avo0Rnfrr0jGkTQS3rAMoDYwUyZvv3k9CPz6soc0rqW5+J4=</X509Certificate></X509Data></KeyInfo></Signature></ClinicalDocument>

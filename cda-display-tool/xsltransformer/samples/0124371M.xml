@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3"
+  xmlns:epsos="urn:epsos-org:ep:medication"
+  xmlns:ext="urn:hl7-EE-DL-Ext:v1" xmlns:mif="urn:hl7-org:v3/mif"
+  xmlns:ns="urn:hl7-org:v3"
+  xmlns:sch="http://www.ascc.net/xml/schematron"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 http://pub.e-tervis.ee/standards2/Schema/V3/HL7-ORG-V3-2005-NORMATIVE-EE-DL-Ext-V1/infrastructure/cda/CDA_EE01.xsd urn:hl7-EE-DL-Ext:v1 http://pub.e-tervis.ee/standards2/Schema/V3/HL7-ORG-V3-2006-NORMATIVE-EE-DL-Ext-V1/processable/multicacheschemas/POCD_MT00040_EE01_Extension.xsd">
+  <!--header-section-->
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3"/>
+  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+  <id extension="5.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+  <code code="60591-5" codeSystem="2.16.840.1.113883.6.1"
+    codeSystemName="LOINC" displayName="Patient Summary"/>
+  <title>Patient Summary</title>
+  <effectiveTime value="20130619"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"
+    codeSystemName="Confidentiality" displayName="clinician"/>
+  <languageCode code="en-GB"/>
+  <!--patient-data-->
+  <recordTarget>
+    <patientRole>
+      <id extension="0124371M" root="2.16.470.1.100.1.1.1000.990.1"/>
+      <addr>
+        <streetAddressLine>4 MADONNA TA POMPEI  TRIQ IL-FOSSA TAL-QAMH  -                                                                                                                                                          </streetAddressLine>
+        <city>ZEBBUG                                            </city>
+        <postalCode nullFlavor="UNK"/>
+        <state nullFlavor="UNK"/>
+        <country>MT</country>
+      </addr>
+      <telecom nullFlavor="NI"/>
+      <patient>
+        <name>
+          <family>CASSAR                                            </family>
+          <given>JOSEPH                                            </given>
+        </name>
+        <administrativeGenderCode code="M"
+          codeSystem="2.16.840.1.113883.5.1"
+          codeSystemName="AdministrativeGender"
+          codeSystemVersion="913-20091020" displayName="Male"/>
+        <birthTime value="19680222"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <!--patient-data-->
+  <!--author-data-->
+  <author>
+    <time value="20151116"/>
+    <assignedAuthor>
+      <id extension="author.gov.mt" root="2.16.470.1.100.1.1.1000.990.1"/>
+      <addr>
+        <streetAddressLine>15, Merchants Street</streetAddressLine>
+        <city>Valletta</city>
+        <postalCode nullFlavor="UNK"/>
+        <state nullFlavor="UNK"/>
+        <country>MT</country>
+      </addr>
+      <telecom use="WP" value="tel:+35625455335"/>
+      <telecom use="WP" value="mailto:epsos.mfh@gov.mt"/>
+      <assignedPerson>
+        <name>
+          <family>Data collected automatically from different sources by National Patient Summary System</family>
+          <given>Ministry for Health, Government of Malta</given>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id extension="mhec.gov.mt" root="2.16.470.1.100.1.1.1000.990.1"/>
+        <name>Ministry for Health, Government of Malta</name>
+        <telecom use="WP" value="tel:+35625455335"/>
+        <telecom use="WP" value="mailto:epsos.mfh@gov.mt"/>
+        <addr>
+          <streetAddressLine>15, Merchants Street</streetAddressLine>
+          <city>Valletta</city>
+          <postalCode nullFlavor="UNK"/>
+          <state nullFlavor="UNK"/>
+          <country>MT</country>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <!--author-data-->
+  <!--custodian-data-->
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id extension="mhec.gov.mt" root="2.16.470.1.100.1.1.1000.990.1"/>
+        <name>Ministry for Health, Government of Malta</name>
+        <telecom use="WP" value="tel:+35625455335"/>
+        <addr>
+          <streetAddressLine>15, Merchants Street</streetAddressLine>
+          <city>Valletta</city>
+          <postalCode nullFlavor="UNK"/>
+          <state nullFlavor="UNK"/>
+          <country>MT</country>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <!--custodian-data-->
+  <!--legal-authenticator-data-->
+  <legalAuthenticator>
+    <time value="20151116"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id extension="legal.authenticator.gov.mt" root="2.16.470.1.100.1.1.1000.990.1"/>
+      <addr>
+        <streetAddressLine>15, Merchants Street</streetAddressLine>
+        <city>Valletta</city>
+        <postalCode nullFlavor="UNK"/>
+        <state nullFlavor="UNK"/>
+        <country>MT</country>
+      </addr>
+      <telecom use="WP" value="tel:+35625455335"/>
+      <telecom use="WP" value="mailto:epsos.mfh@gov.mt"/>
+      <assignedPerson>
+        <name>
+          <family>Agius Muscat</family>
+          <given>Hugo</given>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id extension="mhec.gov.mt" root="2.16.470.1.100.1.1.1000.990.1"/>
+        <name>Ministry for Health, Government of Malta</name>
+        <telecom use="WP" value="tel:+35625455335"/>
+        <telecom use="WP" value="mailto:epsos.mfh@gov.mt"/>
+        <addr>
+          <streetAddressLine>15, Merchants Street</streetAddressLine>
+          <city>Valletta</city>
+          <postalCode nullFlavor="UNK"/>
+          <state nullFlavor="UNK"/>
+          <country>MT</country>
+        </addr>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <!--legal-authenticator-data-->
+  <!--participant-hcp-organization-data-->
+  <participant typeCode="IND">
+    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+    <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" codeSystemName="HL7 ParticipationFunction"/>
+    <associatedEntity classCode="PRS">
+      <scopingOrganization>
+        <id extension="mhec.gov.mt" root="2.16.470.1.100.1.1.1000.990.1"/>
+        <name>Ministry for Health, Government of Malta</name>
+        <telecom use="WP" value="tel:+35625455335"/>
+        <telecom use="WP" value="mailto:epsos.mfh@gov.mt"/>
+        <addr>
+          <streetAddressLine>15, Merchants Street</streetAddressLine>
+          <city>Valletta</city>
+          <postalCode nullFlavor="UNK"/>
+          <state nullFlavor="UNK"/>
+          <country>MT</country>
+        </addr>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  <!--participant-hcp-organization-data-->
+  <documentationOf>
+    <serviceEvent>
+      <effectiveTime>
+        <high value="20130619"/>
+      </effectiveTime>
+    </serviceEvent>
+  </documentationOf>
+  <relatedDocument typeCode="XFRM">
+    <parentDocument>
+      <id extension="5" root="2.16.470.1.100.1.1.1000.990.1"/>
+    </parentDocument>
+  </relatedDocument>
+  <relatedDocument typeCode="APND">
+    <parentDocument>
+      <id extension="5.2" root="2.16.470.1.100.1.1.1000.990.1"/>
+    </parentDocument>
+  </relatedDocument>
+  <!--header-section-->
+  <!--medical-sections-->
+  <component>
+    <structuredBody>
+      <!--history-of-medication-use-->
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+          <templateId root="2.16.840.1.113883.10.20.1.8"/>
+          <code code="10160-0" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC" displayName="History of medication use"/>
+          <title>History of medication use</title>
+          <text>
+            <table border="1">
+              <tbody>
+                <tr>
+                  <th>Code</th>
+                  <th>Description</th>
+                </tr>
+                <tr ID="med.1">
+                  <td>UNK</td>
+                  <td>UNK</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="INT">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <id nullFlavor="NI"/>
+              <code code="182904002" codeSystem="2.16.840.1.113883.6.96"
+                codeSystemName="SNOMED CT" displayName="Drug treatment unknown"/>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low nullFlavor="UNK"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="NA" operator="A"/>
+              <doseQuantity nullFlavor="NA"/>
+              <consumable>
+                <manufacturedProduct classCode="MANU" xmlns:epsos="urn:epsos-org:ep:medication">
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+                  <manufacturedMaterial>
+                    <code nullFlavor="NA">
+                      <originalText>
+                        <reference value="#med.1"/>
+                      </originalText>
+                    </code>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NA" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NA" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code nullFlavor="NA"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                    <name>unknown</name>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <!--history-of-medication-use-->
+      <!--allergies-adverse-reactions-alerts-->
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.2"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+          <code code="48765-2" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
+          <title>Allergies, adverse reactions, alerts</title>
+          <text>
+            <table border="1">
+              <tbody>
+                <tr>
+                  <th>Code</th>
+                  <th>Description</th>
+                </tr>
+                <tr ID="allergy.1">
+                  <td>420134006</td>
+                  <td>No adverse reactions were reported during this admission                                                                                                                                                                                                      </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+              <id extension="allergy.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20110915"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <id extension="allergy.1.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code code="420134006"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Propensity to adverse reactions"/>
+                  <text>
+                    <reference value="#allergy.1"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20110915"/>
+                  </effectiveTime>
+                  <value nullFlavor="NI" xsi:type="CD"/>
+                  <participant typeCode="CSM">
+                    <participantRole classCode="MANU">
+                      <playingEntity classCode="MMAT">
+                        <code nullFlavor="UNK">
+                          <originalText mediaType="text/xml">
+                            <reference value="#allergy.1"/>
+                          </originalText>
+                        </code>
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <!--allergies-adverse-reactions-alerts-->
+      <!--problem-list-->
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+          <templateId root="2.16.840.1.113883.10.20.1.11"/>
+          <code code="11450-4" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC" displayName="Problem list"/>
+          <title>Problem list</title>
+          <text>
+            <table border="1">
+              <tbody>
+                <tr>
+                  <th>Code</th>
+                  <th>Description</th>
+                </tr>
+                <tr ID="problem.1">
+                  <td>UNK</td>
+                  <td>UNK</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="problem.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low nullFlavor="UNK"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="problem.1.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code nullFlavor="UNK"/>
+                  <text>
+                    <reference value="#problem.1"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low nullFlavor="UNK"/>
+                  </effectiveTime>
+                  <value code="160245001"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT"
+                    displayName="No current problems or disability" xsi:type="CD"/>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <!--problem-list-->
+      <!--history-of-procedures-->
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+          <templateId root="2.16.840.1.113883.10.20.1.12"/>
+          <code code="47519-4" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC" displayName="History of Procedures"/>
+          <title>History of Procedures</title>
+          <text>
+            <table border="1">
+              <tbody>
+                <tr>
+                  <th>Code</th>
+                  <th>Description</th>
+                </tr>
+                <tr ID="proc.1">
+                  <td>392011001</td>
+                  <td>EXC SEB CYST RT FOREARM                                                                                                                                                                                                                                                                                                                                                                                         </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <id extension="proc.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code code="392011001" codeSystem="2.16.840.1.113883.6.96"
+                codeSystemName="SNOMED CT" displayName="Operation on skin">
+                <originalText mediaType="text/xml">
+                  <reference value="#proc.1"/>
+                </originalText>
+              </code>
+              <text>
+                <reference value="#proc.1"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="20111115"/>
+              </effectiveTime>
+            </procedure>
+          </entry>
+        </section>
+      </component>
+      <!--history-of-procedures-->
+      <!--history-of-past-illness-->
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.8"/>
+          <code code="11348-0" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC" displayName="History of past illness"/>
+          <title>History of past illness</title>
+          <text>
+            <table border="1">
+              <tbody>
+                <tr>
+                  <th>Code</th>
+                  <th>Description</th>
+                </tr>
+                <tr ID="problem.2">
+                  <td>55607006</td>
+                  <td>sebaceous cyst                                              </td>
+                </tr>
+                <tr ID="problem.4">
+                  <td>55607006</td>
+                  <td>epigastric hernia                                           </td>
+                </tr>
+                <tr ID="problem.3">
+                  <td>55607006</td>
+                  <td>Excision of Sebaceous Cyst  excision of  right forearm      </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="problem.3" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20110915"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="problem.3.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code code="55607006"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                  <text>
+                    <reference value="#problem.3"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20110915"/>
+                  </effectiveTime>
+                  <value code="L72"
+                    codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                    codeSystemName="ICD-10"
+                    displayName="Follicular cysts of skin and subcutaneous tissue" xsi:type="CD"/>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="problem.2" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20090630"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="problem.2.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code code="55607006"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                  <text>
+                    <reference value="#problem.2"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20090630"/>
+                  </effectiveTime>
+                  <value code="L72"
+                    codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                    codeSystemName="ICD-10"
+                    displayName="Follicular cysts of skin and subcutaneous tissue" xsi:type="CD"/>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="problem.4" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20090630"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="problem.4.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code code="55607006"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                  <text>
+                    <reference value="#problem.4"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20090630"/>
+                  </effectiveTime>
+                  <value code="K43"
+                    codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                    codeSystemName="ICD-10" displayName="Ventral hernia" xsi:type="CD"/>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <!--history-of-past-illness-->
+      <!--history-of-medical-device-use-->
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.7"/>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+          <code code="46264-8" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC" displayName="History of medical device use"/>
+          <title>History of medical device use</title>
+          <text>
+            <table border="1">
+              <tbody>
+                <tr>
+                  <th>Code</th>
+                  <th>Description</th>
+                </tr>
+                <tr ID="dev.1">
+                  <td>UNK</td>
+                  <td>UNK</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <supply classCode="SPLY" moodCode="EVN" nullFlavor="NI">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5"/>
+              <text>
+                <reference value="#dev.1"/>
+              </text>
+              <effectiveTime nullFlavor="NI"/>
+              <participant typeCode="DEV">
+                <participantRole classCode="MANU">
+                  <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                    <code nullFlavor="NI"/>
+                  </playingDevice>
+                </participantRole>
+              </participant>
+            </supply>
+          </entry>
+        </section>
+      </component>
+      <!--history-of-medical-device-use-->
+    </structuredBody>
+  </component>
+  <!--medical-sections-->
+</ClinicalDocument>

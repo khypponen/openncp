@@ -1,0 +1,13 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.15" displayName="ProcedureStatusCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="cancelled" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus" displayName="Cancelled"/>
+			<Concept code="Held" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus" displayName="On Hold"/>
+			<Concept code="Active" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus" displayName="In Progress"/>
+			<Concept code="active" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus" displayName="In Progress"/>
+			<Concept code="Aborted" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus" displayName="Not Completed"/>
+			<Concept code="aborted" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus" displayName="Not Completed"/>
+			<Concept code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus" displayName="Completed"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

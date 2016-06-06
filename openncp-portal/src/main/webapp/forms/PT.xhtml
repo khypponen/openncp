@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-W3CDTD XHTML 1.0 TransitionalEN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition>
+        <h:panelGrid columns="2">
+                <h:outputLabel value="#{myBean.identifiers[0].key}" />
+                <p:inputText id="#{myBean.identifiers[0].friendlyName}" value="#{myBean.identifiers[0].userValue}" required="true" />
+        </h:panelGrid>
+            <a id="sc_link" target="_blank" href="/jnlp/openecard.jnlp">#{msg['patient.search.downloadeid']}</a>
+    </ui:composition>
+</html>
+

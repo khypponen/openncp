@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<RoleCodeInformation>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='CHLDADOPT'>
+<displayName lang='en'>adopted child</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='DAUADOPT'>
+<displayName lang='en'>adopted daughter</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='SONADOPT'>
+<displayName lang='en'>adopted son</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='AUNT'>
+<displayName lang='en'>aunt</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='CHILD'>
+<displayName lang='en'>child</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='CHLDINLAW'>
+<displayName lang='en'>child in-law</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='COUSN'>
+<displayName lang='en'>cousin</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='DAUC'>
+<displayName lang='en'>daughter</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='DAUINLAW'>
+<displayName lang='en'>daughter in-law</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='DOMPART'>
+<displayName lang='en'>domestic partner</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='FAMMEMB'>
+<displayName lang='en'>family member</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='FTH'>
+<displayName lang='en'>father</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='FTHINLAW'>
+<displayName lang='en'>father-in-law</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='CHLDFOST'>
+<displayName lang='en'>foster child</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='DAUFOST'>
+<displayName lang='en'>foster daughter</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='SONFOST'>
+<displayName lang='en'>foster son</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='GRNDCHILD'>
+<displayName lang='en'>grandchild</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='GRPRN'>
+<displayName lang='en'>grandparent</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='GGRPRN'>
+<displayName lang='en'>great grandparent</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='MTH'>
+<displayName lang='en'>mother</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='MTHINLAW'>
+<displayName lang='en'>mother-in-law</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='NCHILD'>
+<displayName lang='en'>natural child</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='DAU'>
+<displayName lang='en'>natural daughter</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='SON'>
+<displayName lang='en'>natural son</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='NBOR'>
+<displayName lang='en'>neighbor</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='NIENEPH'>
+<displayName lang='en'>niece/nephew</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='PRN'>
+<displayName lang='en'>parent</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='PRNINLAW'>
+<displayName lang='en'>parent in-law</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='ROOM'>
+<displayName lang='en'>roomate</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='SIB'>
+<displayName lang='en'>sibling</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='SIGOTHR'>
+<displayName lang='en'>significant other</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='SONC'>
+<displayName lang='en'>son</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='SONINLAW'>
+<displayName lang='en'>son in-law</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='SPS'>
+<displayName lang='en'>spouse</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='STPCHLD'>
+<displayName lang='en'>step child</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='STPDAU'>
+<displayName lang='en'>stepdaughter</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='STPSON'>
+<displayName lang='en'>stepson</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='UNCLE'>
+<displayName lang='en'>uncle</displayName>
+</RoleCodeEntry>
+<RoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.38' epsosName='epSOSPersonalRelationship' code='FRND'>
+<displayName lang='en'>unrelated friend</displayName>
+</RoleCodeEntry>
+</RoleCodeInformation>

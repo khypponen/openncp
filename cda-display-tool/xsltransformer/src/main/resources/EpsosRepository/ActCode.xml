@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<ActCodeInformation>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='ALC'>
+<displayName lang='en'>Alternative Level of Care</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='CARD'>
+<displayName lang='en'>Cardiology</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='CHR'>
+<displayName lang='en'>Chronic</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='DNTL'>
+<displayName lang='en'>Dental</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='DRGRHB'>
+<displayName lang='en'>Drug Rehab</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='GENRL'>
+<displayName lang='en'>General</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='MED'>
+<displayName lang='en'>Medical</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='OBS'>
+<displayName lang='en'>Obstetrics</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='ONC'>
+<displayName lang='en'>Oncology</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='PALL'>
+<displayName lang='en'>Palliative</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='PED'>
+<displayName lang='en'>Pediatrics</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='PHAR'>
+<displayName lang='en'>Pharmaceutical</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='PHYRHB'>
+<displayName lang='en'>Physical Rehab</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='PSYCH'>
+<displayName lang='en'>Psychiatric</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='SURG'>
+<displayName lang='en'>Surgical</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='AMB'>
+<displayName lang='en'>ambulatory</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='EMER'>
+<displayName lang='en'>emergency</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='FLD'>
+<displayName lang='en'>field</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='HH'>
+<displayName lang='en'>home health</displayName>
+</ActCodeEntry>
+<ActCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.29' epsosName='epSOSActCode' code='VR'>
+<displayName lang='en'>virtual</displayName>
+</ActCodeEntry>
+</ActCodeInformation>

@@ -1,0 +1,23 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.16" displayName="ResultTypeCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="252275004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hematology"/>
+			<Concept code="275711006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chemistry"/>
+			<Concept code="68793005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Serology"/>
+			<Concept code="395124008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Virology"/>
+			<Concept code="69200006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Toxicology"/>
+			<Concept code="19851009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Microbiology"/>
+			<Concept code="363679005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Imaging"/>
+			<Concept code="363680008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="X-ray"/>
+			<Concept code="16310003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ultrasound"/>
+			<Concept code="77477000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="CT"/>
+			<Concept code="113091000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="MRI"/>
+			<Concept code="77343006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Angiography"/>
+			<Concept code="40701008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiac Echo"/>
+			<Concept code="371572003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Nuclear Medicine"/>
+			<Concept code="108257001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pathology"/>
+			<Concept code="71388002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure"/>
+			<Concept code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vital Sign"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

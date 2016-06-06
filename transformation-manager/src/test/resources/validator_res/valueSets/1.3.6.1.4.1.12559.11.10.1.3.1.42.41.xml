@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSTimingEvent" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.41" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="AC" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="before meal (from lat. ante cibus)"/>
+			<Concept code="AC" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="before meal (from lat. ante cibus) (TimingEvent)"/>
+			<Concept code="ACD" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="before lunch (from lat. ante cibus diurnus)"/>
+			<Concept code="ACD" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="before lunch (from lat. ante cibus diurnus) (TimingEvent)"/>
+			<Concept code="ACM" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="before breakfast (from lat. ante cibus matutinus)"/>
+			<Concept code="ACM" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="before breakfast (from lat. ante cibus matutinus) (TimingEvent)"/>
+			<Concept code="ACV" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="before dinner (from lat. ante cibus vespertinus)"/>
+			<Concept code="ACV" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="before dinner (from lat. ante cibus vespertinus) (TimingEvent)"/>
+			<Concept code="HS" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="Prior to beginning a regular period of extended sleep (this would exclude naps). Note that this might occur at different times of day depending on a person's regular sleep schedule."/>
+			<Concept code="HS" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="Prior to beginning a regular period of extended sleep (this would exclude naps). Note that this might occur at different times of day depending on a person's regular sleep schedule. (TimingEvent)"/>
+			<Concept code="IC" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="between meals (from lat. inter cibus)"/>
+			<Concept code="IC" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="between meals (from lat. inter cibus) (TimingEvent)"/>
+			<Concept code="ICD" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="between lunch and dinner"/>
+			<Concept code="ICD" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="between lunch and dinner (TimingEvent)"/>
+			<Concept code="ICM" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="between breakfast and lunch"/>
+			<Concept code="ICM" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="between breakfast and lunch (TimingEvent)"/>
+			<Concept code="ICV" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="between dinner and the hour of sleep"/>
+			<Concept code="ICV" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="between dinner and the hour of sleep (TimingEvent)"/>
+			<Concept code="PC" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="after meal (from lat. post cibus)"/>
+			<Concept code="PC" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="after meal (from lat. post cibus) (TimingEvent)"/>
+			<Concept code="PCD" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="after lunch (from lat. post cibus diurnus)"/>
+			<Concept code="PCD" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="after lunch (from lat. post cibus diurnus) (TimingEvent)"/>
+			<Concept code="PCM" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="after breakfast (from lat. post cibus matutinus)"/>
+			<Concept code="PCM" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="after breakfast (from lat. post cibus matutinus) (TimingEvent)"/>
+			<Concept code="PCV" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="after dinner (from lat. post cibus vespertinus)"/>
+			<Concept code="PCV" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" displayName="after dinner (from lat. post cibus vespertinus) (TimingEvent)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

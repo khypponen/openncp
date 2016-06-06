@@ -1,0 +1,13 @@
+build setup:
+
+- minimum requirements: Sun Java 6 + Apache Maven 2.2.1
+
+- verify execution of: java -version
+  and: mvn -v
+  is successful.
+
+build:
+- from root of tsam directory (where pom.xml is located) run:
+  mvn -e clean install
+  
+newly generated terminology-service-access-manager-{version}.jar can be found in /target directory and in local maven repository

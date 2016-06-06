@@ -1,0 +1,11 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.1" displayName="AdvanceDirectiveStatusCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="425392003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Current and Verified"/>
+			<Concept code="425394002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Supported By Healthcare Will"/>
+			<Concept code="425393008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Supported By Durable Power of Attorney for Healthcare"/>
+			<Concept code="425396000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Verified With Family Only"/>
+			<Concept code="310305009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Verified By Medical Record Only"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

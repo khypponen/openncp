@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:hl7-org:v3" xmlns:ex="urn:hl7-org/v3-example" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:hl7-org:v3">
+    <xs:annotation>
+        <xs:documentation>Generated using schema builder version 3.1.6. Stylesheets:
+
+StaticMifToXsd.xsl version 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:include schemaLocation="infrastructureRoot.xsd"/>
+    <xs:complexType name="PRPA_MT201306UV02.LivingSubjectAdministrativeGender">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element maxOccurs="unbounded" name="value" type="CE"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.LivingSubjectBirthPlaceAddress">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element maxOccurs="unbounded" name="value" type="AD"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.LivingSubjectBirthPlaceName">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element maxOccurs="unbounded" name="value" type="EN"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.LivingSubjectBirthTime">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element maxOccurs="unbounded" name="value" type="IVL_TS"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.LivingSubjectDeceasedTime">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element maxOccurs="unbounded" name="value" type="IVL_TS"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.LivingSubjectId">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element maxOccurs="unbounded" name="value" type="II"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.LivingSubjectName">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element maxOccurs="unbounded" name="value" type="EN"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.MatchAlgorithm">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element name="value" type="ANY"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.MatchCriterionList">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element minOccurs="0" name="id" type="II"/>
+            <xs:element minOccurs="0" name="matchAlgorithm" nillable="true" type="PRPA_MT201306UV02.MatchAlgorithm"/>
+            <xs:element minOccurs="0" name="matchWeight" nillable="true" type="PRPA_MT201306UV02.MatchWeight"/>
+            <xs:element minOccurs="0" name="minimumDegreeMatch" nillable="true" type="PRPA_MT201306UV02.MinimumDegreeMatch"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.MatchWeight">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element name="value" type="ANY"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.MinimumDegreeMatch">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element name="value" type="ANY"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.MothersMaidenName">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element maxOccurs="unbounded" name="value" type="PN"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.OtherIDsScopingOrganization">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element maxOccurs="unbounded" name="value" type="II"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.ParameterList">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element minOccurs="0" name="id" type="II"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="livingSubjectAdministrativeGender" nillable="true" type="PRPA_MT201306UV02.LivingSubjectAdministrativeGender"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="livingSubjectBirthPlaceAddress" nillable="true" type="PRPA_MT201306UV02.LivingSubjectBirthPlaceAddress"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="livingSubjectBirthPlaceName" nillable="true" type="PRPA_MT201306UV02.LivingSubjectBirthPlaceName"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="livingSubjectBirthTime" nillable="true" type="PRPA_MT201306UV02.LivingSubjectBirthTime"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="livingSubjectDeceasedTime" nillable="true" type="PRPA_MT201306UV02.LivingSubjectDeceasedTime"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="livingSubjectId" nillable="true" type="PRPA_MT201306UV02.LivingSubjectId"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="livingSubjectName" nillable="true" type="PRPA_MT201306UV02.LivingSubjectName"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="mothersMaidenName" nillable="true" type="PRPA_MT201306UV02.MothersMaidenName"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="otherIDsScopingOrganization" nillable="true" type="PRPA_MT201306UV02.OtherIDsScopingOrganization"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="patientAddress" nillable="true" type="PRPA_MT201306UV02.PatientAddress"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="patientStatusCode" nillable="true" type="PRPA_MT201306UV02.PatientStatusCode"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="patientTelecom" nillable="true" type="PRPA_MT201306UV02.PatientTelecom"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="principalCareProviderId" nillable="true" type="PRPA_MT201306UV02.PrincipalCareProviderId"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="principalCareProvisionId" nillable="true" type="PRPA_MT201306UV02.PrincipalCareProvisionId"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.PatientAddress">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element maxOccurs="unbounded" name="value" type="AD"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.PatientStatusCode">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element name="value" type="CV"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.PatientTelecom">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element maxOccurs="unbounded" name="value" type="TEL"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.PrincipalCareProviderId">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element maxOccurs="unbounded" name="value" type="II"/>
+            <xs:element minOccurs="0" name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.PrincipalCareProvisionId">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element maxOccurs="unbounded" name="value" type="II"/>
+            <xs:element name="semanticsText" type="ST"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.QueryByParameter">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element name="queryId" type="II"/>
+            <xs:element name="statusCode" type="CS"/>
+            <xs:element minOccurs="0" name="modifyCode" type="CS"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="responseElementGroupId" type="II"/>
+            <xs:element minOccurs="0" name="responseModalityCode" type="CS"/>
+            <xs:element minOccurs="0" name="responsePriorityCode" type="CS"/>
+            <xs:element minOccurs="0" name="initialQuantity" type="INT"/>
+            <xs:element minOccurs="0" name="initialQuantityCode" type="CE"/>
+            <xs:element minOccurs="0" name="executionAndDeliveryTime" type="TS"/>
+            <xs:element minOccurs="0" name="matchCriterionList" nillable="true" type="PRPA_MT201306UV02.MatchCriterionList"/>
+            <xs:element name="parameterList" type="PRPA_MT201306UV02.ParameterList"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="sortControl" nillable="true" type="PRPA_MT201306UV02.SortControl"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="PRPA_MT201306UV02.SortControl">
+        <xs:sequence>
+            <xs:group ref="InfrastructureRootElements"/>
+            <xs:element minOccurs="0" name="sequenceNumber" type="INT"/>
+            <xs:element minOccurs="0" name="elementName" type="SC"/>
+            <xs:element minOccurs="0" name="directionCode" type="CS"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="InfrastructureRootAttributes"/>
+        <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+    </xs:complexType>
+</xs:schema>

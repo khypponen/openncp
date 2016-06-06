@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3"/>
+  <templateId root="2.16.840.1.113883.10.20.1"/>
+  <id assigningAuthorityName="Agrupamento de Centros de Saúde da Maia/Valongo" root="2.25.188515768544005514411460719492851023250" extension="2.25.8666405116064952933140327650011075249"/>
+  <code code="60591-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Patient Summary"/>
+  <title>Resumo clínico único do utente 187771502</title>
+  <effectiveTime value="20121220220022.507+0000"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+  <languageCode code="pt-PT"/>
+  <versionNumber value="8"/>
+  <recordTarget>
+    <patientRole>
+      <id assigningAuthorityName="Registo Nacional de Utentes" root="2.16.17.710.820" extension="187771502"/>
+      <addr><country>PT</country><postalCode>2625-002 PÓVOA DE SANTA IRIA</postalCode><streetAddressLine>RUA ADRIANO CORREIA OLIVEIRA BANDA 10</streetAddressLine></addr>
+      <telecom nullFlavor="NI"/>
+      <patient>
+        <name><family>ANTUNES BUKNER VIEIRA</family><given>DUARTE NUNO</given></name>
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7:AdministrativeGender" displayName="Masculino"/>
+        <birthTime value="19810506"/>
+      </patient>
+      <providerOrganization>
+        <id root="2.16.620.1.101.10.1" assigningAuthorityName="Registo Nacional de Utentes"/>
+      </providerOrganization>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value="20130313113522+0000"/>
+    <assignedAuthor>
+      <id root="2.16.840.1.113883.19.5" extension="90647"/>
+      <telecom value="tel:+351808242424" use="WP"/>
+      <assignedPerson>
+        <name><family>SANTOS</family><given>MARIA HELENA</given></name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root="2.25.166534786479014991697463964867446734787"/>
+        <name>Agrupamento de Centros de Saúde Estuário do Tejo</name>
+        <addr><country>PT</country><postalCode>2600-445  ALHANDRA</postalCode><streetAddressLine>Rua João de Deus, 19</streetAddressLine></addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="2.16.840.1.113883.19.5" extension="3113101"/>
+        <name>Agrupamento de Centros de Saúde Estuário do Tejo</name>
+        <telecom value="tel:+351219500168" use="WP"/>
+        <addr><country>PT</country><postalCode>2600-445  ALHANDRA</postalCode><streetAddressLine>Rua João de Deus, 19</streetAddressLine></addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value="20121220220022.507+0000"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id root="2.16.840.1.113883.19.5" extension="3113101"/>
+      <telecom nullFlavor="NI"/>
+      <assignedPerson>
+        <name><family>SANTOS</family><given>MARIA HELENA</given></name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.19.5"/>
+        <name>Agrupamento de Centros de Saúde Estuário do Tejo </name>
+        <telecom value="tel:+351219500168" use="WP"/>
+        <addr><country>PT</country><postalCode>2600-445  ALHANDRA</postalCode><streetAddressLine>Rua João de Deus, 19</streetAddressLine></addr>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <participant typeCode="IND">
+    <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" codeSystemName="HL7 ParticipationFunction" displayName="Médico de Família"/>
+    <associatedEntity classCode="PRS">
+      <addr><country>PT</country><postalCode>2600-445  ALHANDRA</postalCode><streetAddressLine>Rua João de Deus, 19</streetAddressLine></addr>
+      <telecom value="tel:+351808242424" use="WP"/>
+      <telecom nullFlavor="NI"/>
+      <associatedPerson>
+        <name><family>SANTOS</family><given>MARIA HELENA</given></name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <documentationOf>
+    <serviceEvent classCode="PCPR">
+      <effectiveTime>
+        <low value="20121220"/>
+        <high value="20121220"/>
+      </effectiveTime>
+      <performer typeCode="PRF">
+        <time>
+          <low value="20121220"/>
+          <high value="20121220"/>
+        </time>
+        <assignedEntity classCode="ASSIGNED">
+          <id root="2.16.840.1.113883.19.5" extension="42"/>
+          <telecom nullFlavor="NI"/>
+          <assignedPerson>
+            <name nullFlavor="NI"/>
+          </assignedPerson>
+          <representedOrganization>
+            <id root="2.25.268991397642899077541964678414839583006" extension="1137103"/>
+            <name>UNIDADE LOCAL DE SAUDE DE MATOSINHOS,EPE</name>
+            <telecom nullFlavor="NI"/>
+            <addr><country>PT</country><city nullFlavor="NI"/><postalCode nullFlavor="NI"/><streetAddressLine nullFlavor="NI"/><state nullFlavor="NI"/></addr>
+          </representedOrganization>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+  <component>
+    <structuredBody>
+      <component>
+        <section moodCode="EVN">
+          <templateId root="2.16.840.1.113883.10.20.1.2"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+          <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
+          <title>Alergias, reacções adversas, alertas</title>
+          <text><table><thead><tr><th>#</th><th>Código Alergénio CPARA</th><th>Descrição Alergénio</th><th>Data Diagnóstico</th><th>Reacção</th><th>Estado</th><th>Categoria</th><th>Severidade</th><th>Origem</th></tr></thead><tbody><tr><td><content ID="allergy0"/>
+                    0
+                  </td><td><content ID="allergy0_allergenCode"/>
+                    J01RA01
+                  </td><td><content ID="allergy0_allergenDescription"/>
+                    PENICILLINS, COMBINATIONS WITH OTHER ANTIBACTERIALS
+                  </td><td><content ID="allergy0_diagnosisDate"/>
+                    2012/12/14
+                  </td><td><content ID="allergy0_reactions"/>
+                    OUTRA
+                  </td><td><content ID="allergy0_status"/>
+                    ATIVO
+                  </td><td><content ID="allergy0_category"/>
+                    ALERGIA MEDICAMENTOSA
+                  </td><td><content ID="allergy0_severity"/>
+                    GRAVE / MODERADA
+                  </td><td><content ID="allergy0_source"/>
+                    LEÇA DA PALMEIRA
+                  </td></tr></tbody></table></text>
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+              <id root="2.25.1934204324436696442071898792205248534" extension="244"/>
+              <code nullFlavor="NA" code="NA"/>
+              <text><reference value="#allergy0"/></text>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="20121214"/>
+                <high nullFlavor="NA"/>
+              </effectiveTime>
+              <entryRelationship typeCode="SUBJ" inversionInd="false">
+                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <id root="4cff759c-3710-4bb4-a6bc-41d71969a8cb"/>
+                  <code code="0001" codeSystem="2.16.840.1.113883.12.127" codeSystemName="CPARA" displayName="ALERGIA MEDICAMENTOSA"/>
+                  <text>
+                    ALERGIA MEDICAMENTOSA
+                    <reference value="#allergy0_category"/></text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low nullFlavor="NA"/>
+                    <high nullFlavor="NA"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="0001" codeSystem="2.16.840.1.113883.12.127" codeSystemName="CPARA">
+                    <originalText>
+                      CPARA
+                      <reference value="#allergy0_category"/></originalText>
+                  </value>
+                  <participant typeCode="CSM">
+                    <participantRole classCode="MANU">
+                      <playingEntity classCode="MMAT">
+                        <code code="J01RA01" codeSystem="2.16.840.1.113883.12.127" codeSystemName="WC" displayName="PENICILLINS, COMBINATIONS WITH OTHER ANTIBACTERIALS">
+                          <originalText><reference value="#allergy0_allergenCode"/></originalText>
+                          <translation nullFlavor="NA"/>
+                        </code>
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <act classCode="ACT" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.1.40"/>
+                      <!--<id root="2.25.286650936228482820160310773728239958803"/>-->
+                      <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+                      <text>teste</text>
+                      <statusCode code="completed"/>
+                    </act>
+                  </entryRelationship>
+                  <entryRelationship typeCode="MFST" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                      <code nullFlavor="NA"/>
+                      <text><reference value="#allergy0_reactions"/></text>
+                      <statusCode code="completed"/>
+                      <value xsi:type="CD" code="0099" codeSystem="2.16.840.1.113883.11.19627" codeSystemName="REACAO" displayName="OUTRA"/>
+                    </observation>
+                  </entryRelationship>
+                  <entryRelationship typeCode="SAS" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.1.55"/>
+                      <code code="SEV" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode" displayName="Severity"/>
+                      <text><reference value="#allergy0_severity"/></text>
+                      <statusCode code="completed"/>
+                      <value xsi:type="CD" code="01" codeSystem="2.16.840.1.113883.12.128" codeSystemName="CPARA" displayName="GRAVE / MODERADA"/>
+                    </observation>
+                  </entryRelationship>
+                  <entryRelationship typeCode="REFR" inversionInd="false">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.1.57"/>
+                      <templateId root="2.16.840.1.113883.10.20.1.39"/>
+                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
+                      <text><reference value="#allergy0_status"/></text>
+                      <statusCode code="completed"/>
+                      <value xsi:type="CE" code="01" codeSystem="2.16.840.1.113883.12.438" displayName="ATIVO">
+                        <originalText nullFlavor="NA"/>
+                      </value>
+                    </observation>
+                  </entryRelationship>
+                  <entryRelationship typeCode="REFR" inversionInd="false">
+                    <supply classCode="SPLY" moodCode="INT">
+                      <templateId root="2.16.840.1.113883.10.20.1.34"/>
+                      <subject typeCode="SBJ">
+                        <relatedSubject>
+                          <code code="02" displayName="MÉDICO"/>
+                        </relatedSubject>
+                      </subject>
+                      <author>
+                        <functionCode nullFlavor="NA" displayName="ASSISTENTE/CLINICA GERAL"/>
+                        <time value="20121214"/>
+                        <assignedAuthor>
+                          <id root="2.16.840.1.113883.19.5" extension="47579"/>
+                          <assignedPerson>
+                            <name nullFlavor="NI"/>
+                          </assignedPerson>
+                          <representedOrganization>
+                            <id root="2.25.151058627588878558679162506533570589474" extension="1135301"/>
+                            <name>LEÇA DA PALMEIRA</name>
+                            <addr><country>PT</country><city nullFlavor="NI"/><postalCode nullFlavor="NI"/><streetAddressLine nullFlavor="NI"/><state nullFlavor="NI"/></addr>
+                          </representedOrganization>
+                        </assignedAuthor>
+                      </author>
+                    </supply>
+                  </entryRelationship>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section moodCode="EVN">
+          <templateId root="2.16.840.1.113883.10.20.1.8"/>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+          <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medication use"/>
+          <title>Medicamentos Usados</title>
+          <text><table><thead><tr><th>#</th><th>Descrição</th><th>Dosagem</th><th>Data Início</th><th>Data Fim</th><th>Posologia</th></tr></thead><tbody><tr><td><content ID="medication0"/>
+                    0
+                  </td><td><content ID="medication0_description"/>
+                    Paracetamol, [Ben-U-Ron], 1000 mg, Comprimido, Blister - 18
+                    unidade(s)
+                  </td><td><content ID="medication0_dosage"/>
+                    1000 mg
+                  </td><td><content ID="medication0_initialDate"/>
+                    2013/03/04
+                  </td><td><content ID="medication0_finalDate"/>
+                    --
+                  </td><td><content ID="medication0_applicationRate"/>
+                    --
+                  </td></tr><tr><td><content ID="medication1"/>
+                    1
+                  </td><td><content ID="medication1_description"/>
+                    Ciclosporina, [Ciclosporina Jaba 50 mg Cápsulas moles], 50
+                    mg, Cápsula mole, Blister - 30 unidade(s)
+                  </td><td><content ID="medication1_dosage"/>
+                    50 mg
+                  </td><td><content ID="medication1_initialDate"/>
+                    2013/03/04
+                  </td><td><content ID="medication1_finalDate"/>
+                    --
+                  </td><td><content ID="medication1_applicationRate"/>
+                    --
+                  </td></tr></tbody></table></text>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <id root="2.25.154189930666336751644379352903321258669" extension="532"/>
+              <text><reference value="#medication0"/></text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130304"/>
+                <high nullFlavor="NA"/>
+              </effectiveTime>
+              <effectiveTime xsi:type="PIVL_TS" nullFlavor="NA" operator="I"/>
+              <effectiveTime xsi:type="PIVL_TS" nullFlavor="NA" operator="A" institutionSpecified="true"/>
+              <routeCode nullFlavor="NA"/>
+              <doseQuantity>
+                <low value="1000" unit="mg"/>
+                <high value="1000" unit="mg"/>
+              </doseQuantity>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <manufacturedMaterial>
+                    <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+                    <code code="86556" codeSystemName="EMB" displayName="Blister - 18 unidade(s)">
+                      <originalText>EMB</originalText>
+                      <translation code="0" codeSystemName="CNPEM" displayName="Paracetamol, [Ben-U-Ron], 1000 mg, Comprimido, Blister - 18 unidade(s)">
+                        <originalText>CNPEM</originalText>
+                      </translation>
+                      <translation code="95" codeSystemName="DCIPT" displayName="Paracetamol">
+                        <originalText>DCIPT</originalText>
+                      </translation>
+                      <translation code="0" codeSystemName="DOSAGE" displayName="1000 mg">
+                        <originalText>
+                          DOSAGE
+                          <reference value="#medication0_dosage"/></originalText>
+                      </translation>
+                      <translation code="N02BE01" codeSystem="2.16.840.1.113883.6.73" codeSystemName="WC" displayName="PARACETAMOL">
+                        <originalText>ATC</originalText>
+                      </translation>
+                    </code>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+              <entryRelationship typeCode="REFR" inversionInd="false">
+                <supply classCode="SPLY" moodCode="INT">
+                  <templateId root="2.16.840.1.113883.10.20.1.34"/>
+                  <subject typeCode="SBJ">
+                    <relatedSubject nullFlavor="NI"/>
+                  </subject>
+                  <author>
+                    <functionCode nullFlavor="NA" displayName="ASSISTENTE/CLINICA GERAL"/>
+                    <time value="20121203000000.000+0000"/>
+                    <assignedAuthor>
+                      <id root="2.16.840.1.113883.19.5" extension="28602"/>
+                      <assignedPerson>
+                        <name><family>TESTA TUDO</family><given>CECILIA</given></name>
+                      </assignedPerson>
+                      <representedOrganization>
+                        <id root="2.25.262640682512159403682852543879198519401" extension="3113400"/>
+                        <name>UCC RIO MOURO</name>
+                        <addr><country>PT</country><city nullFlavor="NI"/><postalCode nullFlavor="NI"/><streetAddressLine nullFlavor="NI"/><state nullFlavor="NI"/></addr>
+                      </representedOrganization>
+                    </assignedAuthor>
+                  </author>
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <act classCode="INFRM" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.1.43"/>
+                      <code code="FINSTRUCT" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode">
+                        <translation code="1" codeSystemName="PRESCRIPTIONTYPE" displayName="NOME_COMERCIAL">
+                          <originalText>Tipo de Prescrição</originalText>
+                        </translation>
+                        <translation code="18" codeSystemName="PACKINGSIZE" displayName="18">
+                          <originalText>Tamanho da embalagem</originalText>
+                        </translation>
+                        <translation code="1" codeSystemName="PESCRIBEDAMOUNT" displayName="1">
+                          <originalText>Quantidade prescrita</originalText>
+                        </translation>
+                        <translation code="271" codeSystemName="DOSAGEFORM" displayName="Comprimido">
+                          <originalText>Forma Farmacêutica</originalText>
+                        </translation>
+                        <translation code="32" codeSystemName="UNITS" displayName="Unidade(s)">
+                          <originalText>Unidades</originalText>
+                        </translation>
+                        <translation code="7" codeSystemName="PACKAGE" displayName="Blister">
+                          <originalText>Tipo Embalagem</originalText>
+                        </translation>
+                      </code>
+                      <statusCode code="completed"/>
+                    </act>
+                  </entryRelationship>
+                </supply>
+              </entryRelationship>
+            </substanceAdministration>
+          </entry>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <id root="2.25.304769032662785085386985580799405618635" extension="533"/>
+              <text><reference value="#medication1"/></text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130304"/>
+                <high nullFlavor="NA"/>
+              </effectiveTime>
+              <effectiveTime xsi:type="PIVL_TS" nullFlavor="NA" operator="I"/>
+              <effectiveTime xsi:type="PIVL_TS" nullFlavor="NA" operator="A" institutionSpecified="true"/>
+              <routeCode nullFlavor="NA"/>
+              <doseQuantity>
+                <low value="50" unit="mg"/>
+                <high value="50" unit="mg"/>
+              </doseQuantity>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <manufacturedMaterial>
+                    <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+                    <code code="71905" codeSystemName="EMB" displayName="Blister - 30 unidade(s)">
+                      <originalText>EMB</originalText>
+                      <translation code="0" codeSystemName="CNPEM" displayName="Ciclosporina, [Ciclosporina Jaba 50 mg Cápsulas moles], 50 mg, Cápsula mole, Blister - 30 unidade(s)">
+                        <originalText>CNPEM</originalText>
+                      </translation>
+                      <translation code="333" codeSystemName="DCIPT" displayName="Ciclosporina">
+                        <originalText>DCIPT</originalText>
+                      </translation>
+                      <translation code="0" codeSystemName="DOSAGE" displayName="50 mg">
+                        <originalText>
+                          DOSAGE
+                          <reference value="#medication1_dosage"/></originalText>
+                      </translation>
+                      <translation code="L04AD01" codeSystem="2.16.840.1.113883.6.73" codeSystemName="WC" displayName="CICLOSPORIN">
+                        <originalText>ATC</originalText>
+                      </translation>
+                    </code>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+              <entryRelationship typeCode="REFR" inversionInd="false">
+                <supply classCode="SPLY" moodCode="INT">
+                  <templateId root="2.16.840.1.113883.10.20.1.34"/>
+                  <subject typeCode="SBJ">
+                    <relatedSubject nullFlavor="NI"/>
+                  </subject>
+                  <author>
+                    <functionCode nullFlavor="NA" displayName="ASSISTENTE/CLINICA GERAL"/>
+                    <time value="20121203000000.000+0000"/>
+                    <assignedAuthor>
+                      <id root="2.16.840.1.113883.19.5" extension="28602"/>
+                      <assignedPerson>
+                        <name><family>TESTA TUDO</family><given>CECILIA</given></name>
+                      </assignedPerson>
+                      <representedOrganization>
+                        <id root="2.25.39619999458179187192730759921603723099" extension="3113400"/>
+                        <name>UCC RIO MOURO</name>
+                        <addr><country>PT</country><city nullFlavor="NI"/><postalCode nullFlavor="NI"/><streetAddressLine nullFlavor="NI"/><state nullFlavor="NI"/></addr>
+                      </representedOrganization>
+                    </assignedAuthor>
+                  </author>
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <act classCode="INFRM" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.1.43"/>
+                      <code code="FINSTRUCT" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode">
+                        <translation code="1" codeSystemName="PRESCRIPTIONTYPE">
+                          <originalText>Tipo de Prescrição</originalText>
+                        </translation>
+                        <translation code="30" codeSystemName="PACKINGSIZE" displayName="30">
+                          <originalText>Tamanho da embalagem</originalText>
+                        </translation>
+                        <translation code="1" codeSystemName="PESCRIBEDAMOUNT" displayName="1">
+                          <originalText>Quantidade prescrita</originalText>
+                        </translation>
+                        <translation code="30" codeSystemName="DOSAGEFORM" displayName="Cápsula mole">
+                          <originalText>Forma Farmacêutica</originalText>
+                        </translation>
+                        <translation code="32" codeSystemName="UNITS" displayName="Unidade(s)">
+                          <originalText>Unidades</originalText>
+                        </translation>
+                        <translation code="7" codeSystemName="PACKAGE" displayName="Blister">
+                          <originalText>Tipo Embalagem</originalText>
+                        </translation>
+                      </code>
+                      <statusCode code="completed"/>
+                    </act>
+                  </entryRelationship>
+                </supply>
+              </entryRelationship>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section moodCode="EVN">
+          <templateId root="2.16.840.1.113883.10.20.1.8"/>
+          <templateId root="2.16.840.1.113883.10.20.1.6"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23"/>
+          <code code="11369-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of immunizations"/>
+          <title>Historial de Vacinação</title>
+          <text><table><thead><tr><th>#</th><th>Data Administração</th><th>Código</th><th>Nome</th><th>Dosagem</th><th>Lote</th><th>Nome Comercial</th></tr></thead><tbody><tr><td><content ID="immunization0"/>
+                    0
+                  </td><td><content ID="immunization0_initialDate"/>
+                    2012/12/21
+                  </td><td><content ID="immunization0_code"/>
+                    BCG
+                  </td><td><content ID="immunization0_name"/>
+                    Vacina contra a tuberculose
+                  </td><td><content ID="immunization0_dosage"/>
+                    999
+                  </td><td><content ID="immunization0_lot"/>
+                    111053g
+                  </td><td><content ID="immunization0_comercialCode"/>
+                    DESC
+                  </td></tr></tbody></table></text>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+              <id root="2.25.186399386734446672753941805862774223779" extension="112959"/>
+              <code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+              <text><reference value="#immunization0"/></text>
+              <statusCode code="completed"/>
+              <effectiveTime value="20121221"/>
+              <routeCode codeSystem="2.16.840.1.113883.5.112" codeSystemName="HL7 RouteOfAdministration"/>
+              <doseQuantity>
+                <low value="999"/>
+                <high value="999"/>
+              </doseQuantity>
+              <consumable typeCode="CSM">
+                <manufacturedProduct classCode="MANU">
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                    <code code="BCG" displayName="Vacina contra a tuberculose">
+                      <originalText>DESC</originalText>
+                    </code>
+                    <lotNumberText>111053g</lotNumberText>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+              <entryRelationship typeCode="REFR" inversionInd="false">
+                <supply classCode="SPLY" moodCode="INT">
+                  <templateId root="2.16.840.1.113883.10.20.1.34"/>
+                  <subject typeCode="SBJ">
+                    <relatedSubject nullFlavor="NI"/>
+                  </subject>
+                  <author>
+                    <functionCode nullFlavor="NA" displayName="ENFERMEIRO"/>
+                    <time value="20121221000000.0000+0000"/>
+                    <assignedAuthor>
+                      <id root="2.16.840.1.113883.19.5" extension="3655"/>
+                      <assignedPerson>
+                        <name nullFlavor="NI"/>
+                      </assignedPerson>
+                      <representedOrganization>
+                        <id root="2.25.10478646919059168967356346707661368528" extension="1135301"/>
+                        <name>LEÇA DA PALMEIRA</name>
+                        <addr><country>PT</country><city nullFlavor="NI"/><postalCode nullFlavor="NI"/><streetAddressLine nullFlavor="NI"/><state nullFlavor="NI"/></addr>
+                      </representedOrganization>
+                    </assignedAuthor>
+                  </author>
+                </supply>
+              </entryRelationship>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section moodCode="EVN">
+          <templateId root="2.16.840.1.113883.10.20.1.11"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+          <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem list"/>
+          <title>Historial de Doenças</title>
+          <text><table><thead><tr><th>#</th><th>Classificação</th><th>Código</th><th>Descrição</th><th>Data Início</th><th>Data Fim</th></tr></thead><tbody><tr><td><content ID="problem0"/>
+                    0
+                  </td><td><content ID="problem0_classificationCode"/>
+                    ICD-9CM
+                  </td><td><content ID="problem0_code"/>
+                    401
+                  </td><td><content ID="problem0_description"/>
+                    HIPERTENSAO ESSENCIAL
+                  </td><td><content ID="problem0_initialDate"/>
+                    2013/03/08
+                  </td><td><content ID="problem0_finalDate"/>
+                    --
+                  </td></tr></tbody></table></text>
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id root="2.25.337765066648056106035445668833281113668" extension="68011797"/>
+              <code nullFlavor="NA" code="NA"/>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="20130308"/>
+                <high nullFlavor="NA"/>
+              </effectiveTime>
+              <entryRelationship typeCode="SUBJ" inversionInd="false">
+                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id root="2.25.176750913715858643444438162280108634361"/>
+                  <code code="57041-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Histórico do utente e diagnósticos"/>
+                  <text><reference value="#problem0"/></text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low nullFlavor="NA"/>
+                    <high nullFlavor="NA"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="401" codeSystem="2.16.840.1.113883.6.2" codeSystemName="ICD-9CM" displayName="HIPERTENSAO ESSENCIAL"/>
+                  <entryRelationship typeCode="REFR" inversionInd="false">
+                    <supply classCode="SPLY" moodCode="INT">
+                      <templateId root="2.16.840.1.113883.10.20.1.34"/>
+                      <subject typeCode="SBJ">
+                        <relatedSubject nullFlavor="NI"/>
+                      </subject>
+                      <author>
+                        <functionCode nullFlavor="NA" displayName="ASSISTENTE/CLINICA GERAL"/>
+                        <time value="20130308"/>
+                        <assignedAuthor>
+                          <id root="2.16.840.1.113883.19.5" extension="44771"/>
+                          <assignedPerson>
+                            <name><family>GOMES</family><given>PAULA</given></name>
+                          </assignedPerson>
+                          <representedOrganization>
+                            <id root="2.25.240984577449653916773450195048092882979" extension="1135301"/>
+                            <name>USF INFESTA</name>
+                            <addr><country>PT</country><city nullFlavor="NI"/><postalCode nullFlavor="NI"/><streetAddressLine nullFlavor="NI"/><state nullFlavor="NI"/></addr>
+                          </representedOrganization>
+                        </assignedAuthor>
+                      </author>
+                    </supply>
+                  </entryRelationship>
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <act classCode="ACT" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.1.40"/>
+                      <id root="2.25.65460727751035171321194130493387296690"/>
+                      <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+                      <text>BCRE</text>
+                      <statusCode code="completed"/>
+                    </act>
+                  </entryRelationship>
+                  <entryRelationship typeCode="REFR" inversionInd="false">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.1.57"/>
+                      <templateId root="2.16.840.1.113883.10.20.1.50"/>
+                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
+                      <statusCode code="completed"/>
+                      <effectiveTime>
+                        <low value="20130308"/>
+                        <high value="20130308"/>
+                      </effectiveTime>
+                      <value xsi:type="CE" code="S" displayName="ACTIVE"/>
+                    </observation>
+                  </entryRelationship>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section moodCode="EVN">
+          <templateId root="2.16.840.1.113883.10.20.1.12"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+          <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of procedures"/>
+          <title>Intervenções Cirúrgicas</title>
+          <text><table><thead><tr><th>#</th><th>Classificação</th><th>Código</th><th>Descrição</th><th>Data Início</th><th>Data Fim</th></tr></thead><tbody><tr><td><content ID="surgery0"/>
+                    0
+                  </td><td><content ID="surgery0_classificationCode"/>
+                    ICD-9CM
+                  </td><td><content ID="surgery0_code"/>
+                    863
+                  </td><td><content ID="surgery0_description"/>
+                    EXCISAO OU DESTRUICAO LOCAL. LESAO OU TEC.PELE E TEC.S/CUT.
+                    NCOP
+                  </td><td><content ID="surgery0_initialDate"/>
+                    2012/12/20
+                  </td><td><content ID="surgery0_finalDate"/>
+                    --
+                  </td></tr></tbody></table></text>
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <id root="2.25.228659653006954411101419525986926246653" extension="1213787"/>
+              <code nullFlavor="NA" code="NA"/>
+              <text><reference value="#surgery0"/></text>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="20121220"/>
+                <high nullFlavor="NA"/>
+              </effectiveTime>
+              <entryRelationship typeCode="SUBJ" inversionInd="true">
+                <observation classCode="ALRT" moodCode="DEF">
+                  <templateId root="2.16.840.1.113883.10.20.1.29"/>
+                  <id root="f52f87ed-3724-44ee-a269-5fc03ed5e4cd"/>
+                  <code code="863" codeSystem="2.16.840.1.113883.6.2" codeSystemName="ICD-9CM" displayName="EXCISAO OU DESTRUICAO LOCAL. LESAO OU TEC.PELE E TEC.S/CUT. NCOP"/>
+                  <entryRelationship typeCode="REFR" inversionInd="false">
+                    <supply classCode="SPLY" moodCode="INT">
+                      <templateId root="2.16.840.1.113883.10.20.1.34"/>
+                      <subject typeCode="SBJ">
+                        <relatedSubject nullFlavor="NI"/>
+                      </subject>
+                      <author>
+                        <functionCode nullFlavor="NA" displayName="ADMINISTRATIVO"/>
+                        <time value="20121220"/>
+                        <assignedAuthor>
+                          <id root="2.16.840.1.113883.19.5" extension="42"/>
+                          <assignedPerson>
+                            <name nullFlavor="NI"/>
+                          </assignedPerson>
+                          <representedOrganization>
+                            <id root="2.25.164470010588120295436783073625497954038" extension="1137103"/>
+                            <name>UNIDADE LOCAL DE SAUDE DE MATOSINHOS,EPE</name>
+                            <addr><country>PT</country><city nullFlavor="NI"/><postalCode nullFlavor="NI"/><streetAddressLine nullFlavor="NI"/><state nullFlavor="NI"/></addr>
+                          </representedOrganization>
+                        </assignedAuthor>
+                      </author>
+                    </supply>
+                  </entryRelationship>
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <act classCode="ACT" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.1.40"/>
+                      <id root="2.25.121454241550228359836095804994235293455"/>
+                      <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+                      <text nullFlavor="NA"/>
+                      <statusCode code="completed"/>
+                    </act>
+                  </entryRelationship>
+                </observation>
+              </entryRelationship>
+            </procedure>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section moodCode="EVN">
+          <templateId root="2.16.840.1.113883.10.20.1.7"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4" assigningAuthorityName="epSOS"/>
+          <code code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medical device use"/>
+          <title>Dispositivos Médicos e Implantes</title>
+          <text><content ID="nomedicalequipment">Não existem dispositivos médicos.</content></text>
+          <entry>
+            <supply nullFlavor="NA" classCode="SPLY" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5"/>
+              <effectiveTime nullFlavor="NA"/>
+              <participant typeCode="DEV">
+                <participantRole classCode="MANU">
+                  <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                    <code nullFlavor="NA"/>
+                  </playingDevice>
+                </participantRole>
+              </participant>
+            </supply>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

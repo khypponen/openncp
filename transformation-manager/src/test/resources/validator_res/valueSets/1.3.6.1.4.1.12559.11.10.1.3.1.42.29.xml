@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSActCode" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.29" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="ALC" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Alternative Level of Care"/>
+			<Concept code="ALC" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Alternative Level of Care (ActEncounter)"/>
+			<Concept code="AMB" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="ambulatory"/>
+			<Concept code="AMB" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="ambulatory (ActEncounter)"/>
+			<Concept code="CARD" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Cardiology"/>
+			<Concept code="CARD" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Cardiology (ActEncounter)"/>
+			<Concept code="CHR" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Chronic"/>
+			<Concept code="CHR" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Chronic (ActEncounter)"/>
+			<Concept code="DNTL" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Dental"/>
+			<Concept code="DNTL" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Dental (ActEncounter)"/>
+			<Concept code="DRGRHB" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Drug Rehab"/>
+			<Concept code="DRGRHB" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Drug Rehab (ActEncounter)"/>
+			<Concept code="EMER" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="emergency"/>
+			<Concept code="EMER" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="emergency (ActEncounter)"/>
+			<Concept code="FLD" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="field"/>
+			<Concept code="FLD" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="field (ActEncounter)"/>
+			<Concept code="GENRL" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="General"/>
+			<Concept code="GENRL" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="General (ActEncounter)"/>
+			<Concept code="HH" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="home health"/>
+			<Concept code="HH" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="home health (ActEncounter)"/>
+			<Concept code="MED" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Medical"/>
+			<Concept code="MED" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Medical (ActEncounter)"/>
+			<Concept code="OBS" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Obstetrics"/>
+			<Concept code="OBS" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Obstetrics (ActEncounter)"/>
+			<Concept code="ONC" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Oncology"/>
+			<Concept code="ONC" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Oncology (ActEncounter)"/>
+			<Concept code="PALL" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Palliative"/>
+			<Concept code="PALL" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Palliative (ActEncounter)"/>
+			<Concept code="PED" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Pediatrics"/>
+			<Concept code="PED" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Pediatrics (ActEncounter)"/>
+			<Concept code="PHAR" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Pharmaceutical"/>
+			<Concept code="PHAR" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Pharmaceutical (ActEncounter)"/>
+			<Concept code="PHYRHB" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Physical Rehab"/>
+			<Concept code="PHYRHB" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Physical Rehab (ActEncounter)"/>
+			<Concept code="PSYCH" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Psychiatric"/>
+			<Concept code="PSYCH" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Psychiatric (ActEncounter)"/>
+			<Concept code="SURG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Surgical"/>
+			<Concept code="SURG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Surgical (ActEncounter)"/>
+			<Concept code="VR" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="virtual"/>
+			<Concept code="VR" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="virtual (ActEncounter)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

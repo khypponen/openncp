@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>eu.europa.ec.joinup.ecc</groupId>
+        <artifactId>epsos-cdadisplaytool</artifactId>
+        <version>4.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>eu.europa.ec.joinup.ecc.epsos-cdadisplaytool</groupId>
+    <artifactId>epsos-xsltransformer</artifactId>
+    <url>http://maven.apache.org</url>
+    <name>xsltransformer</name>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
+    <developers>
+        <developer>
+            <id>k.karkaletsis@gnomon.com.gr</id>
+            <email>k.karkaletsis@gnomon.com.gr</email>
+            <name>Kostas Karkaletsis</name>
+            <organization>Gnomon</organization>
+            <organizationUrl>http://gnomon.com.gr</organizationUrl>
+        </developer>
+    </developers>
+    <inceptionYear>2012</inceptionYear>
+    <licenses>
+        <license>
+            <name>Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git:https://bitbucket.org/openncp/cda-display-tool.git</connection>
+        <tag>HEAD</tag>
+        <url>https://bitbucket.org/openncp/cda-display-tool</url>
+    </scm>
+    <issueManagement>
+        <system>JIRA</system>
+        <url>https://openncp.atlassian.net</url>
+    </issueManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <!-- Set version to 2.9 of maven-surefire-plugin because the execution
+            of tests fails by using an up-to-date version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <forkCount>3</forkCount>
+                    <reuseForks>true</reuseForks>
+                    <argLine>-Xmx1024m -XX:MaxPermSize=512m</argLine>
+                </configuration>
+            </plugin>
+            <!-- Set version to 2.6 of maven-resources-plugin because the filtering
+            fails with 2.7 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/classes/resources</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.shared</groupId>
+                <artifactId>maven-filtering</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

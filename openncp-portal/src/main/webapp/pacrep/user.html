@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-W3CDTD XHTML 1.0 TransitionalEN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<body>
+	
+	<f:view locale="#{facesContext.externalContext.requestLocale}" />
+	
+		<p:ajaxStatus style="width:16px;height:16px;" id="ajaxStatusPanel">
+		<f:facet name="start">
+			<h:graphicImage value="/images/loading.gif"
+				style="text-align:center;width:40px;height:40px;" />
+		</f:facet>
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
+	<BR />
+	
+	<h:form id="langform">
+	<!-- Select language of LTR -->
+ 	<p:panel header="#{msg['pac.select.language']}" style="width:100%">
+ 	
+ 		<h:outputText value="#{msg['pac.select.language.document']}" />  
+		 <p:selectOneMenu value="#{pacRepBean.ltrlang}">  
+               <f:selectItem itemLabel="#{msg['pac.select.language']}" itemValue="#{pacRepBean.ltrlang}" />  
+               <f:selectItems value="#{pacRepBean.ltrlanguages}" />  
+               <p:ajax update=":resultPanel"/>  
+         </p:selectOneMenu>
+	</p:panel>
+	</h:form>
+
+	<p:panel widgetVar="panelwv" closable="true" toggleable="true" id="resultPanel">
+	<h:form>
+	
+		<p:dataTable var="document" value="#{pacRepBean.patientDocuments}" 
+		emptyMessage="#{pacRepBean.queryDocumentsException}">
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['report.document.title']}" />
+				</f:facet>
+				<h:outputText value="#{document.title}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['report.document.description']}" />
+				</f:facet>
+				<h:outputText value="#{document.description}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['report.document.author.person']}" />
+				</f:facet>
+				<h:outputText value="#{document.author}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['report.document.creation.time']}" />
+				</f:facet>
+				<h:outputText value="#{document.creationDate}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['report.document.healthcare.facility.type.code']}" />
+				</f:facet>
+				<h:outputText value="#{document.healthcareFacility}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="" />
+				</f:facet>
+				
+ 				<h:outputLink id="docid" value="/epsosportal/cdaServlet?lang=#{pacRepBean.ltrlang}&amp;uuid=#{document.uuid}&amp;repositoryid=#{document.repositoryId}&amp;hcid=#{document.hcid}&amp;docType=ps"
+ 						target="_blank" rendered="#{document.formatCode.value=='urn:epSOS:ps:ps:2010'}">
+ 						<p:graphicImage value="/images/html-icon.png" style="text-align:center;width:30px;height:30px;" />
+    			</h:outputLink>  
+
+ 				<h:outputLink id="docxmlid" value="/epsosportal/cdaServlet?lang=#{pacRepBean.ltrlang}&amp;uuid=#{document.uuid}&amp;repositoryid=#{document.repositoryId}&amp;hcid=#{document.hcid}&amp;docType=ps&amp;exportType=xml"
+ 						target="_blank" rendered="#{document.formatCode.value=='urn:epSOS:ps:ps:2010'}">
+ 						<p:graphicImage value="/images/xml_icon.png" style="text-align:center;width:30px;height:30px;" />
+    			</h:outputLink>  
+
+
+                        <h:outputLink value="/epsosportal/ccdServlet?lang=#{pacRepBean.ltrlang}&amp;uuid=#{document.uuid}&amp;repositoryid=#{document.repositoryId}&amp;hcid=#{document.hcid}&amp;docType=ps&amp;exportType=xml"
+                                    target="_blank" rendered="#{document.formatCode.value.toLowerCase()=='urn:epsos:ps:ps:2010'}">
+                                <p:graphicImage value="/images/CCD.png" style="text-align:center;height:50px;" />
+    			</h:outputLink>                                                                                    
+                            
+                            
+                        <h:outputLink value="/epsosportal/cdaServlet?lang=#{pacRepBean.ltrlang}&amp;uuid=#{document.uuid}&amp;repositoryid=#{document.repositoryId}&amp;hcid=#{document.hcid}&amp;docType=ps&amp;exportType=pdf"
+ 						target="_blank" rendered="#{document.formatCode.value=='urn:epSOS:ps:ps:2010'}">
+ 						<p:graphicImage value="/images/pdf_icon.png" style="text-align:center;width:30px;height:30px;" />
+    			</h:outputLink>     			
+    			
+                        <h:outputLink value="/epsosportal/pdfServlet?uuid=#{document.uuid}&amp;repositoryid=#{document.repositoryId}&amp;hcid=#{document.hcid}&amp;docType=ps"
+ 					target="_blank" rendered="#{document.formatCode.value=='urn:ihe:iti:xds-sd:pdf:2008'}">
+ 					<p:graphicImage value="/images/pdf_icon.png" style="text-align:center;width:30px;height:30px;" />  
+    			</h:outputLink>  
+                            
+			</p:column>
+		</p:dataTable>
+		
+	</h:form>
+	</p:panel>
+</body>
+</html>

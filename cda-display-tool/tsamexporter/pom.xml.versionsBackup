@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+  
+    <parent>
+        <groupId>eu.europa.ec.joinup.ecc</groupId>
+        <artifactId>epsos-cdadisplaytool</artifactId>
+        <version>3.1.0</version>
+    </parent>
+  
+    <groupId>eu.europa.ec.joinup.ecc.epsos-cdadisplaytool</groupId>
+    <artifactId>epsos-tsamexporter</artifactId>
+    <version>3.1.0</version>
+    <url>http://maven.apache.org</url>
+    <name>tsamexporter</name>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.23</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+        	<groupId>postgresql</groupId>
+        	<artifactId>postgresql</artifactId>
+        	<version>9.1-901.jdbc4</version>
+        	<scope>runtime</scope>
+        </dependency>
+        <dependency>
+        	<groupId>commons-lang</groupId>
+        	<artifactId>commons-lang</artifactId>
+        	<version>2.6</version>
+        </dependency>
+    </dependencies>
+  
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>epsos.ccd.gnomon.tsam.XMLExporter</mainClass>
+                            <packageName>epsos.ccd.gnomon.tsam</packageName>
+                        </manifest>
+                        <manifestEntries>
+                            <mode>development</mode>
+                            <url>${project.url}</url>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+     
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>epsos.ccd.gnomon.tsam.XMLExporter</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+     
+        </plugins>
+    </build>
+
+    <developers>
+        <developer>
+            <id>k.karkaletsis@gnomon.com.gr</id>
+            <email>k.karkaletsis@gnomon.com.gr</email>
+            <name>Kostas Karkaletsis</name>
+            <organization>Gnomon</organization>
+            <organizationUrl>http://gnomon.com.gr</organizationUrl>
+        </developer>
+    </developers>
+    <inceptionYear>2012</inceptionYear>
+    <licenses>
+        <license>
+            <name>Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    <scm>
+        <connection>git clone code.google.com/p/epsos-common-components.epsos-common-components.cdadisplaytool/ 
+        </connection>
+        <url>http://code.google.com/p/epsos-common-components/source/browse?repo=cdadisplaytool</url>
+    </scm>
+    <issueManagement>
+        <system>JIRA</system>
+    </issueManagement>
+</project>

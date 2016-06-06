@@ -1,0 +1,10 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.5" displayName="StatusOfFunctionalStatusCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="55561003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Active"/>
+			<Concept code="90734009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chronic"/>
+			<Concept code="14803004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Temporary"/>
+			<Concept code="370996005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Resolved"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

@@ -1,0 +1,342 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ==================
+       Artifact
+    ================== -->
+    <parent>
+        <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+        <artifactId>epsos-ncp-server</artifactId>
+        <version>4.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
+    <artifactId>epsos-ws-server</artifactId>
+
+    <name>EpSOS CC Web Services (IHE XCPD, XCA, XDR)</name>
+    <packaging>war</packaging>
+    <organization>
+        <name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
+        <url>www.srdc.com.tr</url>
+    </organization>
+
+    <build>
+        <finalName>epsos-ws-server</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>schema/*.*</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <!-- Maven compiler plugin -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-testCompile</id>
+                        <phase>test-compile</phase>
+                        <configuration>
+                            <testExcludes>
+                                <exclude>**/*IT.java</exclude>
+                            </testExcludes>
+                        </configuration>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>target</directory>
+                            <includes>
+                                <include>${project.build.finalName}.aar</include>
+                            </includes>
+                            <targetPath>WEB-INF/services</targetPath>
+                        </resource>
+                    </webResources>
+                    <packagingExcludes>
+                        WEB-INF/lib/antlr-2.7.6.jar,
+                        WEB-INF/lib/commons-codec-1.2.jar,
+                        WEB-INF/lib/commons-codec-1.3.jar,
+                        WEB-INF/lib/commons-collections-2.1.1.jar,
+                        WEB-INF/lib/commons-io-1.3.1.jar,
+                        WEB-INF/lib/jaxen-1.1.1.jar,
+                        WEB-INF/lib/log4j-1.2.15.jar,
+                        WEB-INF/lib/org.apache.xerces-xercesImpl-2.10.0.jar,
+                        WEB-INF/lib/xalan-2.7.0.jar,
+                        WEB-INF/lib/xmlParserAPIs-2.0.2.jar,
+                        WEB-INF/lib/xml-apis-2.10.0.jar
+                    </packagingExcludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
+            <artifactId>epsos-xcpd-ws-server-impl</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
+            <artifactId>epsos-xca-ws-server-impl</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j-over-slf4j</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
+            <artifactId>epsos-xdr-ws-server-impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-webapp</artifactId>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xalan</groupId>
+            <artifactId>xalan</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-defaultpolicymanager</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+            <artifactId>epsos-ncp-pt-utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+            <artifactId>epsos-integration-test</artifactId>
+        </dependency>
+    </dependencies>
+
+
+
+    <properties>
+        <tomcat.home>${CATALINA_HOME}/</tomcat.home>
+        <tomcat.username>username</tomcat.username>
+        <tomcat.password>password</tomcat.password>
+        <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
+        <skip.deploy>true</skip.deploy>
+    </properties>
+
+
+    <profiles>
+        <profile>
+            <!-- This profile bundles the mock National Connector implementation -->
+            <id>national-connector-mock-impl</id>
+            <dependencies>
+                <dependency>
+                    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
+                    <artifactId>epsos-nc-mock-it</artifactId>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
+            <!-- This profile bundles the real National Connector implementation -->
+            <id>national-connector-impl</id>
+            <dependencies>
+                <dependency>
+                    <groupId>${national-connector-impl.groupId}</groupId>
+                    <artifactId>${national-connector-impl.artifactId}</artifactId>
+                    <version>${national-connector-impl.version}</version>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
+            <!-- This profile bundles the real National Connector implementation for Luxembourg -->
+            <id>national-connector-lu-impl</id>
+            <dependencies>
+                <dependency>
+                    <groupId>gi9.ccd.gnomon.epsos</groupId>
+                    <artifactId>epsos-nc-lu</artifactId>
+                    <version>1.0.0-SNAPSHOT</version>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <!-- Integreation Tests -->
+        <profile>
+            <id>integration-tests</id>
+
+            <dependencies>
+                <dependency>
+                    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
+                    <artifactId>epsos-nc-mock-it</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-client</groupId>
+                    <artifactId>epsos-xcpd-ws-client</artifactId>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+                    <artifactId>epsos-ncp-pt-client-consumer</artifactId>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+                    <artifactId>epsos-integration-test</artifactId>
+                </dependency>
+            </dependencies>
+
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <!-- Maven compiler plugin -->
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>iTest-testCompile</id>
+                                <phase>test-compile</phase>
+                                <configuration>
+                                    <testIncludes>
+                                        <include>**/*IT*</include>
+                                    </testIncludes>
+                                </configuration>
+                                <goals>
+                                    <goal>testCompile</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.codehaus.cargo</groupId>
+                        <artifactId>cargo-maven2-plugin</artifactId>
+                        <version>1.2.3</version>
+
+                        <configuration>
+                            <container>
+                                <containerId>tomcat7x</containerId>
+                                <type>remote</type>
+                            </container>
+                            <configuration>
+                                <type>runtime</type>
+                                <properties>
+                                    <cargo.hostname>${remote.hostname}</cargo.hostname>
+                                    <cargo.servlet.port>${remote.port}</cargo.servlet.port>
+                                    <cargo.remote.username>${remote.user}</cargo.remote.username>
+                                    <cargo.remote.password>${remote.pass}</cargo.remote.password>
+                                </properties>
+                            </configuration>
+                        </configuration>
+
+                        <executions>
+                            <execution>
+                                <id>deploy-cargo</id>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <!--<goal>deploy</goal>-->
+                                    <goal>redeploy</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>undeploy-cargo</id>
+                                <phase>post-integration-test</phase>
+                                <goals>
+                                    <goal>undeploy</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- failsafe -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <version>2.12.2</version>
+                        <configuration>
+                            <encoding>${project.build.sourceEncoding}</encoding>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>iTest</id>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>iVerify</id>
+                                <goals>
+                                    <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+
+        </profile>
+    </profiles>
+</project>

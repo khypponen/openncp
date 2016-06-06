@@ -1,0 +1,19 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.18" displayName="SocialHistoryTypeCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="125680007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Marital Status"/>
+			<Concept code="160538000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Religion"/>
+			<Concept code="364699009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ethnicity"/>
+			<Concept code="103579009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Race"/>
+			<Concept code="61909002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Language"/>
+			<Concept code="229819007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Smoking"/>
+			<Concept code="256235009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Exercise"/>
+			<Concept code="364393001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diet"/>
+			<Concept code="364703007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Employment"/>
+			<Concept code="425400000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Toxic Exposure"/>
+			<Concept code="160573003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="ETOH Use"/>
+			<Concept code="363908000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Drug Use"/>
+			<Concept code="228272008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Other Social History"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

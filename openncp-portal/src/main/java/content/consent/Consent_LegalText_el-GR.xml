@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Consent>
+	<LegalText>What is epSOS Patient Consent for?
+epSOS does not establish new or specific conditions for collection, processing and storage of  health data. 
+epSOS project sets up the mechanism to make health data accessible to health care professionals when the 
+patient requires medical service abroad. Thus, epSOS patient's consent is a pre-requisite, not for collecting 
+medical data for the purposes of providing medical care in the Point of Care (PoC) by a health care 
+professional in a foreign Country, but for the purpose of accessing already existing data in the country of 
+residence.
+
+Principles for epSOS Patient Consent
+The patient should provide the consent for creating his/her epSOS Patient Summary in the residence country 
+for access to the summary by a Health Care Provider from abroad (i.e. from epSOS foreign countries).  
+The epSOS consent will be a two-step process where the patient gives consent to the creation of the PS in 
+her/his home country and is duly informed about potential access to his record by a Health Care Provider in a 
+foreign country; as a second step consent to access the Patient Summary in the foreign country s verified in 
+this country once the nature of access and purpose is known to the patient. Securing that consent is freely 
+given, specific and informed about it..
+
+I. The consent will be freely given.  
+* The patient has a free choice to participate in the epSOS LSP without any subsequent restrictions or 
+  negative influence to receiving all necessary medical treatment or any other medical services if s/he 
+  refuses the participation. 
+* Patient may withdraw his/her consent at any time.
+II. The patient is informed, 
+* How Date will be used: on your rights and any other circumstances of the processing of your data for the 
+  epSOS LSP purposes. 
+* consent is free without any consequences if the consent will not be given.
+* the collection and further processing of your health data solely for providing medical services is a subject 
+  of legislation of a country in which medical care is provided.
+	</LegalText>
+</Consent>

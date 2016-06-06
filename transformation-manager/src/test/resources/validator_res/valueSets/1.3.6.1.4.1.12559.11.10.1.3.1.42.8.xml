@@ -1,0 +1,190 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSMedicalDevices" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.8" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="102303004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vascular prosthesis"/>
+			<Concept code="102303004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vascular prosthesis, device (physical object)"/>
+			<Concept code="102303004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vascular prosthesis, device"/>
+			<Concept code="102314001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Gianturco coil"/>
+			<Concept code="102314001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Embolization coil, device (physical object)"/>
+			<Concept code="118374007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Silicone implant"/>
+			<Concept code="118374007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Silicone implant, device (physical object)"/>
+			<Concept code="118374007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Silicone implant, device"/>
+			<Concept code="118382007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Neuropacemaker device"/>
+			<Concept code="118382007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Neuropacemaker device (physical object)"/>
+			<Concept code="118425005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ventricular reservoir"/>
+			<Concept code="118425005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cerebral ventricular reservoir device (physical object)"/>
+			<Concept code="118425005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cerebral ventricular reservoir device"/>
+			<Concept code="17107009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Mitral valve prosthesis, device (physical object)"/>
+			<Concept code="17107009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Mitral valve prosthesis, device"/>
+			<Concept code="17107009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Mitral valve prosthesis"/>
+			<Concept code="17107009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prosthetic mitral valve"/>
+			<Concept code="2282003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Breast prosthesis, device"/>
+			<Concept code="2282003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Mammary prosthesis"/>
+			<Concept code="2282003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Breast prosthesis forTest2"/>
+			<Concept code="2282003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Breast implant"/>
+			<Concept code="2282003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Breast prosthesis, device (physical object)"/>
+			<Concept code="24073000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Artificial cardiac valve prosthesis, device"/>
+			<Concept code="24073000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Artificial cardiac valve prosthesis, device (physical object)"/>
+			<Concept code="24073000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Mechanical cardiac valve prosthesis"/>
+			<Concept code="24073000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Artificial cardiac valve prosthesis"/>
+			<Concept code="257275005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Spinal cage"/>
+			<Concept code="257275005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cage"/>
+			<Concept code="257275005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Spinal cage (physical object)"/>
+			<Concept code="257282009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Non-valved conduit"/>
+			<Concept code="257282009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Non-valved conduit (physical object)"/>
+			<Concept code="257283004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Valved cardiac conduit"/>
+			<Concept code="257283004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Valved conduit"/>
+			<Concept code="257283004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Valved cardiac conduit (physical object)"/>
+			<Concept code="257343005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Xenograft cardiac valve"/>
+			<Concept code="257343005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Xenograft cardiac valve (physical object)"/>
+			<Concept code="257366006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="JJ-stent"/>
+			<Concept code="257366006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="JJ-stent (physical object)"/>
+			<Concept code="258593008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ventricular shunt"/>
+			<Concept code="258593008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cerebrospinal fluid shunt"/>
+			<Concept code="258593008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cerebroventricular shunt"/>
+			<Concept code="258593008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ventricular shunt (physical object)"/>
+			<Concept code="264824009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiac conduit"/>
+			<Concept code="264824009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiac conduit (physical object)"/>
+			<Concept code="271003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Plate"/>
+			<Concept code="271003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone plate"/>
+			<Concept code="271003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone plate, device (physical object)"/>
+			<Concept code="271003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone plate, device"/>
+			<Concept code="272245008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Maxillofacial prosthesis/appliance"/>
+			<Concept code="272245008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Maxillofacial prosthesis/appliance (physical object)"/>
+			<Concept code="286558002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ureteric stent"/>
+			<Concept code="286558002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ureteric stent (physical object)"/>
+			<Concept code="286576009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Urethral stent"/>
+			<Concept code="286576009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Urethral stent (physical object)"/>
+			<Concept code="303277008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fallopian tube prosthesis"/>
+			<Concept code="303277008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fallopian tube prosthesis (physical object)"/>
+			<Concept code="303490004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiovascular implant"/>
+			<Concept code="303490004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiovascular implant (physical object)"/>
+			<Concept code="303497001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Urogenital implant"/>
+			<Concept code="303497001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Urogenital implant (physical object)"/>
+			<Concept code="303499003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Gastrointestinal implant"/>
+			<Concept code="303499003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Gastrointestinal implant (physical object)"/>
+			<Concept code="303500007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Auditory implant"/>
+			<Concept code="303500007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Auditory implant (physical object)"/>
+			<Concept code="303503009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Musculoskeletal implant"/>
+			<Concept code="303503009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Musculoskeletal implant (physical object)"/>
+			<Concept code="303515008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Orbital implant"/>
+			<Concept code="303515008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Orbital implant (physical object)"/>
+			<Concept code="303533002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hip joint implant"/>
+			<Concept code="303533002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hip joint implant (physical object)"/>
+			<Concept code="303608005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ophthalmological implant"/>
+			<Concept code="303608005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ophthalmological implant (physical object)"/>
+			<Concept code="303608005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Eye implant"/>
+			<Concept code="303617005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vascular implant"/>
+			<Concept code="303617005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vascular implant (physical object)"/>
+			<Concept code="303618000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Nervous system implant"/>
+			<Concept code="303618000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Neurological implant"/>
+			<Concept code="303618000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Nervous system implant (physical object)"/>
+			<Concept code="303619008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiac implant"/>
+			<Concept code="303619008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiac implant (physical object)"/>
+			<Concept code="303726000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Shoulder joint prosthesis"/>
+			<Concept code="303726000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Shoulder joint prosthesis (physical object)"/>
+			<Concept code="303947005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rod fixation system"/>
+			<Concept code="303947005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rod fixation system (physical object)"/>
+			<Concept code="304070008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Body wall implant"/>
+			<Concept code="304070008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Body wall implant (physical object)"/>
+			<Concept code="304120007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Total hip replacement prosthesis"/>
+			<Concept code="304120007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Total hip replacement prosthesis (physical object)"/>
+			<Concept code="304121006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Femoral head prosthesis"/>
+			<Concept code="304121006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Femoral head prosthesis (physical object)"/>
+			<Concept code="304124003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Shoulder joint implant"/>
+			<Concept code="304124003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Shoulder joint implant (physical object)"/>
+			<Concept code="304184000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ankle joint implant"/>
+			<Concept code="304184000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ankle joint implant (physical object)"/>
+			<Concept code="304185004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Foot joint implant"/>
+			<Concept code="304185004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Foot joint implant (physical object)"/>
+			<Concept code="304186003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hand joint implant"/>
+			<Concept code="304186003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hand joint implant (physical object)"/>
+			<Concept code="31031000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Internal fixator"/>
+			<Concept code="31031000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Orthopedic internal fixation system, device (physical object)"/>
+			<Concept code="31031000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Orthopedic internal fixation system, device"/>
+			<Concept code="314523008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Joint implant"/>
+			<Concept code="314523008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Joint implant (physical object)"/>
+			<Concept code="360041000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Implanted drug delivery system"/>
+			<Concept code="360041000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Implanted drug delivery system (physical object)"/>
+			<Concept code="360046005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Arterial stent"/>
+			<Concept code="360046005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Arterial stent (physical object)"/>
+			<Concept code="360058005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intraventricular pump"/>
+			<Concept code="360058005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intraventricular pump (physical object)"/>
+			<Concept code="360070009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Laryngeal implant"/>
+			<Concept code="360070009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Laryngeal implant (physical object)"/>
+			<Concept code="360100007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tracheal stent"/>
+			<Concept code="360100007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tracheal stent (physical object)"/>
+			<Concept code="360117000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Gastric bubble"/>
+			<Concept code="360117000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Gastric bubble (physical object)"/>
+			<Concept code="360123005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Biliary stent"/>
+			<Concept code="360123005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Biliary stent (physical object)"/>
+			<Concept code="360145006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone prosthesis"/>
+			<Concept code="360145006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone prosthesis (physical object)"/>
+			<Concept code="360329004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dacron graft"/>
+			<Concept code="360329004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dacron graft (physical object)"/>
+			<Concept code="413766009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Carotid stent (physical object)"/>
+			<Concept code="413766009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Carotid stent"/>
+			<Concept code="414580007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Laryngeal keel (physical object)"/>
+			<Concept code="414580007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Laryngeal keel"/>
+			<Concept code="421168009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Eye sphere implant (physical object)"/>
+			<Concept code="421168009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Eye sphere implant"/>
+			<Concept code="423449009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulmonary valve prosthesis, device (physical object)"/>
+			<Concept code="423449009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulmonary valve prosthesis, device"/>
+			<Concept code="423449009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulmonary valve prosthesis"/>
+			<Concept code="424921004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Permanent cardiac pacemaker, device (physical object)"/>
+			<Concept code="424921004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Permanent cardiac pacemaker, device"/>
+			<Concept code="429798007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Artificial vertebral disc (physical object)"/>
+			<Concept code="429798007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Artificial vertebral disc"/>
+			<Concept code="429798007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Artificial vertebral disk"/>
+			<Concept code="43252007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Artificial cochlea implant"/>
+			<Concept code="43252007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cochlear prosthesis, device"/>
+			<Concept code="43252007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prothèse cochléaire"/>
+			<Concept code="43252007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cochlear prosthesis, device (physical object)"/>
+			<Concept code="43252007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cochlear implant"/>
+			<Concept code="43252007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cochlear prosthesis"/>
+			<Concept code="45633005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Peritoneal dialyzer, device (physical object)"/>
+			<Concept code="45633005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Peritoneal dialyzer, device"/>
+			<Concept code="63112008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone wire, device (physical object)"/>
+			<Concept code="63112008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone wire, device"/>
+			<Concept code="63112008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wires"/>
+			<Concept code="63112008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone wire"/>
+			<Concept code="63112008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wire"/>
+			<Concept code="63289001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone nail"/>
+			<Concept code="63289001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Surgical metal nail, device"/>
+			<Concept code="63289001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Metal nail"/>
+			<Concept code="63289001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Metal nail, device"/>
+			<Concept code="63289001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Surgical nail"/>
+			<Concept code="63289001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Surgical metal nail, device (physical object)"/>
+			<Concept code="67270000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hip prosthesis"/>
+			<Concept code="67270000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hip joint prosthesis"/>
+			<Concept code="67270000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hip prosthesis, device"/>
+			<Concept code="67270000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hip prosthesis, device (physical object)"/>
+			<Concept code="68183006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone screw, device (physical object)"/>
+			<Concept code="68183006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone screw"/>
+			<Concept code="68183006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone screw, device"/>
+			<Concept code="68183006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Screw"/>
+			<Concept code="72506001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Implantable defibrillator"/>
+			<Concept code="72506001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Implantable defibrillator, device (physical object)"/>
+			<Concept code="72506001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Implantable defibrillator, device"/>
+			<Concept code="74444006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="AL - Artificial limb"/>
+			<Concept code="74444006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Limb prosthesis, device (physical object)"/>
+			<Concept code="74444006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Limb prosthesis, device"/>
+			<Concept code="74444006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Limb prosthesis"/>
+			<Concept code="77444004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone pin, device (physical object)"/>
+			<Concept code="77444004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pin"/>
+			<Concept code="77444004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone pin"/>
+			<Concept code="77444004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pins"/>
+			<Concept code="77444004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone pin, device"/>
+			<Concept code="77777004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone staple"/>
+			<Concept code="77777004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone staple, device (physical object)"/>
+			<Concept code="77777004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone staple, device"/>
+			<Concept code="84683006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Aortic valve prosthesis"/>
+			<Concept code="84683006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Aortic valve prosthesis, device (physical object)"/>
+			<Concept code="84683006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Aortic valve prosthesis, device"/>
+			<Concept code="90134004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Metal periosteal implant"/>
+			<Concept code="90134004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Metal periosteal implant, device (physical object)"/>
+			<Concept code="90134004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Metal periosteal implant, device"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

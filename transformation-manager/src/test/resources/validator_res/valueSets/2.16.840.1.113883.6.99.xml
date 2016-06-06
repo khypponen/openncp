@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+    <ValueSet id="2.16.840.1.113883.6.99" version="2002" displayName="ISO639-1">
+        <ConceptList xml:lang="en-US">
+            <Concept displayName="Afar" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="aa"/>
+            <Concept displayName="Abkhazian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ab"/>
+            <Concept displayName="Avestan" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ae"/>
+            <Concept displayName="Afrikaans" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="af"/>
+            <Concept displayName="Akan" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ak"/>
+            <Concept displayName="Amharic" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="am"/>
+            <Concept displayName="Aragonese" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="an"/>
+            <Concept displayName="Arabic" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ar"/>
+            <Concept displayName="Assamese" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="as"/>
+            <Concept displayName="Avaric" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="av"/>
+            <Concept displayName="Aymara" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ay"/>
+            <Concept displayName="Azerbaijani" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="az"/>
+            <Concept displayName="Bashkir" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ba"/>
+            <Concept displayName="Belarusian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="be"/>
+            <Concept displayName="Bulgarian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="bg"/>
+            <Concept displayName="Bihari languages" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="bh"/>
+            <Concept displayName="Bislama" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="bi"/>
+            <Concept displayName="Bambara" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="bm"/>
+            <Concept displayName="Bengali" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="bn"/>
+            <Concept displayName="Tibetan" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="bo"/>
+            <Concept displayName="Breton" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="br"/>
+            <Concept displayName="Bosnian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="bs"/>
+            <Concept displayName="Catalan" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ca"/>
+            <Concept displayName="Chechen" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ce"/>
+            <Concept displayName="Chamorro" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ch"/>
+            <Concept displayName="Corsican" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="co"/>
+            <Concept displayName="Cree" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="cr"/>
+            <Concept displayName="Czech" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="cs"/>
+            <Concept displayName="Church Slavic" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="cu"/>
+            <Concept displayName="Chuvash" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="cv"/>
+            <Concept displayName="Welsh" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="cy"/>
+            <Concept displayName="Danish" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="da"/>
+            <Concept displayName="German" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="de"/>
+            <Concept displayName="Dhivehi" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="dv"/>
+            <Concept displayName="Dzongkha" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="dz"/>
+            <Concept displayName="Ewe" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ee"/>
+            <Concept displayName="Modern Greek (1453-)" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="el"/>
+            <Concept displayName="English" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="en"/>
+            <Concept displayName="Esperanto" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="eo"/>
+            <Concept displayName="Spanish" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="es"/>
+            <Concept displayName="Estonian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="et"/>
+            <Concept displayName="Basque" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="eu"/>
+            <Concept displayName="Persian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="fa"/>
+            <Concept displayName="Fulah" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ff"/>
+            <Concept displayName="Finnish" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="fi"/>
+            <Concept displayName="Fijian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="fj"/>
+            <Concept displayName="Faroese" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="fo"/>
+            <Concept displayName="French" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="fr"/>
+            <Concept displayName="Western Frisian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="fy"/>
+            <Concept displayName="Irish" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ga"/>
+            <Concept displayName="Scottish Gaelic" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="gd"/>
+            <Concept displayName="Galician" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="gl"/>
+            <Concept displayName="Guarani" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="gn"/>
+            <Concept displayName="Gujarati" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="gu"/>
+            <Concept displayName="Manx" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="gv"/>
+            <Concept displayName="Hausa" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ha"/>
+            <Concept displayName="Hebrew" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="he"/>
+            <Concept displayName="Hindi" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="hi"/>
+            <Concept displayName="Hiri Motu" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ho"/>
+            <Concept displayName="Croatian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="hr"/>
+            <Concept displayName="Haitian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ht"/>
+            <Concept displayName="Hungarian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="hu"/>
+            <Concept displayName="Armenian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="hy"/>
+            <Concept displayName="Herero" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="hz"/>
+            <Concept displayName="Interlingua (International Auxiliary Language Association)" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ia"/>
+            <Concept displayName="Indonesian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="id"/>
+            <Concept displayName="Interlingue" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ie"/>
+            <Concept displayName="Igbo" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ig"/>
+            <Concept displayName="Sichuan Yi" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ii"/>
+            <Concept displayName="Inupiaq" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ik"/>
+            <Concept displayName="Ido" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="io"/>
+            <Concept displayName="Icelandic" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="is"/>
+            <Concept displayName="Italian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="it"/>
+            <Concept displayName="Inuktitut" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="iu"/>
+            <Concept displayName="Japanese" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ja"/>
+            <Concept displayName="Javanese" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="jv"/>
+            <Concept displayName="Georgian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ka"/>
+            <Concept displayName="Kongo" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="kg"/>
+            <Concept displayName="Kikuyu" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ki"/>
+            <Concept displayName="Kuanyama" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="kj"/>
+            <Concept displayName="Kazakh" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="kk"/>
+            <Concept displayName="Kalaallisut" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="kl"/>
+            <Concept displayName="Central Khmer" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="km"/>
+            <Concept displayName="Kannada" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="kn"/>
+            <Concept displayName="Korean" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ko"/>
+            <Concept displayName="Kanuri" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="kr"/>
+            <Concept displayName="Kashmiri" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ks"/>
+            <Concept displayName="Kurdish" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ku"/>
+            <Concept displayName="Komi" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="kv"/>
+            <Concept displayName="Cornish" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="kw"/>
+            <Concept displayName="Kirghiz" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ky"/>
+            <Concept displayName="Latin" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="la"/>
+            <Concept displayName="Luxembourgish" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="lb"/>
+            <Concept displayName="Ganda" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="lg"/>
+            <Concept displayName="Limburgan" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="li"/>
+            <Concept displayName="Lingala" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ln"/>
+            <Concept displayName="Lao" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="lo"/>
+            <Concept displayName="Lithuanian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="lt"/>
+            <Concept displayName="Luba-Katanga" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="lu"/>
+            <Concept displayName="Latvian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="lv"/>
+            <Concept displayName="Malagasy" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="mg"/>
+            <Concept displayName="Marshallese" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="mh"/>
+            <Concept displayName="Maori" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="mi"/>
+            <Concept displayName="Macedonian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="mk"/>
+            <Concept displayName="Malayalam" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ml"/>
+            <Concept displayName="Mongolian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="mn"/>
+            <Concept displayName="Marathi" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="mr"/>
+            <Concept displayName="Malay (macrolanguage)" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ms"/>
+            <Concept displayName="Maltese" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="mt"/>
+            <Concept displayName="Burmese" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="my"/>
+            <Concept displayName="Nauru" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="na"/>
+            <Concept displayName="Norwegian Bokmål" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="nb"/>
+            <Concept displayName="North Ndebele" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="nd"/>
+            <Concept displayName="Nepali (macrolanguage)" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ne"/>
+            <Concept displayName="Ndonga" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ng"/>
+            <Concept displayName="Dutch" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="nl"/>
+            <Concept displayName="Norwegian Nynorsk" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="nn"/>
+            <Concept displayName="Norwegian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="no"/>
+            <Concept displayName="South Ndebele" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="nr"/>
+            <Concept displayName="Navajo" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="nv"/>
+            <Concept displayName="Nyanja" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ny"/>
+            <Concept displayName="Occitan (post 1500)" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="oc"/>
+            <Concept displayName="Ojibwa" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="oj"/>
+            <Concept displayName="Oromo" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="om"/>
+            <Concept displayName="Oriya (macrolanguage)" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="or"/>
+            <Concept displayName="Ossetian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="os"/>
+            <Concept displayName="Panjabi" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="pa"/>
+            <Concept displayName="Pali" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="pi"/>
+            <Concept displayName="Polish" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="pl"/>
+            <Concept displayName="Pushto" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ps"/>
+            <Concept displayName="Portuguese" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="pt"/>
+            <Concept displayName="Quechua" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="qu"/>
+            <Concept displayName="Romansh" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="rm"/>
+            <Concept displayName="Rundi" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="rn"/>
+            <Concept displayName="Romanian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ro"/>
+            <Concept displayName="Russian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ru"/>
+            <Concept displayName="Kinyarwanda" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="rw"/>
+            <Concept displayName="Sanskrit" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="sa"/>
+            <Concept displayName="Sardinian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="sc"/>
+            <Concept displayName="Sindhi" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="sd"/>
+            <Concept displayName="Northern Sami" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="se"/>
+            <Concept displayName="Sango" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="sg"/>
+            <Concept displayName="Serbo-Croatian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="sh"/>
+            <Concept displayName="Sinhala" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="si"/>
+            <Concept displayName="Slovak" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="sk"/>
+            <Concept displayName="Slovenian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="sl"/>
+            <Concept displayName="Samoan" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="sm"/>
+            <Concept displayName="Shona" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="sn"/>
+            <Concept displayName="Somali" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="so"/>
+            <Concept displayName="Albanian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="sq"/>
+            <Concept displayName="Serbian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="sr"/>
+            <Concept displayName="Swati" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ss"/>
+            <Concept displayName="Southern Sotho" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="st"/>
+            <Concept displayName="Sundanese" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="su"/>
+            <Concept displayName="Swedish" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="sv"/>
+            <Concept displayName="Swahili (macrolanguage)" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="sw"/>
+            <Concept displayName="Tamil" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ta"/>
+            <Concept displayName="Telugu" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="te"/>
+            <Concept displayName="Tajik" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="tg"/>
+            <Concept displayName="Thai" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="th"/>
+            <Concept displayName="Tigrinya" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ti"/>
+            <Concept displayName="Turkmen" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="tk"/>
+            <Concept displayName="Tagalog" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="tl"/>
+            <Concept displayName="Tswana" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="tn"/>
+            <Concept displayName="Tonga (Tonga Islands)" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="to"/>
+            <Concept displayName="Turkish" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="tr"/>
+            <Concept displayName="Tsonga" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ts"/>
+            <Concept displayName="Tatar" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="tt"/>
+            <Concept displayName="Twi" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="tw"/>
+            <Concept displayName="Tahitian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ty"/>
+            <Concept displayName="Uighur" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ug"/>
+            <Concept displayName="Ukrainian" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="uk"/>
+            <Concept displayName="Urdu" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ur"/>
+            <Concept displayName="Uzbek" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="uz"/>
+            <Concept displayName="Venda" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="ve"/>
+            <Concept displayName="Vietnamese" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="vi"/>
+            <Concept displayName="Volapük" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="vo"/>
+            <Concept displayName="Walloon" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="wa"/>
+            <Concept displayName="Wolof" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="wo"/>
+            <Concept displayName="Xhosa" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="xh"/>
+            <Concept displayName="Yiddish" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="yi"/>
+            <Concept displayName="Yoruba" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="yo"/>
+            <Concept displayName="Zhuang" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="za"/>
+            <Concept displayName="Chinese" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="zh"/>
+            <Concept displayName="Zulu" codeSystemName="ISO-639-1" codeSystem="2.16.840.1.113883.6.99" code="zu"/>
+        </ConceptList>
+    </ValueSet>
+</RetrieveValueSetResponse>

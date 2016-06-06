@@ -1,0 +1,10 @@
+# Ignore all target directories
+target/
+db/
+log/
+schemaTemp/
+tmresult.xml
+pivot*.xml
+/.settings/
+/.classpath
+/.project

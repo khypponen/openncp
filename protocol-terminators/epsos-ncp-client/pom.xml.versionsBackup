@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!-- ==================
+       Artifact
+    ================== -->
+    <parent>
+        <groupId>eu.europa.ec.joinup.ecc</groupId>
+        <artifactId>epsos-protocol-terminators</artifactId>
+        <version>3.2.1</version>
+    </parent>
+
+    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+    <artifactId>epsos-ncp-client</artifactId>
+
+    <packaging>pom</packaging>
+    <name>EpSOS CC Web Services Client</name>
+
+    <modules>
+        <module>epsos-xcpd-ws-client</module>
+        <module>epsos-xca-ws-client</module>
+        <module>epsos-xdr-ws-client</module>
+        <module>epsos-client-connector</module>
+    </modules>
+
+    <description>
+        This project is a simple POM project.
+        It was created with the only purpose of aggregate all IHE client projects "under the same roof".
+    </description>
+</project>

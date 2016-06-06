@@ -1,0 +1,49 @@
+<saml2:Assertion xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" ID="_4cb0c86a-e727-495f-a815-66f1a873b7c0" IssueInstant="2010-08-12T11:51:04.416Z" Version="2.0">
+    <saml2:Issuer NameQualifier="urn:epsos:wp34:assertions">issuer</saml2:Issuer>
+    <saml2:Subject>
+        <saml2:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">massi</saml2:NameID>
+        <saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:sender-vouches"/>
+    </saml2:Subject>
+    <saml2:Conditions NotBefore="2010-10-12T11:51:04.416Z" NotOnOrAfter="2012-11-12T12:41:04.416Z">
+        <saml2:AudienceRestriction>
+            <saml2:Audience>a</saml2:Audience>
+        </saml2:AudienceRestriction>
+    </saml2:Conditions>
+    <saml2:AuthnStatement AuthnInstant="2010-10-11T11:51:04.416Z" SessionNotOnOrAfter="2012-10-31T12:41:04.416Z">
+        <saml2:AuthnContext>
+            <saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:Kerberos</saml2:AuthnContextClassRef>
+        </saml2:AuthnContext>
+    </saml2:AuthnStatement>
+    <saml2:AttributeStatement>
+        <saml2:Attribute FriendlyName="XSPA Subject" Name="urn:oasis:names:tc:xacml:1.0:subject:subject-id" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaSubject</saml2:AttributeValue>
+        </saml2:Attribute>
+        <saml2:Attribute FriendlyName="XSPA Role" Name="urn:oasis:names:tc:xacml:2.0:subject:role" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">pharmacist</saml2:AttributeValue>
+        </saml2:Attribute>
+        <saml2:Attribute FriendlyName="Hl7 Permissions" Name="urn:oasis:names:tc:xspa:1.0:subject:hl7:permission" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">PRD-006</saml2:AttributeValue>
+            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">PRD-004</saml2:AttributeValue>
+            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">PRD-010</saml2:AttributeValue>
+            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">PPD-046</saml2:AttributeValue>
+        </saml2:Attribute>
+        <saml2:Attribute FriendlyName="HITSP Clinical Speciality" Name="urn:epsos:names:wp3.4:subject:clinical-speciality" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaSpeciality</saml2:AttributeValue>
+        </saml2:Attribute>
+        <saml2:Attribute FriendlyName="XSPA Organization" Name="urn:oasis:names:tc:xspa:1.0:subject:organization" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaOrganization</saml2:AttributeValue>
+        </saml2:Attribute>
+        <saml2:Attribute FriendlyName="XSPA Organization ID" Name="urn:oasis:names:tc:xspa:1.0:subject:organization-id" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyURI">xspaOrganizationId</saml2:AttributeValue>
+        </saml2:Attribute>
+        <saml2:Attribute FriendlyName="epSOS Healthcare Facility Type" Name="urn:epsos:names:wp3.4:subject:healthcare-facility-type" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaType</saml2:AttributeValue>
+        </saml2:Attribute>
+        <saml2:Attribute FriendlyName="XSPA Purpose of Use" Name="urn:oasis:names:tc:xspa:1.0:subject:purposeofuse" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">TREATMENT</saml2:AttributeValue>
+        </saml2:Attribute>
+        <saml2:Attribute FriendlyName="XSPA Locality" Name="urn:oasis:names:tc:xspa:1.0:environment:locality" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaLocality</saml2:AttributeValue>
+        </saml2:Attribute>
+    </saml2:AttributeStatement>
+</saml2:Assertion>

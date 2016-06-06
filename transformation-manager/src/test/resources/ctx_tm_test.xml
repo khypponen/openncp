@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd	">
+
+	<!--
+		allow the user of properties from application.properties throughout
+		this configuration file(s)
+	-->
+	<bean id="placeholderConfig"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:tsam.properties</value>			
+				<value>classpath:tm.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="tmConfiguration" class="epsos.ccd.posam.tm.util.TMConfiguration"
+		factory-method="getInstance">
+		<property name="patientSummaryCode">
+			<value>${tm.documenttype.patientsummary}</value>
+		</property>
+		<property name="ePrescriptionCode">
+			<value>${tm.documenttype.eprescription}</value>
+		</property>
+		<property name="eDispensationCode">
+			<value>${tm.documenttype.edispensation}</value>
+		</property>
+		<property name="hcerCode">
+			<value>${tm.documenttype.hcer}</value>
+		</property>
+		<property name="mroCode">
+			<value>${tm.documenttype.mro}</value>
+		</property>
+		
+		<property name="schemaFilePath">
+			<value>${tm.schemafilepath}</value>
+		</property>
+
+		<property name="patientSummarySchematronFriendlyPath">
+			<value>${tm.schematron.path.patientsummary.friendly}</value>
+		</property>
+		<property name="ePrescriptionSchematronFriendlyPath">
+			<value>${tm.schematron.path.eprescription.friendly}</value>
+		</property>
+		<property name="eDispensationSchematronFriendlyPath">
+			<value>${tm.schematron.path.edispensation.friendly}</value>
+		</property>
+
+		<property name="patientSummarySchematronPivotPath">
+			<value>${tm.schematron.path.patientsummary.pivot}</value>
+		</property>
+		<property name="ePrescriptionSchematronPivotPath">
+			<value>${tm.schematron.path.eprescription.pivot}</value>
+		</property>
+		<property name="eDispensationSchematronPivotPath">
+			<value>${tm.schematron.path.edispensation.pivot}</value>
+		</property>
+
+		<property name="scannedDocumentFriendlyPath">
+			<value>${tm.schematron.path.scannedDocument.friendly}</value>
+		</property>
+		<property name="scannedDocumentPivotPath">
+			<value>${tm.schematron.path.scannedDocument.pivot}</value>
+		</property>
+
+		<property name="schematronValidationEnabled">
+			<value>${tm.schematron.validation.enabled}</value>
+		</property>
+		<property name="schemaValidationEnabled">
+			<value>${tm.schema.validation.enabled}</value>
+		</property>
+		<property name="auditTrailEnabled">
+			<value>${tm.audittrail.enabled}</value>
+		</property>
+		<property name="auditTrailTransactionNumber">
+			<value>${tm.audittrail.transactionnumber}</value>
+		</property>
+		<property name="auditTrailTargetIP">
+			<value>${tm.audittrail.targetip}</value>
+		</property>
+		<property name="auditTrailFacility">
+			<value>${tm.audittrail.facility}</value>
+		</property>
+		<property name="auditTrailSeverity">
+			<value>${tm.audittrail.severity}</value>
+		</property>
+		<property name="modelValidationEnabled">
+			<value>${tm.mda.validation.enabled}</value>
+		</property>
+		<property name="mdaCdaXsdPath">
+			<value>${tm.mda.cda_xsd_path}</value>
+		</property>
+		<property name="mdaCdaEpsosXsdPath">
+			<value>${tm.mda.cda_epsos_xsd_path}</value>
+		</property>
+		<property name="mdaCdaXslTransformerPath">
+			<value>${tm.mda.cda_xsl_transformer_path}</value>
+		</property>
+		<property name="mdaValuesetRepositoryPath">
+			<value>${tm.mda.value_set_repository_path}</value>
+		</property>
+		
+		
+	</bean>
+
+	<bean id="codedElementList" class="epsos.ccd.posam.tm.util.CodedElementList"
+		factory-method="getInstance">
+		<property name="configurableElementIdentification">
+			<value>${tm.codedelementlist.enabled}</value>
+		</property>
+		<property name="codedElementListPath">
+			<value>${tm.codedelementlist.path}</value>
+		</property>
+	</bean>
+	
+	<bean id="schematronValidator" class="epsos.ccd.posam.tm.util.SchematronValidator"
+		factory-method="getInstance">
+		<property name="xslDirectoryPath">
+			<value>${tm.schematron.path.xsldir}</value>
+		</property>
+		<property name="config" ref="tmConfiguration"/>
+	</bean>
+	
+	<bean id="mdaValidator" class="epsos.ccd.posam.tm.util.ModelBasedValidator"
+		factory-method="getInstance">
+		<property name="config" ref="tmConfiguration"/>
+	</bean>
+	
+
+	<!-- ::: Service ::: -->
+	<import resource="ctx_tsam_test.xml" />
+
+	<bean class="epsos.ccd.posam.tm.service.impl.TransformationService" 
+		id="epsos.ccd.posam.tm.service.ITransformationService">
+		<property name="tsamApi"
+			ref="epsos.ccd.posam.tsam.service.ITerminologyService" />
+		<property name="config" ref="tmConfiguration"/>
+	</bean>
+</beans>

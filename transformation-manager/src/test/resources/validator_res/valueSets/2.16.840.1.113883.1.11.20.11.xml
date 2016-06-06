@@ -1,0 +1,14 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.11" displayName="PlanOfCareTypeCode">
+		<ConceptList xml:lang="en-US">
+             		 <Concept code="223452003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Reminder"/>
+                        <Concept code="71388002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Order"/>
+                        <Concept code="416118004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prescription"/>
+			<Concept code="386336002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Request For Authorization"/>
+			<Concept code="386336002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Authorization"/>
+			<Concept code="3457005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Referral"/>
+			<Concept code="11429006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Request For Consultation"/>
+			<Concept code="391157003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Treatment Recommendation"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

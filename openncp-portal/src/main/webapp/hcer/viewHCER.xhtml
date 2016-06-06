@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-W3CDTD XHTML 1.0 TransitionalEN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jsp/jstl/core" 
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<body>
+
+	<f:view locale="#{facesContext.externalContext.requestLocale}" />
+        
+	<h:form id="hcerForm">
+            <p:dataTable var="doc1" value="#{hcerBean.docs}" id="datatable1_inc" >
+                <p:column headerText="Created"><h:outputText value="#{doc1.creationDate}" /></p:column>
+                <p:column headerText="Country"><h:outputText value="#{doc1.fromcountry}" /></p:column>
+                <p:column headerText="Author"><h:outputText value="#{doc1.creator}" /></p:column>
+                <p:column headerText="Patient"><h:outputText value="#{doc1.patient}" /></p:column>
+                <p:column>
+                    <h:outputLink value="/epsosportal/HCERServlet?uuid=#{doc1.docid}&amp;exporttype=html" target="_blank" >
+ 					<p:graphicImage value="/images/HTML-Icon.gif" style="text-align:center;width:30px;height:30px;" />  
+                    </h:outputLink>  
+                    <h:outputLink value="/epsosportal/HCERServlet?uuid=#{doc1.docid}&amp;exporttype=xml" target="_blank" >
+ 					<p:graphicImage value="/images/xml_icon.png" style="text-align:center;width:30px;height:30px;" />  
+                    </h:outputLink>                      
+                </p:column>
+            </p:dataTable>
+	</h:form>
+</body>
+</html>

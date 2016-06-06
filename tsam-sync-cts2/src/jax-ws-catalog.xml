@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/TermServer/Search?wsdl" uri="wsdl/localhost_8080/TermServer/Search.wsdl"/>
+    <system systemId="http://localhost:8080/TermServer/Search?xsd=1" uri="wsdl/localhost_8080/TermServer/Search.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/TermServer/Search?xsd=2" uri="wsdl/localhost_8080/TermServer/Search.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/TermServer/Authorization?wsdl" uri="wsdl/localhost_8080/TermServer/Authorization.wsdl"/>
+    <system systemId="http://localhost:8080/TermServer/Authorization?xsd=1" uri="wsdl/localhost_8080/TermServer/Authorization.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/TermServer/Authoring?wsdl" uri="wsdl/localhost_8080/TermServer/Authoring.wsdl"/>
+    <system systemId="http://localhost:8080/TermServer/Authoring?xsd=1" uri="wsdl/localhost_8080/TermServer/Authoring.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/TermServer/Authoring?xsd=2" uri="wsdl/localhost_8080/TermServer/Authoring.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/TermServer/Administration?wsdl" uri="wsdl/localhost_8080/TermServer/Administration.wsdl"/>
+    <system systemId="http://localhost:8080/TermServer/Administration?xsd=1" uri="wsdl/localhost_8080/TermServer/Administration.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/TermServer/Administration?xsd=2" uri="wsdl/localhost_8080/TermServer/Administration.xsd_2.xsd"/>
+</catalog>

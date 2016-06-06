@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSResolutionOutcome" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.30" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="161045001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Disability - severe"/>
+			<Concept code="161045001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Disability - severe (finding)"/>
+			<Concept code="161901003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chronic sick"/>
+			<Concept code="161901003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chronic sick (finding)"/>
+			<Concept code="162467007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Free of symptoms"/>
+			<Concept code="162467007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Free of symptoms (situation)"/>
+			<Concept code="21134002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Disability"/>
+			<Concept code="21134002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Disability (finding)"/>
+			<Concept code="271593001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Moribund"/>
+			<Concept code="271593001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Moribund (finding)"/>
+			<Concept code="313386006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Patient in remission"/>
+			<Concept code="313386006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Patient in remission (finding)"/>
+			<Concept code="419099009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dead (finding)"/>
+			<Concept code="419099009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dead"/>
+			<Concept code="419099009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Died"/>
+			<Concept code="419099009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Has died"/>
+			<Concept code="81323004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Normal general body function"/>
+			<Concept code="81323004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Normal patient condition"/>
+			<Concept code="81323004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Alive and well"/>
+			<Concept code="81323004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Normal general body function (finding)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

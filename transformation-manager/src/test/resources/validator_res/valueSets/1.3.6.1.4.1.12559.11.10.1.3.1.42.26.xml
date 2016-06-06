@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSSections" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.26" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medication use"/>
+			<Concept code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medication use (epsos loinc)"/>
+			<Concept code="10162-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of pregnancies "/>
+			<Concept code="10162-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of pregnancies  (epsos loinc)"/>
+			<Concept code="10164-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of present illness"/>
+			<Concept code="10164-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of present illness (epsos loinc)"/>
+			<Concept code="11348-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of past illness"/>
+			<Concept code="11348-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of past illness (epsos loinc)"/>
+			<Concept code="11369-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of immunization"/>
+			<Concept code="11369-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of immunization (epsos loinc)"/>
+			<Concept code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem list (epsos loinc)"/>
+			<Concept code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem list"/>
+			<Concept code="18776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Plan of treatment"/>
+			<Concept code="18776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Plan of treatment (epsos loinc)"/>
+			<Concept code="29554-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Procedures (epsos loinc)"/>
+			<Concept code="29554-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Procedures"/>
+			<Concept code="29762-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Social history"/>
+			<Concept code="29762-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Social history (epsos loinc)"/>
+			<Concept code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests/laboratory data"/>
+			<Concept code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests/laboratory data (epsos loinc)"/>
+			<Concept code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medical device use"/>
+			<Concept code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medical device use (epsos loinc)"/>
+			<Concept code="47420-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Functional status assessment"/>
+			<Concept code="47420-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Functional status assessment (epsos loinc)"/>
+			<Concept code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Procedures "/>
+			<Concept code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Procedures  (epsos loinc)"/>
+			<Concept code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
+			<Concept code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts (epsos loinc)"/>
+			<Concept code="57828-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Prescriptions"/>
+			<Concept code="57828-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Prescriptions (epsos loinc)"/>
+			<Concept code="60590-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Medication dispensed"/>
+			<Concept code="60590-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Medication dispensed (epsos loinc)"/>
+			<Concept code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Physical findings"/>
+			<Concept code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Physical findings (epsos loinc)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

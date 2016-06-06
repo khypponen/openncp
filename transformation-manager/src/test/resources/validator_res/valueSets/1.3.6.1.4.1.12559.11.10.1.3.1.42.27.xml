@@ -1,0 +1,357 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSCodedElements" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.27" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient Information"/>
+			<Concept code="1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient Information (epsos codes)"/>
+			<Concept code="1.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Family Name/Surname"/>
+			<Concept code="1.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Family Name/Surname (epsos codes)"/>
+			<Concept code="1.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Given Name"/>
+			<Concept code="1.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Given Name (epsos codes)"/>
+			<Concept code="1.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Gender"/>
+			<Concept code="1.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Gender (epsos codes)"/>
+			<Concept code="1.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Birth Date"/>
+			<Concept code="1.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Birth Date (epsos codes)"/>
+			<Concept code="10" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prefered Legal Organization to contact"/>
+			<Concept code="10" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prefered Legal Organization to contact (epsos codes)"/>
+			<Concept code="10.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Name"/>
+			<Concept code="10.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Name (epsos codes)"/>
+			<Concept code="11" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Legal Organization Address"/>
+			<Concept code="11" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Legal Organization Address (epsos codes)"/>
+			<Concept code="11.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Street"/>
+			<Concept code="11.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Street (epsos codes)"/>
+			<Concept code="11.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Number of Street"/>
+			<Concept code="11.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Number of Street (epsos codes)"/>
+			<Concept code="11.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="City"/>
+			<Concept code="11.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="City (epsos codes)"/>
+			<Concept code="11.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Postal Code"/>
+			<Concept code="11.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Postal Code (epsos codes)"/>
+			<Concept code="11.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="State or Province"/>
+			<Concept code="11.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="State or Province (epsos codes)"/>
+			<Concept code="12" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Legal Organization Telecommunication"/>
+			<Concept code="12" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Legal Organization Telecommunication (epsos codes)"/>
+			<Concept code="12.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Telephone"/>
+			<Concept code="12.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Telephone (epsos codes)"/>
+			<Concept code="12.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="E-mail"/>
+			<Concept code="12.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="E-mail (epsos codes)"/>
+			<Concept code="12.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Country"/>
+			<Concept code="12.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Country (epsos codes)"/>
+			<Concept code="13" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prefered HCP to contact"/>
+			<Concept code="13" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prefered HCP to contact (epsos codes)"/>
+			<Concept code="13.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Family Name/Surname"/>
+			<Concept code="13.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Family Name/Surname (epsos codes)"/>
+			<Concept code="13.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Given Name"/>
+			<Concept code="13.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Given Name (epsos codes)"/>
+			<Concept code="14" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prefered HCP's Address"/>
+			<Concept code="14" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prefered HCP's Address (epsos codes)"/>
+			<Concept code="14.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Street"/>
+			<Concept code="14.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Street (epsos codes)"/>
+			<Concept code="14.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Number of Street"/>
+			<Concept code="14.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Number of Street (epsos codes)"/>
+			<Concept code="14.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="City"/>
+			<Concept code="14.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="City (epsos codes)"/>
+			<Concept code="14.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Postal Code"/>
+			<Concept code="14.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Postal Code (epsos codes)"/>
+			<Concept code="14.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="State or Province"/>
+			<Concept code="14.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="State or Province (epsos codes)"/>
+			<Concept code="14.6" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Country"/>
+			<Concept code="14.6" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Country (epsos codes)"/>
+			<Concept code="15" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prefered HCP's Telecommunication"/>
+			<Concept code="15" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prefered HCP's Telecommunication (epsos codes)"/>
+			<Concept code="15.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Telephone"/>
+			<Concept code="15.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Telephone (epsos codes)"/>
+			<Concept code="15.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="E-mail"/>
+			<Concept code="15.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="E-mail (epsos codes)"/>
+			<Concept code="16" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="HCP Identification"/>
+			<Concept code="16" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="HCP Identification (epsos codes)"/>
+			<Concept code="16.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Family Name/Surname"/>
+			<Concept code="16.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Family Name/Surname (epsos codes)"/>
+			<Concept code="16.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Given Name"/>
+			<Concept code="16.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Given Name (epsos codes)"/>
+			<Concept code="16.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="HCP ID"/>
+			<Concept code="16.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="HCP ID (epsos codes)"/>
+			<Concept code="16.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Profession"/>
+			<Concept code="16.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Profession (epsos codes)"/>
+			<Concept code="16.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Specialty"/>
+			<Concept code="16.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Specialty (epsos codes)"/>
+			<Concept code="17" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="HCP Telecommunication"/>
+			<Concept code="17" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="HCP Telecommunication (epsos codes)"/>
+			<Concept code="17.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Telephone"/>
+			<Concept code="17.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Telephone (epsos codes)"/>
+			<Concept code="17.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="E-mail"/>
+			<Concept code="17.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="E-mail (epsos codes)"/>
+			<Concept code="18" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Healthcare Facility"/>
+			<Concept code="18" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Healthcare Facility (epsos codes)"/>
+			<Concept code="18.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Name"/>
+			<Concept code="18.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Name (epsos codes)"/>
+			<Concept code="18.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Identifier"/>
+			<Concept code="18.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Identifier (epsos codes)"/>
+			<Concept code="19" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Healthcare Facility’s Address"/>
+			<Concept code="19" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Healthcare Facility’s Address (epsos codes)"/>
+			<Concept code="19.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Street"/>
+			<Concept code="19.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Street (epsos codes)"/>
+			<Concept code="19.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="City"/>
+			<Concept code="19.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="City (epsos codes)"/>
+			<Concept code="19.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="State or Province"/>
+			<Concept code="19.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="State or Province (epsos codes)"/>
+			<Concept code="19.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Postal  Code"/>
+			<Concept code="19.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Postal  Code (epsos codes)"/>
+			<Concept code="19.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Country"/>
+			<Concept code="19.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Country (epsos codes)"/>
+			<Concept code="2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient Identifiers"/>
+			<Concept code="2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient Identifiers (epsos codes)"/>
+			<Concept code="2.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Regional/National Health ID"/>
+			<Concept code="2.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Regional/National Health ID (epsos codes)"/>
+			<Concept code="2.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Social/Insurance Number"/>
+			<Concept code="2.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Social/Insurance Number (epsos codes)"/>
+			<Concept code="20" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Healthcare Facility's Telecom"/>
+			<Concept code="20" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Healthcare Facility's Telecom (epsos codes)"/>
+			<Concept code="20.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Telephone"/>
+			<Concept code="20.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Telephone (epsos codes)"/>
+			<Concept code="20.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="E-mail"/>
+			<Concept code="20.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="E-mail (epsos codes)"/>
+			<Concept code="21" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Document ID"/>
+			<Concept code="21" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Document ID (epsos codes)"/>
+			<Concept code="22" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Document creation date"/>
+			<Concept code="22" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Document creation date (epsos codes)"/>
+			<Concept code="23" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date of last update of document"/>
+			<Concept code="23" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date of last update of document (epsos codes)"/>
+			<Concept code="25" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Document Origin"/>
+			<Concept code="25" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Document Origin (epsos codes)"/>
+			<Concept code="26" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Author organization"/>
+			<Concept code="26" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Author organization (epsos codes)"/>
+			<Concept code="27" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Clinical document code"/>
+			<Concept code="27" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Clinical document code (epsos codes)"/>
+			<Concept code="28" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Clinial document title"/>
+			<Concept code="28" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Clinial document title (epsos codes)"/>
+			<Concept code="29" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Confidentiality code"/>
+			<Concept code="29" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Confidentiality code (epsos codes)"/>
+			<Concept code="3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient Address"/>
+			<Concept code="3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient Address (epsos codes)"/>
+			<Concept code="3.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Street"/>
+			<Concept code="3.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Street (epsos codes)"/>
+			<Concept code="3.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Number of Street"/>
+			<Concept code="3.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Number of Street (epsos codes)"/>
+			<Concept code="3.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="City"/>
+			<Concept code="3.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="City (epsos codes)"/>
+			<Concept code="3.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Postal Code"/>
+			<Concept code="3.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Postal Code (epsos codes)"/>
+			<Concept code="3.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="State or Province"/>
+			<Concept code="3.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="State or Province (epsos codes)"/>
+			<Concept code="3.6" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Country"/>
+			<Concept code="3.6" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Country (epsos codes)"/>
+			<Concept code="30" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prescription"/>
+			<Concept code="30" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prescription (epsos codes)"/>
+			<Concept code="31" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prescription ID"/>
+			<Concept code="31" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prescription ID (epsos codes)"/>
+			<Concept code="32" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prescriber"/>
+			<Concept code="32" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prescriber (epsos codes)"/>
+			<Concept code="33" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prescriber Credentialing Organization"/>
+			<Concept code="33" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prescriber Credentialing Organization (epsos codes)"/>
+			<Concept code="33.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Name"/>
+			<Concept code="33.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Name (epsos codes)"/>
+			<Concept code="33.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Identifier"/>
+			<Concept code="33.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Identifier (epsos codes)"/>
+			<Concept code="34" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prescription Item ID"/>
+			<Concept code="34" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Prescription Item ID (epsos codes)"/>
+			<Concept code="35" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Dispensation"/>
+			<Concept code="35" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Dispensation (epsos codes)"/>
+			<Concept code="36" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Dispenser"/>
+			<Concept code="36" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Dispenser (epsos codes)"/>
+			<Concept code="37" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Dispenser Credentialing Organization"/>
+			<Concept code="37" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Dispenser Credentialing Organization (epsos codes)"/>
+			<Concept code="37.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Name"/>
+			<Concept code="37.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Name (epsos codes)"/>
+			<Concept code="37.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Identifier"/>
+			<Concept code="37.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Identifier (epsos codes)"/>
+			<Concept code="38" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Dispensed Medicine ID"/>
+			<Concept code="38" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Dispensed Medicine ID (epsos codes)"/>
+			<Concept code="39" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Country A Cross-border/regional/national medicinal product code"/>
+			<Concept code="39" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Country A Cross-border/regional/national medicinal product code (epsos codes)"/>
+			<Concept code="4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient’s Telecommunication"/>
+			<Concept code="4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient’s Telecommunication (epsos codes)"/>
+			<Concept code="4.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Telephone"/>
+			<Concept code="4.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Telephone (epsos codes)"/>
+			<Concept code="4.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="E-mail"/>
+			<Concept code="4.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="E-mail (epsos codes)"/>
+			<Concept code="40" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="National medicinal product code"/>
+			<Concept code="40" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="National medicinal product code (epsos codes)"/>
+			<Concept code="41" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Brand Name"/>
+			<Concept code="41" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Brand Name (epsos codes)"/>
+			<Concept code="42" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Active ingredient"/>
+			<Concept code="42" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Active ingredient (epsos codes)"/>
+			<Concept code="43" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Strength of the medicinal product"/>
+			<Concept code="43" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Strength of the medicinal product (epsos codes)"/>
+			<Concept code="44" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Medicinal product package"/>
+			<Concept code="44" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Medicinal product package (epsos codes)"/>
+			<Concept code="45" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Pharmaceutical dose form"/>
+			<Concept code="45" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Pharmaceutical dose form (epsos codes)"/>
+			<Concept code="46" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Route of Administration"/>
+			<Concept code="46" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Route of Administration (epsos codes)"/>
+			<Concept code="47" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Number of packages"/>
+			<Concept code="47" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Number of packages (epsos codes)"/>
+			<Concept code="48" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Number of units per intake"/>
+			<Concept code="48" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Number of units per intake (epsos codes)"/>
+			<Concept code="49" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Frequency of intakes"/>
+			<Concept code="49" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Frequency of intakes (epsos codes)"/>
+			<Concept code="5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient's Preferred Language"/>
+			<Concept code="5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient's Preferred Language (epsos codes)"/>
+			<Concept code="50" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Duration of treament"/>
+			<Concept code="50" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Duration of treament (epsos codes)"/>
+			<Concept code="51" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date of onset of treatment"/>
+			<Concept code="51" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date of onset of treatment (epsos codes)"/>
+			<Concept code="52" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date of end of treatment"/>
+			<Concept code="52" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date of end of treatment (epsos codes)"/>
+			<Concept code="53" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Instructions to patient"/>
+			<Concept code="53" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Instructions to patient (epsos codes)"/>
+			<Concept code="54" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Advise to the dispenser"/>
+			<Concept code="54" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Advise to the dispenser (epsos codes)"/>
+			<Concept code="55" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Dose"/>
+			<Concept code="55" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Dose (epsos codes)"/>
+			<Concept code="56" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Posology"/>
+			<Concept code="56" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Posology (epsos codes)"/>
+			<Concept code="57" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Substitution"/>
+			<Concept code="57" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Substitution (epsos codes)"/>
+			<Concept code="58" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient Summary"/>
+			<Concept code="58" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient Summary (epsos codes)"/>
+			<Concept code="6" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient's Contact Information"/>
+			<Concept code="6" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient's Contact Information (epsos codes)"/>
+			<Concept code="6.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Family Name/Surname"/>
+			<Concept code="6.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Family Name/Surname (epsos codes)"/>
+			<Concept code="6.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Given Name"/>
+			<Concept code="6.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Given Name (epsos codes)"/>
+			<Concept code="60" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Allergies and Other Adverse Reactions"/>
+			<Concept code="60" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Allergies and Other Adverse Reactions (epsos codes)"/>
+			<Concept code="60.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Alergen"/>
+			<Concept code="60.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Alergen (epsos codes)"/>
+			<Concept code="60.1.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description"/>
+			<Concept code="60.1.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description (epsos codes)"/>
+			<Concept code="60.1.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code"/>
+			<Concept code="60.1.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code (epsos codes)"/>
+			<Concept code="60.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Allergy"/>
+			<Concept code="60.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Allergy (epsos codes)"/>
+			<Concept code="60.2.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description"/>
+			<Concept code="60.2.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description (epsos codes)"/>
+			<Concept code="60.2.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code"/>
+			<Concept code="60.2.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code (epsos codes)"/>
+			<Concept code="60.2.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Onset date"/>
+			<Concept code="60.2.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Onset date (epsos codes)"/>
+			<Concept code="61" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Medical Alerts Infromation (alerts not included in the allergies)"/>
+			<Concept code="61" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Medical Alerts Infromation (alerts not included in the allergies) (epsos codes)"/>
+			<Concept code="61.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description"/>
+			<Concept code="61.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description (epsos codes)"/>
+			<Concept code="61.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code"/>
+			<Concept code="61.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code (epsos codes)"/>
+			<Concept code="62" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="History of past illness and disorders"/>
+			<Concept code="62" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="History of past illness and disorders (epsos codes)"/>
+			<Concept code="62.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description"/>
+			<Concept code="62.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description (epsos codes)"/>
+			<Concept code="62.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code"/>
+			<Concept code="62.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code (epsos codes)"/>
+			<Concept code="62.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Onset Date"/>
+			<Concept code="62.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Onset Date (epsos codes)"/>
+			<Concept code="62.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="End Date"/>
+			<Concept code="62.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="End Date (epsos codes)"/>
+			<Concept code="62.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Resolution Circumstances"/>
+			<Concept code="62.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Resolution Circumstances (epsos codes)"/>
+			<Concept code="63" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Vaccinations"/>
+			<Concept code="63" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Vaccinations (epsos codes)"/>
+			<Concept code="63.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Brand Name"/>
+			<Concept code="63.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Brand Name (epsos codes)"/>
+			<Concept code="63.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description"/>
+			<Concept code="63.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description (epsos codes)"/>
+			<Concept code="63.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code"/>
+			<Concept code="63.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code (epsos codes)"/>
+			<Concept code="63.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date"/>
+			<Concept code="63.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date (epsos codes)"/>
+			<Concept code="64" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Surgical Procedures"/>
+			<Concept code="64" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Surgical Procedures (epsos codes)"/>
+			<Concept code="64.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description"/>
+			<Concept code="64.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description (epsos codes)"/>
+			<Concept code="64.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code"/>
+			<Concept code="64.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code (epsos codes)"/>
+			<Concept code="64.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date"/>
+			<Concept code="64.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date (epsos codes)"/>
+			<Concept code="65" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="List of Current Problems/Diagnosis"/>
+			<Concept code="65" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="List of Current Problems/Diagnosis (epsos codes)"/>
+			<Concept code="65.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description"/>
+			<Concept code="65.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description (epsos codes)"/>
+			<Concept code="65.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code"/>
+			<Concept code="65.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code (epsos codes)"/>
+			<Concept code="65.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Onset Time"/>
+			<Concept code="65.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Onset Time (epsos codes)"/>
+			<Concept code="66" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Medical Devices and Implants"/>
+			<Concept code="66" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Medical Devices and Implants (epsos codes)"/>
+			<Concept code="66.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description"/>
+			<Concept code="66.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description (epsos codes)"/>
+			<Concept code="66.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code"/>
+			<Concept code="66.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code (epsos codes)"/>
+			<Concept code="66.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Implant Date"/>
+			<Concept code="66.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Implant Date (epsos codes)"/>
+			<Concept code="67" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Treatment Recommendations"/>
+			<Concept code="67" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Treatment Recommendations (epsos codes)"/>
+			<Concept code="67.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Recommendation Description"/>
+			<Concept code="67.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Recommendation Description (epsos codes)"/>
+			<Concept code="67.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Recommendation Code"/>
+			<Concept code="67.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Recommendation Code (epsos codes)"/>
+			<Concept code="68" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Autonomy/Invalidity"/>
+			<Concept code="68" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Autonomy/Invalidity (epsos codes)"/>
+			<Concept code="68.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description"/>
+			<Concept code="68.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Description (epsos codes)"/>
+			<Concept code="68.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code"/>
+			<Concept code="68.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Code (epsos codes)"/>
+			<Concept code="69" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Social History"/>
+			<Concept code="69" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Social History (epsos codes)"/>
+			<Concept code="69.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Observations related to: smoke, alcohol and diet"/>
+			<Concept code="69.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Observations related to: smoke, alcohol and diet (epsos codes)"/>
+			<Concept code="69.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date Range"/>
+			<Concept code="69.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date Range (epsos codes)"/>
+			<Concept code="7" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient's Contact Address"/>
+			<Concept code="7" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient's Contact Address (epsos codes)"/>
+			<Concept code="7.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Street"/>
+			<Concept code="7.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Street (epsos codes)"/>
+			<Concept code="7.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Number of Street"/>
+			<Concept code="7.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Number of Street (epsos codes)"/>
+			<Concept code="7.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="City"/>
+			<Concept code="7.3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="City (epsos codes)"/>
+			<Concept code="7.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Postal Code"/>
+			<Concept code="7.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Postal Code (epsos codes)"/>
+			<Concept code="7.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="State or Province"/>
+			<Concept code="7.5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="State or Province (epsos codes)"/>
+			<Concept code="7.6" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Country"/>
+			<Concept code="7.6" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Country (epsos codes)"/>
+			<Concept code="70" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Pregnancy  History"/>
+			<Concept code="70" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Pregnancy  History (epsos codes)"/>
+			<Concept code="70.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Expected Date of Delivery"/>
+			<Concept code="70.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Expected Date of Delivery (epsos codes)"/>
+			<Concept code="71" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Physical  findings"/>
+			<Concept code="71" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Physical  findings (epsos codes)"/>
+			<Concept code="71.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Vital Signs Observations"/>
+			<Concept code="71.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Vital Signs Observations (epsos codes)"/>
+			<Concept code="71.1.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Blood pressure"/>
+			<Concept code="71.1.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Blood pressure (epsos codes)"/>
+			<Concept code="71.1.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date (when blood pressure was measured)"/>
+			<Concept code="71.1.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date (when blood pressure was measured) (epsos codes)"/>
+			<Concept code="72" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Blood Group"/>
+			<Concept code="72" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Blood Group (epsos codes)"/>
+			<Concept code="72.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Results"/>
+			<Concept code="72.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Results (epsos codes)"/>
+			<Concept code="72.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date of measurement"/>
+			<Concept code="72.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Date of measurement (epsos codes)"/>
+			<Concept code="73" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Medication Summary"/>
+			<Concept code="73" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Medication Summary (epsos codes)"/>
+			<Concept code="8" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient's Contact Telecommunication"/>
+			<Concept code="8" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient's Contact Telecommunication (epsos codes)"/>
+			<Concept code="8.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Telephone"/>
+			<Concept code="8.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Telephone (epsos codes)"/>
+			<Concept code="8.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="E-mail"/>
+			<Concept code="8.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="E-mail (epsos codes)"/>
+			<Concept code="9" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient's Contact Additional Information"/>
+			<Concept code="9" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Patient's Contact Additional Information (epsos codes)"/>
+			<Concept code="9.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Type of contact"/>
+			<Concept code="9.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Type of contact (epsos codes)"/>
+			<Concept code="9.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Contact Relationship"/>
+			<Concept code="9.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.3" codeSystemName="epSOS:CodedElements" displayName="Contact Relationship (epsos codes)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

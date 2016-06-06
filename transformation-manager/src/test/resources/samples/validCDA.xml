@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDASchema/CDA_extended.xsd" classCode="DOCCLIN" moodCode="EVN">
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+  <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3" />
+  <id root="1.1.1.1.12133.213.1" extension="2865646" />
+  <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="60591-5" /> <!-- code="34133-9" -->
+  <title>epSOS Patient Summary</title>
+  <effectiveTime value="20021004" />
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
+  <languageCode code="es-ES" />
+  <recordTarget typeCode="RCT" contextControlCode="OP">
+    <patientRole classCode="PAT">
+      <id root="1.3.6.1.4.1.19126.3" extension="28638911K" />
+      <!--  It is not allowed more than one  patient id ?????? -->
+      <addr use="HP">
+        <state>Sevilla</state>
+        <city>Sevillla</city>
+        <precinct>Sevilla</precinct>
+        <country>ES</country>
+        <!-- code="ES" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.42.4" -->
+        <postalCode>41013</postalCode>
+        <streetAddressLine>Avenida Manuel Siurot N 28 2º Bloque 4º Piso 3º B, preguntar por María</streetAddressLine>
+      </addr>
+      <telecom use="MC" value="tel:+34661982266" />
+      <!-- codeSystem='2.16.840.1.113883.1.11.201' -->
+      <telecom use="HP" value="mailto:correodelpaciente@juntadeandalucia.com" />
+      <!-- codeSystem='2.16.840.1.113883.1.11.201'  -->
+      <patient>
+        <name>
+          <given>Iñigo</given>
+          <family>Primerapellido</family>
+          <!-- <family> It is not possible to record the second  surmane</family> -->
+        </name>
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" displayName="Masculino" />
+        <birthTime value="19570924" />
+        <guardian classCode="GUARD">
+          <!--  In the implementation document is not specified the procedence of the "GUARD" code-->
+          <addr use="HP">
+            <state>Sevilla</state>
+            <city>Sevillla</city>
+            <precinct>Sevilla</precinct>
+            <country>ES</country>
+            <postalCode>41013</postalCode>
+            <streetAddressLine>Avenida Manuel Siurot N 28 1º Bloque 3º Piso 3º B, preguntar por Jose</streetAddressLine>
+          </addr>
+          <telecom use="MC" value="tel:+34623982266" />
+          <telecom use="HP" value="mailto:correodelguardian@juntadeandalucia.es" />
+          <guardianPerson>
+            <name>
+              <given>Emilio</given>
+              <family>Guardian</family>
+              <!--   <family>Segundoapellido</family>          -->
+            </name>
+          </guardianPerson>
+        </guardian>
+        <languageCommunication>
+          <languageCode code="es-ES"/>           <!--SESCAM: validation error: displayName="Castilian"-->
+          
+        </languageCommunication>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author typeCode="AUT" contextControlCode="OP">
+    <functionCode codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.42.1" code="221" />
+    <time value="201010040123" />
+    <assignedAuthor classCode="ASSIGNED">
+      <!-- Professional identifier -->
+      <id root="2.16.840.1.113883.2.19.40.5.410286.10.3" extension="1234567" />
+    
+      <telecom use="WP" value="tel:+34954321234" xmlns="urn:hl7-org:v3"></telecom>
+      <assignedPerson>
+        <name>
+          <given>Eva</given>
+          <family>Autor</family>
+          <!--  <family>Robles</family>        -->
+        </name>
+        
+        <!--SESCAM: Error in validation: <telecom use="WP" value="doctor@juntadeandalucia.es" xmlns="urn:hl7-org:v3"></telecom>-->
+      </assignedPerson>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.2.19.40.5.410286" />
+        <!--  OID from the Virgen del Rocío University Hospital -->
+        <name>Hospital Universitario Virgen del Rocío </name>
+        <addr use="HP">
+          <state>Sevilla</state>
+          <city>Sevilla</city>
+          <precinct>Sevilla</precinct>
+          <country>ES</country>
+          <!-- code="ES" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.42.4" -->
+          <postalCode>41003</postalCode>
+          <streetAddressLine>Avenida Eduardo Dato N 10  1º A</streetAddressLine>
+        </addr>
+        <!--SESCAM: Error in validation: <telecom use="MC" value="tel:+34666166266" xmlns="urn:hl7-org:v3"></telecom>-->
+        <!-- codeSystem='2.16.840.1.113883.1.11.201' -->
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id />
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator xmlns="urn:hl7-org:v3">
+    <time value="20100408" />
+    <signatureCode code="S" />
+    <assignedEntity>
+      <id extension="KP00017" root="2.16.840.1.113883.19.5" />
+      <assignedPerson>
+        <name>
+          <given>Marcos</given>
+          <family>Gómez</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root="2.16.840.1.113883.2.19.40.5.410286" />
+        <!--  OID from the Virgen del Rocío University Hospital-->
+        <name>Hospital Universitario Virgen del Rocío </name>
+        <addr use="HP">
+          <state>Sevilla</state>
+          <city>Sevilla</city>
+          <precinct>Sevilla</precinct>
+          <country>ES</country> <!-- code="ES" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.42.4" -->
+          <postalCode>41003</postalCode>
+          <streetAddressLine>Avenida Eduardo Dato N 10  1º A</streetAddressLine>
+        </addr>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <participant typeCode="IND" xmlns="urn:hl7-org:v3">
+    <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" />
+    <associatedEntity classCode="CAREGIVER">
+      <addr use="HP">
+        <state>Sevilla</state>
+        <city>Sevillla</city>
+        <precinct>Sevilla</precinct>
+        <country>ES</country>  <!-- code="ES" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.42.4" --> 
+        <postalCode>41013</postalCode><streetAddressLine>Avenida Manuel Siurot N 28 1º Bloque 3º Piso 3º A</streetAddressLine></addr>
+      <telecom value="mailto:cuidador@correo.com" use="BAD" />
+      <associatedPerson>
+        <name>
+          <given>María</given>
+          <family>Contacto</family>
+          <!-- <family>Segundoapellido</family>     -->
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <documentationOf xmlns="urn:hl7-org:v3">
+    <serviceEvent />
+  </documentationOf>
+  <component>
+    <structuredBody>
+      <!-- Sección eliminada en archivo Secciones eliminadas. HISTORY OF MEDICATION USE -->
+      
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.8" />
+          <!-- CCD -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19" />
+          <!-- PCC Medications section content module  -->
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3" />
+          <!-- PCC Section Template -->
+          <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF MEDICATION USE" />
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="INT">
+              <templateId root="2.16.840.1.113883.10.20.1.24" />
+              <!--  CCD -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7" />
+              <!-- PCC Medications Entry content module -->
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4" />
+              <!-- PCC Medication Item Entry Content Module -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.8" />
+              <!-- medication administration events that require special processing to handle tapered dosing -->
+              <id root="2.16.840.1.113883.2.19.40.5.410286.10.8" extension="1.1" />
+              <code code="271650006" codeSystem="2.16.840.1.113883.6.96" displayName="Diastolic blood pressure"/>
+              <text>
+                <reference value="Ingrediente activo de medicamento 1" />
+              </text>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <!-- Intervalo toma medicación-->
+                <low value="20100808" />
+                <high nullFlavor="UNK" />
+              </effectiveTime>
+              <effectiveTime xsi:type="IVL_TS" operator="A" />
+              <!--  Frecuencia de toma de medicación -->
+              <doseQuantity nullFlavor="UNK" />
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2" />
+                  <templateId root="2.16.840.1.113883.10.20.1.53" />
+                  <manufacturedMaterial>
+                    <code>
+                      <originalText>
+                        <reference />
+                      </originalText>
+                    </code>
+                    <ingredient xmlns="urn:epsos-org:ep:medication" classCode="ACTI">
+                      <quantity>
+                        <!-- xsi:type="RTO como en arquetipos??? -->
+                        <numerator xsi:type="PQ" value="15" unit="ml" />
+                        <denominator xsi:type="PQ" value="1" unit="1" />
+                      </quantity>
+                      <ingredient classCode="CER" determinerCode="INSTANCE">
+                        <code nullFlavor="UNK" />
+                      </ingredient>
+                    </ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      
+      <component>
+        <!--Allergies and Other Adverse Reactions Section 1.3.6.1.4.1.19376.1.5.3.1.3.13-->
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13" />
+          <templateId root="2.16.840.1.113883.10.20.1.2" />
+          <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts" />
+          <!-- Allergy and Intolerance Concern Entry : 1.3.6.1.4.1.19376.1.5.3.1.4.5.3-->
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27" />
+              <!--Concern Entry 1.3.6.1.4.1.19376.1.5.3.1.4.5.1-->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" />
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3" />
+              <id root='2.16.840.1.113883.2.19.40.5.410286.10.11' extension='1.1'/> <!-- CODIGO HUVR ALERGIAS-->
+              <code nullFlavor="NA" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low />
+                <high />
+              </effectiveTime>
+              
+              <entryRelationship typeCode="SUBJ" inversionInd="false">
+                <observation classCode="OBS" moodCode="EVN" negationInd='false'>
+                  
+                  
+                  
+                  
+                  <templateId root="2.16.840.1.113883.10.20.1.18" />
+                  <!--Allergy and Intolerance Entry Content Module 1.3.6.1.4.1.19376.1.5.3.1.4.6-->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6" />
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" />
+                  <templateId root="2.16.840.1.113883.10.20.1.28" />
+                  
+                  <!-- <id /> -->
+                  <id root='2.16.840.1.113883.10.20.1.18' extension='419199007'/>
+                  
+                  <!--          <code code='FALG' codeSystem='2.16.840.1.113883.5.4'  codeSystemName='ObservationIntoleranceType'/> --> 
+                  <!-- TIPO DE ALERGIA. DUDAS ACERCA DEL CODIGO -->
+                                    <code code='FALG' codeSystem='1.3.6.1.4.1.12559.11.10.1.3.1.42.11'  codeSystemName='ObservationIntoleranceType'/> 
+                  
+                  
+                  <!-- SESCAM: Attribute displayName added from epSOS_implementation_v0.0.4.20100729.doc, page 42 -->
+                  
+                  <text>
+                    <reference value="Alergia" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime>
+                    <!--SESCAM: Attribute value added from epSOS_implementation_v0.0.4.20100729.doc, page 42-->
+                    <low nullFlavor="UNK" value="19800307"></low>
+                    <width />
+                  </effectiveTime>
+                  
+                  <!-- <value xsi:type="CD" displayName="REQUIRED" code="REQUIRED" codeSystem="REQUIRED" /> -->
+                  <!--<value xsi:type="CD" displayName="Brucellosis" code="A23" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.42.5" /> -->
+                  
+                  <participant typeCode="CSM">
+                    <participantRole classCode="MANU">
+                      <playingEntity classCode="MMAT">
+                        <code code="420111002" displayName="Contact metal agent" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.42.19">
+                          <originalText>
+                            <reference />
+                          </originalText>
+                        </code>
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                  
+                  
+                  <!-- This is how the allergy manifests itself -->
+                  <entryRelationship typeCode='MFST'>
+                    <templateId root='1.3.6.1.4.1.19376.1.5.3.1.4.6.1'/>
+                    <!-- a problem entry -->
+                    <observation classCode='OBS' moodCode='EVN'>
+                      <templateId root='2.16.840.1.113883.10.20.1.54'/>
+                      <templateId root='1.3.6.1.4.1.19376.1.5.3.1.4.5'/>
+                      <!-- The code tells us that the observation is a symptom -->
+                      <code code="418799008" codeSystem="2.16.840.1.113883.6.96" displayName="Symptom" codeSystemName="SNOMED CT"/>
+                      <text><reference value='Sintoma'/></text>
+                      <statusCode code='completed'/>
+                      <!-- The value tells us what the symptom (i.e. allergy manifestation) is -->
+                      <!-- This is where anaphylaxy or angiooedema will be coded -->
+                      <value xsi:type='CD' code='43116000' codeSystem='1.3.6.1.4.1.12559.11.10.1.3.1.42.11' displayName='Eczema' codeSystemName='epSOSReactionAllergy'/>
+                    </observation>
+                  </entryRelationship>
+                  
+                  
+                  
+            
+            
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      <!--Required entryRelationship: severity 1.3.6.1.4.1.19376.1.5.3.1.4.1-->
+                      <entryRelationship typeCode="SUBJ" inversionInd="true">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <templateId root="2.16.840.1.113883.10.20.1.55" />
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1" />
+                          <code code="SEV" displayName="Severity" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" />
+                          <text>
+                            <reference value="#severity-2" />
+                          </text>
+                          <statusCode code="completed" />
+                          <value xsi:type="CD" code="H" codeSystem="2.16.840.1.113883.5.1063" />
+                        </observation>
+                      </entryRelationship>
+   
+                      
+                    </observation>
+                  </entryRelationship>
+                                        
+                
+            </act>
+          </entry>
+        </section>
+      </component>
+
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11" />
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12" />
+          <templateId root="2.16.840.1.113883.10.20.1.12" />
+                  
+          <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of procedures" />
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" />
+              <templateId root="2.16.840.1.113883.10.20.1.25" />
+              <templateId root="2.16.840.1.113883.10.20.1.29" />
+              <id root="1.1.1" />
+              <code displayName="Appendectomy" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.42.10" code="80146002" />
+              <text>
+                <reference />
+              </text>
+              <statusCode code="active" />
+              <effectiveTime value="19980706" />
+            </procedure>
+          </entry>
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" />
+              <templateId root="2.16.840.1.113883.10.20.1.25" />
+              <templateId root="2.16.840.1.113883.10.20.1.29" />
+              <id root="1.1.1" />
+              <code displayName="Ophthalmic examination and evaluation (procedure)" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.42.10" code="36228007" />
+              <text>
+                <reference />
+              </text>
+              <statusCode code="active" />
+              <effectiveTime value="20100101" />
+            </procedure>
+          </entry>
+        </section>
+      </component>
+
+      <component>
+        <!-- History of Past Illness Section 1.3.6.1.4.1.19376.1.5.3.1.3.8-->
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.8" />
+          
+          <id root="2.16.840.1.113883.2.19.40.5.410286.10.9" extension="1.1" />
+          <!--  OID from Past Illness of the Virgen del Rocío University Hospital -->
+          
+          <code code="11348-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF PAST ILLNESS" />
+          <!--Problem Concern Entry 1.3.6.1.4.1.19376.1.5.3.1.4.5.2-->
+         
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27" />
+              <!--Concern Entry 1.3.6.1.4.1.19376.1.5.3.1.4.5.1-->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" />
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" />
+            
+              <id />
+              <code nullFlavor="NA" />
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <!--SESCAM: Attribute xsi:type added from epSOS_implementation_v0.0.4.20100729.doc, page 44 (R7.3)-->
+                <low value="20071210"></low>
+                <high value="20071225"></high>
+              </effectiveTime>
+              <entryRelationship typeCode="SUBJ" inversionInd="false">
+                <!--Problem Entry 1.3.6.1.4.1.19376.1.5.3.1.4.5-->
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28" />
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" />
+                  <templateId root="2.16.840.1.113883.10.20.1.54" />
+                  <id />
+                  <code nullFlavor="NA" />
+                  <text>Zoster</text>
+                  <statusCode code="completed" />
+                  <effectiveTime>
+                    <low nullFlavor="UNK" />
+                    <width />
+                  </effectiveTime>
+                  <value xsi:type="CD" displayName="Zoster [herpes zoster]" code="1.3.6.1.4.1.12559.11.10.1.3.1.42.5" codeSystem="B02" />  <!-- Cambiando valores de codeSystem y code es validado. ???? -->
+                  
+                  
+                  <!--Required entryRelationship: severity 1.3.6.1.4.1.19376.1.5.3.1.4.1-->
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.1.55" />
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1" />
+                      <code code="SEV" displayName="Severity" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" />
+                      <text>
+                        <reference value="#severity-2" />
+                      </text>
+                      <statusCode code="completed" />
+                      
+                      <value xsi:type="CD" code="H" codeSystem="2.16.840.1.113883.5.1063" />
+                      
+                    </observation>
+                  </entryRelationship>
+                  
+         
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.4" />
+          <id root="1.1.1" />
+          <code code="10164-2" displayName="HISTORY OF PRESENT ILLNESS" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <text>Brucellosis</text>
+        </section>
+      </component>
+      <!-- <component>
+                <section>
+                        <templateId root='2.16.840.1.113883.10.20.1.11'/>
+                        <templateId root='1.3.6.1.4.1.19376.1.5.3.1.3.6'/>
+                        <id root='1.1.1'/>
+                        <code code='11450-4' displayName='PROBLEM LIST'
+                            codeSystem='2.16.840.1.113883.6.1' codeSystemName='LOINC'/>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root='2.16.840.1.113883.10.20.1.27'/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <!-\-<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>-\->
+                            
+                            <id/>
+                            <code nullFlavor="NA"></code>
+                            <statusCode code="completed"/>
+                            <effectiveTime>
+                                <low value=20100101/>
+                                <high/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <code></code>
+                                    <value code="A23" displayName="Brucellosis" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.42.5"/>
+                                </observation>
+                                
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                        
+                </section>
+                </component>-->
+      <!--  epSOS Medical Devices Coded Section: 1.3.6.1.4.1.12559.11.10.1.3.1.2.4 -->
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4" />
+          <templateId root="2.16.840.1.11383.10.20.1.7" />
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5" />
+          <code code="46264-8" displayName="HISTORY OF MEDICAL DEVICE USE" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <entry>
+            <supply moodCode="EVN" classCode="SPLY">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5" />
+              
+              
+              <effectiveTime value="20100220" />
+              <participant typeCode="DEV">
+                <participantRole>
+                  <playingDevice>
+                    <code code="1.3.6.1.4.1.12559.11.10.1.3.1.42.8"  displayName="Ophthalmological implant"/> <!-- 303608005 codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.42.8"  /> -->
+                  </playingDevice>
+                </participantRole>
+              </participant>
+            </supply>
+          </entry>
+        </section>
+      </component>
+      <!-- Immunization Section: 1.3.6.1.4.1.19376.1.5.3.1.3.23 -->
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.6" />
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23" />
+          <id root="2.16.840.1.113883.2.19.40.5.410286.10.9" extension="1.1" />
+          <!--  OID from Inmunizations of the Virgen del Rocío University Hospital -->
+          <code code="11369-6" displayName="HISTORY OF IMMUNIZATIONS" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <entry>
+            <!--Immunization Entry 1.3.6.1.4.1.19376.1.5.3.1.4.12-->
+            <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="true">
+              <templateId root="2.16.840.1.113883.10.20.1.24" />
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12" />
+              
+              <id root='2.16.840.1.113883.2.19.40.5.410286.10.9' extension='2.1'/> <!-- CODIGO HUVR -->
+              
+              <code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" />
+             
+              <text><reference value='Inmunización'/></text>  <!-- INTRODUCIDO POR HUVR -->
+              
+              <statusCode code="completed" />
+              <effectiveTime value="19991010"></effectiveTime>
+              
+                      
+              
+              <consumable typeCode='CSM'> <!-- AÑADIDO typecode HUVR -->
+                <!--Product Entry 1.3.6.1.4.1.19376.1.5.3.1.4.7.2-->
+                <manufacturedProduct classCode='MANU'> <!-- AÑADIDO classcode HUVR -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2" />
+                  <templateId root="2.16.840.1.113883.10.20.1.53" />
+                  <templateId root= "1.3.6.1.4.1.12559.11.10.1.3.1.42.18" />
+                  <id />
+                  <manufacturedMaterial>
+                    <code code="1.3.6.1.4.1.12559.11.10.1.3.1.42.18" displayName="Diphtheria + tetanus vaccine"> <!-- Eliminado codigo de diphteria y tetanus. HUVR -->
+                      <!--  350327004   SESCAM: Attributes code,codesystem,displayname added from epSOS_implementation_v0.0.4.20100729.doc, page 46-->
+                      <originalText>
+                        <reference />
+                      </originalText>
+                      <translation displayName="DIFTAVAX" />
+                    </code>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--Functional Status Section (Body:R13 Autonomy/Invalididty): 1.3.6.1.4.1.19376.1.5.3.1.3.17-->
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.17" />
+          <templateId root="2.16.840.1.113883.10.20.1.5" />
+          <code code="47420-5" displayName="TREATMENT PLAN" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

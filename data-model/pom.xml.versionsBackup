@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>eu.europa.ec.joinup.ecc</groupId>
+    <artifactId>epsos-data-model</artifactId>
+    <version>1.1.1</version>
+    <name>SRDC epSOS Data Model</name>
+    <organization>
+        <name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
+        <url>www.srdc.com.tr</url>
+    </organization>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>epsos-util</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <!-- Maven compiler plugin -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <optimize>true</optimize>
+                </configuration>
+            </plugin>
+            <!--Code Quality Plugins-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                    <consoleOutput>true</consoleOutput>
+                    <configLocation>http://dev.iuz.pt/openncp-jenkins/checkstyle.xml</configLocation>
+                    <failsOnError>false</failsOnError>
+                    <excludes>**/ihe/**/*,**/oasis/**/*,**/org/**/*</excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>2.7.1</version>
+                <configuration>
+                    <linkXRef>true</linkXRef>
+                    <targetJdk>1.7</targetJdk>
+                    <excludes>
+                        <exclude>**/ihe/**/*</exclude>
+                        <exclude>**/oasis/**/*</exclude>
+                        <exclude>**/org/**/*</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>2.5.2</version>
+                <configuration>
+                    <onlyAnalyze>tr.com.srdc.epsos.-,eu.epsos.-,fi.kela.se.epsos.-</onlyAnalyze>
+                    <xmlOutput>true</xmlOutput>
+                    <xmlOutputDirectory>target/site</xmlOutputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- ==================
+       Repositories
+    ================== -->
+    <repositories>
+        <repository>
+            <id>joinup-releases</id>
+            <url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>joinup-snapshots</id>
+            <url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>joinup-releases</id>
+            <url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>joinup-snapshots</id>
+            <url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
+            <uniqueVersion>true</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>

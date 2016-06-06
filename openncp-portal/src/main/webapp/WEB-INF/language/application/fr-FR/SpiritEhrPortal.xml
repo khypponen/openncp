@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+<entry key="F">FÈminin</entry>
+<entry key="M">Masculin</entry>
+<entry key="O">Autre</entry>
+<entry key="U">Inconnu</entry>
+<entry key="UN">IndiffÈrenciÈ</entry>
+
+<entry key="contact.title">Contact</entry>
+
+<entry key="DBLMNG QUERY MODE  ALL PAT">All Patients</entry>                                 <!-- Portal A functionality for Patient database managment -->
+<entry key="DBLMNG QUERY MODE  DBL AND MRGPAT">Local and Index Duplicates</entry>            <!-- Portal A functionality for Patient database managment --> 
+<entry key="DBLMNG QUERY MODE  ONLY DBLPAT">Only Index Duplicates</entry>                    <!-- Portal A functionality for Patient database managment -->
+<entry key="DBLMNG QUERY MODE  ONLY MRGPAT">Only Local Duplicates</entry>                    <!-- Portal A functionality for Patient database managment --> 
+
+<entry key="doubletten.download.link">Download Report</entry>                            <!-- Portal A functionality for Patient database managment -->  
+<entry key="doubletten.filter.detail">Detail Report</entry>                              <!-- Portal A functionality for Patient database managment --> 
+<entry key="doubletten.filter.pair">Pair Report</entry>                                  <!-- Portal A functionality for Patient database managment -->
+<entry key="doubletten.filter.predefined">Predefined Report</entry>                      <!-- Portal A functionality for Patient database managment -->
+<entry key="doubletten.filter.query.type">Query Type:</entry>                            <!-- Portal A functionality for Patient database managment -->
+<entry key="doubletten.filter.report.type">Report Type:</entry>                          <!-- Portal A functionality for Patient database managment -->
+<entry key="doubletten.generate.button">Generate</entry>                                 <!-- Portal A functionality for Patient database managment -->
+<entry key="doubletten.management.title">Duplicates Management</entry>                   <!-- Portal A functionality for Patient database managment -->
+
+<entry key="help.download.manual">TÈlÈcharger le manuel utilisateur</entry>  
+<entry key="help.title">Aide</entry>  
+
+<entry key="info.build.date">Date :</entry>
+<entry key="info.build">Sous-version :</entry>
+<entry key="info.producer">Editeur :</entry>
+<entry key="info.product.name">Nom du logiciel :</entry>
+<entry key="info.title">Editeur du logiciel :</entry>
+<entry key="info.version">Version du logiciel :</entry>
+
+<entry key="lifecycleAddendum">Ajouter</entry>
+<entry key="lifecycleReplacement">Remplacer</entry>
+<entry key="lifecycleStorno">Annuler</entry>
+<entry key="lifecycleTransformation">Modifier</entry>
+<entry key="list.entry.detail">DÈtails</entry>  
+<entry key="login.back">Retour</entry>
+<entry key="login.change">Modifier le mot de passe</entry>
+<entry key="login.login">Connexion</entry>
+<entry key="login.organisation">Structure</entry>
+<entry key="login.password.new">Nouveau mot de passe</entry>
+<entry key="login.password.retry">Le mot de passe est incorrect. Entrez le mot de passe en respectant la casse.</entry>
+<entry key="login.password">Mot de passe</entry>
+<entry key="login.role">RÙle</entry>
+<entry key="login.username">Utilisateur</entry>
+
+<entry key="message.access">ATTENTION !</entry>
+<entry key="message.doubletten.select.report">SÈlectionnez le type de rapport.</entry> 
+<entry key="message.error">ERREUR !</entry>
+<entry key="message.info">INFO</entry>
+<entry key="message.insert.succesful">Patient successfully added.</entry>                 <!-- Portal A functionality - Overtake a foreign Patient into local system -->
+<entry key="message.insert.values">Veuillez saisir une valeur pour les {0}.</entry>
+<entry key="message.merge.added.patient">Patient added to merge.</entry>                  <!-- Portal A functionality - merge 2 local Patient data sets for one human person -->
+<entry key="message.merge.not.local.patient">Only patients from the local domain can be merged.</entry> <!-- only local datasets can be merged -->
+<entry key="message.merge.only.two.patients">There are already two patients selected. Please deselect one before you choose another patient.</entry> <!-- Portal A functionality - merge 2 local Patient data sets for one human person -->
+<entry key="message.merge.select.survivor">Please select the surviving patient.</entry> <!-- Portal A functionaluty - after merge, only one Patient remains, the User has to choose, which one remains -->
+<entry key="message.merge.succesful">Patient successfully merged.</entry>    <!-- Portal A functionality - Message about the success of the Patient Merge -->
+<entry key="message.popup.break.glass">AccËs en cas d'urgence</entry>         <!-- PopUp for break-the-glass functionality -->
+<entry key="message.popup.relogin">Authentification</entry>
+<entry key="message.popup.close">Fermer</entry>
+<entry key="message.popup.detail">DÈtails</entry>
+<entry key="message.popup.no">Non</entry>
+<entry key="message.popup.yes">Oui</entry>
+<entry key="message.question">QUESTION ?</entry>
+<entry key="message.search.givenname.length">Veuillez saisir au moins 3 lettres pour le prÈnom.</entry> <!-- in standard PDQ a wildcard search is possible. ¬ß characters are needed to erform a wildcard search -->
+<entry key="message.search.surname.length">Veuillez saisir au moins 3 lettres pour le nom.</entry> <!-- in standard PDQ a wildcard search is possible. ¬ß characters are needed to erform a wildcard search -->
+<entry key="message.search.values">Veuillez saisir des critËres de recherche.</entry>
+<entry key="message.select.patient">SÈlectionnez un patient.</entry>
+<entry key="message.update.not.local.patient">You can not change this patient because he/she does not exist in the local domain. Do you want to create this patient locally?</entry> <!-- Portal A functinlity - Only Patients who are in the local daomain can be edited -->
+<entry key="message.update.succesful">Les informations ont ÈtÈ mises ‡ jour.</entry>
+<entry key="message.warning">ATTENTION !</entry>
+<entry key="messageFillInNewPassword">Veuillez saisir un nouveau mot de passe.</entry>
+<entry key="messageFillInPassword">Veuillez saisir votre mot de passe.</entry>
+<entry key="messageFillInPasswordRetry">Veuillez confirmer votre mot de passe.</entry>
+<entry key="messageFillInUser">Veuillez entrer votre nom utilisateur.</entry>
+<entry key="messageForcedPasswordChangeException">Votre mot de passe a ÈtÈ modifiÈ par l'administrateur. Veuillez changer votre mot de passe.</entry>
+<entry key="messageLoginException">Erreur d'authentification. VÈifiez vos nom et mot de passe.</entry>
+<entry key="messageLoginNoOrganisation">Vous n'appartenez pas ‡ une structure de santÈ !</entry>
+<entry key="messageLoginNoPermissionForApplication">Vous n'avez pas les droits vous permettant d'accÈder ‡ ce service !</entry>
+<entry key="messageLoginNoRole">Vous n'avez pas rÙle !</entry>
+<entry key="messagePasswordDuplicateUse">L'ancien et le nouveau mot de passe sont identiques. Veuillez en choisir un autre.</entry>
+<entry key="messagePasswordMissmatch">Les deux mots de passe ne sont pas identiques.</entry>
+<entry key="messageUserAccountExpirationInDays">Votre mot de passe expire dans {0} jours. Veuillez changer votre mot de passe.</entry>
+<entry key="messageUserAccountExpiredException">Votre mot de passe a expirÈ. Veuillez contacter votre administrateur.</entry>
+<entry key="messageWrongUserException">Utilisateur inconnu.</entry>
+
+<entry key="navi.config.contact">Contact - Info - Aide</entry>
+<entry key="navi.config.help">Aide</entry>
+<entry key="navi.config.settings">ParamËtres</entry>
+<entry key="navi.info.access.protocol">Historique des accËs</entry>
+<entry key="navi.info.doubletten.management">Gestion des doublons</entry>
+<entry key="navi.info.patient.agreement">Consentement du patient</entry>
+<entry key="navi.link.patient.registration">Nouveau patient</entry>
+<entry key="navi.link.patient.search">Rechercher un patient</entry>
+<entry key="navi.report.search">Rechercher un document</entry>
+<entry key="navi.report.prescription">Prescription</entry>
+<entry key="navi.report.summary">Patient Summary</entry>
+<entry key="navi.report.medical.history">Medical History</entry>    <!-- Portal A functionality -->
+<entry key="navi.report.insert">Document Insert</entry>             <!-- Portal A functionality -->
+<entry key="navi.report.create">Document Create</entry>             <!-- Portal A functionality -->
+<entry key="navi.report.emergency.data">Patient Summary</entry>     <!-- Portal A functionality -->
+<entry key="navi.report.vaccination">Vaccination</entry>            <!-- Portal A functionality - it is NOT the section in the CDA!!! -->
+<entry key="navi.report.xdm.report">Personal Health Record Import</entry> <!-- Portal A functionality -->
+<entry key="navi.user.login">est connectÈ</entry>
+<entry key="navi.user.logout.btn">DÈconnexion</entry>
+<entry key="navi.user.organisation">Structure</entry>  
+<entry key="navi.user.role">Profession</entry>  
+<entry key="navigator.pro.site">Nombre de rÈsultat par page</entry>
+<entry key="navigator.sorting">Trier</entry>
+
+<entry key="patient.create.id.add">Ajouter</entry>
+<entry key="patient.create.id.remove">Supprimer</entry>
+<entry key="patient.create.patient.id">Create Patient ID:</entry>  <!--  Portal A functionality -->
+<entry key="patient.data.day.of.death">Date of Death:</entry>      <!-- Portal A functionality -->
+<entry key="patient.data.account.number">NumÈro de compte bancaire :</entry>
+<entry key="patient.data.agreement.title">Consentement du patient</entry>
+<entry key="patient.data.birth.date">Date de naissance :</entry>
+<entry key="patient.data.birth.place">Lieu de naissance :</entry>
+<entry key="patient.data.button.merge">Merge</entry>               <!-- Portal A functionality -->
+<entry key="patient.data.button.modify">Modify</entry>             <!-- Portal A functionality -->
+<entry key="patient.data.button.remove">Remove</entry>             <!-- Portal A functionality -->
+<entry key="patient.data.button.save">Save</entry>                 <!-- Portal A functionality -->
+<entry key="patient.data.cancel">Annuler</entry>
+<entry key="patient.data.citizen.ship">CitoyennetÈ :</entry>
+<entry key="patient.data.city">Ville :</entry>
+<entry key="patient.data.code">Code postal :</entry>
+<entry key="patient.data.country">Pays :</entry>
+<entry key="patient.data.domain.type">Type de domaine</entry>
+<entry key="patient.data.domain">Domaine</entry>  <!-- The domain, the patient comes from. I.e. a country -->
+<entry key="patient.data.driving.licence">NumÈro de permis de conduire :</entry>
+<entry key="patient.data.family.status">Situation familiale :</entry>
+<entry key="patient.data.givenname">PrÈnom :</entry>
+<entry key="patient.data.header.merge">Patient Merge</entry>       <!-- Portal A functionality -->
+<entry key="patient.data.id.type">Type de l'identifiant du patient</entry>
+<entry key="patient.data.insurance.number">NumÈro de sÈcuritÈ sociale :</entry>
+<entry key="patient.data.last.update">DerniËre mise ‡ jour :</entry>
+<entry key="patient.data.mail.business">Email (professionnel):</entry>
+<entry key="patient.data.mail.home">Email (personnel):</entry>
+<entry key="patient.data.middlename">Autres prÈnoms :</entry>
+<entry key="patient.data.name.space">Namespace</entry> <!-- A namespace (sometimes also called a name scope) is an abstract container or environment created to hold a logical grouping of unique identifiers or symbols (i.e., names) (from http://en.wikipedia.org) -->
+<entry key="patient.data.nationality">NationalitÈ :</entry>
+<entry key="patient.data.patient.id">Identifiant du patient</entry>
+<entry key="patient.data.patientdata.title">DonnÈes du patient</entry>
+<entry key="patient.data.phone.business">TÈlÈphone (professionnel):</entry>
+<entry key="patient.data.phone.private">TÈlÈphone (personnel):</entry>
+<entry key="patient.data.registration.title">Patient Registration</entry> <!-- Portal A functionlity - Header on Registration page -->
+<entry key="patient.data.religion">Religion :</entry>
+<entry key="patient.data.sex">Sexe :</entry> <!-- In epSOS we use HL7 - Adminstrative Gender. As agreed, it is more understandable for the user that there is written only Gender. -->
+<entry key="patient.data.state">DÈpartement / RÈgion :</entry>
+<entry key="patient.data.street.address">Rue :</entry>
+<entry key="patient.data.surname">Nom :</entry>
+<entry key="patient.data.title">CivilitÈ :</entry>
+<entry key="patient.has.local.documents">Il existe des documents locaux pour ce patient.</entry> <!-- Info (mouseover) for 3 "Lamps (= green)" in PatientSearchMask to inform about the PatID, local and remote documents -->
+<entry key="patient.has.remote.documents">Il existe des documents externes pour ce patient.</entry> <!-- Info (mouseover) for 3 "Lamps (= green)" in PatientSearchMask to inform about the PatID, local and remote documents -->
+<entry key="patient.is.local">Ce patient existe en local.</entry> <!-- Info (mouseover) for 3 "Lamps(= green)" in PatientSearchMask to inform about the PatID, local and remote documents -->
+<entry key="patient.list.givenname.sort.ascending">PrÈnom par ordre alphabÈtique croissant</entry>
+<entry key="patient.list.givenname.sort.descending">PrÈnom par ordre alphabÈtique dÈcroissant</entry>
+<entry key="patient.list.no.patient">Aucun patient trouvÈ</entry>
+<entry key="patient.list.patientlist">RÈsultat de la recherche</entry>
+<entry key="patient.list.surname.sort.ascending">Nom par ordre alphabÈtique croissant</entry>
+<entry key="patient.list.surname.sort.descending">Nom par ordre alphabÈtique dÈcroissant</entry>
+<entry key="patient.no.local.documents">Il n'y a pas de documents locaux pour ce patient.</entry> <!-- Info (mouseover) for 3 "Lamps (= red)" in PatientSearchMask to inform about the PatID, local and remote documents -->
+<entry key="patient.no.remote.documents">Il n'y a pas de documents externes pour ce patient.</entry> <!-- Info (mouseover) for 3 "Lamps (= red)" in PatientSearchMask to inform about the PatID, local and remote documents -->
+<entry key="patient.not.local">Ce patient n'existe pas en local.</entry> <!-- Info (mouseover) for 3 "Lamps (= red)" in PatientSearchMask to inform about the PatID, local and remote documents -->
+<entry key="patient.search.birth.date.day">Jour</entry>
+<entry key="patient.search.birth.date.month">Mois</entry>
+<entry key="patient.search.birth.date.year">AnnÈe</entry>
+<entry key="patient.button.search">Rechercher</entry>
+<entry key="patient.button.search.reset">RÈinitialiser</entry>
+<entry key="patient.search.patient.id">Identifiant du patient :</entry>
+<entry key="patient.search.patient.svnr">NumÈro de sÈcuritÈ sociale du patient :</entry>
+<entry key="patient.search.patientsearch">Rechercher un patient</entry>
+<entry key="patient.search.xcpd">Externe</entry>
+
+<entry key="report.button.search.reset">RÈinitialiser</entry>
+<entry key="report.button.search">Rechercher</entry>
+<entry key="report.category.search">Search in specific categories:</entry>
+<!-- This section is Poratl A functionlity. Document Upload / document description / Metadata-->
+<entry key="report.document.header.title">Document Details</entry>
+<entry key="report.document.author.department">Author Department:</entry>
+<entry key="report.document.author.institution">Author Institution:</entry>
+<entry key="report.document.author.person">Author:</entry>
+<entry key="report.document.author.role">Author Role:</entry>
+<entry key="report.document.author.speciality">Author Specialty:</entry>
+<entry key="report.document.legal.authenticator">Legal Authenticator:</entry>
+<entry key="report.document.title">Title:</entry>
+<entry key="report.document.description">Description:</entry>
+<entry key="report.document.creation.time">Creation Date/Time:</entry>
+<entry key="report.document.language">Language:</entry>
+<entry key="report.document.class.code">Document Class:</entry>
+<entry key="report.document.confidentiality.code">Confidentiality:</entry>
+<entry key="report.document.healthcare.facility.type.code">Healthcare Facility:</entry>
+<entry key="report.document.practice.setting.code">Practice Setting:</entry>
+<entry key="report.document.type.code">Document Type:</entry>
+<entry key="report.document.status">Status:</entry>
+<entry key="report.document.format.code">Format Code:</entry>
+<entry key="report.document.size">Size:</entry>
+<entry key="report.document.format">Format:</entry>
+<!-- This section is Portal A functionlity. Document upload / Metadata of submission set -->
+<entry key="report.submission.header.title">Submission Details</entry>
+<entry key="report.submission.author.institution">Author Institution:</entry>
+<entry key="report.submission.author.department">Author Department:</entry>
+<entry key="report.submission.author.person">Author:</entry>
+<entry key="report.submission.author.role">Author Role:</entry>
+<entry key="report.submission.author.speciality">Author Specialty:</entry>
+<entry key="report.submission.title">Title:</entry>
+<entry key="report.submission.description">Description:</entry>
+<entry key="report.submission.time">Submission Date/Time:</entry>
+<entry key="report.submission.content.type.code">Content Type:</entry>
+<!-- This section is Portal A functionlity. Document upload / XDS Repository behaviour -->    
+<entry key="report.folder.header.title">Folder Details</entry>
+<entry key="report.folder.create">Create Folder:</entry>
+<entry key="report.folder.title">Title:</entry>
+<entry key="report.folder.description">Description:</entry>
+<entry key="report.folder.code">Folder Code:</entry>
+<!-- Portal B(!!!) functionality,since eD documents will be created in the Portal B -->
+<entry key="report.create.document.data.incomplete">Document details incomplete!</entry>
+<entry key="report.create.document.submit">Submit</entry>
+<entry key="report.create.document.success">Document successfully submitted.</entry>
+<entry key="report.create.folder.data.incomplete">Folder details incomplete!</entry>
+<entry key="report.create.submission.data.incomplete">Submission details incomplete!</entry>
+<entry key="report.create.upload.added.documents">Added Documents:</entry>
+<entry key="report.create.upload.choose.document">Choose Documents:</entry>
+<entry key="report.create.upload.document">Upload</entry>
+<entry key="report.create.upload.remove.document">Remove</entry>
+
+<entry key="report.date.search">Recherche par date :</entry> <!-- Document query in a specific time frame -->
+<entry key="report.detail.document">Documents</entry> <!-- Document details -->
+<entry key="report.detail.title">DÈtails du document</entry> <!-- Document Details -->
+<entry key="report.details">DÈtails</entry>
+<entry key="report.from">du</entry>
+<entry key="report.is.accesable">AccËs autorisÈ</entry> <!-- Access is allowed -->
+<entry key="report.link.report.type">type de document</entry>     <!-- Label of describing the type of the document, i.e. CDA L1 or L3, *.pdf, DICOM, JPEG, MP3, etc.-->
+<entry key="report.list.date.sort.ascending">Ordre chronologique croissant</entry> <!-- Sort multiple documents according date, i.e. several eP -->
+<entry key="report.list.date.sort.descending">Ordre chronologique dÈcroissant</entry> <!-- Sort multiple documents according date, i.e. several eP -->
+<entry key="report.list.no.document">Aucun document trouvÈ</entry>
+<entry key="report.list">RÈsultat de la recherche</entry>
+<entry key="report.not.accesable">AccËs refusÈ !</entry> <!-- access to document is not allowed -->
+<entry key="report.search.advanced">Advanced Search</entry>    <!-- Portal A functionlity for filtered XDS DocQuery -->
+<entry key="report.search">Document Search</entry>             <!-- Portal A functionlity - standard XDS StoredQuery -->
+<entry key="report.prescription">Prescription</entry>          <!-- Button for epSOS query for eP -->
+<entry key="report.summary">Patient Summary</entry>            <!-- Button for epSOS query for PS -->
+<entry key="report.till">au</entry>
+
+<!-- This section is Portal A functionality. It deals with possibility to import an EHR from a media device (i.e. USB-Key or CD-Rom) in a standardized way -->
+<entry key="xdm.import">Personal Health Record Import</entry>
+<entry key="xdm.import.description">Import patient data in XDM format to the XDS repository.\nThe data must be packaged in a ZIP file. Choose your file and upload it to the server.</entry>
+<entry key="xdm.select.file.before.upload">Please choose a ZIP file before pressing upload.</entry>
+<entry key="xdm.import.upload.document.choose">Choose ZIP file:</entry>
+<entry key="xdm.import.upload.document">Upload</entry>
+<entry key="xdm.import.button">Import</entry>
+<entry key="xdm.select.patient">Please choose a patient.</entry>
+<entry key="xdm.select.only.one.patient">Please choose only one patient.</entry>
+<entry key="xdm.select.document">Please choose a document.</entry>
+<entry key="xdm.patient.on.media">Patient on media</entry>
+<entry key="xdm.patient.content.preview">Preview</entry>
+<entry key="xdm.patient.content.import">Import</entry>
+<entry key="xdsi.header">Web Image Viewer</entry> <!-- Portal A functionlity - DICOM Images -->
+<entry key="xdsi.info.series.number">Image Number:</entry> <!-- Portal A functionality - DICOM Images -->
+<entry key="xdsi.info.study">Study:</entry> <!-- Portal A functionality - DICOM Images -->
+<entry key="xdsi.info.series">Series:</entry> <!-- Portal A functionality - DICOM Images -->
+
+<entry key="session.timeout.relogin">Votre session a expirÈ. Veuillez vous reconnecter.</entry>
+<entry key="patient.id.create.failed">No patient ID created for domain {0}!\nPossible reasons: not found in addable-removable domains and is not the local working domain.\nPlease choose another domain or remove it from the list.</entry> <!-- Portal A functionality -->
+<entry key="patient.id.insert.failed">No patient ID inserted for domain {0}</entry> <!-- Portal A functionlity -->
+<entry key="patient.id.create.exception">Error creating Patient ID!</entry> <!-- Portal A functionlity -->
+<entry key="report.document.metadata.exception">Erreur sur les mÈtadonnÈes du document !</entry>
+<entry key="report.document.formatcode.exception">Erreur sur le format du document !</entry>
+<entry key="report.choose.upload.file">Please choose a file before pressing upload!</entry> <!-- Portal A functionlity - XDS document upload --> 
+<entry key="report.folder.metadata.exception">Error getting folder metadata!</entry> <!-- Portal A functionlity - XDS DocUpload -->
+<entry key="report.submission.metadata.exception">Error getting submission metadata!</entry> <!-- Portal A functionlity - XDS DocUpload -->
+<entry key="report.folder.add.document">Do you really want to add this document to the folder?</entry> <!-- Portal A functionlity - XDS DocUpload -->
+<entry key="xdm.export">Export</entry>       <!-- Portal A functionlity - Export an EHR to a media device -->
+<entry key="xdm.export.really">Do you really want to export those documents?\nThe export will take a while. The download starts automatically.</entry> <!-- Portal A functionlity - Export an EHR to a media device -->
+
+<entry key="xdm.import.success">Data successfully imported.</entry> <!-- Portal A functionlity - Message that EHR import from media device was successful -->
+<entry key="policy.administration.title">Consentement du patient</entry> <!-- Patient Agreement == Patient consent -->
+<entry key="patient.subscription.header">Notification</entry> <!-- Portal A functionality - HCP can subscribe for a specific Patient to get notified if a new doc is available -->
+<entry key="navi.info.patient.subscribtion">Notification</entry>  <!-- Portal A functionality - HCP can subscribe for a specific Patient to get notified if a new doc is available -->
+<entry key="patient.data.create.report">Imprimer le rapport</entry>
+<entry key="patient.data.create.label">Imprimer l'Ètiquette</entry>
+
+<entry key="messagePasswordMinimumLengthException">Votre mot de passe doit comporter au minimum {0} caractËres alphabÈtiques.</entry>
+<entry key="messagePasswordMinimumUpperCaseCharacterException">Votre mot de passe doit comporter au minimum {0} caractËres en majuscules.</entry>
+<entry key="messagePasswordMinimumLowerCaseCharacterException">Votre mot de passe doit comporter au minimum {0} caractËres en minuscules.</entry>
+<entry key="messagePasswordMinimumDigitException">Votre mot de passe doit comporter au minimum {0} caractËres numÈriques.</entry>
+<entry key="messagePasswordMinimumSpecialCharacterException">Votre mot de passe doit comporter au minimum {0} caractËres spÈciaux.</entry>
+
+<entry key="login.tooltip.password.length">Longueur minimale {0} caractËres</entry>
+<entry key="login.tooltip.password.upper.case">Minimum {0} caractËres en majuscules.</entry>
+<entry key="login.tooltip.password.lower.case">Minimum {0} caractËres en minuscules.</entry>
+<entry key="login.tooltip.password.digits">Minimum {0} caractËres numÈriques.</entry>
+<entry key="login.tooltip.password.special.character">Minimum {0} caractËres spÈciaux.</entry>
+
+<entry key="patient.subscribe">Subscribe</entry>  <!-- Portal A functionality - HCP can subscribe for a specific Patient to get notified if a new doc is available -->
+<entry key="message.popup.error">Une erreur est survenue. Veuillez contacter votre administrateur.</entry>
+<entry key="patient.created.patient.ids">Created patient IDs:</entry> <!-- Portal A functionality -->
+<entry key="message.create.patient.id">Please create a patient ID!</entry> <!-- Portal A functionlity -->
+<entry key="message.birth.greater.death">Date of death is before date of birth!</entry> <!-- Portal A functionlity -->
+<entry key="report.submission.recipient.organisation">Structure bÈnÈficiaire :</entry>
+<entry key="report.submission.recipient.person">Personne bÈnÈficiaire :</entry>
+<entry key="report.list.filter.organisation">Structure :</entry>
+<entry key="report.list.filter.type.code">Type de contenu :</entry>
+<entry key="report.list.filter.button.reset">RÈinitialiser</entry>
+<entry key="report.list.filter.button.filter">Filtrer</entry>
+<entry key="report.list.button.filter">Filtrer</entry>
+
+<entry key="patient.search.international">Recherche d'un patient Ètranger</entry>
+<entry key="patient.search.country">Pays :</entry>
+<entry key="patient.data.pseudonym">Pseudonyme :</entry>
+<entry key="patient.data.tan.code">Code TAN :</entry>
+    
+<entry key="AT">Autriche</entry>
+<entry key="CZ">RÈpublique TchËque</entry>
+<entry key="DK">Danemark</entry>
+<entry key="FR">France</entry>
+<entry key="DE">Allemagne</entry>
+<entry key="GR">GrËce</entry>
+<entry key="IT">Italie</entry>
+<entry key="NL">Pays-Bas</entry>
+<entry key="SK">Slovaquie</entry>
+<entry key="ES">Espagne</entry>
+<entry key="SE">SuËde</entry>
+<entry key="GB">Royaume Uni</entry>
+<entry key="EE">Estonie</entry>
+<entry key="CH">Suisse</entry>
+<entry key="TR">Turquie</entry>
+
+<entry key="patient.data.ins.france">Identifiant National de SantÈ (INS) :</entry>
+<entry key="patient.search.treatment.question">Etes-vous dans le cadre d'une consultation ?</entry>
+<entry key="patient.search.fiscal.code">Code Fiscal :</entry>
+
+<!-- <entry key="message.popup.patient.search.italy">Veuillez saisir le nom, le prÈnom, le sexe et la date de naissance. \nOu faites une recherche avec le code fiscal.</entry> -->
+<entry key="message.rpc.error">Une erreur est survenue. Veuillez contacter votre support.</entry>
+<entry key="patient.data.unique.identifier">Identifiant unique du patient :</entry>
+<entry key="patient.data.region.spain">RÈgion :</entry>
+<entry key="patient.data.unique.identifier.spain">Code de l'identifiant du patient :</entry>
+
+<!-- PolicyIds -->
+<!-- Country=IHE -->
+<entry key="2.16.17.710.812.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.812.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=NL -->
+<entry key="2.16.17.710.810.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.810.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=GB -->
+<entry key="2.16.17.710.809.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.809.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=GR -->
+<entry key="2.16.17.710.808.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.808.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=SE -->
+<entry key="2.16.17.710.807.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.807.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=IT -->
+<entry key="2.16.17.710.806.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.806.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=SK -->
+<entry key="2.16.17.710.805.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.805.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=CZ -->
+<entry key="2.16.17.710.804.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.804.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=DE -->
+<entry key="2.16.17.710.803.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.803.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=DK -->
+<entry key="2.16.17.710.802.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.802.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=ES -->
+<entry key="2.16.17.710.801.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.801.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=CK -->
+<entry key="2.16.17.710.800.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.800.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=FR -->
+<entry key="2.16.17.710.790.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.790.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=AT -->
+<entry key="2.16.17.710.780.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.780.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=TR -->
+<entry key="2.16.17.710.813.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.813.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=CH -->
+<entry key="2.16.17.710.814.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.814.2.4.1.1">RËgle autorisant tout.</entry>
+<!-- Country=EE -->
+<entry key="2.16.17.710.815.2.4.1.2">RËgle interdisant tout.</entry>
+<entry key="2.16.17.710.815.2.4.1.1">RËgle autorisant tout.</entry>
+
+<entry key="navi.link.patient.update">Patient Update</entry> 										<!-- Portal A functionality - edit and/or update demografic data of a patient -->
+<entry key="patient.consent.save">Enregistrer</entry>
+<entry key="patient.consent.print">Imprimer</entry>
+<entry key="patient.data.id.code">Code de l'identifiant du patient :</entry>
+<entry key="policy.not.combinable">Policy is not combinable.</entry>
+<entry key="policy.stored.succesful">Enregistrement effectuÈ.</entry>
+<entry key="consent.not.given">Le consentement du patient n'existe pas.</entry>
+<entry key="message.popup.consent.edit">Mettre ‡ jour le consentement du patient.</entry>
+<entry key="message.popup.emergency">Urgence</entry>
+<entry key="patient.data.audit.report">Traces</entry>
+
+<!-- NEW ENTRIES - 6.4.2011 !!! -->
+
+<entry key="doubletten.no.data">No Data available to create a Report.</entry>
+
+</properties>

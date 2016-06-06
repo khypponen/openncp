@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This file is part of epSOS OpenNCP implementation
+ * Copyright (C) 2012  SPMS (Serviços Partilhados do Ministério da Saúde - Portugal)
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * Contact email: epsos@iuz.pt
+-->
+<cc:retrieveDocument xmlns:cc="http://clientconnector.protocolterminator.openncp.epsos/">
+    <arg0>
+        <countryCode>ZZ</countryCode>
+        <homeCommunityId>2.16.620.1.101.10.1.1</homeCommunityId>
+        <documentId>
+            <repositoryUniqueId>2.16.17.710.811</repositoryUniqueId>
+            <documentUniqueId>2.25^2.25.1.1</documentUniqueId>
+        </documentId>
+        <classCode>
+            <nodeRepresentation>56445-0</nodeRepresentation>
+            <schema>2.16.840.1.113883.6.1</schema>
+            <value>MRO</value>
+        </classCode>
+        <targetLanguage>pt-PT</targetLanguage>
+    </arg0>
+</cc:retrieveDocument>

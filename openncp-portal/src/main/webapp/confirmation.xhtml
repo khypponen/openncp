@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-W3CDTD XHTML 1.0 TransitionalEN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+    </h:head>
+    <body>
+        <p:panel
+            header="#{msg['trca.header']}" id="subConfirmationPanel">
+            <p:outputPanel id="customPanel">
+                <td><b><h:outputText value="#{msg['trca.purpose']}" /></b></td>
+                <p:selectOneRadio id="customRadio"
+                                  value="#{confirmationBean.purposeOfUse}" layout="custom">
+                    <f:selectItem itemLabel="&nbsp;&nbsp;#{msg['trca.emergency']}"
+                                  itemValue="EMERGENCY" />
+                    <f:selectItem itemLabel="&nbsp;&nbsp;#{msg['trca.treatment']}"
+                                  itemValue="TREATMENT" />
+                    <p:ajax update="subConfirmationPanel"/>
+                </p:selectOneRadio>
+                <h:panelGrid columns="2" >
+                    <p:radioButton id="opt2" for="customRadio" itemIndex="0" />
+                    <h:outputLabel for="opt2" value="&nbsp;&nbsp;#{msg['trca.emergency']}" />
+                    <p:radioButton id="opt1" for="customRadio" itemIndex="1" />
+                    <h:outputLabel for="opt1" value="&nbsp;&nbsp;#{msg['trca.treatment']}" />
+                </h:panelGrid>
+            </p:outputPanel>
+            <p:outputPanel rendered="#{confirmationBean.purposeOfUse=='TREATMENT'}" id="customPanel2">
+                <td><b><h:outputText
+                            value="#{msg['previous.consent']}" /></b></td>
+                <p:selectOneRadio id="customRadio2"
+                                  value="#{confirmationBean.confirm}" layout="custom">
+                    <f:selectItem itemLabel="Yes" itemValue="Yes" />
+                    <f:selectItem itemLabel="No" itemValue="No" />
+                </p:selectOneRadio>
+                <h:panelGrid columns="2">
+                    <p:radioButton id="opt11" for="customRadio2" itemIndex="0" />
+                    <h:outputLabel for="opt11" value="&nbsp;&nbsp;#{msg['message.popup.yes']}" />
+                    <p:radioButton id="opt22" for="customRadio2" itemIndex="1" />
+                    <h:outputLabel for="opt22" value="&nbsp;&nbsp;#{msg['message.popup.no']}" />
+                </h:panelGrid>
+            </p:outputPanel>
+
+        </p:panel>
+
+    </body>
+</html>

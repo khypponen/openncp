@@ -1,0 +1,15 @@
+<saml2:Assertion ID="1285689011909" IssueInstant="2010-09-28T15:50:11.910Z" Version="2.0" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:exc14n="http://www.w3.org/2001/10/xml-exc-c14n#" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#">
+    <saml2:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:X509SubjectName">CN=SAML User,OU=SU,O=SAML User,L=Los Angeles,ST=CA,C=US</saml2:Issuer>
+    <saml2:Subject>
+        <saml2:NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:X509SubjectName">CN=SAML User,OU=SU,O=SAML User,L=Los Angeles,ST=CA,C=US</saml2:NameID>
+        <saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:sender-vouches">
+            <saml2:NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:X509SubjectName">CN=SAML User,OU=SU,O=SAML User,L=Los Angeles,ST=CA,C=US</saml2:NameID>
+        </saml2:SubjectConfirmation>
+    </saml2:Subject>
+    <saml2:Conditions NotBefore="2010-09-28T14:50:11.909Z" NotOnOrAfter="2010-09-28T16:50:11.910Z"/>
+    <saml2:AttributeStatement>
+        <saml2:Attribute Name="attribute1">
+            <saml2:AttributeValue ns6:type="ns7:string" xmlns:ns6="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns7="http://www.w3.org/2001/XMLSchema">ATTRIBUTE1</saml2:AttributeValue>
+        </saml2:Attribute>
+    </saml2:AttributeStatement>
+</saml2:Assertion>

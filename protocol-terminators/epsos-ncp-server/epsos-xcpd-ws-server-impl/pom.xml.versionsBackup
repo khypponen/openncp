@@ -1,0 +1,55 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+    <!-- ==================
+       Artifact
+    ================== -->
+    <parent>
+        <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+        <artifactId>epsos-ncp-server</artifactId>
+        <version>3.2.1</version>
+    </parent>
+
+	<groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
+	<artifactId>epsos-xcpd-ws-server-impl</artifactId>
+	<name>EpSOS CC IHE-XCPD Service Interface Implementation</name>
+	<organization>
+		<name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
+		<url>www.srdc.com.tr</url>
+	</organization>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-kernel</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
+			<artifactId>epsos-interface</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<dependency>
+  			<groupId>eu.europa.ec.joinup.ecc</groupId>
+			<artifactId>epsos-assertion-validator</artifactId>
+  		</dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-defaultpolicymanager</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+            <artifactId>epsos-integration-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

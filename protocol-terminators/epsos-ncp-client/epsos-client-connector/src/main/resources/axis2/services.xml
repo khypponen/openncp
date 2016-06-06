@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST) -->
+<serviceGroup>
+    <service name="ClientConnectorService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="eu.epsos.pt.cc.ClientConnectorServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">eu.epsos.pt.cc.ClientConnectorServiceSkeleton${service.class.mock}</parameter>
+        <parameter name="useOriginalwsdl">false</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="submitDocument" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://client.pt.openncp.epsos/">
+            <actionMapping>http://clientconnector.protocolterminator.openncp.epsos/ClientConnectorService/submitDocumentRequest</actionMapping>
+            <outputActionMapping>http://clientconnector.protocolterminator.openncp.epsos/ClientConnectorService/submitDocumentResponse</outputActionMapping>
+        </operation>
+        <operation name="queryPatient" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://client.pt.openncp.epsos/">
+            <actionMapping>http://clientconnector.protocolterminator.openncp.epsos/ClientConnectorService/queryPatientRequest</actionMapping>
+            <outputActionMapping>http://clientconnector.protocolterminator.openncp.epsos/ClientConnectorService/queryPatientResponse</outputActionMapping>
+        </operation>
+        <operation name="sayHello" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://client.pt.openncp.epsos/">
+            <actionMapping>http://clientconnector.protocolterminator.openncp.epsos/ClientConnectorService/sayHelloRequest</actionMapping>
+            <outputActionMapping>http://clientconnector.protocolterminator.openncp.epsos/ClientConnectorService/sayHelloResponse</outputActionMapping>
+        </operation>
+        <operation name="queryDocuments" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://client.pt.openncp.epsos/">
+            <actionMapping>http://clientconnector.protocolterminator.openncp.epsos/ClientConnectorService/queryDocumentsRequest</actionMapping>
+            <outputActionMapping>http://clientconnector.protocolterminator.openncp.epsos/ClientConnectorService/queryDocumentsResponse</outputActionMapping>
+        </operation>
+        <operation name="retrieveDocument" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://client.pt.openncp.epsos/">
+            <actionMapping>http://clientconnector.protocolterminator.openncp.epsos/ClientConnectorService/retrieveDocumentRequest</actionMapping>
+            <outputActionMapping>http://clientconnector.protocolterminator.openncp.epsos/ClientConnectorService/retrieveDocumentResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

@@ -1,0 +1,3 @@
+ID;OID;NAME;DESCRIPTION
+11;2.16.840.1.113883.6.96;SNOMED CT;Systematized Nomenclature of Medicine-Clinical Terms (maintained by IHTSDO)
+12;2.16.840.1.113883.6.1;LOINC;Logical Observation Identifiers Names and Codes

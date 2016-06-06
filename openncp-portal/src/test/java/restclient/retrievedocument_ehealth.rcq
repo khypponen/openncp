@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rest-client version="3.5"><request><http-version>1.1</http-version><http-follow-redirects/><URL>http://localhost:8380/ehealth/rest/epsos/documents/get/ps/el_GR/true</URL><method>POST</method><headers><header key="Authorization" value="O3jwgkCGtr3cOyuB5Pvw0mZgGqH2cmlW3U8CKqamAVTC9BrJRtAg8PE8EKRzh7Yj"/></headers><body><string content-type="text/plain" charset="UTF-8">     &lt;Document&gt;
+     &lt;root&gt;2.16.840.1.113883.2.9.4.3.2&lt;/root&gt;
+     &lt;extension&gt;CRRPLA47H13A794V&lt;/extension&gt;
+     &lt;repositoryid&gt;2.16.840.1.113883.19.5.88888.1&lt;/repositoryid&gt;
+     &lt;hcid&gt;2.16.17.710.806.1000.990.1&lt;/hcid&gt;
+     &lt;uuid&gt;2.16.840.1.113883.19.5.88888.1%5ETB1.PS.2&lt;/uuid&gt;
+     &lt;/Document&gt;</string></body></request></rest-client>

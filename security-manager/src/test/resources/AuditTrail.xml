@@ -1,0 +1,40 @@
+<AuditMessage>
+     <EventIdentification EventActionCode="E" EventDateTime="2010-09-23T13:00:24.148+03:00" EventOutcomeIndicator="0">
+         <EventID code="epsos-1" codeSystem="epsosTransaction" displayName="epsosIdentityService:FindIdentityFromTraits"/>
+     </EventIdentification>
+     <ActiveParticipant NetworkAccessPointID="194.219.31.2" UserID="SG">
+         <RoleIDCode code="Source Gateway"/>
+     </ActiveParticipant>
+     <ActiveParticipant NetworkAccessPointID="222.33.33.3" UserID="TG">
+         <RoleIDCode code="Target Gateway"/>
+     </ActiveParticipant>
+     <ActiveParticipant UserID="" UserIsRequestor="true">
+         <RoleIDCode code="epSOSPointOfCare"/>
+     </ActiveParticipant>
+     <ActiveParticipant AlternativeUserID="Massimiliano Masi" UserID="Massi" UserIsRequestor="true">
+         <RoleIDCode code="epSOSHR"/>
+     </ActiveParticipant>
+     <ActiveParticipant UserID="sc_userid" UserIsRequestor="true">
+         <RoleIDCode code="ServiceConsumer"/>
+     </ActiveParticipant>
+     <ActiveParticipant UserID="sp_userid" UserIsRequestor="true">
+         <RoleIDCode code="ServiceProvider"/>
+     </ActiveParticipant>
+     <ActiveParticipant UserID="sp_userid" UserIsRequestor="true">
+         <RoleIDCode code="epSOSMappingService"/>
+     </ActiveParticipant>
+     <AuditSourceIdentification AuditSourceID="auditsource"/>
+     <ParticipantObjectIdentification ParticipantObjectID="22" ParticipantObjectTypeCode="1" ParticipantObjectTypeCodeRole="1">
+         <ParticipantObjectIDTypeCode code="2" codeSystemName="RFC-3881" displayName="Patient Number"/>
+     </ParticipantObjectIdentification>
+     <ParticipantObjectIdentification ParticipantObjectID="patienttarget^^^" ParticipantObjectTypeCode="2" ParticipantObjectTypeCodeRole="3">
+         <ParticipantObjectIDTypeCode code="9"/>
+         <ParticipantObjectDetail type="errormsg" value=""/>
+     </ParticipantObjectIdentification>
+     <ParticipantObjectIdentification ParticipantObjectID="11" ParticipantObjectTypeCode="4">
+         <ParticipantObjectIDTypeCode code="req" codeSystemName="epSOS Msg" displayName="Request Message"/>
+     </ParticipantObjectIdentification>
+     <ParticipantObjectIdentification ParticipantObjectID="22" ParticipantObjectTypeCode="4">
+         <ParticipantObjectIDTypeCode code="rsp" codeSystemName="epSOS Msg" displayName="Response Message"/>
+     </ParticipantObjectIdentification>
+ </AuditMessage>

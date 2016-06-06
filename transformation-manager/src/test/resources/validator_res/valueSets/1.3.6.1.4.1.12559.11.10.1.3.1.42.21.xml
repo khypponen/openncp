@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSBloodPressure" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.21" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="8462-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="INTRAVASCULAR DIASTOLIC"/>
+			<Concept code="8462-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="INTRAVASCULAR DIASTOLIC (epsos loinc)"/>
+			<Concept code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="INTRAVASCULAR SYSTOLIC"/>
+			<Concept code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="INTRAVASCULAR SYSTOLIC (epsos loinc)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

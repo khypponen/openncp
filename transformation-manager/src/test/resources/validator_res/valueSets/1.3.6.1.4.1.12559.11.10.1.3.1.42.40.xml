@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSTelecomAddress" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.40" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="AS" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="answering service"/>
+			<Concept code="AS" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="answering service (TelecommunicationAddressUse)"/>
+			<Concept code="EC" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="emergency contact"/>
+			<Concept code="EC" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="emergency contact (TelecommunicationAddressUse)"/>
+			<Concept code="H" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="home"/>
+			<Concept code="H" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="home (TelecommunicationAddressUse)"/>
+			<Concept code="HP" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="primary home"/>
+			<Concept code="HP" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="primary home (TelecommunicationAddressUse)"/>
+			<Concept code="HV" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="vacation home"/>
+			<Concept code="HV" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="vacation home (TelecommunicationAddressUse)"/>
+			<Concept code="MC" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="mobile contact"/>
+			<Concept code="MC" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="mobile contact (TelecommunicationAddressUse)"/>
+			<Concept code="PG" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="pager"/>
+			<Concept code="PG" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="pager (TelecommunicationAddressUse)"/>
+			<Concept code="WP" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="work place"/>
+			<Concept code="WP" codeSystem="2.16.840.1.113883.5.1119" codeSystemName="AddressUse" displayName="work place (TelecommunicationAddressUse)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

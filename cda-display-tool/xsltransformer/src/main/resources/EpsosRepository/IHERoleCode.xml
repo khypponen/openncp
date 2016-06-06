@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<IHERoleCodeInformation>
+<IHERoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.36' epsosName='epSOSIHERoleCode' code='AFFILIATED'>
+<displayName lang='en'>An organization with which a person is affiliated (e.g., a volunteer organization).</displayName>
+</IHERoleCodeEntry>
+<IHERoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.36' epsosName='epSOSIHERoleCode' code='EMPLOYER'>
+<displayName lang='en'>The employer of a person.</displayName>
+</IHERoleCodeEntry>
+<IHERoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.36' epsosName='epSOSIHERoleCode' code='PHARMACY'>
+<displayName lang='en'>The pharmacy a person uses.</displayName>
+</IHERoleCodeEntry>
+<IHERoleCodeEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.36' epsosName='epSOSIHERoleCode' code='SCHOOL'>
+<displayName lang='en'>The school in which a person is enrolled.</displayName>
+</IHERoleCodeEntry>
+</IHERoleCodeInformation>

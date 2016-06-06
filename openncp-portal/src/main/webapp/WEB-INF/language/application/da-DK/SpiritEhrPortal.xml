@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<!-- DK translation made by Rasmus Melgaard, Nationl Board of E-Health, Denmark for EU epSOS project.
+    Version: 1.0
+    Date: 06.04.2011
+-->
+
+<properties>
+
+<entry key="F">Kvinde</entry>
+<entry key="M">Mand</entry>
+<entry key="O">Other</entry>
+<entry key="U">Unknown</entry>
+<entry key="UN">Udifferentierede</entry>
+
+<entry key="contact.title">Kontakt</entry>
+
+<entry key="DBLMNG QUERY MODE  ALL PAT">Alle patienter</entry>                                 <!-- Portal A functionality for Patient database managment -->
+<entry key="DBLMNG QUERY MODE  DBL AND MRGPAT">Lokale og indeks dubletter</entry>            <!-- Portal A functionality for Patient database managment --> 
+<entry key="DBLMNG QUERY MODE  ONLY DBLPAT">Kun indeks dubletter</entry>                    <!-- Portal A functionality for Patient database managment -->
+<entry key="DBLMNG QUERY MODE  ONLY MRGPAT">Kun lokale dubletter</entry>                    <!-- Portal A functionality for Patient database managment --> 
+
+<entry key="doubletten.download.link">Hent rapport</entry>                            <!-- Portal A functionality for Patient database managment -->  
+<entry key="doubletten.filter.detail">Detaljeret rapport</entry>                              <!-- Portal A functionality for Patient database managment --> 
+<entry key="doubletten.filter.pair">Par rapport</entry>                                  <!-- Portal A functionality for Patient database managment -->
+<entry key="doubletten.filter.predefined">Prædefineret rapportt</entry>                      <!-- Portal A functionality for Patient database managment -->
+<entry key="doubletten.filter.query.type">Forespørgselstype:</entry>                            <!-- Portal A functionality for Patient database managment -->
+<entry key="doubletten.filter.report.type">Rapporttype:</entry>                          <!-- Portal A functionality for Patient database managment -->
+<entry key="doubletten.generate.button">Generér</entry>                                 <!-- Portal A functionality for Patient database managment -->
+<entry key="doubletten.management.title">Håndtér Dubletter</entry>                   <!-- Portal A functionality for Patient database managment -->
+
+<entry key="help.download.manual">Hent brugermanual</entry>  
+<entry key="help.title">Hjælp</entry>  
+
+<entry key="info.build.date">Dato:</entry>
+<entry key="info.build">Byg:</entry>
+<entry key="info.producer">Producent:</entry>
+<entry key="info.product.name">Produktnavn:</entry>
+<entry key="info.title">Info</entry>
+<entry key="info.version">Version:</entry>
+
+<entry key="lifecycleAddendum">Tilføjelse</entry>
+<entry key="lifecycleReplacement">Erstatning</entry>
+<entry key="lifecycleStorno">Annullering</entry>
+<entry key="lifecycleTransformation">Transformation</entry>
+<entry key="list.entry.detail">Detaljer</entry>  
+<entry key="login.back">Tilbage</entry>
+<entry key="login.change">Skift adgangskode</entry>
+<entry key="login.login">Login</entry>
+<entry key="login.organisation">Organisation</entry>
+<entry key="login.password.new">Ny adgangskode</entry>
+<entry key="login.password.retry">Bekræft adgangskode</entry>
+<entry key="login.password">Adgangskode</entry>
+<entry key="login.role">Rolle</entry>
+<entry key="login.username">Brugernavn</entry>
+
+<entry key="message.access">Adgangsadvarsel !</entry>
+<entry key="message.doubletten.select.report">Vælg venligst en rapporttype.</entry> 
+<entry key="message.error">FEJL !</entry>
+<entry key="message.info">INFO</entry>
+<entry key="message.insert.succesful">Patienten blev tilføjet.</entry>                 <!-- Portal A functionality - Overtake a foreign Patient into local system -->
+<entry key="message.insert.values">Vær venlig og tilføje en værdi for {0}.</entry>
+<entry key="message.merge.added.patient">Patienten blev tilføjet ved fletning (merge).</entry>                  <!-- Portal A functionality - merge 2 local Patient data sets for one human person -->
+<entry key="message.merge.not.local.patient">Kun patienter fra det lokale domæne kan flettes.</entry> <!-- only local datasets can be merged -->
+<entry key="message.merge.only.two.patients">To patienter er allerede valgt. Fjern markeringen fra en af patienterne, før en ny vælges.</entry> <!-- Portal A functionality - merge 2 local Patient data sets for one human person -->
+<entry key="message.merge.select.survivor">Vælg venligst den patient som skal IKKE skal slettes.</entry> <!-- Portal A functionaluty - after merge, only one Patient remains, the User has to choose, which one remains -->
+<entry key="message.merge.succesful">Patienten er flettet.</entry>    <!-- Portal A functionality - Message about the success of the Patient Merge -->
+<entry key="message.popup.break.glass">Brug værdisprengsregel</entry>         <!-- PopUp for break-the-glass functionality -->
+<entry key="message.popup.relogin">Login</entry>
+<entry key="message.popup.close">Luk</entry>
+<entry key="message.popup.detail">Detajler</entry>
+<entry key="message.popup.no">Nej</entry>
+<entry key="message.popup.yes">Ja</entry>
+<entry key="message.question">SPØRGSMÅL ?</entry>
+<entry key="message.search.givenname.length">Indtast venligst 3 eller flere karakterer i fornavn.</entry> <!-- in standard PDQ a wildcard search is possible. § characters are needed to erform a wildcard search -->
+<entry key="message.search.surname.length">Indtast venligst 3 eller flere karakterer i efternavn.</entry> <!-- in standard PDQ a wildcard search is possible. § characters are needed to erform a wildcard search -->
+<entry key="message.search.values">Indtast venligst søgeværdier.</entry>
+<entry key="message.select.patient">Vælg venligst en patient.</entry>
+<entry key="message.update.not.local.patient">Denne patient kan ikke ændres, fordi vedkommende ikke eksisterer i det lokale domæne. Ønskes patienten oprettet lokalt?</entry> <!-- Portal A functinlity - Only Patients who are in the local daomain can be edited -->
+<entry key="message.update.succesful">Patient er opdateret.</entry>
+<entry key="message.warning">ADVARSEL !</entry>
+<entry key="messageFillInNewPassword">Indtast venligst ny adgangskode.</entry>
+<entry key="messageFillInPassword">Indtast venligst en adgangskode.</entry>
+<entry key="messageFillInPasswordRetry">Bekræft venligst ny adgangskode.</entry>
+<entry key="messageFillInUser">Indtast venligst brugernavn.</entry>
+<entry key="messageForcedPasswordChangeException">Adgangskoden er reset af administratoren. Indtast venligst en ny.</entry>
+<entry key="messageLoginException">Der skete en fejl under login. Check venligst brugernavn og adgangskode, og prøv igen.</entry>
+<entry key="messageLoginNoOrganisation">Bruger er ikke tilknyttet en organisation!</entry>
+<entry key="messageLoginNoPermissionForApplication">Bruger har ikke tilladelse til at tilgå denne applikation!</entry>
+<entry key="messageLoginNoRole">Bruger har ingen rolle tilknyttet!</entry>
+<entry key="messagePasswordDuplicateUse">Den nye og gamle adgangskode er ens. Vælg venligst et andet.</entry>
+<entry key="messagePasswordMissmatch">Adgangskoderne er ikke ens.</entry>
+<entry key="messageUserAccountExpirationInDays">Din adgangskode udløber om {0} dage. Ændre venligst adgangskoden.</entry>
+<entry key="messageUserAccountExpiredException">Din adgangskode er udløbet. Kontakt venligst din administrator.</entry>
+<entry key="messageWrongUserException">Brugernavnet eksisterer ikke.</entry>
+
+<entry key="navi.config.contact">Kontakt - Info - Hjælp</entry>
+<entry key="navi.config.help">Hjælp</entry>
+<entry key="navi.config.settings">Indstillinger</entry>
+<entry key="navi.info.access.protocol">Access History</entry>
+<entry key="navi.info.doubletten.management">Håndtér dubletter</entry>
+<entry key="navi.info.patient.agreement">Patient samtykke</entry>
+<entry key="navi.link.patient.registration">Patient Registration</entry>
+<entry key="navi.link.patient.search">Patient Søgning</entry>
+<entry key="navi.report.search">Dokument Søg</entry>
+<entry key="navi.report.prescription">Recept</entry>
+<entry key="navi.report.summary">Patient resumé</entry>
+<entry key="navi.report.medical.history">Medical Historie</entry>    <!-- Portal A functionality -->
+<entry key="navi.report.insert">Indsæt dokument</entry>             <!-- Portal A functionality -->
+<entry key="navi.report.create">Opret dokument</entry>             <!-- Portal A functionality -->
+<entry key="navi.report.emergency.data">Patient resumé</entry>     <!-- Portal A functionality -->
+<entry key="navi.report.vaccination">Vaccination</entry>            <!-- Portal A functionality - it is NOT the section in the CDA!!! -->
+<entry key="navi.report.xdm.report">Import af personlig sundhedsjournal</entry> <!-- Portal A functionality -->
+<entry key="navi.user.login">er logget ind</entry>
+<entry key="navi.user.logout.btn">Logout</entry>
+<entry key="navi.user.organisation">Organisation</entry>  
+<entry key="navi.user.role">Rolle</entry>  
+<entry key="navigator.pro.site">Antal pr. side</entry>
+<entry key="navigator.sorting">Sortering</entry>
+
+<entry key="patient.create.id.add">Tilføj</entry>
+<entry key="patient.create.id.remove">Fjern</entry>
+<entry key="patient.create.patient.id">Opret patient id:</entry>  <!--  Portal A functionality -->
+<entry key="patient.data.day.of.death">Dødsdato:</entry>      <!-- Portal A functionality -->
+<entry key="patient.data.account.number">Konto data:</entry>
+<entry key="patient.data.agreement.title">Patient samtykke</entry>
+<entry key="patient.data.birth.date">Fødselsdato:</entry>
+<entry key="patient.data.birth.place">Fødselssted:</entry>
+<entry key="patient.data.button.merge">Flet</entry>               <!-- Portal A functionality -->
+<entry key="patient.data.button.modify">Ændre</entry>             <!-- Portal A functionality -->
+<entry key="patient.data.button.remove">Fjern</entry>             <!-- Portal A functionality -->
+<entry key="patient.data.button.save">Gem</entry>                <!-- Portal A functionality -->
+<entry key="patient.data.cancel">Annuller</entry>
+<entry key="patient.data.citizen.ship">Statsborgerskab:</entry>
+<entry key="patient.data.city">By:</entry>
+<entry key="patient.data.code">Postnummer:</entry>
+<entry key="patient.data.country">Land:</entry>
+<entry key="patient.data.domain.type">Domænetype</entry>
+<entry key="patient.data.domain">Domæne</entry>  <!-- The domain, the patient comes from. I.e. a country -->
+<entry key="patient.data.driving.licence">Kørekortnr.:</entry>
+<entry key="patient.data.family.status">Civilstand:</entry>
+<entry key="patient.data.givenname">Fornavn:</entry>
+<entry key="patient.data.header.merge">Flet patient</entry>       <!-- Portal A functionality -->
+<entry key="patient.data.id.type">Patient id type</entry>
+<entry key="patient.data.insurance.number">Sygeforsikringsnr.:</entry>
+<entry key="patient.data.last.update">Sidste opdatering:</entry>
+<entry key="patient.data.mail.business">Email (arb.):</entry>
+<entry key="patient.data.mail.home">Email (hjemme):</entry>
+<entry key="patient.data.middlename">Mellemnavn:</entry>
+<entry key="patient.data.name.space">Namespace</entry> <!-- A namespace (sometimes also called a name scope) is an abstract container or environment created to hold a logical grouping of unique identifiers or symbols (i.e., names) (from http://en.wikipedia.org) -->
+<entry key="patient.data.nationality">Nationalitet:</entry>
+<entry key="patient.data.patient.id">Patient id</entry>
+<entry key="patient.data.patientdata.title">Patient data</entry>
+<entry key="patient.data.phone.business">Tlf. (arb.):</entry>
+<entry key="patient.data.phone.private">Tlf. (hjemme):</entry>
+<entry key="patient.data.registration.title">Patient registrering</entry> <!-- Portal A functionlity - Header on Registration page -->
+<entry key="patient.data.religion">Religion:</entry>
+<entry key="patient.data.sex">Køn:</entry> <!-- In epSOS we use HL7 - Adminstrative Gender. As agreed, it is more understandable for the user that there is written only Gender. -->
+<entry key="patient.data.state">Delstat:</entry>
+<entry key="patient.data.street.address">Vej:</entry>
+<entry key="patient.data.surname">Efternavn:</entry>
+<entry key="patient.data.title">Titel:</entry>
+<entry key="patient.has.local.documents">Patienten har lokale dokumenter</entry> <!-- Info (mouseover) for 3 "Lamps (= green)" in PatientSearchMask to inform about the PatID, local and remote documents -->
+<entry key="patient.has.remote.documents">Patient har fjern dokumenter</entry> <!-- Info (mouseover) for 3 "Lamps (= green)" in PatientSearchMask to inform about the PatID, local and remote documents -->
+<entry key="patient.is.local">Patient er lokal</entry> <!-- Info (mouseover) for 3 "Lamps(= green)" in PatientSearchMask to inform about the PatID, local and remote documents -->
+<entry key="patient.list.givenname.sort.ascending">Fornavn stigende</entry>
+<entry key="patient.list.givenname.sort.descending">Fornavn aftagende</entry>
+<entry key="patient.list.no.patient">Ingen patient fundet</entry>
+<entry key="patient.list.patientlist">Patient liste</entry>
+<entry key="patient.list.surname.sort.ascending">Efternavn stigende</entry>
+<entry key="patient.list.surname.sort.descending">Efternavn aftagende</entry>
+<entry key="patient.no.local.documents">Patient har ingen lokale dokumenter</entry> <!-- Info (mouseover) for 3 "Lamps (= red)" in PatientSearchMask to inform about the PatID, local and remote documents -->
+<entry key="patient.no.remote.documents">Patient har ingen fjern dokumenter</entry> <!-- Info (mouseover) for 3 "Lamps (= red)" in PatientSearchMask to inform about the PatID, local and remote documents -->
+<entry key="patient.not.local">Patient er ikke lokal</entry> <!-- Info (mouseover) for 3 "Lamps (= red)" in PatientSearchMask to inform about the PatID, local and remote documents -->
+<entry key="patient.search.birth.date.day">Dag</entry>
+<entry key="patient.search.birth.date.month">Måned</entry>
+<entry key="patient.search.birth.date.year">År</entry>
+<entry key="patient.button.search">Søg</entry>
+<entry key="patient.button.search.reset">Reset</entry>
+<entry key="patient.search.patient.id">Patient id:</entry>
+<entry key="patient.search.patient.svnr">Sygeforsikringsnr.:</entry>
+<entry key="patient.search.patientsearch">Patient søgning</entry>
+<entry key="patient.search.xcpd">Ekstern</entry>
+
+<entry key="report.button.search.reset">Reset</entry>
+<entry key="report.button.search">Søg</entry>
+<entry key="report.category.search">Søg i specifikke kategorier:</entry>
+<!-- This section is Poratl A functionlity. Document Upload / document description / Metadata-->
+<entry key="report.document.header.title">Dokumentdetaljer</entry>
+<entry key="report.document.author.department">Forfatters afdeling:</entry>
+<entry key="report.document.author.institution">Forfatters institution:</entry>
+<entry key="report.document.author.person">Forfatter:</entry>
+<entry key="report.document.author.role">Forfatter rolle:</entry>
+<entry key="report.document.author.speciality">Forfatter specialitet:</entry>
+<entry key="report.document.legal.authenticator">Juridisk myndighed:</entry>
+<entry key="report.document.title">Titel:</entry>
+<entry key="report.document.description">Beskrivelse:</entry>
+<entry key="report.document.creation.time">Oprettelses dato/tid:</entry>
+<entry key="report.document.language">Sprog:</entry>
+<entry key="report.document.class.code">Dokument klasse:</entry>
+<entry key="report.document.confidentiality.code">Konfidentialitet:</entry>
+<entry key="report.document.healthcare.facility.type.code">Healthcare Facility:</entry>
+<entry key="report.document.practice.setting.code">Praksis indstilling:</entry>
+<entry key="report.document.type.code">Dokument type:</entry>
+<entry key="report.document.status">Status:</entry>
+<entry key="report.document.format.code">Format kode:</entry>
+<entry key="report.document.size">Størrelse:</entry>
+<entry key="report.document.format">Format:</entry>
+
+<!-- This section is Portal A functionlity. Document upload / Metadata of submission set -->
+<entry key="report.submission.header.title">Forsendelsesdetaljer</entry>
+<entry key="report.submission.author.institution">Forfatter institution:</entry>
+<entry key="report.submission.author.department">Forfatter afdeling:</entry>
+<entry key="report.submission.author.person">Forfatter:</entry>
+<entry key="report.submission.author.role">Forfatter rolle:</entry>
+<entry key="report.submission.author.speciality">Forfatter specialitet:</entry>
+<entry key="report.submission.title">Titel:</entry>
+<entry key="report.submission.description">Beskrivelse:</entry>
+<entry key="report.submission.time">Afsendelses dato/tid:</entry>
+<entry key="report.submission.content.type.code">Indholdstype:</entry>
+
+<!-- This section is Portal A functionlity. Document upload / XDS Repository behaviour -->    
+<entry key="report.folder.header.title">Folder detaljer</entry>
+<entry key="report.folder.create">Ny folder:</entry>
+<entry key="report.folder.title">Titel:</entry>
+<entry key="report.folder.description">Beskrivelse:</entry>
+<entry key="report.folder.code">Folder kode:</entry>
+
+<!-- Portal B(!!!) functionality,since eD documents will be created in the Portal B -->
+<entry key="report.create.document.data.incomplete">Dokument detaljer er ufuldstændig!</entry>
+<entry key="report.create.document.submit">Send</entry>
+<entry key="report.create.document.success">Dokumentet er afsendt.</entry>
+<entry key="report.create.folder.data.incomplete">Folder detaljer er ufuldstændig!</entry>
+<entry key="report.create.submission.data.incomplete">Afsendelsesdetaljer er ufuldstændig!</entry>
+<entry key="report.create.upload.added.documents">Dokumenter tilføjet:</entry>
+<entry key="report.create.upload.choose.document">Vælg dokumenter:</entry>
+<entry key="report.create.upload.document">Upload</entry>
+<entry key="report.create.upload.remove.document">Fjern</entry>
+    
+<entry key="report.date.search">Søg i specifik periode:</entry> <!-- Document query in a specific time frame -->
+<entry key="report.detail.document">Dokument</entry> <!-- Document details -->
+<entry key="report.detail.title">Dokumentdetaljer</entry> <!-- Document Details -->
+<entry key="report.details">Detaljer</entry>
+<entry key="report.from">Fra</entry>
+<entry key="report.is.accesable">Rapport adgang tilladt</entry> <!-- Access is allowed -->
+<entry key="report.link.report.type">Dokumenttype</entry>     <!-- Label of describing the type of the document, i.e. CDA L1 or L3, *.pdf, DICOM, JPEG, MP3, etc.-->
+<entry key="report.list.date.sort.ascending">Dato stigende</entry> <!-- Sort multiple documents according date, i.e. several eP -->
+<entry key="report.list.date.sort.descending">Dato aftagende</entry> <!-- Sort multiple documents according date, i.e. several eP -->
+<entry key="report.list.no.document">Ingen dokumenter fundet</entry>
+<entry key="report.list">Dokumentliste</entry>
+<entry key="report.not.accesable">Du har ikke rettigheder til rapport adgang!</entry> <!-- access to document is not allowed -->
+<entry key="report.search.advanced">Advanceret søgning</entry>    <!-- Portal A functionlity for filtered XDS DocQuery -->
+<entry key="report.search">Dokumentsøgning</entry>             <!-- Portal A functionlity - standard XDS StoredQuery -->
+<entry key="report.prescription">Recept</entry>          <!-- Button for epSOS query for eP -->
+<entry key="report.summary">Patientresumé</entry>            <!-- Button for epSOS query for PS -->
+<entry key="report.till">Til</entry>
+
+<!-- This section is Portal A functionality. It deals with possibility to import an EHR from a media device (i.e. USB-Key or CD-Rom) in a standardized way -->
+<entry key="xdm.import">Import af personlig sundhedsjournal</entry>
+<entry key="xdm.import.description">Import af patient data i XDM format til XDS arkivet.\nData skal være pakket i en ZIP fil. Vælg din fil og upload den til serveren.</entry>
+<entry key="xdm.select.file.before.upload">Vælg venligst en ZIP fil før der trykkes på upload.</entry>
+<entry key="xdm.import.upload.document.choose">Vælg ZIP fil:</entry>
+<entry key="xdm.import.upload.document">Upload</entry>
+<entry key="xdm.import.button">Import</entry>
+<entry key="xdm.select.patient">Vælg venligst en patient.</entry>
+<entry key="xdm.select.only.one.patient">Vælg venligst kun én patient.</entry>
+<entry key="xdm.select.document">Vælg venligst et dokument.</entry>
+<entry key="xdm.patient.on.media">Patient på medie</entry>
+<entry key="xdm.patient.content.preview">Preview</entry>
+<entry key="xdm.patient.content.import">Import</entry>
+
+<entry key="session.timeout.relogin">Din session er udløbet. Vær venlig at logge ind igen.</entry>
+<entry key="patient.id.create.failed">Ingen patient id'er oprettet for domæne {0}!\nMulig årsag: Ikke fundet i 'addable-removable' domæner og er ikke det lokal arbejdsdomæne\nVælg venligst et andet domæne eller fjern det fra listen.</entry> <!-- Portal A functionality -->
+<entry key="patient.id.insert.failed">Ingen patient id indsat for domæne {0}</entry> <!-- Portal A functionlity -->
+<entry key="patient.id.create.exception">Fejl under oprettelse af patient id!</entry> <!-- Portal A functionlity -->
+<entry key="report.document.metadata.exception">Fejl ved udtræk af dokument metadata!</entry>
+<entry key="report.document.formatcode.exception">Fejl ved udtræk af dokument format code!</entry>
+<entry key="report.choose.upload.file">Vælg venligst en fil før upload trykkes!</entry> <!-- Portal A functionlity - XDS document upload --> 
+<entry key="report.folder.metadata.exception">Fejl ved udtræk af folder metadata!</entry> <!-- Portal A functionlity - XDS DocUpload -->
+<entry key="report.submission.metadata.exception">Fejl ved udtræk af forsendelses metadata!</entry> <!-- Portal A functionlity - XDS DocUpload -->
+<entry key="report.folder.add.document">Ønskes dokumentet tilføjet til folderen?</entry> <!-- Portal A functionlity - XDS DocUpload -->
+<entry key="xdm.export">Eksport</entry>       <!-- Portal A functionlity - Export an EHR to a media device -->
+<entry key="xdm.export.really">Ønskes disse dokumenter eksporteret??\nEksporten tager et stykke tid. Hentningen startes automatisk.</entry> <!-- Portal A functionlity - Export an EHR to a media device -->
+<entry key="xdm.import.success">Data blev importeret.</entry> <!-- Portal A functionlity - Message that EHR import from media device was successful -->
+<entry key="policy.administration.title">Patient aftale</entry> <!-- Patient Agreement == Patient consent -->
+<entry key="patient.subscription.header">Notifikation</entry> <!-- Portal A functionality - HCP can subscribe for a specific Patient to get notified if a new doc is available -->
+<entry key="navi.info.patient.subscribtion">Notifikation</entry>  <!-- Portal A functionality - HCP can subscribe for a specific Patient to get notified if a new doc is available -->
+<entry key="patient.data.create.report">Print rapport</entry>
+<entry key="patient.data.create.label">Print label</entry>
+
+<entry key="messagePasswordMinimumLengthException">Indsæt venligst mindst {0} tegn i adgangskoden.</entry>
+<entry key="messagePasswordMinimumUpperCaseCharacterException">Indsæt venligst mindst {0} store bogstaver i adgangskoden.</entry>
+<entry key="messagePasswordMinimumLowerCaseCharacterException">Indsæt venligst mindst {0} små bogstaver i adgangskoden.</entry>
+<entry key="messagePasswordMinimumDigitException">Indsæt venligst mindst {0} tal (0 til 9) i adgangskoden.</entry>
+<entry key="messagePasswordMinimumSpecialCharacterException">Indsæt venligst mindst {0} special tegn i adgangskoden.</entry>
+
+<entry key="login.tooltip.password.length">Mindste længde {0} tegn.</entry>
+<entry key="login.tooltip.password.upper.case">Mindste længde {0} store bogstaver.</entry>
+<entry key="login.tooltip.password.lower.case">Mindste længde {0} små bogstaver.</entry>
+<entry key="login.tooltip.password.digits">Mindste længde {0} tal (0 til 9).</entry>
+<entry key="login.tooltip.password.special.character">Mindst {0} special tegn.</entry>
+
+<entry key="patient.subscribe">Abonnér</entry>  <!-- Portal A functionality - HCP can subscribe for a specific Patient to get notified if a new doc is available -->
+<entry key="message.popup.error">En fejl er opstået. Vær venlig at kontakte din systemadministrator.</entry>
+
+<entry key="patient.created.patient.ids">Oprettet patient id'er:</entry> <!-- Portal A functionality -->
+<entry key="message.create.patient.id">Vær venlig at oprettet patient id!</entry> <!-- Portal A functionlity -->
+<entry key="message.birth.greater.death">Dødsdag før fødselsdag!</entry> <!-- Portal A functionlity -->
+
+<entry key="report.submission.recipient.organisation">Modtager organisation:</entry>
+<entry key="report.submission.recipient.person">Modtager person:</entry>
+
+<entry key="report.list.filter.organisation">Organisation:</entry>
+<entry key="report.list.filter.type.code">Indholdstype:</entry>
+<entry key="report.list.filter.button.reset">Reset</entry>
+<entry key="report.list.filter.button.filter">Filtrer</entry>
+<entry key="report.list.button.filter">Filtrer</entry>
+
+<entry key="patient.search.international">International patient søgning</entry>
+<entry key="patient.search.country">Land:</entry>
+<entry key="patient.data.pseudonym">Pseudonym:</entry>
+<entry key="patient.data.tan.code">TAN kode:</entry>
+    
+<entry key="AT">Østrig</entry>
+<entry key="CZ">Tjekiet</entry>
+<entry key="DK">Danmark</entry>
+<entry key="FR">Frankrig</entry>
+<entry key="DE">Tyskland</entry>
+<entry key="GR">Grækenland</entry>
+<entry key="IT">Italien</entry>
+<entry key="NL">Holland</entry>
+<entry key="SK">Slovakiet</entry>
+<entry key="ES">Spanien</entry>
+<entry key="SE">Sverige</entry>
+<entry key="GB">Stor Britanien</entry>
+<entry key="EE">Estonien</entry>
+<entry key="CH">Schweiz</entry>
+<entry key="TR">Tyrkiet</entry>
+
+<entry key="patient.data.ins.france">National sundhedsidentifikationsnr.:</entry>
+<entry key="xdsi.header">Web Billedviser</entry> <!-- Portal A functionlity - DICOM Images -->
+<entry key="xdsi.info.series.number">Billednr.:</entry> <!-- Portal A functionality - DICOM Images -->
+<entry key="xdsi.info.study">Studie:</entry> <!-- Portal A functionality - DICOM Images -->
+<entry key="xdsi.info.series">Serie:</entry> <!-- Portal A functionality - DICOM Images -->
+<entry key="patient.search.treatment.question">Haves en behandlingsrelation med de valgte patienter?</entry>
+<entry key="patient.search.fiscal.code">Bank kode:</entry>
+
+<!-- <entry key="message.popup.patient.search.italy">Please fill in the fields family name, gender and first name or date of birth.\nOr search only according the fiscal code.</entry> -->
+<entry key="message.rpc.error">En fejl er opstået. Vær venlig at kontakte din systemadministrator.</entry>
+<entry key="patient.data.unique.identifier">Unik identifikator:</entry>
+<entry key="patient.data.region.spain">Region:</entry>
+<entry key="patient.data.unique.identifier.spain">Patient identifikationskode:</entry>
+
+<!-- PolicyIds -->
+<!-- Country=IHE -->
+<entry key="2.16.17.710.812.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.812.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=NL -->
+<entry key="2.16.17.710.810.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.810.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=GB -->
+<entry key="2.16.17.710.809.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.809.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=GR -->
+<entry key="2.16.17.710.808.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.808.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=SE -->
+<entry key="2.16.17.710.807.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.807.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=IT -->
+<entry key="2.16.17.710.806.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.806.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=SK -->
+<entry key="2.16.17.710.805.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.805.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=CZ -->
+<entry key="2.16.17.710.804.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.804.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=DE -->
+<entry key="2.16.17.710.803.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.803.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=DK -->
+<entry key="2.16.17.710.802.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.802.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=ES -->
+<entry key="2.16.17.710.801.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.801.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=CK -->
+<entry key="2.16.17.710.800.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.800.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=FR -->
+<entry key="2.16.17.710.790.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.790.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=AT -->
+<entry key="2.16.17.710.780.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.780.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=TR -->
+<entry key="2.16.17.710.813.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.813.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=CH -->
+<entry key="2.16.17.710.814.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.814.2.4.1.1">Politik, som tillader alt.</entry>
+<!-- Country=EE -->
+<entry key="2.16.17.710.815.2.4.1.2">Politik, som afviser alt.</entry>
+<entry key="2.16.17.710.815.2.4.1.1">Politik, som tillader alt.</entry>
+
+<entry key="navi.link.patient.update">Patient opdatering</entry> <!-- Portal A functionality - edit and/or update demografic data of a patient -->
+<entry key="patient.consent.save">Gem</entry>
+<entry key="patient.consent.print">Print</entry>
+<entry key="patient.data.id.code">Patient id kode:</entry>
+<entry key="policy.not.combinable">Politikken kan ikke kombineres.</entry>
+<entry key="policy.stored.succesful">Politikken blev gemt.</entry>
+<entry key="consent.not.given">Inget patient samtykke eksisterer.</entry>
+<entry key="message.popup.consent.edit">Ændre patient samtykke.</entry>
+<entry key="message.popup.emergency">Nødssituation</entry>
+<entry key="patient.data.audit.report">Opret patient auditeringsrapport</entry>
+
+
+<!-- NEW ENTRIES - 6.4.2011 !!! -->
+
+<entry key="doubletten.no.data">No Data available to create a Report.</entry>
+
+</properties>

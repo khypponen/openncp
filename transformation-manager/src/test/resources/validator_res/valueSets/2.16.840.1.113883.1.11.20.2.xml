@@ -1,0 +1,14 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.2" displayName="AdvanceDirectiveTypeCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="304251008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Resuscitation"/>
+			<Concept code="52765003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intubation"/>
+			<Concept code="225204009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="IV Fluid and Support"/>
+			<Concept code="89666000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="CPR"/>
+			<Concept code="281789004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Antibiotics"/>
+			<Concept code="78823007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Life Support"/>
+			<Concept code="61420007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tube Feedings"/>
+			<Concept code="71388002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Other Directive"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

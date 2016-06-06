@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+<entry key="F">انثى</entry>
+<entry key="M">ذكر</entry>
+<entry key="O">آخر</entry>
+<entry key="U">غير معروف</entry> 
+
+<entry key="contact.title">Contact</entry>
+
+<entry key="doubletten.download.link">تنزيل التقرير</entry>  
+<entry key="doubletten.filter.detail">تقرير مفصل</entry>  
+<entry key="doubletten.filter.pair">تقرير مزدوج</entry>  
+<entry key="doubletten.filter.predefined">تقرير معرّف</entry>  
+<entry key="doubletten.filter.query.type">نوع الاستفسار</entry>  
+<entry key="doubletten.filter.report.type">نوع التقرير</entry>  
+<entry key="doubletten.generate.button">اصدار</entry>
+<entry key="doubletten.management.title">تصحيح الأزدواج</entry>
+
+<entry key="help.download.manual">تنزيل دليل المستخدم</entry>  
+<entry key="help.title">مساعدة</entry>  
+
+<entry key="info.build.date">التاريخ</entry>
+<entry key="info.build">رمز الصنع</entry>
+<entry key="info.producer">المصنّع</entry>
+<entry key="info.product.name">اسم المنتج</entry>
+<entry key="info.title">معلومات المنتج</entry>
+<entry key="info.version">اصدار</entry>
+
+<entry key="lifecycleAddendum">ملحق</entry>
+<entry key="lifecycleReplacement">استبدال</entry>
+<entry key="lifecycleStorno">الغاء</entry>
+<entry key="lifecycleTransformation">تحوير</entry>
+
+<entry key="list.entry.detail">تفاصيل</entry>  
+
+<entry key="login.back">عودة</entry>
+<entry key="login.change">تغيير كلمة السر</entry>
+<entry key="login.login">دخول</entry>
+<entry key="login.organisation">مؤسسة</entry>
+<entry key="login.password.new">كلمة سر جديدة</entry>
+<entry key="login.password.retry">ادخال كلمة السر</entry>
+<entry key="login.password">كلمة السر</entry>
+<entry key="login.role">وظيفة</entry>
+<entry key="login.username">اسم المستخدم</entry>
+
+<entry key="message.access">تنبيه !</entry>
+<entry key="message.doubletten.select.report">الرجاء تحديد نوع التقرير.</entry> 
+<entry key="message.error">خطأ !</entry>
+<entry key="message.info">معلومات</entry>
+<entry key="message.insert.succesful">تم اضافة المريض .</entry>
+<entry key="message.merge.added.patient">تم دمج المريض</entry>
+<entry key="message.merge.not.local.patient">يمكن دمج المريض في نفس النطاق فقط.</entry>
+<entry key="message.merge.only.two.patients">إختر مريضين فقط.</entry>
+<entry key="message.merge.select.survivor">رجاء إختيار المريض المتبقي.</entry>
+<entry key="message.merge.succesful">تم دمج المريض.</entry>
+<entry key="message.popup.break.glass">إكسر الزجاج</entry>
+<entry key="message.popup.relogin">دخول</entry>
+<entry key="message.popup.close">خروج</entry>
+<entry key="message.popup.detail">تفاصيل</entry>
+<entry key="message.popup.no">لا</entry>
+<entry key="message.popup.yes">نعم</entry>
+<entry key="message.question">سؤال ؟</entry>
+<entry key="message.search.givenname.length">رجاء إدخال ثلاث حروف أو أكثر من إسم المريض.</entry>
+<entry key="message.search.surname.length">رجاء إدخال ثلاث حروف أو أكثر لإسم العائلة.</entry>
+<entry key="message.search.values">رجاء ادخال بيانات البحث.</entry>
+<entry key="message.select.patient">ادخال بيانات المريض.</entry>
+<entry key="message.update.not.local.patient">لا يمكن تعديل ملف المريض لأنه غير موجود في النطاق المحلي. هل تريد اضافة المريض الى النطاق المحلي ؟</entry>
+<entry key="message.update.succesful">تم تعدبل المريض.</entry>
+<entry key="message.warning">تحذير !</entry>
+
+<entry key="messageFillInNewPassword">الرجاء إدخال كلمة سر جديدة.</entry>
+<entry key="messageFillInPassword">الرجاء إدخال كلمة السر.</entry>
+<entry key="messageFillInPasswordRetry">الرجاء إدخال كلمة السر الجديدة.</entry>
+<entry key="messageFillInUser">ادخال اسم المستخدم</entry>
+<entry key="messageForcedPasswordChangeException">رجاء تعديل كلمة السر الآن.</entry>
+<entry key="messageLoginException">حصل خظأ في الدخول, تأكد من البيانات و حاول الدخول مرة ثانية.</entry>
+<entry key="messageLoginNoOrganisation">المستخدم لا ينتمي الى أي مؤسسة</entry>
+<entry key="messageLoginNoPermissionForApplication">ليس لديك صلاحيات لإستخدام هذا البرنامج.</entry>
+<entry key="messageLoginNoRole">ليس لديك أي دور!</entry>
+<entry key="messagePasswordDuplicateUse">كلمة السر الجديدة مطابقة للقديمة. الرجاء تعديل كلمة السر.</entry>
+<entry key="messagePasswordMissmatch">كلمات السر غير متطابقة.</entry>
+<entry key="messageUserAccountExpirationInDays">كلمة السر الخاصة بك سوف تنفذ خلال )0( ايام, رجاء تعديل كلمة السر.</entry>
+<entry key="messageUserAccountExpiredException">لقد نفذت مدة كلمة السر الخاصة بك, رجاء الإتصال بالدعم الفني.</entry>
+<entry key="messageWrongUserException">اسم المستخدم غير موجود.</entry>
+
+<entry key="navi.config.contact">إتصال - معلومات - مساعدة.</entry>
+<entry key="navi.config.help">مساعدة</entry>
+<entry key="navi.config.settings">خيارات</entry>
+<entry key="navi.info.access.protocol">سجل الدخول</entry>
+<entry key="navi.info.doubletten.management">معالجة اللإزدواجيات.</entry>
+<entry key="navi.info.patient.agreement">موافقة المريض.</entry>
+<entry key="navi.link.patient.registration">تسجيل المريض.</entry>
+<entry key="navi.link.patient.search">بحث عن مريض.</entry>
+<entry key="navi.report.create">إنشاء ملف. </entry>
+<entry key="navi.report.emergency.data">ملخص معلومات المريض</entry>
+<entry key="navi.report.insert">إدخال ملف</entry>
+<entry key="navi.report.medical.history">الملف الطبي</entry>
+<entry key="navi.report.search">بحث عن ملف</entry>
+<entry key="navi.report.vaccination">تطعييم</entry>
+<entry key="navi.report.xdm.report"> استيراد ملف طبي خاص </entry>  
+<entry key="navi.user.login">مسجل</entry>
+<entry key="navi.user.logout.btn">خروج</entry>
+<entry key="navi.user.organisation">مؤسسة</entry>  
+<entry key="navi.user.role">دور</entry>  
+
+<entry key="navigator.pro.site">العدد لكل موقع</entry>
+<entry key="navigator.sorting">ترتيب</entry>
+
+<entry key="patient.create.id.add">إضافة</entry>
+<entry key="patient.create.id.remove">حذف</entry>
+<entry key="patient.create.patient.id">إنشاء رقم المريض</entry>
+<entry key="patient.data.day.of.death">تاريخ الوفاة</entry>
+<entry key="patient.data.account.number">معلومات السجل</entry>
+<entry key="patient.data.agreement.title">إقرار المريض.</entry>
+<entry key="patient.data.birth.date">تاريخ الميلاد</entry>
+<entry key="patient.data.birth.place">مكان الميلاد</entry>
+<entry key="patient.data.button.merge">دمج</entry>
+<entry key="patient.data.button.modify">تعديل</entry>
+<entry key="patient.data.button.remove">حذف</entry>
+<entry key="patient.data.button.save">حفظ</entry>
+<entry key="patient.data.cancel">الغاء</entry>
+<entry key="patient.data.citizen.ship">الجنسية</entry>
+<entry key="patient.data.city">المدينة</entry>
+<entry key="patient.data.code">الرمز البريدي</entry>
+<entry key="patient.data.country">البلد</entry>
+<entry key="patient.data.domain.type">نوع النطاق</entry>
+<entry key="patient.data.domain">النطاق</entry>
+<entry key="patient.data.driving.licence">رقم رخصة القيادة</entry>
+<entry key="patient.data.family.status">الحالة العائلية</entry>
+<entry key="patient.data.givenname">الإسم</entry>
+<entry key="patient.data.header.merge">دمج سجل المريض</entry>
+<entry key="patient.data.id.type">نوع وثيقة التعريف</entry>
+<entry key="patient.data.insurance.number">رقم الضمان الصحي </entry>
+<entry key="patient.data.last.update">تاريخ آخر تعديل</entry>
+<entry key="patient.data.mail.business"> بريد العمل</entry>
+<entry key="patient.data.mail.home">البريد الشخصي</entry>
+<entry key="patient.data.middlename">إسم الأب و الجد</entry>
+<entry key="patient.data.name.space">مساحة الإسم</entry>
+<entry key="patient.data.nationality">الجنسية</entry>
+<entry key="patient.data.patient.id">رقم المريض</entry>
+<entry key="patient.data.patientdata.title">معلومات المريض</entry>
+<entry key="patient.data.phone.business">هاتف العمل</entry>
+<entry key="patient.data.phone.private">هاتف المنزل</entry>
+<entry key="patient.data.registration.title">تسجيل المريض</entry>
+<entry key="patient.data.religion">الديانة</entry>
+<entry key="patient.data.sex">الجنس</entry>
+<entry key="patient.data.state">المنطقة</entry>
+<entry key="patient.data.street.address">الشارع</entry>
+<entry key="patient.data.surname">إسم العئلة</entry>
+<entry key="patient.data.title">اللقب</entry>
+<entry key="patient.has.local.documents">يوجد ملفات محلية للمريض.</entry>
+<entry key="patient.has.remote.documents">يوجد ملفات في مراكز أخرى. </entry>
+<entry key="patient.is.local">سجل المريض محلي.</entry>
+<entry key="patient.list.givenname.sort.ascending">ترتيب حسب الإسم صعوداً</entry>
+<entry key="patient.list.givenname.sort.descending">ترتيب حسب الإسم نزولاً</entry>
+<entry key="patient.list.no.patient">المريض غير موجود.</entry>
+<entry key="patient.list.patientlist">لائحة المرضى.</entry>
+<entry key="patient.list.surname.sort.ascending">ترتيب حسب إسم العائلة صعوداً</entry>
+<entry key="patient.list.surname.sort.descending">ترتيب حسب إسم العئلة نزولاً</entry>
+<entry key="patient.no.local.documents">لايوجد ملفات محلية االمريض.</entry>
+<entry key="patient.no.remote.documents">لا يوجد ملفات للمريض ف مراكز أخرى.</entry>
+<entry key="patient.not.local">الريض غير معرف محلياً</entry>
+<entry key="patient.search.birth.date.day">اليوم</entry>
+<entry key="patient.search.birth.date.month">الشهر</entry>
+<entry key="patient.search.birth.date.year">السنة</entry>
+<entry key="patient.button.search">بحث</entry>
+<entry key="patient.button.search.reset">اعد التشغيل</entry>
+<entry key="patient.search.patient.id">رقم المريض</entry>
+<entry key="patient.search.patient.svnr">رقم الملف الشامل</entry>
+<entry key="patient.search.patientsearch">بحث عن مريض</entry>
+<entry key="patient.search.xcpd">خارجي</entry>
+
+<entry key="report.document.header.title">تفاصيل الوثيقة</entry>
+<entry key="report.document.author.department">قسم المؤلف</entry>
+<entry key="report.document.author.institution">مؤسسة المؤلف</entry>
+<entry key="report.document.author.person">المؤلف</entry>
+<entry key="report.document.author.role">دور المؤلف</entry>
+<entry key="report.document.author.speciality">تخصص المؤلف</entry>
+<entry key="report.document.legal.authenticator">الموثق القانوني</entry>
+<entry key="report.document.title">إسم المركز</entry>
+<entry key="report.document.description">النوع</entry>
+<entry key="report.document.creation.time">تاريخ و وقت الدخال</entry>
+<entry key="report.document.language">اللغة</entry>
+<entry key="report.document.class.code">صنف الوثيقة</entry>
+<entry key="report.document.confidentiality.code">الخصوصية</entry>
+<entry key="report.document.healthcare.facility.type.code">المركز الصحي</entry>
+<entry key="report.document.practice.setting.code">وضع المركز</entry>
+<entry key="report.document.type.code">نوع الوثيقة</entry>
+<entry key="report.document.status">الوضع</entry>
+<entry key="report.document.format.code">صيغة الوثيقة</entry>
+<entry key="report.document.size">الحجم</entry>
+<entry key="report.document.format">الصيغة</entry>
+
+<entry key="report.submission.header.title">تفاصيل التسجيل</entry>
+<entry key="report.submission.author.institution">مؤسسة المؤلف</entry>
+<entry key="report.submission.author.department">قسم المؤلف</entry>
+<entry key="report.submission.author.person">المؤلف</entry>
+<entry key="report.submission.author.role">دور المؤلف</entry>
+<entry key="report.submission.author.speciality">اختصاص المؤلف</entry>
+<entry key="report.submission.title">العنوان</entry>
+<entry key="report.submission.description">النوع</entry>
+<entry key="report.submission.time">وقت و تاريخ التسجيل</entry>
+<entry key="report.submission.content.type.code">نوع المحتوى</entry>
+
+<entry key="report.folder.header.title">تفاصيل الملف</entry>
+<entry key="report.folder.create">إنشاء الملف</entry>
+<entry key="report.folder.title">العنوان</entry>
+<entry key="report.folder.description">النوع</entry>
+<entry key="report.folder.code">رمز الملف</entry>
+
+<entry key="report.button.search.reset">اعد التشغيل</entry>
+<entry key="report.button.search">بحث</entry>
+<entry key="report.category.search">بحث عن فئات معينة</entry>
+<entry key="report.create.document.data.incomplete">تفاصيل المعلومات غير كاملة!</entry>
+<entry key="report.create.document.submit">ارسال</entry>
+<entry key="report.create.document.success">سجلت الوثيقة بنجاح.</entry>
+<entry key="report.create.folder.data.incomplete">تفاصيل الملف ناقصة!</entry>
+<entry key="report.create.submission.data.incomple">معلومات التسجيل ناقصة!</entry>
+<entry key="report.create.upload.added.documents">الوثائق المضافة</entry>
+<entry key="report.create.upload.choose.document">اختيار الوثائق</entry>
+<entry key="report.create.upload.document">نقل </entry>
+<entry key="report.create.upload.remove.document">ازالة</entry>
+<entry key="report.date.search">البحث ضمن مدة معينة</entry>
+<entry key="report.detail.document">الوثيقة</entry>
+<entry key="report.detail.title">تفاصيل الوثيقة</entry>
+<entry key="report.details">التفاصيل</entry>
+<entry key="report.from">من</entry>
+<entry key="report.is.accesable">يسمح الإطلاع على التقرير</entry>
+<entry key="report.link.report.type">نوع الوثيقة</entry>
+<entry key="report.list.date.sort.ascending">التاريخ المتصاعد</entry>
+<entry key="report.list.date.sort.descending">التاريخ النازل</entry>
+<entry key="report.list.no.document">لا يوجد وثائق </entry>
+<entry key="report.list">قائمة الوثائق</entry>
+<entry key="report.not.accesable">لا يسمح الإطلاع على التقرير!</entry>
+<entry key="report.search.advanced">بحث متقدم</entry>
+<entry key="report.search">البحث عن وثيقة</entry>
+<entry key="report.till">الى</entry>
+<entry key="xdm.import">تحميل ملف طبي خاص</entry>
+<entry key="xdm.import.description">تحميل ملفات XDM مضغوطة ZIP إلى قاعة بيانات XDS \n  إختر الملف و تابع التحميل إلى النظام.</entry>
+<entry key="xdm.select.file.before.upload">الرجاء اختيار ملف ZIP  قبل المتابعة.</entry>
+<entry key="xdm.import.upload.document.choose">اختيار ملف ZIP</entry>
+<entry key="xdm.import.upload.document">التحميل</entry>
+<entry key="xdm.import.button"> تحميل إلى قاعدة البيانات</entry>
+<entry key="xdm.select.patient">الرجاء اختيار المريض.</entry>
+<entry key="xdm.select.only.one.patient"> الرجاء اختيار مريض واحد فقط.</entry>
+<entry key="xdm.select.document">الرجاء اختيار الوثيقة.</entry>
+<entry key="xdm.patient.on.media">ملف المريض موجود</entry>
+<entry key="xdm.patient.content.preview">العرض الملف</entry>
+<entry key="xdm.patient.content.import">تحميل</entry>
+
+<entry key="session.timeout.relogin">انقضت مدة الدخول, الرجاء الدخول من جديد.</entry>
+<entry key="patient.id.create.failed">لم تتم إضافة المريض في النطاق (0) \n غير موجود في النطاقات المحددة و ليس في النطاق المحلي.\n إختيار نطاق مناسب أو حذف من القائمة</entry>
+<entry key="patient.id.insert.failed">م تتم إضافة المريض في النطاق (0)</entry>
+<entry key="patient.id.create.exception">خطاء في أنشاء رقم المريض.</entry>
+<entry key="report.document.metadata.exception">خطأ في تنزيل المعلومات المفصلة!</entry>
+<entry key="report.document.formatcode.exception">خطأ في الحصول على رموز المعلومات</entry>
+<entry key="report.choose.upload.file">الرجاء ااختيار الملف قبل الضغط  على زر التحميل!</entry>
+<entry key="report.folder.metadata.exception">خطأ في تنزيل ملف المعلومات المفصلة!</entry>
+<entry key="report.submission.metadata.exception">خطأ في تحميل معلومات الإدخال! !</entry>
+<entry key="report.folder.add.document"> تأكيد أضافة هذه الوثيقة الى الملف?</entry>
+<entry key="xdm.export">تنزيل</entry>
+<entry key="xdm.export.really">تأكيد تنزيل الوثائق?\nالعملية سوف تستغرق بعض الوقت!</entry>
+
+<!-- NEW ENTRIES !!! -->
+
+<entry key="xdm.import.success">Data successful imported.</entry>
+<entry key="policy.administration.title">Patient Agreement</entry>
+<entry key="patient.subscription.header">Notification</entry>
+<entry key="navi.info.patient.subscribtion">Notification</entry>
+<entry key="patient.data.create.report">print report</entry>
+<entry key="patient.data.create.label">print label</entry>
+
+<entry key="message.insert.values">Please insert a value for {0}.</entry>
+
+<entry key="DBLMNG_QUERY_MODE__ALL_PAT">all patients</entry>  
+<entry key="DBLMNG_QUERY_MODE__DBL_AND_MRGPAT">local and index doubletts</entry>  
+<entry key="DBLMNG_QUERY_MODE__ONLY_DBLPAT">only index doubletts</entry>  
+<entry key="DBLMNG_QUERY_MODE__ONLY_MRGPAT">only local doubletts</entry>
+
+<entry key="messagePasswordMinimumLengthException">Please insert a minimum of {0} characters for the password.</entry>
+<entry key="messagePasswordMinimumUpperCaseCharacterException">Please insert a minimum of {0} upper case characters for the password.</entry>
+<entry key="messagePasswordMinimumLowerCaseCharacterException">Please insert a minimum of {0} lower case characters for the password.</entry>
+<entry key="messagePasswordMinimumDigitException">Please insert a minimum of {0} digits for the password.</entry>
+<entry key="messagePasswordMinimumSpecialCharacterException">Please insert a minimum of {0} special characters for the password.</entry>
+
+<entry key="login.tooltip.password.length">Minimum length {0} characters</entry>
+<entry key="login.tooltip.password.upper.case">Minimum {0} upper case characters.</entry>
+<entry key="login.tooltip.password.lower.case">Minimum {0} lower case characters.</entry>
+<entry key="login.tooltip.password.digits">Minimum {0} digits.</entry>
+<entry key="login.tooltip.password.special.character">Minimum {0} special characters.</entry>
+
+<entry key="patient.subscribe">subscribe</entry>
+<entry key="message.popup.error">An error has occurred. Please contact your Systemadministrator.</entry>
+
+<entry key="patient.created.patient.ids">Created PatientIDs</entry>
+<entry key="message.create.patient.id">Please create a patient ID!</entry>
+<entry key="message.birth.greater.death">Day of death is before birthdate!</entry>
+<entry key="message.birthdate.future">Choosen birthdate is in the future!</entry>
+
+<entry key="report.submission.recipient.organisation">Recipient Organisation:</entry>
+<entry key="report.submission.recipient.person">Recipient Person:</entry>
+
+<entry key="report.list.filter.organisation">Organisation:</entry>
+<entry key="report.list.filter.type.code">Content type:</entry>
+<entry key="report.list.filter.button.reset">reset</entry>
+<entry key="report.list.filter.button.filter">filter</entry>
+<entry key="report.list.button.filter">filter</entry>
+
+<entry key="patient.search.international">Patient Search international</entry>
+<entry key="patient.search.country">Country:</entry>
+<entry key="patient.data.pseudonym">Pseudonym:</entry>
+<entry key="patient.data.tan.code">TAN code:</entry>
+
+<entry key="report.prescription">Prescription</entry>
+<entry key="navi.report.prescription">Prescription</entry>
+<entry key="report.summary">Patient Summary</entry>
+<entry key="navi.report.summary">Patient Summary</entry>
+
+<!-- NEW ENTRIES - 11.10.2010 !!! -->
+
+<entry key="patient.data.ins.france">National Health Identifier:</entry>
+<entry key="xdsi.header">Web Image Viewer</entry>
+<entry key="xdsi.info.series.number">Image Number:</entry>
+<entry key="xdsi.info.study">Study:</entry>
+<entry key="xdsi.info.series">Series:</entry>
+<entry key="patient.search.treatment.question">Are you in a treatment relationship with the selected patients?</entry>
+<entry key="patient.search.fiscal.code">Fiscal Code:</entry>
+<entry key="message.popup.patient.search.italy">Please fill in the fields family name, gender and first name or date of birth.\nOr search only according the fiscal code.</entry>
+<entry key="message.rpc.error">An error has occurred. Please contact your system administrator.</entry>
+<entry key="patient.data.unique.identifier">Unique Identifier:</entry>
+<entry key="patient.data.region.spain">Region:</entry>
+<entry key="patient.data.unique.identifier.spain">Patient Identifier Code:</entry>
+
+<!-- PolicyIds -->
+<!-- Country=IHE -->
+<entry key="2.16.17.710.812.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.812.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=NL -->
+<entry key="2.16.17.710.810.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.810.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=GB -->
+<entry key="2.16.17.710.809.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.809.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=GR -->
+<entry key="2.16.17.710.808.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.808.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=SE -->
+<entry key="2.16.17.710.807.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.807.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=IT -->
+<entry key="2.16.17.710.806.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.806.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=SK -->
+<entry key="2.16.17.710.805.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.805.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=CZ -->
+<entry key="2.16.17.710.804.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.804.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=DE -->
+<entry key="2.16.17.710.803.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.803.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=DK -->
+<entry key="2.16.17.710.802.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.802.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=ES -->
+<entry key="2.16.17.710.801.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.801.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=CK -->
+<entry key="2.16.17.710.800.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.800.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=FR -->
+<entry key="2.16.17.710.790.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.790.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=AT -->
+<entry key="2.16.17.710.780.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.780.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=TR -->
+<entry key="2.16.17.710.813.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.813.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=CH -->
+<entry key="2.16.17.710.814.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.814.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=EE -->
+<entry key="2.16.17.710.815.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.815.2.4.1.1">Policy which allows everything.</entry>
+
+<entry key="navi.link.patient.update">Patient Update</entry>
+<entry key="patient.consent.save">Save</entry>
+<entry key="patient.consent.print">Print</entry>
+
+<entry key="patient.data.id.code">Patient ID Code:</entry>
+<entry key="policy.not.combinable">Policy is not combinable.</entry>
+<entry key="policy.stored.succesful">Policy successful stored.</entry>
+<entry key="consent.not.given">No patient consent exists.</entry>
+<entry key="message.popup.consent.edit">Edit patient consent.</entry>
+
+<entry key="message.popup.emergency">Emergency</entry>
+
+
+<!-- ******************** CDA ******************** -->
+<!-- Header -->
+<entry key="cda.Documentdetails">Document Details</entry>
+<entry key="cda.Custodian">Custodian</entry>
+<entry key="cda.Author">Author</entry>
+<entry key="cda.LegalAuthenticator">Legal Authenticator</entry>
+<entry key="cda.Participant">Participant</entry>
+<entry key="cda.Patient">Patient</entry>
+<entry key="cda.Guardian">Patient's Guardian</entry>
+<entry key="cda.ServiceEventInformation">Service Event Information</entry>
+<!-- not translated yet -->
+<entry key="cda.EncompassingEncounter">Encompassing Encounter</entry>
+<entry key="cda.DataEnterer">Data Enterer</entry>
+<entry key="cda.Informant">Informant</entry>
+<entry key="cda.InformationRecipient">Information Recipient</entry>
+<entry key="cda.Performer">Performer</entry>
+<entry key="cda.Authorization">Authorization</entry>
+<entry key="cda.InFullfillmentOf">InFullfillmentOf</entry>
+<entry key="cda.EncounterParticipant">EncounterParticipant</entry>
+
+<!-- Document section -->
+<entry key="cda.ConfidentialityCode">Confidentiality Code</entry>
+<entry key="cda.Language">Language</entry>
+<entry key="cda.Realm">Realm</entry>
+<entry key="cda.TimeCreated">Time Created</entry>
+<entry key="cda.UTC">UTC</entry>
+<entry key="cda.DocumentId">DocumentId</entry>
+<entry key="cda.VersionNumber">Version Number</entry>
+<entry key="cda.EmbeddedInformation">Embedded Information</entry>
+
+<!-- Person section -->
+<entry key="cda.Name">Name</entry>
+<entry key="cda.Address">Address</entry>
+<entry key="cda.Contact">Contact</entry>
+<entry key="cda.Gender">Gender</entry>
+<entry key="cda.DateOfBirth">Date of Birth</entry>
+<entry key="cda.Date">Date</entry>
+<entry key="cda.TimeFrom">Time From</entry>
+<entry key="cda.TimeTo">Time To</entry>
+<entry key="cda.PerformedFrom">Performed From</entry>
+<entry key="cda.PerformedTo">Performed To</entry>
+<entry key="cda.SignatureStatus">Signature Status</entry>
+<entry key="cda.Code">Code</entry>
+<entry key="cda.FunctionCode">Function Code</entry>
+<entry key="cda.ManufacturerName">Manufacturer Name</entry>
+<entry key="cda.SoftwareName">Software Name</entry>
+<entry key="cda.IsPrefered">is prefered</entry>
+<entry key="cda.Status">Status</entry>
+<entry key="cda.PatientContact">Patient Contact</entry>
+<entry key="cda.Relationship">Personal relationship</entry>
+<entry key="cda.TypeOfContact">Type Of Contact</entry>
+
+<!-- Organization section -->
+<entry key="cda.Organization">Organization</entry>
+<entry key="cda.ProviderOrganization">Provider Organization</entry>
+<entry key="cda.RepresentedOrganization">Represented Organization</entry>
+<entry key="cda.ScopingOrganization">Scoping Organization</entry>
+<entry key="cda.OrganizationName">Organization Name</entry>
+
+<!-- Telecom attributes -->
+<entry key="cda.AnsweringService">Answering Service</entry>
+<entry key="cda.EmergencyContact">Emergency Contact</entry>
+<entry key="cda.Home">Home</entry>
+<entry key="cda.MobileContact">Mobile Contact</entry>
+<entry key="cda.Pager">Pager</entry>
+<entry key="cda.PrimaryHome">Primary Home</entry>
+<entry key="cda.VacationHome">Vacation Home</entry>
+<entry key="cda.WorkPlace">Work Place</entry>
+
+<!-- NullFlavor attributes -->
+<entry key="cda.NoInformation">No Information</entry>
+<entry key="cda.Other">Other</entry>
+<entry key="cda.NegativeInfinity">Negative infinity</entry>
+<entry key="cda.PositiveInfinity">Positive infinity</entry>
+<entry key="cda.Unknown">Unknown</entry>
+<entry key="cda.AskedButUnknown">Asked, but unknown</entry>
+<entry key="cda.TemporarilyUnavailable">Temporarily unavailable</entry>
+<entry key="cda.NotAsked">Not asked</entry>
+<entry key="cda.Trace">Trace</entry>
+<entry key="cda.Masked">Masked</entry>
+<entry key="cda.NotApplicable">Not applicable</entry>
+<entry key="cda.NotPresent">Not present</entry>
+
+<!--  Type of contact attributes - AGNT|CAREGIVER|ECON|NOK|PRS -->
+<entry key="cda.ECON">Emergency contact</entry>
+<entry key="cda.NOK">Next of kin</entry>
+
+<entry key="doubletten.no.data">No Data available to create a Report.</entry>
+
+</properties>

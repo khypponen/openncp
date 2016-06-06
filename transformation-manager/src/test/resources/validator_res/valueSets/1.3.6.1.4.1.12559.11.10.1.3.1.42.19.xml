@@ -1,0 +1,236 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSAllergenNoDrugs" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.19" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="102259006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Citrus fruit"/>
+			<Concept code="102259006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Citrus fruit (substance)"/>
+			<Concept code="102261002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Strawberry"/>
+			<Concept code="102261002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Strawberry (substance)"/>
+			<Concept code="102261002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Strawberries"/>
+			<Concept code="102262009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chocolate"/>
+			<Concept code="102262009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chocolate (substance)"/>
+			<Concept code="102263004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Eggs (edible)"/>
+			<Concept code="102263004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Eggs (edible) (substance)"/>
+			<Concept code="102264005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cheese"/>
+			<Concept code="102264005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cheese (substance)"/>
+			<Concept code="111088007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Latex"/>
+			<Concept code="111088007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Latex (substance)"/>
+			<Concept code="11526002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Aspartame"/>
+			<Concept code="11526002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Aspartame (substance)"/>
+			<Concept code="11526002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Aspartamine"/>
+			<Concept code="115589000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ethanolamine"/>
+			<Concept code="115589000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ethanolamine (substance)"/>
+			<Concept code="115589000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ethanolamine agent"/>
+			<Concept code="116273005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dietary substance"/>
+			<Concept code="116273005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dietary substance (substance)"/>
+			<Concept code="116549003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Organochlorine pesticide"/>
+			<Concept code="116549003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Organochlorine pesticide (substance)"/>
+			<Concept code="11894001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Botulinum toxin"/>
+			<Concept code="11894001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Clostridium botulinum toxin (substance)"/>
+			<Concept code="11894001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Botulism toxin"/>
+			<Concept code="11894001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Botulin toxin"/>
+			<Concept code="11894001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Clostridium botulinum toxin"/>
+			<Concept code="119417004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Organophosphate insecticide"/>
+			<Concept code="119417004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Organophosphate insecticide (substance)"/>
+			<Concept code="12503006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Aluminum (substance)"/>
+			<Concept code="128488006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="House dust"/>
+			<Concept code="128488006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="House dust (substance)"/>
+			<Concept code="128488006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="HD - House dust"/>
+			<Concept code="13577000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Nut"/>
+			<Concept code="13577000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Nut (substance)"/>
+			<Concept code="13652007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Silicone"/>
+			<Concept code="13652007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Silicone (substance)"/>
+			<Concept code="14402002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wood"/>
+			<Concept code="14402002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wood (substance)"/>
+			<Concept code="14423008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Adhesive bandage"/>
+			<Concept code="14423008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Adhesive bandage, device (physical object)"/>
+			<Concept code="14423008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Adhesive bandage, device"/>
+			<Concept code="226359003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fish oil - dietary"/>
+			<Concept code="226359003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Marine oil"/>
+			<Concept code="226359003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fish oil - dietary (substance)"/>
+			<Concept code="226491003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Apple juice"/>
+			<Concept code="226491003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Apple juice (substance)"/>
+			<Concept code="226760005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dairy foods"/>
+			<Concept code="226760005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Milk cheese and egg"/>
+			<Concept code="226760005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dairy foods (substance)"/>
+			<Concept code="226760005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dairy products"/>
+			<Concept code="226915003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Red meat"/>
+			<Concept code="226915003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Red meat (substance)"/>
+			<Concept code="226934003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pork"/>
+			<Concept code="226934003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pork (substance)"/>
+			<Concept code="227037002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fish - dietary"/>
+			<Concept code="227037002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fish - dietary (substance)"/>
+			<Concept code="227146005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Shellfish"/>
+			<Concept code="227146005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Shellfish - dietary"/>
+			<Concept code="227146005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Shellfish - dietary (substance)"/>
+			<Concept code="227313005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulse vegetables"/>
+			<Concept code="227313005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Beans peas and lentils"/>
+			<Concept code="227313005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulse vegetables (substance)"/>
+			<Concept code="227313005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Legumes"/>
+			<Concept code="227388008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cinnamon"/>
+			<Concept code="227388008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cinnamon (substance)"/>
+			<Concept code="227425007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Figs"/>
+			<Concept code="227425007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Figs (substance)"/>
+			<Concept code="227425007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Figue"/>
+			<Concept code="230031005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lobster - dietary"/>
+			<Concept code="230031005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lobster - dietary (substance)"/>
+			<Concept code="230032003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Oyster - dietary"/>
+			<Concept code="230032003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Oyster - dietary (substance)"/>
+			<Concept code="255640000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Biocide"/>
+			<Concept code="255640000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Biocide (substance)"/>
+			<Concept code="255667006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Paraffin"/>
+			<Concept code="255667006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Paraffin (substance)"/>
+			<Concept code="256259004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pollen"/>
+			<Concept code="256259004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pollen (substance)"/>
+			<Concept code="256260009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tree and shrub pollen"/>
+			<Concept code="256260009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tree and shrub pollen (substance)"/>
+			<Concept code="256277009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Grass pollen"/>
+			<Concept code="256277009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Grass pollen (substance)"/>
+			<Concept code="256292005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Flower and weed pollen"/>
+			<Concept code="256292005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Flower and weed pollen (substance)"/>
+			<Concept code="256303006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ragweed pollen"/>
+			<Concept code="256303006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ragweed pollen (substance)"/>
+			<Concept code="256305004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tree resin"/>
+			<Concept code="256305004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tree resin (substance)"/>
+			<Concept code="256310000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cherries"/>
+			<Concept code="256310000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cherry - dietary (substance)"/>
+			<Concept code="256310000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cherry - dietary"/>
+			<Concept code="256310000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cherry"/>
+			<Concept code="256310000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cherry - herbal supplement"/>
+			<Concept code="256319004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Carrot"/>
+			<Concept code="256319004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Carrot (substance)"/>
+			<Concept code="256327008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tomato - dietary"/>
+			<Concept code="256327008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tomato"/>
+			<Concept code="256327008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tomato - dietary (substance)"/>
+			<Concept code="256349002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Peanut - dietary"/>
+			<Concept code="256349002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Peanuts"/>
+			<Concept code="256349002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Peanut"/>
+			<Concept code="256349002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Peanut - dietary (substance)"/>
+			<Concept code="256352005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Walnut"/>
+			<Concept code="256352005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Walnut - nut"/>
+			<Concept code="256352005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Walnut - nut (substance)"/>
+			<Concept code="256352005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="English walnut"/>
+			<Concept code="256417003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Horse dander"/>
+			<Concept code="256417003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Horse dander (substance)"/>
+			<Concept code="256435007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Feathers"/>
+			<Concept code="256435007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Feathers (substance)"/>
+			<Concept code="256440004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vespidae venom"/>
+			<Concept code="256440004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wasp venom"/>
+			<Concept code="256440004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wasp venom (substance)"/>
+			<Concept code="260152009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cat dander"/>
+			<Concept code="260152009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cat dander (substance)"/>
+			<Concept code="260154005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dog dander"/>
+			<Concept code="260154005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dog dander (substance)"/>
+			<Concept code="260170007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Potato - dietary"/>
+			<Concept code="260170007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Potato"/>
+			<Concept code="260170007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Potato - dietary (substance)"/>
+			<Concept code="260170007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="White potato"/>
+			<Concept code="264287008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Animal dander"/>
+			<Concept code="264287008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Animal dander (substance)"/>
+			<Concept code="264295007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cow's milk protein"/>
+			<Concept code="264295007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cow's milk protein (substance)"/>
+			<Concept code="264337003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Seed"/>
+			<Concept code="264337003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Seeds"/>
+			<Concept code="264337003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Seed (substance)"/>
+			<Concept code="276310004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Animal hair"/>
+			<Concept code="276310004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Non-human hair - material (substance)"/>
+			<Concept code="276310004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Non-human hair - material"/>
+			<Concept code="278840001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Shrimp agent (substance)"/>
+			<Concept code="278840001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Shrimp"/>
+			<Concept code="278840001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Shrimp product"/>
+			<Concept code="278840001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Shrimp agent"/>
+			<Concept code="288328004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Apidae venom"/>
+			<Concept code="288328004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Apisin"/>
+			<Concept code="288328004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bee venom"/>
+			<Concept code="288328004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bee venom (substance)"/>
+			<Concept code="289122001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cosmetic material"/>
+			<Concept code="289122001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cosmetic material (substance)"/>
+			<Concept code="303300008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Egg protein"/>
+			<Concept code="303300008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Egg protein (substance)"/>
+			<Concept code="303314008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Scorpion venom"/>
+			<Concept code="303314008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Scorpion venom (substance)"/>
+			<Concept code="303315009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Spider venom"/>
+			<Concept code="303315009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Spider venom (substance)"/>
+			<Concept code="31006001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Kingdom Plantae (organism)"/>
+			<Concept code="31006001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Plant"/>
+			<Concept code="31006001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Kingdom Plantae"/>
+			<Concept code="311846002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pyrethroid insecticide"/>
+			<Concept code="311846002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pyrethroid insecticide (substance)"/>
+			<Concept code="33008008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dust"/>
+			<Concept code="33008008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dust (substance)"/>
+			<Concept code="387398009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Podophyllum resin (substance)"/>
+			<Concept code="387398009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Podophyllum resin"/>
+			<Concept code="387398009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Podophyllin"/>
+			<Concept code="391737006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Almond oil (substance)"/>
+			<Concept code="391737006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Almond oil"/>
+			<Concept code="395835001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Plasma protein (substance)"/>
+			<Concept code="395835001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Plasma protein"/>
+			<Concept code="395922006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wool alcohols (substance)"/>
+			<Concept code="395922006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wool alcohols"/>
+			<Concept code="396031000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dimeticone (substance)"/>
+			<Concept code="396031000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dimeticone"/>
+			<Concept code="406771001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Sulfite and/or sulfite derivative (substance)"/>
+			<Concept code="406774009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fish derived omega 3 fatty acid (substance)"/>
+			<Concept code="406774009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fish derived omega 3 fatty acid"/>
+			<Concept code="406774009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fish N-3 fatty acid"/>
+			<Concept code="410853002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Perfluorochemical (substance)"/>
+			<Concept code="410853002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Perfluorochemical"/>
+			<Concept code="410853002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Perfluoro compound"/>
+			<Concept code="412068007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rye (substance)"/>
+			<Concept code="412068007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rye"/>
+			<Concept code="412069004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Flavoring agent (substance)"/>
+			<Concept code="412071004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wheat (substance)"/>
+			<Concept code="412071004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wheat"/>
+			<Concept code="412161004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wool (substance)"/>
+			<Concept code="412161004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wool"/>
+			<Concept code="412357001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Corn (substance)"/>
+			<Concept code="412357001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Corn"/>
+			<Concept code="415710007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Terpene (substance)"/>
+			<Concept code="415710007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Terpene"/>
+			<Concept code="415710007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Terpenes"/>
+			<Concept code="418266005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Yellow paraffin (substance)"/>
+			<Concept code="418266005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Yellow paraffin"/>
+			<Concept code="418504009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Oats (substance)"/>
+			<Concept code="418504009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Oats"/>
+			<Concept code="418785009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Perfume (substance)"/>
+			<Concept code="418785009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Perfume"/>
+			<Concept code="418920007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Adhesive agent (substance)"/>
+			<Concept code="418920007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Adhesive agent"/>
+			<Concept code="419420009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Watermelon (substance)"/>
+			<Concept code="419420009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Watermelon"/>
+			<Concept code="419633007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="White paraffin (substance)"/>
+			<Concept code="419633007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="White paraffin"/>
+			<Concept code="420111002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Contact metal agent (substance)"/>
+			<Concept code="420111002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Contact metal agent"/>
+			<Concept code="43230003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rubber"/>
+			<Concept code="43230003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Raw rubber"/>
+			<Concept code="43230003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rubber (substance)"/>
+			<Concept code="43735007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Brimstone"/>
+			<Concept code="43735007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Sulfur (substance)"/>
+			<Concept code="44027008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Seafood (substance)"/>
+			<Concept code="44027008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Seafood"/>
+			<Concept code="52454007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Albumin"/>
+			<Concept code="52454007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Albumin (substance)"/>
+			<Concept code="59351004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Citrate"/>
+			<Concept code="59351004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Citrate (substance)"/>
+			<Concept code="59351004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Citrate ion"/>
+			<Concept code="59545008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pesticide"/>
+			<Concept code="59545008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pesticide (substance)"/>
+			<Concept code="61789006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dye (substance)"/>
+			<Concept code="61789006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Stain"/>
+			<Concept code="61789006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dye"/>
+			<Concept code="72511004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fruit"/>
+			<Concept code="72511004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fruit (substance)"/>
+			<Concept code="7791007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Soy protein"/>
+			<Concept code="7791007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Soy protein (substance)"/>
+			<Concept code="7791007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Soya protein"/>
+			<Concept code="83619009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ethenol homopolymer"/>
+			<Concept code="83619009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Polyvinyl alcohol"/>
+			<Concept code="83619009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Polyvinyl alcohol (substance)"/>
+			<Concept code="83619009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="PVA - Polyvinyl alcohol"/>
+			<Concept code="9021002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Carbaryl"/>
+			<Concept code="9021002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Methyl carbamic acid 1-naphthyl ester"/>
+			<Concept code="9021002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Carbaryl (substance)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

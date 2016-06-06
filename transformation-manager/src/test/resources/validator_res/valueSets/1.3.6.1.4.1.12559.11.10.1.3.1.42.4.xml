@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSCountry" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.4" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="AT" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Austria"/>
+			<Concept code="AT" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Austria (ISO 3166-1)"/>
+			<Concept code="BE" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Belgium"/>
+			<Concept code="BE" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Belgium (ISO 3166-1)"/>
+			<Concept code="CH" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Switzerland"/>
+			<Concept code="CH" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Switzerland (ISO 3166-1)"/>
+			<Concept code="CZ" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Czech Republic"/>
+			<Concept code="CZ" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Czech Republic (ISO 3166-1)"/>
+			<Concept code="DE" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Germany"/>
+			<Concept code="DE" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Germany (ISO 3166-1)"/>
+			<Concept code="DK" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Denmark"/>
+			<Concept code="DK" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Denmark (ISO 3166-1)"/>
+			<Concept code="EE" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Estonia"/>
+			<Concept code="EE" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Estonia (ISO 3166-1)"/>
+			<Concept code="ES" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Spain"/>
+			<Concept code="ES" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Spain (ISO 3166-1)"/>
+			<Concept code="FI" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Finland"/>
+			<Concept code="FI" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Finland (ISO 3166-1)"/>
+			<Concept code="FR" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="France"/>
+			<Concept code="FR" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="France (ISO 3166-1)"/>
+			<Concept code="GB" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="United Kingdom"/>
+			<Concept code="GB" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="United Kingdom (ISO 3166-1)"/>
+			<Concept code="GR" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Greece"/>
+			<Concept code="GR" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Greece (ISO 3166-1)"/>
+			<Concept code="HU" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Hungary"/>
+			<Concept code="HU" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Hungary (ISO 3166-1)"/>
+			<Concept code="IT" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Italy"/>
+			<Concept code="IT" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Italy (ISO 3166-1)"/>
+			<Concept code="MT" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Malta"/>
+			<Concept code="MT" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Malta (ISO 3166-1)"/>
+			<Concept code="NL" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Netherlands"/>
+			<Concept code="NL" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Netherlands (ISO 3166-1)"/>
+			<Concept code="NO" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Norway"/>
+			<Concept code="NO" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Norway (ISO 3166-1)"/>
+			<Concept code="PL" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Poland"/>
+			<Concept code="PL" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Poland (ISO 3166-1)"/>
+			<Concept code="PT" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Portugal"/>
+			<Concept code="PT" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Portugal (ISO 3166-1)"/>
+			<Concept code="SE" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Sweden"/>
+			<Concept code="SE" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Sweden (ISO 3166-1)"/>
+			<Concept code="SI" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Slovenia"/>
+			<Concept code="SI" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Slovenia (ISO 3166-1)"/>
+			<Concept code="SK" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Slovakia"/>
+			<Concept code="SK" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Slovakia (ISO 3166-1)"/>
+			<Concept code="TR" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Turkey"/>
+			<Concept code="TR" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="Turkey (ISO 3166-1)"/>
+		       <Concept code="IH" codeSystem="1.0.3166.1" codeSystemName="ISO 3166-1" displayName="IHE"/>
+                </ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

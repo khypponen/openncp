@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+      <groupId>eu.europa.ec.joinup.ecc</groupId>
+      <artifactId>epsos-cdadisplaytool</artifactId>
+      <version>3.1.0</version>
+  </parent>
+  
+  <groupId>eu.europa.ec.joinup.ecc.epsos-cdadisplaytool</groupId>
+  <artifactId>epsos-xsltransformer</artifactId>
+  <version>3.1.0</version>
+  <url>http://maven.apache.org</url>
+  <name>xsltransformer</name>
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+      <dependency><groupId>log4j</groupId><artifactId>log4j</artifactId><version>1.2.17</version></dependency>
+              <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+            <type>jar</type>
+        </dependency>
+      
+  </dependencies>
+   <developers>
+      <developer><id>k.karkaletsis@gnomon.com.gr</id><email>k.karkaletsis@gnomon.com.gr</email><name>Kostas Karkaletsis</name><organization>Gnomon</organization><organizationUrl>http://gnomon.com.gr</organizationUrl></developer>
+  </developers>
+  <inceptionYear>2012</inceptionYear>
+  <licenses><license><name>Apache Software License, Version 2.0</name><url>http://www.apache.org/licenses/LICENSE-2.0</url></license></licenses>
+    <scm>
+  	<connection>git clone code.google.com/p/epsos-common-components.epsos-common-components.cdadisplaytool/ 
+</connection>
+  	<url>http://code.google.com/p/epsos-common-components/source/browse?repo=cdadisplaytool</url>
+  </scm>
+  <issueManagement>
+  	<system>JIRA</system>
+  </issueManagement>
+
+ <build>
+    	<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                     <source>1.6</source>
+                     <target>1.6</target>
+                </configuration>
+            </plugin>
+    	
+  <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/target/classes/resources</outputDirectory>
+              <resources>          
+                <resource>
+                  <directory>src/main/java/resources</directory>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>              
+            </configuration>            
+          </execution>
+        </executions>
+      </plugin>
+      </plugins>
+      </build>
+</project>

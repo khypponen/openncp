@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+    <ValueSet id="1.0.3166.1" version="2006" displayName="ISO 3166">
+        <ConceptList xml:lang="en-US">
+            <Concept displayName="ANDORRA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AD"/>
+            <Concept displayName="UNITED ARAB EMIRATES" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AE"/>
+            <Concept displayName="AFGHANISTAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AF"/>
+            <Concept displayName="ANTIGUA AND BARBUDA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AG"/>
+            <Concept displayName="ANGUILLA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AI"/>
+            <Concept displayName="ALBANIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AL"/>
+            <Concept displayName="ARMENIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AM"/>
+            <Concept displayName="ANGOLA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AO"/>
+            <Concept displayName="ANTARCTICA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AQ"/>
+            <Concept displayName="ARGENTINA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AR"/>
+            <Concept displayName="AMERICAN SAMOA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AS"/>
+            <Concept displayName="AUSTRIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AT"/>
+            <Concept displayName="AUSTRALIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AU"/>
+            <Concept displayName="ARUBA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AW"/>
+            <Concept displayName="ÅLAND ISLANDS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AX"/>
+            <Concept displayName="AZERBAIJAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="AZ"/>
+            <Concept displayName="BOSNIA AND HERZEGOVINA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BA"/>
+            <Concept displayName="BARBADOS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BB"/>
+            <Concept displayName="BANGLADESH" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BD"/>
+            <Concept displayName="BELGIUM" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BE"/>
+            <Concept displayName="BURKINA FASO" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BF"/>
+            <Concept displayName="BULGARIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BG"/>
+            <Concept displayName="BAHRAIN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BH"/>
+            <Concept displayName="BURUNDI" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BI"/>
+            <Concept displayName="BENIN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BJ"/>
+            <Concept displayName="SAINT BARTHÉLEMY" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BL"/>
+            <Concept displayName="BERMUDA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BM"/>
+            <Concept displayName="BRUNEI DARUSSALAM" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BN"/>
+            <Concept displayName="BOLIVIA, PLURINATIONAL STATE OF" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BO"/>
+            <Concept displayName="BONAIRE, SINT EUSTATIUS AND SABA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BQ"/>
+            <Concept displayName="BRAZIL" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BR"/>
+            <Concept displayName="BAHAMAS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BS"/>
+            <Concept displayName="BHUTAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BT"/>
+            <Concept displayName="BOUVET ISLAND" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BV"/>
+            <Concept displayName="BOTSWANA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BW"/>
+            <Concept displayName="BELARUS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BY"/>
+            <Concept displayName="BELIZE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="BZ"/>
+            <Concept displayName="CANADA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CA"/>
+            <Concept displayName="COCOS (KEELING) ISLANDS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CC"/>
+            <Concept displayName="CONGO, THE DEMOCRATIC REPUBLIC OF THE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CD"/>
+            <Concept displayName="CENTRAL AFRICAN REPUBLIC" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CF"/>
+            <Concept displayName="CONGO" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CG"/>
+            <Concept displayName="SWITZERLAND" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CH"/>
+            <Concept displayName="CÔTE D'IVOIRE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CI"/>
+            <Concept displayName="COOK ISLANDS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CK"/>
+            <Concept displayName="CHILE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CL"/>
+            <Concept displayName="CAMEROON" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CM"/>
+            <Concept displayName="CHINA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CN"/>
+            <Concept displayName="COLOMBIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CO"/>
+            <Concept displayName="COSTA RICA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CR"/>
+            <Concept displayName="CUBA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CU"/>
+            <Concept displayName="CAPE VERDE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CV"/>
+            <Concept displayName="CURAÇAO" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CW"/>
+            <Concept displayName="CHRISTMAS ISLAND" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CX"/>
+            <Concept displayName="CYPRUS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CY"/>
+            <Concept displayName="CZECH REPUBLIC" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="CZ"/>
+            <Concept displayName="GERMANY" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="DE"/>
+            <Concept displayName="DJIBOUTI" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="DJ"/>
+            <Concept displayName="DENMARK" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="DK"/>
+            <Concept displayName="DOMINICA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="DM"/>
+            <Concept displayName="DOMINICAN REPUBLIC" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="DO"/>
+            <Concept displayName="ALGERIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="DZ"/>
+            <Concept displayName="ECUADOR" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="EC"/>
+            <Concept displayName="ESTONIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="EE"/>
+            <Concept displayName="EGYPT" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="EG"/>
+            <Concept displayName="WESTERN SAHARA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="EH"/>
+            <Concept displayName="ERITREA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="ER"/>
+            <Concept displayName="SPAIN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="ES"/>
+            <Concept displayName="ETHIOPIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="ET"/>
+            <Concept displayName="FINLAND" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="FI"/>
+            <Concept displayName="FIJI" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="FJ"/>
+            <Concept displayName="FALKLAND ISLANDS (MALVINAS)" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="FK"/>
+            <Concept displayName="MICRONESIA, FEDERATED STATES OF" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="FM"/>
+            <Concept displayName="FAROE ISLANDS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="FO"/>
+            <Concept displayName="FRANCE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="FR"/>
+            <Concept displayName="GABON" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GA"/>
+            <Concept displayName="UNITED KINGDOM" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GB"/>
+            <Concept displayName="GRENADA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GD"/>
+            <Concept displayName="GEORGIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GE"/>
+            <Concept displayName="FRENCH GUIANA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GF"/>
+            <Concept displayName="GUERNSEY" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GG"/>
+            <Concept displayName="GHANA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GH"/>
+            <Concept displayName="GIBRALTAR" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GI"/>
+            <Concept displayName="GREENLAND" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GL"/>
+            <Concept displayName="GAMBIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GM"/>
+            <Concept displayName="GUINEA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GN"/>
+            <Concept displayName="GUADELOUPE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GP"/>
+            <Concept displayName="EQUATORIAL GUINEA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GQ"/>
+            <Concept displayName="GREECE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GR"/>
+            <Concept displayName="SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GS"/>
+            <Concept displayName="GUATEMALA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GT"/>
+            <Concept displayName="GUAM" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GU"/>
+            <Concept displayName="GUINEA-BISSAU" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GW"/>
+            <Concept displayName="GUYANA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="GY"/>
+            <Concept displayName="HONG KONG" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="HK"/>
+            <Concept displayName="HEARD ISLAND AND MCDONALD ISLANDS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="HM"/>
+            <Concept displayName="HONDURAS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="HN"/>
+            <Concept displayName="CROATIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="HR"/>
+            <Concept displayName="HAITI" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="HT"/>
+            <Concept displayName="HUNGARY" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="HU"/>
+            <Concept displayName="INDONESIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="ID"/>
+            <Concept displayName="IRELAND" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="IE"/>
+            <Concept displayName="ISRAEL" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="IL"/>
+            <Concept displayName="ISLE OF MAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="IM"/>
+            <Concept displayName="INDIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="IN"/>
+            <Concept displayName="BRITISH INDIAN OCEAN TERRITORY" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="IO"/>
+            <Concept displayName="IRAQ" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="IQ"/>
+            <Concept displayName="IRAN, ISLAMIC REPUBLIC OF" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="IR"/>
+            <Concept displayName="ICELAND" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="IS"/>
+            <Concept displayName="ITALY" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="IT"/>
+            <Concept displayName="JERSEY" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="JE"/>
+            <Concept displayName="JAMAICA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="JM"/>
+            <Concept displayName="JORDAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="JO"/>
+            <Concept displayName="JAPAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="JP"/>
+            <Concept displayName="KENYA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="KE"/>
+            <Concept displayName="KYRGYZSTAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="KG"/>
+            <Concept displayName="CAMBODIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="KH"/>
+            <Concept displayName="KIRIBATI" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="KI"/>
+            <Concept displayName="COMOROS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="KM"/>
+            <Concept displayName="SAINT KITTS AND NEVIS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="KN"/>
+            <Concept displayName="KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="KP"/>
+            <Concept displayName="KOREA, REPUBLIC OF" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="KR"/>
+            <Concept displayName="KUWAIT" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="KW"/>
+            <Concept displayName="CAYMAN ISLANDS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="KY"/>
+            <Concept displayName="KAZAKHSTAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="KZ"/>
+            <Concept displayName="LAO PEOPLE'S DEMOCRATIC REPUBLIC" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="LA"/>
+            <Concept displayName="LEBANON" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="LB"/>
+            <Concept displayName="SAINT LUCIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="LC"/>
+            <Concept displayName="LIECHTENSTEIN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="LI"/>
+            <Concept displayName="SRI LANKA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="LK"/>
+            <Concept displayName="LIBERIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="LR"/>
+            <Concept displayName="LESOTHO" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="LS"/>
+            <Concept displayName="LITHUANIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="LT"/>
+            <Concept displayName="LUXEMBOURG" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="LU"/>
+            <Concept displayName="LATVIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="LV"/>
+            <Concept displayName="LIBYA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="LY"/>
+            <Concept displayName="MOROCCO" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MA"/>
+            <Concept displayName="MONACO" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MC"/>
+            <Concept displayName="MOLDOVA, REPUBLIC OF" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MD"/>
+            <Concept displayName="MONTENEGRO" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="ME"/>
+            <Concept displayName="SAINT MARTIN (FRENCH PART)" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MF"/>
+            <Concept displayName="MADAGASCAR" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MG"/>
+            <Concept displayName="MARSHALL ISLANDS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MH"/>
+            <Concept displayName="MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MK"/>
+            <Concept displayName="MALI" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="ML"/>
+            <Concept displayName="MYANMAR" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MM"/>
+            <Concept displayName="MONGOLIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MN"/>
+            <Concept displayName="MACAO" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MO"/>
+            <Concept displayName="NORTHERN MARIANA ISLANDS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MP"/>
+            <Concept displayName="MARTINIQUE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MQ"/>
+            <Concept displayName="MAURITANIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MR"/>
+            <Concept displayName="MONTSERRAT" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MS"/>
+            <Concept displayName="MALTA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MT"/>
+            <Concept displayName="MAURITIUS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MU"/>
+            <Concept displayName="MALDIVES" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MV"/>
+            <Concept displayName="MALAWI" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MW"/>
+            <Concept displayName="MEXICO" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MX"/>
+            <Concept displayName="MALAYSIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MY"/>
+            <Concept displayName="MOZAMBIQUE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="MZ"/>
+            <Concept displayName="NAMIBIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="NA"/>
+            <Concept displayName="NEW CALEDONIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="NC"/>
+            <Concept displayName="NIGER" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="NE"/>
+            <Concept displayName="NORFOLK ISLAND" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="NF"/>
+            <Concept displayName="NIGERIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="NG"/>
+            <Concept displayName="NICARAGUA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="NI"/>
+            <Concept displayName="NETHERLANDS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="NL"/>
+            <Concept displayName="NORWAY" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="NO"/>
+            <Concept displayName="NEPAL" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="NP"/>
+            <Concept displayName="NAURU" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="NR"/>
+            <Concept displayName="NIUE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="NU"/>
+            <Concept displayName="NEW ZEALAND" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="NZ"/>
+            <Concept displayName="OMAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="OM"/>
+            <Concept displayName="PANAMA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PA"/>
+            <Concept displayName="PERU" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PE"/>
+            <Concept displayName="FRENCH POLYNESIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PF"/>
+            <Concept displayName="PAPUA NEW GUINEA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PG"/>
+            <Concept displayName="PHILIPPINES" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PH"/>
+            <Concept displayName="PAKISTAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PK"/>
+            <Concept displayName="POLAND" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PL"/>
+            <Concept displayName="SAINT PIERRE AND MIQUELON" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PM"/>
+            <Concept displayName="PITCAIRN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PN"/>
+            <Concept displayName="PUERTO RICO" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PR"/>
+            <Concept displayName="PALESTINIAN TERRITORY, OCCUPIED" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PS"/>
+            <Concept displayName="PORTUGAL" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PT"/>
+            <Concept displayName="PALAU" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PW"/>
+            <Concept displayName="PARAGUAY" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="PY"/>
+            <Concept displayName="QATAR" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="QA"/>
+            <Concept displayName="RÉUNION" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="RE"/>
+            <Concept displayName="ROMANIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="RO"/>
+            <Concept displayName="SERBIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="RS"/>
+            <Concept displayName="RUSSIAN FEDERATION" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="RU"/>
+            <Concept displayName="RWANDA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="RW"/>
+            <Concept displayName="SAUDI ARABIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SA"/>
+            <Concept displayName="SOLOMON ISLANDS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SB"/>
+            <Concept displayName="SEYCHELLES" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SC"/>
+            <Concept displayName="SUDAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SD"/>
+            <Concept displayName="SWEDEN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SE"/>
+            <Concept displayName="SINGAPORE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SG"/>
+            <Concept displayName="SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SH"/>
+            <Concept displayName="SLOVENIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SI"/>
+            <Concept displayName="SVALBARD AND JAN MAYEN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SJ"/>
+            <Concept displayName="SLOVAKIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SK"/>
+            <Concept displayName="SIERRA LEONE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SL"/>
+            <Concept displayName="SAN MARINO" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SM"/>
+            <Concept displayName="SENEGAL" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SN"/>
+            <Concept displayName="SOMALIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SO"/>
+            <Concept displayName="SURINAME" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SR"/>
+            <Concept displayName="SOUTH SUDAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SS"/>
+            <Concept displayName="SAO TOME AND PRINCIPE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="ST"/>
+            <Concept displayName="EL SALVADOR" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SV"/>
+            <Concept displayName="SINT MAARTEN (DUTCH PART)" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SX"/>
+            <Concept displayName="SYRIAN ARAB REPUBLIC" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SY"/>
+            <Concept displayName="SWAZILAND" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="SZ"/>
+            <Concept displayName="TURKS AND CAICOS ISLANDS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TC"/>
+            <Concept displayName="CHAD" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TD"/>
+            <Concept displayName="FRENCH SOUTHERN TERRITORIES" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TF"/>
+            <Concept displayName="TOGO" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TG"/>
+            <Concept displayName="THAILAND" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TH"/>
+            <Concept displayName="TAJIKISTAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TJ"/>
+            <Concept displayName="TOKELAU" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TK"/>
+            <Concept displayName="TIMOR-LESTE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TL"/>
+            <Concept displayName="TURKMENISTAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TM"/>
+            <Concept displayName="TUNISIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TN"/>
+            <Concept displayName="TONGA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TO"/>
+            <Concept displayName="TURKEY" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TR"/>
+            <Concept displayName="TRINIDAD AND TOBAGO" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TT"/>
+            <Concept displayName="TUVALU" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TV"/>
+            <Concept displayName="TAIWAN, PROVINCE OF CHINA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TW"/>
+            <Concept displayName="TANZANIA, UNITED REPUBLIC OF" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="TZ"/>
+            <Concept displayName="UKRAINE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="UA"/>
+            <Concept displayName="UGANDA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="UG"/>
+            <Concept displayName="UNITED STATES MINOR OUTLYING ISLANDS" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="UM"/>
+            <Concept displayName="UNITED STATES" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="US"/>
+            <Concept displayName="URUGUAY" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="UY"/>
+            <Concept displayName="UZBEKISTAN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="UZ"/>
+            <Concept displayName="HOLY SEE (VATICAN CITY STATE)" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="VA"/>
+            <Concept displayName="SAINT VINCENT AND THE GRENADINES" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="VC"/>
+            <Concept displayName="VENEZUELA, BOLIVARIAN REPUBLIC OF" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="VE"/>
+            <Concept displayName="VIRGIN ISLANDS, BRITISH" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="VG"/>
+            <Concept displayName="VIRGIN ISLANDS, U.S." codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="VI"/>
+            <Concept displayName="VIET NAM" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="VN"/>
+            <Concept displayName="VANUATU" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="VU"/>
+            <Concept displayName="WALLIS AND FUTUNA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="WF"/>
+            <Concept displayName="SAMOA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="WS"/>
+            <Concept displayName="YEMEN" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="YE"/>
+            <Concept displayName="MAYOTTE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="YT"/>
+            <Concept displayName="SOUTH AFRICA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="ZA"/>
+            <Concept displayName="ZAMBIA" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="ZM"/>
+            <Concept displayName="ZIMBABWE" codeSystemName="ISO 3166-1" codeSystem="1.0.3166.1" code="ZW"/>
+        </ConceptList>
+    </ValueSet>
+</RetrieveValueSetResponse>

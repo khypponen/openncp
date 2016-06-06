@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!-- ==================
+       Artifact
+    ================== -->
+    <parent>
+        <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+        <artifactId>epsos-ncp-client</artifactId>
+        <version>4.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-client</groupId>
+    <artifactId>epsos-xca-ws-client</artifactId>
+
+    <name>EpSOS CC IHE-XCA Service Client</name>
+    <inceptionYear>2012</inceptionYear>
+    <packaging>jar</packaging>
+    <url>epsos.eu</url>
+
+
+    <!-- ==================
+       Development
+    ================== -->
+    <licenses>
+        <license>
+            <name>GNU Public License, Version 3.0</name>
+            <url>http://www.gnu.org/copyleft/gpl.html</url>
+        </license>
+    </licenses>
+    <scm>
+        <connection>git clone https://code.google.com/p/epsos-common-components.protocolterminators/</connection>
+        <url>http://code.google.com/p/epsos-common-components.protocolterminators/source/browse/</url>
+    </scm>
+    <issueManagement>
+        <system>JIRA</system>
+        <url>https://openncp.atlassian.net/browse/PT</url>
+    </issueManagement>
+
+
+    <!-- ==================
+        Dependencies
+    ================== -->
+    <dependencies>
+
+        <!-- epSOS -->
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+            <artifactId>epsos-ncp-pt-utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-util</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-audit-manager</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-data-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+            <artifactId>epsos-integration-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- axis -->
+        <dependency>
+            <groupId>org.apache.ws.commons.axiom</groupId>
+            <artifactId>axiom-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ws.commons.axiom</groupId>
+            <artifactId>axiom-impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-transport-http</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-transport-local</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>xalan</groupId>
+            <artifactId>serializer</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>wsdl4j</groupId>
+            <artifactId>wsdl4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.opensaml</groupId>
+            <artifactId>opensaml</artifactId>
+        </dependency>
+
+        <!-- tests -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- log -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring</artifactId>
+            <version>2.5.6.SEC02</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+</project>
+

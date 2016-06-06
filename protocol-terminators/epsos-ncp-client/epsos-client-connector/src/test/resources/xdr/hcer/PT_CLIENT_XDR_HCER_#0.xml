@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This file is part of epSOS OpenNCP implementation
+ * Copyright (C) 2012  SPMS (Serviços Partilhados do Ministério da Saúde - Portugal)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Contact email: epsos@iuz.pt
+-->
+<cc:submitDocument xmlns:cc="http://clientconnector.protocolterminator.openncp.epsos/">
+    <arg0>
+        <countryCode>ZZ</countryCode>
+        <document>
+            <author>Author</author>
+            <classCode>
+                <nodeRepresentation>34133-9</nodeRepresentation>
+                <schema>2.16.840.1.113883.6.1</schema>
+                <value>34133-9</value>
+            </classCode>
+            <creationDate>2012-10-26T21:32:52</creationDate>
+            <description>Description</description>
+            <formatCode>
+                <nodeRepresentation>urn:epSOS:hcer:2013</nodeRepresentation>
+                <schema>epSOS formatCodes</schema>
+                <value>urn:epSOS:hcer:2013</value>
+            </formatCode>
+            <mimeType>text/xml</mimeType>
+            <title>A HCER Document</title>
+            <uuid>1.2.3.4</uuid>
+            <base64Binary>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxDbGluaWNhbERvY3VtZW50IHhtbG5zPSJ1cm46aGw3LW9yZzp2MyIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6ZXBzb3M9InVybjplcHNvcy1vcmc6ZXA6bWVkaWNhdGlvbiIgeHNpOnNjaGVtYUxvY2F0aW9uPSJ1cm46aGw3LW9yZzp2MyBDREFfZXh0ZW5kZWQueHNkIiBjbGFzc0NvZGU9IkRPQ0NMSU4iIG1vb2RDb2RlPSJFVk4iPjwhLS1oZWFkZXItc2VjdGlvbi0tPjx0eXBlSWQgZXh0ZW5zaW9uPSJQT0NEX0hEMDAwMDQwIiByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xLjMiLz48dGVtcGxhdGVJZCByb290PSIxLjMuNi4xLjQuMS4xMjU1OS4xMS4xMC4xLjMuMS4xLjQiLz48aWQgZXh0ZW5zaW9uPSIxODc3NzE1MDIuaGNlciIgcm9vdD0iMi4xNi4xNy43MTAuODIwLjEwMDAuOTkwLjEiLz48Y29kZSBjb2RlPSIzNDEzMy05IiBkaXNwbGF5TmFtZT0iU3VtbWFyaXphdGlvbiBvZiBFcGlzb2RlIE5vdGUiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuMSIgY29kZVN5c3RlbU5hbWU9IkxPSU5DIi8+PHRpdGxlPkhlYWx0aCBDYXJlIEVuY291bnRlciBSZXBvcnQ8L3RpdGxlPjxlZmZlY3RpdmVUaW1lIHZhbHVlPSIyMDEzMDUyOSIvPjxjb25maWRlbnRpYWxpdHlDb2RlIGNvZGU9Ik4iIGRpc3BsYXlOYW1lPSJub3JtYWwiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuMjUiIGNvZGVTeXN0ZW1OYW1lPSJITDc6Q29uZmlkZW50aWFsaXR5Ii8+PGxhbmd1YWdlQ29kZSBjb2RlPSJlbi1HQiIvPjwhLS1wYXRpZW50LWRhdGEtLT48cmVjb3JkVGFyZ2V0IHR5cGVDb2RlPSJSQ1QiIGNvbnRleHRDb250cm9sQ29kZT0iT1AiPjxwYXRpZW50Um9sZSBjbGFzc0NvZGU9IlBBVCI+PGlkIGV4dGVuc2lvbj0iMTg3NzcxNTAyIiByb290PSIyLjE2LjE3LjcxMC44MjAuMTAwMC45OTAuMSIvPjxhZGRyPjxzdHJlZXRBZGRyZXNzTGluZT5SdWEgZGUgQ2V1dGE8L3N0cmVldEFkZHJlc3NMaW5lPjxjaXR5PkF2ZWlybzwvY2l0eT48cG9zdGFsQ29kZT4zODEwPC9wb3N0YWxDb2RlPjxzdGF0ZSBudWxsRmxhdm9yPSJVTksiLz48Y291bnRyeT5Qb3J0dWdhbDwvY291bnRyeT48L2FkZHI+PHRlbGVjb20gbnVsbEZsYXZvcj0iTkkiLz48cGF0aWVudD48bmFtZT48ZmFtaWx5PkFOVFVORVMgQlVOS0VSIFZJRUlSQTwvZmFtaWx5PjxnaXZlbj5EVUFSVEUgTlVOTzwvZ2l2ZW4+PC9uYW1lPjxhZG1pbmlzdHJhdGl2ZUdlbmRlckNvZGUgY29kZT0iTSIgZGlzcGxheU5hbWU9Ik1hbGUiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjUuMSIgY29kZVN5c3RlbU5hbWU9IkhMNzpBZG1pbmlzdHJhdGl2ZUdlbmRlciIgY29kZVN5c3RlbVZlcnNpb249IjkxMy0yMDA5MTAyMCIvPjxiaXJ0aFRpbWUgbnVsbEZsYXZvcj0iVU5LIi8+PC9wYXRpZW50PjwvcGF0aWVudFJvbGU+PC9yZWNvcmRUYXJnZXQ+PCEtLXBhdGllbnQtZGF0YS0tPjwhLS1hdXRob3ItZGF0YS0tPjxhdXRob3I+PHRpbWUgIHZhbHVlPSIyMDEzMDUyOSIvPjxhc3NpZ25lZEF1dGhvciBjbGFzc0NvZGU9IkFTU0lHTkVEIj48aWQgZXh0ZW5zaW9uPSIxODc3NzE1MDIiIHJvb3Q9IjIuMTYuMTcuNzEwLjgyMC4xMDAwLjk5MC4xIi8+PGFzc2lnbmVkUGVyc29uPjxuYW1lPjxmYW1pbHk+RmV0Y2hlcjwvZmFtaWx5PjxnaXZlbj5QYXRpZW50IFN1bW1hcnk8L2dpdmVuPjwvbmFtZT48L2Fzc2lnbmVkUGVyc29uPjxyZXByZXNlbnRlZE9yZ2FuaXphdGlvbj48aWQgZXh0ZW5zaW9uPSI5MDAwOTAxNiIgcm9vdD0iMS4zLjYuMS40LjEuMjgyODQuNi4yLjQuMSIvPjxuYW1lPkVlc3RpIEUtVGVydmlzZSBTQTwvbmFtZT48dGVsZWNvbSB1c2U9IldQIiB2YWx1ZT0idGVsOiszNzI2OTQzOTAwIi8+PHRlbGVjb20gdXNlPSJXUCIgdmFsdWU9InRlbDplLXRlcnZpc0BlLXRlcnZpcy5lZSIvPjwvcmVwcmVzZW50ZWRPcmdhbml6YXRpb24+PC9hc3NpZ25lZEF1dGhvcj48L2F1dGhvcj48IS0tYXV0aG9yLWRhdGEtLT48IS0tY3VzdG9kaWFuLWRhdGEtLT48Y3VzdG9kaWFuPjxhc3NpZ25lZEN1c3RvZGlhbj48cmVwcmVzZW50ZWRDdXN0b2RpYW5Pcmdhbml6YXRpb24+PGlkIGV4dGVuc2lvbj0iOTAwMDkwMTYiIHJvb3Q9IjEuMy42LjEuNC4xLjI4Mjg0LjYuMi40LjEiLz48bmFtZT5FZXN0aSBFLVRlcnZpc2UgU0E8L25hbWU+PHRlbGVjb20gdXNlPSJXUCIgdmFsdWU9InRlbDorMzcyNjk0MzkwMCIvPjx0ZWxlY29tIHVzZT0iV1AiIHZhbHVlPSJ0ZWw6ZS10ZXJ2aXNAZS10ZXJ2aXMuZWUiLz48L3JlcHJlc2VudGVkQ3VzdG9kaWFuT3JnYW5pemF0aW9uPjwvYXNzaWduZWRDdXN0b2RpYW4+PC9jdXN0b2RpYW4+PCEtLWN1c3RvZGlhbi1kYXRhLS0+PCEtLWxlZ2FsLWF1dGhlbnRpY2F0b3ItZGF0YS0tPjxsZWdhbEF1dGhlbnRpY2F0b3I+PHRpbWUgIHZhbHVlPSIyMDEzMDUyOSIvPjxzaWduYXR1cmVDb2RlIG51bGxGbGF2b3I9Ik5JIi8+PGFzc2lnbmVkRW50aXR5PjxpZCBleHRlbnNpb249IjEyMTMxMiIgcm9vdD0iMS4zLjYuMS40LjEuMjgyODQuNi4yLjQuMzIiLz48YXNzaWduZWRQZXJzb24gbnVsbEZsYXZvcj0iTkkiLz48cmVwcmVzZW50ZWRPcmdhbml6YXRpb24+PGlkIGV4dGVuc2lvbj0iOTAwMDkwMTYiIHJvb3Q9IjEuMy42LjEuNC4xLjI4Mjg0LjYuMi40LjEiLz48bmFtZT5FZXN0aSBFLVRlcnZpc2UgU0E8L25hbWU+PHRlbGVjb20gdXNlPSJXUCIgdmFsdWU9InRlbDorMzcyNjk0MzkwMCIvPjx0ZWxlY29tIHVzZT0iV1AiIHZhbHVlPSJ0ZWw6ZS10ZXJ2aXNAZS10ZXJ2aXMuZWUiLz48L3JlcHJlc2VudGVkT3JnYW5pemF0aW9uPjwvYXNzaWduZWRFbnRpdHk+PC9sZWdhbEF1dGhlbnRpY2F0b3I+PCEtLWxlZ2FsLWF1dGhlbnRpY2F0b3ItZGF0YS0tPjxkb2N1bWVudGF0aW9uT2Y+PHNlcnZpY2VFdmVudCBjbGFzc0NvZGU9IlBDUFIiPjxlZmZlY3RpdmVUaW1lPjxsb3cgdmFsdWU9IjIwMTMwNTI5Ii8+PGhpZ2ggdmFsdWU9IjIwMTMwNTI5Ii8+PC9lZmZlY3RpdmVUaW1lPjxwZXJmb3JtZXIgdHlwZUNvZGU9IlBSRiI+PGZ1bmN0aW9uQ29kZSBjb2RlPSIyMjIiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjIuOS42LjIuNyIgY29kZVN5c3RlbU5hbWU9ImVwU09TSGVhbHRoY2FyZVByb2Zlc3Npb25hbFJvbGVzIiBkaXNwbGF5TmFtZT0iTnVyc2luZyBhbmQgbWlkd2lmZXJ5IHByb2Zlc3Npb25hbHMiLz48YXNzaWduZWRFbnRpdHk+PGlkIHJvb3Q9IjEuMy42LjEuNC4xLjI4Mjg0LjYuMi40LjMyIi8+PGFzc2lnbmVkUGVyc29uPjxuYW1lPjxnaXZlbj5QYXRpZW50IFN1bW1hcnk8L2dpdmVuPjxmYW1pbHk+RmV0Y2hlcjwvZmFtaWx5PjwvbmFtZT48L2Fzc2lnbmVkUGVyc29uPjwvYXNzaWduZWRFbnRpdHk+PC9wZXJmb3JtZXI+PC9zZXJ2aWNlRXZlbnQ+PC9kb2N1bWVudGF0aW9uT2Y+PHJlbGF0ZWREb2N1bWVudCB0eXBlQ29kZT0iWEZSTSI+PHBhcmVudERvY3VtZW50PjxpZCBleHRlbnNpb249IjIwMTMwNDI5MTAxMzE1MTIzNCIgcm9vdD0iMS4zLjYuMS40LjEuMjgyODQuNi4yLjQuNzUiLz48L3BhcmVudERvY3VtZW50PjwvcmVsYXRlZERvY3VtZW50PjxyZWxhdGVkRG9jdW1lbnQgdHlwZUNvZGU9IkFQTkQiPjxwYXJlbnREb2N1bWVudD48aWQgZXh0ZW5zaW9uPSIyMDEzMDQyOTA5MTMxNTQzMjEiIHJvb3Q9IjIuMTYuMTcuNzEwLjgyMC4xMDAwLjk5MC4xLjEuMSIvPjwvcGFyZW50RG9jdW1lbnQ+PC9yZWxhdGVkRG9jdW1lbnQ+PCEtLWhlYWRlci1zZWN0aW9uLS0+PCEtLW1lZGljYWwtc2VjdGlvbnMtLT48Y29tcG9uZW50PjxzdHJ1Y3R1cmVkQm9keT48IS0tcHJvYmxlbS1saXN0LS0+PGNvbXBvbmVudD48c2VjdGlvbj48dGVtcGxhdGVJZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My4xMC4yMC4xLjExIi8+PHRlbXBsYXRlSWQgcm9vdD0iMS4zLjYuMS40LjEuMTkzNzYuMS41LjMuMS4zLjYiLz48Y29kZSBjb2RlPSIxMTQ1MC00IiBkaXNwbGF5TmFtZT0iUHJvYmxlbSBsaXN0IiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42LjEiIGNvZGVTeXN0ZW1OYW1lPSJMT0lOQyIvPjx0aXRsZT5Qcm9ibGVtIGxpc3Q8L3RpdGxlPjx0ZXh0Pjx0YWJsZSBib3JkZXI9IjEiPjx0Ym9keT48dHI+PHRoPkNvZGU8L3RoPjx0aD5EZXNjcmlwdGlvbjwvdGg+PC90cj48dHIgSUQ9InByb2JsZW0uMSI+PHRkPjI4MjI5MTAwOTwvdGQ+PHRkPjwvdGQ+PC90cj48L3Rib2R5PjwvdGFibGU+PC90ZXh0PjxlbnRyeSB0eXBlQ29kZT0iRFJJViI+PGFjdCBjbGFzc0NvZGU9IkFDVCIgbW9vZENvZGU9IkVWTiI+PHRlbXBsYXRlSWQgcm9vdD0iMi4xNi44NDAuMS4xMTM4ODMuMTAuMjAuMS4yNyIvPjx0ZW1wbGF0ZUlkIHJvb3Q9IjEuMy42LjEuNC4xLjE5Mzc2LjEuNS4zLjEuNC41LjEiLz48dGVtcGxhdGVJZCByb290PSIxLjMuNi4xLjQuMS4xOTM3Ni4xLjUuMy4xLjQuNS4yIi8+PGlkIGV4dGVuc2lvbj0icHJvYmxlbS4xIiByb290PSIyLjE2LjQ3MC4xLjEwMC4xLjEuMTAwMC45OTAuMSIvPjxjb2RlIG51bGxGbGF2b3I9Ik5BIi8+PHN0YXR1c0NvZGUgY29kZT0iYWN0aXZlIi8+PGVmZmVjdGl2ZVRpbWU+PGxvdyB2YWx1ZT0iMjAxMzA1MDgiLz48L2VmZmVjdGl2ZVRpbWU+PGVudHJ5UmVsYXRpb25zaGlwIGludmVyc2lvbkluZD0iZmFsc2UiIHR5cGVDb2RlPSJTVUJKIj48b2JzZXJ2YXRpb24gY2xhc3NDb2RlPSJPQlMiIG1vb2RDb2RlPSJFVk4iPjx0ZW1wbGF0ZUlkIHJvb3Q9IjIuMTYuODQwLjEuMTEzODgzLjEwLjIwLjEuMjgiLz48dGVtcGxhdGVJZCByb290PSIxLjMuNi4xLjQuMS4xOTM3Ni4xLjUuMy4xLjQuNSIvPjxpZCBleHRlbnNpb249InByb2JsZW0uMS5vYnMuMSIgcm9vdD0iMi4xNi40NzAuMS4xMDAuMS4xLjEwMDAuOTkwLjEiLz48Y29kZSBjb2RlPSIyODIyOTEwMDkiIGRpc3BsYXlOYW1lPSJJbnRlcnByZXRhw6fDo28gZGlhZ27Ds3N0aWNhIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My42Ljk2IiBjb2RlU3lzdGVtTmFtZT0iU05PTUVEIENUIi8+PHRleHQ+PHJlZmVyZW5jZSB2YWx1ZT0iI3Byb2JsZW0uMSIvPjwvdGV4dD48c3RhdHVzQ29kZSBjb2RlPSJjb21wbGV0ZWQiLz48ZWZmZWN0aXZlVGltZT48bG93IHZhbHVlPSIyMDEzMDUwOCIvPjwvZWZmZWN0aXZlVGltZT48dmFsdWUgY29kZT0iSDAwIiBkaXNwbGF5TmFtZT0iSG9yZMOpb2xvIGUgY2Fsw6F6aW8gW2NoYWxhem9dIiBjb2RlU3lzdGVtPSIxLjMuNi4xLjQuMS4xMjU1OS4xMS4xMC4xLjMuMS40NC4yIiBjb2RlU3lzdGVtTmFtZT0iSUNELTEwIiB4c2k6dHlwZT0iQ0QiLz48L29ic2VydmF0aW9uPjwvZW50cnlSZWxhdGlvbnNoaXA+PC9hY3Q+PC9lbnRyeT48L3NlY3Rpb24+PC9jb21wb25lbnQ+PCEtLXByb2JsZW0tbGlzdC0tPjwvc3RydWN0dXJlZEJvZHk+PC9jb21wb25lbnQ+PCEtLW1lZGljYWwtc2VjdGlvbnMtLT48L0NsaW5pY2FsRG9jdW1lbnQ+</base64Binary>
+            <associatedDocuments></associatedDocuments>
+        </document>
+        <patientDemographics>
+            <patientId>
+                <root>2.16.17.710.811</root>
+                <extension>199604092388</extension>
+            </patientId>
+            <administrativeGender>M</administrativeGender>
+            <city>Aveiro</city>
+            <email>email@example.com</email>
+            <familyName>Doe</familyName>
+            <givenName>John</givenName>
+            <postalCode>3810</postalCode>
+            <streetAddress>Rua de Ceuta</streetAddress>
+            <telephone>912345678</telephone>
+            <birthDate>2001-10-26T21:32:52</birthDate>
+        </patientDemographics>
+    </arg0>
+</cc:submitDocument>

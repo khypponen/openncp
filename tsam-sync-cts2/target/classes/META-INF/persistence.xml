@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="LTR" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>ec.europa.eu.tsamsync2.LTR.LicencedUser</class>
+    <class>ec.europa.eu.tsamsync2.LTR.ConceptValueSetMembership</class>
+    <class>ec.europa.eu.tsamsync2.LTR.CodeSystemConceptTranslation</class>
+    <class>ec.europa.eu.tsamsync2.LTR.TermUser</class>
+    <class>ec.europa.eu.tsamsync2.LTR.ValueSetMetadataValue</class>
+    <class>ec.europa.eu.tsamsync2.LTR.MetadataParameter</class>
+    <class>ec.europa.eu.tsamsync2.LTR.CodeSystemEntity</class>
+    <class>ec.europa.eu.tsamsync2.LTR.DomainValue</class>
+    <class>ec.europa.eu.tsamsync2.LTR.Domain</class>
+    <class>ec.europa.eu.tsamsync2.LTR.AssociationType</class>
+    <class>ec.europa.eu.tsamsync2.LTR.LicenceType</class>
+    <class>ec.europa.eu.tsamsync2.LTR.CodeSystemEntityVersion</class>
+    <class>ec.europa.eu.tsamsync2.LTR.CodeSystemMetadataValue</class>
+    <class>ec.europa.eu.tsamsync2.LTR.SysParam</class>
+    <class>ec.europa.eu.tsamsync2.LTR.CodeSystemVersionEntityMembership</class>
+    <class>ec.europa.eu.tsamsync2.LTR.Session</class>
+    <class>ec.europa.eu.tsamsync2.LTR.CodeSystemEntityVersionAssociation</class>
+    <class>ec.europa.eu.tsamsync2.LTR.model.CodeSystemConcept</class>
+    <class>ec.europa.eu.tsamsync2.LTR.model.TranscodingAssociation</class>
+    <class>ec.europa.eu.tsamsync2.LTR.model.CodeSystem</class>
+    <class>ec.europa.eu.tsamsync2.LTR.model.ValueSetVersion</class>
+    <class>ec.europa.eu.tsamsync2.LTR.model.Designation</class>
+    <class>ec.europa.eu.tsamsync2.LTR.model.ValueSet</class>
+    <class>ec.europa.eu.tsamsync2.LTR.model.CodeSystemVersion</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tsam_test?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="eclipselink.logging.level" value="FINER"/>
+    </properties>
+  </persistence-unit>
+</persistence>

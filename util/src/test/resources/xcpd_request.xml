@@ -1,0 +1,54 @@
+<PRPA_IN201305UV02 ITSVersion="XML_1.0" xmlns="urn:hl7-org:v3">
+   <id extension="363ac05f-4a76-453d-909f-b7d29c4d0585" root="5bd5c8fd-2184-4d8b-a6d2-d08a20ac6b60"/>
+   <creationTime value="20131128"/>
+   <versionCode code="V3PR1"/>
+   <interactionId extension="PRPA_IN201305UV02" root="2.16.840.1.113883.1.6"/>
+   <processingCode code="P"/>
+   <processingModeCode code="T"/>
+   <acceptAckCode code="AL"/>
+   <receiver typeCode="RCV">
+      <device classCode="DEV" determinerCode="INSTANCE">
+         <id root="2.16.17.710.807.1000.990.1"/>
+         <asAgent classCode="AGNT">
+            <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+               <id root="2.16.17.710.807.1000.990.1"/>
+            </representedOrganization>
+         </asAgent>
+      </device>
+   </receiver>
+   <sender typeCode="SND">
+      <device classCode="DEV" determinerCode="INSTANCE">
+         <id root="2.16.17.710.807.1000.990.1"/>
+         <asAgent classCode="AGNT">
+            <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+               <id root="2.16.17.710.807.1000.990.1"/>
+            </representedOrganization>
+         </asAgent>
+      </device>
+   </sender>
+   <controlActProcess classCode="CACT" moodCode="EVN">
+      <code code="PRPA_TE201305UV02" codeSystemName="2.16.840.1.113883.1.6"/>
+      <authorOrPerformer typeCode="AUT">
+         <assignedPerson classCode="ASSIGNED"/>
+      </authorOrPerformer>
+      <queryByParameter>
+         <queryId root="1.263507841149"/>
+         <statusCode code="new"/>
+         <responseModalityCode code="R"/>
+         <responsePriorityCode code="I"/>
+         <matchCriterionList/>
+         <parameterList>
+            <livingSubjectId>
+               <value extension="195011052478" root="2.16.17.710.807.1000.990.1"/>
+               <semanticsText/>
+            </livingSubjectId>
+            <patientAddress>
+               <value>
+                  <country>SE</country>
+               </value>
+               <semanticsText/>
+            </patientAddress>
+         </parameterList>
+      </queryByParameter>
+   </controlActProcess>
+</PRPA_IN201305UV02>

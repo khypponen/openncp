@@ -1,0 +1,145 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSPackage" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.3" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="30000500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Administration system"/>
+			<Concept code="30000500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Administration system (edqm)"/>
+			<Concept code="30001000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ampoule"/>
+			<Concept code="30001000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ampoule (edqm)"/>
+			<Concept code="30002000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Applicator"/>
+			<Concept code="30002000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Applicator (edqm)"/>
+			<Concept code="30004000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Bag"/>
+			<Concept code="30004000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Bag (edqm)"/>
+			<Concept code="30006000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Barrel"/>
+			<Concept code="30006000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Barrel (edqm)"/>
+			<Concept code="30007000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Blister"/>
+			<Concept code="30007000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Blister (edqm)"/>
+			<Concept code="30008000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Bottle"/>
+			<Concept code="30008000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Bottle (edqm)"/>
+			<Concept code="30009000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Box"/>
+			<Concept code="30009000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Box (edqm)"/>
+			<Concept code="30010000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Brush"/>
+			<Concept code="30010000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Brush (edqm)"/>
+			<Concept code="30011000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Brush applicator"/>
+			<Concept code="30011000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Brush applicator (edqm)"/>
+			<Concept code="30012000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cannula"/>
+			<Concept code="30012000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cannula (edqm)"/>
+			<Concept code="30013000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cap"/>
+			<Concept code="30013000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cap (edqm)"/>
+			<Concept code="30014000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cartridge"/>
+			<Concept code="30014000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cartridge (edqm)"/>
+			<Concept code="30015000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Child-resistant closure"/>
+			<Concept code="30015000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Child-resistant closure (edqm)"/>
+			<Concept code="30016000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cup"/>
+			<Concept code="30016000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cup (edqm)"/>
+			<Concept code="30017000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dabbing applicator"/>
+			<Concept code="30017000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dabbing applicator (edqm)"/>
+			<Concept code="30019000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dredging applicator"/>
+			<Concept code="30019000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dredging applicator (edqm)"/>
+			<Concept code="30020000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dredging container"/>
+			<Concept code="30020000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dredging container (edqm)"/>
+			<Concept code="30022000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dropper applicator"/>
+			<Concept code="30022000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dropper applicator (edqm)"/>
+			<Concept code="30023000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dropper container"/>
+			<Concept code="30023000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dropper container (edqm)"/>
+			<Concept code="30023005" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Fixed cryogenic vessel"/>
+			<Concept code="30023005" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Fixed cryogenic vessel (edqm)"/>
+			<Concept code="30024000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gas cylinder"/>
+			<Concept code="30024000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gas cylinder (edqm)"/>
+			<Concept code="30025000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="High pressure transdermal delivery device"/>
+			<Concept code="30025000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="High pressure transdermal delivery device (edqm)"/>
+			<Concept code="30026000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Implanter"/>
+			<Concept code="30026000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Implanter (edqm)"/>
+			<Concept code="30026500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhaler"/>
+			<Concept code="30026500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhaler (edqm)"/>
+			<Concept code="30027000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="In-ovo injection device"/>
+			<Concept code="30027000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="In-ovo injection device (edqm)"/>
+			<Concept code="30028000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Injection needle"/>
+			<Concept code="30028000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Injection needle (edqm)"/>
+			<Concept code="30029000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Injection syringe"/>
+			<Concept code="30029000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Injection syringe (edqm)"/>
+			<Concept code="30031000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intramammary syringe"/>
+			<Concept code="30031000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intramammary syringe (edqm)"/>
+			<Concept code="30032000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Jar"/>
+			<Concept code="30032000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Jar (edqm)"/>
+			<Concept code="30033000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Measuring device"/>
+			<Concept code="30033000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Measuring device (edqm)"/>
+			<Concept code="30034000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Measuring spoon"/>
+			<Concept code="30034000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Measuring spoon (edqm)"/>
+			<Concept code="30035000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Metering pump"/>
+			<Concept code="30035000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Metering pump (edqm)"/>
+			<Concept code="30036000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Metering valve"/>
+			<Concept code="30036000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Metering valve (edqm)"/>
+			<Concept code="30036005" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Mobile cryogenic vessel"/>
+			<Concept code="30036005" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Mobile cryogenic vessel (edqm)"/>
+			<Concept code="30037000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Mouthpiece"/>
+			<Concept code="30037000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Mouthpiece (edqm)"/>
+			<Concept code="30038000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Multidose container"/>
+			<Concept code="30038000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Multidose container (edqm)"/>
+			<Concept code="30039000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Multidose container with airless pump"/>
+			<Concept code="30039000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Multidose container with airless pump (edqm)"/>
+			<Concept code="30040000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Multipuncturer"/>
+			<Concept code="30040000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Multipuncturer (edqm)"/>
+			<Concept code="30041000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal applicator"/>
+			<Concept code="30041000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal applicator (edqm)"/>
+			<Concept code="30042000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebuliser"/>
+			<Concept code="30042000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebuliser (edqm)"/>
+			<Concept code="30043000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Needle applicator"/>
+			<Concept code="30043000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Needle applicator (edqm)"/>
+			<Concept code="30044000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nozzle"/>
+			<Concept code="30044000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nozzle (edqm)"/>
+			<Concept code="30045000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral syringe"/>
+			<Concept code="30045000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral syringe (edqm)"/>
+			<Concept code="30046000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pipette"/>
+			<Concept code="30046000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pipette (edqm)"/>
+			<Concept code="30047000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pipette applicator"/>
+			<Concept code="30047000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pipette applicator (edqm)"/>
+			<Concept code="30048000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pour-on container"/>
+			<Concept code="30048000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pour-on container (edqm)"/>
+			<Concept code="30049000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pre-filled gastroenteral tube"/>
+			<Concept code="30049000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pre-filled gastroenteral tube (edqm)"/>
+			<Concept code="30050000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pre-filled pen"/>
+			<Concept code="30050000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pre-filled pen (edqm)"/>
+			<Concept code="30051000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pre-filled syringe"/>
+			<Concept code="30051000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pre-filled syringe (edqm)"/>
+			<Concept code="30052000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pressurised container"/>
+			<Concept code="30052000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Pressurised container (edqm)"/>
+			<Concept code="30053000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prick test applicator"/>
+			<Concept code="30053000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Prick test applicator (edqm)"/>
+			<Concept code="30053500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Roll-on container"/>
+			<Concept code="30053500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Roll-on container (edqm)"/>
+			<Concept code="30054000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Sachet"/>
+			<Concept code="30054000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Sachet (edqm)"/>
+			<Concept code="30055000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Scarifier"/>
+			<Concept code="30055000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Scarifier (edqm)"/>
+			<Concept code="30056000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Screw cap"/>
+			<Concept code="30056000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Screw cap (edqm)"/>
+			<Concept code="30057000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Single-dose container"/>
+			<Concept code="30057000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Single-dose container (edqm)"/>
+			<Concept code="30058000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Spatula"/>
+			<Concept code="30058000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Spatula (edqm)"/>
+			<Concept code="30059000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Spot-on applicator"/>
+			<Concept code="30059000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Spot-on applicator (edqm)"/>
+			<Concept code="30060000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Spray container"/>
+			<Concept code="30060000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Spray container (edqm)"/>
+			<Concept code="30061000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Spray pump"/>
+			<Concept code="30061000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Spray pump (edqm)"/>
+			<Concept code="30062000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Spray valve"/>
+			<Concept code="30062000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Spray valve (edqm)"/>
+			<Concept code="30063000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Stab vaccinator"/>
+			<Concept code="30063000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Stab vaccinator (edqm)"/>
+			<Concept code="30064000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Stopper"/>
+			<Concept code="30064000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Stopper (edqm)"/>
+			<Concept code="30064500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Straw"/>
+			<Concept code="30064500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Straw (edqm)"/>
+			<Concept code="30065000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Strip"/>
+			<Concept code="30065000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Strip (edqm)"/>
+			<Concept code="30066000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet container"/>
+			<Concept code="30066000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tablet container (edqm)"/>
+			<Concept code="30067000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tube"/>
+			<Concept code="30067000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tube (edqm)"/>
+			<Concept code="30069000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vial"/>
+			<Concept code="30069000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vial (edqm)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

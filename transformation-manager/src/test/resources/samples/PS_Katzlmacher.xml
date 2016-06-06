@@ -1,0 +1,1675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3">
+	<realmCode code="universal"/>
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+	<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3"/>
+	<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+	<templateId extension="46a65f98-fc1e-102d-82ad-7e7cb6377d4f" root="1.2.40.0.32.6.1.10.1.1"/>
+	<id extension="F0B7C4C7-B77A-09D5-34A3-5C9F20270CAF" root="2.16.17.710.780.1000.902.1.1.3.2"/>
+	<code code="60591-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Patient Summary" codeSystemVersion="vs"/>
+	<title>epSOS Patient Summary</title>
+	<effectiveTime value="20101206150937+0200"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="HL7:Confidentiality" displayName="normal"/>
+	<languageCode code="de-AT"/>
+	<setId extension="469DEB0B-44F5-9804-7E7C-844CE7336C52" root="2.16.17.710.780.1000.902.1.1.3.2"/>
+	<versionNumber value="1"/>
+	<recordTarget>
+		<patientRole>
+			<id extension="AT12925765085331" root="2.16.17.710.780.1000.990.1"/>
+			<addr>
+				<country>AT</country>
+				<state>Wien</state>
+				<city>Wien</city>
+				<postalCode>1020</postalCode>
+				<streetAddressLine>Obere Donaustrasse 45/15</streetAddressLine>
+			</addr>
+			<telecom use="HP" value="mailto:markus@katzemacher.com"/>
+			<telecom use="WP" value="mailto:business@mail.com"/>
+			<telecom use="HP" value="tel:+123456789"/>
+			<telecom use="WP" value="tel:+987654321"/>
+			<patient>
+				<name>
+					<given>Markus</given>
+					<family>Katzlmacher</family>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7 AdministrativeGender" displayName="Male"/>
+				<birthTime value="19760609"/>
+				<maritalStatusCode code="S" codeSystem="2.16.840.1.113883.5.2" codeSystemName="HL7 Marital Status Vocabulary" displayName="Single"/>
+				<religiousAffiliationCode nullFlavor="NI"/>
+				<raceCode nullFlavor="NI"/>
+				<ethnicGroupCode nullFlavor="NI"/>
+				<guardian classCode="GUARD">
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+					<code code="DOMPART" codeSystem="2.16.840.1.113883.11.19563" codeSystemName="HL7:PersonalRelationshipRoleType" displayName="Lebensgefährte"/>
+					<addr>
+						<country>AT</country>
+						<state>Wien</state>
+						<city>Wien</city>
+						<postalCode>1020</postalCode>
+						<streetAddressLine>Obere Donaustrasse 45/15</streetAddressLine>
+					</addr>
+					<telecom use="HP" value="mailto:brigitte@maier.com"/>
+					<telecom use="WP" value="mailto:business@mail.com"/>
+					<telecom use="HP" value="tel:+123456789"/>
+					<telecom use="WP" value="tel:+987654321"/>
+					<guardianPerson>
+						<name>
+							<family>Maier</family>
+							<given>Brigitte</given>
+						</name>
+					</guardianPerson>
+				</guardian>
+				<languageCommunication>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.1"/>
+					<languageCode code="de-AT"/>
+					<modeCode code="ESGN" codeSystem="2.16.840.1.113883.5.60" codeSystemName="HL7:LanguageAbilityMode" displayName="Expressed signed"/>
+					<proficiencyLevelCode code="E" codeSystem="2.16.840.1.113883.5.61" codeSystemName="HL7:LanguageProficiencyLevel" displayName="Excellent"/>
+					<preferenceInd value="true"/>
+				</languageCommunication>
+				<languageCommunication>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.1"/>
+					<languageCode code="en-GB"/>
+					<modeCode code="RWR" codeSystem="2.16.840.1.113883.5.60" codeSystemName="HL7:LanguageAbilityMode" displayName="Received written"/>
+					<proficiencyLevelCode code="G" codeSystem="2.16.840.1.113883.5.61" codeSystemName="HL7:LanguageProficiencyLevel" displayName="Good"/>
+					<preferenceInd value="false"/>
+				</languageCommunication>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20101206150937+0200"/>
+		<assignedAuthor>
+			<id extension="admin" root="2.16.17.710.780.1000.903.1.1.3.3"/>
+			<addr>
+				<country>AT</country>
+				<state>Vienna</state>
+				<city>Vienna</city>
+				<postalCode>1110</postalCode>
+				<streetAddressLine>Guglgasse 6</streetAddressLine>
+			</addr>
+			<telecom nullFlavor="NI"/>
+			<assignedPerson>
+				<name>
+					<given>Fingerle</given>
+					<family>Harry</family>
+					<prefix>Dr.</prefix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id extension="2.16.17.710" root="1.2.40.0.32.6.1.10"/>
+				<name>spirit</name>
+				<telecom nullFlavor="NI"/>
+				<addr>
+					<country>AT</country>
+					<state>Vienna</state>
+					<city>Vienna</city>
+					<postalCode>1110</postalCode>
+					<streetAddressLine>Guglgasse 6</streetAddressLine>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<author>
+		<functionCode code="22" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO-08" displayName="Health professionals"/>
+		<time nullFlavor="NI"/>
+		<assignedAuthor>
+			<id nullFlavor="NI"/>
+			<telecom use="PG" value="tel:+123123"/>
+			<assignedPerson>
+				<name>
+					<family>Smith</family>
+					<given>Harry</given>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id nullFlavor="NI"/>
+				<name>Hospital Green Cross</name>
+				<telecom use="WP" value="mailto:office@hospital.com"/>
+				<addr>
+					<country>AT</country>
+					<state>VIE</state>
+					<city>Vienna</city>
+					<postalCode>1020</postalCode>
+					<streetAddressLine>Hospital Strasse 1</streetAddressLine>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id nullFlavor="NI"/>
+				<name>Austria NC</name>
+				<telecom use="WP" value="Telecom"/>
+				<addr>
+					<country>AT</country>
+					<state>Bundesland Wien</state>
+					<city>Wien</city>
+					<postalCode>1010</postalCode>
+					<streetName>Wollzeile</streetName>
+					<houseNumber>75</houseNumber>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<legalAuthenticator>
+		<time value="20101206150937+0200"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id extension="admin" root="2.16.17.710.780.1000.903.1.1.3.3"/>
+			<addr>
+				<country>AT</country>
+				<state>Vienna</state>
+				<city>Vienna</city>
+				<postalCode>1110</postalCode>
+				<streetAddressLine>Guglgasse 6</streetAddressLine>
+			</addr>
+			<telecom nullFlavor="NI"/>
+			<assignedPerson>
+				<name>
+					<given>Izidor</given>
+					<family>Lutschger</family>
+					<prefix>Univ. Prof. Dr.</prefix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id extension="2.16.17.710" root="1.2.40.0.32.6.1.10"/>
+				<name>spirit</name>
+				<telecom nullFlavor="NI"/>
+				<addr>
+					<country>AT</country>
+					<state>Vienna</state>
+					<city>Vienna</city>
+					<postalCode>1110</postalCode>
+					<streetAddressLine>Guglgasse 6</streetAddressLine>
+				</addr>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<participant typeCode="IND">
+		<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+		<functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" codeSystemName="HL7 ParticipationFunction" displayName="Primary Care Physician"/>
+		<associatedEntity classCode="PRS">
+			<scopingOrganization>
+				<name>KH Zell am See</name>
+				<telecom use="WP" value="tel:+436542777"/>
+				<addr>
+					<country>AT</country>
+					<state>Salzburg</state>
+					<city>Zell am See</city>
+					<postalCode>5700</postalCode>
+					<streetAddressLine>Paracelsusstrasse 8</streetAddressLine>
+				</addr>
+			</scopingOrganization>
+		</associatedEntity>
+	</participant>
+	<participant typeCode="IND">
+		<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+		<functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" codeSystemName="HL7 ParticipationFunction" displayName="Primary Care Physician"/>
+		<associatedEntity classCode="PRS">
+			<code code="CHILD" codeSystem="2.16.840.1.113883.11.19563" codeSystemName="HL7:PersonalRelationshipRoleType" displayName="child"/>
+			<addr>
+				<country>AT</country>
+				<state>VIE</state>
+				<city>Vienna</city>
+				<postalCode>1220</postalCode>
+				<streetAddressLine>Test Street 23</streetAddressLine>
+			</addr>
+			<telecom use="H" value="mailto:simon@mail.com"/>
+			<associatedPerson>
+				<name>
+					<family>Test</family>
+					<given>Maxi</given>
+				</name>
+			</associatedPerson>
+		</associatedEntity>
+	</participant>
+	<participant typeCode="IND">
+		<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+		<time nullFlavor="NI"/>
+		<associatedEntity classCode="NOK">
+			<code code="CHILD" codeSystem="2.16.840.1.113883.11.19563" codeSystemName="HL7:PersonalRelationshipRoleType" displayName="child"/>
+			<addr>
+				<country>AT</country>
+				<state>Kaernten</state>
+				<city>Klagenfurt</city>
+				<postalCode>9200</postalCode>
+				<streetAddressLine>Strasse 1</streetAddressLine>
+			</addr>
+			<telecom use="HP" value="tel:+4323456789"/>
+			<associatedPerson>
+				<name>
+					<family>Kozibar</family>
+					<given>Lisbeth</given>
+				</name>
+			</associatedPerson>
+		</associatedEntity>
+	</participant>
+	<documentationOf>
+		<serviceEvent>
+			<performer typeCode="PRF">
+				<functionCode code="22" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO-08" displayName="Health professionals"/>
+				<assignedEntity>
+					<id nullFlavor="NI"/>
+					<telecom use="PG" value="tel:+123123"/>
+					<assignedPerson>
+						<name>
+							<given>Izidor</given>
+							<family>Lutschger</family>
+							<prefix>Univ. Prof. Dr.</prefix>
+						</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id nullFlavor="NI"/>
+						<name>Hospital Green Cross</name>
+						<telecom use="WP" value="mailto:office@hospital.com"/>
+						<addr>
+							<country>AT</country>
+							<state>VIE</state>
+							<city>Vienna</city>
+							<postalCode>1020</postalCode>
+							<streetAddressLine>Krankenstrasse 1</streetAddressLine>
+						</addr>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<documentationOf>
+		<serviceEvent classCode="PCPR">
+			<effectiveTime>
+				<low value="20101206"/>
+				<high value="20101206"/>
+			</effectiveTime>
+			<performer typeCode="PRF">
+				<time>
+					<low value="20101206"/>
+					<high value="20101206"/>
+				</time>
+				<assignedEntity>
+					<id extension="admin" root="2.16.17.710.780.1000.903.1.1.3.3"/>
+					<addr>
+						<country>AT</country>
+						<state>Vienna</state>
+						<city>Vienna</city>
+						<postalCode>1110</postalCode>
+						<streetAddressLine>Guglgasse 6</streetAddressLine>
+					</addr>
+					<telecom nullFlavor="NI"/>
+					<assignedPerson>
+						<name>
+							<given>Izidor</given>
+							<family>Lutschger</family>
+							<prefix>Univ. Prof. Dr.</prefix>
+						</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id extension="admin" root="1.2.40.0.32.6.1.10"/>
+						<name>spirit</name>
+						<telecom nullFlavor="NI"/>
+						<addr>
+							<country>AT</country>
+							<state>Vienna</state>
+							<city>Vienna</city>
+							<postalCode>1110</postalCode>
+							<streetAddressLine>Guglgasse 6</streetAddressLine>
+						</addr>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<relatedDocument typeCode="XFRM">
+		<parentDocument>
+			<id extension="FF7B06E8-9F6B-C38C-F39A-A7695FB53EDA" root="2.16.17.710.780.1000.902.1.1.3.2"/>
+		</parentDocument>
+	</relatedDocument>
+	<authorization typeCode="AUTH">
+		<consent classCode="CONS" moodCode="EVN">
+			<templateId assigningAuthorityName="BPPC Authorization Template" root="1.3.6.1.4.1.19376.1.5.3.1.2.5"/>
+			<id root="DDDD13A8-969F-9F1B-6B32-50C9AB8A4A31"/>
+			<code code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="HL7:Confidentiality" displayName="normal"/>
+			<statusCode code="completed"/>
+		</consent>
+	</authorization>
+	<componentOf>
+		<encompassingEncounter>
+			<id root="294EE8AC-D30F-C52B-8ECD-AF444553EE1F"/>
+			<effectiveTime>
+				<low value="20101206"/>
+				<high value="20101206"/>
+			</effectiveTime>
+		</encompassingEncounter>
+	</componentOf>
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.2"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+					<code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
+					<title>Allergien und unerwünschte Nebenwirkungen</title>
+					<text>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>
+										<content styleCode="bold">Allergie / Reaktion Type</content>
+									</td>
+									<td>
+										<content styleCode="bold">Status</content>
+									</td>
+									<td>
+										<content styleCode="bold">Schwere</content>
+									</td>
+									<td>
+										<content styleCode="bold">Auslöser</content>
+									</td>
+									<td>
+										<content styleCode="bold">bekannte Reaktionen</content>
+									</td>
+									<td>
+										<content styleCode="bold">von: / Dauer</content>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="allergy1">
+									<td ID="allergy1_allergytype">Medikamentenallergie</td>
+									<td ID="allergy1_status">Aktiv</td>
+									<td ID="allergy1_severity">Moderat</td>
+									<td ID="allergy1_agent">Amfetamine</td>
+									<td ID="allergy1_reaction">
+										<list>
+											<item ID="allergy1_1_reaction">Anaphylaxie, MyReaction11_</item>
+											<item ID="allergy1_2_reaction">Ekzem, MyReaction12_</item>
+										</list>
+									</td>
+									<td ID="allergy1_datefrom">01.12.2009</td>
+								</tr>
+								<tr ID="allergy2">
+									<td ID="allergy2_allergytype">Nahrungsmittelallergie</td>
+									<td ID="allergy2_status">Beendet</td>
+									<td ID="allergy2_severity">Gering</td>
+									<td ID="allergy2_agent">ZItrusfrüchte</td>
+									<td ID="allergy2_reaction">
+										<list>
+											<item ID="allergy2_1_reaction">Juckreiz, MyReaction21_</item>
+											<item ID="allergy2_2_reaction">Bronchospasmus, MyReaction22_</item>
+										</list>
+									</td>
+									<td ID="allergy2_datefrom">03.12.2009</td>
+									<td ID="allergy2_dateto">06.12.2010</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.6"/>
+							<id root="A3051C12-4172-2705-060C-7991D5FD0243"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="20091201"/>
+							</effectiveTime>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="2.16.840.1.113883.10.20.1.18"/>
+									<id root="47B7CADE-2151-753E-6DCA-3662D1A45E04"/>
+									<code code="416098002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Drug allergy">
+										<!-- -->
+										<originalText>
+											<!-- -->
+											<reference value="#allergy1_allergytype"/>
+										</originalText>
+										<originalText>
+											<!-- -->
+											<reference value="#allergy12_allergytype"/>
+										</originalText>
+										<translation displayName="he"/>
+									</code>
+									<text>
+										<reference value="#
+											"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20091201"/>
+										<high nullFlavor="UNK"/>
+									</effectiveTime>
+									<value code="160244002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="No known allergies" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+										<originalText>
+											<reference value="#allergy1"/>
+										</originalText>
+									</value>
+									<participant typeCode="CSM">
+										<participantRole classCode="MANU">
+											<playingEntity classCode="MMAT">
+												<code code="N06BA01" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" displayName="Amfetamine">
+													<originalText>
+														<reference value="#allergy1_agent"/>
+													</originalText>
+												</code>
+												<name>Amfetamine</name>
+											</playingEntity>
+										</participantRole>
+									</participant>
+									<entryRelationship typeCode="MFST">
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.28"/>
+											<templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+											<id root="4A1124A2-89E2-31A4-A326-F1BEF0027535"/>
+											<code code="39579001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Anaphylaxie"/>
+											<text>
+												<reference value="allergy1_1_reaction"/>
+											</text>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low value="20091201"/>
+												<high nullFlavor="UNK"/>
+											</effectiveTime>
+											<value code="160244002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="No known allergies" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+												<originalText>
+													<reference value="allergy1_1_reaction"/>
+												</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+									<entryRelationship typeCode="MFST">
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.28"/>
+											<templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+											<id root="A0D9AEC8-93C3-206A-FB7F-975D87CBD1CA"/>
+											<code code="43116000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Ekzem"/>
+											<text>
+												<reference value="allergy1_2_reaction"/>
+											</text>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low value="20091201"/>
+												<high nullFlavor="UNK"/>
+											</effectiveTime>
+											<value code="160244002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="No known allergies" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+												<originalText>
+													<reference value="allergy1_2_reaction"/>
+												</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.55"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1"/>
+											<code code="SEV" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Schwere"/>
+											<text>
+												<reference value="#allergy1_severity"/>
+											</text>
+											<statusCode code="completed"/>
+											<value code="6736007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Moderat" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+												<originalText>
+													<reference value="#allergy1_severity"/>
+												</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.6"/>
+							<id root="D57EE609-0D44-A26F-34CE-9F3807311793"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20091203"/>
+								<high value="20101206"/>
+							</effectiveTime>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="2.16.840.1.113883.10.20.1.18"/>
+									<id root="E92D6540-0B07-39AE-4D8C-D0940E89E5C6"/>
+									<code code="414285001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Nahrungsmittelallergie">
+										<originalText>
+											<reference value="#allergy2_allergytype"/>
+										</originalText>
+									</code>
+									<text>
+										<reference value="#allergy2"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20091203"/>
+										<high value="20101206"/>
+									</effectiveTime>
+									<value code="160244002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="No known allergies" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+										<originalText>
+											<reference value="#allergy2"/>
+										</originalText>
+									</value>
+									<participant typeCode="CSM">
+										<participantRole classCode="MANU">
+											<playingEntity classCode="MMAT">
+												<code code="102259006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Zitrusfrüchte">
+													<originalText>
+														<reference value="#allergy2_agent"/>
+													</originalText>
+												</code>
+												<name>Zitrusfrüchte</name>
+											</playingEntity>
+										</participantRole>
+									</participant>
+									<entryRelationship typeCode="MFST">
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.28"/>
+											<templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+											<id root="82D8BAE4-91B7-9CB0-4A6F-5901A5C6D0E7"/>
+											<code code="247472004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Juckreiz"/>
+											<text>
+												<reference value="allergy2_1_reaction"/>
+											</text>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low value="20091203"/>
+												<high value="20101206"/>
+											</effectiveTime>
+											<value code="160244002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="No known allergies" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+												<originalText>
+													<reference value="allergy2_1_reaction"/>
+												</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+									<entryRelationship typeCode="MFST">
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.28"/>
+											<templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+											<id root="C921DD49-A49D-C8A7-2C7E-A0802F520F46"/>
+											<code code="4386001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Bronchospasmus"/>
+											<text>
+												<reference value="allergy2_2_reaction"/>
+											</text>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low value="20091203"/>
+												<high value="20101206"/>
+											</effectiveTime>
+											<value code="160244002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="No known allergies" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+												<originalText>
+													<reference value="allergy2_2_reaction"/>
+												</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.55"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1"/>
+											<code code="SEV" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Severity"/>
+											<text>
+												<reference value="#allergy2_severity"/>
+											</text>
+											<statusCode code="completed"/>
+											<value code="349915008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Low grade" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+												<originalText>
+													<reference value="#allergy2_severity"/>
+												</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.6"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23"/>
+					<code code="11369-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of immunizations"/>
+					<title>Immunisierungen / Impfungen</title>
+					<text>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>Name</td>
+									<td>Beschreibung</td>
+									<td>Datum</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="im_med1">
+									<td ID="im_med1_name">Hepatitis A+B</td>
+									<td ID="im_med1_description">Twinrix®</td>
+									<td>01.12.2009</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.13"/>
+							<id root="3F0C3BC7-F871-4150-D0F1-C78DD914B15C"/>
+							<code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+							<text>
+								<reference value="#im_med1"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime value="20091201"/>
+							<consumable typeCode="CSM">
+								<manufacturedProduct classCode="MANU">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.53"/>
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+										<code code="333702001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Hepatitis A+B">
+											<originalText>
+												<reference value="#im_med1_name"/>
+											</originalText>
+										</code>
+										<name/>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.8"/>
+					<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.1"/>
+					<id root="8653B6B0-868E-55E2-CFE9-F34223F25951"/>
+					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Medication Use"/>
+					<title>Medikations-Übersicht</title>
+					<text>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>Aktiver Wirkstoff</td>
+									<td>Frequenz</td>
+									<td>Dosis</td>
+									<td>Packungs Information</td>
+									<td>Art der Applikation</td>
+									<td>Beschreibung</td>
+									<td>von:</td>
+									<td>bis:</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="meddesc1">
+									<td ID="meddesc1_activeingredient">Pantoprazol, 10g</td>
+									<td ID="meddesc1_frequency">3XW - dreimal wöchentlich</td>
+									<td ID="meddesc1_dose">Intraruminlae Einheit</td>
+									<td ID="meddesc1_packageinfo">Tabletten Box</td>
+									<td ID="meddesc1_routecode">zur oralen Einnahme</td>
+									<td ID="meddesc1_description"/>
+									<td ID="meddesc1_datefrom">01.02.2010</td>
+									<td ID="meddesc1_dateto">20.02.2010</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.8"/>
+							<id root="E3E57010-25E3-76F0-6347-8EF8AD55650F"/>
+							<text>
+								<reference value="#meddesc1"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+								<low value="20100201"/>
+								<high value="20100220"/>
+							</effectiveTime>
+							<effectiveTime institutionSpecified="true" operator="A" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS">
+								<period unit="W" value="0.3333333333333333"/>
+							</effectiveTime>
+							<routeCode code="20053000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="zur oralen Einnahme"/>
+							<doseQuantity nullFlavor="NI"/>
+							<rateQuantity nullFlavor="NI"/>
+							<consumable>
+								<manufacturedProduct classCode="MANU">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+									<templateId root="2.16.840.1.113883.10.20.1.53"/>
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+										<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+										<epsos:id root="6E8F0DE0-5BAD-AC3D-F182-4F932CD6C805" xmlns:epsos="urn:epsos-org:ep:medication"/>
+										<code code="A02BC02" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" displayName="Pantoprazol">
+											<originalText>
+												<reference value="concat('#meddesc', position(), '_activeingredient')"/>
+											</originalText>
+										</code>
+										<name/>
+										<epsos:formCode code="12320" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraruminal device" xmlns:epsos="urn:epsos-org:ep:medication"/>
+										<epsos:asContent classCode="CONT" xmlns:epsos="urn:epsos-org:ep:medication">
+											<epsos:containerPackagedMedicine classCode="CONT" determinerCode="INSTANCE">
+												<epsos:formCode code="30066000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Tabletten Box"/>
+											</epsos:containerPackagedMedicine>
+										</epsos:asContent>
+										<epsos:ingredient classCode="ACTI" xmlns:epsos="urn:epsos-org:ep:medication">
+											<epsos:quantity>
+												<epsos:numerator unit="g" value="10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="epsos:PQ"/>
+												<epsos:denominator unit="g" value="20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="epsos:PQ"/>
+											</epsos:quantity>
+											<epsos:ingredient classCode="MMAT" determinerCode="KIND">
+												<epsos:code code="A02BC02" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" displayName="Pantoprazol"/>
+												<epsos:name>Pantoprazol</epsos:name>
+											</epsos:ingredient>
+										</epsos:ingredient>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.4"/>
+					<code code="10164-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Verlauf der aktuellen Krankheit"/>
+					<title>Verlauf der aktuellen Krankheit</title>
+					<text>Das ist ein Freitext eintrag --- This is a free text entry</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+					<templateId root="2.16.840.1.113883.10.20.1.11"/>
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem list"/>
+					<title>Aktuelle Probleme</title>
+					<text>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>
+										<content styleCode="bold">Beobachtung</content>
+									</td>
+									<td>
+										<content styleCode="bold">Problem</content>
+									</td>
+									<td>
+										<content styleCode="bold">Status</content>
+									</td>
+									<td>
+										<content styleCode="bold">Schweregrad</content>
+									</td>
+									<td>
+										<content styleCode="bold">Beschreibung</content>
+									</td>
+									<td>
+										<content styleCode="bold">von:</content>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="actproblem1">
+									<td ID="actproblem1_observation">Bronchoneumonie, nicht näher bezeichnet</td>
+									<td ID="actproblem1_problem">Beschwerde</td>
+									<td ID="actproblem1_status">Aktiv</td>
+									<td ID="actproblem1_severity">geringgradig</td>
+									<td ID="actproblem1_description">Eine geringgradige Lungenentzündung, ohne respiratorische Einschränkiung, mit leichtem Fieber</td>
+									<td ID="actproblem1_datefrom">12.12.2010</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"/>
+							<id root="C35FE3CD-BE0C-A706-1FED-2AA013C8EF47"/>
+							<code nullFlavor="NA"/>
+							<text>
+								<reference value="#actproblem1"/>
+							</text>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="20101212"/>
+							</effectiveTime>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<id root="20037D6C-FB55-D5D4-96EC-F38204EF7068"/>
+									<code code="409586006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Beschwerde">
+										<originalText>
+											<reference value="#actproblem1_problem"/>
+										</originalText>
+									</code>
+									<text>
+										<reference value="#actproblem1_description"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20101212"/>
+									</effectiveTime>
+									<value code="J18.0" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10-WHO-en 2008" displayName="Bronchopneumonie, nicht näher bezeichnet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+										<originalText>
+											<reference value="#actproblem1_observation"/>
+										</originalText>
+									</value>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.55"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1"/>
+											<code code="SEV" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Severity"/>
+											<text>
+												<reference value="#actproblem1_severity"/>
+											</text>
+											<statusCode code="completed"/>
+											<value code="349915008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="geringgradig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+												<originalText>
+													<reference value="#actproblem1_severity"/>
+												</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.8"/>
+					<code code="11348-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vergangene Krankheiten"/>
+					<title>Vergangene Krankheiten</title>
+					<text>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>
+										<content styleCode="bold">Beobachtung</content>
+									</td>
+									<td>
+										<content styleCode="bold">Problem</content>
+									</td>
+									<td>
+										<content styleCode="bold">Status</content>
+									</td>
+									<td>
+										<content styleCode="bold">Schweregrad</content>
+									</td>
+									<td>
+										<content styleCode="bold">Beschreibung</content>
+									</td>
+									<td>
+										<content styleCode="bold">von</content>
+									</td>
+									<td>
+										<content styleCode="bold">bis</content>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="resproblem1">
+									<td ID="resproblem1_observation">Hypothermie</td>
+									<td ID="resproblem1_problem">Problem</td>
+									<td ID="resproblem1_status">beendet</td>
+									<td ID="resproblem1_severity">Moderat</td>
+									<td ID="resproblem1_description">Hypothermie (Kerntemperatur 34 Grad Celsius)</td>
+									<td ID="resproblem1_datefrom">02.12.2009</td>
+									<td ID="resproblem1_dateto">03.12.2009</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<id root="35EC27C6-03BD-175B-5D51-36216534D14C"/>
+							<code nullFlavor="NA"/>
+							<text>
+								<reference value="#resproblem1"/>
+							</text>
+							<statusCode code="beendet"/>
+							<effectiveTime>
+								<low value="20091202"/>
+								<high value="20091203"/>
+							</effectiveTime>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<id root="4982B39B-08A8-67F7-A335-11EC7B1432A6"/>
+									<code code="55607006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Problem">
+										<originalText>
+											<reference value="#resproblem1_problem"/>
+										</originalText>
+									</code>
+									<text>
+										<reference value="#resproblem1_description"/>
+									</text>
+									<statusCode code="beendet"/>
+									<effectiveTime>
+										<low value="20091202"/>
+										<high value="20091203"/>
+									</effectiveTime>
+									<value code="T68.0" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10-WHO-en 2008" displayName="Hypothermie" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+										<originalText>
+											<reference value="#resproblem1_observation"/>
+										</originalText>
+									</value>
+									<entryRelationship inversionInd="true" typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.55"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1"/>
+											<code code="SEV" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Schweregrad"/>
+											<text>
+												<reference value="#resproblem1_severity"/>
+											</text>
+											<statusCode code="beendet"/>
+											<value code="6736007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Moderat" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+												<originalText>
+													<reference value="#resproblem1_severity"/>
+												</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+					<templateId root="2.16.840.1.113883.10.20.1.12"/>
+					<code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of procedures"/>
+					<title>Operationen und med. Leistungen</title>
+					<text>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>
+										<content styleCode="bold">Art</content>
+									</td>
+									<td>
+										<content styleCode="bold">Typ</content>
+									</td>
+									<td>
+										<content styleCode="bold">Status</content>
+									</td>
+									<td>
+										<content styleCode="bold">von</content>
+									</td>
+									<td>
+										<content styleCode="bold">bis</content>
+									</td>
+									<td>
+										<content styleCode="bold">Dringlichkeit</content>
+									</td>
+									<td>
+										<content styleCode="bold">Zugang</content>
+									</td>
+									<td>
+										<content styleCode="bold">betroffene Körperstelle</content>
+									</td>
+									<td>
+										<content styleCode="bold">Beschreibung</content>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="surgeriesprocedure1">
+									<td ID="surgeriesprocedure1_moodCode">Event</td>
+									<td ID="surgeriesprocedure1_code">Operation an einem Knochen</td>
+									<td ID="surgeriesprocedure1_status">Beendet</td>
+									<td ID="surgeriesprocedure1_effectiveTime_low">01.12.2009</td>
+									<td ID="surgeriesprocedure1_effectiveTime_high">02.12.2009</td>
+									<td ID="surgeriesprocedure1_priorityCode">hoch</td>
+									<td ID="surgeriesprocedure1_approachSiteCode">Invasiv</td>
+									<td ID="surgeriesprocedure1_targetSiteCode">links</td>
+									<td ID="surgeriesprocedure1_description">Fract. apert. crur. sin.</td>
+								</tr>
+							</tbody>
+						</table>
+						<paragraph styleCode="bold">Referenzen:</paragraph>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>
+										<content styleCode="bold">Typ</content>
+									</td>
+									<td>
+										<content styleCode="bold">Name</content>
+									</td>
+									<td>
+										<content styleCode="bold">URL</content>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="surgeriesact1">
+									<td ID="surgeriesact1_typeCode">Support</td>
+									<td ID="surgeriesact1_targetName">Eigene Referenz</td>
+									<td ID="surgeriesact1_targetValue">http://www.google.at</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<procedure classCode="PROC" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+							<templateId root="2.16.840.1.113883.10.20.1.29"/>
+							<id root="547A955F-D5A2-A1BF-F674-B7903111C937"/>
+							<code code="57168000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Operation an einem Knochen">
+								<originalText>
+									<reference value="surgeriesprocedure1_code"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#surgeriesprocedure1_description"/>
+							</text>
+							<statusCode code="Beendet"/>
+							<effectiveTime>
+								<low value="20091201"/>
+								<high value="20091202"/>
+							</effectiveTime>
+							<priorityCode code="24484000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="hoch">
+								<originalText>
+									<reference value="surgeriesprocedure1_priorityCode"/>
+								</originalText>
+							</priorityCode>
+							<approachSiteCode code="1" codeSystem="x" codeSystemName="x" displayName="Invasiv">
+								<originalText>
+									<reference value="surgeriesprocedure1_approachSiteCode"/>
+								</originalText>
+							</approachSiteCode>
+							<targetSiteCode code="1" codeSystem="2.16.840.1.113883.5.1052" codeSystemName="HL7:ActSite" displayName="links">
+								<originalText>
+									<reference value="surgeriesprocedure1_targetSiteCode"/>
+								</originalText>
+							</targetSiteCode>
+						</procedure>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.4"/>
+							<id root="125B71EB-F1CF-C9AB-B1AF-6EBE6878C70B"/>
+							<code nullFlavor="NA"/>
+							<text>
+								<reference value="#surgeriesact1"/>
+							</text>
+							<reference typeCode="SPRT">
+								<externalDocument classCode="DOC" moodCode="EVN">
+									<id extension="C016B586-D606-D905-C303-66551A4D857C" root="0A340522-83AD-9A4E-50D9-1F1B0FB4AC01"/>
+									<text>
+										<reference value="http://www.google.at"/>
+									</text>
+								</externalDocument>
+							</reference>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.11"/>
+					<code code="29544-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Procedures"/>
+					<title>Interventionen</title>
+					<text>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>
+										<content styleCode="bold">Art</content>
+									</td>
+									<td>
+										<content styleCode="bold">Typ</content>
+									</td>
+									<td>
+										<content styleCode="bold">Status</content>
+									</td>
+									<td>
+										<content styleCode="bold">von</content>
+									</td>
+									<td>
+										<content styleCode="bold">bis</content>
+									</td>
+									<td>
+										<content styleCode="bold">Dringlichkeit</content>
+									</td>
+									<td>
+										<content styleCode="bold">Zugang</content>
+									</td>
+									<td>
+										<content styleCode="bold">Seite</content>
+									</td>
+									<td>
+										<content styleCode="bold">Beschreibung</content>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="proceduresandinterventions1">
+									<td ID="proceduresandinterventions1_moodCode">Event</td>
+									<td ID="proceduresandinterventions1_code">Operation an einem Knochen</td>
+									<td ID="proceduresandinterventions1_status">beendet</td>
+									<td ID="proceduresandinterventions1_effectiveTime_low">27.12.2009</td>
+									<td ID="proceduresandinterventions1_effectiveTime_high">06.01.2010</td>
+									<td ID="proceduresandinterventions1_priorityCode">hoch</td>
+									<td ID="proceduresandinterventions1_approachSiteCode">Invasiv</td>
+									<td ID="proceduresandinterventions1_targetSiteCode">right</td>
+									<td ID="proceduresandinterventions1_description">Titanmarknagel, 3x verriegelt</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<procedure classCode="PROC" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+							<templateId root="2.16.840.1.113883.10.20.1.29"/>
+							<id root="7C76D66E-6300-FB9B-0032-8D6E752B362F"/>
+							<code code="57168000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Operation an einem Knochen">
+								<originalText>
+									<reference value="proceduresandinterventions1_code"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#proceduresandinterventions1_description"/>
+							</text>
+							<statusCode code="beendet"/>
+							<effectiveTime>
+								<low value="20091227"/>
+								<high value="20100106"/>
+							</effectiveTime>
+							<priorityCode code="24484000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="hoch">
+								<originalText>
+									<reference value="proceduresandinterventions1_priorityCode"/>
+								</originalText>
+							</priorityCode>
+							<approachSiteCode code="1" codeSystem="x" codeSystemName="x" displayName="Invasiv">
+								<originalText>
+									<reference value="proceduresandinterventions1_approachSiteCode"/>
+								</originalText>
+							</approachSiteCode>
+							<targetSiteCode code="2" codeSystem="2.16.840.1.113883.5.1052" codeSystemName="HL7:ActSite" displayName="rechts">
+								<originalText>
+									<reference value="proceduresandinterventions1_targetSiteCode"/>
+								</originalText>
+							</targetSiteCode>
+						</procedure>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.28"/>
+					<code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Untersuchungen"/>
+					<title>Untersuchungen / Bluttests / Labor</title>
+					<text>
+						<content>Diagnostische Untersuchung</content>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>
+										<content styleCode="bold">Blutgruppe</content>
+									</td>
+									<td>
+										<content styleCode="bold">Datum</content>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="CodedResultsObservation_BloodGroup1">
+									<td ID="CodedResultsObservation_BloodGroup1_value">Blutgruppe  AB Rh(D) positiv</td>
+									<td ID="CodedResultsObservation_BloodGroup1_date">2010-11-10</td>
+								</tr>
+							</tbody>
+						</table>
+						<content>Procedures</content>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>
+										<content styleCode="bold">Art</content>
+									</td>
+									<td>
+										<content styleCode="bold">Typ</content>
+									</td>
+									<td>
+										<content styleCode="bold">Status</content>
+									</td>
+									<td>
+										<content styleCode="bold">von</content>
+									</td>
+									<td>
+										<content styleCode="bold">bis</content>
+									</td>
+									<td>
+										<content styleCode="bold">Dringlichkeit</content>
+									</td>
+									<td>
+										<content styleCode="bold">Zugang</content>
+									</td>
+									<td>
+										<content styleCode="bold">Seite</content>
+									</td>
+									<td>
+										<content styleCode="bold">Beschreibung</content>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="CodedResultsProcedure1">
+									<td ID="CodedResultsProcedure1_moodCode">Event</td>
+									<td ID="CodedResultsProcedure1_code">Operation an einem Knochen</td>
+									<td ID="CodedResultsProcedure1_status">beendet</td>
+									<td ID="CodedResultsProcedure1_effectiveTime_low">01.12.2009</td>
+									<td ID="CodedResultsProcedure1_effectiveTime_high">02.12.2009</td>
+									<td ID="CodedResultsProcedure1_priorityCode">hoch</td>
+									<td ID="CodedResultsProcedure1_approachSiteCode">Invasiv</td>
+									<td ID="CodedResultsProcedure1_targetSiteCode">left</td>
+									<td ID="CodedResultsProcedure1_description">Freitext ------------- free text</td>
+								</tr>
+							</tbody>
+						</table>
+						<content>Referenzen</content>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>
+										<content styleCode="bold">Typ</content>
+									</td>
+									<td>
+										<content styleCode="bold">Name</content>
+									</td>
+									<td>
+										<content styleCode="bold">URL</content>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="CodedResultsAct1">
+									<td ID="CodedResultsAct1_typeCode">Support</td>
+									<td ID="CodedResultsAct1_targetName">MyTarget 1</td>
+									<td ID="CodedResultsAct1_targetValue">http://www.google.at_</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<procedure classCode="PROC" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+							<templateId root="2.16.840.1.113883.10.20.1.29"/>
+							<id root="D56C687C-7FB8-AFEE-09D1-191AB0968F09"/>
+							<code code="57168000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Operation an einem Knochen">
+								<originalText>
+									<reference value="CodedResultsProcedure1_code"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#CodedResultsProcedure1_description"/>
+							</text>
+							<statusCode code="beendet"/>
+							<effectiveTime>
+								<low value="20091201"/>
+								<high value="20091202"/>
+							</effectiveTime>
+							<priorityCode code="24484000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="hoch">
+								<originalText>
+									<reference value="CodedResultsProcedure1_priorityCode"/>
+								</originalText>
+							</priorityCode>
+							<approachSiteCode code="1" codeSystem="x" codeSystemName="x" displayName="Invasiv">
+								<originalText>
+									<reference value="CodedResultsProcedure1_approachSiteCode"/>
+								</originalText>
+							</approachSiteCode>
+							<targetSiteCode code="1" codeSystem="x" codeSystemName="x" displayName="left">
+								<originalText>
+									<reference value="CodedResultsProcedure1_targetSiteCode"/>
+								</originalText>
+							</targetSiteCode>
+						</procedure>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.4"/>
+							<id root="DF3673C8-2983-B317-6BC3-1CC80A3DAB4B"/>
+							<code nullFlavor="NA"/>
+							<text>
+								<reference value="#CodedResultsAct1"/>
+							</text>
+							<reference typeCode="SPRT">
+								<externalDocument classCode="DOC" moodCode="EVN">
+									<id root="15EF97BB-C1CF-F82D-5B92-43ABB3FE518F"/>
+									<text>
+										<reference value="http://www.google.at_"/>
+									</text>
+								</externalDocument>
+							</reference>
+						</act>
+					</entry>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+							<id extension="3DE4073E-DC95-ABFC-2AD2-926E10ED9B80" root="8C6F8A38-BB0B-DEB2-C479-41C192FF9545"/>
+							<code code="34530-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ABO &amp; Rh group panel in Blood"/>
+							<text>
+								<reference value="#CodedResultsObservation_BloodGroup1"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime value="20101110"/>
+							<value code="278151004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Blutgruppe  AB Rh(D) positiv" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD"/>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.11383.10.20.1.7"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+					<code code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Medication Use"/>
+					<title>Med. Geräte</title>
+					<text>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>
+										<content styleCode="bold">Medizinische Geräte</content>
+									</td>
+									<td>
+										<content styleCode="bold">Datum</content>
+									</td>
+									<td>
+										<content styleCode="bold">Beschreibung</content>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="meddevices1">
+									<td ID="meddevices1_observation">Knochenschraube</td>
+									<td ID="meddevices1_datefrom">01.12.2009</td>
+									<td ID="meddevices1_description">Freitext ----------- free text</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<supply classCode="SPLY" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5"/>
+							<id root="F782A04D-B82A-7D18-B7C1-9CEEF01BB4A9"/>
+							<text>
+								<reference value="#meddevices1"/>
+							</text>
+							<effectiveTime value="20091201"/>
+							<participant typeCode="DEV">
+								<participantRole classCode="MANU">
+									<id root="7459A07D-284C-E367-683C-6550540650AE"/>
+									<playingDevice classCode="DEV" determinerCode="INSTANCE">
+										<code code="68183006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="2.16.840.1.113883.6.96" displayName="Knochenschraube"/>
+									</playingDevice>
+								</participantRole>
+							</participant>
+						</supply>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.15"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.16"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.16.1"/>
+					<code code="29762-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Soziale Lebensumstände"/>
+					<title>Soziale Lebensumstände</title>
+					<text>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>
+										<content styleCode="bold">Beobachtung</content>
+									</td>
+									<td>
+										<content styleCode="bold">Beschreibung</content>
+									</td>
+									<td>
+										<content styleCode="bold">von</content>
+									</td>
+									<td>
+										<content styleCode="bold">bis</content>
+									</td>
+									<td>
+										<content styleCode="bold">Wert</content>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="codedsocialhist1">
+									<td ID="codedsocialhist1_code">C2H5OH Abusus</td>
+									<td ID="codedsocialhist1_description">Patient gibt den Konsum von ca. 1l Wien pro Tag an</td>
+									<td ID="codedsocialhist1_datefrom">17.02.2001</td>
+									<td ID="codedsocialhist1_dateto">20.04.2009</td>
+									<td ID="codedsocialhist1_frequency">12 / Woche</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+							<templateId root="2.16.840.1.113883.10.20.1.33"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.4"/>
+							<id root="225E5607-D383-2952-B2A4-B09AB8116DA1"/>
+							<code code="160573003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="C2H5OH Abusus"/>
+							<text>
+								<reference value="#codedsocialhist1"/>
+							</text>
+							<statusCode code="beendet"/>
+							<effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+								<low value="20010217"/>
+								<high value="20090420"/>
+							</effectiveTime>
+							<value unit="{drink}/wk" value="12" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ"/>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<!--  ++++++++++++++++++++++++++++++This section is not applicable for a male patient++++++++++++++++++++++++++++++++++
+				<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.4"/>
+					<code code="10162-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Pregnancies"/>
+					<title>Pregnancy History</title>
+					<text>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>
+										<content styleCode="bold">Observation</content>
+									</td>
+									<td>
+										<content styleCode="bold">Date</content>
+									</td>
+									<td>
+										<content styleCode="bold">Value</content>
+									</td>
+									<td>
+										<content styleCode="bold">Unit</content>
+									</td>
+									<td>
+										<content styleCode="bold">Description</content>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="histpregnancies1">
+									<td ID="histpregnancies1_observation">Delivery date estimated (clinical)</td>
+									<td ID="histpregnancies1_observationdate">01.12.2009</td>
+									<td ID="histpregnancies1_value">-</td>
+									<td ID="histpregnancies1_unit">-</td>
+									<td ID="histpregnancies1_description">MyBirthsLive_FurtherDesc_</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.5"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+							<id root="2BE7613D-CFCF-9DB4-5327-B7F45685A4D7"/>
+							<code code="11778-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Delivery date estimated (clinical)"/>
+							<text>
+								<reference value="#histpregnancies1_description"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime value="20091201"/>
+							<value nullFlavor="NI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TS"/>
+						</observation>
+					</entry>
+				</section>
+			</component> -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.16"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.25"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2"/>
+					<code code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vitalparameter"/>
+					<title>Vitalparameter</title>
+					<text>
+						<table>
+							<thead>
+								<tr styleCode="border-bottom: 2px solid black">
+									<td>Name</td>
+									<td>Wert</td>
+									<td>Einheit</td>
+									<td>Grenzen</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="vitsig1">
+									<td ID="vitsig1_name">Blutdruck, systolisch</td>
+									<td ID="vitsig1_value">120</td>
+									<td ID="vitsig1_unit">mm[Hg]</td>
+									<td ID="vitsig1_limits">(0-300)</td>
+								</tr>
+								<tr ID="vitsig2">
+									<td ID="vitsig2_name">Blutdruck, diastolisch</td>
+									<td ID="vitsig2_value">80</td>
+									<td ID="vitsig2_unit">mm[Hg]</td>
+									<td ID="vitsig2_limits">(0-300)</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.32"/>
+							<templateId root="2.16.840.1.113883.10.20.1.35"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
+							<id root="DC17F814-3A08-83D9-49EF-7A3F0B0B0A32"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vitalparameter"/>
+							<statusCode code="beendet"/>
+							<effectiveTime value="20101206150937+0200"/>
+							<component typeCode="COMP">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<id root="538DC510-6F7B-F718-4A46-04BC586CEBD3"/>
+									<code code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Blutdruck, systolisch"/>
+									<text>
+										<reference value="#vitsig1_name"/>
+									</text>
+									<statusCode code="beendet"/>
+									<effectiveTime value="20101206150937+0200"/>
+									<value unit="mm[Hg]" value="120" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ"/>
+									<referenceRange typeCode="REFV">
+										<observationRange>
+											<value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+												<low unit="mm[Hg]" value="0"/>
+												<high unit="mm[Hg]" value="300"/>
+											</value>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+							<component typeCode="COMP">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+									<id root="CE67F9E3-30C1-30A3-197D-763E4DEAE2BB"/>
+									<code code="8462-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Blutdruck, diastolisch"/>
+									<text>
+										<reference value="#vitsig2_name"/>
+									</text>
+									<statusCode code="beendet"/>
+									<effectiveTime value="20101206150937+0200"/>
+									<value unit="mm[Hg]" value="80" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ"/>
+									<referenceRange typeCode="REFV">
+										<observationRange>
+											<value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+												<low unit="mm[Hg]" value="0"/>
+												<high unit="mm[Hg]" value="300"/>
+											</value>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.5"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.17"/>
+					<code code="47420-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Funktioneller Status"/>
+					<title>Funktioneller Status</title>
+					<text>Hier steht ein Freitexteintrag --- this is a free text entry</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.10"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.31"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.9.50"/>
+					<code code="18776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Therapieplan"/>
+					<title>Therapieplan</title>
+					<text>Hier steht ein Freitexteintrag --- this is a free text entry</text>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

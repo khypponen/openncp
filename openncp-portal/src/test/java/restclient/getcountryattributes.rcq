@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rest-client version="3.5"><request><http-version>1.1</http-version><http-follow-redirects/><URL>http://localhost:8080/epsosportal/rest/get/countries/names/NOFCgxZ25s9Q6GUd2KSABg%3D%3D/en-US</URL><method>GET</method><headers><header key="Authorization" value="YWRtaW46YWRtaW4="/></headers></request></rest-client>

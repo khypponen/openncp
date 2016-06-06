@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<SubstanceAdminSubstitutionInformation>
+<SubstanceAdminSubstitutionEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.7' epsosName='epSOSSubstitutionCode' code='N'>
+<displayName lang='en'>none</displayName>
+</SubstanceAdminSubstitutionEntry>
+<SubstanceAdminSubstitutionEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.7' epsosName='epSOSSubstitutionCode' code='TE'>
+<displayName lang='en'>therapeutic alternative</displayName>
+</SubstanceAdminSubstitutionEntry>
+<SubstanceAdminSubstitutionEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.7' epsosName='epSOSSubstitutionCode' code='G'>
+<displayName lang='en'>Generic</displayName>
+</SubstanceAdminSubstitutionEntry>
+</SubstanceAdminSubstitutionInformation>

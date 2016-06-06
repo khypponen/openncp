@@ -1,0 +1,35 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+   <ValueSet displayName="epSOS languageCodes" id="1.3.6.1.4.1.12559.11.4.1.11" version="20120114">
+      <ConceptList xml:lang="en-US">
+         <Concept code="cs-CZ" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Czech in Czechy"/>
+         <Concept code="da-DK" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Danish in Denmark"/>
+         <Concept code="fr-FR" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="French in France"/>
+         <Concept code="de-DE" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="German in Germany"/>
+         <Concept code="el-GR" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Greek in Greece"/>
+         <Concept code="it-IT" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Italian in Italy"/>
+         <Concept code="nl-NL" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Dutch in The Netherlands"/>
+         <Concept code="sk-SK" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Slovak in Slovakia"/>
+         <Concept code="es-ES" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Castillian in Spain"/>
+         <Concept code="sv-SE" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Swedish in Sweden"/>
+         <Concept code="en-GB" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="English in Great Britain"/>
+         <Concept code="ca-ES" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Catalan in Spain"/>
+         <Concept code="nl-BE" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Dutch in Belgium"/>
+         <Concept code="de-CH" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="German in Switzerland"/>
+         <Concept code="et-EE" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Esthonian in Estonia"/>
+         <Concept code="fi-FI" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Finnish in Finland"/>
+         <Concept code="hu-HU" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Hungarian in Hungary"/>
+         <Concept code="mt-MT" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Maltese in Malte"/>
+         <Concept code="no-NO" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Norvegian in Norway"/>
+         <Concept code="pl-PL" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Polish in Poland"/>
+         <Concept code="pt-PR" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Portugese in Portugal"/>
+         <Concept code="sl-SI" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Slovenian in Slovenia"/>
+         <Concept code="tr-TR" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Turkish in Turkey"/>
+         <Concept code="fr-BE" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="French in Belgium"/>
+         <Concept code="fr-CH" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="French in Switzerland"/>
+         <Concept code="de-AT" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="German in Austria"/>
+         <Concept code="de-BE" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="German in Belgium"/>
+         <Concept code="it-CH" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Italian in Switzerland"/>
+         <Concept code="et-FI" codeSystem="epSOSLanguageCode" codeSystemName="epSOSLanguageCode" displayName="Esthonian in Finland"/>
+      </ConceptList>
+   </ValueSet>
+</RetrieveValueSetResponse>

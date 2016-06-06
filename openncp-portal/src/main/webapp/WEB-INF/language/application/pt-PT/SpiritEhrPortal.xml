@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+<entry key="F">feminino</entry>
+<entry key="M">masculino</entry>
+<entry key="O">outro</entry>
+<entry key="D">desconhecido</entry> 
+
+<entry key="contact.title">Contacto</entry>
+
+<entry key="DBLMNG_QUERY_MODE__ALL_PAT">todos os doentes</entry>  
+<entry key="DBLMNG_QUERY_MODE__DBL_AND_MRGPAT">local and index doubletts</entry>  
+<entry key="DBLMNG_QUERY_MODE__ONLY_DBLPAT">only index doubletts</entry>  
+<entry key="DBLMNG_QUERY_MODE__ONLY_MRGPAT">only local doubletts</entry>    
+
+<entry key="doubletten.download.link">Descarregar do relatório</entry>  
+<entry key="doubletten.filter.detail">Relatório de detalhes</entry>  
+<entry key="doubletten.filter.pair">Relatório de Pares</entry>  
+<entry key="doubletten.filter.predefined">Relatório predefinido</entry>  
+<entry key="doubletten.filter.query.type">Tipo de consulta:</entry>  
+<entry key="doubletten.filter.report.type">Tipo de relatório:</entry>  
+<entry key="doubletten.generate.button">gerar</entry>
+<entry key="doubletten.management.title">Duplicar Gestão</entry>
+
+<entry key="help.download.manual">Descarregar o manual de utilizador</entry>  
+<entry key="help.title">Ajuda</entry>  
+
+<entry key="info.build.date">Data:</entry>
+<entry key="info.build">Build:</entry>
+<entry key="info.producer">Fornecedor:</entry>
+<entry key="info.product.name">Produto:</entry>
+<entry key="info.title">Info</entry>
+<entry key="info.version">Versão:</entry>
+
+<entry key="lifecycleAddendum">Adenda</entry>
+<entry key="lifecycleReplacement">Substituição</entry>
+<entry key="lifecycleStorno">Cancelamento</entry>
+<entry key="lifecycleTransformation">Transformação</entry>
+
+<entry key="list.entry.detail">detalhes</entry>  
+
+<entry key="login.back">para trás</entry>
+<entry key="login.change">alterar senha</entry>
+<entry key="login.login">entrar</entry>
+<entry key="login.organisation">Organização</entry>
+<entry key="login.password.new">Nova senha</entry>
+<entry key="login.password.retry">Tentar senha novamente</entry>
+<entry key="login.password">Senha</entry>
+<entry key="login.role">Perfil</entry>
+<entry key="login.username">Nome de Utilizador</entry>
+
+<entry key="message.access">AVISO DE ACESSO !</entry>
+<entry key="message.doubletten.select.report">Por favor seleccione um tipo de relatório.</entry> 
+<entry key="message.error">ERRO !</entry>
+<entry key="message.info">INFO</entry>
+<entry key="message.insert.succesful">Doente adicionado com sucesso.</entry>
+<entry key="message.insert.values">Por favor insira um valor para {0}.</entry>
+<entry key="message.merge.added.patient">Doente adicionado para fundir.</entry>
+<entry key="message.merge.not.local.patient">Apenas os doentes do domínio local podem ser fundidos.</entry>
+<entry key="message.merge.only.two.patients">Já existem dois doentes selecionados. Por favor, desmarque antes de escolher um outro doente.</entry>
+<entry key="message.merge.select.survivor">Por favor seleccione o doente sobrevivente.</entry>
+<entry key="message.merge.succesful">Doente fundido com sucesso.</entry>
+<entry key="message.popup.break.class">break the glass</entry>
+<entry key="message.popup.relogin">entrar</entry>
+<entry key="message.popup.close">fechar</entry>
+<entry key="message.popup.detail">detalhes</entry>
+<entry key="message.popup.no">não</entry>
+<entry key="message.popup.yes">sim</entry>
+<entry key="message.question">QUESTÃO ?</entry>
+<entry key="message.search.givenname.length">Por favor, digite 3 ou mais caracteres para o Nome Próprio.</entry>
+<entry key="message.search.surname.length">Por favor, digite 3 ou mais caracteres para o Apelido.</entry>
+<entry key="message.search.values">Por favor insira os valores de pesquisa.</entry>
+<entry key="message.select.patient">Por favor seleccione um Doente.</entry>
+<entry key="message.update.not.local.patient">Não é possível alterar este doente porque ele / ela não existe no domínio local. Deseja criar este doente localmente?</entry>
+<entry key="message.update.succesful">Doente atualizado com sucesso.</entry>
+<entry key="message.warning">ATENÇÃO !</entry>
+
+<entry key="messageFillInNewPassword">Por favor, insira uma nova senha.</entry>
+<entry key="messageFillInPassword">Por favor, digite a sua senha.</entry>
+<entry key="messageFillInPasswordRetry">Por favor, tente novamente sua nova senha.</entry>
+<entry key="messageFillInUser">Por favor, indique um nome de utilizador.</entry>
+<entry key="messageForcedPasswordChangeException">Sua senha foi alterada pelo administrador. Por favor, altere sua senha agora.</entry>
+<entry key="messageLoginException">Ocorreu um erro durante a atenticação no sistema. Por favor, verifique o nome de utilizador e/ou senha, e tente novamente.</entry>
+<entry key="messageLoginNoOrganisation">O seu utilizador não pertence a uma organização!</entry>
+<entry key="messageLoginNoPermissionForApplication">O seu utilizador não tem permissão para aceder a esta aplicação!</entry>
+<entry key="messageLoginNoRole">O seu utilizador não tem um perfil!</entry>
+<entry key="messagePasswordDuplicateUse">A senha antiga e nova são a mesma. Por favor, escolha uma nova senha.</entry>
+<entry key="messagePasswordMissmatch">As senhas não são iguais.</entry>
+<entry key="messageUserAccountExpirationInDays">Sua senha expira em {0} dias. Por favor, altere sua senha.</entry>
+<entry key="messageUserAccountExpiredException">A sua senha expirou. Por favor, contate o administrador.</entry>
+<entry key="messageWrongUserException">Este nome de utilizador não existe.</entry>
+
+<entry key="navi.config.contact">Contecto - Info - Ajuda</entry>
+<entry key="navi.config.help">Ajuda</entry>
+<entry key="navi.config.settings">Configurações</entry>
+<entry key="navi.info.access.protocol">Histórico de Acesso</entry>
+<entry key="navi.info.doubletten.management">Duplicar Gestão</entry>
+<entry key="navi.info.patient.agreement">Consentimento do Doente</entry>
+<entry key="navi.link.patient.registration">Registar Doente</entry>
+<entry key="navi.link.patient.search">Pesquisar Doente</entry>
+<entry key="navi.report.search">Pesquisar documento</entry>
+<entry key="navi.report.prescription">Prescrição</entry>
+<entry key="navi.report.summary">Resumo do Doente</entry>
+<entry key="navi.report.medical.history">Histórico da Doença</entry>
+<entry key="navi.report.insert">Inserir documento</entry>
+<entry key="navi.report.create">Criar documento</entry>
+<entry key="navi.report.emergency.data">Resumo do Doente</entry>
+<entry key="navi.report.vaccination">Vacinação</entry>
+<entry key="navi.report.xdm.report">Importar Registo Pessoal de Saúde</entry>  
+<entry key="navi.user.login">está autenticado</entry>
+<entry key="navi.user.logout.btn">terminar sessão</entry>
+<entry key="navi.user.organisation">Organização</entry>  
+<entry key="navi.user.role">Perfil</entry>  
+
+<entry key="navigator.pro.site">entradas por site</entry>
+<entry key="navigator.sorting">ordenar</entry>
+
+<entry key="patient.create.id.add">adicionar</entry>
+<entry key="patient.create.id.remove">remover</entry>
+<entry key="patient.create.patient.id">Criar ID do doente:</entry>
+<entry key="patient.data.day.of.death">Data de morte:</entry>
+<entry key="patient.data.account.number">Dados da conta:</entry>
+<entry key="patient.data.agreement.bppc.case.five">Gostaria de divulgar partes da minha informação médica a profissionais de saúde.</entry>
+<entry key="patient.data.agreement.bppc.case.four">As minhas informações gerais de saúde podem ser consultadas por profissionais de saúde.</entry>
+<entry key="patient.data.agreement.bppc.case.one">Toda a minha informação deve ser acessível por mim.</entry>
+<entry key="patient.data.agreement.bppc.case.three">Os meus dados de saúde podem ser consultadas por investigadores e empresas farmacêuticas.</entry>
+<entry key="patient.data.agreement.bppc.case.two">Em caso de emergência, os profissionais de saúde estão autorizados a consultar os meus dados.</entry>
+<entry key="patient.data.agreement.title">Consentimento do Doente</entry>
+<entry key="patient.data.birth.date">Data de Nascimento</entry>
+<entry key="patient.data.birth.place">Naturalidade:</entry>
+<entry key="patient.data.button.merge">fundir</entry>
+<entry key="patient.data.button.modify">modificar</entry>
+<entry key="patient.data.button.remove">remover</entry>
+<entry key="patient.data.button.save">guardar</entry>
+<entry key="patient.data.cancel">cancelar</entry>
+<entry key="patient.data.citizen.ship">Cidadania:</entry>
+<entry key="patient.data.city">Cidade</entry>
+<entry key="patient.data.code">Código Postal</entry>
+<entry key="patient.data.country">País</entry>
+<entry key="patient.data.domain.type">Tipo de domínio</entry>
+<entry key="patient.data.domain">Domínio</entry>
+<entry key="patient.data.driving.licence">Número de carta de condução:</entry>
+<entry key="patient.data.family.status">Estado civil:</entry>
+<entry key="patient.data.givenname">Nome Próprio</entry>
+<entry key="patient.data.header.merge">Fundir informação do doente</entry>
+<entry key="patient.data.id.type">ID do Tipo de doente</entry>
+<entry key="patient.data.insurance.number">Número de seguro social:</entry>
+<entry key="patient.data.last.update">Última atualização:</entry>
+<entry key="patient.data.mail.business">Email (trabalho):</entry>
+<entry key="patient.data.mail.home">Email (casa):</entry>
+<entry key="patient.data.middlename">Nome(s) do meio:</entry>
+<entry key="patient.data.name.space">Namespace</entry>
+<entry key="patient.data.nationality">Nacionalidade:</entry>
+<entry key="patient.data.patient.id">ID do doente</entry>
+<entry key="patient.data.patientdata.title">Dados do doente</entry>
+<entry key="patient.data.phone.business">Telefone (trabalho):</entry>
+<entry key="patient.data.phone.private">Telefone (casa):</entry>
+<entry key="patient.data.registration.title">Registo de Doente</entry>
+<entry key="patient.data.religion">Religião:</entry>
+<entry key="patient.data.sex">Sexo:</entry>
+<entry key="patient.data.state">State:</entry>
+<entry key="patient.data.street.address">Morada</entry>
+<entry key="patient.data.surname">Apelido</entry>
+<entry key="patient.data.title">Título</entry>
+<entry key="patient.has.local.documents">O doente tem documentos locais</entry>
+<entry key="patient.has.remote.documents">O doente tem documentos remotos</entry>
+<entry key="patient.is.local">O doente é local</entry>
+<entry key="patient.list.givenname.sort.ascending">Nome Próprio ascendente</entry>
+<entry key="patient.list.givenname.sort.descending">Nome Próprio descendente</entry>
+<entry key="patient.list.no.patient">Nenhum utente foi encontrado</entry>
+<entry key="patient.list.patientlist">Lista de Doentes</entry>
+<entry key="patient.list.surname.sort.ascending">Apelido ascendente</entry>
+<entry key="patient.list.surname.sort.descending">Apelido descending</entry>
+<entry key="patient.no.local.documents">O doente não tem documentos locais</entry>
+<entry key="patient.no.remote.documents">O doente não tem documentos remotos</entry>
+<entry key="patient.not.local">O doente não é local</entry>
+<entry key="patient.search.birth.date.day">Dia</entry>
+<entry key="patient.search.birth.date.month">Mês</entry>
+<entry key="patient.search.birth.date.year">ano</entry>
+<entry key="patient.button.search">pesquisar</entry>
+<entry key="patient.button.search.reset">limpar</entry>
+<entry key="patient.search.patient.id">ID do doente:</entry>
+<entry key="patient.search.patient.svnr">Número de seguro social:</entry>
+<entry key="patient.search.patientsearch">Pesquisar Doente</entry>
+<entry key="patient.search.xcpd">externo</entry>
+
+<entry key="report.button.search.reset">limpar</entry>
+<entry key="report.button.search">pesquisar</entry>
+<entry key="report.category.search">Pesquisar em categorias específicas:</entry>
+
+<entry key="report.document.header.title">Detalhes do documento</entry>
+<entry key="report.document.author.department">Departamento Autor:</entry>
+<entry key="report.document.author.institution">Instituição Autora:</entry>
+<entry key="report.document.author.person">Autor</entry>
+<entry key="report.document.author.role">Perfil do Autor</entry>
+<entry key="report.document.author.speciality">Especialidade do Autor:</entry>
+<entry key="report.document.legal.authenticator">Legal authenticator:</entry>
+<entry key="report.document.title">Título:</entry>
+<entry key="report.document.description">Descrição</entry>
+<entry key="report.document.creation.time">Data/hora criação</entry>
+<entry key="report.document.language">Linguagem:</entry>
+<entry key="report.document.class.code">Classe do documento:</entry>
+<entry key="report.document.confidentiality.code">Confidencialidade:</entry>
+<entry key="report.document.healthcare.facility.type.code">Unidade de Saúde</entry>
+<entry key="report.document.practice.setting.code">Practice setting:</entry>
+<entry key="report.document.type.code">Tipo de documento</entry>
+<entry key="report.document.status">Estado:</entry>
+<entry key="report.document.format.code">Código do Formato:</entry>
+<entry key="report.document.size">Tamanho:</entry>
+<entry key="report.document.format">Formato:</entry>
+
+<entry key="report.submission.header.title">Detalhes de submissão</entry>
+<entry key="report.submission.author.institution">Instituição do autor:</entry>
+<entry key="report.submission.author.department">Departamento  do autor:</entry>
+<entry key="report.submission.author.person">Autor:</entry>
+<entry key="report.submission.author.role">Perfil do Autor:</entry>
+<entry key="report.submission.author.speciality">Especialidade do Autor:</entry>
+<entry key="report.submission.title">Título:</entry>
+<entry key="report.submission.description">Descrição:</entry>
+<entry key="report.submission.time">Data/hora submissão:</entry>
+<entry key="report.submission.content.type.code">Tipo de conteúdo:</entry>
+
+<entry key="report.folder.header.title">Detalhes do pasta</entry>
+<entry key="report.folder.create">Criar pasta:</entry>
+<entry key="report.folder.title">Título:</entry>
+<entry key="report.folder.description">Descrição:</entry>
+<entry key="report.folder.code">Código da pasta:</entry>
+
+<entry key="report.create.document.data.incomplete">Detalhes do documento incompletos!</entry>
+<entry key="report.create.document.submit">Submeter</entry>
+<entry key="report.create.document.success">Documento enviado com sucesso.</entry>
+<entry key="report.create.folder.data.incomplete">Detalhes da pasta incompletos!</entry>
+<entry key="report.create.submission.data.incomplete">Detalhes de submissão incompletos!</entry>
+<entry key="report.create.upload.added.documents">Documentos adicionados:</entry>
+<entry key="report.create.upload.choose.document">Escolher documentos:</entry>
+<entry key="report.create.upload.document">Enviar</entry>
+<entry key="report.create.upload.remove.document">remover</entry>
+<entry key="report.date.search">Pesquisar num período de tempo específico:</entry>
+<entry key="report.detail.document">Documento</entry>
+<entry key="report.detail.title">Detalhes do documento</entry>
+<entry key="report.details">Detalhes</entry>
+<entry key="report.from">de</entry>
+<entry key="report.is.accesable">Relatório de acesso permitido</entry>
+<entry key="report.link.report.type">Tipo de Documento</entry>
+<entry key="report.list.date.sort.ascending">Data ascendente</entry>
+<entry key="report.list.date.sort.descending">Data descendente</entry>
+<entry key="report.list.no.document">Não foram encontrados documentos</entry>
+<entry key="report.list">Lista de Documentos</entry>
+<entry key="report.not.accesable">O seu utilizador não tem permissões de acesso a relatórios!</entry>
+<entry key="report.search.advanced">pesquisa avançada</entry>
+<entry key="report.search">Pesquisa de Docuemntos</entry>
+<entry key="report.prescription">Prescrição</entry>
+<entry key="report.summary">Identificação do utente</entry>
+<entry key="report.till">para</entry>
+
+<entry key="xdm.import">Importar Registo Pessoal de Saúde</entry>
+<entry key="xdm.import.description">Importar os dados do doente no formato XDM para o repositório XDS.\nOs dados devem ser compactados num ficheiro ZIP. Escolha o seu arquivo e faça o envio para o servidor.</entry>
+<entry key="xdm.select.file.before.upload">Por favor, escolha um arquivo ZIP antes de pressionar envio.</entry>
+<entry key="xdm.import.upload.document.choose">Escolha um arquivo ZIP:</entry>
+<entry key="xdm.import.upload.document">enviar</entry>
+<entry key="xdm.import.button">importar</entry>
+<entry key="xdm.select.patient">Por favor, escolha um doente.</entry>
+<entry key="xdm.select.only.one.patient">Por favor, escolha apenas um doente.</entry>
+<entry key="xdm.select.document">Por favor, escolha um documento.</entry>
+<entry key="xdm.patient.on.media">Patient on media</entry>
+<entry key="xdm.patient.content.preview">pré-visualizar</entry>
+<entry key="xdm.patient.content.import">importar</entry>
+
+<!-- NEW ENTRIES !!! -->
+
+<entry key="session.timeout.relogin">Sua sessão expirou, por favor autentique-se novamente.</entry>
+<entry key="patient.id.create.failed">Não existe no domínio um doente com o ID indicado {0}!\nPossíveis razões: não foi encontrado em domínios addable-removable  e não pertence ao domínio atual.\nPor favor escolha ou ov domínio ou remova da lista.</entry>
+<entry key="patient.id.insert.failed">ID do doente não inserido no domínio {0}</entry>
+<entry key="patient.id.create.exception">Erro na criação de ID do doente!</entry>
+<entry key="report.document.metadata.exception">Erro ao obter os metadados do documento!</entry>
+<entry key="report.document.formatcode.exception">Erro ao obter o código de formato do documento!</entry>
+<entry key="report.choose.upload.file">Por favor, escolha um arquivo antes de pressionar envio!</entry>
+<entry key="report.folder.metadata.exception">Erro ao obter metadados da pasta!</entry>
+<entry key="report.submission.metadata.exception">Erro ao obter metadados de submissão!</entry>
+<entry key="report.folder.add.document">Pretende realmente adicionar este documento à pasta?</entry>
+<entry key="xdm.export">exportar</entry>
+<entry key="xdm.export.really">Pretende realmente exportar estes documentos?\nA exportação poderá demorar algum tempo. O download é iniciado automaticamente.</entry>
+
+<entry key="xdm.import.success">Dados importados com sucesso.</entry>
+<entry key="policy.administration.title">Acordo do Doente</entry>
+<entry key="patient.subscription.header">Notificação</entry>
+<entry key="navi.info.patient.subscribtion">Notificação</entry>
+<entry key="patient.data.create.report">Relatório de Impressão</entry>
+<entry key="patient.data.create.label">Rótulo de Impressão</entry>
+
+<entry key="messagePasswordMinimumLengthException">Por favor introduza no mínimo {0} carateres na senha.</entry>
+<entry key="messagePasswordMinimumUpperCaseCharacterException">Por favor introduza no mínimo {0} carateres maiúsculos na senha.</entry>
+<entry key="messagePasswordMinimumLowerCaseCharacterException">Por favor introduza no mínimo{0} minúsculos na senha.</entry>
+<entry key="messagePasswordMinimumDigitException">Por favor introduza no mínimo {0} digits na senha.</entry>
+<entry key="messagePasswordMinimumSpecialCharacterException">Por favor introduza no mínimo{0} carateres especiais na senha.</entry>
+
+<entry key="login.tooltip.password.length">Mínimo {0} caracteres</entry>
+<entry key="login.tooltip.password.upper.case">Mínimo {0} carateres maiúsculos.</entry>
+<entry key="login.tooltip.password.lower.case">Mínimo {0} carateres minúsculos.</entry>
+<entry key="login.tooltip.password.digits">Mínimo {0} digitos.</entry>
+<entry key="login.tooltip.password.special.character">Mínimo {0} carateres especiais.</entry>
+
+<entry key="patient.subscribe">subscrever</entry>
+<entry key="message.popup.error">Ocorreu um erro. Por favor contacte o administrator do sistema.</entry>
+
+<entry key="patient.created.patient.ids">Criados IDs dos Doentes:</entry>
+<entry key="message.create.patient.id">Por favor crie um ID para o Doente!</entry>
+<entry key="message.birth.greater.death">Dia da morte é antes de data de nascimento!</entry>
+
+<entry key="report.submission.recipient.organisation">Organização Destinatária:</entry>
+<entry key="report.submission.recipient.person">Pessoa Destinatária:</entry>
+
+<entry key="report.list.filter.organisation">Organização:</entry>
+<entry key="report.list.filter.type.code">Tipo de Conteúdo:</entry>
+<entry key="report.list.filter.button.reset">limpar</entry>
+<entry key="report.list.filter.button.filter">filtrar</entry>
+<entry key="report.list.button.filter">filtrar</entry>
+
+<entry key="patient.search.international">Pesquisa Internacional de Doente</entry>
+<entry key="patient.search.country">País:</entry>
+<entry key="patient.data.pseudonym">Pseudônimo:</entry>
+<entry key="patient.data.tan.code">Código TAN:</entry>
+
+<entry key="AT">Áustria</entry>
+<entry key="CZ">República Checa</entry>
+<entry key="DK">Dinamarca</entry>
+<entry key="FR">França</entry>
+<entry key="DE">Alemanha</entry>
+<entry key="GR">Grécia</entry>
+<entry key="IT">Itália</entry>
+<entry key="NL">Holanda</entry>
+<entry key="SK">Eslováquia</entry>
+<entry key="ES">Espanha</entry>
+<entry key="SE">Suécia</entry>
+<entry key="GB">Reino Unido</entry>
+<entry key="EE">Estónia</entry>
+<entry key="CH">Suíça</entry>
+<entry key="TR">Turquia</entry>
+<entry key="PT">Portugal</entry>
+<entry key="MT">Malta</entry>
+<entry key="IH">Simulador IHE</entry>
+<entry key="FI">Finlândia</entry>
+
+<!-- NEW ENTRIES - 11.10.2010 !!! -->
+
+<entry key="patient.data.ins.france">Número do Sistema Nacional de Saúde:</entry>
+<entry key="xdsi.header">Visualizador de Imagens na Web</entry>
+<entry key="xdsi.info.series.number">Número da Imagem:</entry>
+<entry key="xdsi.info.study">Estudo:</entry>
+<entry key="xdsi.info.series">Série:</entry>
+<entry key="patient.search.treatment.question">Está numa relação terapêutica com os doentes seleccionados?</entry>
+<entry key="patient.search.fiscal.code">Número de identificação fiscal:</entry>
+<entry key="message.popup.patient.search.italy">Por favor, preencha o nome da família, sexo e nome ou data de nascimento.\nOu procure apenas através do número de identificação fiscal.</entry>
+<entry key="message.rpc.error">Ocorreu um erro. Por favor contacte o administrator do sistema.</entry>
+<entry key="patient.data.unique.identifier">Identificador Único:</entry>
+<entry key="patient.data.region.spain">Região:</entry>
+<entry key="patient.data.unique.identifier.spain">Código de Identificação do Doente:</entry>
+
+<entry key="navi.link.patient.update">Atualização da informação do Doente</entry>
+<entry key="patient.consent.save">Guardar</entry>
+<entry key="patient.consent.print">Imprimir</entry>
+
+<entry key="patient.data.id.code">Código de Identificação do Doente:</entry>
+<entry key="policy.not.combinable">Permissão de utilização não combinável.</entry>
+<entry key="policy.stored.succesful">Permissão de utilização guardada com sucesso.</entry>
+<entry key="consent.not.given">Consentimento do Doente não disponível.</entry>
+<entry key="message.popup.consent.edit">Atualizar consentimento do Doente.</entry>
+
+<entry key="message.popup.emergency">Emergência</entry>
+
+
+
+<!-- NEW ENTRIES - 6.4.2011 !!! -->
+
+<entry key="doubletten.no.data">Sem dados disponíveis para criar um Doubletreport.</entry>
+
+<entry key="patient.data.audit.report">Imprimir Auditoria</entry>
+<entry key="report.prescription.consent.question">O Doente {0} deu consentimento para consultar as suas Prescrições?</entry>
+<entry key="report.summary.consent.question">O Doente {0} deu consentimento para consultar o seu Resumo Clínico?</entry>
+<entry key="Consent(Given)">Permissões que permitem que tudo.</entry>
+<entry key="Consent(Revoke)">Permissões que não permitem qualquer operação.</entry>
+<entry key="report.view.errors">Lista de Erros</entry>
+
+<entry key="message.search.value.enter">Por favor, insira um valor para {0}.</entry>
+<entry key="message.search.value.length">Por favor, introduza um mínimo de {1} caracteres para {0}.</entry>
+<entry key="message.search.value.format">Por favor, use o formato {1} para {0}.</entry>
+
+
+
+
+</properties>

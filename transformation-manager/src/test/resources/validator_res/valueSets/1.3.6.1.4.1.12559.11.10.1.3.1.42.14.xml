@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSSocialHistory" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.14" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="160573003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="AI - Alcohol intake"/>
+			<Concept code="160573003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="ETOH - Alcohol intake"/>
+			<Concept code="160573003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Alcohol intake (observable entity)"/>
+			<Concept code="160573003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ethanol intake"/>
+			<Concept code="160573003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Alcohol consumption"/>
+			<Concept code="160573003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Alcoholic drink intake"/>
+			<Concept code="160573003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Alcohol intake"/>
+			<Concept code="228272008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Health-related behavior (observable entity)"/>
+			<Concept code="229819007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tobacco use and exposure"/>
+			<Concept code="229819007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tobacco use and exposure (observable entity)"/>
+			<Concept code="256235009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Exercise"/>
+			<Concept code="256235009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Exercise (observable entity)"/>
+			<Concept code="363908000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Details of drug misuse behavior (observable entity)"/>
+			<Concept code="364393001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Nutritional observable"/>
+			<Concept code="364393001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Nutritional observable (observable entity)"/>
+			<Concept code="364703007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Employment detail"/>
+			<Concept code="364703007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Employment detail (observable entity)"/>
+			<Concept code="425400000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Toxic exposure status (observable entity)"/>
+			<Concept code="425400000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Toxic exposure status"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

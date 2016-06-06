@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+
+	<appender name="SYSLOG" class="org.apache.log4j.net.SyslogAppender">
+		<param name="syslogHost" value="127.0.0.1" />
+		<param name="Facility" value="LOCAL1" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %-5p [%t] %c{2} %x - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="WARN" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{ISO8601}] [%-5p] [%c] %m %n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG" />
+			<param name="LevelMax" value="INFO" />
+		</filter>
+	</appender>
+	<appender name="STDERR" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.err" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{ISO8601}] [%-5p] %c %m %n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="WARN" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+
+
+	<appender name="TRAP_LOG" class="org.apache.log4j.ext.SNMPTrapAppender">
+		<param name="ImplementationClassName" value="org.apache.log4j.ext.JoeSNMPTrapSender" />
+		<param name="ManagementHost" value="127.0.0.1" />
+		<param name="ManagementHostTrapListenPort" value="162" />
+		<param name="EnterpriseOID" value="1.3.6.1.4.1.24.0" />
+		<param name="LocalIPAddress" value="127.0.0.1" />
+		<param name="LocalTrapSendPort" value="161" />
+		<param name="GenericTrapType" value="6" />
+		<param name="SpecificTrapType" value="12345678" />
+		<param name="CommunityString" value="public" />
+		<param name="ForwardStackTraceWithTrap" value="true" />
+		<param name="Threshold" value="DEBUG" />
+		<param name="ApplicationTrapOID" value="1.3.6.1.4.1.24.12.10.22.64" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d,%p,[%t],[%c],%m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="FATAL" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+
+	<appender name="INFO" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{ISO8601}] [%-5p] [%c] %m %n" />
+		</layout>
+	</appender>
+
+	<appender name="WARN" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{ISO8601}] [%-5p ]%c %m %n" />
+		</layout>
+	</appender>
+
+	<appender name="DEBUG" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{ISO8601}] [%-5p] %c %m %n" />
+		</layout>
+	</appender>
+
+	<appender name="tmtsam" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="log/tm.log" />
+		<param name="MaxFileSize" value="1000KB" />
+		<!-- Keep one backup file -->
+		<param name="MaxBackupIndex" value="1" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{ISO8601}] [%-5p] [%c] %m %n" />
+		</layout>
+	</appender> 
+
+	<logger name="org" additivity="false">
+	   <level value="warn" />
+	   <appender-ref ref="INFO" />
+	</logger>
+
+	<logger name="org.springframework.jdbc.datasource.DataSourceUtils" additivity="false">
+	   <level value="warn" />
+	   <appender-ref ref="INFO" />
+	</logger>
+
+	<logger name="epsos.ccd.posam" additivity="false">
+	   <level value="info" />
+	   <appender-ref ref="tmtsam" />
+	   <appender-ref ref="INFO" />
+	</logger>
+	
+	<logger name="epsos.ccd.posam.tm.service.impl.TransformationService" additivity="false">
+	   <level value="debug" />
+	   <appender-ref ref="tmtsam" />
+	   <appender-ref ref="INFO" />
+	</logger>
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="INFO" />
+
+	</root>
+</log4j:configuration>

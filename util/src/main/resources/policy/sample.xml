@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Policy PolicyId="urn:org:herasaf:xacml:example:policy:policy1">
+<div id="_mcePaste">RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:permit-overrides"></div>
+<Target>
+<Subjects>
+<Subject>
+<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Jack</AttributeValue>
+<SubjectAttributeDesignator
+DataType="http://www.w3.org/2001/XMLSchema#string" AttributeId="name" />
+</SubjectMatch>
+</Subject>
+</Subjects>
+<Resources>
+<Resource>
+<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">schedule</AttributeValue>
+<ResourceAttributeDesignator DataType="http://www.w3.org/2001/XMLSchema#string" AttributeId="resource-id" />
+</ResourceMatch>
+</Resource>
+</Resources>
+<Actions>
+<Action>
+<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">read</AttributeValue>
+<ActionAttributeDesignator DataType="http://www.w3.org/2001/XMLSchema#string" AttributeId="action-id" />
+</ActionMatch>
+</Action>
+</Actions>
+<Environments />
+</Target>
+<Rule RuleId="urn:org:herasaf:xacml:example:rule:rule1"
+Effect="Permit">
+</Rule>
+</Policy>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>eu.europa.ec.joinup.ecc</groupId>
+  <artifactId>epsos-cdadisplaytool</artifactId>
+  <version>3.1.0</version>
+  <packaging>pom</packaging>
+  <name>cdadisplaytool</name>
+  <modules>
+    <module>xsltransformer</module>
+    <module>tsamexporter</module>
+    <module>cdautils</module>
+  </modules>
+
+    <!-- ==================
+       Distribution Management
+    ================== -->
+    <distributionManagement>
+        <repository>
+          <id>gnomon-lib-release</id>
+          <name>gnomon</name>
+          <url>http://artifactory.gnomon.com.gr/artifactory/libs-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>gnomon-lib-snapshot</id>
+            <url>http://artifactory.gnomon.com.gr/artifactory/libs-snapshot-local/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    
+</project>

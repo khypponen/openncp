@@ -1,0 +1,9 @@
+ID;DESIGNATION;CODE_SYSTEM_CONCEPT_ID;LANGUAGE_CODE;TYPE;IS_PREFERRED;STATUS;STATUS_DATE
+51;Allergy to substance;21;en-US;Preferred Term;Yes;current;20.1.2010
+52;Drug allergy;22;en-US;Preferred Term;Yes;current;20.1.2010
+53;Drug intolerance;23;en-US;Preferred Term;Yes;current;20.1.2010
+54;INTRAVASCULAR DIASTOLIC ;24;en-GB;;;current;6.6.2010
+55;INTRAVASCULAR SYSTOLIC ;25;en-GB;;;current;6.6.2010
+56;Systolic blood pressure;26;en;Preferred Term;Yes;current;1.7.2009
+57;diastolický artériový tlak;27;sk-SK;Preferred Term;Yes;current;24.12.2009
+58;Diastolic blood pressure;27;en;Preferred Term;Yes;current;1.7.2009

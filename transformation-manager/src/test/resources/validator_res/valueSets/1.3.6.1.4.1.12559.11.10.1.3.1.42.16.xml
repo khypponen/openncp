@@ -1,0 +1,159 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSUnits" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.16" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="%" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Percent"/>
+			<Concept code="%" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Percent (UCUM-epSOS)"/>
+			<Concept code="/d" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerDay"/>
+			<Concept code="/d" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerDay (UCUM-epSOS)"/>
+			<Concept code="/g" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerGram"/>
+			<Concept code="/g" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerGram (UCUM-epSOS)"/>
+			<Concept code="/h" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerHour"/>
+			<Concept code="/h" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerHour (UCUM-epSOS)"/>
+			<Concept code="/kg" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerKiloGram"/>
+			<Concept code="/kg" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerKiloGram (UCUM-epSOS)"/>
+			<Concept code="/kg{body wt}" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerKiloGramBodyWeight"/>
+			<Concept code="/kg{body wt}" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerKiloGramBodyWeight (UCUM-epSOS)"/>
+			<Concept code="/min" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerMinute"/>
+			<Concept code="/min" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerMinute (UCUM-epSOS)"/>
+			<Concept code="/s" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerSecond"/>
+			<Concept code="/s" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="PerSecond (UCUM-epSOS)"/>
+			<Concept code="Cal" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Calorie (UCUM-epSOS)"/>
+			<Concept code="Cal" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Calorie"/>
+			<Concept code="Cel" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="DegreeCelsius"/>
+			<Concept code="Cel" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="DegreeCelsius (UCUM-epSOS)"/>
+			<Concept code="J" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Joule"/>
+			<Concept code="J" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Joule (UCUM-epSOS)"/>
+			<Concept code="L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Liter"/>
+			<Concept code="L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Liter (UCUM-epSOS)"/>
+			<Concept code="L/s" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="LitersPerSecond"/>
+			<Concept code="L/s" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="LitersPerSecond (UCUM-epSOS)"/>
+			<Concept code="[iU]" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="InternationalUnit"/>
+			<Concept code="[iU]" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="InternationalUnit (UCUM-epSOS)"/>
+			<Concept code="[iU]/g" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="InternationalUnitsPerGram"/>
+			<Concept code="[iU]/g" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="InternationalUnitsPerGram (UCUM-epSOS)"/>
+			<Concept code="[iU]/mL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="InternationalUnitsPerMilliLiter"/>
+			<Concept code="[iU]/mL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="InternationalUnitsPerMilliLiter (UCUM-epSOS)"/>
+			<Concept code="a" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Year"/>
+			<Concept code="a" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Year (UCUM-epSOS)"/>
+			<Concept code="bar" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Bar"/>
+			<Concept code="bar" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Bar (UCUM-epSOS)"/>
+			<Concept code="cal/d" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="CaloriesPerDay"/>
+			<Concept code="cal/d" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="CaloriesPerDay (UCUM-epSOS)"/>
+			<Concept code="cal/g" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="CaloriesPerGram"/>
+			<Concept code="cal/g" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="CaloriesPerGram (UCUM-epSOS)"/>
+			<Concept code="cal/h" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="CaloriesPerHour"/>
+			<Concept code="cal/h" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="CaloriesPerHour (UCUM-epSOS)"/>
+			<Concept code="cal/mL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="CaloriesPerMiliLiter"/>
+			<Concept code="cal/mL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="CaloriesPerMiliLiter (UCUM-epSOS)"/>
+			<Concept code="cm" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="CentiMeter"/>
+			<Concept code="cm" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="CentiMeter (UCUM-epSOS)"/>
+			<Concept code="cm2" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="SquareCentimeter"/>
+			<Concept code="cm2" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="SquareCentimeter (UCUM-epSOS)"/>
+			<Concept code="cm3" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="CubicCentimeter"/>
+			<Concept code="cm3" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="CubicCentimeter (UCUM-epSOS)"/>
+			<Concept code="d" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Day"/>
+			<Concept code="d" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Day (UCUM-epSOS)"/>
+			<Concept code="g" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Gram"/>
+			<Concept code="g" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Gram (UCUM-epSOS)"/>
+			<Concept code="g/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="GramsPerLiter"/>
+			<Concept code="g/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="GramsPerLiter (UCUM-epSOS)"/>
+			<Concept code="g/kg" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="GramsPerKiloGram"/>
+			<Concept code="g/kg" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="GramsPerKiloGram (UCUM-epSOS)"/>
+			<Concept code="g/mL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="GramsPerMilliliter"/>
+			<Concept code="g/mL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="GramsPerMilliliter (UCUM-epSOS)"/>
+			<Concept code="h" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Hour"/>
+			<Concept code="h" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Hour (UCUM-epSOS)"/>
+			<Concept code="kJ" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloJoule"/>
+			<Concept code="kJ" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloJoule (UCUM-epSOS)"/>
+			<Concept code="kPa" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloPascal"/>
+			<Concept code="kPa" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloPascal (UCUM-epSOS)"/>
+			<Concept code="k[iU]" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloInternationalUnits"/>
+			<Concept code="k[iU]" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloInternationalUnits (UCUM-epSOS)"/>
+			<Concept code="k[iU]/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloInternationalUnitsPerLiter"/>
+			<Concept code="k[iU]/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloInternationalUnitsPerLiter (UCUM-epSOS)"/>
+			<Concept code="kat" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Katal"/>
+			<Concept code="kat" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Katal (UCUM-epSOS)"/>
+			<Concept code="kcal" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloCalorie"/>
+			<Concept code="kcal" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloCalorie (UCUM-epSOS)"/>
+			<Concept code="kcal/d" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloCaloriesPerDay"/>
+			<Concept code="kcal/d" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloCaloriesPerDay (UCUM-epSOS)"/>
+			<Concept code="kcal/g" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloCaloriesPerGram"/>
+			<Concept code="kcal/g" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloCaloriesPerGram (UCUM-epSOS)"/>
+			<Concept code="kcal/h" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloCaloriesPerHour"/>
+			<Concept code="kcal/h" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloCaloriesPerHour (UCUM-epSOS)"/>
+			<Concept code="kcal/mL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloCaloriesPerMililiter"/>
+			<Concept code="kcal/mL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloCaloriesPerMililiter (UCUM-epSOS)"/>
+			<Concept code="kg" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloGrams"/>
+			<Concept code="kg" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloGrams (UCUM-epSOS)"/>
+			<Concept code="kg/m2" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KilogramPerSquareMeter"/>
+			<Concept code="kg/m2" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KilogramPerSquareMeter (UCUM-epSOS)"/>
+			<Concept code="kg/m3" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloGramsPerCubicMeter"/>
+			<Concept code="kg/m3" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="KiloGramsPerCubicMeter (UCUM-epSOS)"/>
+			<Concept code="m" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Meter"/>
+			<Concept code="m" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Meter (UCUM-epSOS)"/>
+			<Concept code="m2" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="SquareMeter"/>
+			<Concept code="m2" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="SquareMeter (UCUM-epSOS)"/>
+			<Concept code="mL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliLiter"/>
+			<Concept code="mL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliLiter (UCUM-epSOS)"/>
+			<Concept code="mL/s" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliLitersPerSecond"/>
+			<Concept code="mL/s" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliLitersPerSecond (UCUM-epSOS)"/>
+			<Concept code="m[iU]" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliInternationalUnit"/>
+			<Concept code="m[iU]" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliInternationalUnit (UCUM-epSOS)"/>
+			<Concept code="m[iU]/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliInternationalUnitsPerLiter"/>
+			<Concept code="m[iU]/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliInternationalUnitsPerLiter (UCUM-epSOS)"/>
+			<Concept code="mbar" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliBar"/>
+			<Concept code="mbar" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliBar (UCUM-epSOS)"/>
+			<Concept code="mg" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliGram"/>
+			<Concept code="mg" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliGram (UCUM-epSOS)"/>
+			<Concept code="mg/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliGramsPerLiter"/>
+			<Concept code="mg/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliGramsPerLiter (UCUM-epSOS)"/>
+			<Concept code="min" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Minute"/>
+			<Concept code="min" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Minute (UCUM-epSOS)"/>
+			<Concept code="mm" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Millimeter"/>
+			<Concept code="mm" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Millimeter (UCUM-epSOS)"/>
+			<Concept code="mm2" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="SquareMilliMeter"/>
+			<Concept code="mm2" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="SquareMilliMeter (UCUM-epSOS)"/>
+			<Concept code="mm[Hg]" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliMetersOfMercury"/>
+			<Concept code="mm[Hg]" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliMetersOfMercury (UCUM-epSOS)"/>
+			<Concept code="mmol" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliMole"/>
+			<Concept code="mmol" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliMole (UCUM-epSOS)"/>
+			<Concept code="mmol/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliMolesPerLiter"/>
+			<Concept code="mmol/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MilliMolesPerLiter (UCUM-epSOS)"/>
+			<Concept code="mo" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Month"/>
+			<Concept code="mo" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Month (UCUM-epSOS)"/>
+			<Concept code="mol/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MolePerLiter"/>
+			<Concept code="mol/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MolePerLiter (UCUM-epSOS)"/>
+			<Concept code="ng" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="NanoGram"/>
+			<Concept code="ng" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="NanoGram (UCUM-epSOS)"/>
+			<Concept code="ng/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="NanoGramsPerLiter"/>
+			<Concept code="ng/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="NanoGramsPerLiter (UCUM-epSOS)"/>
+			<Concept code="nmol/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="NanoMolesPerLiter"/>
+			<Concept code="nmol/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="NanoMolesPerLiter (UCUM-epSOS)"/>
+			<Concept code="pH" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="pH"/>
+			<Concept code="pH" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="pH (UCUM-epSOS)"/>
+			<Concept code="s" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Second"/>
+			<Concept code="s" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Second (UCUM-epSOS)"/>
+			<Concept code="uL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroLiter"/>
+			<Concept code="uL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroLiter (UCUM-epSOS)"/>
+			<Concept code="ug" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Microgram"/>
+			<Concept code="ug" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Microgram (UCUM-epSOS)"/>
+			<Concept code="ug/(kg.min)" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroGramsPerKiloGramAndMinute"/>
+			<Concept code="ug/(kg.min)" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroGramsPerKiloGramAndMinute (UCUM-epSOS)"/>
+			<Concept code="ug/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroGramsPerLiter"/>
+			<Concept code="ug/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroGramsPerLiter (UCUM-epSOS)"/>
+			<Concept code="ukat" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroKatal"/>
+			<Concept code="ukat" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroKatal (UCUM-epSOS)"/>
+			<Concept code="ukat/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroKatalsPerLiter"/>
+			<Concept code="ukat/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroKatalsPerLiter (UCUM-epSOS)"/>
+			<Concept code="ukat/mL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroKatalsPerMilliLiter"/>
+			<Concept code="ukat/mL" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroKatalsPerMilliLiter (UCUM-epSOS)"/>
+			<Concept code="umol" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroMole"/>
+			<Concept code="umol" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroMole (UCUM-epSOS)"/>
+			<Concept code="umol/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroMolesPerLiter"/>
+			<Concept code="umol/L" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="MicroMolesPerLiter (UCUM-epSOS)"/>
+			<Concept code="wk" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Week"/>
+			<Concept code="wk" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM Unified Code for Units of Measure" displayName="Week (UCUM-epSOS)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

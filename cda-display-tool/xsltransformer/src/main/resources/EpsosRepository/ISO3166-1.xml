@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<ISO3166-1Information>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='AT'>
+<displayName lang='en'>Austria</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='BE'>
+<displayName lang='en'>Belgium</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='CZ'>
+<displayName lang='en'>Czech Republic</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='DK'>
+<displayName lang='en'>Denmark</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='EE'>
+<displayName lang='en'>Estonia</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='FI'>
+<displayName lang='en'>Finland</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='FR'>
+<displayName lang='en'>France</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='DE'>
+<displayName lang='en'>Germany</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='GR'>
+<displayName lang='en'>Greece</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='HU'>
+<displayName lang='en'>Hungary</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='IT'>
+<displayName lang='en'>Italy</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='MT'>
+<displayName lang='en'>Malta</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='NL'>
+<displayName lang='en'>Netherlands</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='NO'>
+<displayName lang='en'>Norway</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='PL'>
+<displayName lang='en'>Poland</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='PT'>
+<displayName lang='en'>Portugal</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='SK'>
+<displayName lang='en'>Slovakia</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='SI'>
+<displayName lang='en'>Slovenia</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='ES'>
+<displayName lang='en'>Spain</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='SE'>
+<displayName lang='en'>Sweden</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='CH'>
+<displayName lang='en'>Switzerland</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='TR'>
+<displayName lang='en'>Turkey</displayName>
+</ISO3166-1Entry>
+<ISO3166-1Entry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.4' epsosName='epSOSCountry' code='GB'>
+<displayName lang='en'>United Kingdom</displayName>
+</ISO3166-1Entry>
+</ISO3166-1Information>

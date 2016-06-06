@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!-- ==================
+       Artifact
+    ================== -->
+    <parent>
+        <groupId>eu.europa.ec.joinup.ecc</groupId>
+        <artifactId>epsos-protocol-terminators</artifactId>
+        <version>3.2.1</version>
+    </parent>
+
+    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+    <artifactId>epsos-ncp-pt-client-consumer</artifactId>
+
+    <name>EpSOS CC Web Services Client Consumer</name>
+    <inceptionYear>2012</inceptionYear>
+    <url>http://maven.apache.org</url>
+
+
+    <!-- ==================
+       Dependencies
+    ================== -->
+    <dependencies>
+
+        <!-- epSOS -->
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-assertion-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-defaultpolicymanager</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-util</artifactId>
+            <version>${project.utilsVersion}</version>
+        </dependency>
+
+        <!-- axis2 -->
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-kernel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-transport-http</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-transport-local</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-xmlbeans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xalan</groupId>
+            <artifactId>serializer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.opensaml</groupId>
+            <artifactId>opensaml</artifactId>
+        </dependency>
+    </dependencies>
+
+
+    <!-- ==================
+       Build
+    ================== -->
+    <build>
+        <finalName>${project.artifactId}</finalName>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>${project.build.directory}/generated-sources/resources</directory>
+            </resource>
+        </resources>
+
+        <plugins>
+
+            <!-- axis client-->
+            <plugin>
+                <groupId>org.apache.axis2</groupId>
+                <artifactId>axis2-wsdl2code-maven-plugin</artifactId>
+                <version>${project.axis2ReleaseVersion}</version>
+                <executions>
+                    <execution>
+                        <id>Generate_Server_Code</id>
+                        <goals>
+                            <goal>wsdl2code</goal>
+                        </goals>
+                        <configuration>
+                            <packageName>epsos.openncp.pt.client</packageName>
+                            <wsdlFile>src/main/resources/wsdl/ClientConnectorService.wsdl</wsdlFile>
+                            <databindingName>xmlbeans</databindingName>
+                            <generateAllClasses>false</generateAllClasses>
+                            <generateServerSide>false</generateServerSide>
+                            <generateServerSideInterface>true</generateServerSideInterface>
+                            <generateServicesXml>true</generateServicesXml>
+                            <generateTestcase>false</generateTestcase>
+                            <outputDirectory>target/generated-sources/</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

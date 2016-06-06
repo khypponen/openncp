@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSVaccine" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.28" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="108729007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Varicella virus vaccine (product)"/>
+			<Concept code="111164008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Poliovirus vaccine (product)"/>
+			<Concept code="111164008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Sabin vaccine"/>
+			<Concept code="111164008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Poliomyelitis vaccine"/>
+			<Concept code="111164008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Poliovirus vaccine"/>
+			<Concept code="111164008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="OPV"/>
+			<Concept code="111164008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="TOPV"/>
+			<Concept code="116077000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rotavirus vaccine"/>
+			<Concept code="116077000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rotavirus vaccine (product)"/>
+			<Concept code="14745005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hepatitis A virus vaccine (product)"/>
+			<Concept code="14745005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hepatitis A virus vaccine"/>
+			<Concept code="14745005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hepatitis A vaccine"/>
+			<Concept code="14745005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hep A - Hepatitis A vaccine"/>
+			<Concept code="33234009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Var/Vac"/>
+			<Concept code="33234009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Smallpox vaccine (product)"/>
+			<Concept code="33234009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Smallpox vaccine"/>
+			<Concept code="333598008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pneumococcal vaccine"/>
+			<Concept code="333598008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pneumococcal vaccine (product)"/>
+			<Concept code="333606008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rabies vaccine"/>
+			<Concept code="333606008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rabies vaccine (product)"/>
+			<Concept code="333621002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="HTIG - Tetanus vaccine"/>
+			<Concept code="333621002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tetanus vaccine (product)"/>
+			<Concept code="333621002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tetanus vaccine"/>
+			<Concept code="333621002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tetanus toxoids"/>
+			<Concept code="333680004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Haemophilus influenzae Type b vaccine (product)"/>
+			<Concept code="333680004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Haemophilus influenzae Type b vaccine"/>
+			<Concept code="333680004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="HIB - Haemophilus influenzae Type B vaccine"/>
+			<Concept code="333680004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Haemophilus influenzae type B vaccine"/>
+			<Concept code="333697005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Japanese B encephalitis vaccine"/>
+			<Concept code="333697005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Japanese B encephalitis vaccine (product)"/>
+			<Concept code="333697005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Japanese encephalitis virus vaccine"/>
+			<Concept code="333699008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tick-borne encephalitis vaccine"/>
+			<Concept code="333699008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tick-borne encephalitis vaccine (product)"/>
+			<Concept code="333702001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hepatitis A+B vaccine"/>
+			<Concept code="333702001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hepatitis A+B vaccine (product)"/>
+			<Concept code="333702001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hepatitis A + B vaccine"/>
+			<Concept code="34689006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hepatitis B virus vaccine inactivated"/>
+			<Concept code="34689006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hepatitis B virus vaccine"/>
+			<Concept code="34689006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hepatitis B vaccine"/>
+			<Concept code="34689006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hep B - Hepatitis B vaccine"/>
+			<Concept code="34689006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="HBIG - Hepatitis B vaccine"/>
+			<Concept code="34689006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hepatitis B virus vaccine (product)"/>
+			<Concept code="350327004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diphtheria+tetanus vaccine"/>
+			<Concept code="350327004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diphtheria + tetanus vaccine"/>
+			<Concept code="350327004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diphtheria + Tetanus vaccine"/>
+			<Concept code="350327004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diphtheria + tetanus vaccine (product)"/>
+			<Concept code="35736007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cholera vaccines"/>
+			<Concept code="35736007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cholera vaccine (product)"/>
+			<Concept code="35736007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cholera vaccine"/>
+			<Concept code="386012008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Measles vaccine (product)"/>
+			<Concept code="386012008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Measles vaccine"/>
+			<Concept code="386012008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rubeola virus vaccine"/>
+			<Concept code="386012008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Measles live virus vaccine"/>
+			<Concept code="386013003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rubella vaccine (product)"/>
+			<Concept code="386013003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rubella vaccine"/>
+			<Concept code="386013003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="German measles vaccine"/>
+			<Concept code="420538001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tuberculosis vaccine (product)"/>
+			<Concept code="420538001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tuberculosis vaccine"/>
+			<Concept code="421245007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="DTP - Diphtheria + tetanus + pertussis vaccine"/>
+			<Concept code="421245007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diphtheria + Pertussis + Tetanus vaccine"/>
+			<Concept code="421245007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diphtheria and tetanus toxoids with pertussis, combined vaccine"/>
+			<Concept code="421245007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diphtheria + pertussis + tetanus vaccine (product)"/>
+			<Concept code="421245007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diphtheria + pertussis + tetanus vaccine"/>
+			<Concept code="421245007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="DPT - Diphtheria + pertussis + tetanus vaccine"/>
+			<Concept code="423531006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Meningococcus vaccine (product)"/>
+			<Concept code="423531006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Meningococcus vaccine"/>
+			<Concept code="424519000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Human papillomavirus vaccine (product)"/>
+			<Concept code="424519000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Human papillomavirus vaccine"/>
+			<Concept code="427036009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Influenza virus H5N1 vaccine (product)"/>
+			<Concept code="427036009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Influenza virus H5N1 vaccine"/>
+			<Concept code="428214002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diphtheria vaccine (product)"/>
+			<Concept code="428214002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diphtheria vaccine"/>
+			<Concept code="428214002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diphtheria toxoid"/>
+			<Concept code="46233009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Influenza virus vaccine"/>
+			<Concept code="46233009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="FLU - Influenza vaccine"/>
+			<Concept code="46233009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Influenza vaccine"/>
+			<Concept code="46233009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Influenza virus vaccine (product)"/>
+			<Concept code="56844000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Yellow fever vaccine product"/>
+			<Concept code="56844000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Yellow fever vaccine (product)"/>
+			<Concept code="56844000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Yellow fever vaccine"/>
+			<Concept code="61153008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Measles, mumps and rubella vaccine (product)"/>
+			<Concept code="61153008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Measles/mumps/rubella vaccine"/>
+			<Concept code="61602008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Whooping-cough vaccine"/>
+			<Concept code="61602008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pertussis vaccine"/>
+			<Concept code="61602008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pertussis vaccine (product)"/>
+			<Concept code="89428009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Typhoid vaccine"/>
+			<Concept code="89428009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Typhoid vaccine (product)"/>
+			<Concept code="90043005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Mumps live virus vaccine"/>
+			<Concept code="90043005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Mumps vaccine"/>
+			<Concept code="90043005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Mumps live virus vaccine (product)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

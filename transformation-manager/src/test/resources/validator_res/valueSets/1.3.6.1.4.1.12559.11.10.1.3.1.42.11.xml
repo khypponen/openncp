@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSReactionAllergy" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.11" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="247472004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Weal"/>
+			<Concept code="247472004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Nettle rash"/>
+			<Concept code="247472004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Weal (disorder)"/>
+			<Concept code="247472004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wheal"/>
+			<Concept code="247472004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hives"/>
+			<Concept code="247472004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Welt"/>
+			<Concept code="247472004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Urticarial rash"/>
+			<Concept code="39579001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Anaphylactic shock"/>
+			<Concept code="39579001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Allergic shock"/>
+			<Concept code="39579001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Systemic anaphylaxis"/>
+			<Concept code="39579001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Anaphylaxis"/>
+			<Concept code="39579001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Anaphylactic reaction"/>
+			<Concept code="39579001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Anaphylaxis (disorder)"/>
+			<Concept code="41291007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Giant urticaria"/>
+			<Concept code="41291007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Quincke's disease"/>
+			<Concept code="41291007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Angioedema (disorder)"/>
+			<Concept code="43116000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dermatitis"/>
+			<Concept code="43116000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Eczema (disorder)"/>
+			<Concept code="43116000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Eczema"/>
+			<Concept code="4386001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bronchospasm"/>
+			<Concept code="4386001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bronchial spasm"/>
+			<Concept code="4386001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bronchospasm (finding)"/>
+			<Concept code="70076002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rhinite"/>
+			<Concept code="70076002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rhinitis"/>
+			<Concept code="70076002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Irritation of nose"/>
+			<Concept code="70076002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rhinitis (disorder)"/>
+			<Concept code="9826008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Conjunctivitis"/>
+			<Concept code="9826008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Inflammation of conjunctiva"/>
+			<Concept code="9826008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Conjunctivitis (disorder)"/>
+			<Concept code="9826008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Conjonctivite"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<ObservationInterpretationInformation>
+<ObservationInterpretationEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.43' epsosName='epSOSObservationInterpretation' code='L'>
+<displayName lang='en'>Low</displayName>
+</ObservationInterpretationEntry>
+<ObservationInterpretationEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.43' epsosName='epSOSObservationInterpretation' code='N'>
+<displayName lang='en'>Normal</displayName>
+</ObservationInterpretationEntry>
+<ObservationInterpretationEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.43' epsosName='epSOSObservationInterpretation' code='H'>
+<displayName lang='en'>High</displayName>
+</ObservationInterpretationEntry>
+<ObservationInterpretationEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.43' epsosName='epSOSObservationInterpretation' code='H'>
+<displayName lang='en'>High</displayName>
+</ObservationInterpretationEntry>
+<ObservationInterpretationEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.43' epsosName='epSOSObservationInterpretation' code='L'>
+<displayName lang='en'>Low</displayName>
+</ObservationInterpretationEntry>
+<ObservationInterpretationEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.43' epsosName='epSOSObservationInterpretation' code='N'>
+<displayName lang='en'>Normal</displayName>
+</ObservationInterpretationEntry>
+</ObservationInterpretationInformation>

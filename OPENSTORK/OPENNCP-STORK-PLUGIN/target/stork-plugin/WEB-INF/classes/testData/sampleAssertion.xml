@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<saml2p:Response xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:stork="urn:eu:stork:names:tc:STORK:1.0:assertion" xmlns:storkp="urn:eu:stork:names:tc:STORK:1.0:protocol" xmlns:xs="http://www.w3.org/2001/XMLSchema" Consent="urn:oasis:names:tc:SAML:2.0:consent:obtained" Destination="https://vmepsos.hcuge.ch:14443/" ID="_7fab95a8b2c335af91922877293ed957" InResponseTo="_b44f384be3252c72dbe65415fee17862" IssueInstant="2015-03-24T09:05:30.993Z" Version="2.0">
+<saml2:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">https://storkdemo2.bfh.ch</saml2:Issuer>
+<ds:Signature>
+    <ds:SignedInfo>
+        <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+        <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+        <ds:Reference URI="#_7fab95a8b2c335af91922877293ed957">
+            <ds:Transforms>
+                <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                <ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="xs"/>
+            </ds:Transform>
+        </ds:Transforms>
+        <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <ds:DigestValue>fyfmCG1BXT21jI/ymhlNHUNE4PY=</ds:DigestValue>
+    </ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>enMO5NoThewQ8CeGYUkWOBJDLqvgLo2uy56ckwLgTKhChCpba4jgwmu/14PdGjadjM3x8AOzudz1bOr4gSFND64q+nDcuGRoHL1MYWXT0FN4hdG5qS32lbaw3k0i/ZSOJnPaUQO7BlADFiwH7vWUZAhDQWXlgDYBQrp7Ev1nLAozljLa8zLpv3fVjBTcbpXDGVdCkimqGNOoRj5SXs/KnY17vlIlKpTDPG8sCScuFBTSwtEE+7Bh7k0I3asUquNsd9A/cu0qceQ7eV0Kt5qEOmxbNaEzhqeQsOH7IkHQQ4TjTrJ5LRO3IQx7L3386XWVprQBSekL9Qiak5y6Ya+CRg==</ds:SignatureValue>
+<ds:KeyInfo>
+    <ds:X509Data>
+        <ds:X509Certificate>MIIDIDCCAgigAwIBAgIEUVGw8zANBgkqhkiG9w0BAQIFADBSMQswCQYDVQQGEwJDSDEUMBIGA1UE
+        CBMLU3dpdHplcmxhbmQxDTALBgNVBAcTBEJpZWwxDDAKBgNVBAoTA0JGSDEQMA4GA1UEAxMHZGVt
+        by1jaDAeFw0xMzAzMjYxNDMxMTVaFw0xOTAzMjYxNDMxMTVaMFIxCzAJBgNVBAYTAkNIMRQwEgYD
+        VQQIEwtTd2l0emVybGFuZDENMAsGA1UEBxMEQmllbDEMMAoGA1UEChMDQkZIMRAwDgYDVQQDEwdk
+        ZW1vLWNoMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj1pbJ1U7oRaATKgS6ooy2NG7
+        D7NSLe6WMBn+Xy45Rq/isplJGTIZ0IVFDEMtSjK11RMsBNrtW1GGY+NdzRxuiyhhuonPUsyM0pIt
+        SPUhN2NjoAeSicUtc98Zn0V1iNYyDIJYUip1awMgZkJ6QkwXL3l7uYfmUuCjas2r3+Gn77aGljco
+        xKK9Rh4N9PwZO4Beuo5n/wpxyiVIH3RBzBRRuEmg4A8HUDuQdxVOdJ0GETmNJruMu2ralqU6oK6U
+        KCFjy2vHBVrVq0FM4NV7B6hpaoh2/qZvkgYUulXa6AUyhI18yAYpCxNxddyrABSHBWA5ySCLfpi+
+        K8A7VhBujEKLrQIDAQABMA0GCSqGSIb3DQEBAgUAA4IBAQAkWTgPjXMMKhFVHaP3wRDrqVu9QuQw
+        XAJUenJGIW1VITCDFH5RsJdvgHksC/qpxAASd5COWuDIkmaFTG/oHY3dVZOWeVZ1RwfPWxL0bs0M
+        Uq8sGotsB79mpYHk4wki0euhXSjHmXDpf39x9OX+EHcuqC2XnWI4Anu+asRWMq5joFlXfjikRM7m
+        133HVijuotN0ZvBuiUUZuCzZKKZ48fhKaTKmveqeonjGJzuSkOf1ntS43iK2eyj+zRvwPccAizN4
+        5WXQGZW6JivEs4fHDn9GNVuiYn3k+Wy2VkcGo7M12RQZYQK+P696FuhrNu9utIEQ55q32sAo5cBD
+        Z//xfSv+</ds:X509Certificate>
+    </ds:X509Data>
+</ds:KeyInfo>
+</ds:Signature>
+<saml2p:Status>
+    <saml2p:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/>
+    <saml2p:StatusMessage>urn:oasis:names:tc:SAML:2.0:status:Success</saml2p:StatusMessage>
+</saml2p:Status>
+<saml2:Assertion ID="_961323a1ca5327a65afab035cd028097" IssueInstant="2015-03-24T09:05:30.993Z" Version="2.0">
+    <saml2:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">https://storkdemo2.bfh.ch</saml2:Issuer>
+    <saml2:Subject>
+        <saml2:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" NameQualifier="https://storkdemo2.bfh.ch">urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</saml2:NameID>
+        <saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+            <saml2:SubjectConfirmationData Address="129.195.0.205" InResponseTo="_b44f384be3252c72dbe65415fee17862" NotOnOrAfter="2015-03-24T09:10:30.993Z" Recipient="https://vmepsos.hcuge.ch:14443/"/>
+        </saml2:SubjectConfirmation>
+    </saml2:Subject>
+    <saml2:Conditions NotBefore="2015-03-24T09:05:30.993Z" NotOnOrAfter="2015-03-24T09:10:30.993Z">
+        <saml2:AudienceRestriction>
+            <saml2:Audience>http://S-PEPS.gov.xx</saml2:Audience>
+        </saml2:AudienceRestriction>
+        <saml2:OneTimeUse/>
+    </saml2:Conditions>
+    <saml2:AuthnStatement AuthnInstant="2015-03-24T09:05:30.993Z">
+        <saml2:SubjectLocality Address="129.195.0.205"/>
+        <saml2:AuthnContext>
+            <saml2:AuthnContextDecl/>
+        </saml2:AuthnContext>
+    </saml2:AuthnStatement>
+    <saml2:AttributeStatement>
+        <saml2:Attribute Name="http://www.stork.gov.eu/1.0/eIdentifier" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" stork:AttributeStatus="Available">
+        <saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">CH/CH/1300-0000-0000-0000</saml2:AttributeValue>
+    </saml2:Attribute>
+    <saml2:Attribute Name="http://www.stork.gov.eu/1.0/givenName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" stork:AttributeStatus="Available">
+    <saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">Heiri</saml2:AttributeValue>
+</saml2:Attribute>
+<saml2:Attribute Name="http://www.stork.gov.eu/1.0/dateOfBirth" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" stork:AttributeStatus="Available">
+<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">19760913</saml2:AttributeValue>
+</saml2:Attribute>
+<saml2:Attribute Name="http://www.stork.gov.eu/1.0/eMail" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" stork:AttributeStatus="Available">
+<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">heiri.muster@acme.com</saml2:AttributeValue>
+</saml2:Attribute>
+<saml2:Attribute Name="http://www.stork.gov.eu/1.0/surname" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" stork:AttributeStatus="Available">
+<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">Muster</saml2:AttributeValue>
+</saml2:Attribute>
+</saml2:AttributeStatement>
+</saml2:Assertion>
+<saml2:Assertion ID="_ccc273ff28db46b2aafe86c56d037634" IssueInstant="2015-03-24T09:05:27.440Z" Version="2.0">
+    <saml2:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">http://C-PEPS.gov.xx</saml2:Issuer>
+    <ds:Signature>
+        <ds:SignedInfo>
+            <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <ds:Reference URI="#_ccc273ff28db46b2aafe86c56d037634">
+                <ds:Transforms>
+                    <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                    <ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="xs"/>
+                </ds:Transform>
+            </ds:Transforms>
+            <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+            <ds:DigestValue>gsotMQscG0Dl2UJH7bmrh4dtXFI=</ds:DigestValue>
+        </ds:Reference>
+    </ds:SignedInfo>
+    <ds:SignatureValue>dYJWnQSljG55x9uNj74dyKwSvN30HZ9TDgZMiENQ43k6MchC6bA+RxqB4pEv/WN2Awx56IbIbhJEuYmtCLfq5j0XVXgem23RzN8p/XITkh7ehQsGZpHeP3dUfC+x6eaJv+TvBIdPi++pY7HhFoVwtmqK4oAP6YGDU5bXPAryPjU/Pn4cpbaOm7NQt9ZM1CrIcq9zcDWc7aCnvVo8K+gp0ea2N1ugvGe68lGACPpj8iZVGL+W+5gcUUvL5wd6jhuCqXQajfBYNFkPEpK2PD/r8bSUcBpqgCPSZmhZ/boIpm9t9J0dbsA998o5ogwgu/HQ1VycO1BR6mHfCzk9ahunwA==</ds:SignatureValue>
+    <ds:KeyInfo>
+        <ds:X509Data>
+            <ds:X509Certificate>MIIFSjCCBDKgAwIBAgIQQRcqdmgJpfCET0y/cGgjBjANBgkqhkiG9w0BAQsFADBsMQswCQYDVQQG
+            EwJjaDERMA8GA1UEChMIU3dpc3Njb20xJTAjBgNVBAsTHERpZ2l0YWwgQ2VydGlmaWNhdGUgU2Vy
+            dmljZXMxIzAhBgNVBAMTGlN3aXNzY29tIFRFU1QgU21hcmFnZCBDQSAyMB4XDTE0MDYyNTE0MTgw
+            MFoXDTE2MDQwMTE0MTUwMFoweDELMAkGA1UEBhMCQ0gxKjAoBgNVBAoTIUhvcGl0YXV4IHVuaXZl
+            cnNpdGFpcmVzIGRlIEdlbmV2ZTERMA8GA1UEKhMIU3RlcGhhbmUxDzANBgNVBAQTBlNwYWhuaTEZ
+            MBcGA1UEAxMQdm1lcHNvcy5oY3VnZS5jaDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+            AMGG5fL3tsoHagRjJNuEkH7V5vPfebvzPXPdgeobkkh89P2f/vCUaFL2wJSygErdHIby0I3p7es0
+            0jyCt3WfU95VCAMtyJODUpCHCy9hz0GnMrXvoiQwApDZuN2ZAR9+BUjOk/IjxrBLkDfH5Os9ZTtB
+            baA1YB9yqWyQt73r6KhUBEMWjTGwfgQCDTY3dab2oQ64Jye5OFEn36x/wPZIZGnEsrs5QDrH8qgI
+            dzQp12YYNe9+pnz59NPi+kqfrWvt51UybKPdwGfTgUy0+49j1yIdlaR2e4NZvAz1znMSyDI6wBEs
+            xgq8hu8MXcbG6AjmgggEYlCfEjpHTLIAOxsazLkCAwEAAaOCAdowggHWMA4GA1UdDwEB/wQEAwIG
+            wDCBiQYIKwYBBQUHAQEEfTB7MDoGCCsGAQUFBzABhi5odHRwOi8vb2NzcC5wcmUuc3dpc3NkaWdp
+            Y2VydC5jaC9zZGNzLXNtYXJhZ2QyMD0GCCsGAQUFBzAChjFodHRwOi8vYWlhLnByZS5zd2lzc2Rp
+            Z2ljZXJ0LmNoL3NkY3Mtc21hcmFnZDIuY3J0MB8GA1UdIwQYMBaAFBBuaK4OZpHb7D88zJQqfMBX
+            PPVSMAwGA1UdEwEB/wQCMAAwEwYDVR0gBAwwCjAIBgZghXQBUwcwgdQGA1UdHwSBzDCByTA3oDWg
+            M4YxaHR0cDovL2NybC5wcmUuc3dpc3NkaWdpY2VydC5jaC9zZGNzLXNtYXJhZ2QyLmNybDCBjaCB
+            iqCBh4aBhGxkYXA6Ly9sZGFwLnByZS5zd2lzc2RpZ2ljZXJ0LmNoL0NOPVN3aXNzY29tJTIwVEVT
+            VCUyMFNtYXJhZ2QlMjBDQSUyMDIsZGM9c21hcmFnZDIsZGM9c3dpc3NkaWdpY2VydCxkYz1jaD9j
+            ZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0PzAdBgNVHQ4EFgQUaSzSa1VY4s2MrnScIBjBcJMsvdEw
+            DQYJKoZIhvcNAQELBQADggEBAMQwmtJLBdpx2DqVNxEep9JpuThpFOtfQadeL7dbb+hlqjky9IfQ
+            3xv2b9Ls/DvD0QXFqTax3dHPj5c6nvb/uBP5Y9O3BlQuZSL4aUFS4zJnQHFkHnSqR+rGN8jqlvSx
+            bZ2r+zufUZIBZErDIxPMokIFVE9l+u106EFC1r9zALOSTy+JLotVEbgDimnxeGK+W/23LFEh5UD0
+            Zbahzzgfv00mol4vE/whFLhSU5PToSkcwkrPQwEXROoJg7l8/Uq2xFEe+tCc1sUDp3/0UhjJ7e4Y
+            6E8+5t/w3vJcF/Zt9DmHeOi1y2mLUqiiMMqEMvVJ3PGdsg4qtnIT1cOZl1ZT2rA=</ds:X509Certificate>
+        </ds:X509Data>
+    </ds:KeyInfo>
+</ds:Signature>
+<saml2:Subject>
+    <saml2:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" NameQualifier="http://C-PEPS.gov.xx">urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</saml2:NameID>
+    <saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+        <saml2:SubjectConfirmationData Address="127.0.0.1" InResponseTo="_9e173e3039893cc6fad8ea3b8a10f955" NotOnOrAfter="2015-03-24T09:10:27.439Z"/>
+    </saml2:SubjectConfirmation>
+</saml2:Subject>
+<saml2:Conditions NotBefore="2015-03-24T09:05:27.443Z" NotOnOrAfter="2015-03-24T09:10:27.439Z">
+    <saml2:AudienceRestriction>
+        <saml2:Audience>https://storkdemo2.bfh.ch/CH-PEPS</saml2:Audience>
+    </saml2:AudienceRestriction>
+    <saml2:OneTimeUse/>
+</saml2:Conditions>
+<saml2:AuthnStatement AuthnInstant="2015-03-24T09:05:27.449Z">
+    <saml2:SubjectLocality Address="127.0.0.1"/>
+    <saml2:AuthnContext>
+        <saml2:AuthnContextDecl/>
+    </saml2:AuthnContext>
+</saml2:AuthnStatement>
+<saml2:AttributeStatement>
+    <saml2:Attribute Name="http://www.stork.gov.eu/1.0/eIdentifier" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" stork:AttributeStatus="Available">
+    <saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">1300-0000-0000-0000</saml2:AttributeValue>
+</saml2:Attribute>
+<saml2:Attribute Name="http://www.stork.gov.eu/1.0/givenName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" stork:AttributeStatus="Available">
+<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">Heiri</saml2:AttributeValue>
+</saml2:Attribute>
+<saml2:Attribute Name="http://www.stork.gov.eu/1.0/dateOfBirth" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" stork:AttributeStatus="Available">
+<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">19800101</saml2:AttributeValue>
+</saml2:Attribute>
+<saml2:Attribute Name="http://www.stork.gov.eu/1.0/isHealthCareProfessional" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" stork:AttributeStatus="Available">
+<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">"&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;isHealthCareProfessional xmlns="urn:eu:stork:names:tc:STORK:1.0:assertion"&gt;&lt;/isHealthCareProfessional&gt;"</saml2:AttributeValue>
+</saml2:Attribute>
+<saml2:Attribute Name="http://www.stork.gov.eu/1.0/ehic" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" stork:AttributeStatus="Available">
+<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">80756999999999993000</saml2:AttributeValue>
+</saml2:Attribute>
+<saml2:Attribute Name="http://www.stork.gov.eu/1.0/surname" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" stork:AttributeStatus="Available">
+<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">Muster</saml2:AttributeValue>
+</saml2:Attribute>
+</saml2:AttributeStatement>
+</saml2:Assertion>
+</saml2p:Response>

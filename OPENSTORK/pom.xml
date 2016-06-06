@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>openncp</artifactId>
+        <groupId>eu.europa.ec.joinup.ecc</groupId>
+        <version>4.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ==================
+       Artifact
+    ================== -->
+    <groupId>eu.europa.ec.joinup.ecc</groupId>
+    <artifactId>OPENSTORK</artifactId>
+    <name>OPENSTORK</name>
+    <packaging>pom</packaging>
+    <inceptionYear>2014</inceptionYear>
+
+    <!-- ==================
+       Modules
+    ================== -->
+    <modules>
+        <module>OPENSTORK.UTILS</module>
+        <module>OPENNCP-STORK-PLUGIN</module>
+    </modules>
+
+    <!--    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.zeroturnaround</groupId>
+                <artifactId>jrebel-maven-plugin</artifactId>
+                <version>1.1.5</version>
+                <executions>
+                    <execution>
+                        <id>generate-rebel-xml</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>-->
+
+
+
+    <!-- ==================
+       Properties
+    ================== -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- ==================
+       Properties
+    ================== -->
+    <repositories>
+        <repository>
+            <id>gnomon-lib-snapshot</id>
+            <url>http://artifactory.gnomon.com.gr/artifactory/libs-snapshot-local/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>gnomon-lib-release</id>
+            <url>http://artifactory.gnomon.com.gr/artifactory/libs-release-local/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>joinup-releases</id>
+            <url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>joinup-snapshots</id>
+            <url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>joinup-releases</id>
+            <url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>joinup-snapshots</id>
+            <url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
+            <uniqueVersion>true</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
+
+</project>

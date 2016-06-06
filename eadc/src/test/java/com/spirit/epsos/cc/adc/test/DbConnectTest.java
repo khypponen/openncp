@@ -1,0 +1,73 @@
+package com.spirit.epsos.cc.adc.test;
+
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.naming.NamingException;
+import javax.xml.parsers.ParserConfigurationException;
+import org.apache.log4j.Logger;
+import org.apache.log4j.BasicConfigurator;
+import com.spirit.epsos.cc.adc.db.EadcDbConnect;
+
+import eu.epsos.pt.eadc.util.EadcFactory;
+
+import org.junit.Test;
+
+/**
+ * This test will test the database connection
+ */
+public class DbConnectTest extends BaseEadcTest {
+
+    private static Logger log = Logger.getLogger(DbConnectTest.class);
+    
+    @Test
+    public void eadcReceiverTest() throws ClassNotFoundException, SQLException, ParserConfigurationException, NamingException {
+        //DOMConfigurator.configureAndWatch("log4j.xml", 60 * 1000);
+        BasicConfigurator.configure();
+        for (int i = 0; i < 3; i++) {
+            new DbConnectTest().tryDbConnect(false);
+        }
+        new DbConnectTest().tryDbConnect(true);
+    }
+
+    public void tryDbConnect(boolean dropTable) throws NamingException, SQLException, ParserConfigurationException, ClassNotFoundException {
+        log.info("create new  DBConnect_epSOS");
+        EadcDbConnect con = EadcFactory.INSTANCE.createEadcDbConnect(DS_NAME);
+        log.info("DBConnect_epSOS created .......");
+        try {
+            log.info("start test DBConnect_epSOS .......");
+            DatabaseMetaData md = con.getConnection().getMetaData();
+            ResultSet rs = md.getTables(null, null, "TEST_ADC", null);
+            boolean exists = rs.next();
+            log.info("TABLE TEST_ADC EXISTS? " + exists);
+            rs.close();
+            Statement sql = con.getConnection().createStatement();
+            if (!exists) {
+                String s = "create table TEST_ADC(PK   char( 48 ) not null primary key ,C1 varchar(256))";
+                log.info("execute :" + s);
+                sql.executeUpdate(s);
+            }
+            String s = "insert into TEST_ADC (PK,C1) values ('" + System.currentTimeMillis() + "','hallo')";
+            log.info("execute :" + s);
+            sql.executeUpdate(s);
+            s = "select * from TEST_ADC";
+            log.info("execute :" + s);
+            rs = sql.executeQuery(s);
+            while (rs.next()) {
+                log.info("queryResult :" + rs.getString(1) + " / " + rs.getString(2));
+            }
+            rs.close();
+            if (dropTable) {
+                s = "drop table TEST_ADC";
+                log.info("execute :" + s);
+                sql.executeUpdate(s);
+            }
+            log.info("finished test DBConnect_epSOS .......\n\n");
+        } finally {
+            con.closeConnection();
+        }
+    }
+
+}

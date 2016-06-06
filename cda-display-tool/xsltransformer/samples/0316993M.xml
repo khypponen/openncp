@@ -1,0 +1,2097 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3"
+  xmlns:epsos="urn:epsos-org:ep:medication"
+  xmlns:ext="urn:hl7-EE-DL-Ext:v1" xmlns:mif="urn:hl7-org:v3/mif"
+  xmlns:ns="urn:hl7-org:v3"
+  xmlns:sch="http://www.ascc.net/xml/schematron"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 http://pub.e-tervis.ee/standards2/Schema/V3/HL7-ORG-V3-2005-NORMATIVE-EE-DL-Ext-V1/infrastructure/cda/CDA_EE01.xsd urn:hl7-EE-DL-Ext:v1 http://pub.e-tervis.ee/standards2/Schema/V3/HL7-ORG-V3-2006-NORMATIVE-EE-DL-Ext-V1/processable/multicacheschemas/POCD_MT00040_EE01_Extension.xsd">
+  <!--header-section-->
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3"/>
+  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+  <id extension="8.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+  <code code="60591-5" codeSystem="2.16.840.1.113883.6.1"
+    codeSystemName="LOINC" displayName="Patient Summary"/>
+  <title>Patient Summary</title>
+  <effectiveTime value="20130619"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"
+    codeSystemName="Confidentiality" displayName="clinician"/>
+  <languageCode code="en-GB"/>
+  <!--patient-data-->
+  <recordTarget>
+    <patientRole>
+      <id extension="0316993M" root="2.16.470.1.100.1.1.1000.990.1"/>
+      <addr>
+        <streetAddressLine>IL-WIDNA TRIQ ANGELO DORINI                                                                                                                                                                             </streetAddressLine>
+        <city>SIGGIEWI                                          </city>
+        <postalCode nullFlavor="UNK"/>
+        <state nullFlavor="UNK"/>
+        <country>MT</country>
+      </addr>
+      <telecom nullFlavor="NI"/>
+      <patient>
+        <name>
+          <family>CUTAJAR                                           </family>
+          <given>PETER                                             </given>
+        </name>
+        <administrativeGenderCode code="M"
+          codeSystem="2.16.840.1.113883.5.1"
+          codeSystemName="AdministrativeGender"
+          codeSystemVersion="913-20091020" displayName="Male"/>
+        <birthTime value="19530210"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <!--patient-data-->
+  <!--author-data-->
+  <author>
+    <time value="20151116"/>
+    <assignedAuthor>
+      <id extension="author.gov.mt" root="2.16.470.1.100.1.1.1000.990.1"/>
+      <addr>
+        <streetAddressLine>15, Merchants Street</streetAddressLine>
+        <city>Valletta</city>
+        <postalCode nullFlavor="UNK"/>
+        <state nullFlavor="UNK"/>
+        <country>MT</country>
+      </addr>
+      <telecom use="WP" value="tel:+35625455335"/>
+      <telecom use="WP" value="mailto:epsos.mfh@gov.mt"/>
+      <assignedPerson>
+        <name>
+          <family>Data collected automatically from different sources by National Patient Summary System</family>
+          <given>Ministry for Health, Government of Malta</given>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id extension="mhec.gov.mt" root="2.16.470.1.100.1.1.1000.990.1"/>
+        <name>Ministry for Health, Government of Malta</name>
+        <telecom use="WP" value="tel:+35625455335"/>
+        <telecom use="WP" value="mailto:epsos.mfh@gov.mt"/>
+        <addr>
+          <streetAddressLine>15, Merchants Street</streetAddressLine>
+          <city>Valletta</city>
+          <postalCode nullFlavor="UNK"/>
+          <state nullFlavor="UNK"/>
+          <country>MT</country>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <!--author-data-->
+  <!--custodian-data-->
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id extension="mhec.gov.mt" root="2.16.470.1.100.1.1.1000.990.1"/>
+        <name>Ministry for Health, Government of Malta</name>
+        <telecom use="WP" value="tel:+35625455335"/>
+        <addr>
+          <streetAddressLine>15, Merchants Street</streetAddressLine>
+          <city>Valletta</city>
+          <postalCode nullFlavor="UNK"/>
+          <state nullFlavor="UNK"/>
+          <country>MT</country>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <!--custodian-data-->
+  <!--legal-authenticator-data-->
+  <legalAuthenticator>
+    <time value="20151116"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id extension="legal.authenticator.gov.mt" root="2.16.470.1.100.1.1.1000.990.1"/>
+      <addr>
+        <streetAddressLine>15, Merchants Street</streetAddressLine>
+        <city>Valletta</city>
+        <postalCode nullFlavor="UNK"/>
+        <state nullFlavor="UNK"/>
+        <country>MT</country>
+      </addr>
+      <telecom use="WP" value="tel:+35625455335"/>
+      <telecom use="WP" value="mailto:epsos.mfh@gov.mt"/>
+      <assignedPerson>
+        <name>
+          <family>Agius Muscat</family>
+          <given>Hugo</given>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id extension="mhec.gov.mt" root="2.16.470.1.100.1.1.1000.990.1"/>
+        <name>Ministry for Health, Government of Malta</name>
+        <telecom use="WP" value="tel:+35625455335"/>
+        <telecom use="WP" value="mailto:epsos.mfh@gov.mt"/>
+        <addr>
+          <streetAddressLine>15, Merchants Street</streetAddressLine>
+          <city>Valletta</city>
+          <postalCode nullFlavor="UNK"/>
+          <state nullFlavor="UNK"/>
+          <country>MT</country>
+        </addr>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <!--legal-authenticator-data-->
+  <!--participant-hcp-organization-data-->
+  <participant typeCode="IND">
+    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+    <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" codeSystemName="HL7 ParticipationFunction"/>
+    <associatedEntity classCode="PRS">
+      <scopingOrganization>
+        <id extension="mhec.gov.mt" root="2.16.470.1.100.1.1.1000.990.1"/>
+        <name>Ministry for Health, Government of Malta</name>
+        <telecom use="WP" value="tel:+35625455335"/>
+        <telecom use="WP" value="mailto:epsos.mfh@gov.mt"/>
+        <addr>
+          <streetAddressLine>15, Merchants Street</streetAddressLine>
+          <city>Valletta</city>
+          <postalCode nullFlavor="UNK"/>
+          <state nullFlavor="UNK"/>
+          <country>MT</country>
+        </addr>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  <!--participant-hcp-organization-data-->
+  <documentationOf>
+    <serviceEvent>
+      <effectiveTime>
+        <high value="20130619"/>
+      </effectiveTime>
+    </serviceEvent>
+  </documentationOf>
+  <relatedDocument typeCode="XFRM">
+    <parentDocument>
+      <id extension="8" root="2.16.470.1.100.1.1.1000.990.1"/>
+    </parentDocument>
+  </relatedDocument>
+  <relatedDocument typeCode="APND">
+    <parentDocument>
+      <id extension="8.2" root="2.16.470.1.100.1.1.1000.990.1"/>
+    </parentDocument>
+  </relatedDocument>
+  <!--header-section-->
+  <!--medical-sections-->
+  <component>
+    <structuredBody>
+      <!--history-of-procedures-->
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+          <templateId root="2.16.840.1.113883.10.20.1.12"/>
+          <code code="47519-4" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC" displayName="History of Procedures"/>
+          <title>History of Procedures</title>
+          <text>
+            <table border="1">
+              <tbody>
+                <tr>
+                  <th>Code</th>
+                  <th>Description</th>
+                </tr>
+                <tr ID="proc.1">
+                  <td>UNK</td>
+                  <td>UNK</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN" nullFlavor="NA">
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <id nullFlavor="NI"/>
+              <code nullFlavor="NI"/>
+              <text>
+                <reference value="#proc.1"/>
+              </text>
+              <statusCode nullFlavor="NI"/>
+            </procedure>
+          </entry>
+        </section>
+      </component>
+      <!--history-of-procedures-->
+      <!--history-of-medical-device-use-->
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.7"/>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+          <code code="46264-8" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC" displayName="History of medical device use"/>
+          <title>History of medical device use</title>
+          <text>
+            <table border="1">
+              <tbody>
+                <tr>
+                  <th>Code</th>
+                  <th>Description</th>
+                </tr>
+                <tr ID="dev.1">
+                  <td>UNK</td>
+                  <td>UNK</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <supply classCode="SPLY" moodCode="EVN" nullFlavor="NI">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5"/>
+              <text>
+                <reference value="#dev.1"/>
+              </text>
+              <effectiveTime nullFlavor="NI"/>
+              <participant typeCode="DEV">
+                <participantRole classCode="MANU">
+                  <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                    <code nullFlavor="NI"/>
+                  </playingDevice>
+                </participantRole>
+              </participant>
+            </supply>
+          </entry>
+        </section>
+      </component>
+      <!--history-of-medical-device-use-->
+      <!--problem-list-->
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+          <templateId root="2.16.840.1.113883.10.20.1.11"/>
+          <code code="11450-4" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC" displayName="Problem list"/>
+          <title>Problem list</title>
+          <text>
+            <table border="1">
+              <tbody>
+                <tr>
+                  <th>Code</th>
+                  <th>Description</th>
+                </tr>
+                <tr ID="problem.1">
+                  <td>UNK</td>
+                  <td>UNK</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="problem.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low nullFlavor="UNK"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="problem.1.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code nullFlavor="UNK"/>
+                  <text>
+                    <reference value="#problem.1"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low nullFlavor="UNK"/>
+                  </effectiveTime>
+                  <value code="160245001"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT"
+                    displayName="No current problems or disability" xsi:type="CD"/>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <!--problem-list-->
+      <!--history-of-past-illness-->
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.8"/>
+          <code code="11348-0" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC" displayName="History of past illness"/>
+          <title>History of past illness</title>
+          <text>
+            <table border="1">
+              <tbody>
+                <tr>
+                  <th>Code</th>
+                  <th>Description</th>
+                </tr>
+                <tr ID="problem.6">
+                  <td>55607006</td>
+                  <td>fatigue/lethargy                                            </td>
+                </tr>
+                <tr ID="problem.4">
+                  <td>55607006</td>
+                  <td>NA(dizziness)                                               </td>
+                </tr>
+                <tr ID="problem.7">
+                  <td>55607006</td>
+                  <td>anorexia.                                                   </td>
+                </tr>
+                <tr ID="problem.5">
+                  <td>55607006</td>
+                  <td>Admission for drug regime review-high INR                   </td>
+                </tr>
+                <tr ID="problem.2">
+                  <td>55607006</td>
+                  <td>Atrial fibrillation (AF)                                    </td>
+                </tr>
+                <tr ID="problem.3">
+                  <td>55607006</td>
+                  <td>increasing SOB                                              </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="problem.2" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20120716"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="problem.2.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code code="55607006"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                  <text>
+                    <reference value="#problem.2"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20120716"/>
+                  </effectiveTime>
+                  <value code="I48"
+                    codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                    codeSystemName="ICD-10"
+                    displayName="Atrial fibrillation and flutter" xsi:type="CD"/>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="problem.3" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20120526"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="problem.3.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code code="55607006"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                  <text>
+                    <reference value="#problem.3"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20120526"/>
+                  </effectiveTime>
+                  <value code="R06"
+                    codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                    codeSystemName="ICD-10"
+                    displayName="Abnormalities of breathing" xsi:type="CD"/>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="problem.4" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20120526"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="problem.4.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code code="55607006"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                  <text>
+                    <reference value="#problem.4"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20120526"/>
+                  </effectiveTime>
+                  <value code="R42"
+                    codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                    codeSystemName="ICD-10"
+                    displayName="Dizziness and giddiness" xsi:type="CD"/>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="problem.5" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20120526"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="problem.5.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code code="55607006"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                  <text>
+                    <reference value="#problem.5"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20120526"/>
+                  </effectiveTime>
+                  <value code="D68"
+                    codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                    codeSystemName="ICD-10"
+                    displayName="Other coagulation defects" xsi:type="CD"/>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="problem.6" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20120526"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="problem.6.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code code="55607006"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                  <text>
+                    <reference value="#problem.6"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20120526"/>
+                  </effectiveTime>
+                  <value code="R53"
+                    codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                    codeSystemName="ICD-10"
+                    displayName="Malaise and fatigue" xsi:type="CD"/>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="problem.7" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20120526"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="problem.7.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code code="55607006"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                  <text>
+                    <reference value="#problem.7"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20120526"/>
+                  </effectiveTime>
+                  <value code="R63"
+                    codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                    codeSystemName="ICD-10"
+                    displayName="Symptoms and signs concerning food and fluid intake" xsi:type="CD"/>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <!--history-of-past-illness-->
+      <!--history-of-medication-use-->
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+          <templateId root="2.16.840.1.113883.10.20.1.8"/>
+          <code code="10160-0" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC" displayName="History of medication use"/>
+          <title>History of medication use</title>
+          <text>
+            <table border="1">
+              <tbody>
+                <tr>
+                  <th>Code</th>
+                  <th>Description</th>
+                </tr>
+                <tr ID="med.16">
+                  <td>C01DA14</td>
+                  <td>ISOSORBIDE MONONITRATE {Imdur} 60MG TABLET                                                                                                                                                                                                                     </td>
+                </tr>
+                <tr ID="med.15">
+                  <td>C01DA14</td>
+                  <td>Isosorbide mononitrate                                                                                                                                                                                                                                         </td>
+                </tr>
+                <tr ID="med.26">
+                  <td>null</td>
+                  <td>Glimepiride {Amaryl} 3mg Tablet                                                                                                                                                                                                                                </td>
+                </tr>
+                <tr ID="med.20">
+                  <td>J05AF07</td>
+                  <td>Tenofovir                                                                                                                                                                                                                                                      </td>
+                </tr>
+                <tr ID="med.25">
+                  <td>null</td>
+                  <td>OMEPRAZOLE 20MG CAPSULE                                                                                                                                                                                                                                        </td>
+                </tr>
+                <tr ID="med.27">
+                  <td>null</td>
+                  <td>SPIRONOLACTONE {Aldactone} 25MG TABLET                                                                                                                                                                                                                         </td>
+                </tr>
+                <tr ID="med.5">
+                  <td>A10AC01</td>
+                  <td>INSULIN - ISOPHANE {Insulatard}                                                                                                                                                                                                                                </td>
+                </tr>
+                <tr ID="med.13">
+                  <td>A02BC01</td>
+                  <td>Omeprazole                                                                                                                                                                                                                                                     </td>
+                </tr>
+                <tr ID="med.12">
+                  <td>C03DA01</td>
+                  <td>Spironolactone                                                                                                                                                                                                                                                 </td>
+                </tr>
+                <tr ID="med.17">
+                  <td>C09BA04</td>
+                  <td>Perindopril                                                                                                                                                                                                                                                    </td>
+                </tr>
+                <tr ID="med.2">
+                  <td>C01BD01</td>
+                  <td>Amiodarone                                                                                                                                                                                                                                                     </td>
+                </tr>
+                <tr ID="med.6">
+                  <td>A10BB12</td>
+                  <td>Amaryl                                                                                                                                                                                                                                                         </td>
+                </tr>
+                <tr ID="med.11">
+                  <td>C07AG02</td>
+                  <td>Carvedilol                                                                                                                                                                                                                                                     </td>
+                </tr>
+                <tr ID="med.7">
+                  <td>M04AC01</td>
+                  <td>Colchicine                                                                                                                                                                                                                                                     </td>
+                </tr>
+                <tr ID="med.18">
+                  <td>C09BA04</td>
+                  <td>PERINDOPRIL 3.338MG {?COVERSYL 4MG?} TABLET                                                                                                                                                                                                                    </td>
+                </tr>
+                <tr ID="med.23">
+                  <td>null</td>
+                  <td>WARFARIN 3MG TABLET                                                                                                                                                                                                                                            </td>
+                </tr>
+                <tr ID="med.1">
+                  <td>C10AA04</td>
+                  <td>Fluvastatin                                                                                                                                                                                                                                                    </td>
+                </tr>
+                <tr ID="med.3">
+                  <td>C01BD01</td>
+                  <td>AMIODARONE 200MG TABLET                                                                                                                                                                                                                                        </td>
+                </tr>
+                <tr ID="med.24">
+                  <td>null</td>
+                  <td>CARVEDILOL 6.25MG TABLET                                                                                                                                                                                                                                       </td>
+                </tr>
+                <tr ID="med.19">
+                  <td>B01AA03</td>
+                  <td>Warfarin                                                                                                                                                                                                                                                       </td>
+                </tr>
+                <tr ID="med.14">
+                  <td>C03CA02</td>
+                  <td>Bumetanide                                                                                                                                                                                                                                                     </td>
+                </tr>
+                <tr ID="med.4">
+                  <td>A10AC01</td>
+                  <td>Insulatard                                                                                                                                                                                                                                                     </td>
+                </tr>
+                <tr ID="med.9">
+                  <td>A10AB01</td>
+                  <td>?ACTRAPID HUMAN INSULIN INJECTION                                                                                                                                                                                                                              </td>
+                </tr>
+                <tr ID="med.8">
+                  <td>A10AB01</td>
+                  <td>Actrapid                                                                                                                                                                                                                                                       </td>
+                </tr>
+                <tr ID="med.21">
+                  <td>null</td>
+                  <td>BUMETANIDE {Burinex} 5MG TABLET                                                                                                                                                                                                                                </td>
+                </tr>
+                <tr ID="med.28">
+                  <td>null</td>
+                  <td>CIPROFLOXACIN 250MG TABLET                                                                                                                                                                                                                                     </td>
+                </tr>
+                <tr ID="med.22">
+                  <td>null</td>
+                  <td>COLCHICINE 500MCG TABLET                                                                                                                                                                                                                                       </td>
+                </tr>
+                <tr ID="med.10">
+                  <td>N02BA01</td>
+                  <td>Aspirin                                                                                                                                                                                                                                                        </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.3" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.3"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120716"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="C01BD01" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="AMIODARONE 200MG TABLET                                                                                                                                                                                                                                        ">
+                      <originalText>
+                        <reference value="#med.3"/>
+                      </originalText>
+                    </code>
+                    <name>AMIODARONE 200MG TABLET                                                                                                                                                                                                                                        </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="C01BD01"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="amiodarone"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.5" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.5"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120716"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="A10AC01" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="INSULIN - ISOPHANE {Insulatard}                                                                                                                                                                                                                                ">
+                      <originalText>
+                        <reference value="#med.5"/>
+                      </originalText>
+                    </code>
+                    <name>INSULIN - ISOPHANE {Insulatard}                                                                                                                                                                                                                                </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="A10AC01"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="insulin (human)"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.9" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.9"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120716"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="A10AB01" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="?ACTRAPID HUMAN INSULIN INJECTION                                                                                                                                                                                                                              ">
+                      <originalText>
+                        <reference value="#med.9"/>
+                      </originalText>
+                    </code>
+                    <name>?ACTRAPID HUMAN INSULIN INJECTION                                                                                                                                                                                                                              </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="A10AB01"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="insulin (human)"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.16" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.16"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120716"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="C01DA14" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="ISOSORBIDE MONONITRATE {Imdur} 60MG TABLET                                                                                                                                                                                                                     ">
+                      <originalText>
+                        <reference value="#med.16"/>
+                      </originalText>
+                    </code>
+                    <name>ISOSORBIDE MONONITRATE {Imdur} 60MG TABLET                                                                                                                                                                                                                     </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="C01DA14"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="isosorbide mononitrate"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.18" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.18"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120716"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="C09BA04" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="PERINDOPRIL 3.338MG {?COVERSYL 4MG?} TABLET                                                                                                                                                                                                                    ">
+                      <originalText>
+                        <reference value="#med.18"/>
+                      </originalText>
+                    </code>
+                    <name>PERINDOPRIL 3.338MG {?COVERSYL 4MG?} TABLET                                                                                                                                                                                                                    </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="C09BA04"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="perindopril and diuretics"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.21" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.21"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120716"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code nullFlavor="UNK"/>
+                    <name>BUMETANIDE {Burinex} 5MG TABLET                                                                                                                                                                                                                                </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code nullFlavor="UNK"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.22" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.22"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120716"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code nullFlavor="UNK"/>
+                    <name>COLCHICINE 500MCG TABLET                                                                                                                                                                                                                                       </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code nullFlavor="UNK"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.23" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.23"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120716"/>
+                <high value="20120718"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code nullFlavor="UNK"/>
+                    <name>WARFARIN 3MG TABLET                                                                                                                                                                                                                                            </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code nullFlavor="UNK"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.24" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.24"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120716"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code nullFlavor="UNK"/>
+                    <name>CARVEDILOL 6.25MG TABLET                                                                                                                                                                                                                                       </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code nullFlavor="UNK"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.25" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.25"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120716"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code nullFlavor="UNK"/>
+                    <name>OMEPRAZOLE 20MG CAPSULE                                                                                                                                                                                                                                        </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code nullFlavor="UNK"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.26" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.26"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120716"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code nullFlavor="UNK"/>
+                    <name>Glimepiride {Amaryl} 3mg Tablet                                                                                                                                                                                                                                </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code nullFlavor="UNK"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.27" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.27"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120716"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code nullFlavor="UNK"/>
+                    <name>SPIRONOLACTONE {Aldactone} 25MG TABLET                                                                                                                                                                                                                         </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code nullFlavor="UNK"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.28" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.28"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120716"/>
+                <high value="20120720"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code nullFlavor="UNK"/>
+                    <name>CIPROFLOXACIN 250MG TABLET                                                                                                                                                                                                                                     </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code nullFlavor="UNK"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.1"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="C10AA04" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Fluvastatin                                                                                                                                                                                                                                                    ">
+                      <originalText>
+                        <reference value="#med.1"/>
+                      </originalText>
+                    </code>
+                    <name>Fluvastatin                                                                                                                                                                                                                                                    </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="C10AA04"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="fluvastatin"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.2" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.2"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="C01BD01" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Amiodarone                                                                                                                                                                                                                                                     ">
+                      <originalText>
+                        <reference value="#med.2"/>
+                      </originalText>
+                    </code>
+                    <name>Amiodarone                                                                                                                                                                                                                                                     </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="C01BD01"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="amiodarone"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.4" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.4"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="A10AC01" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Insulatard                                                                                                                                                                                                                                                     ">
+                      <originalText>
+                        <reference value="#med.4"/>
+                      </originalText>
+                    </code>
+                    <name>Insulatard                                                                                                                                                                                                                                                     </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="A10AC01"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="insulin (human)"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.6" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.6"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="A10BB12" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Amaryl                                                                                                                                                                                                                                                         ">
+                      <originalText>
+                        <reference value="#med.6"/>
+                      </originalText>
+                    </code>
+                    <name>Amaryl                                                                                                                                                                                                                                                         </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="A10BB12"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="glimepiride"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.7" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.7"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="M04AC01" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Colchicine                                                                                                                                                                                                                                                     ">
+                      <originalText>
+                        <reference value="#med.7"/>
+                      </originalText>
+                    </code>
+                    <name>Colchicine                                                                                                                                                                                                                                                     </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="M04AC01"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="colchicine"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.8" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.8"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="A10AB01" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Actrapid                                                                                                                                                                                                                                                       ">
+                      <originalText>
+                        <reference value="#med.8"/>
+                      </originalText>
+                    </code>
+                    <name>Actrapid                                                                                                                                                                                                                                                       </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="A10AB01"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="insulin (human)"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.10" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.10"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="N02BA01" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Aspirin                                                                                                                                                                                                                                                        ">
+                      <originalText>
+                        <reference value="#med.10"/>
+                      </originalText>
+                    </code>
+                    <name>Aspirin                                                                                                                                                                                                                                                        </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="N02BA01"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="acetylsalicylic acid"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.11" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.11"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="C07AG02" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Carvedilol                                                                                                                                                                                                                                                     ">
+                      <originalText>
+                        <reference value="#med.11"/>
+                      </originalText>
+                    </code>
+                    <name>Carvedilol                                                                                                                                                                                                                                                     </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="C07AG02"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="carvedilol"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.12" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.12"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="C03DA01" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Spironolactone                                                                                                                                                                                                                                                 ">
+                      <originalText>
+                        <reference value="#med.12"/>
+                      </originalText>
+                    </code>
+                    <name>Spironolactone                                                                                                                                                                                                                                                 </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="C03DA01"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="spironolactone"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.13" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.13"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="A02BC01" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Omeprazole                                                                                                                                                                                                                                                     ">
+                      <originalText>
+                        <reference value="#med.13"/>
+                      </originalText>
+                    </code>
+                    <name>Omeprazole                                                                                                                                                                                                                                                     </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="A02BC01"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="omeprazole"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.14" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.14"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="C03CA02" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Bumetanide                                                                                                                                                                                                                                                     ">
+                      <originalText>
+                        <reference value="#med.14"/>
+                      </originalText>
+                    </code>
+                    <name>Bumetanide                                                                                                                                                                                                                                                     </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="C03CA02"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="bumetanide"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.15" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.15"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="C01DA14" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Isosorbide mononitrate                                                                                                                                                                                                                                         ">
+                      <originalText>
+                        <reference value="#med.15"/>
+                      </originalText>
+                    </code>
+                    <name>Isosorbide mononitrate                                                                                                                                                                                                                                         </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="C01DA14"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="isosorbide mononitrate"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.17" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.17"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="C09BA04" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Perindopril                                                                                                                                                                                                                                                    ">
+                      <originalText>
+                        <reference value="#med.17"/>
+                      </originalText>
+                    </code>
+                    <name>Perindopril                                                                                                                                                                                                                                                    </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="C09BA04"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="perindopril and diuretics"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.19" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.19"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high value="20120527"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="B01AA03" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Warfarin                                                                                                                                                                                                                                                       ">
+                      <originalText>
+                        <reference value="#med.19"/>
+                      </originalText>
+                    </code>
+                    <name>Warfarin                                                                                                                                                                                                                                                       </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="B01AA03"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="warfarin"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="med.20" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <text>
+                <reference value="#med.20"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120526"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK" xsi:type="PIVL_TS">
+                <period nullFlavor="UNK"/>
+              </effectiveTime>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code code="J05AF07" codeSystem="MTCODES"
+                      codeSystemName="MTCODES" displayName="Tenofovir                                                                                                                                                                                                                                                      ">
+                      <originalText>
+                        <reference value="#med.20"/>
+                      </originalText>
+                    </code>
+                    <name>Tenofovir                                                                                                                                                                                                                                                      </name>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="J05AF07"
+                          codeSystem="2.16.840.1.113883.6.73"
+                          codeSystemName="Anatomical Therapeutic Chemical" displayName="tenofovir disoproxil"/>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <!--history-of-medication-use-->
+      <!--allergies-adverse-reactions-alerts-->
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.2"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+          <code code="48765-2" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
+          <title>Allergies, adverse reactions, alerts</title>
+          <text>
+            <table border="1">
+              <tbody>
+                <tr>
+                  <th>Code</th>
+                  <th>Description</th>
+                </tr>
+                <tr ID="allergy.2">
+                  <td>420134006</td>
+                  <td>Ivabradina                                                                                                                                                                                                                                                    </td>
+                </tr>
+                <tr ID="allergy.3">
+                  <td>420134006</td>
+                  <td>Allopurinol                                                                                                                                                                                                                                                   </td>
+                </tr>
+                <tr ID="allergy.1">
+                  <td>420134006</td>
+                  <td>??allopurinol/ivabradine                                                                                                                                                                                                                                      </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+              <id extension="allergy.2" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20120716"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <id extension="allergy.2.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code code="420134006"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Propensity to adverse reactions"/>
+                  <text>
+                    <reference value="#allergy.2"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20120716"/>
+                  </effectiveTime>
+                  <value nullFlavor="NI" xsi:type="CD"/>
+                  <participant typeCode="CSM">
+                    <participantRole classCode="MANU">
+                      <playingEntity classCode="MMAT">
+                        <code nullFlavor="UNK">
+                          <originalText mediaType="text/xml">
+                            <reference value="#allergy.2"/>
+                          </originalText>
+                        </code>
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+              <id extension="allergy.3" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20120716"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <id extension="allergy.3.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code code="420134006"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Propensity to adverse reactions"/>
+                  <text>
+                    <reference value="#allergy.3"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20120716"/>
+                  </effectiveTime>
+                  <value nullFlavor="NI" xsi:type="CD"/>
+                  <participant typeCode="CSM">
+                    <participantRole classCode="MANU">
+                      <playingEntity classCode="MMAT">
+                        <code nullFlavor="UNK">
+                          <originalText mediaType="text/xml">
+                            <reference value="#allergy.3"/>
+                          </originalText>
+                        </code>
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+              <id extension="allergy.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20120526"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <id extension="allergy.1.obs.1" root="2.16.470.1.100.1.1.1000.990.1"/>
+                  <code code="420134006"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Propensity to adverse reactions"/>
+                  <text>
+                    <reference value="#allergy.1"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20120526"/>
+                  </effectiveTime>
+                  <value nullFlavor="NI" xsi:type="CD"/>
+                  <participant typeCode="CSM">
+                    <participantRole classCode="MANU">
+                      <playingEntity classCode="MMAT">
+                        <code nullFlavor="UNK">
+                          <originalText mediaType="text/xml">
+                            <reference value="#allergy.1"/>
+                          </originalText>
+                        </code>
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <!--allergies-adverse-reactions-alerts-->
+    </structuredBody>
+  </component>
+  <!--medical-sections-->
+</ClinicalDocument>

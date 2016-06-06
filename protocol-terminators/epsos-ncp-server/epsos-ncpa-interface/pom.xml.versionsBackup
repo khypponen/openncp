@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
+    <artifactId>epsos-interface</artifactId>
+    <name>EpSOS CC WS Interface Declarations</name>
+    <organization>
+        <name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
+        <url>www.srdc.com.tr</url>
+    </organization>
+    <parent>
+        <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+        <artifactId>epsos-ncp-server</artifactId>
+        <version>3.2.1</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-data-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ws.commons.axiom</groupId>
+            <artifactId>axiom-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ws.commons.axiom</groupId>
+            <artifactId>axiom-impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ws.commons.axiom</groupId>
+            <artifactId>axiom-dom</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-audit-manager</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <artifactId>epsos-assertion-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+    </dependencies>
+</project>

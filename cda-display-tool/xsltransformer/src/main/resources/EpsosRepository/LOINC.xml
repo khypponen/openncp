@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<LOINCInformation>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.21' epsosName='epSOSBloodPressure' code='8462-4'>
+<displayName lang='en'>INTRAVASCULAR DIASTOLIC</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.21' epsosName='epSOSBloodPressure' code='8480-6'>
+<displayName lang='en'>INTRAVASCULAR SYSTOLIC</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.9' epsosName='epSOSPregnancyInformation' code='11778-8'>
+<displayName lang='en'>Delivery date estimated (clinical)</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.9' epsosName='epSOSPregnancyInformation' code='11779-6'>
+<displayName lang='en'>Delivery date estimated from last menstrual period</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.9' epsosName='epSOSPregnancyInformation' code='11780-4'>
+<displayName lang='en'>Delivery date estimated from ovulation</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='57828-6'>
+<displayName lang='en'>Prescriptions</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='60590-7'>
+<displayName lang='en'>Medication dispensed</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='10160-0'>
+<displayName lang='en'>History of medication use</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='48765-2'>
+<displayName lang='en'>Allergies, adverse reactions, alerts</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='11369-6'>
+<displayName lang='en'>History of immunization</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='11348-0'>
+<displayName lang='en'>History of past illness</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='47519-4'>
+<displayName lang='en'>History of Procedures </displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='11450-4'>
+<displayName lang='en'>Problem list</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='10164-2'>
+<displayName lang='en'>History of present illness</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='46264-8'>
+<displayName lang='en'>History of medical device use</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='18776-5'>
+<displayName lang='en'>Plan of treatment</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='29554-3'>
+<displayName lang='en'>Procedures</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='47420-5'>
+<displayName lang='en'>Functional status assessment</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='29762-2'>
+<displayName lang='en'>Social history</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='10162-6'>
+<displayName lang='en'>History of pregnancies </displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='8716-3'>
+<displayName lang='en'>Physical findings</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.26' epsosName='epSOSSections' code='30954-2'>
+<displayName lang='en'>Relevant diagnostic tests/laboratory data</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.32' epsosName='epSOSDocumentCode' code='57833-6'>
+<displayName lang='en'>ePrescription</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.32' epsosName='epSOSDocumentCode' code='60593-1'>
+<displayName lang='en'>eDispensation</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.32' epsosName='epSOSDocumentCode' code='60591-5'>
+<displayName lang='en'>Patient Summary</displayName>
+</LOINCEntry>
+<LOINCEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.32' epsosName='epSOSDocumentCode' code='57016-8'>
+<displayName lang='en'>Patient Consent</displayName>
+</LOINCEntry>
+</LOINCInformation>

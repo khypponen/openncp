@@ -1,0 +1,14 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.12" displayName="ProblemHealthStatusCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="81323004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Alive and well"/>
+			<Concept code="313386006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="In remission"/>
+			<Concept code="162467007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Symptom free"/>
+			<Concept code="161901003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chronically ill"/>
+			<Concept code="271593001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Severely ill"/>
+			<Concept code="21134002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Disabled"/>
+			<Concept code="161045001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Severely disabled"/>
+			<Concept code="419099009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Deceased"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

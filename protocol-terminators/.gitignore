@@ -1,0 +1,32 @@
+**/nb-configuration.xml
+# Ignore all target directories
+target/
+
+# Ignore all embedded Axis files
+overlays/
+
+# Ignore all project files from IntelliJ
+*.iml
+.idea/
+
+# Ignore mac index files
+._*
+
+# Ignore Eclipse configuration files
+.classpath
+.project
+.settings
+
+# Ignore dependency diagram generated files
+*.graphml
+
+# Ignore out directory (IntelliJ)
+out/
+
+# Ignore IntelliJ Atlassian plugin file
+atlassian-ide-plugin.xml
+/epsos-ncp-client/epsos-client-connector/nbactions.xml
+/epsos-ncp-server/epsos-ws-server/nbactions.xml
+
+# Ignore .metadata directory
+.metadata

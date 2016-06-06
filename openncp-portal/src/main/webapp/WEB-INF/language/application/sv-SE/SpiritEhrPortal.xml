@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+<entry key="F">female</entry>
+<entry key="M">male</entry>
+<entry key="O">other</entry>
+<entry key="U">unknown</entry> 
+
+<entry key="contact.title">Contact</entry>
+
+<entry key="DBLMNG_QUERY_MODE__ALL_PAT">all patients</entry>  
+<entry key="DBLMNG_QUERY_MODE__DBL_AND_MRGPAT">local and index doubletts</entry>  
+<entry key="DBLMNG_QUERY_MODE__ONLY_DBLPAT">only index doubletts</entry>  
+<entry key="DBLMNG_QUERY_MODE__ONLY_MRGPAT">only local doubletts</entry>    
+
+<entry key="doubletten.download.link">Download report</entry>  
+<entry key="doubletten.filter.detail">Detail report</entry>  
+<entry key="doubletten.filter.pair">Pair report</entry>  
+<entry key="doubletten.filter.predefined">Predefined report</entry>  
+<entry key="doubletten.filter.query.type">Query type:</entry>  
+<entry key="doubletten.filter.report.type">Report type:</entry>  
+<entry key="doubletten.generate.button">generate</entry>
+<entry key="doubletten.management.title">Duplicate Management</entry>
+
+<entry key="help.download.manual">Download user manual</entry>  
+<entry key="help.title">Help</entry>  
+
+<entry key="info.build.date">Date:</entry>
+<entry key="info.build">Build:</entry>
+<entry key="info.producer">Producer:</entry>
+<entry key="info.product.name">Product name:</entry>
+<entry key="info.title">Info</entry>
+<entry key="info.version">Version:</entry>
+
+<entry key="lifecycleAddendum">Addendum</entry>
+<entry key="lifecycleReplacement">Replacement</entry>
+<entry key="lifecycleStorno">Cancelation</entry>
+<entry key="lifecycleTransformation">Transformation</entry>
+
+<entry key="list.entry.detail">details</entry>  
+
+<entry key="login.back">back</entry>
+<entry key="login.change">Change password</entry>
+<entry key="login.login">login</entry>
+<entry key="login.organisation">Organization</entry>
+<entry key="login.password.new">New password</entry>
+<entry key="login.password.retry">Password retry</entry>
+<entry key="login.password">Password</entry>
+<entry key="login.role">Role</entry>
+<entry key="login.username">User name</entry>
+
+<entry key="message.access">ACCESS WARNING !</entry>
+<entry key="message.doubletten.select.report">Please select a report type.</entry> 
+<entry key="message.error">ERROR !</entry>
+<entry key="message.info">INFO</entry>
+<entry key="message.insert.succesful">Patient successfully added.</entry>
+<entry key="message.insert.values">Please insert a value for {0}.</entry>
+<entry key="message.merge.added.patient">Patient added to merge.</entry>
+<entry key="message.merge.not.local.patient">Only patients from the local domain can be merged.</entry>
+<entry key="message.merge.only.two.patients">There are already two patients selected. Please deselect one before you choose another patient.</entry>
+<entry key="message.merge.select.survivor">Please select the surviving patient.</entry>
+<entry key="message.merge.succesful">Patient successfully merged.</entry>
+<entry key="message.popup.break.glass">break the glass</entry>
+<entry key="message.popup.relogin">login</entry>
+<entry key="message.popup.close">close</entry>
+<entry key="message.popup.detail">details</entry>
+<entry key="message.popup.no">no</entry>
+<entry key="message.popup.yes">yes</entry>
+<entry key="message.question">QUESTION ?</entry>
+<entry key="message.search.givenname.length">Please enter 3 or more characters for Given Name.</entry>
+<entry key="message.search.surname.length">Please enter 3 or more characters for Surname.</entry>
+<entry key="message.search.values">Please enter search values.</entry>
+<entry key="message.select.patient">Please select a Patient.</entry>
+<entry key="message.update.not.local.patient">You can not change this patient because he/she does not exist in the local domain. Do you want to create this patient locally?</entry>
+<entry key="message.update.succesful">Patient successfully updated.</entry>
+<entry key="message.warning">WARNING !</entry>
+
+<entry key="messageFillInNewPassword">Please enter a new password.</entry>
+<entry key="messageFillInPassword">Please enter a password.</entry>
+<entry key="messageFillInPasswordRetry">Please retry your new password.</entry>
+<entry key="messageFillInUser">Please enter a user name.</entry>
+<entry key="messageForcedPasswordChangeException">Your password was changed by the administrator. Please change your password now.</entry>
+<entry key="messageLoginException">An error occurred during login. Please check your user name and password and retry.</entry>
+<entry key="messageLoginNoOrganisation">You do not belong to an organization!</entry>
+<entry key="messageLoginNoPermissionForApplication">You do not have permission to access this application!</entry>
+<entry key="messageLoginNoRole">You do not have a role!</entry>
+<entry key="messagePasswordDuplicateUse">The old and new passwords are the same. Please choose another password.</entry>
+<entry key="messagePasswordMissmatch">Password mismatch.</entry>
+<entry key="messageUserAccountExpirationInDays">Your password expires in {0} days. Please change your password.</entry>
+<entry key="messageUserAccountExpiredException">Your password has expired. Please contact your administrator.</entry>
+<entry key="messageWrongUserException">This user name does not exist.</entry>
+
+<entry key="navi.config.contact">Contact - Info - Help</entry>
+<entry key="navi.config.help">Help</entry>
+<entry key="navi.config.settings">Settings</entry>
+<entry key="navi.info.access.protocol">Access History</entry>
+<entry key="navi.info.doubletten.management">Duplicate Management</entry>
+<entry key="navi.info.patient.agreement">Patient Consent</entry>
+<entry key="navi.link.patient.registration">Patient Registration</entry>
+<entry key="navi.link.patient.search">Patient Search</entry>
+<entry key="navi.report.search">Document Search</entry>
+<entry key="navi.report.prescription">Prescription</entry>
+<entry key="navi.report.summary">Patient Summary</entry>
+<entry key="navi.report.medical.history">Medical History</entry>
+<entry key="navi.report.insert">Document Insert</entry>
+<entry key="navi.report.create">Document Create</entry>
+<entry key="navi.report.emergency.data">Patient Summary</entry>
+<entry key="navi.report.vaccination">Vaccination</entry>
+<entry key="navi.report.xdm.report">Personal Health Record Import</entry>  
+<entry key="navi.user.login">is logged in</entry>
+<entry key="navi.user.logout.btn">logout</entry>
+<entry key="navi.user.organisation">Organization</entry>  
+<entry key="navi.user.role">Role</entry>  
+
+<entry key="navigator.pro.site">entries per site</entry>
+<entry key="navigator.sorting">sorting</entry>
+
+<entry key="patient.create.id.add">add</entry>
+<entry key="patient.create.id.remove">remove</entry>
+<entry key="patient.create.patient.id">Create patient ID:</entry>
+<entry key="patient.data.day.of.death">Date of death:</entry>
+<entry key="patient.data.account.number">Account data:</entry>
+<entry key="patient.data.agreement.title">Patient Consent</entry>
+<entry key="patient.data.birth.date">Birth Date:</entry>
+<entry key="patient.data.birth.place">Place of Birth:</entry>
+<entry key="patient.data.button.merge">merge</entry>
+<entry key="patient.data.button.modify">modify</entry>
+<entry key="patient.data.button.remove">remove</entry>
+<entry key="patient.data.button.save">save</entry>
+<entry key="patient.data.cancel">cancel</entry>
+<entry key="patient.data.citizen.ship">Citizenship:</entry>
+<entry key="patient.data.city">City:</entry>
+<entry key="patient.data.code">Zip/Postal Code:</entry>
+<entry key="patient.data.country">Country:</entry>
+<entry key="patient.data.domain.type">Domain Type</entry>
+<entry key="patient.data.domain">Domain</entry>
+<entry key="patient.data.driving.licence">Driver's license number:</entry>
+<entry key="patient.data.family.status">Marital status:</entry>
+<entry key="patient.data.givenname">Given Name:</entry>
+<entry key="patient.data.header.merge">Patient merge</entry>
+<entry key="patient.data.id.type">Patient Id Type</entry>
+<entry key="patient.data.insurance.number">Social insurance number:</entry>
+<entry key="patient.data.last.update">last update:</entry>
+<entry key="patient.data.mail.business">Mail (business):</entry>
+<entry key="patient.data.mail.home">Mail (home):</entry>
+<entry key="patient.data.middlename">Middle Name:</entry>
+<entry key="patient.data.name.space">Namespace</entry>
+<entry key="patient.data.nationality">Nationality:</entry>
+<entry key="patient.data.patient.id">Patient Id</entry>
+<entry key="patient.data.patientdata.title">Patient Data</entry>
+<entry key="patient.data.phone.business">Phone (business):</entry>
+<entry key="patient.data.phone.private">Phone (home):</entry>
+<entry key="patient.data.registration.title">Patient Registration</entry>
+<entry key="patient.data.religion">Religion:</entry>
+<entry key="patient.data.sex">Sex:</entry>
+<entry key="patient.data.state">State:</entry>
+<entry key="patient.data.street.address">Street:</entry>
+<entry key="patient.data.surname">Surname:</entry>
+<entry key="patient.data.title">Title:</entry>
+<entry key="patient.has.local.documents">Patient has local documents</entry>
+<entry key="patient.has.remote.documents">Patient has remote documents</entry>
+<entry key="patient.is.local">Patient is local</entry>
+<entry key="patient.list.givenname.sort.ascending">Given Name ascending</entry>
+<entry key="patient.list.givenname.sort.descending">Given Name descending</entry>
+<entry key="patient.list.no.patient">no patient found</entry>
+<entry key="patient.list.patientlist">Patient List</entry>
+<entry key="patient.list.surname.sort.ascending">Surname ascending</entry>
+<entry key="patient.list.surname.sort.descending">Surname descending</entry>
+<entry key="patient.no.local.documents">Patient has no local documents</entry>
+<entry key="patient.no.remote.documents">Patient has no remote documents</entry>
+<entry key="patient.not.local">Patient is not local</entry>
+<entry key="patient.search.birth.date.day">Day</entry>
+<entry key="patient.search.birth.date.month">Month</entry>
+<entry key="patient.search.birth.date.year">Year</entry>
+<entry key="patient.button.search">search</entry>
+<entry key="patient.button.search.reset">reset</entry>
+<entry key="patient.search.patient.id">Patient Id:</entry>
+<entry key="patient.search.patient.svnr">Social Security Number:</entry>
+<entry key="patient.search.patientsearch">Patient Search</entry>
+<entry key="patient.search.xcpd">external</entry>
+
+<entry key="report.button.search.reset">reset</entry>
+<entry key="report.button.search">search</entry>
+<entry key="report.category.search">Search in specific categories:</entry>
+
+<entry key="report.document.header.title">Document details</entry>
+<entry key="report.document.author.department">Author department:</entry>
+<entry key="report.document.author.institution">Author institution:</entry>
+<entry key="report.document.author.person">Author:</entry>
+<entry key="report.document.author.role">Author role:</entry>
+<entry key="report.document.author.speciality">Author speciality:</entry>
+<entry key="report.document.legal.authenticator">Legal authenticator:</entry>
+<entry key="report.document.title">Title:</entry>
+<entry key="report.document.description">Description:</entry>
+<entry key="report.document.creation.time">Creation date/time:</entry>
+<entry key="report.document.language">Language:</entry>
+<entry key="report.document.class.code">Document class:</entry>
+<entry key="report.document.confidentiality.code">Confidentiality:</entry>
+<entry key="report.document.healthcare.facility.type.code">Healthcare facility:</entry>
+<entry key="report.document.practice.setting.code">Practice setting:</entry>
+<entry key="report.document.type.code">Document type:</entry>
+<entry key="report.document.status">Status:</entry>
+<entry key="report.document.format.code">Format code:</entry>
+<entry key="report.document.size">Size:</entry>
+<entry key="report.document.format">Format:</entry>
+
+<entry key="report.submission.header.title">Submission details</entry>
+<entry key="report.submission.author.institution">Author institution:</entry>
+<entry key="report.submission.author.department">Author department:</entry>
+<entry key="report.submission.author.person">Author:</entry>
+<entry key="report.submission.author.role">Author role:</entry>
+<entry key="report.submission.author.speciality">Author speciality:</entry>
+<entry key="report.submission.title">Title:</entry>
+<entry key="report.submission.description">Description:</entry>
+<entry key="report.submission.time">Submission date/time:</entry>
+<entry key="report.submission.content.type.code">Content type:</entry>
+
+<entry key="report.folder.header.title">Folder details</entry>
+<entry key="report.folder.create">Create folder:</entry>
+<entry key="report.folder.title">Title:</entry>
+<entry key="report.folder.description">Description:</entry>
+<entry key="report.folder.code">Folder code:</entry>
+
+<entry key="report.create.document.data.incomplete">Document details incomplete!</entry>
+<entry key="report.create.document.submit">submit</entry>
+<entry key="report.create.document.success">Document successfully submitted.</entry>
+<entry key="report.create.folder.data.incomplete">Folder details incomplete!</entry>
+<entry key="report.create.submission.data.incomplete">Submission details incomplete!</entry>
+<entry key="report.create.upload.added.documents">Added documents:</entry>
+<entry key="report.create.upload.choose.document">Choose documents:</entry>
+<entry key="report.create.upload.document">upload</entry>
+<entry key="report.create.upload.remove.document">remove</entry>
+<entry key="report.date.search">Search in a specific time period:</entry>
+<entry key="report.detail.document">Document</entry>
+<entry key="report.detail.title">Document details</entry>
+<entry key="report.details">details</entry>
+<entry key="report.from">from</entry>
+<entry key="report.is.accesable">Report access allowed</entry>
+<entry key="report.link.report.type">Document type</entry>
+<entry key="report.list.date.sort.ascending">Date ascending</entry>
+<entry key="report.list.date.sort.descending">Date descending</entry>
+<entry key="report.list.no.document">no documents found</entry>
+<entry key="report.list">Document List</entry>
+<entry key="report.not.accesable">You do not have permissions for report access!</entry>
+<entry key="report.search.advanced">advanced search</entry>
+<entry key="report.search">Document Search</entry>
+<entry key="report.prescription">Prescription</entry>
+<entry key="report.summary">Patient Summary</entry>
+<entry key="report.till">to</entry>
+
+<entry key="xdm.import">Personal Health Record Import</entry>
+<entry key="xdm.import.description">Import patient data in XDM format to the XDS repository.\nThe data must be packaged in a ZIP file. Choose your file and upload it to the server.</entry>
+<entry key="xdm.select.file.before.upload">Please choose a ZIP file before pressing upload.</entry>
+<entry key="xdm.import.upload.document.choose">Choose ZIP file:</entry>
+<entry key="xdm.import.upload.document">upload</entry>
+<entry key="xdm.import.button">import</entry>
+<entry key="xdm.select.patient">Please choose a patient.</entry>
+<entry key="xdm.select.only.one.patient">Please choose only one patient.</entry>
+<entry key="xdm.select.document">Please choose a document.</entry>
+<entry key="xdm.patient.on.media">Patient on media</entry>
+<entry key="xdm.patient.content.preview">preview</entry>
+<entry key="xdm.patient.content.import">import</entry>
+
+<!-- NEW ENTRIES !!! -->
+
+<entry key="session.timeout.relogin">Your session timed out, please login again.</entry>
+<entry key="patient.id.create.failed">No patient id created for domain {0}!\nPossible reasons: not found in addable-removable domains and is not the local working domain.\nPlease choose another domain or remove it from the list.</entry>
+<entry key="patient.id.insert.failed">No patient id inserted for domain {0}</entry>
+<entry key="patient.id.create.exception">Error creating Patient ID!</entry>
+<entry key="report.document.metadata.exception">Error getting document metadata!</entry>
+<entry key="report.document.formatcode.exception">Error getting document format code!</entry>
+<entry key="report.choose.upload.file">Please choose a file before pressing upload!</entry>
+<entry key="report.folder.metadata.exception">Error getting folder metadata!</entry>
+<entry key="report.submission.metadata.exception">Error getting submission metadata!</entry>
+<entry key="report.folder.add.document">Really add this document to the folder?</entry>
+<entry key="xdm.export">export</entry>
+<entry key="xdm.export.really">Do you really want to export those documents?\nThe export will take a while. The download starts automatically.</entry>
+
+<entry key="xdm.import.success">Data successful imported.</entry>
+<entry key="policy.administration.title">Patient Agreement</entry>
+<entry key="patient.subscription.header">Notification</entry>
+<entry key="navi.info.patient.subscribtion">Notification</entry>
+<entry key="patient.data.create.report">print report</entry>
+<entry key="patient.data.create.label">print label</entry>
+
+<entry key="messagePasswordMinimumLengthException">Please insert a minimum of {0} characters for the password.</entry>
+<entry key="messagePasswordMinimumUpperCaseCharacterException">Please insert a minimum of {0} upper case characters for the password.</entry>
+<entry key="messagePasswordMinimumLowerCaseCharacterException">Please insert a minimum of {0} lower case characters for the password.</entry>
+<entry key="messagePasswordMinimumDigitException">Please insert a minimum of {0} digits for the password.</entry>
+<entry key="messagePasswordMinimumSpecialCharacterException">Please insert a minimum of {0} special characters for the password.</entry>
+
+<entry key="login.tooltip.password.length">Minimum length {0} characters</entry>
+<entry key="login.tooltip.password.upper.case">Minimum {0} upper case characters.</entry>
+<entry key="login.tooltip.password.lower.case">Minimum {0} lower case characters.</entry>
+<entry key="login.tooltip.password.digits">Minimum {0} digits.</entry>
+<entry key="login.tooltip.password.special.character">Minimum {0} special characters.</entry>
+
+<entry key="patient.subscribe">subscribe</entry>
+<entry key="message.popup.error">An error has occurred. Please contact your Systemadministrator.</entry>
+
+<entry key="patient.created.patient.ids">Created patient IDs:</entry>
+<entry key="message.create.patient.id">Please create a patient ID!</entry>
+<entry key="message.birth.greater.death">Day of death is before birthdate!</entry>
+<entry key="message.birthdate.future">Choosen birthdate is in the future!</entry>
+
+<entry key="report.submission.recipient.organisation">Recipient Organisation:</entry>
+<entry key="report.submission.recipient.person">Recipient Person:</entry>
+
+<entry key="report.list.filter.organisation">Organisation:</entry>
+<entry key="report.list.filter.type.code">Content type:</entry>
+<entry key="report.list.filter.button.reset">reset</entry>
+<entry key="report.list.filter.button.filter">filter</entry>
+<entry key="report.list.button.filter">filter</entry>
+
+<entry key="patient.search.international">Patient Search international</entry>
+<entry key="patient.search.country">Country:</entry>
+<entry key="patient.data.pseudonym">Pseudonym:</entry>
+<entry key="patient.data.tan.code">TAN code:</entry>
+    
+    <entry key="AT">Österrike</entry>
+	<entry key="CZ">Tjeckien</entry>
+	<entry key="DK">Danmark</entry>
+	<entry key="FR">Frankrike</entry>
+	<entry key="DE">Tyskland</entry>
+	<entry key="GR">Grekland</entry>
+	<entry key="IT">Italien</entry>
+	<entry key="NL">Nederländerna</entry>
+	<entry key="SK">Slovakien</entry>
+	<entry key="ES">Spanien</entry>
+	<entry key="SE">Sverige</entry>
+	<entry key="GB">Storbritannien</entry>
+
+<!-- NEW ENTRIES - 11.10.2010 !!! -->
+
+<entry key="patient.data.ins.france">National Health Identifier:</entry>
+<entry key="xdsi.header">Web Image Viewer</entry>
+<entry key="xdsi.info.series.number">Image Number:</entry>
+<entry key="xdsi.info.study">Study:</entry>
+<entry key="xdsi.info.series">Series:</entry>
+<entry key="patient.search.treatment.question">Are you in a treatment relationship with the selected patients?</entry>
+<entry key="patient.search.fiscal.code">Fiscal Code:</entry>
+<entry key="message.popup.patient.search.italy">Please fill in the fields family name, gender and first name or date of birth.\nOr search only according the fiscal code.</entry>
+<entry key="message.rpc.error">An error has occurred. Please contact your system administrator.</entry>
+<entry key="patient.data.unique.identifier">Unique Identifier:</entry>
+<entry key="patient.data.region.spain">Region:</entry>
+<entry key="patient.data.unique.identifier.spain">Patient Identifier Code:</entry>
+
+<!-- PolicyIds -->
+<!-- Country=IHE -->
+<entry key="2.16.17.710.812.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.812.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=NL -->
+<entry key="2.16.17.710.810.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.810.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=GB -->
+<entry key="2.16.17.710.809.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.809.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=GR -->
+<entry key="2.16.17.710.808.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.808.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=SE -->
+<entry key="2.16.17.710.807.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.807.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=IT -->
+<entry key="2.16.17.710.806.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.806.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=SK -->
+<entry key="2.16.17.710.805.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.805.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=CZ -->
+<entry key="2.16.17.710.804.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.804.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=DE -->
+<entry key="2.16.17.710.803.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.803.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=DK -->
+<entry key="2.16.17.710.802.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.802.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=ES -->
+<entry key="2.16.17.710.801.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.801.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=CK -->
+<entry key="2.16.17.710.800.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.800.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=FR -->
+<entry key="2.16.17.710.790.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.790.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=AT -->
+<entry key="2.16.17.710.780.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.780.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=TR -->
+<entry key="2.16.17.710.813.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.813.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=CH -->
+<entry key="2.16.17.710.814.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.814.2.4.1.1">Policy which allows everything.</entry>
+<!-- Country=EE -->
+<entry key="2.16.17.710.815.2.4.1.2">Policy which denies everything.</entry>
+<entry key="2.16.17.710.815.2.4.1.1">Policy which allows everything.</entry>
+
+<entry key="navi.link.patient.update">Patient Update</entry>
+<entry key="patient.consent.save">Save</entry>
+<entry key="patient.consent.print">Print</entry>
+
+<entry key="patient.data.id.code">Patient ID Code:</entry>
+<entry key="policy.not.combinable">Policy is not combinable.</entry>
+<entry key="policy.stored.succesful">Policy successful stored.</entry>
+<entry key="consent.not.given">No patient consent exists.</entry>
+<entry key="message.popup.consent.edit">Edit patient consent.</entry>
+
+<entry key="message.popup.emergency">Emergency</entry>
+
+<entry key="EE">Estonia</entry>
+<entry key="CH">Switzerland</entry>
+<entry key="TR">Türkiye</entry>
+
+<!-- NEW ENTRIES - 6.4.2011 !!! -->
+
+<entry key="doubletten.no.data">No Data available to create a Report.</entry>
+
+</properties>

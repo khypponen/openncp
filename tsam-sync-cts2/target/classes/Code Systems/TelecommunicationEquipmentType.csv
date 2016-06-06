@@ -1,0 +1,10 @@
+code;term;description
+BP;Beeper;"Beeper"
+CP;Cellular Phone;"Cellular Phone"
+FX;Fax;"Fax"
+MD;Modem;"Modem"
+TDD;Telecommunications Device for the Deaf;"Telecommunications Device for the Deaf"
+PH;Telephone;"Telephone"
+TTY;"Teletypewriter;Teletypewriter"
+X.400;"X.400 email address: Use Only If Telecommunication Use Code Is NET;X.400 email address: Use Only If Telecommunication Use Code Is NET"
+Internet;"Internet Address: Use Only If Telecommunication Use Code Is NET;Internet Address: Use Only If Telecommunication Use Code Is NET"

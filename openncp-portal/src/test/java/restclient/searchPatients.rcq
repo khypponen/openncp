@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rest-client version="3.5"><request><http-version>1.1</http-version><http-follow-redirects/><URL>http://localhost:8080/epsosportal/rest/search/patients/7yE23IUFl%2Bd4E1aBWV6I1w%3D%3D</URL><method>POST</method><headers><header key="Authorization" value="cGF0aWVudDp0ZXN0"/></headers><body><string content-type="text/plain" charset="UTF-8">&lt;PatientDiscovery&gt;
+ &lt;identifiers&gt;
+   &lt;identifier root="2.16.840.1.113883.2.9.4.3.2" extension="CRRPLA47H13A794V" /&gt;
+   &lt;identifier root="2.16.840.1.113883.2.9.4.1.4" extension="1234" /&gt;
+ &lt;/identifiers&gt;
+ &lt;demographics&gt;
+     &lt;country&gt;IT&lt;/country&gt;
+&lt;/demographics&gt;
+&lt;/PatientDiscovery&gt;</string></body></request></rest-client>

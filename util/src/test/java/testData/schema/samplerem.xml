@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AcceptanceRejectionByRecipient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://uri.etsi.org/02640/v1# TS02640v1_3.xsd"
+ xmlns="http://uri.etsi.org/02640/v1#"
+ version="">
+    <EventCode>Rejection</EventCode>
+    <EventReasons>
+        <EventReason>
+            <Code>1</Code>
+            <Details>Unable to verify security header</Details>
+        </EventReason>
+    </EventReasons>
+    <EvidenceIdentifier>urn:esens:ehealth:1</EvidenceIdentifier>
+    <EvidenceIssuerDetails>
+        <ElectronicAddress xmlns="http://uri.etsi.org/02231/v2#">
+            <URI>http://www.ncp:greece</URI>
+        </ElectronicAddress>
+    </EvidenceIssuerDetails>
+    <EventTime>2014-12-28T17:23:19.956Z</EventTime>
+    <SenderDetails>
+        <ElectronicAddress xmlns="http://uri.etsi.org/02231/v2#">
+            <URI>http://www.ncp.italy</URI>
+        </ElectronicAddress>
+    </SenderDetails>
+    <RecipientsDetails>
+        <EntityDetails>
+            <ElectronicAddress xmlns="http://uri.etsi.org/02231/v2#">
+                <URI>urn:patient:id</URI>
+            </ElectronicAddress>
+        </EntityDetails>
+    </RecipientsDetails>
+</AcceptanceRejectionByRecipient>

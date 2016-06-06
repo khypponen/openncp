@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-W3CDTD XHTML 1.0 TransitionalEN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jsp/jstl/core" 
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <style>
+        .companyHeaderGrid tr, .companyHeaderGrid td {
+    border: none;
+}
+    </style>
+</h:head>
+<body>
+   
+    <div class="portlet-msg-info">
+        You can upload here your patient summary from any removable storage drive and then select the language in which you want to see this
+    </div>
+    <h:form enctype="multipart/form-data" id="form1">  
+        <h:panelGrid id="upload" columns="2">  
+         <p:outputLabel value="Upload your patient summary file here:" />
+         <p:fileUpload value="#{trilliumBean.cdafile}" mode="simple" allowTypes="/(\.|\/)(xml)$/"/>            
+
+        <p:outputLabel value="Select the language to display the documents: " />
+        <p:selectOneMenu value="#{trilliumBean.ltrlang}">  
+            <f:selectItem itemLabel="Select the language to display the documents: " itemValue="#{trilliumBean.ltrlang}" />  
+            <f:selectItems value="#{trilliumBean.ltrlanguages}" />  
+         </p:selectOneMenu>
+
+        </h:panelGrid>
+
+        <p:commandLink ajax="false" id="buttonhtml" update="p1" 
+                actionListener="#{trilliumBean.export('html')}"  >
+                <p:graphicImage value="/images/html-icon.png" height="50"/>
+        </p:commandLink>    
+   
+        <p:commandLink ajax="false" id="button1" update="p1" rendered="false"
+                actionListener="#{trilliumBean.export('xml')}">
+                <p:graphicImage value="/images/xml_icon.png" height="50"/>
+        </p:commandLink>   
+
+        <p:commandLink ajax="false" id="button2" update="p1" rendered="false" target="_blank"
+                actionListener="#{trilliumBean.export('pdf')}">
+            <p:graphicImage value="/images/pdf_icon.png" height="50"/>
+        </p:commandLink>    
+
+        <h:commandLink id="button3" rendered="false" 
+                       target="_blank" 
+                actionListener="#{trilliumBean.export('ccd')}">
+            <p:graphicImage value="/images/CCD.png" height="50"/>
+        </h:commandLink>           
+        
+        <p:commandButton id="button1_" ajax="false" value="Export XML" update="p1" actionListener="#{trilliumBean.export('xml')}" rendered="false"/>  
+        <p:commandButton id="button2_" ajax="false" value="Export PDF" update="p1" actionListener="#{trilliumBean.export('pdf')}" rendered="false"/>  
+                
+        <p:panel id="p1" rendered="false">
+            <h:outputText escape="false" value="#{trilliumBean.convertedcda}" id="p2" />
+        </p:panel>
+
+    </h:form>  
+        
+</body>
+</html>

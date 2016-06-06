@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+    <local-tx-datasource>
+        <jndi-name>XCPD</jndi-name>
+        <connection-url>jdbc:mysql://192.168.111.201/eadc</connection-url>
+        <driver-class>com.mysql.jdbc.Driver</driver-class>
+        <user-name>epsos</user-name>
+        <password>epsos</password>
+        <max_allowed_packet>10M</max_allowed_packet>
+    </local-tx-datasource>
+    <local-tx-datasource>
+        <jndi-name>XCA</jndi-name>
+        <connection-url>jdbc:mysql://192.168.111.201/eadc</connection-url>
+        <driver-class>com.mysql.jdbc.Driver</driver-class>
+        <user-name>epsos</user-name>
+        <password>epsos</password>
+        <max_allowed_packet>10M</max_allowed_packet>
+    </local-tx-datasource>
+    <local-tx-datasource>
+        <jndi-name>XDR</jndi-name>
+        <connection-url>jdbc:mysql://192.168.111.201/eadc</connection-url>
+        <driver-class>com.mysql.jdbc.Driver</driver-class>
+        <user-name>epsos</user-name>
+        <password>epsos</password>
+        <max_allowed_packet>10M</max_allowed_packet>
+    </local-tx-datasource>
+</datasources>
+
+
+

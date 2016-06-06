@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- For assistance related to logback-translator or configuration  -->
+<!-- files in general, please contact the logback user mailing list -->
+<!-- at http://www.qos.ch/mailman/listinfo/logback-user             -->
+<!--                                                                -->
+<!-- For professional support please see                            -->
+<!--    http://www.qos.ch/shop/products/professionalSupport         -->
+<!--                                                                -->
+<configuration> 
+  <appender name="InfoLog" class="ch.qos.logback.core.FileAppender">
+    <File>log/info.log</File>
+    <encoder>
+      <pattern>[ %-6p] [%d{dd.MM.yyyy HH:mm:ss}] --- %c: %m%n</pattern>
+    </encoder>
+  </appender>
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>[ %-6p] [%d{dd.MM.yyyy HH:mm:ss}] --- %c: %m%n</pattern>
+    </encoder>
+  </appender>
+  <logger name="epsos.ccd.posam" level="INFO">
+    <appender-ref ref="stdout"/>
+  </logger>
+  <logger name="org.springframework.jdbc.datasource.DataSourceUtils" level="DEBUG">
+    <appender-ref ref="InfoLog"/>
+  </logger>
+  <root level="INFO">
+    <appender-ref ref="InfoLog"/>
+  </root>
+</configuration>

@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+<entry key="F">Femmina</entry>
+<entry key="M">Maschio</entry>
+<entry key="O">other</entry>     <!-- OUT OF SCOPE - NOT IN MVC !!!!! -->
+<entry key="U">unknown</entry>   <!-- OUT OF SCOPE - NOT IN MVC !!!!! -->
+<entry key="UN">Non Differenziato</entry>                    <!-- ADDED BECAUSE NOT PREVIOUSLY INCLUDED !!!!! --> 
+
+<entry key="contact.title">Contatto</entry>
+<entry key="consent.not.given">Non esiste nessun Consenso del Paziente.</entry>
+
+<entry key="DBLMNG_QUERY_MODE__ALL_PAT">tutti i pazienti</entry>  
+<entry key="DBLMNG_QUERY_MODE__DBL_AND_MRGPAT">local and index doubletts</entry> <!-- NOT CLEAR MEANING - PORTAL A ??? --> 
+<entry key="DBLMNG_QUERY_MODE__ONLY_DBLPAT">only index doubletts</entry>         <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="DBLMNG_QUERY_MODE__ONLY_MRGPAT">only local doubletts</entry>         <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="doubletten.download.link">Rapporto di download</entry>  
+<entry key="doubletten.filter.detail">Rapporto dettagliato</entry>  
+<entry key="doubletten.filter.pair">Pair report</entry>                          <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="doubletten.filter.predefined">Rapporto predefinito</entry>  
+<entry key="doubletten.filter.query.type">Tipo di ricerca:</entry>  
+<entry key="doubletten.filter.report.type">Tipo di rapporto:</entry>  
+<entry key="doubletten.generate.button">generare</entry>
+<entry key="doubletten.management.title">Duplicate Management</entry>            <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+
+<entry key="help.download.manual">Scarica manuale utente</entry>                   
+<entry key="help.title">Aiuto</entry>  
+
+<entry key="info.build.date">Data:</entry>
+<entry key="info.build">Generato:</entry>
+<entry key="info.producer">Produttore:</entry>
+<entry key="info.product.name">Nome prodotto:</entry>
+<entry key="info.title">Info</entry>
+<entry key="info.version">Versione:</entry>
+
+<entry key="lifecycleAddendum">Addendum</entry>
+<entry key="lifecycleReplacement">Sostituzione</entry>
+<entry key="lifecycleStorno">Cancelazione</entry>
+<entry key="lifecycleTransformation">Trasformazione</entry>
+<entry key="list.entry.detail">Trasformazione</entry>  
+<entry key="login.back">indietro</entry>
+<entry key="login.change">Cambia la password</entry>
+<entry key="login.login">login</entry>
+<entry key="login.organisation">Organizzazione</entry>
+<entry key="login.password.new">Nuova password</entry>
+<entry key="login.password.retry">Riinserire la Password</entry>
+<entry key="login.password">Password</entry>
+<entry key="login.role">Ruolo</entry>
+<entry key="login.username">Nome utente</entry>
+<entry key="login.tooltip.password.length">Numero minimo di caratteri {0} </entry>
+<entry key="login.tooltip.password.upper.case">Numero minimo di caratteri maiuscoli {0}.</entry>
+<entry key="login.tooltip.password.lower.case">Numero minimo di caratteri minuscoli {0}.</entry>
+<entry key="login.tooltip.password.digits">Numero minimo di cifre {0}.</entry>
+<entry key="login.tooltip.password.special.character">Numero minimo di caratteri speciali {0}.</entry>
+
+<entry key="message.access">AVVISO CONTROLLO ACCESSO !</entry>
+<entry key="message.doubletten.select.report">Selezionare un tipo di rapporto.</entry> 
+<entry key="message.error">ERRORE !</entry>
+<entry key="message.info">INFO</entry>
+<entry key="message.insert.succesful">Patient successfully added.</entry>       <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="message.insert.values">Inserire un valore per {0}.</entry>          
+<entry key="message.merge.added.patient">Patient added to merge.</entry>        <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="message.merge.not.local.patient">Only patients from the local domain can be merged.</entry>  <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="message.merge.only.two.patients">There are already two patients selected. Please deselect one before you choose another patient.</entry>  <!-- DOES NOT APPLY TO LOMBARDY - PORTAL A ??? -->
+<entry key="message.merge.select.survivor">Please select the surviving patient.</entry>  <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="message.merge.succesful">Patient successfully merged.</entry>       <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="message.popup.break.glass">break the glass</entry>                  <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="message.popup.relogin">login</entry>
+<entry key="message.popup.close">chiudere</entry>
+<entry key="message.popup.detail">dettagli</entry>
+<entry key="message.popup.no">no</entry>
+<entry key="message.popup.yes">sI</entry>
+<entry key="message.question">DOMANDE ?</entry>
+<entry key="message.search.givenname.length">Inserire 3 o piu' caratteri per il Nome.</entry>  <!-- NOT CLEAR MEANING - WHICH CONTEXT, WHY ??? Names can be 2 chars -->
+<entry key="message.search.surname.length">Inserire 3 o piu' caratteri per il Cognome.</entry> <!-- NOT CLEAR MEANING - WHICH CONTEXT, WHY ??? Names can be 2 chars -->
+<entry key="message.search.values">Inserire valore da ricercare.</entry>
+<entry key="message.select.patient">Selezionare un Paziente.</entry>
+<entry key="message.update.not.local.patient">You can not change this patient because he/she does not exist in the local domain. Do you want to create this patient locally?</entry> <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="message.update.succesful">Patient successfully updated.</entry>
+<entry key="message.warning">ATTENZIONE !</entry>
+<entry key="messageFillInNewPassword">Inserire la nuova password.</entry>
+<entry key="messageFillInPassword">Inserire la password.</entry>
+<entry key="messageFillInPasswordRetry">Reinserire la nuova password.</entry>
+<entry key="messageFillInUser">Inserire il nome utente.</entry>
+<entry key="messageForcedPasswordChangeException">La password e' stata cambiata dall'amministratore. Si prega di cambiare ora la password.</entry>
+<entry key="messageLoginException">Si e' verificato un errore di Login.Controllare Nome utente / Password e riprovare.</entry>
+<entry key="messageLoginNoOrganisation">Non appartieni ad una organizzazione!</entry>
+<entry key="messageLoginNoPermissionForApplication">Non hai sufficineti permessi per accedere a questa applicazione!</entry>
+<entry key="messageLoginNoRole">Non e' definito il tuo Ruolo!</entry>
+<entry key="messagePasswordDuplicateUse">La vecchia e la nuova Password sono uguali: scegiere una nuova Password.</entry>
+<entry key="messagePasswordMissmatch">Password errata -oppure- Password diverse.</entry>       <!-- NOT CLEAR MEANING - WHICH CONTEXT ??? -->
+<entry key="messageUserAccountExpirationInDays">La tua Password scadra' tra {0} giorni. Cambiare la Password.</entry>
+<entry key="messageUserAccountExpiredException">La tua Password e' scaduta. Contattare il tuo amministratore.</entry>
+<entry key="messageWrongUserException">Il Nome Utente specificato non esiste.</entry>
+<entry key="messagePasswordMinimumLengthException">Inserire almemo {0} caratteri per la password.</entry>
+<entry key="messagePasswordMinimumUpperCaseCharacterException">Inserire almemo {0} caratteri maiuscoli per la password.</entry>
+<entry key="messagePasswordMinimumLowerCaseCharacterException">Inserire almemo {0} caratteri minuscoli per la password.</entry>
+<entry key="messagePasswordMinimumDigitException">Inserire almemo {0} cifre per la password.</entry>
+<entry key="messagePasswordMinimumSpecialCharacterException">Inserire almemo {0} caratteri speciali per la password.</entry>
+<entry key="message.popup.error">Si e' verificato un errore. Contattare l'amministratore di sistema.</entry>
+<entry key="message.create.patient.id">Please create a patient ID!</entry>                                      <!-- NOT CLEAR CONTEXT - PORTAL A !!! -->
+<entry key="message.birth.greater.death">Day of death is before birthdate!</entry>                              <!-- OUT OF EPSOS SCOPE !!!! - PORTAL A !!! -->
+<entry key="message.birthdate.future">La data di nascita Ë successiva alla data corrente!</entry>
+<!-- ERROR - ERROR - ERROR: ITALIAN PATIENTS ARE IDENTIFIED ONLY WITH FISCAL CODE AND 5 DIGITS OF HEALTHCARE CARD !!! -->
+<entry key="message.popup.patient.search.italy">Inserire i seguenti dati: Codice Fiscale e ultime 5 cifre Tessera Sanitaria.</entry>
+<entry key="message.rpc.error">Si e' verificato un errore. Contattare l'Amministratore di Sistema.</entry>
+<entry key="message.popup.consent.edit">Modifica Consenso Paziente.</entry>
+<entry key="message.popup.emergency">Emergenza</entry>
+
+<entry key="navi.config.contact">Contatti - Info - Aiuto</entry>
+<entry key="navi.config.help">Aiuto</entry>
+<entry key="navi.config.settings">Configurazione</entry>
+<entry key="navi.info.access.protocol">Elenco accessi</entry>
+<entry key="navi.info.doubletten.management">Duplicate Management</entry>
+<entry key="navi.info.patient.agreement">Consenso Paziente</entry>
+<entry key="navi.link.patient.registration">Registrazione Paziente</entry>
+<entry key="navi.link.patient.search">Ricerca Paziente</entry>
+<entry key="navi.report.search">Ricerca Documento</entry>
+<entry key="navi.report.prescription">Prescrizione</entry>
+<entry key="navi.report.summary">Patient Summary (Profile Sanitario Sintetico</entry>
+<entry key="navi.report.medical.history">Medical History</entry>      <!-- OUT OF SCOPE - NOT IN MVC !!!!! -->
+<entry key="navi.report.insert">Document Insert</entry>               <!-- Portal A -->
+<entry key="navi.report.create">Document Create</entry>               <!-- Portal A -->
+<entry key="navi.report.emergency.data">Patient Summary</entry>       <!-- IF EMERGENCY DATA: OUT OF SCOPE - NOT IN MVC !!!!! -->
+<entry key="navi.report.vaccination">Vaccination</entry>              <!-- OUT OF SCOPE - NOT IN MVC !!!!! TO BE USED: History of immunization -->
+<entry key="navi.report.xdm.report">Personal Health Record Import</entry>  <!-- Portal A -->
+<entry key="navi.user.login">e' collegato</entry>
+<entry key="navi.user.logout.btn">Scollegati</entry>
+<entry key="navi.user.organisation">Organizzazione</entry>  
+<entry key="navi.user.role">Ruolo</entry>  
+<entry key="navigator.pro.site">entries per site</entry>              <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="navigator.sorting">ordina</entry>
+<entry key="navi.info.patient.subscribtion">Notifica</entry>
+<entry key="navi.link.patient.update">Aggiorna Patiente</entry>                 <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+
+<entry key="patient.create.id.add">aggiungi</entry>
+<entry key="patient.create.id.remove">rimuovi</entry>
+<entry key="patient.create.patient.id">Create patient ID:</entry>     <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="patient.data.day.of.death">Date of death:</entry>         <!-- OUT OF SCOPE - PORTAL A ??? NOT AN EPSOS USE CASE !!!!! -->
+<entry key="patient.data.account.number">Dati di registrazione:</entry>
+<entry key="patient.data.agreement.title">Consenso del Paziente</entry>
+<entry key="patient.data.birth.date">Data di nascita:</entry>
+<entry key="patient.data.birth.place">Luogo di nascita:</entry>
+<entry key="patient.data.button.merge">merge</entry>                  <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="patient.data.button.modify">modifica</entry>
+<entry key="patient.data.button.remove">rimuovi</entry>
+<entry key="patient.data.button.save">salva</entry>
+<entry key="patient.data.cancel">cancella</entry>
+<entry key="patient.data.citizen.ship">Cittadinanza:</entry>
+<entry key="patient.data.city">Citta':</entry>
+<entry key="patient.data.code">Zip/Codice Avviamento Postale:</entry>
+<entry key="patient.data.country">Nazione:</entry>
+<entry key="patient.data.domain.type">Tipo di Dominio</entry>
+<entry key="patient.data.domain">Dominio</entry>                      <!-- NOT CLEAR MEANING -->
+<entry key="patient.data.driving.licence">Numero Patente di guida:</entry>
+<entry key="patient.data.family.status">Stato civile:</entry>
+<entry key="patient.data.givenname">Nome:</entry>
+<entry key="patient.data.header.merge">Patient merge</entry>          <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="patient.data.id.type">Tipo di identificativo del Paziente</entry>
+<entry key="patient.data.insurance.number">Numero assicurazione malattie:</entry>
+<entry key="patient.data.last.update">ultimo aggiornamento:</entry>
+<entry key="patient.data.mail.business">Indirizzo Mail (ufficio):</entry>
+<entry key="patient.data.mail.home">Indirizzo Mail (casa):</entry>
+<entry key="patient.data.middlename">Secondo nome:</entry>
+<entry key="patient.data.name.space">Namespace</entry>                <!-- NOT CLEAR MEANING -->
+<entry key="patient.data.nationality">Nazionalita':</entry>
+<entry key="patient.data.patient.id">Identificativo Paziente</entry>
+<entry key="patient.data.patientdata.title">Dati Paziente</entry>
+<entry key="patient.data.phone.business">Telefono (ufficio):</entry>
+<entry key="patient.data.phone.private">Telefono (casa):</entry>
+<entry key="patient.data.registration.title">Patient Registration</entry>   <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="patient.data.religion">Religion:</entry>                  <!-- OUT OF SCOPE - NOT IN MVC !!!!! -->
+<entry key="patient.data.sex">Sesso:</entry>                          <!-- OUT OF SCOPE - NOT IN MVC !!!!! TO BE USED ADMINISTRATIVE GENDER --> 
+<entry key="patient.data.state">Stato:</entry>
+<entry key="patient.data.street.address">Via/Piazza:</entry>
+<entry key="patient.data.surname">Cognome:</entry>
+<entry key="patient.data.title">Titolo:</entry>
+<entry key="patient.has.local.documents">Patient has local documents</entry>    <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="patient.has.remote.documents">Il Paziente ha documenti remoti</entry>
+<entry key="patient.is.local">Patient is local</entry>                          <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="patient.list.givenname.sort.ascending">Nome in ordine alfabetico</entry>
+<entry key="patient.list.givenname.sort.descending">Nome in ordine alfabetico inverso</entry>
+<entry key="patient.list.no.patient">non trovato nessun paziente</entry>
+<entry key="patient.list.patientlist">Elenco Pazienti</entry>
+<entry key="patient.list.surname.sort.ascending">Cognome in ordine alfabetico</entry>
+<entry key="patient.list.surname.sort.descending">Cognome in ordine alfabetico inverso</entry>
+<entry key="patient.no.local.documents">Patient has no local documents</entry>  <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="patient.no.remote.documents">Il Paziente non ha documenti remoti</entry>
+<entry key="patient.not.local">Patient is not local</entry>                     <!-- NOT CLEAR MEANING - PORTAL A ??? -->
+<entry key="patient.search.birth.date.day">Giorno</entry>
+<entry key="patient.search.birth.date.month">Mese</entry>
+<entry key="patient.search.birth.date.year">Anno</entry>
+<entry key="patient.button.search">cerca</entry>
+<entry key="patient.button.search.reset">azzera</entry>
+<entry key="patient.search.patient.id">Identificativo Paziente:</entry>
+<entry key="patient.search.patient.svnr">Numero assicurazione malattie:</entry>
+<entry key="patient.search.patientsearch">Ricerca Paziente</entry>
+<entry key="patient.search.xcpd">esterno</entry>
+<entry key="patient.id.create.failed">No patient id created for domain {0}!\nPossible reasons: not found in addable-removable domains and is not the local working domain.\nPlease choose another domain or remove it from the list.</entry>  <!-- NOT CLEAR CONTEXT - PORTAL A !!! -->
+<entry key="patient.id.insert.failed">Nessun ID paziente inserito per il dominio {0}</entry> <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="patient.id.create.exception">Error creating Patient ID!</entry>                  <!-- NOT CLEAR CONTEXT - PORTAL A !!! -->
+<entry key="policy.administration.title">Patient Agreement</entry>                                              <!-- NOT CLEAR MEANING !!! -->
+<entry key="patient.subscription.header">Notifica</entry>
+<entry key="patient.data.create.report">stampa rapporto</entry>                                                 
+<entry key="patient.data.create.label">stampa etichetta</entry>                                                 <!-- NOT CLEAR CONTEXT !!! -->
+<entry key="patient.subscribe">sottoscrivi</entry>                                                              <!-- NOT CLEAR CONTEXT !!! -->
+<entry key="patient.created.patient.ids">Created patient IDs:</entry>                                           <!-- NOT CLEAR CONTEXT - PORTAL A !!! -->
+<entry key="patient.search.international">Ricerca paziente all'estero</entry>
+<entry key="patient.search.country">Nazione/Regione:</entry>
+<entry key="patient.data.pseudonym">Pseudonimo:</entry>
+<entry key="patient.data.tan.code">TAN code/Codice TEAM:</entry>
+<entry key="patient.data.ins.france">Codice Identificativo Sanitario Nazionale:</entry>
+<entry key="patient.search.treatment.question">Stai prestando assistenza sanitaria al paziente selezionato, previo il suo consenso esplicito?</entry>  
+<entry key="patient.search.fiscal.code">Codice Fiscale:</entry>
+<entry key="patient.data.unique.identifier">Identificativo Univoco:</entry>
+<entry key="patient.data.region.spain">Regione:</entry>
+<entry key="patient.data.unique.identifier.spain">Codice Identificatovo Paziente:</entry>
+<entry key="patient.consent.save">Salva</entry>
+<entry key="patient.consent.print">Stampa</entry>
+<entry key="patient.data.id.code">Codice ID Paziente:</entry>
+<entry key="policy.not.combinable">Policy non Ë combinabile.</entry>            <!-- NOT CLEAR MEANING   ??? -->
+<entry key="policy.stored.succesful">Policy salvata con successo.</entry>
+<entry key="patient.data.audit.report">creare un rapporto di Audit per il Paziente</entry><entry key="2.16.17.710.806.2.4.1.2">Policy which denies everything.</entry>
+
+<entry key="report.button.search.reset">reset</entry>
+<entry key="report.button.search">search</entry>
+<entry key="report.category.search">Search in specific categories:</entry>
+<entry key="report.document.header.title">Dettagli documento</entry>
+<entry key="report.document.author.department">Dipartimento dell'autore:</entry>
+<entry key="report.document.author.institution">Istituzione dell'autore:</entry>
+<entry key="report.document.author.person">Autore:</entry>
+<entry key="report.document.author.role">Ruolo dell'autore:</entry>
+<entry key="report.document.author.speciality">Specializzazione dell'autore:</entry>
+<entry key="report.document.legal.authenticator">Autenticatore legale:</entry>
+<entry key="report.document.title">Titolo:</entry>
+<entry key="report.document.description">Descrizione:</entry>
+<entry key="report.document.creation.time">Data/ora di creazione:</entry>
+<entry key="report.document.language">Lingua:</entry>
+<entry key="report.document.class.code">Classe/tipo di documento:</entry>
+<entry key="report.document.confidentiality.code">Livello di riservatezza:</entry>
+<entry key="report.document.healthcare.facility.type.code">Presidio sanitario:</entry>         
+<entry key="report.document.practice.setting.code">Codice Ambulatorio:</entry>                 <!-- NOT CLEAR MEANING ??? -->
+<entry key="report.document.type.code">Tipo documento:</entry>
+<entry key="report.document.status">Stato:</entry>
+<entry key="report.document.format.code">Codice formato:</entry>
+<entry key="report.document.size">Dimensione:</entry>
+<entry key="report.document.format">Formato:</entry>
+<entry key="report.submission.header.title">Dettagli di invio</entry>                         <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.submission.author.institution">Istituzione dell'autore:</entry>            <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.submission.author.department">Dipartimento dell'autore:</entry>            <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.submission.author.person">Autore:</entry>                                  <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.submission.author.role">Ruolo dell'autore:</entry>                         <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.submission.author.speciality">Specialita' Autore:</entry>                  <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.submission.title">Titolo:</entry>                                          <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.submission.description">Descrizione:</entry>                               <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.submission.time">Data/ora di invio:</entry>                                <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.submission.content.type.code">Tipo di contenuto:</entry>                   <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.folder.header.title">Folder details</entry>                                <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.folder.create">Create folder:</entry>                                      <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.folder.title">Title:</entry>                                               <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.folder.description">Description:</entry>                                   <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.folder.code">Folder code:</entry>                                          <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.create.document.data.incomplete">Dettagli documento incompleti!</entry>      <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.create.document.submit">invia</entry>                                     <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.create.document.success">Documento inviato con successo.</entry>          <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.create.folder.data.incomplete">Dettagli cartella incompleti!</entry>      <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.create.submission.data.incomplete">Dettagli invio incompleti!</entry>     <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.create.upload.added.documents">Documenti aggiunti:</entry>                <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.create.upload.choose.document">Scegli i documenti:</entry>                <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.create.upload.document">Carica</entry>                                    <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.create.upload.remove.document">rimuovi</entry>                            <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.date.search">Cerca in uno specifico periodo temporale:</entry>            <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.detail.document">Documento</entry>                                        <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.detail.title">Dettagli documenti</entry>                                  <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.details">dettagli</entry>                                                 <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.from">da</entry>                                                          <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.is.accesable">Raporto di accesso permesso</entry>                         <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.link.report.type">Tipo documento</entry>                                  <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.list.date.sort.ascending">Date crescenti</entry>                          <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.list.date.sort.descending">Date decrescenti</entry>                       <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.list.no.document">nessun documento trovato</entry>                        <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.list">Lista documenti</entry>                                             <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.not.accesable">Non hai le autorizzazioni per acccedere al raporto accessi!</entry>     <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.search.advanced">Ricerca avanzata</entry>                                 <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.search">Ricerca documento</entry>                                         <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.prescription">Prescrizione</entry>                                        <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.summary">Patient Summary / Profilo Sanitario Sintetico</entry>            <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.till">A</entry>                                                           <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.document.metadata.exception">Errore di ricezione informazioni (metadati) documento!</entry>
+<entry key="report.document.formatcode.exception">Errore di ricezione codice formato documento!</entry>
+<entry key="report.choose.upload.file">Selezionae un file prima di premere carica!</entry>                      <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.folder.metadata.exception">Errore di ricezione informazioni (metadati) cartella!</entry>     <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.submission.metadata.exception">Errore di ricezione informazioni (metadati) di invio!</entry> <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.folder.add.document">Vuoi realmente aggiungere il documento alla cartella?</entry>           <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="report.submission.recipient.organisation">Organizzazione ricevente/destinataria:</entry>            <!-- NOT CLEAR CONTEXT !!! -->
+<entry key="report.submission.recipient.person">Persona ricevente/destinataria:</entry>                         <!-- NOT CLEAR CONTEXT !!! -->
+<entry key="report.list.filter.organisation">Organizzazione:</entry>
+<entry key="report.list.filter.type.code">Tipo contenuto:</entry>
+<entry key="report.list.filter.button.reset">azzera</entry>
+<entry key="report.list.filter.button.filter">filtro</entry>
+<entry key="report.list.button.filter">filtro</entry>
+
+<entry key="session.timeout.relogin">La sessione e' scaduta, ricollegati per favore.</entry>
+
+<entry key="xdm.import">Personal Health Record Import</entry>                                <!-- NOT CLEAR CONTEXT - PORTAL A !!! -->
+<entry key="xdm.import.description">Import patient data in XDM format to the XDS repository.\nThe data must be packaged in a ZIP file. Choose your file and upload it to the server.</entry>  <!-- NOT CLEAR CONTEXT - PORTAL A !!! -->
+<entry key="xdm.select.file.before.upload">Please choose a ZIP file before pressing upload.</entry>   <!-- NOT CLEAR CONTEXT - PORTAL A !!! -->
+<entry key="xdm.import.upload.document.choose">Choose ZIP file:</entry>                      <!-- NOT CLEAR CONTEXT - PORTAL A !!! -->
+<entry key="xdm.import.upload.document">upload</entry>                                       <!-- NOT CLEAR CONTEXT - PORTAL A !!! -->
+<entry key="xdm.import.button">import</entry>                                                <!-- NOT CLEAR CONTEXT - PORTAL A !!! -->
+<entry key="xdm.select.patient">Selezionare un paziente.</entry>                             <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="xdm.select.only.one.patient">Selezionare un solo paziente.</entry>               <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="xdm.select.document">Selezionare un documento.</entry>                           <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="xdm.patient.on.media">Patient on media</entry>                                   <!-- NOT CLEAR CONTEXT - PORTAL A !!! -->
+<entry key="xdm.patient.content.preview">anteprima</entry>                                   <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="xdm.patient.content.import">import</entry>                                       <!-- NOT CLEAR CONTEXT - PORTAL A !!! -->
+<entry key="xdm.export">esporta</entry>                                                                         <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="xdm.export.really">Vuoi realmente esportare questi documenti?\nL'operazione richiedera' un certo tempo. Lo scaricamento inizia automaticamente.</entry> <!-- NOT CLEAR CONTEXT - PORTAL A ??? -->
+<entry key="xdm.import.success">Data successful imported.</entry>         <!-- NOT CLEAR CONTEXT - PORTAL A !!! -->
+<entry key="xdsi.header">Web Image Viewer</entry>                                            <!-- NOT CLEAR MEANING !!! -->
+<entry key="xdsi.info.series.number">Image Number:</entry>                                   <!-- NOT CLEAR CONTEXT !!! -->
+<entry key="xdsi.info.study">sTUDIO:</entry>
+<entry key="xdsi.info.series">Serie:</entry>
+
+<entry key="AT">Austria</entry>
+<entry key="CZ">Repubblica Ceca</entry>
+<entry key="DK">Danimarca</entry>
+<entry key="FR">Francia</entry>
+<entry key="DE">Germania</entry>
+<entry key="GR">Grecia</entry>
+<entry key="IT">Italia</entry>
+<entry key="NL">Paesi Bassi</entry>
+<entry key="SK">Slovacchia</entry>
+<entry key="ES">Spagna</entry>
+<entry key="SE">Svezia</entry>
+<entry key="GB">Regno Unito</entry>
+<entry key="EE">Estonia</entry>
+<entry key="CH">Svizzera</entry>
+<entry key="TR">Turchia</entry>
+
+<!-- PolicyIds -->
+<!-- Country=IHE -->
+<entry key="2.16.17.710.812.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.812.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=NL -->
+<entry key="2.16.17.710.810.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.810.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=GB -->
+<entry key="2.16.17.710.809.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.809.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=GR -->
+<entry key="2.16.17.710.808.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.808.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=SE -->
+<entry key="2.16.17.710.807.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.807.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=IT -->
+<entry key="2.16.17.710.806.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.806.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=SK -->
+<entry key="2.16.17.710.805.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.805.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=CZ -->
+<entry key="2.16.17.710.804.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.804.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=DE -->
+<entry key="2.16.17.710.803.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.803.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=DK -->
+<entry key="2.16.17.710.802.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.802.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=ES -->
+<entry key="2.16.17.710.801.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.801.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=CK -->
+<entry key="2.16.17.710.800.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.800.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=FR -->
+<entry key="2.16.17.710.790.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.790.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=AT -->
+<entry key="2.16.17.710.780.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.780.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=TR -->
+<entry key="2.16.17.710.813.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.813.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=CH -->
+<entry key="2.16.17.710.814.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.814.2.4.1.1">Policy che concede tutti i diritti.</entry>
+<!-- Country=EE -->
+<entry key="2.16.17.710.815.2.4.1.2">Policy che nega tutti i diritti.</entry>
+<entry key="2.16.17.710.815.2.4.1.1">Policy che concede tutti i diritti.</entry>
+
+
+<!-- NEW ENTRIES - 6.4.2011 !!! -->
+
+<entry key="doubletten.no.data">No Data available to create a Report.</entry>
+
+<entry key="ui.flags.info">Selezionare il paese del paziente</entry>
+
+<entry key="patient.data.address">Address</entry>
+
+<entry key="ui.searchmask.info">È possibile trovare il paziente utilizzando i seguenti criteri</entry>
+
+<entry key="ui.search.info">Ricerca per il paziente</entry>
+
+<entry key="ui.ps.info">View Patient Summary</entry>
+
+<entry key="ui.ep.info">View ePrescriptions</entry>
+
+<entry key="ui.mro.info">View Medical Related Overview Records</entry>
+
+<entry key="ui.consent.info">Consent Handling</entry>
+
+<entry key="ui.hcer.info">Submit an HealthCare Encounter Report</entry>
+
+<entry key="ui.confirmation.info">You have to declare why do you want to have access to the patient data</entry>
+
+<entry key="ui.ps.details">You will now have access to the patient summary documents of the patient below</entry>
+
+<entry key="ui.ep.details">You will now have access to the ePrescription documents of the patient below</entry>
+
+<entry key="ui.mro.details">You will now have access to the Medical Related Overview documents of the patient below</entry>
+
+<entry key="pac.select.language.document">Seleziona la lingua per visualizzare il documento</entry>
+<entry key="pac.select.language"> Seleziona la lingua</entry>
+<entry key="hcer.submit.button.save">scaricare</entry>
+
+    <entry key="trca.header">Per accedere ai dati del Paziente devi inserire la Conferma del Paziente per la tua Organizzazione
+</entry>
+    <entry key="trca.purpose">Finalità di Uso</entry>
+    <entry key="trca.treatment">Struttura Sanitaria (TRATTAMENTO E CURA)</entry>
+    <entry key="trca.emergency">Dipartimento di Emergenza ed Urgenza (EMERGENZA)</entry>
+    <entry key="trca.agreement">Sei d'accordo col fare accedere alle tue informazioni cliniche 
+Da parte di un Operatore Sanitario ? (Chiedere al paziente)</entry>
+    <entry key="trca.yes">Si</entry>
+    <entry key="trca.no">No</entry>
+    <entry key="trca.confirm">Conferma</entry>
+    <entry key="trca.cancel">Cancella</entry>
+    <entry key="trca.confirmation">Dare Conferma</entry>
+    <entry key="trca.no.authorization">Il paziente non ha dato la sua autorizzazione per accedere alla sue informazioni, quindi il workflow è completato.</entry>
+
+    <!--HCER diagnosis messages -->
+    <entry key="patient.data.hcer.title">Invia HCER</entry>
+    <entry key="hcer.tab.diagnoses.title">Diagnosi</entry>
+    <entry key="hcer.diagnoses.datatable.title">Diagnosi attualmente memorizzate 
+</entry>
+    <entry key="hcer.diagnoses.datatable.empty">Nessuna diagnosi memorizzata</entry>
+    <entry key="hcer.diagnosis.problem.code">Codice Problema</entry>
+    <entry key="hcer.diagnosis.problem.display">Problema</entry>
+    <entry key="hcer.diagnosis.status">Stato</entry>
+    <entry key="hcer.diagnosis.onset">Data Attivazione</entry>
+    <entry key="hcer.diagnosis.resolution">Data Risoluzione </entry>
+    <entry key="hcer.diagnosis.observation.code">Codice Osservazione</entry>
+    <entry key="hcer.diagnosis.observation.display">Osservazione</entry>
+    <entry key="hcer.diagnosis.observations.display">Osservazioni</entry>
+    <entry key="hcer.diagnosis.description">Descrizione</entry>
+    <entry key="hcer.diagnosis.menu.view">Visualizza</entry>
+    <entry key="hcer.diagnosis.menu.delete">Cancella</entry>
+    <entry key="hcer.diagnosis.dialog.view.title"> Visualizza Diagnosi
+dialog</entry>
+    <entry key="hcer.diagnosis.dialog.delete.title">Cancella Diagnosi
+confirmation dialog</entry>
+    <entry key="hcer.diagnosis.dialog.delete.message">Sei sicuro di cancellare le diagnosi selezionate ?</entry>
+    <entry key="hcer.diagnosis.dialog.ok">OK</entry>
+    <entry key="hcer.diagnosis.dialog.cancel">Cancella</entry>
+    <entry key="hcer.diagnosis.add">Aggiungi Diagnosi</entry>
+    <entry key="hcer.diagnosis.dialog.add.title">Aggiungi Diagnosi
+dialog</entry>
+    <entry key="hcer.diagnosis.dialog.fields.required">Il campo è 
+richiesto</entry>
+    <entry
+key="hcer.diagnosis.dialog.fields.resolution.required">Il campo data di Risoluzione
+è richiesto solo in caso di diagnosi "risolta"</entry>
+    <entry key="hcer.diagnosis.dialog.add.save">Salva</entry>
+    <entry key="hcer.diagnosis.dialog.add.cancel">Cancella</entry>
+    <entry key="hcer.diagnosis.observations.datatable.title">Lista delle
+Osservazioni memorizzate</entry>
+    <entry key="hcer.diagnosis.observations.datatable.code">Codice</entry>
+    <entry key="hcer.diagnosis.observations.datatable.display">Nome</entry>
+ 
+    <!--HCER diagnosis validation messages-->
+    <entry key="hcer.diagnosis.problem.required"> Il codice Problema è
+Richiesto, oppure il valore non è valido </entry>
+    <entry key="hcer.diagnosis.onset.required">Il campo data di attivazione è
+richiesto</entry>
+    <entry key="hcer.diagnosis.resolution.required"> Il campo data di risoluzione è
+richiesto </entry>
+    <entry key="hcer.diagnosis.dates.interval.validation">La data di Risoluzione 
+deve differire da quella di attivazione</entry>
+    <entry key="hcer.diagnosis.resolution.not.required"> Il campo data di Risoluzione
+è richiesto solo in caso di diagnosi "risolta"</entry>
+    <entry key="hcer.diagnosis.observation.required">E' richiesta almeno 
+una osservazione, oppure il valore non è valido</entry>
+ 
+    <!--HCER procedures messages -->
+    <entry key="hcer.tab.procedures.title">Procedure</entry>
+ 
+    <!--HCER  messages -->
+    <entry key="hcer.tab.treatments.title">Trattamenti</entry>
+ 
+    <!--HCER submit messages-->
+    <entry key="hcer.submit.button.title">Invia Documento</entry>
+    <entry key="hcer.sumbit.dialog.title">Invia Elementi dialog</entry>
+    <entry key="hcer.submit.dialog.message">Sei sicuro di memorizzare tutte queste entry mediche ?</entry>
+    <entry key="hcer.submit.dialog.ok">OK</entry>
+    <entry key="hcer.submit.dialog.cancel">Cancella</entry>
+    <entry key="hcer.submit.entries.emtpy">Nessuna entry medica trovata,
+Si prega di provare a memorizzare almeno una entry.</entry>
+    <entry key="hcer.diagnosis.dialog.submission.title">Invio HCER 
+dialog</entry>
+    <entry key="hcer.diagnosis.dialog.submission.succeeded.message">L'HCER
+È stato inviato con successo.</entry>
+    <entry key="hcer.diagnosis.dialog.submission.failed.message">L'invio del HCER
+è fallito</entry>
+
+
+</properties>

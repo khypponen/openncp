@@ -1,0 +1,1155 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<SNOMEDCTInformation>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='271003'>
+<displayName lang='en'>Bone plate</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='2282003'>
+<displayName lang='en'>Breast prosthesis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='3418002'>
+<displayName lang='en'>Chondrectomy of spine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.11' epsosName='epSOSReactionAllergy' code='4386001'>
+<displayName lang='en'>Bronchospasm</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='4770005'>
+<displayName lang='en'>Colporrhaphy for repair of urethrocele</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='6025007'>
+<displayName lang='en-US'>Laparoscopic appendectomy</displayName>
+<displayName lang='en-GB'>Laparoscopic appendicectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.13' epsosName='epSOSSeverity' code='6736007'>
+<displayName lang='en'>Moderate</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.15' epsosName='epSOSStatusCode' code='7087005'>
+<displayName lang='en'>Intermittent</displayName>
+<displayName lang='es-ES'>Intermitente</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='7791007'>
+<displayName lang='en'>Soy protein</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='9021002'>
+<displayName lang='en'>Carbaryl</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.11' epsosName='epSOSReactionAllergy' code='9826008'>
+<displayName lang='en'>Conjunctivitis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='9888007'>
+<displayName lang='en'>Excision of intracranial lesion</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='10458001'>
+<displayName lang='en-US'>Evacuation of intracerebral hematoma</displayName>
+<displayName lang='en-GB'>Evacuation of intracerebral haematoma</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='10847001'>
+<displayName lang='en'>Bronchoscopy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='11466000'>
+<displayName lang='en-US'>Cesarean section</displayName>
+<displayName lang='en-GB'>Caesarean section</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='11526002'>
+<displayName lang='en'>Aspartame</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='11894001'>
+<displayName lang='en'>Clostridium botulinum toxin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='12503006'>
+<displayName lang='en-US'>Aluminum</displayName>
+<displayName lang='en-GB'>Aluminium</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='12658000'>
+<displayName lang='en'>Operation on female genital organs</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='13577000'>
+<displayName lang='en'>Nut</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='13619001'>
+<displayName lang='en'>Thyroidectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='13652007'>
+<displayName lang='en'>Silicone</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='14402002'>
+<displayName lang='en'>Wood</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='14423008'>
+<displayName lang='en'>Adhesive bandage</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='14745005'>
+<displayName lang='en'>Hepatitis A virus vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='15018006'>
+<displayName lang='en'>Laparoscopic repair of inguinal hernia</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='16545005'>
+<displayName lang='en'>Operation on nervous system</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='17107009'>
+<displayName lang='en'>Mitral valve prosthesis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='19063003'>
+<displayName lang='en'>Arthroplasty of knee</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.30' epsosName='epSOSResolutionOutcome' code='21134002'>
+<displayName lang='en'>Disability</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='21371007'>
+<displayName lang='en'>Operation on abdominal region</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='23968004'>
+<displayName lang='en'>Colectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='24073000'>
+<displayName lang='en'>Artificial cardiac valve prosthesis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.13' epsosName='epSOSSeverity' code='24484000'>
+<displayName lang='en'>Severe</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='26476002'>
+<displayName lang='en'>Operation on bronchus</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='30904006'>
+<displayName lang='en'>Vascular surgery procedure</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='31006001'>
+<displayName lang='en'>Kingdom Plantae</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='31031000'>
+<displayName lang='en-US'>Orthopedic internal fixation system</displayName>
+<displayName lang='en-GB'>Orthopaedic internal fixation system</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='33008008'>
+<displayName lang='en'>Dust</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='33234009'>
+<displayName lang='en'>Smallpox vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='34689006'>
+<displayName lang='en'>Hepatitis B virus vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='34969007'>
+<displayName lang='en'>Operation on retroperitoneum</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='35736007'>
+<displayName lang='en'>Cholera vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='36228007'>
+<displayName lang='en'>Ophthalmic examination and evaluation</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='37508003'>
+<displayName lang='en'>Operation on neck</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='38102005'>
+<displayName lang='en'>Cholecystectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.11' epsosName='epSOSReactionAllergy' code='39579001'>
+<displayName lang='en'>Anaphylaxis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.11' epsosName='epSOSReactionAllergy' code='41291007'>
+<displayName lang='en-US'>Angioedema</displayName>
+<displayName lang='en-GB'>Angio-oedema</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.11' epsosName='epSOSReactionAllergy' code='43116000'>
+<displayName lang='en'>Eczema</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='43230003'>
+<displayName lang='en'>Rubber</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='43252007'>
+<displayName lang='en'>Cochlear prosthesis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='43735007'>
+<displayName lang='en-US'>Sulfur</displayName>
+<displayName lang='en-GB'>Sulphur</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='44027008'>
+<displayName lang='en'>Seafood</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='44558001'>
+<displayName lang='en'>Repair of inguinal hernia</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='45595009'>
+<displayName lang='en'>Laparoscopic cholecystectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='45633005'>
+<displayName lang='en-US'>Peritoneal dialyzer</displayName>
+<displayName lang='en-GB'>Peritoneal dialyser</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='46116005'>
+<displayName lang='en-US'>Excision of malignant tumor of breast</displayName>
+<displayName lang='en-GB'>Excision of malignant tumour of breast</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='47534009'>
+<displayName lang='en'>Decompression of median nerve</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='49509003'>
+<displayName lang='en'>Operation on lymphatic structure</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='52454007'>
+<displayName lang='en'>Albumin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='53266006'>
+<displayName lang='en'>Operation on diaphragm</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='54885007'>
+<displayName lang='en'>Extraction of cataract</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.15' epsosName='epSOSStatusCode' code='55561003'>
+<displayName lang='en'>Active</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.23' epsosName='epSOSCodeProb' code='55607006'>
+<displayName lang='en'>Problem</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='56361007'>
+<displayName lang='en'>Excision of soft tissue</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='56844000'>
+<displayName lang='en'>Yellow fever vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='57168000'>
+<displayName lang='en'>Operation on bone</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.20' epsosName='epSOSBloodGroup' code='58460004'>
+<displayName lang='en'>Blood group O</displayName>
+<displayName lang='en'>Blood group O</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.18' epsosName='epSOSAdverseEventType' code='59037007'>
+<displayName lang='en'>Drug intolerance</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='59300005'>
+<displayName lang='en'>Operation on spleen</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='59351004'>
+<displayName lang='en'>Citrate</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='59545008'>
+<displayName lang='en'>Pesticide</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='59712006'>
+<displayName lang='en-US'>Evacuation of subdural hematoma</displayName>
+<displayName lang='en-GB'>Evacuation of subdural haematoma</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='61153008'>
+<displayName lang='en-US'>Measles, mumps and rubella vaccine</displayName>
+<displayName lang='en-GB'>Measles + Mumps + Rubella vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='61602008'>
+<displayName lang='en'>Pertussis vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='61789006'>
+<displayName lang='en'>Dye</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='63016009'>
+<displayName lang='en'>Complete cystectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='63112008'>
+<displayName lang='en'>Bone wire</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='63289001'>
+<displayName lang='en'>Surgical metal nail, device</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='64253000'>
+<displayName lang='en'>Implantation of heart assist system</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='64368001'>
+<displayName lang='en'>Partial mastectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.23' epsosName='epSOSCodeProb' code='64572001'>
+<displayName lang='en'>Disease</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.17' epsosName='epSOSUnknownInformation' code='64970000'>
+<displayName lang='en'>Substance type unknown</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='66951008'>
+<displayName lang='en'>Carotid endarterectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='67270000'>
+<displayName lang='en'>Hip prosthesis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='68183006'>
+<displayName lang='en'>Bone screw</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.11' epsosName='epSOSReactionAllergy' code='70076002'>
+<displayName lang='en'>Rhinitis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='70183006'>
+<displayName lang='en'>Subcutaneous mastectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='70536003'>
+<displayName lang='en'>Transplant of kidney</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='72506001'>
+<displayName lang='en'>Implantable defibrillator</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='72511004'>
+<displayName lang='en'>Fruit</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.15' epsosName='epSOSStatusCode' code='73425007'>
+<displayName lang='en'>Inactive</displayName>
+<displayName lang='es-ES'>Inactivo</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='73761001'>
+<displayName lang='en'>Colonoscopy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='74444006'>
+<displayName lang='en'>Limb prosthesis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='76810006'>
+<displayName lang='en'>Diagnostic dilation and curettage of uterus</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='77444004'>
+<displayName lang='en'>Bone pin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='77777004'>
+<displayName lang='en'>Bone staple</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='78418002'>
+<displayName lang='en'>Operation on heart and pericardium</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='80146002'>
+<displayName lang='en-US'>Appendectomy</displayName>
+<displayName lang='en-GB'>Appendicectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.30' epsosName='epSOSResolutionOutcome' code='81323004'>
+<displayName lang='en'>Normal general body function</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='83619009'>
+<displayName lang='en'>Polyvinyl alcohol</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='84683006'>
+<displayName lang='en'>Aortic valve prosthesis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='84877006'>
+<displayName lang='en'>Arthroscopy of knee with meniscus repair</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='85548006'>
+<displayName lang='en'>Episiotomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='85921004'>
+<displayName lang='en'>Puncture procedure</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='86273004'>
+<displayName lang='en'>Biopsy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='86749008'>
+<displayName lang='en'>Stripping and ligation</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='86800006'>
+<displayName lang='en'>Operation on trachea</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='89428009'>
+<displayName lang='en'>Typhoid vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='90043005'>
+<displayName lang='en'>Mumps live virus vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='90134004'>
+<displayName lang='en'>Metal periosteal implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='90199006'>
+<displayName lang='en'>Transurethral prostatectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='90470006'>
+<displayName lang='en'>Prostatectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.15' epsosName='epSOSStatusCode' code='90734009'>
+<displayName lang='en'>Chronic</displayName>
+<displayName lang='es-ES'>Crónico</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='102259006'>
+<displayName lang='en'>Citrus fruit</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='102261002'>
+<displayName lang='en'>Strawberry</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='102262009'>
+<displayName lang='en'>Chocolate</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='102263004'>
+<displayName lang='en'>Eggs (edible)</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='102264005'>
+<displayName lang='en'>Cheese</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='102303004'>
+<displayName lang='en'>Vascular prosthesis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='102314001'>
+<displayName lang='en-US'>Embolization coil</displayName>
+<displayName lang='en-GB'>Embolisation coil</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='107907001'>
+<displayName lang='en'>Operative procedure on digestive system</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='108021004'>
+<displayName lang='en'>Operative procedure on male genitourinary system</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='108729007'>
+<displayName lang='en-US'>Varicella virus vaccine</displayName>
+<displayName lang='en-GB'>Varicella vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='111088007'>
+<displayName lang='en'>Latex</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='111164008'>
+<displayName lang='en'>Poliovirus vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.20' epsosName='epSOSBloodGroup' code='112144000'>
+<displayName lang='en'>Blood group A</displayName>
+<displayName lang='en'>Blood group A</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.20' epsosName='epSOSBloodGroup' code='112149005'>
+<displayName lang='en'>Blood group B</displayName>
+<displayName lang='en'>Blood group B</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='112698002'>
+<displayName lang='en'>Operation on joint</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='112727005'>
+<displayName lang='en'>Revision of hip replacement</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='112802009'>
+<displayName lang='en'>Cardiovascular surgical procedure</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='112828007'>
+<displayName lang='en'>Femoral-popliteal artery bypass graft</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='115589000'>
+<displayName lang='en'>Ethanolamine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='116077000'>
+<displayName lang='en'>Rotavirus vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='116273005'>
+<displayName lang='en'>Dietary substance</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='116549003'>
+<displayName lang='en'>Organochlorine pesticide</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='118374007'>
+<displayName lang='en'>Silicone implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='118382007'>
+<displayName lang='en'>Neuropacemaker device</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='118425005'>
+<displayName lang='en'>Ventricular reservoir</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='118675001'>
+<displayName lang='en'>Procedure on female genital system</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='118683007'>
+<displayName lang='en'>Procedure on ear and related structures</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='118716003'>
+<displayName lang='en'>Procedure on foot</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='118795000'>
+<displayName lang='en'>Procedure on pleura</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='118804001'>
+<displayName lang='en'>Procedure on blood vessel</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='118831003'>
+<displayName lang='en'>Procedure on intestine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='118949002'>
+<displayName lang='en'>Procedure on extremity</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='118950002'>
+<displayName lang='en'>Procedure on head AND/OR neck</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='118955007'>
+<displayName lang='en'>Implantation to cardiovascular system</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='119417004'>
+<displayName lang='en'>Organophosphate insecticide</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='119922005'>
+<displayName lang='en'>Biliary tract endoscopy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='122470005'>
+<displayName lang='en'>Reduction of closed fracture</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='122471009'>
+<displayName lang='en'>Reduction of open fracture</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='128488006'>
+<displayName lang='en'>House dust</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='133864008'>
+<displayName lang='en'>Lithotripsy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.17' epsosName='epSOSUnknownInformation' code='160243008'>
+<displayName lang='en'>No medical history</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.17' epsosName='epSOSUnknownInformation' code='160244002'>
+<displayName lang='en'>No known allergies</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.17' epsosName='epSOSUnknownInformation' code='160245001'>
+<displayName lang='en'>No current problems or disability</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.14' epsosName='epSOSSocialHistory' code='160573003'>
+<displayName lang='en'>Alcohol intake</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.30' epsosName='epSOSResolutionOutcome' code='161045001'>
+<displayName lang='en'>Disability - severe</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.30' epsosName='epSOSResolutionOutcome' code='161901003'>
+<displayName lang='en'>Chronic sick</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.30' epsosName='epSOSResolutionOutcome' code='162467007'>
+<displayName lang='en'>Free of symptoms</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.20' epsosName='epSOSBloodGroup' code='165743006'>
+<displayName lang='en'>Blood group AB</displayName>
+<displayName lang='en'>Blood group AB</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='173171007'>
+<displayName lang='en'>Lobectomy of lung</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='173422009'>
+<displayName lang='en'>Tonsillectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.22' epsosName='epSOSCodeNoMedication' code='182849000'>
+<displayName lang='en'>No drug therapy prescribed</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.22' epsosName='epSOSCodeNoMedication' code='182904002'>
+<displayName lang='en'>Drug treatment unknown</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='226359003'>
+<displayName lang='en'>Fish oil - dietary</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='226491003'>
+<displayName lang='en'>Apple juice</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='226760005'>
+<displayName lang='en'>Dairy foods</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='226915003'>
+<displayName lang='en'>Red meat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='226934003'>
+<displayName lang='en'>Pork</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='227037002'>
+<displayName lang='en'>Fish - dietary</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='227146005'>
+<displayName lang='en'>Shellfish - dietary</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='227313005'>
+<displayName lang='en'>Pulse vegetables</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='227388008'>
+<displayName lang='en'>Cinnamon</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='227425007'>
+<displayName lang='en'>Figs</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.14' epsosName='epSOSSocialHistory' code='228272008'>
+<displayName lang='en-GB'>Health-related behaviour</displayName>
+<displayName lang='en-US'>Health-related behavior</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.14' epsosName='epSOSSocialHistory' code='229819007'>
+<displayName lang='en'>Tobacco use and exposure</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='230031005'>
+<displayName lang='en'>Lobster - dietary</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='230032003'>
+<displayName lang='en'>Oyster - dietary</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='232632009'>
+<displayName lang='en'>Wedge excision of lung</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='232717009'>
+<displayName lang='en'>Coronary artery bypass graft</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='234336002'>
+<displayName lang='en-US'>Hemopoietic stem cell transplant</displayName>
+<displayName lang='en-GB'>Haemopoietic stem cell transplant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.18' epsosName='epSOSAdverseEventType' code='235719002'>
+<displayName lang='en'>Food intolerance</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='236886002'>
+<displayName lang='en'>Hysterectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='236887006'>
+<displayName lang='en'>Laparoscopic hysterectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.11' epsosName='epSOSReactionAllergy' code='247472004'>
+<displayName lang='en'>Weal</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.23' epsosName='epSOSCodeProb' code='248536006'>
+<displayName lang='en'>Finding of functional performance and activity</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='250980009'>
+<displayName lang='en'>Cardioversion</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.15' epsosName='epSOSStatusCode' code='255227004'>
+<displayName lang='en'>Recurrent</displayName>
+<displayName lang='es-ES'>Recurrente</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.13' epsosName='epSOSSeverity' code='255604002'>
+<displayName lang='en'>Mild</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='255640000'>
+<displayName lang='en'>Biocide</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='255667006'>
+<displayName lang='en'>Paraffin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.14' epsosName='epSOSSocialHistory' code='256235009'>
+<displayName lang='en'>Exercise</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256259004'>
+<displayName lang='en'>Pollen</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256260009'>
+<displayName lang='en'>Tree and shrub pollen</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256277009'>
+<displayName lang='en'>Grass pollen</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256292005'>
+<displayName lang='en'>Flower and weed pollen</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256303006'>
+<displayName lang='en'>Ragweed pollen</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256305004'>
+<displayName lang='en'>Tree resin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256310000'>
+<displayName lang='en'>Cherry - dietary</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256319004'>
+<displayName lang='en'>Carrot</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256327008'>
+<displayName lang='en'>Tomato - dietary</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256349002'>
+<displayName lang='en'>Peanut - dietary</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256352005'>
+<displayName lang='en'>Walnut - nut</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256417003'>
+<displayName lang='en'>Horse dander</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256435007'>
+<displayName lang='en'>Feathers</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='256440004'>
+<displayName lang='en'>Wasp venom</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='257275005'>
+<displayName lang='en'>Spinal cage</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='257282009'>
+<displayName lang='en'>Non-valved conduit</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='257283004'>
+<displayName lang='en'>Valved cardiac conduit</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='257343005'>
+<displayName lang='en'>Xenograft cardiac valve</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='257366006'>
+<displayName lang='en'>JJ-stent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='257822003'>
+<displayName lang='en'>Extracapsular extraction</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='258593008'>
+<displayName lang='en'>Ventricular shunt</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='260152009'>
+<displayName lang='en'>Cat dander</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='260154005'>
+<displayName lang='en'>Dog dander</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='260170007'>
+<displayName lang='en'>Potato - dietary</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='264287008'>
+<displayName lang='en'>Animal dander</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='264295007'>
+<displayName lang='en'>Cow's milk protein</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='264337003'>
+<displayName lang='en'>Seed</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='264824009'>
+<displayName lang='en'>Cardiac conduit</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='265703000'>
+<displayName lang='en'>Jaw and temporomandibular joint operations</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.30' epsosName='epSOSResolutionOutcome' code='271593001'>
+<displayName lang='en'>Moribund</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='272245008'>
+<displayName lang='en'>Maxillofacial prosthesis/appliance</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='276310004'>
+<displayName lang='en'>Animal hair</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.20' epsosName='epSOSBloodGroup' code='278147001'>
+<displayName lang='en'>Blood group O Rh(D) positive</displayName>
+<displayName lang='en'>Blood group O Rh(D) positive</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.20' epsosName='epSOSBloodGroup' code='278148006'>
+<displayName lang='en'>Blood group O Rh(D) negative</displayName>
+<displayName lang='en'>Blood group O Rh(D) negative</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.20' epsosName='epSOSBloodGroup' code='278149003'>
+<displayName lang='en'>Blood group A Rh(D) positive</displayName>
+<displayName lang='en'>Blood group A Rh(D) positive</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.20' epsosName='epSOSBloodGroup' code='278150003'>
+<displayName lang='en'>Blood group B Rh(D) positive</displayName>
+<displayName lang='en'>Blood group B Rh(D) positive</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.20' epsosName='epSOSBloodGroup' code='278151004'>
+<displayName lang='en'>Blood group AB Rh(D) positive</displayName>
+<displayName lang='en'>Blood group AB Rh(D) positive</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.20' epsosName='epSOSBloodGroup' code='278152006'>
+<displayName lang='en'>Blood group A Rh(D) negative</displayName>
+<displayName lang='en'>Blood group A Rh(D) negative</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.20' epsosName='epSOSBloodGroup' code='278153001'>
+<displayName lang='en'>Blood group B Rh(D) negative</displayName>
+<displayName lang='en'>Blood group B Rh(D) negative</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.20' epsosName='epSOSBloodGroup' code='278154007'>
+<displayName lang='en'>Blood group AB Rh(D) negative</displayName>
+<displayName lang='en'>Blood group AB Rh(D) negative</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='278840001'>
+<displayName lang='en'>Shrimp product</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.23' epsosName='epSOSCodeProb' code='282291009'>
+<displayName lang='en'>Diagnosis interpretation</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='286558002'>
+<displayName lang='en'>Ureteric stent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='286576009'>
+<displayName lang='en'>Urethral stent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='287310004'>
+<displayName lang='en-GB'>Lung tumour excision</displayName>
+<displayName lang='en-US'>Lung tumor excision</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='288328004'>
+<displayName lang='en'>Bee venom</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='289122001'>
+<displayName lang='en'>Cosmetic material</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='302343007'>
+<displayName lang='en'>Insertion of prosthesis for breast</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303277008'>
+<displayName lang='en'>Fallopian tube prosthesis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='303300008'>
+<displayName lang='en'>Egg protein</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='303314008'>
+<displayName lang='en'>Scorpion venom</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='303315009'>
+<displayName lang='en'>Spider venom</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303490004'>
+<displayName lang='en'>Cardiovascular implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303497001'>
+<displayName lang='en'>Urogenital implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303499003'>
+<displayName lang='en'>Gastrointestinal implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303500007'>
+<displayName lang='en'>Auditory implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303503009'>
+<displayName lang='en'>Musculoskeletal implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303515008'>
+<displayName lang='en'>Orbital implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303533002'>
+<displayName lang='en'>Hip joint implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303608005'>
+<displayName lang='en'>Ophthalmological implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303617005'>
+<displayName lang='en'>Vascular implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303618000'>
+<displayName lang='en'>Nervous system implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303619008'>
+<displayName lang='en'>Cardiac implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303726000'>
+<displayName lang='en'>Shoulder joint prosthesis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='303947005'>
+<displayName lang='en'>Rod fixation system</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='304070008'>
+<displayName lang='en'>Body wall implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='304120007'>
+<displayName lang='en'>Total hip replacement prosthesis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='304121006'>
+<displayName lang='en'>Femoral head prosthesis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='304124003'>
+<displayName lang='en'>Shoulder joint implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='304184000'>
+<displayName lang='en'>Ankle joint implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='304185004'>
+<displayName lang='en'>Foot joint implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='304186003'>
+<displayName lang='en'>Hand joint implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.45' epsosName='epSOSMedicalEquipment' code='309641003'>
+<displayName lang='en'>Aneroid sphygmomanometer</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.45' epsosName='epSOSMedicalEquipment' code='309642005'>
+<displayName lang='en'>Mercury sphygmomanometer</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='311846002'>
+<displayName lang='en'>Pyrethroid insecticide</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='312775003'>
+<displayName lang='en'>Debridement of ulcer</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.30' epsosName='epSOSResolutionOutcome' code='313386006'>
+<displayName lang='en'>Patient in remission</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='314523008'>
+<displayName lang='en'>Joint implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='333598008'>
+<displayName lang='en'>Pneumococcal vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='333606008'>
+<displayName lang='en'>Rabies vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='333621002'>
+<displayName lang='en'>Tetanus vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='333680004'>
+<displayName lang='en'>Haemophilus influenzae Type b vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='333697005'>
+<displayName lang='en'>Japanese B encephalitis vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='333699008'>
+<displayName lang='en'>Tick-borne encephalitis vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='333702001'>
+<displayName lang='en'>Hepatitis A+B vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.13' epsosName='epSOSSeverity' code='349915008'>
+<displayName lang='en'>Low grade</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='350327004'>
+<displayName lang='en'>Diphtheria + tetanus vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='359612003'>
+<displayName lang='en'>Implantation of cochlear prosthetic device</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='359623004'>
+<displayName lang='en'>Total lobectomy of lung</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='360041000'>
+<displayName lang='en'>Implanted drug delivery system</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='360046005'>
+<displayName lang='en'>Arterial stent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='360058005'>
+<displayName lang='en'>Intraventricular pump</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='360070009'>
+<displayName lang='en'>Laryngeal implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='360100007'>
+<displayName lang='en'>Tracheal stent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='360117000'>
+<displayName lang='en'>Gastric bubble</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='360123005'>
+<displayName lang='en'>Biliary stent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='360145006'>
+<displayName lang='en'>Bone prosthesis</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='360329004'>
+<displayName lang='en'>Dacron graft</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='363187007'>
+<displayName lang='en'>Limb operation</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.14' epsosName='epSOSSocialHistory' code='363908000'>
+<displayName lang='en-US'>Details of drug misuse behavior</displayName>
+<displayName lang='en-GB'>Details of drug misuse behaviour</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.14' epsosName='epSOSSocialHistory' code='364393001'>
+<displayName lang='en'>Nutritional observable</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.14' epsosName='epSOSSocialHistory' code='364703007'>
+<displayName lang='en'>Employment detail</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='370611004'>
+<displayName lang='en'>Excision of malignant neoplasm</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.13' epsosName='epSOSSeverity' code='371923003'>
+<displayName lang='en'>Mild to moderate</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.13' epsosName='epSOSSeverity' code='371924009'>
+<displayName lang='en'>Moderate to severe</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='373353005'>
+<displayName lang='en'>Surgical procedure on eye proper</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='384723003'>
+<displayName lang='en'>Radical mastectomy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='385487005'>
+<displayName lang='en'>Surgical procedure on thorax</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='385488000'>
+<displayName lang='en'>Surgical procedure on chest wall</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='386012008'>
+<displayName lang='en'>Measles vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='386013003'>
+<displayName lang='en'>Rubella vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='386638009'>
+<displayName lang='en'>Obstetric operation</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='386765006'>
+<displayName lang='en'>Operation on mediastinum</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='387398009'>
+<displayName lang='en'>Podophyllum resin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='387714009'>
+<displayName lang='en'>Operation on lung</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='391737006'>
+<displayName lang='en'>Almond oil</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='392011001'>
+<displayName lang='en'>Operation on skin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='392048005'>
+<displayName lang='en'>Operation on urinary system</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='392090004'>
+<displayName lang='en'>Operation on breast</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='392236004'>
+<displayName lang='en'>Operative procedure on spinal structure</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='395835001'>
+<displayName lang='en'>Plasma protein</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='395922006'>
+<displayName lang='en'>Wool alcohols</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='396031000'>
+<displayName lang='en'>Dimeticone</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.17' epsosName='epSOSUnknownInformation' code='396782006'>
+<displayName lang='en'>Medical history unknown</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='397956004'>
+<displayName lang='en'>Prosthetic arthroplasty of the hip</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.23' epsosName='epSOSCodeProb' code='404684003'>
+<displayName lang='en'>Clinical finding</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='405525004'>
+<displayName lang='en'>Repair of aneurysm of abdominal aorta</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='406771001'>
+<displayName lang='en-GB'>Sulphite and/or sulphite derivative</displayName>
+<displayName lang='en-US'>Sulfite and/or sulfite derivative</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='406774009'>
+<displayName lang='en'>Fish derived omega 3 fatty acid</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.17' epsosName='epSOSUnknownInformation' code='407559004'>
+<displayName lang='en'>Family history unknown</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.22' epsosName='epSOSCodeNoMedication' code='408350003'>
+<displayName lang='en'>Patient not on self-medication</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.17' epsosName='epSOSUnknownInformation' code='409137002'>
+<displayName lang='en'>No known drug allergies</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.23' epsosName='epSOSCodeProb' code='409586006'>
+<displayName lang='en'>Complaint</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.15' epsosName='epSOSStatusCode' code='410516002'>
+<displayName lang='en'>Known absent</displayName>
+<displayName lang='es-ES'>Ausencia conocida</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='410853002'>
+<displayName lang='en'>Perfluorochemical</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='412068007'>
+<displayName lang='en'>Rye</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='412069004'>
+<displayName lang='en-GB'>Flavouring agent</displayName>
+<displayName lang='en-US'>Flavoring agent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='412071004'>
+<displayName lang='en'>Wheat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='412161004'>
+<displayName lang='en'>Wool</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='412357001'>
+<displayName lang='en'>Corn</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.15' epsosName='epSOSStatusCode' code='413322009'>
+<displayName lang='en'>Problem resolved</displayName>
+<displayName lang='es-ES'>Problema resuelto</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='413766009'>
+<displayName lang='en'>Carotid stent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.18' epsosName='epSOSAdverseEventType' code='414285001'>
+<displayName lang='en'>Food allergy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='414580007'>
+<displayName lang='en'>Laryngeal keel</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.15' epsosName='epSOSStatusCode' code='415684004'>
+<displayName lang='en'>Suspected</displayName>
+<displayName lang='es-ES'>Sospechado</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='415710007'>
+<displayName lang='en'>Terpene</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.18' epsosName='epSOSAdverseEventType' code='416098002'>
+<displayName lang='en'>Drug allergy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.18' epsosName='epSOSAdverseEventType' code='418038007'>
+<displayName lang='en'>Propensity to adverse reactions to substance</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='418266005'>
+<displayName lang='en'>Yellow paraffin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.18' epsosName='epSOSAdverseEventType' code='418471000'>
+<displayName lang='en'>Propensity to adverse reactions to food</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='418504009'>
+<displayName lang='en'>Oats</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='418785009'>
+<displayName lang='en'>Perfume</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.23' epsosName='epSOSCodeProb' code='418799008'>
+<displayName lang='en'>Finding reported by subject or history provider</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='418920007'>
+<displayName lang='en'>Adhesive agent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.30' epsosName='epSOSResolutionOutcome' code='419099009'>
+<displayName lang='en'>Dead</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.18' epsosName='epSOSAdverseEventType' code='419199007'>
+<displayName lang='en'>Allergy to substance</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='419420009'>
+<displayName lang='en'>Watermelon</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.18' epsosName='epSOSAdverseEventType' code='419511003'>
+<displayName lang='en'>Propensity to adverse reactions to drug</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='419633007'>
+<displayName lang='en'>White paraffin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.19' epsosName='epSOSAllergenNoDrugs' code='420111002'>
+<displayName lang='en'>Contact metal agent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.18' epsosName='epSOSAdverseEventType' code='420134006'>
+<displayName lang='en'>Propensity to adverse reactions</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='420538001'>
+<displayName lang='en'>Tuberculosis vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='421168009'>
+<displayName lang='en'>Eye sphere implant</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='421245007'>
+<displayName lang='en'>Diphtheria + pertussis + tetanus vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='423449009'>
+<displayName lang='en'>Pulmonary valve prosthesis, device</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='423531006'>
+<displayName lang='en'>Meningococcus vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='423827005'>
+<displayName lang='en'>Endoscopy</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='424519000'>
+<displayName lang='en'>Human papillomavirus vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='424921004'>
+<displayName lang='en'>Permanent cardiac pacemaker, device</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.14' epsosName='epSOSSocialHistory' code='425400000'>
+<displayName lang='en'>Toxic exposure status</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='426153007'>
+<displayName lang='en'>Insertion of artificial airway</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='427036009'>
+<displayName lang='en'>Influenza virus H5N1 vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.28' epsosName='epSOSVaccine' code='428214002'>
+<displayName lang='en'>Diphtheria vaccine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='429639007'>
+<displayName lang='en'>Percutaneous transluminal balloon angioplasty with insertion of stent into coronary artery</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.8' epsosName='epSOSMedicalDevices' code='429798007'>
+<displayName lang='en'>Artificial vertebral disc</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.10' epsosName='epSOSProcedures' code='441612006'>
+<displayName lang='en'>Repair of infrarenal abdominal aortic aneurysm with insertion of endovascular stent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.13' epsosName='epSOSSeverity' code='442452003'>
+<displayName lang='en'>Life threatening severity</displayName>
+</SNOMEDCTEntry>
+</SNOMEDCTInformation>

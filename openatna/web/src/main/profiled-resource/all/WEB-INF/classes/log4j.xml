@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!-- 
+  This file is part of epSOS OpenNCP implementation
+  Copyright (C) 2012 Kela (The Social Insurance Institution of Finland)
+  Based on the original log4j.properties file 
+  Copyright (C) 2011, 2012 Apotekens Service AB
+  
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  
+  Contact email: epsos@kanta.fi or Konstantin.Hypponen@kela.fi
+ -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+	<appender name="logFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/epsos-openatna.log" />
+		<param name="Threshold" value="DEBUG"/>
+		<param name="Encoding" value="UTF-8"/>
+		<param name="MaxFileSize" value="1MB"/>
+		<param name="MaxBackupIndex" value="1"/>
+		
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p %d %c %M.%L %x - %m\n"/>
+		</layout>
+	</appender>
+	
+	<appender name="Stdout" class="org.apache.log4j.ConsoleAppender"> 
+	  <param name="Target" value="System.out"/> 
+	  <layout class="org.apache.log4j.PatternLayout"> 
+	    <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %p %c{1} %m%n"/> 
+	  </layout> 
+	</appender>
+	
+	<root>
+	    <priority value ="info" /> 
+		<appender-ref ref="logFile"/>
+	</root>
+</log4j:configuration>

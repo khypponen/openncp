@@ -1,0 +1,8 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.4" displayName="AlertTypeCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="106190000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Allergy"/>
+			<Concept code="281647001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Adverse Reaction"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

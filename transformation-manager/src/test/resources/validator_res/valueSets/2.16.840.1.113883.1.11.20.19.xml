@@ -1,0 +1,11 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.19" displayName="TestStatusCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="active" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus" displayName="Pending"/>
+			<Concept code="active" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus" displayName="In Process"/>
+			<Concept code="active" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus" displayName="Preliminary Results"/>
+			<Concept code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus" displayName="Final Results"/>
+			<Concept code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus" displayName="Corrected Results"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

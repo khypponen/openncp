@@ -1,0 +1,416 @@
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:epsos="urn:epsos-org:ep:medication" xmlns:cda="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ..\schema\CDA_extended.xsd">
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3"/>
+  <id assigningAuthorityName="Regione Lombardia" displayable="true" extension="030308.RRCSLS.REF030308X1484.60591-5.CDA" root="2.16.840.1.113883.2.9.2.30"/>
+  <code code="60591-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Patient Summary"/>
+  <title>Patient Summary</title>
+  <effectiveTime value="20111011125543+0100"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" codeSystemVersion="913-20091020" displayName="normal">
+      <translation displayName="Normale"/>
+  </confidentialityCode>
+  <languageCode code="it-IT"/>
+  <setId assigningAuthorityName="Regione Lombardia" displayable="true" extension="030308.RRCSLS.REF030308X1484.60591-5.CDA" root="2.16.840.1.113883.2.9.2.30"/>
+  <versionNumber value="1"/>
+  <recordTarget>
+      <patientRole classCode="PAT">
+         <id assigningAuthorityName="MEF" displayable="true" extension="NTSTNT80A31L219O" root="2.16.840.1.113883.2.9.4.3.2"/>
+         <addr use="HP">
+            <state>MI</state>
+            <city>MILANO</city>
+            <country>IT</country>
+            <postalCode>20158</postalCode>
+            <streetAddressLine>V. C/O LOMBARDIA INFORMATICA VIA, MINZONI 24 &#157;</streetAddressLine>
+         </addr>
+         <telecom nullFlavor="NI"/>
+         <patient>
+            <name>
+               <family>INTSISS</family>
+               <given>TRENTUNO</given>
+            </name>
+            <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="913-20091020" displayName="Male">
+               <translation displayName="Maschio"/>
+            </administrativeGenderCode>
+            <birthTime value="19800131"/>
+            <languageCommunication>
+               <languageCode code="it-IT"/>
+            </languageCommunication>
+         </patient>
+      </patientRole>
+  </recordTarget>
+  <author>
+      <functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO" codeSystemVersion="2008" displayName="Medical doctors">
+         <translation displayName="Medico di Medicina Generale"/>
+      </functionCode>
+      <time value="20111011125543+0100"/>
+      <assignedAuthor classCode="ASSIGNED">
+         <id assigningAuthorityName="MEF" displayable="true" extension="CNPMMG60L01F205V" root="2.16.840.1.113883.2.9.4.3.2"/>
+         <addr nullFlavor="NI"/>
+         <telecom nullFlavor="NI"/>
+         <assignedPerson>
+            <name>
+               <family>CNIPAVII</family>
+               <given>MMG</given>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id assigningAuthorityName="Regione Lombardia" extension="030308" root="2.16.840.1.113883.2.9.4.1.1"/>
+            <name nullFlavor="NI"/>
+            <telecom nullFlavor="NI"/>
+            <addr nullFlavor="NI"/>
+         </representedOrganization>
+      </assignedAuthor>
+  </author>
+  <custodian>
+      <assignedCustodian>
+         <representedCustodianOrganization>
+            <id assigningAuthorityName="Regione Lombardia" extension="030308" root="2.16.840.1.113883.2.9.4.1.1"/>
+            <name nullFlavor="NI"/>
+            <telecom nullFlavor="NI"/>
+            <addr nullFlavor="NI"/>
+         </representedCustodianOrganization>
+      </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+      <time value="20111011125543+0100"/>
+      <signatureCode code="S"/>
+      <assignedEntity>
+         <id assigningAuthorityName="MEF" displayable="false" extension="CNPMMG60L01F205V" root="2.16.840.1.113883.2.9.4.3.2"/>
+         <addr nullFlavor="NI"/>
+         <telecom nullFlavor="NI"/>
+         <assignedPerson>
+            <name>
+               <family>CNIPAVII</family>
+               <given>MMG</given>
+            </name>
+         </assignedPerson>
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id assigningAuthorityName="Regione Lombardia" extension="030308" root="2.16.840.1.113883.2.9.4.1.1"/>
+            <name nullFlavor="NI"/>
+            <telecom nullFlavor="NI"/>
+            <addr nullFlavor="NI"/>
+         </representedOrganization>
+      </assignedEntity>
+  </legalAuthenticator>
+  <participant typeCode="IND">
+      <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88"/>
+      <associatedEntity classCode="PRS">
+         <addr nullFlavor="NI"/>
+         <telecom nullFlavor="NI"/>
+         <associatedPerson>
+            <name nullFlavor="NI"/>
+         </associatedPerson>
+      </associatedEntity>
+  </participant>
+  <documentationOf>
+      <serviceEvent classCode="PCPR">
+         <effectiveTime>
+            <low nullFlavor="NI"/>
+            <high value="20111011125543+0100"/>
+         </effectiveTime>
+         <performer typeCode="PRF">
+            <functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO" codeSystemVersion="2008" displayName="Medical doctors">
+               <translation displayName="Medico di Medicina Generale"/>
+            </functionCode>
+            <assignedEntity>
+               <id assigningAuthorityName="MEF" displayable="false" extension="CNPMMG60L01F205V" root="2.16.840.1.113883.2.9.4.3.2"/>
+               <addr nullFlavor="NI"/>
+               <telecom nullFlavor="NI"/>
+               <assignedPerson>
+                  <name>
+                     <family>CNIPAVII</family>
+                     <given>MMG</given>
+                  </name>
+               </assignedPerson>
+               <representedOrganization>
+                  <id assigningAuthorityName="Regione Lombardia" extension="030308" root="2.16.840.1.113883.2.9.4.1.1"/>
+                  <name nullFlavor="NI"/>
+                  <telecom nullFlavor="NI"/>
+                  <addr nullFlavor="NI"/>
+               </representedOrganization>
+            </assignedEntity>
+         </performer>
+      </serviceEvent>
+  </documentationOf>
+  <relatedDocument typeCode="XFRM">
+      <parentDocument>
+         <id extension="030308.RRCSLS.REF030308X1484.60591-5.CDA" root="2.16.840.1.113883.2.9.2.30"/>
+      </parentDocument>
+  </relatedDocument>
+  <component>
+      <structuredBody>
+         <component>
+            <section>
+               <templateId root="2.16.840.1.113883.10.20.1.8"/>
+               <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+               <id extension="RE00001" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+               <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="History of medication use"/>
+               <title>Terapie Farmacologiche</title>
+               <text>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>Nome Farmaco</th>
+                           <th>Principio Attivo</th>
+                           <th>Dosaggio</th>
+                           <th>Posologia</th>
+                           <th>Via di Somministrazione</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td/>
+                           <td/>
+                           <td/>
+                           <td/>
+                           <td/>
+                        </tr>
+                     </tbody>
+                  </table>
+               </text>
+               <entry>
+                  <substanceAdministration classCode="SBADM" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                     <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+                     <id extension="RE00001.1" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+                     <code code="182904002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Drug treatment unknown">
+                        <translation displayName="Trattamento farmacologico sconosciuto"/>
+                     </code>
+                     <statusCode code="completed"/>
+                     <effectiveTime xsi:type="IVL_TS">
+                        <low nullFlavor="UNK"/>
+                        <high nullFlavor="UNK"/>
+                     </effectiveTime>
+                     <effectiveTime nullFlavor="UNK" operator="A"/>
+                     <doseQuantity nullFlavor="NI"/>
+                     <consumable>
+                        <manufacturedProduct classCode="MANU">
+                           <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+                           <manufacturedMaterial>
+                              <code nullFlavor="NI"/>
+                              <epsos:asContent classCode="CONT">
+                                 <epsos:containerPackagedMedicine classCode="CONT" determinerCode="INSTANCE">
+                                    <epsos:name/>
+                                    <epsos:formCode nullFlavor="NI"/>
+                                 </epsos:containerPackagedMedicine>
+                              </epsos:asContent>
+                              <epsos:ingredient classCode="ACTI">
+                                 <epsos:quantity>
+                                    <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                                    <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                                 </epsos:quantity>
+                                 <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                                    <epsos:code nullFlavor="NI"/>
+                                    <epsos:name/>
+                                 </epsos:ingredient>
+                              </epsos:ingredient>
+                           </manufacturedMaterial>
+                        </manufacturedProduct>
+                     </consumable>
+                  </substanceAdministration>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section>
+               <templateId root="2.16.840.1.113883.10.20.1.2"/>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+               <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Allergies, adverse reactions, alerts">
+                  <translation displayName="Allergie, reazioni avverse ed allarmi"/>
+               </code>
+               <title>Allergie, reazioni avverse ed allarmi</title>
+               <text>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>Tipo Allergia</th>
+                           <th>Tipo Reazione</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td/>
+                           <td/>
+                        </tr>
+                     </tbody>
+                  </table>
+               </text>
+               <entry>
+                  <act classCode="ACT" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                     <id extension="RE00002.1" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+                     <code nullFlavor="NA"/>
+                     <statusCode code="active"/>
+                     <effectiveTime>
+                        <low nullFlavor="UNK"/>
+                        <high nullFlavor="UNK"/>
+                     </effectiveTime>
+                     <entryRelationship inversionInd="false" typeCode="SUBJ">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                           <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                           <id extension="RE00002.1.1" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+                           <code code="420134006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Propensity to adverse reactions">
+                              <translation displayName="SuscettibilitÂ a reazioni avverse"/>
+                           </code>
+                           <text>
+                              <reference nullFlavor="NI"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value code="160244002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="No known allergies" xsi:type="CD">
+                              <translation displayName="Nessuna allergia conosciuta"/>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                  </act>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section>
+               <templateId root="2.16.840.1.113883.10.20.1.11"/>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+               <id extension="RE00005" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+               <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Problem list">
+                  <translation displayName="Lista dei problemi attivi"/>
+               </code>
+               <title>Lista dei problemi attivi</title>
+               <text>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>Descrizione Problema</th>
+                           <th>Data Insorgenza</th>
+                           <th>Diagnosi</th>
+                           <th>Stato</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td/>
+                           <td/>
+                           <td/>
+                           <td/>
+                        </tr>
+                     </tbody>
+                  </table>
+               </text>
+               <entry>
+                  <act classCode="ACT" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                     <id extension="RE00005.1" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+                     <code nullFlavor="NA"/>
+                     <statusCode code="active"/>
+                     <effectiveTime>
+                        <low nullFlavor="UNK"/>
+                     </effectiveTime>
+                     <entryRelationship inversionInd="false" typeCode="SUBJ">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                           <id extension="RE00005.1.1" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+                           <code codeSystemName="SNOMED CT" nullFlavor="NI"/>
+                           <text>
+                              <reference/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value code="160245001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="No current problems or disability" xsi:type="CD">
+                              <translation displayName="Nessuna patologia o disabilitÃ  in atto"/>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                  </act>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section>
+               <templateId root="2.16.840.1.113883.10.20.1.12"/>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+               <id extension="RE00004" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+               <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="History of ProceduresÂ ">
+                  <translation displayName="Storia delle procedure"/>
+               </code>
+               <title>Storia delle procedure</title>
+               <text>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>Data</th>
+                           <th>Tipo Procedura/Intervento</th>
+                           <th>Esito</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td/>
+                           <td/>
+                           <td/>
+                        </tr>
+                     </tbody>
+                  </table>
+               </text>
+               <entry>
+                  <procedure classCode="PROC" moodCode="EVN" nullFlavor="NA">
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+                     <templateId root="2.16.840.1.113883.10.20.1.29"/>
+                  </procedure>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section>
+               <templateId root="2.16.840.1.113883.10.20.1.7"/>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+               <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4"/>
+               <id extension="RE00006" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+               <code code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="History of medical device use">
+                  <translation displayName="Dispositivi medici in uso"/>
+               </code>
+               <title>Dispositivi medici in uso</title>
+               <text>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>Tipologia Strumento</th>
+                           <th>Data Impianto</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td/>
+                           <td/>
+                        </tr>
+                     </tbody>
+                  </table>
+               </text>
+               <entry>
+                  <supply classCode="SPLY" moodCode="EVN" nullFlavor="NA">
+                     <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5"/>
+                     <effectiveTime nullFlavor="NA"/>
+                     <participant typeCode="DEV">
+                        <participantRole classCode="MANU">
+                           <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                              <code nullFlavor="NA"/>
+                           </playingDevice>
+                        </participantRole>
+                     </participant>
+                  </supply>
+               </entry>
+            </section>
+         </component>
+      </structuredBody>
+  </component>
+</ClinicalDocument>

@@ -1,0 +1,562 @@
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:epsos="urn:epsos-org:ep:medication" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA_extended.xsd">
+   <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+   <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3"/>
+   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+   <id extension="2.25.271880571734028737286179844728537118486" root="2.25.31948331284107710764978028514917798228"/>
+   <code code="60591-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Résumé patient epSOS">
+      <translation displayName="Patient Summary"/>
+   </code>
+   <title>Resumo Clínico Único do Utente</title>
+   <effectiveTime value="20121127155701.415+0000"/>
+   <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" codeSystemVersion="913-20091020" displayName="normal"/>
+   <languageCode code="en-GB"/>
+   <recordTarget>
+      <patientRole>
+         <id extension="192419714" root="2.16.620.1.101.10.1.1"/>
+         <addr>
+            <country>PT</country>
+            <postalCode>5000-000 ABAÇAS</postalCode>
+            <streetAddressLine>Lug Souto Velho,  - </streetAddressLine>
+         </addr>
+         <telecom nullFlavor="NI"/>
+         <patient>
+            <name>
+               <family>Palacios Perez Vasquez Vasco</family>
+               <given>Rosalina Maria</given>
+            </name>
+            <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="913-20091020" displayName="Féminin">             
+               <translation displayName="Female">
+                  <translation displayName="Feminino"/>
+               </translation>
+            </administrativeGenderCode>
+            <birthTime value="19260104"/>
+         </patient>
+         <providerOrganization>
+            <id root="2.16.620.1.101.10.1"/>
+            <name>Registo Nacional de Utentes</name>
+         </providerOrganization>
+      </patientRole>
+   </recordTarget>
+   <author>
+      <time value="20130313113522+0000"/>
+      <assignedAuthor>
+         <id extension="90647" root="2.16.620.1.101.10.2.5"/>
+         <telecom use="WP" value="tel:+351259302270"/>
+         <assignedPerson>
+            <name>
+               <family>Santos</family>
+               <given>Maria Helena</given>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id extension="1171400" root="2.16.620.1.101.10.3.29"/>
+            <name>Agrupamento de Centros de Saúde Douro I - Marão e Douro Norte</name>
+            <addr>
+               <country>PT</country>
+               <postalCode>5000-524 VILA REAL</postalCode>
+               <streetAddressLine>Rua Miguel Torga, 12 F</streetAddressLine>
+            </addr>
+         </representedOrganization>
+      </assignedAuthor>
+   </author>
+   <custodian>
+      <assignedCustodian>
+         <representedCustodianOrganization>
+            <id extension="1171400" root="2.16.620.1.101.10.3.29"/>
+            <name>Agrupamento de Centros de Saúde Douro I - Marão e Douro Norte</name>
+            <telecom use="WP" value="tel:+351259302270"/>
+            <addr>
+               <country>PT</country>
+               <postalCode>5000-524 VILA REAL</postalCode>
+               <streetAddressLine>Rua Miguel Torga, 12 F</streetAddressLine>
+            </addr>
+         </representedCustodianOrganization>
+      </assignedCustodian>
+   </custodian>
+   <legalAuthenticator>
+      <time value="20130313113522+0000"/>
+      <signatureCode code="S"/>
+      <assignedEntity>
+         <id extension="1171400" root="2.16.620.1.101.10.3.29"/>
+         <telecom use="WP" value="tel:+351259302270"/>
+         <assignedPerson>
+            <name>
+               <family>Santos</family>
+               <given>Maria Helena</given>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id extension="1171400" root="2.16.620.1.101.10.3.29"/>
+            <name>Agrupamento de Centros de Saúde Douro I - Marão e Douro Norte</name>
+            <telecom use="WP" value="tel:+351259302270"/>
+            <addr>
+               <country>PT</country>
+               <postalCode>5000-524 VILA REAL</postalCode>
+               <streetAddressLine>Rua Miguel Torga, 12 F</streetAddressLine>
+            </addr>
+         </representedOrganization>
+      </assignedEntity>
+   </legalAuthenticator>
+   <participant typeCode="IND">
+      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+      <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" codeSystemName="HL7 ParticipationFunction" displayName="Médico de Família"/>
+      <associatedEntity classCode="PRS">
+         <addr>
+            <country>PT</country>
+            <postalCode>5000-524 VILA REAL</postalCode>
+            <streetAddressLine>Rua Miguel Torga, 12 F</streetAddressLine>
+         </addr>
+         <telecom use="WP" value="tel:+351259302270"/>
+         <telecom nullFlavor="NI"/>
+         <associatedPerson>
+            <name>
+               <family>Santos</family>
+               <given>Maria Helena</given>
+            </name>
+         </associatedPerson>
+      </associatedEntity>
+   </participant>
+   <documentationOf>
+      <serviceEvent classCode="PCPR">
+         <effectiveTime>
+            <low value="20121203000000.000+0000"/>
+            <high value="20121203000000.000+0000"/>
+         </effectiveTime>
+         <performer typeCode="PRF">
+            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.3"/>
+            <time>
+               <low value="20121203000000.000+0000"/>
+               <high value="20121203000000.000+0000"/>
+            </time>
+            <assignedEntity classCode="ASSIGNED">
+               <id extension="28602" root="2.16.840.1.113883.19.5"/>
+               <telecom nullFlavor="NI"/>
+               <assignedPerson>
+                  <name>
+                     <family>Santos</family>
+                     <given>Maria Helena</given>
+                  </name>
+               </assignedPerson>
+               <representedOrganization>
+                  <id extension="3113400" root="2.16.620.1.101.10.3"/>
+                  <name nullFlavor="NI"/>
+                  <telecom nullFlavor="NI"/>
+                  <addr>
+                     <country>PT</country>
+                     <postalCode nullFlavor="NI"/>
+                     <streetAddressLine nullFlavor="NI"/>
+                  </addr>
+               </representedOrganization>
+            </assignedEntity>
+         </performer>
+      </serviceEvent>
+   </documentationOf>
+   <relatedDocument typeCode="XFRM">
+      <parentDocument>
+         <id extension="2.25.271880571734028737286179844728537118486" root="2.25.31948331284107710764978028514917798228"/>
+      </parentDocument>
+   </relatedDocument>
+   <component>
+      <structuredBody>
+         <component>
+            <section moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.1.2"/>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+               <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Allergies, effets indésirables, alertes">
+                  <translation displayName="Allergies, adverse reactions, alerts"/>
+               </code>
+               <title>Alergias, reacções adversas, alertas</title>
+               <text>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>#</th>
+                           <th>Categoria</th>
+                           <th>Código Alergénio CPARA</th>
+                           <th>Descrição Alergénio</th>
+                           <th>Data Diagnóstico</th>
+                           <th>Reacção</th>
+                           <th>Estado</th>
+                           <th>Severidade</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td ID="allergy0">0</td>
+                           <td ID="allergy0_category">ALERGIA MEDICAMENTOSA</td>
+                           <td ID="allergy0_allergenCode">S01AA</td>
+                           <td ID="allergy0_allergenDescription">ANTIBIOTICS</td>
+                           <td ID="allergy0_diagnosisDate">20120611</td>
+                           <td ID="allergy0_reactions">ANAFILAXIA</td>
+                           <td ID="allergy0_status">ATIVO</td>
+                           <td ID="allergy0_severity">LIGEIRA</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </text>
+               <entry>
+                  <act classCode="ACT" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                     <id extension="79" root="2.16.620.1.101.10.3.1135301"/>
+                     <code code="NA" nullFlavor="NA"/>
+                     <text>
+                        <reference value="#allergy0"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime>
+                        <low value="20120611"/>
+                        <high value="20120611"/>
+                     </effectiveTime>
+                     <entryRelationship inversionInd="false" typeCode="SUBJ">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                           <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                           <id root="2.25.170129778122968719735828360008972556"/>
+                           <code code="416098002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Hypersensibilité médicamenteuse">
+                              
+                              <translation displayName="Drug allergy">
+                                 <translation code="0001" codeSystem="CPARA-CATEGORIA" codeSystemName="CPARA" displayName="ALERGIA MEDICAMENTOSA"/>
+                              </translation>
+                           </code>
+                           <text>
+					  
+                    ALERGIA MEDICAMENTOSA
+                    
+					  <reference value="#allergy0_category"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                              <high nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value nullFlavor="NI" xsi:type="CD">
+                              <originalText>CPARA<reference value="#allergy0_category"/>
+                              </originalText>
+                           </value>
+                           <participant typeCode="CSM">
+                              <participantRole classCode="MANU">
+                                 <playingEntity classCode="MMAT">
+                                    <code code="S01AA" codeSystem="2.16.840.1.113883.6.73" codeSystemName="Anatomical Therapeutic Chemical" codeSystemVersion="January 2010" displayName="ANTIBIOTIQUES">
+                                       <originalText>
+                                          <reference value="#allergy0_allergenCode"/>
+                                       </originalText>
+                                       
+                                       <translation displayName="Antibiotics">
+                                          <translation displayName="antibiotics"/>
+                                       </translation>
+                                    </code>
+                                 </playingEntity>
+                              </participantRole>
+                           </participant>
+                           <entryRelationship inversionInd="true" typeCode="MFST">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                 <code nullFlavor="NA"/>
+                                 <text>
+                                    <reference value="#allergy0_reactions"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <value code="39579001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Anaphylaxie" xsi:type="CD">
+                                    
+                                    <translation displayName="Anaphylaxis">
+                                       <translation code="0002" codeSystem="CPARA-REACAO" codeSystemName="REACAO" displayName="ANAFILAXIA"/>
+                                    </translation>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                           <entryRelationship inversionInd="true" typeCode="SAS">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <templateId root="2.16.840.1.113883.10.20.1.55"/>
+                                 <code code="SEV" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode" displayName="Severity"/>
+                                 <text>
+                                    <reference value="#allergy0_severity"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <value code="02" codeSystem="CPARA-GRAVIDADE" codeSystemName="SEVERITY" displayName="LIGEIRA" xsi:type="CE"/>
+                              </observation>
+                           </entryRelationship>
+                        </observation>
+                     </entryRelationship>
+                  </act>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.1.8"/>
+               <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+               <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Historique de la prise médicamenteuse">
+                  <translation displayName="History of medication use"/>
+               </code>
+               <title>Medicamentos Usados</title>
+               <text>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>#</th>
+                           <th>Descrição</th>
+                           <th>Dosagem</th>
+                           <th>Data Início</th>
+                           <th>Data Fim</th>
+                           <th>Posologia</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td ID="medication0">0</td>
+                           <td ID="medication0_description">Paracetamol, [Ben-U-Ron], 1000 mg, Supositório, Fita termossoldada - 10 unidade(s)</td>
+                           <td ID="medication0_dosage"/>
+                           <td ID="medication0_initialDate">20130306</td>
+                           <td ID="medication0_finalDate">20130306</td>
+                           <td ID="medication0_applicationRate"/>
+                        </tr>
+                     </tbody>
+                  </table>
+               </text>
+               <entry>
+                  <substanceAdministration classCode="SBADM" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                     <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+                     <id extension="534" root="2.16.620.1.101.10.3.3113400"/>
+                     <text>
+                        <reference value="#medication0"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime xsi:type="IVL_TS">
+                        <low value="20130306"/>
+                        <high nullFlavor="UNK"/>
+                     </effectiveTime>
+                     <effectiveTime institutionSpecified="true" nullFlavor="NA" operator="A" xsi:type="PIVL_TS"/>
+                     <doseQuantity nullFlavor="UNK"/>
+                     <consumable>
+                        <manufacturedProduct>
+                           <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                           <manufacturedMaterial>
+                              <code nullFlavor="NI"/>
+                              <name nullFlavor="NI"/>
+                              <epsos:formCode nullFlavor="NI"/>
+                              <epsos:ingredient classCode="ACTI">
+                                 <epsos:quantity>
+                                    <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                                    <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                                 </epsos:quantity>
+                                 <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                                    <epsos:code code="N02BE01" codeSystem="2.16.840.1.113883.6.73" codeSystemName="Anatomical Therapeutic Chemical" codeSystemVersion="January 2010" displayName="PARACETAMOL">
+                                       
+                                       <epsos:translation displayName="paracetamol">
+                                          <epsos:translation displayName="PARACETAMOL"/>
+                                       </epsos:translation>
+                                    </epsos:code>
+                                 </epsos:ingredient>
+                              </epsos:ingredient>
+                           </manufacturedMaterial>
+                        </manufacturedProduct>
+                     </consumable>
+                  </substanceAdministration>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.1.6"/>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23"/>
+               <code code="11369-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Vaccinations">
+                  
+                  <translation displayName="History of immunization">
+                     <translation displayName="History of immunizations"/>
+                  </translation>
+               </code>
+               <title>Historial de Vacinação</title>
+               <text>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>#</th>
+                           <th>Data Administração</th>
+                           <th>Código</th>
+                           <th>Nome</th>
+                           <th>Dosagem</th>
+                           <th>Lote</th>
+                           <th>Nome Comercial</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td ID="immunization0">0</td>
+                           <td ID="immunization0_initialDate">20121221</td>
+                           <td ID="immunization0_code">Td</td>
+                           <td ID="immunization0_name">Vacina contra o tétano e a difteria</td>
+                           <td ID="immunization0_dosage"/>
+                           <td ID="immunization0_lot">DT181A</td>
+                           <td ID="immunization0_comercialCode">dTeBooster</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </text>
+               <entry>
+                  <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+                     <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+                     <id extension="2026107" root="2.16.620.1.101.10.3.1135301"/>
+                     <code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+                     <text>
+                        <reference value="#immunization0"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime value="20121221"/>
+                     <doseQuantity>
+                        <low value="999"/>
+                        <high value="999"/>
+                     </doseQuantity>
+                     <consumable typeCode="CSM">
+                        <manufacturedProduct classCode="MANU">
+                           <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                           <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                              <code code="350327004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Vaccin anti diphtérie-tétanos">
+                                 <originalText>
+                                    <reference value="#immunization0_name"/>
+                                 </originalText>
+                                 
+                                 <translation displayName="Diphtheria + tetanus vaccine">
+                                    <translation code="Td" codeSystem="SINUS-VACINAS" displayName="Vacina contra o tétano e a difteria"/>
+                                 </translation>
+                              </code>
+                              <lotNumberText>DT181A</lotNumberText>
+                           </manufacturedMaterial>
+                        </manufacturedProduct>
+                     </consumable>
+                  </substanceAdministration>
+               </entry>
+            </section>
+         </component>
+         
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.11"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+                    <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Liste des problèmes actifs">
+                        
+                    
+                  <translation displayName="Problem list">
+                     <translation displayName="Lista de problemas activos">
+                        <translation displayName="Lista de problemas activos"/>
+                     </translation>
+                  </translation>
+               </code>
+                    <title>Lista de problemas activos</title>
+                    <text>
+                        <content ID="actnoproblem">Não existem problemas activos.</content>
+                    </text>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <id root="964fe760-9da1-11e1-a8b0-0800200c9a66"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low nullFlavor="UNK"/>
+                            </effectiveTime>
+                            <entryRelationship inversionInd="false" typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <id root="964fe761-9da1-11e1-a8b0-0800200c9a66"/>
+                                    <code nullFlavor="NA"/>
+                                    <text>
+                                        <reference value="#actnoproblem"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value code="160245001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Pas de problème ou de handicap actuel" xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#actnoproblem"/>
+                                        </originalText>
+                                    <translation displayName="No current problems or disability"/>
+                           </value>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+             </component>
+        
+         
+                <component>
+                  <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+                    <templateId root="2.16.840.1.113883.10.20.1.12"/>
+                    <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Antécédents chirurgicaux">
+                  
+                  <translation displayName="History of Procedures">
+                     <translation displayName="Intervenções Cirúgicas"/>
+                  </translation>
+               </code>
+                    <title>Intervenções Cirúgicas</title>
+                    <text>
+                        <content ID="nosurgeries">Sem cirurgias conhecidas</content>
+                    </text>
+                    <entry>
+                        <procedure classCode="PROC" moodCode="EVN" nullFlavor="NA">
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+                            <templateId root="2.16.840.1.113883.10.20.1.29"/>
+                            <id nullFlavor="NI"/>
+                            <code nullFlavor="NI"/>
+                            <text>
+                                <reference value="#nosurgeries"/>
+	                    </text>
+                            <statusCode nullFlavor="NI"/>
+                            <effectiveTime>
+                                <low nullFlavor="UNK"/>
+                                <high nullFlavor="UNK"/>
+                            </effectiveTime>
+                        </procedure>
+                    </entry>
+                </section>
+              </component>  
+        
+         <component>
+            
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.7"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+                    <templateId assigningAuthorityName="epSOS" root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4"/>
+                    <code code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Liste des dispositifs médicaux">
+                  
+                  <translation displayName="History of medical device use">
+                     <translation displayName="Dispositivos Médicos e Implantes"/>
+                  </translation>
+               </code>
+                    <title>Dispositivos Médicos e Implantes</title>
+                    <text>Não existem dispositivos médicos</text>
+                    <entry>
+                        <supply classCode="SPLY" moodCode="EVN" nullFlavor="NA">
+                            <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5"/>
+                            <effectiveTime nullFlavor="NA"/>
+                            <participant typeCode="DEV">
+                                <participantRole classCode="MANU">
+                                    <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                                        <code nullFlavor="NA"/>
+                                    </playingDevice>
+                                </participantRole>
+                            </participant>
+                        </supply>
+                    </entry>
+                </section>
+        
+         </component>
+      </structuredBody>
+   </component>
+</ClinicalDocument>

@@ -1,0 +1,346 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSProcedures" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.10" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="10458001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Evacuation of intracerebral hematoma (procedure)"/>
+			<Concept code="107907001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operative procedure on digestive system"/>
+			<Concept code="107907001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operative procedure on digestive system (procedure)"/>
+			<Concept code="108021004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operative procedure on male genitourinary system"/>
+			<Concept code="108021004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operative procedure on male genitourinary system (procedure)"/>
+			<Concept code="10847001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bronchial endoscopy"/>
+			<Concept code="10847001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Endoscopy of bronchus"/>
+			<Concept code="10847001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bronchoscopy"/>
+			<Concept code="10847001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bronchoscopy (procedure)"/>
+			<Concept code="10847001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="By - Bronchoscopy"/>
+			<Concept code="10847001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tracheobronchial endoscopy"/>
+			<Concept code="112698002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on joint"/>
+			<Concept code="112698002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Joint operation"/>
+			<Concept code="112698002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on joint (procedure)"/>
+			<Concept code="112698002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on joint structures"/>
+			<Concept code="112727005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Revision of hip replacement"/>
+			<Concept code="112727005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Revision of hip replacement (procedure)"/>
+			<Concept code="112802009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiovascular operative procedure"/>
+			<Concept code="112802009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiovascular operation"/>
+			<Concept code="112802009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiovascular surgical procedure"/>
+			<Concept code="112802009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Surgical procedure on cardiovascular system"/>
+			<Concept code="112802009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiovascular operative procedure (procedure)"/>
+			<Concept code="112828007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Femoropopliteal bypass"/>
+			<Concept code="112828007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Femoral-popliteal artery vascular bypass"/>
+			<Concept code="112828007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Femoral-popliteal artery bypass graft (procedure)"/>
+			<Concept code="112828007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="AK - Above knee femoral popliteal bypass graft"/>
+			<Concept code="112828007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Femoral-popliteal artery bypass graft"/>
+			<Concept code="112828007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Creation of femoropopliteal shunt"/>
+			<Concept code="112828007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="FPB - Femoropopliteal bypass"/>
+			<Concept code="112828007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Femoropopliteal bypass graft"/>
+			<Concept code="11466000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cesarean section (procedure)"/>
+			<Concept code="118675001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on female genital system"/>
+			<Concept code="118675001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on female genital system (procedure)"/>
+			<Concept code="118683007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on ear and related structures"/>
+			<Concept code="118683007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on ear and related structures (procedure)"/>
+			<Concept code="118716003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on foot"/>
+			<Concept code="118716003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on foot (procedure)"/>
+			<Concept code="118795000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on pleura"/>
+			<Concept code="118795000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on pleura (procedure)"/>
+			<Concept code="118804001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on blood vessel"/>
+			<Concept code="118804001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on blood vessel (procedure)"/>
+			<Concept code="118831003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on intestine"/>
+			<Concept code="118831003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on intestine (procedure)"/>
+			<Concept code="118949002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on extremity"/>
+			<Concept code="118949002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on extremity (procedure)"/>
+			<Concept code="118950002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on head AND/OR neck"/>
+			<Concept code="118950002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure on head AND/OR neck (procedure)"/>
+			<Concept code="118955007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Implantation to cardiovascular system"/>
+			<Concept code="118955007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Implantation to cardiovascular system (procedure)"/>
+			<Concept code="119922005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Biliary tract endoscopy"/>
+			<Concept code="119922005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Biliary tract endoscopy (procedure)"/>
+			<Concept code="122470005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Reduction of closed fracture"/>
+			<Concept code="122470005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Reduction of closed fracture (procedure)"/>
+			<Concept code="122471009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Reduction of open fracture"/>
+			<Concept code="122471009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Reduction of open fracture (procedure)"/>
+			<Concept code="12658000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on female genital organs"/>
+			<Concept code="12658000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on female genital organs (procedure)"/>
+			<Concept code="133864008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lithotripsy"/>
+			<Concept code="133864008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lithotrity"/>
+			<Concept code="133864008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lithotripsy (procedure)"/>
+			<Concept code="133864008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lithotripsie"/>
+			<Concept code="13619001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Thyroidectomy (procedure)"/>
+			<Concept code="13619001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of thyroid gland"/>
+			<Concept code="13619001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Thyroidectomy"/>
+			<Concept code="13619001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Thyroid gland excision"/>
+			<Concept code="15018006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Laparoscopic repair of inguinal hernia"/>
+			<Concept code="15018006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Laparoscopic repair of inguinal hernia (procedure)"/>
+			<Concept code="16545005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on nervous system (procedure)"/>
+			<Concept code="16545005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on nervous system"/>
+			<Concept code="16545005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operative procedure on nervous system"/>
+			<Concept code="173171007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lobectomy of lung"/>
+			<Concept code="173171007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulmonary lobectomy"/>
+			<Concept code="173171007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lobectomy of lung (procedure)"/>
+			<Concept code="173422009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tonsillectomy"/>
+			<Concept code="173422009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tonsillectomy (procedure)"/>
+			<Concept code="173422009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of tonsil"/>
+			<Concept code="173422009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ts - Tonsillectomy"/>
+			<Concept code="19063003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Arthroplasty of knee"/>
+			<Concept code="19063003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Arthroplasty of the knee"/>
+			<Concept code="19063003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Repair of knee joint"/>
+			<Concept code="19063003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Knee arthroplasty"/>
+			<Concept code="19063003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Arthroplasty of knee (procedure)"/>
+			<Concept code="19063003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Knee replacement"/>
+			<Concept code="21371007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on abdominal region"/>
+			<Concept code="21371007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on abdominal region (procedure)"/>
+			<Concept code="232632009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wedge excision of lung"/>
+			<Concept code="232632009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wedge excision of lung (procedure)"/>
+			<Concept code="232717009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Coronary artery bypass graft operations"/>
+			<Concept code="232717009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Coronary artery bypass grafting (procedure)"/>
+			<Concept code="232717009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="CABG - Coronary artery bypass graft"/>
+			<Concept code="232717009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Coronary artery bypass graft"/>
+			<Concept code="232717009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="CBG - Coronary bypass graft"/>
+			<Concept code="232717009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Coronary artery bypass grafting"/>
+			<Concept code="232717009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="CAG - Coronary artery graft"/>
+			<Concept code="234336002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hemopoietic stem cell transplant (procedure)"/>
+			<Concept code="234336002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Transfusion of stem cells"/>
+			<Concept code="236886002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hysterectomy"/>
+			<Concept code="236886002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hysterectomy (procedure)"/>
+			<Concept code="236886002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision procedure on uterus"/>
+			<Concept code="236886002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Uterus excision"/>
+			<Concept code="236887006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Laparoscopic hysterectomy"/>
+			<Concept code="236887006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Laparoscopic hysterectomy (procedure)"/>
+			<Concept code="23968004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Colectomy"/>
+			<Concept code="23968004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Colectomy (procedure)"/>
+			<Concept code="250980009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Conversion of cardiac rhythm"/>
+			<Concept code="250980009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardioversion"/>
+			<Concept code="250980009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardioversion (procedure)"/>
+			<Concept code="250980009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardioversion"/>
+			<Concept code="257822003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Extracapsular extraction"/>
+			<Concept code="257822003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Extracapsular extraction (qualifier value)"/>
+			<Concept code="26476002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bronchus operation"/>
+			<Concept code="26476002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on bronchus"/>
+			<Concept code="26476002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on bronchus (procedure)"/>
+			<Concept code="265703000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Jaw and temporomandibular joint operations"/>
+			<Concept code="265703000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Jaw and temporomandibular joint operations (procedure)"/>
+			<Concept code="287310004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lung tumor excision (procedure)"/>
+			<Concept code="302343007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Insertion of breast prosthesis"/>
+			<Concept code="302343007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Insertion of prosthesis for breast"/>
+			<Concept code="302343007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Insertion of prosthesis for breast (procedure)"/>
+			<Concept code="30904006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vascular surgery procedure"/>
+			<Concept code="30904006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Blood vessel operations"/>
+			<Concept code="30904006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vascular surgery procedure (procedure)"/>
+			<Concept code="30904006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on vessels"/>
+			<Concept code="312775003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Debridement of ulcer"/>
+			<Concept code="312775003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Debridement of ulcer (procedure)"/>
+			<Concept code="3418002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diskectomy"/>
+			<Concept code="3418002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Discectomy"/>
+			<Concept code="3418002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of intervertebral disc"/>
+			<Concept code="3418002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of intervertebral cartilage"/>
+			<Concept code="3418002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chondrectomy of spine"/>
+			<Concept code="3418002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chondrectomy of intervertebral cartilage"/>
+			<Concept code="3418002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chondrectomy of spine (procedure)"/>
+			<Concept code="3418002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Arthrectomy of intervertebral disc"/>
+			<Concept code="3418002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intervertebral discectomy"/>
+			<Concept code="34969007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on retroperitoneum"/>
+			<Concept code="34969007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on retroperitoneum (procedure)"/>
+			<Concept code="359612003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Implantation of cochlear prosthetic device"/>
+			<Concept code="359612003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Implantation of cochlear prosthetic device (procedure)"/>
+			<Concept code="359612003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Insertion of cochlear implant"/>
+			<Concept code="359623004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Total lobectomy of lung"/>
+			<Concept code="359623004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Total lobectomy of lung (procedure)"/>
+			<Concept code="36228007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Eye examination"/>
+			<Concept code="36228007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Examination of eye"/>
+			<Concept code="36228007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ophthalmic examination and evaluation (procedure)"/>
+			<Concept code="36228007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ophthalmic examination and evaluation"/>
+			<Concept code="36228007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Examining eye"/>
+			<Concept code="36228007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ophthalmic examination"/>
+			<Concept code="363187007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Limb operation"/>
+			<Concept code="363187007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Limb operation (procedure)"/>
+			<Concept code="370611004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of malignant neoplasm (procedure)"/>
+			<Concept code="370611004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of malignant neoplasm"/>
+			<Concept code="373353005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on eyeball"/>
+			<Concept code="373353005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Eye operation"/>
+			<Concept code="373353005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ocular operation"/>
+			<Concept code="373353005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on eye"/>
+			<Concept code="373353005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Surgical procedure on eye proper"/>
+			<Concept code="373353005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on eye proper"/>
+			<Concept code="373353005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Eyeball operations"/>
+			<Concept code="373353005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Surgical procedure on eye proper (procedure)"/>
+			<Concept code="373353005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ophthalmologic operation"/>
+			<Concept code="373353005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on globe"/>
+			<Concept code="373353005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ophthalmic surgery procedure"/>
+			<Concept code="37508003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on neck (procedure)"/>
+			<Concept code="37508003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on neck"/>
+			<Concept code="38102005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Gallbladder excision"/>
+			<Concept code="38102005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cholecystectomy (procedure)"/>
+			<Concept code="38102005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of gallbladder"/>
+			<Concept code="38102005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Removal of gallbladder"/>
+			<Concept code="38102005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cholecystectomy"/>
+			<Concept code="384723003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Radical mastectomy (procedure)"/>
+			<Concept code="384723003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Radical mastectomy"/>
+			<Concept code="385487005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Surgical procedure on thorax (procedure)"/>
+			<Concept code="385487005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Surgical procedure on thorax"/>
+			<Concept code="385487005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on thorax"/>
+			<Concept code="385488000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Surgical procedure on chest wall (procedure)"/>
+			<Concept code="385488000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Surgical procedure on chest wall"/>
+			<Concept code="385488000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on chest wall"/>
+			<Concept code="386638009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pregnancy operation"/>
+			<Concept code="386638009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Obstetric operation (procedure)"/>
+			<Concept code="386638009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Obstetric operations"/>
+			<Concept code="386638009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Obstetric operation"/>
+			<Concept code="386638009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Childbirth operation"/>
+			<Concept code="386765006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on mediastinum (procedure)"/>
+			<Concept code="386765006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on mediastinum"/>
+			<Concept code="386765006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Mediastinum operations"/>
+			<Concept code="387714009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on lung (procedure)"/>
+			<Concept code="387714009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on lung"/>
+			<Concept code="387714009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulmonary operation"/>
+			<Concept code="387714009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lung operation"/>
+			<Concept code="392011001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on skin (procedure)"/>
+			<Concept code="392011001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on skin"/>
+			<Concept code="392011001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Dermatological operation"/>
+			<Concept code="392011001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Skin operation"/>
+			<Concept code="392048005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on urinary system (procedure)"/>
+			<Concept code="392048005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on urinary system"/>
+			<Concept code="392048005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Urinary operations"/>
+			<Concept code="392090004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on breast (procedure)"/>
+			<Concept code="392090004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Mammary operation"/>
+			<Concept code="392090004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Mammary gland operation"/>
+			<Concept code="392090004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on breast"/>
+			<Concept code="392090004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Breast operation"/>
+			<Concept code="392236004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operative procedure on spinal structures"/>
+			<Concept code="392236004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operative procedure on spinal structure"/>
+			<Concept code="392236004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operative procedure on spine"/>
+			<Concept code="392236004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operative procedure on vertebral column"/>
+			<Concept code="392236004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Spinal operation"/>
+			<Concept code="392236004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operative procedure on spinal structure (procedure)"/>
+			<Concept code="397956004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prosthetic arthroplasty of the hip (procedure)"/>
+			<Concept code="397956004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prosthetic arthroplasty of the hip"/>
+			<Concept code="397956004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hip replacement"/>
+			<Concept code="405525004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Repair of aneurysm of abdominal aorta (procedure)"/>
+			<Concept code="405525004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Repair of aneurysm of abdominal aorta"/>
+			<Concept code="423827005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Endoscopy (procedure)"/>
+			<Concept code="423827005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Endoscopy"/>
+			<Concept code="423827005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Inspection using endoscope"/>
+			<Concept code="426153007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Insertion of artificial airway (procedure)"/>
+			<Concept code="426153007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Insertion of artificial airway"/>
+			<Concept code="429639007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Percutaneous transluminal balloon angioplasty with insertion of stent into coronary artery (procedure)"/>
+			<Concept code="429639007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Percutaneous transluminal balloon angioplasty with insertion of stent into coronary artery"/>
+			<Concept code="441612006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Repair of infrarenal abdominal aortic aneurysm with insertion of endovascular stent"/>
+			<Concept code="441612006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Repair of infrarenal abdominal aortic aneurysm with insertion of endovascular stent (procedure)"/>
+			<Concept code="44558001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Repair of inguinal hernia (procedure)"/>
+			<Concept code="44558001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Inguinal hernioplasty"/>
+			<Concept code="44558001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Inguinal herniorrhaphy"/>
+			<Concept code="44558001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Repair of inguinal hernia"/>
+			<Concept code="45595009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Laparoscopic cholecystectomy"/>
+			<Concept code="45595009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Laparoscopic cholecystectomy (procedure)"/>
+			<Concept code="45595009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Endoscopic cholecystectomy"/>
+			<Concept code="46116005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of malignant tumor of breast (procedure)"/>
+			<Concept code="47534009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Decompression of median nerve at wrist"/>
+			<Concept code="47534009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Release of carpal tunnel for nerve decompression"/>
+			<Concept code="47534009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Carpal tunnel decompression"/>
+			<Concept code="47534009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Release of transverse carpal ligament for nerve decompression"/>
+			<Concept code="47534009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="CTD - Carpal tunnel decompression"/>
+			<Concept code="47534009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Decompression of median nerve"/>
+			<Concept code="47534009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Release of carpal tunnel for median nerve decompression"/>
+			<Concept code="47534009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Retinaculotomy of carpal tunnel"/>
+			<Concept code="47534009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Decompression of median nerve (procedure)"/>
+			<Concept code="47534009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="CTR - Carpal tunnel release"/>
+			<Concept code="47534009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Carpal tunnel release"/>
+			<Concept code="4770005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Colporrhaphy for repair of urethrocele"/>
+			<Concept code="4770005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Repair of urethrocele"/>
+			<Concept code="4770005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Colporrhaphy for repair of urethrocele (procedure)"/>
+			<Concept code="49509003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on lymphatic structure (procedure)"/>
+			<Concept code="49509003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on lymphatic structure"/>
+			<Concept code="49509003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lymphatic tissue operation"/>
+			<Concept code="49509003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lymphatic operations"/>
+			<Concept code="49509003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lymphatic system surgical procedure"/>
+			<Concept code="53266006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diaphragm procedure"/>
+			<Concept code="53266006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on diaphragm (procedure)"/>
+			<Concept code="53266006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diaphragm operation"/>
+			<Concept code="53266006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on diaphragm"/>
+			<Concept code="54885007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Extraction of cataract (procedure)"/>
+			<Concept code="54885007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of cataract"/>
+			<Concept code="54885007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Extraction of cataract"/>
+			<Concept code="54885007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cataract extraction"/>
+			<Concept code="54885007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="CE - Cataract extraction"/>
+			<Concept code="56361007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of soft tissue (procedure)"/>
+			<Concept code="56361007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Resection of soft tissue"/>
+			<Concept code="56361007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of soft tissue"/>
+			<Concept code="57168000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on bone (procedure)"/>
+			<Concept code="57168000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Bone operation"/>
+			<Concept code="57168000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on bone"/>
+			<Concept code="59300005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on spleen (procedure)"/>
+			<Concept code="59300005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on spleen"/>
+			<Concept code="59300005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Spleen operation"/>
+			<Concept code="59712006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Evacuation of subdural hematoma (procedure)"/>
+			<Concept code="6025007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Laparoscopic appendectomy (procedure)"/>
+			<Concept code="63016009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Complete cystectomy"/>
+			<Concept code="63016009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Total resection of bladder"/>
+			<Concept code="63016009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Total resection of urinary bladder (procedure)"/>
+			<Concept code="63016009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Total resection of urinary bladder"/>
+			<Concept code="63016009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Total excision of bladder"/>
+			<Concept code="63016009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Total cystectomy"/>
+			<Concept code="64253000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Implantation of heart assist system (procedure)"/>
+			<Concept code="64253000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Insertion of Kantrowitz heart pump"/>
+			<Concept code="64253000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Insertion of artificial cardioassist pump"/>
+			<Concept code="64253000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Implantation of heart assist system"/>
+			<Concept code="64368001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Subtotal mastectomy"/>
+			<Concept code="64368001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of part of breast"/>
+			<Concept code="64368001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Partial mastectomy (procedure)"/>
+			<Concept code="64368001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Partial mastectomy"/>
+			<Concept code="66951008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Carotid thromboendarterectomy"/>
+			<Concept code="66951008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Carotid endarterectomy (procedure)"/>
+			<Concept code="66951008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="CEA - Carotid endarterectomy"/>
+			<Concept code="66951008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Carotid endarterectomy"/>
+			<Concept code="70183006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Unilateral subcutaneous mammectomy"/>
+			<Concept code="70183006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Subcutaneous mastectomy"/>
+			<Concept code="70183006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Nipple preserving subcutaneous mastectomy"/>
+			<Concept code="70183006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Unilateral mastectomy with preservation of skin and nipple"/>
+			<Concept code="70183006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Subcutaneous mastectomy (procedure)"/>
+			<Concept code="70536003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tx - Renal transplantation"/>
+			<Concept code="70536003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Renal graft"/>
+			<Concept code="70536003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Kidney transplant"/>
+			<Concept code="70536003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Transplant of kidney (procedure)"/>
+			<Concept code="70536003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Transplantation of kidney"/>
+			<Concept code="70536003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Transplant of kidney"/>
+			<Concept code="70536003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tx - Kidney transplantation"/>
+			<Concept code="70536003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Kidney transplantation"/>
+			<Concept code="70536003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Renal transplant"/>
+			<Concept code="73761001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Colonoscopy (procedure)"/>
+			<Concept code="73761001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Endoscopy of colon"/>
+			<Concept code="73761001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Colonoscopy"/>
+			<Concept code="73761001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Endoscopic examination of colon"/>
+			<Concept code="76810006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diagnostic dilation and curettage of uterus"/>
+			<Concept code="76810006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diagnostic dilation and curettage of uterus (procedure)"/>
+			<Concept code="78418002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on heart and pericardium"/>
+			<Concept code="78418002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on heart and pericardium (procedure)"/>
+			<Concept code="80146002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of appendix"/>
+			<Concept code="80146002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Appendectomy (procedure)"/>
+			<Concept code="84877006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Arthroscopy of knee with meniscus repair"/>
+			<Concept code="84877006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Arthroscopy of knee with meniscus repair (procedure)"/>
+			<Concept code="84877006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Arthroscopic repair of meniscus"/>
+			<Concept code="85548006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Episiotomy"/>
+			<Concept code="85548006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Episiotomy (procedure)"/>
+			<Concept code="85921004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Piercing procedure"/>
+			<Concept code="85921004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Puncture procedure"/>
+			<Concept code="85921004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Perforation procedure"/>
+			<Concept code="85921004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Puncture procedure (procedure)"/>
+			<Concept code="86273004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Biopsy"/>
+			<Concept code="86273004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Biopsy (procedure)"/>
+			<Concept code="86749008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Stripping and ligation"/>
+			<Concept code="86749008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Stripping and ligation (procedure)"/>
+			<Concept code="86800006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Trachea operation"/>
+			<Concept code="86800006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on trachea (procedure)"/>
+			<Concept code="86800006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Operation on trachea"/>
+			<Concept code="90199006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="TUR of prostate"/>
+			<Concept code="90199006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Transurethral prostatectomy"/>
+			<Concept code="90199006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Endoscopic prostatectomy"/>
+			<Concept code="90199006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="TURP - Transurethral resection of prostate"/>
+			<Concept code="90199006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Transurethral prostatectomy (procedure)"/>
+			<Concept code="90199006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Endoscopic resection of prostate"/>
+			<Concept code="90199006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Loop prostatectomy"/>
+			<Concept code="90199006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Transurethral resection of prostate"/>
+			<Concept code="90470006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prostate excision"/>
+			<Concept code="90470006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prostatectomy (procedure)"/>
+			<Concept code="90470006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prostatectomy"/>
+			<Concept code="9888007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of intracranial lesion"/>
+			<Concept code="9888007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Excision of intracranial lesion (procedure)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

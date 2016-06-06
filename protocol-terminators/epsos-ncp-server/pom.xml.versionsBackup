@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>eu.europa.ec.joinup.ecc</groupId>
+        <artifactId>epsos-protocol-terminators</artifactId>
+        <version>3.2.1</version>
+    </parent>
+
+    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+    <artifactId>epsos-ncp-server</artifactId>
+    <packaging>pom</packaging>
+    <name>EpSOS CC Web Services Server</name>
+
+    <modules>
+        <module>epsos-ncpa-interface</module>
+        <module>epsos-xca-ws-server-impl</module>
+        <module>epsos-xcpd-ws-server-impl</module>
+        <module>epsos-xdr-ws-server-impl</module>
+        <module>epsos-nc-mock-it</module>
+        <module>epsos-ws-server</module>
+    </modules>
+
+    <description>
+        This project is a simple POM project.
+        It was created with the only purpose of aggregate all IHE server projects "under the same roof".
+    </description>
+</project>

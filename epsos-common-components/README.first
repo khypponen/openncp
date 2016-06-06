@@ -1,0 +1,8 @@
+This project is the entry point for the common components developed. The individual components are accessible through the URL pattern:
+
+https://code.google.com/p/epsos-common-components.{component name}
+
+So, for instance, the protocol terminators miniproject is available under
+
+https://code.google.com/p/epsos-common-components.protocolterminators
+

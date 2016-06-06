@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="epsos_PS.v1.xsl"?>
+<ClinicalDocument classCode="DOCCLIN" moodCode="EVN" xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDASchema/CDA_extended.xsd">
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3"/>
+  <id extension="PS0192760f274530a032_f" root="2.16.724.4.8.10.200.10"/>
+  <code code="60591-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" codeSystemVersion="June 2010" displayName="Patient Summary"/>
+  <title>CLM epSOS Patient Summary example</title>
+  <effectiveTime value="20110220"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="HL7:Confidentiality" codeSystemVersion="June 2009" displayName="normal">
+    <translation displayName="Normal"/>
+  </confidentialityCode>
+  <languageCode code="es-ES"/>
+  <setId extension="PS0192760f274530a032S" root="2.16.724.4.8.10.200.10"/>
+  <recordTarget contextControlCode="OP" typeCode="RCT">
+    <patientRole classCode="PAT">
+      <id extension="BBBBBBBBJA212212" root="2.16.17.710.801.1000.2.1.1.1.19"/>
+      <id extension="13455432T" root="1.3.6.1.4.1.19126.3"/>
+      <id extension="051977977977" root="1.3.6.1.4.1.19126.4"/>
+      <id extension="HRNX801123911017" root="2.19.724.4.41"/>
+      <id extension="803411" root="2.19.724.4.42"/>
+      <addr use="HP">
+        <state>Castilla-La Mancha</state>
+        <city>Albacete</city>
+        <precinct>Albacete</precinct>
+        <country>ES</country>
+        <postalCode>02006</postalCode>
+        <streetAddressLine>Avenida de España, 5</streetAddressLine>
+      </addr>
+      <telecom use="HP" value="tel:+34967654321"/>
+      <telecom nullFlavor="NI"/>
+      <patient classCode="PSN" determinerCode="INSTANCE">
+        <name>
+          <given>José Antonio</given>
+          <family>Hernández</family>
+          <family>Núñez</family>
+        </name>
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7:AdministrativeGender" codeSystemVersion="June 2009" displayName="Male">
+          <translation displayName="Hombre"/>
+        </administrativeGenderCode>
+        <birthTime value="19801123"/>
+        <languageCommunication>
+          <languageCode code="es-ES"/>
+        </languageCommunication>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author contextControlCode="OP" typeCode="AUT">
+    <time value="20101004"/>
+    <assignedAuthor classCode="ASSIGNED">
+      <id root="2.16.724.4.8"/>
+      <assignedAuthoringDevice classCode="DEV" determinerCode="INSTANCE">
+        <softwareName displayName="Turriano"/>
+      </assignedAuthoringDevice>
+      <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id extension="0800000000000000011012810" root="2.16.724.4.8.10.100.10"/>
+        <name>Centro de Atención Primaria Perpetuo Socorro - Zona 4</name>
+        <addr use="WP">
+          <state>Castilla-La Mancha</state>
+          <city>Albacete</city>
+          <precinct>Albacete</precinct>
+          <country>ES</country>
+          <postalCode>02006</postalCode>
+          <streetAddressLine>Calle Seminario, 2</streetAddressLine>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian typeCode="CST">
+    <assignedCustodian classCode="ASSIGNED">
+      <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id root="2.16.724.4.8"/>
+        <name>SESCAM</name>
+        <telecom use="HP" value="tel:+34925274100"/>
+        <addr use="HP">
+          <state>Castilla-La Mancha</state>
+          <city>Toledo</city>
+          <precinct>Toledo</precinct>
+          <country>ES</country>
+          <postalCode>45007</postalCode>
+          <streetAddressLine>Av. Río Guadiana, 4</streetAddressLine>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator contextControlCode="OP" typeCode="LA">
+    <time value="20110220"/>
+    <signatureCode code="S"/>
+    <assignedEntity classCode="ASSIGNED">
+      <id root="2.16.724.4.8"/>
+      <assignedPerson nullFlavor="NA"/>
+      <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id root="2.16.724.4.8"/>
+        <name>SESCAM</name>
+        <addr use="HP">
+          <state>Castilla-La Mancha</state>
+          <city>Toledo</city>
+          <precinct>Toledo</precinct>
+          <country>ES</country>
+          <postalCode>45007</postalCode>
+          <streetAddressLine>Av. Río Guadiana, 4</streetAddressLine>
+        </addr>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <participant typeCode="IND">
+    <functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO" codeSystemVersion="2008" displayName="Medical doctors">
+      <translation displayName="Doctor"/>
+    </functionCode>
+    <associatedEntity classCode="CAREGIVER">
+      <addr use="WP">
+        <state>Castilla-La Mancha</state>
+        <city>Albacete</city>
+        <precinct>Albacete</precinct>
+        <country>ES</country>
+        <postalCode>02006</postalCode>
+        <streetAddressLine>Calle Seminario, 2</streetAddressLine>
+      </addr>
+      <telecom use="WP" value="tel:+34925111111"/>
+      <associatedPerson classCode="PSN" determinerCode="INSTANCE">
+        <name>
+          <given>Rafael</given>
+          <family>García</family>
+          <family>Torres</family>
+        </name>
+      </associatedPerson>
+      <scopingOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id extension="0800000000000000011012810" root="2.16.724.4.8.10.100.10"/>
+        <name>Centro de Atención Primaria Perpetuo Socorro - Zona 4</name>
+        <addr use="WP">
+          <state>Castilla-La Mancha</state>
+          <city>Albacete</city>
+          <precinct>Albacete</precinct>
+          <country>ES</country>
+          <postalCode>02006</postalCode>
+          <streetAddressLine>Calle Seminario, 2</streetAddressLine>
+        </addr>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  <documentationOf typeCode="DOC">
+    <serviceEvent classCode="ACT" moodCode="EVN">
+      <effectiveTime>
+        <high value="20101004"/>
+      </effectiveTime>
+    </serviceEvent>
+  </documentationOf>
+  <relatedDocument typeCode="XFRM">
+    <parentDocument>
+      <id extension="PS0192760f274530a032" root="2.16.724.4.8.10.200.10"/>
+    </parentDocument>
+  </relatedDocument>
+  <component contextConductionInd="true" typeCode="COMP">
+    <structuredBody classCode="DOCBODY" moodCode="EVN">
+      <component contextConductionInd="true" typeCode="COMP">
+        <section classCode="DOCSECT" moodCode="EVN">
+          <templateId root="2.16.840.1.113883.10.20.1.8"/>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+          <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" codeSystemVersion="June 2010" displayName="History of medication use">
+            <translation displayName="Medication Summary"/>
+          </code>
+          <title>Resumen de medicaciones</title>
+          <text>
+            <list>
+              <item ID="MED1">VENTOLIN 5 mg/ml Solucion para Inhalacion por nebulizador. Dos inhalaciones antes del desayuno.</item>
+              <item ID="MED2">ENALAPRIL 5 mg comprimidos. 1 comprimido antes de las comidas.</item>
+            </list>
+          </text>
+          <entry contextConductionInd="true" typeCode="COMP">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <id extension="SESCAM:MED0011" root="2.16.724.4.8.4.1"/>
+              <code nullFlavor="NI"/>
+              <text>
+                <reference value="#MED1"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20100102"/>
+                <high value="20100108"/>
+              </effectiveTime>
+              <effectiveTime operator="A" xsi:type="EIVL_TS">
+                <event code="ACM" codeSystem="2.16.840.1.113883.5.139" codeSystemName="TimingEvent" codeSystemVersion="June 2009" displayName="before breakfast (from lat. ante cibus matutinus)"/>
+              </effectiveTime>
+              <routeCode code="20020000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="Inhalation use">
+                <translation code="V23" codeSystem="2.16.724.4.21.5.4" codeSystemName="Nomenclator Alcántara" displayName="Inhalación"/>
+              </routeCode>
+              <doseQuantity>
+                <low unit="1" value="2"/>
+                <high unit="1" value="2"/>
+              </doseQuantity>
+              <consumable>
+                <manufacturedProduct classCode="MANU" xmlns:epsos="urn:epsos-org:ep:medication">
+                  <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+                  <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                    <code nullFlavor="NA"/>
+                    <name>VENTOLIN 5 mg/ml Solucion para Inhalacion por nebulizador</name>
+                    <epsos:formCode code="11101000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="Nebuliser solution">
+                      <translation code="F2711" codeSystem="2.16.724.4.21.5.4" codeSystemName="Nomenclator Alcántara" displayName="Nebulizador"/>
+                    </epsos:formCode>
+                    <epsos:asContent classCode="CONT">
+                      <epsos:containerPackagedMedicine classCode="CONT" determinerCode="INSTANCE">
+                        <epsos:formCode nullFlavor="NI"/>
+                        <epsos:capacityQuantity unit="mL" value="10"/>
+                      </epsos:containerPackagedMedicine>
+                    </epsos:asContent>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator unit="mg" value="5" xsi:type="epsos:PQ"/>
+                        <epsos:denominator unit="ml" value="1" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="R03AC02" codeSystem="2.16.840.1.113883.6.73" codeSystemName="Anatomical Therapeutic Chemical" codeSystemVersion="January 2010" displayName="salbutamol"/>
+                        <epsos:name>salbutamol</epsos:name>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry contextConductionInd="true" typeCode="COMP">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <id extension="SESCAM:MED0012" root="2.16.724.4.8.4.1"/>
+              <code nullFlavor="NI"/>
+              <text>
+                <reference value="#MED2"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20100202"/>
+                <high value="20100208"/>
+              </effectiveTime>
+              <effectiveTime operator="A" xsi:type="PIVL_TS">
+                <period unit="h" value="12"/>
+              </effectiveTime>
+              <routeCode code="20053000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="Oral use">
+                <translation code="V21" codeSystem="2.16.724.4.21.5.4" codeSystemName="Nomenclator Alcántara" displayName="Uso oral"/>
+              </routeCode>
+              <doseQuantity>
+                <low unit="1" value="1"/>
+                <high unit="1" value="1"/>
+              </doseQuantity>
+              <consumable>
+                <manufacturedProduct classCode="MANU" xmlns:epsos="urn:epsos-org:ep:medication">
+                  <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+                  <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                    <code nullFlavor="NA"/>
+                    <name>ENALAPRIL APHAR EFG 5 mg comprimidos</name>
+                    <epsos:formCode code="10220000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="Coated tablet">
+                      <translation code="F2115" codeSystem="2.16.724.4.21.5.4" codeSystemName="Nomenclator Alcántara" displayName="Comprimido recubierto"/>
+                    </epsos:formCode>
+                    <epsos:asContent classCode="CONT">
+                      <epsos:containerPackagedMedicine classCode="CONT" determinerCode="INSTANCE">
+                        <epsos:formCode nullFlavor="NI"/>
+                        <epsos:capacityQuantity unit="1" value="60"/>
+                      </epsos:containerPackagedMedicine>
+                    </epsos:asContent>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity>
+                        <epsos:numerator unit="mg" value="5" xsi:type="epsos:PQ"/>
+                        <epsos:denominator unit="1" value="1" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="C09AA02" codeSystem="2.16.840.1.113883.6.73" codeSystemName="Anatomical Therapeutic Chemical" codeSystemVersion="January 2010" displayName="enalapril"/>
+                        <epsos:name>enalapril</epsos:name>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <component contextConductionInd="true" typeCode="COMP">
+        <section classCode="DOCSECT" moodCode="EVN">
+          <templateId root="2.16.840.1.113883.10.20.1.2"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+          <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" codeSystemVersion="June 2010" displayName="Allergies, adverse reactions, alerts">
+            <translation displayName="Alergies, adverse reactions, alerts"/>
+          </code>
+          <title>Alergias y otras reacciones adversas</title>
+          <text ID="ALERGIAS">Alergia al ibuprofeno<list>
+              <item ID="ALE1">ibuprofen</item>
+            </list>
+          </text>
+          <entry contextConductionInd="true" typeCode="COMP">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+              <id extension="SESCAM:AL0011" root="2.16.724.4.8.4.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low nullFlavor="NA"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="SESCAM:ALE0001" root="2.16.724.4.8.4.1"/>
+                  <code code="416098002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Drug allergy">
+                    <translation displayName="Alergia a medicamento"/>
+                  </code>
+                  <text>
+                    <reference value="#ALE1"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20091220"/>
+                  </effectiveTime>
+                  <value xsi:type="CD">
+                    <originalText>
+                      <reference value="#ALE1"/>
+                    </originalText>
+                  </value>
+                  <participant typeCode="CSM">
+                    <participantRole classCode="MANU">
+                      <playingEntity classCode="MMAT">
+                        <code code="M01AE01" codeSystem="2.16.840.1.113883.6.73" codeSystemName="Anatomical Therapeutic Chemical" codeSystemVersion="January 2010" displayName="ibuprofen">
+                          <originalText>
+                            <reference value="#ALE1"/>
+                          </originalText>
+                          <translation displayName="ibuprofeno"/>
+                        </code>
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <component contextConductionInd="true" typeCode="COMP">
+        <section classCode="DOCSECT" moodCode="EVN">
+          <templateId root="2.16.840.1.113883.10.20.1.6"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23"/>
+          <code code="11369-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" codeSystemVersion="June 2010" displayName="History of immunization">
+            <translation displayName="History of immunizations"/>
+          </code>
+          <title>Vacunaciones</title>
+          <text ID="VACUNACIONES">
+            <list>
+              <item ID="VAC1">Hepatitis B virus vaccine</item>
+              <item ID="VAC2">PAPILOMAVIRUS. Fecha: 6-06-1999 </item>
+            </list>
+          </text>
+          <entry contextConductionInd="true" typeCode="COMP">
+            <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+              <id extension="SESCAM:VAC011" root="2.16.724.4.8.4.1"/>
+              <code code="IMMUNIZ" codeSystem="1.3.5.1.4.1.19376.1.5.3.2" codeSystemName="IHE:ActCode" codeSystemVersion="August 2009 (R5)" displayName="The act of immunization of a patient using a particular substance or class of substances identified using a specified vocabulary. Use of this vocabulary term requires the use of either the SUBSTANCE or SUBSTCLASS qualifier described below, along with an "/>
+              <text>
+                <reference value="#VAC1"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime value="20050816"/>
+              <routeCode code="20035000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="Intramuscular use">
+                <translation code="V11" codeSystem="2.16.724.4.21.5.4" codeSystemName="Nomenclator Alcántara" displayName="Uso intramuscular"/>
+              </routeCode>
+              <doseQuantity unit="1" value="1"/>
+              <consumable typeCode="CSM">
+                <manufacturedProduct classCode="MANU">
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                    <code code="34689006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Hepatitis B virus vaccine">
+                      <originalText>
+                        <reference value="#VAC1"/>
+                      </originalText>
+                      <translation displayName="Hepatitis B"/>
+                    </code>
+                    <name>hepatitis B</name>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry contextConductionInd="true" typeCode="COMP">
+            <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+              <id extension="SESCAM:VAC011" root="2.16.724.4.8.4.1"/>
+              <code code="IMMUNIZ" codeSystem="1.3.5.1.4.1.19376.1.5.3.2" codeSystemName="IHE:ActCode" codeSystemVersion="August 2009 (R5)" displayName="The act of immunization of a patient using a particular substance or class of substances identified using a specified vocabulary. Use of this vocabulary term requires the use of either the SUBSTANCE or SUBSTCLASS qualifier described below, along with an "/>
+              <text>
+                <reference value="#VAC1"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime value="19990606"/>
+              <routeCode code="20035000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="Intramuscular use">
+                <translation code="V11" codeSystem="2.16.724.4.21.5.4" codeSystemName="Nomenclator Alcántara" displayName="Uso intramuscular"/>
+              </routeCode>
+              <doseQuantity unit="1" value="1"/>
+              <consumable typeCode="CSM">
+                <manufacturedProduct classCode="MANU">
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                    <code code="424519000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Human papillomavirus vaccine">
+                      <originalText>
+                        <reference value="#VAC1"/>
+                      </originalText>
+                      <translation displayName="Papilomavirus "/>
+                    </code>
+                    <name>Triple vï¿½rica</name>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <component contextConductionInd="true" typeCode="COMP">
+        <section classCode="DOCSECT" moodCode="EVN">
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.8"/>
+          <code code="11348-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" codeSystemVersion="June 2010" displayName="History of past illness">
+            <translation displayName="History of past illnes"/>
+          </code>
+          <title>Problemas y episodios resueltos</title>
+          <text>
+            <list>
+              <item ID="PR1">Recurrent depressive disorder</item>
+              <item ID="PR2">Haemorrhoids</item>
+            </list>
+          </text>
+          <entry contextConductionInd="true" typeCode="COMP">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="SESCAM:PR0011" root="2.16.724.4.8.4.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="20040101"/>
+                <high value="20040601"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="SESCAM:PR011.1" root="2.16.724.4.8.4.1"/>
+                  <code code="55607006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Problem">
+                    <translation displayName="Problema"/>
+                  </code>
+                  <text>
+                    <reference value="#PR1"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20040101"/>
+                    <high value="20040601"/>
+                  </effectiveTime>
+                  <value code="F33" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Recurrent depressive disorder" xsi:type="CD">
+                    <originalText>
+                      <reference value="#PR1"/>
+                    </originalText>
+                    <translation code="311" codeSystem="2.16.840.1.113883.6.2" codeSystemName="CIE-9-MC" displayName="Depresión"/>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry contextConductionInd="true" typeCode="COMP">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="SESCAM:PR0012" root="2.16.724.4.8.4.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="20070101"/>
+                <high value="20071231"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="SESCAM:PR012.1" root="2.16.724.4.8.4.1"/>
+                  <code code="55607006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Problem">
+                    <translation displayName="Problema"/>
+                  </code>
+                  <text>
+                    <reference value="#PR2"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20050101"/>
+                    <high value="20051231"/>
+                  </effectiveTime>
+                  <value code="I84" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Haemorrhoids" xsi:type="CD">
+                    <originalText>
+                      <reference value="#PR2"/>
+                    </originalText>
+                    <translation code="455" codeSystem="2.16.840.1.113883.6.2" codeSystemName="CIE-9-MC" displayName="Hemorroides"/>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <component contextConductionInd="true" typeCode="COMP">
+        <section classCode="DOCSECT" moodCode="EVN">
+          <templateId root="2.16.840.1.113883.10.20.1.11"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+          <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" codeSystemVersion="June 2010" displayName="Problem list - Reported">
+            <translation displayName="Problem list"/>
+          </code>
+          <title>Problemas activos</title>
+          <text>
+            <list>
+              <item ID="PACT1">Problem</item>
+            </list>
+          </text>
+          <entry contextConductionInd="true" typeCode="COMP">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <id extension="SESCAM:PA0011" root="2.16.724.4.8.4.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20080202"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="SESCAM:PA011.1" root="2.16.724.4.8.4.1"/>
+                  <code code="55607006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Problem">
+                    <originalText>
+                      <reference value="#PACT1"/>
+                    </originalText>
+                    <translation displayName="Problema"/>
+                  </code>
+                  <text>
+                    <reference value="#PACT1"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20080202"/>
+                    <high value="20080202"/>
+                  </effectiveTime>
+                  <value code="493" codeSystem="2.16.840.1.113883.6.2" codeSystemName="CIE-9-MC" displayName="Asma" xsi:type="CD">
+                    <originalText>
+                      <reference value="#PACT1"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <component contextConductionInd="true" typeCode="COMP">
+        <section classCode="DOCSECT" moodCode="EVN">
+          <templateId root="2.16.840.1.113883.10.20.1.12"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+          <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" codeSystemVersion="June 2010" displayName="History of Proceduresï¿½"/>
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN" nullFlavor="NI"/>
+          </entry>
+        </section>
+      </component>
+      <component contextConductionInd="true" typeCode="COMP">
+        <section classCode="DOCSECT" moodCode="EVN">
+          <templateId root="2.16.840.1.113883.10.20.1.7"/>
+          <templateId root="2.16.840.1.11383.10.20.1.7"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.5"/>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4"/>
+          <code code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" codeSystemVersion="June 2010" displayName="History of medical device use">
+            <translation displayName="History of Medical Device Use"/>
+          </code>
+          <entry>
+            <supply classCode="SPLY" moodCode="EVN" nullFlavor="NA"/>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

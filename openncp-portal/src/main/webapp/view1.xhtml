@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-W3CDTD XHTML 1.0 TransitionalEN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:portlet="http://java.sun.com/portlet_2_0"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+    </h:head>
+    <body>
+
+        <f:view locale="#{facesContext.externalContext.requestLocale}" />
+
+        <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+
+        <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+            <p:graphicImage value="/images/loading.gif" />
+        </p:dialog>
+
+        <h:form>
+            <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />  
+            <p:commandLink ajax="false"
+                           action="/view.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal">
+                <p:graphicImage value="/images/Home-Button.png" />
+            </p:commandLink>
+            <p:graphicImage value="/images/flags/#{myBean.selectedCountry}.png"
+                            style="text-align:center;width:30px;height:30px;" />
+        </h:form>
+
+        <h:form prependId="false" id="searchPatient">
+            <h3>#{msg['ui.searchmask.info']}</h3>
+            <c:choose>
+                <c:when test="#{myBean.selectedCountry eq 'PT'}">
+                    <ui:include src="/forms/PT.xhtml"/>
+                </c:when>
+                <c:when test="#{myBean.selectedCountry eq 'IT'}">
+                    <ui:include src="/forms/IT.xhtml"/>
+                </c:when>    
+                <c:when test="#{myBean.selectedCountry eq 'AT'}">
+                    <ui:include src="/forms/AT.xhtml"/>
+                </c:when>    
+                <c:otherwise>
+                    <h:panelGrid columns="2" >
+                        <ui:repeat value="#{myBean.identifiers}" var="identifier">
+                            <h:outputLabel value="#{identifier.key}" />
+                            <p:inputText id="uservalue" value="#{identifier.userValue}" required="true" />
+                        </ui:repeat>
+                    </h:panelGrid>
+                    <h:panelGrid columns="2" id="aa">
+                        <ui:repeat value="#{myBean.demographics}" var="demographic">
+                            <h:outputLabel value="#{demographic.label}" rendered="#{myBean.showDemographics}"/>
+                            <p:inputText id="userValue2" value="#{demographic.userValue}" 
+                                         required="#{demographic.mandatory}" rendered="#{demographic.type=='text'}" />
+                            <p:calendar value="#{demographic.userDateValue}" id="userDateValue2" 
+                                        rendered="#{demographic.type=='calendar'}" yearRange="c-100:c+0" pattern="yyyyMMdd" 
+                                        navigator="true" >
+                                <f:convertDateTime pattern="yyyyMMdd"/>  
+                            </p:calendar>			
+                        </ui:repeat>
+                    </h:panelGrid>
+                </c:otherwise>
+            </c:choose>
+
+            <!--h:panelGrid columns="2" id="aa">
+                <ui:repeat value="#{myBean.demographics}" var="demographic">
+                    <h:outputLabel value="#{demographic.label}" rendered="#{myBean.showDemographics}"/>
+                    <p:inputText id="userValue2" value="#{demographic.userValue}" 
+                                 required="#{demographic.mandatory}" rendered="#{demographic.type=='text'}" />
+                    <p:calendar value="#{demographic.userDateValue}" id="userDateValue2" 
+                                rendered="#{demographic.type=='calendar'}" yearRange="c-100:c+0" pattern="yyyyMMdd" 
+                                navigator="true" >
+                        <f:convertDateTime pattern="yyyyMMdd"/>  
+                    </p:calendar>			
+                </ui:repeat>
+            </h:panelGrid-->                
+
+            <p:commandButton 
+                id="submitPatient" value="#{msg['ui.search.info']}"
+                ajax="true" actionListener="#{myBean.searchPatients}"
+                update="resultPanel" oncomplete="panelwv.show();">
+            </p:commandButton>
+            <p/>
+
+            <p:panel widgetVar="panelwv" visible="false" closable="true"
+                     toggleable="true" id="resultPanel">
+
+                <h:outputLabel value="#{myBean.queryPatientsException}" />
+
+                <ui:repeat value="#{myBean.patients}" var="patient" id="patui">
+
+                    <table>
+                        <tr>
+                            <td><b><h:outputText value="#{msg['patient.data.givenname']}" /></b></td>
+                            <td>&nbsp;</td>
+                            <td><h:outputText value="#{patient.name}" /></td>
+                        </tr>
+                        <tr>
+                            <td><b><h:outputText value="#{msg['patient.data.surname']}" /></b></td>
+                            <td>&nbsp;</td>
+                            <td><h:outputText value="#{patient.familyName}" /></td>
+                        </tr>
+                        <tr>
+                            <td><b><h:outputText value="#{msg['patient.data.birth.date']}" /></b></td>
+                            <td>&nbsp;</td>
+                            <td><h:outputText value="#{patient.birthDate}" /></td>
+                        </tr>                            
+                        <tr>
+                            <td><b><h:outputText value="#{msg['patient.data.street.address']}" /></b></td>
+                            <td>&nbsp;</td>
+                            <td><h:outputText value="#{patient.address}" /></td>
+                        </tr>
+                        <tr>
+                            <td><b><h:outputText value="#{msg['patient.data.code']}" /></b></td>
+                            <td>&nbsp;</td>
+                            <td><h:outputText value="#{patient.postalCode}" /></td>
+                        </tr>
+                        <tr>
+                            <td><b><h:outputText value="#{msg['patient.data.city']}" /></b></td>
+                            <td>&nbsp;</td>
+                            <td><h:outputText value="#{patient.city}" /></td>
+                        </tr>
+                        <tr>
+                            <td><b><h:outputText value="#{msg['patient.data.country']}" /></b></td>
+                            <td>&nbsp;</td>
+                            <td><h:outputText value="#{patient.country}" /></td>
+                        </tr>
+                    </table>                                                                                              
+
+                    <p:commandLink
+                        action="/viewPatientConfirmationForDocuments.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+                        id="p1"
+                        ajax="false"
+                        title="#{msg['navi.report.summary']}"
+                        rendered="#{myBean.assertionNotExists}"
+                        disabled="#{!myBean.enablePatientDocuments}">
+                        <f:setPropertyActionListener value="#{patient}"
+                                                     target="#{myBean.selectedPatient}" />
+                        #{msg['ui.ps.info']}<br/>
+
+                    </p:commandLink>
+
+                    <p:commandLink 
+                        action="/viewPatientConfirmation.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+                        ajax="false"
+                        id="p4"
+                        title="#{msg['navi.report.prescription']}"
+                        rendered="#{myBean.assertionNotExists}"
+                        disabled="#{!myBean.enablePrescriptionDocuments}">
+                        <f:setPropertyActionListener value="#{patient}"
+                                                     target="#{myBean.selectedPatient}" />
+                        #{msg['ui.ep.info']}<br/>
+                    </p:commandLink>
+
+                    <p:commandLink 
+                        action="/viewPatientConfirmationForConsent.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+                        ajax="false"
+                        id="p6"
+                        title="#{msg['patient.data.agreement.title']}"
+                        rendered="#{myBean.assertionNotExists and myBean.enableCONSENT}"
+                        disabled="#{!myBean.enablePatientDocuments}">
+                        <f:setPropertyActionListener value="#{patient}"
+                                                     target="#{myBean.selectedPatient}" />
+                        #{msg['ui.consent.info']}<br/>
+                    </p:commandLink>
+                    <p:commandLink 
+                        action="/viewPatientConfirmationForHCER.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+                        ajax="false"
+                        id="p8"
+                        title="#{msg['patient.data.hcer.title']}"
+                        rendered="#{myBean.assertionNotExists and myBean.enableHCER}"
+                        disabled="#{!myBean.enableHCER}">
+                        <f:setPropertyActionListener value="#{patient}"
+                                                     target="#{myBean.selectedPatient}" />
+                        #{msg['ui.hcer.info']}<br/>
+                    </p:commandLink>
+                    <p:commandLink 
+                        action="/viewPatientConfirmationForMRO.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+                        ajax="false"
+                        id="p10"
+                        title="#{msg['patient.data.mro.title']}"
+                        rendered="#{myBean.assertionNotExists and myBean.enableMRO}"
+                        disabled="#{!myBean.enableMRO}">
+                        <f:setPropertyActionListener value="#{patient}"
+                                                     target="#{myBean.selectedPatient}" />
+                        #{msg['ui.mro.info']}<br/>
+                    </p:commandLink>                              
+                </ui:repeat>  
+            </p:panel>
+
+
+        </h:form>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                // Hide download link and retrieve button until the status of the FutureID Client is discovered
+                $("#sc_button").hide();
+                $("#sc_link").hide();
+                //$("button[id = '<portlet:namespace/>:submitPatient']").hide();
+                getStatus();
+            });
+
+            var intervalVariable = setInterval(function () {
+                getStatus();
+            }, 10000);
+            
+            var clicked = false;
+
+            $("#sc_link").one("click", function () {
+                intervalVariable = setInterval(function () {
+                    getStatus();
+                }, 10000);
+                $(this).hide();
+                clicked = true;
+            });
+
+            function b64_to_utf8(str) {
+                return decodeURIComponent(escape(window.atob(str)));
+            }
+
+            function getStatus() {
+                // If there was already a patient search, stop the search for the smartcard
+                if ($("div[data-widget = 'panelwv']").attr("style")) {
+                    window.clearInterval(intervalVariable);
+                    return;
+                }
+                $.ajax({
+                    type: 'GET',
+                    url: "http://www.localhost-ecard-client.de:24727/larms/getAttributes?servicelevel=basic&amp;format=JWT",
+                    crossDomain: true,
+                    success: function (responseData) {
+                        // on success there is no need to show buttons or link
+                        //$("#sc_link").hide();
+                        //$("#sc_button").show();
+                        window.clearInterval(intervalVariable);
+                        insertValues(responseData);
+                        //$("button[id = '<portlet:namespace/>:submitPatient']").click().hide();
+                    },
+                    error: function (responseData) {
+                        // handle request errors
+                        $("button[id = '<portlet:namespace/>:submitPatient']").show();
+                        if (responseData.status == 400) {
+                            console.log('Invalid request (e.g. wrong operation, unknown parameter)');
+                        } else if (responseData.status == 500) {
+                            console.log('Problems processing the request.');
+                        } else {
+                            // will be executed if no FutureID Client listens on the port
+                            console.log('The e-SENS eID Components seem not to be active! The retrieval of smartcard identity attributes is therefore not possible. Please download and start the client using the above link.');
+                            console.log('No service...');
+                            if (!clicked) {
+                                window.clearInterval(intervalVariable);
+                                $("#sc_link").show();
+                            }
+                        }
+                    },
+                    timeout: 60000
+                });
+            }
+
+            function insertValues(response) {
+                // split the JWT into header and payload
+                var res = response.split('.', 2);
+                //var header = $.parseJSON(b64_to_utf8(res[0]));
+                var payload = $.parseJSON(b64_to_utf8(res[1]));
+                var identifier = payload['http://www.esens.eu/attributes/smartcard/HealthInsuranceId'];
+                var selector = Object.keys(identifier)[0];
+                //var short_selector = selector.split(":")[2];
+                //var request = "input[title='" + short_selector + "']";
+                console.log(identifier[selector]);
+                $("input[id = '<portlet:namespace/>:healthInsuranceId']").val(identifier[selector]).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:fiscalNumber']").val(payload['http://www.esens.eu/attributes/smartcard/FiscalNumber']).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:cardId']").val(payload['http://www.esens.eu/attributes/smartcard/CardId']).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:givenName']").val(payload['http://eidas.europa.eu/attributes/naturalperson/CurrentGivenName']).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:surname']").val(payload['http://eidas.europa.eu/attributes/naturalperson/CurrentFamilyName']).attr("readonly", true);
+
+                //$(request).attr("value", identifier[selector]);
+                return 0;
+            }
+        </script>
+
+    </body>
+</html>
+

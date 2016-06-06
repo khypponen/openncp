@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<job-scheduling-data xmlns="http://www.quartz-scheduler.org/xml/JobSchedulingData"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://www.quartz-scheduler.org/xml/JobSchedulingData http://www.quartz-scheduler.org/xml/job_scheduling_data_1_8.xsd"
+                     version="1.8">
+    <schedule>
+        <job>
+            <name>testjob</name>
+            <group>TSL_GROUP</group>
+            <description>Basic test job</description>
+            <job-class>epsos.ccd.gnomon.configmanager.job.SyncJob</job-class>
+            <job-data-map>
+                <entry>
+                    <key>param1</key>
+                    <value>value1</value>
+                </entry>
+                <entry>
+                    <key>param2</key>
+                    <value>value2</value>
+                </entry>
+            </job-data-map>
+        </job>
+        <trigger>
+            <simple>
+                <name>my-trigger</name>
+                <group>MYTRIGGER_GROUP</group>
+                <job-name>testjob</job-name>
+                <job-group>TSL_GROUP</job-group>
+                <!-- repeat indefinitely every 5 seconds -->
+                <repeat-count>-1</repeat-count>
+                <repeat-interval>86400000</repeat-interval>
+            </simple>
+        </trigger>
+    </schedule>
+
+</job-scheduling-data>

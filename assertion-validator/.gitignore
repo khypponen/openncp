@@ -1,0 +1,11 @@
+target/
+
+# Ignore all project files from IntelliJ
+*.iml
+.idea/
+
+# Ignore IntelliJ Atlassian plugin file
+atlassian-ide-plugin.xml
+/.settings/
+/.classpath
+/.project

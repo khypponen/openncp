@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-W3CDTD XHTML 1.0 TransitionalEN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<body>
+
+        <f:view locale="#{facesContext.externalContext.requestLocale}" />
+
+        <p:ajaxStatus style="width:16px;height:16px;position:fixed;top:63px;right:120px;" id="ajaxStatusPanel">
+            <f:facet name="start">
+                <h:graphicImage value="/images/loading.gif"
+                                style="text-align:center;width:40px;height:40px;" />
+            </f:facet>
+            <f:facet name="complete">
+                <h:outputText value="" />
+            </f:facet>
+        </p:ajaxStatus>
+        <p class="portlet-msg-info">#{msg['ui.confirmation.info']}</p>
+        <h:form>
+                   <p:commandLink  ajax="false"
+                            action="/view.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal" >
+                <p:graphicImage value="/images/Home-Button.png" />
+            </p:commandLink>
+            <p:commandLink ajax="false"
+                           actionListener="#{myBean.showForm}">
+                <f:setPropertyActionListener value="#{myBean.selectedCountry}"
+                                             target="#{myBean.selectedCountry}" />
+                <p:graphicImage value="/images/flags/#{myBean.selectedCountry}.png"
+                                style="text-align:center;width:30px;height:30px;" />
+            </p:commandLink>
+            <ui:include src="patient.xhtml" />
+            <ui:include src="confirmation.xhtml" />
+        
+ 
+        </h:form>
+
+        <h:form>
+
+
+
+
+            <p:panel id="confirmationPanel">
+                <p:commandButton id="submitButton"
+                                 value="#{msg['trca.confirm']}"
+                                 ajax="false"
+
+                                 action="/viewOptions.xhtml?faces-redirect=true&amp;javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal">
+                    <f:setPropertyActionListener value="#{confirmationBean.purposeOfUse}"
+                                                 target="#{myBean.purposeOfUseForPS}" />
+                    <f:setPropertyActionListener value="#{confirmationBean.confirm}"
+                                                 target="#{myBean.specificConsent}" />
+                    <p:resetInput target="confirmationPanel" />
+                </p:commandButton>
+
+                <p:commandButton id="cancelButton"
+                                 value="#{msg['trca.cancel']}"
+                                 ajax="false"
+                                 action="/view1.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal" />
+            </p:panel>
+        </h:form>
+</body>
+</html>

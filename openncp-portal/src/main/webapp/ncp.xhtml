@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-W3CDTD XHTML 1.0 TransitionalEN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+</h:head>
+<body>
+
+	<f:view locale="#{facesContext.externalContext.requestLocale}" />
+
+	<p:ajaxStatus style="width:16px;height:16px;" id="ajaxStatusPanel">
+		<f:facet name="start">
+			<h:graphicImage value="/images/loading.gif"
+				style="text-align:center;width:40px;height:40px;" />
+		</f:facet>
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
+	<BR />
+
+        <div class="portlet-msg-info">
+            Fill in the identifiers form to search for a patient
+        </div>
+
+        <h:form>
+		<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />  
+		<p:commandLink ajax="false"
+			action="/ncp.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal">
+			<p:graphicImage value="/images/Home-Button.png" />
+		</p:commandLink>
+		<p:graphicImage value="/images/flags/#{ncpBean.selectedCountry}.png"
+			style="text-align:center;width:30px;height:30px;" />
+	</h:form>
+        
+	<h:form>
+		<p:panel widgetVar="panel1">
+			<p:dataTable var="identifier" value="#{ncpBean.identifiers}">
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="#{identifier.key}" />
+					</f:facet>
+					<h:outputText value="#{identifier.key}" />
+
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+					</f:facet>
+					<p:inputText id="userValue" value="#{identifier.userValue}"
+						required="true" />
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+		<p:panel widgetVar="panel2" visible="#{ncpBean.showDemographics}">
+			<p:dataTable var="demographic" value="#{ncpBean.demographics}">
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="#{demographic.label}" />
+					</f:facet>
+					<h:outputText value="#{demographic.label}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+					</f:facet>
+					<p:inputText id="userValue2" value="#{demographic.userValue}"
+						required="#{demographic.mandatory}" rendered="#{demographic.type=='text'}" />
+ 					<p:calendar value="#{demographic.userDateValue}" id="userDateValue2" 
+						rendered="#{demographic.type=='calendar'}" pattern="yyyyMMdd" 
+						navigator="true" >
+						 <f:convertDateTime pattern="yyyyMMdd"/>  
+				    </p:calendar>
+						 
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+
+		<p:commandButton 
+			value="#{msg['patient.button.search']}"
+			ajax="true" actionListener="#{myBean.searchPatientsRequest}"
+			update="resultPanel" oncomplete="panelwv.show();">                    
+                    <f:attribute name="selectedCountry" value="#{ncpBean.selectedCountry}" />
+                    <f:attribute name="identifiers" value="#{ncpBean.identifiers}" />
+                    <f:attribute name="demographics" value="#{ncpBean.demographics}" />
+                    
+		</p:commandButton>
+
+		<p:panel widgetVar="panelwv" visible="false" closable="true"
+			toggleable="true" id="resultPanel">
+			<p:dataTable var="patient" value="#{myBean.patients}" 
+				emptyMessage="#{myBean.queryPatientsException}">
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="#{msg['patient.data.surname']}" />
+					</f:facet>
+					<h:outputText value="#{patient.familyName}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="#{msg['patient.data.givenname']}" />
+					</f:facet>
+					<h:outputText value="#{patient.name}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="#{msg['patient.data.birth.date']}" />					
+					</f:facet>
+					<h:outputText value="#{patient.birthDate}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="#{msg['patient.data.street.address']}" />
+					</f:facet>
+					<h:outputText value="#{patient.address}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="#{msg['patient.data.code']}" />					
+					</f:facet>
+					<h:outputText value="#{patient.postalCode}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="#{msg['patient.data.city']}" />					
+					</f:facet>
+					<h:outputText value="#{patient.city}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="#{msg['patient.data.country']}" />					
+					</f:facet>
+					<h:outputText value="#{patient.country}" />
+				</p:column>
+				<p:column>
+
+
+					<p:commandLink
+						action="/viewPatientConfirmationForDocuments.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+						id="p1"
+						ajax="false"
+						title="#{msg['navi.report.summary']}"
+						rendered="#{myBean.assertionNotExists}"
+						disabled="#{!myBean.enablePatientDocuments}">
+						<f:setPropertyActionListener value="#{patient}"
+							target="#{myBean.selectedPatient}" />
+						<p:graphicImage value="/images/PatientData.png"
+							style="text-align:center" />
+													
+					</p:commandLink>
+					
+					<p:commandLink
+						action="/viewDocuments.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+						id="p2"
+						ajax="false"
+						title="#{msg['navi.report.summary']}"
+						rendered="#{myBean.assertionExists}"
+						disabled="#{!myBean.enablePatientDocuments}">
+						<f:setPropertyActionListener value="#{patient}"
+							target="#{myBean.selectedPatient}" />
+						<p:graphicImage value="/images/PatientData.png"
+							style="text-align:center" />						
+					</p:commandLink>
+					
+					<p:commandLink 
+						action="/viewPrescriptions.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+						ajax="false"
+						id="p3"
+						title="#{msg['navi.report.prescription']}"
+						rendered="#{myBean.assertionExists}"
+						disabled="#{!myBean.enablePrescriptionDocuments}">
+						<f:setPropertyActionListener value="#{patient}"
+							target="#{myBean.selectedPatient}" />
+						<p:graphicImage value="/images/prescription.png"
+							style="text-align:center" />												
+					</p:commandLink>
+					
+					<p:commandLink 
+						action="/viewPatientConfirmation.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+						ajax="false"
+						id="p4"
+						title="#{msg['navi.report.prescription']}"
+						rendered="#{myBean.assertionNotExists}"
+						disabled="#{!myBean.enablePrescriptionDocuments}">
+						<f:setPropertyActionListener value="#{patient}"
+							target="#{myBean.selectedPatient}" />
+						<p:graphicImage value="/images/prescription.png"
+							style="text-align:center" />																			
+					</p:commandLink>
+					
+					<p:commandLink 
+						action="/viewConsent.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+						ajax="false"
+						id="p5"
+						title="#{msg['patient.data.agreement.title']}"
+						rendered="#{myBean.assertionExists}"
+						disabled="#{!myBean.enablePatientDocuments}">
+						<f:setPropertyActionListener value="#{patient}"
+							target="#{myBean.selectedPatient}" />
+						<p:graphicImage value="/images/consent.png"
+							style="text-align:center" />											
+					</p:commandLink>
+					
+					<p:commandLink 
+						action="/viewPatientConfirmationForConsent.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+						ajax="false"
+						id="p6"
+						title="#{msg['patient.data.agreement.title']}"
+						rendered="#{myBean.assertionNotExists}"
+						disabled="#{!myBean.enablePatientDocuments}">
+						<f:setPropertyActionListener value="#{patient}"
+							target="#{myBean.selectedPatient}" />
+						<p:graphicImage value="/images/consent.png"
+							style="text-align:center" />												
+                                        </p:commandLink>
+
+                                        <p:commandLink 
+                                            action="/viewHCER.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+                                            id="p7"
+                                            ajax="false" 
+                                            title="#{msg['patient.data.hcer.title']}"
+                                            rendered="#{myBean.assertionExists}"
+                                            disabled="#{!myBean.enableHCER}">
+                                            <f:setPropertyActionListener value="#{patient}"
+                                                                         target="#{myBean.selectedPatient}" />
+                                            <p:graphicImage value="/images/PatientFile.png"
+                                                            style="text-align:center" />									
+                                        </p:commandLink>
+                                        <p:commandLink 
+                                            action="/viewPatientConfirmationForHCER.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+                                            ajax="false" 
+                                            id="p8"
+                                            title="#{msg['patient.data.hcer.title']}"
+                                            rendered="#{myBean.assertionNotExists}"
+                                            disabled="#{!myBean.enableHCER}">
+                                            <f:setPropertyActionListener value="#{patient}"
+                                                                         target="#{myBean.selectedPatient}" />
+                                            <p:graphicImage value="/images/PatientFile.png"
+                                                            style="text-align:center" />									
+                                        </p:commandLink>
+
+                                        <p:commandLink 
+                                            action="/viewMRO.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+                                            ajax="false"
+                                            id="p9"
+                                            title="#{msg['patient.data.mro.title']}"
+                                            rendered="#{myBean.assertionExists}"
+                                            disabled="#{!myBean.enableMRO}">
+                                            <f:setPropertyActionListener value="#{patient}"
+                                                                         target="#{myBean.selectedPatient}" />
+                                            <p:graphicImage value="/images/PatientFile.png"
+                                                            style="text-align:center" />									
+                                        </p:commandLink>
+                                        <p:commandLink 
+                                            action="/viewPatientConfirmationForMRO.xhtml?javax.portlet.faces.PortletMode=view&amp;javax.portlet.faces.WindowState=normal"
+                                            ajax="false"
+                                            id="p10"
+                                            title="#{msg['patient.data.mro.title']}"
+                                            rendered="#{myBean.assertionNotExists}"
+                                            disabled="#{!myBean.enableMRO}">
+                                            <f:setPropertyActionListener value="#{patient}"
+                                                                         target="#{myBean.selectedPatient}" />
+                                            <p:graphicImage value="/images/MROFile.png"
+                                                            style="text-align:center" />									
+                                        </p:commandLink>
+					
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+	</h:form>
+</body>
+</html>
+
+
+
+

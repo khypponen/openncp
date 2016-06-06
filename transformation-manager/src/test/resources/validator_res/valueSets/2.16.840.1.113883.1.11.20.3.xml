@@ -1,0 +1,9 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.3" displayName="AlertStatusCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="55561003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Active"/>
+			<Concept code="392521001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prior History"/>
+			<Concept code="73425007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="No Longer Active"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <f:view locale="#{facesContext.externalContext.requestLocale}"/>
+    <h:head>
+    </h:head>
+    <h:body>
+
+		<p:panel header="#{msg['navi.report.summary']}">
+			<table>
+				<tr>
+					<td><b><h:outputText value="#{msg['patient.data.givenname']}" /></b></td>
+					<td>&nbsp;</td>
+					<td><h:outputText value="#{myBean.selectedPatient.name}" /></td>
+				</tr>
+				<tr>
+					<td><b><h:outputText value="#{msg['patient.data.surname']}" /></b></td>
+					<td>&nbsp;</td>
+					<td><h:outputText value="#{myBean.selectedPatient.familyName}" /></td>
+				</tr>
+				<tr>
+					<td><b><h:outputText value="#{msg['patient.data.street.address']}" /></b></td>
+					<td>&nbsp;</td>
+					<td><h:outputText value="#{myBean.selectedPatient.address}" /></td>
+				</tr>
+				<tr>
+					<td><b><h:outputText value="#{msg['patient.data.code']}" /></b></td>
+					<td>&nbsp;</td>
+					<td><h:outputText value="#{myBean.selectedPatient.postalCode}" /></td>
+				</tr>
+				<tr>
+					<td><b><h:outputText value="#{msg['patient.data.city']}" /></b></td>
+					<td>&nbsp;</td>
+					<td><h:outputText value="#{myBean.selectedPatient.city}" /></td>
+				</tr>
+				<tr>
+					<td><b><h:outputText value="#{msg['patient.data.country']}" /></b></td>
+					<td>&nbsp;</td>
+					<td><h:outputText value="#{myBean.selectedPatient.country}" /></td>
+				</tr>
+			</table>
+		</p:panel>        
+        
+        <h:form>
+            <h:panelGroup>
+                <p:tabView id="tabs">
+                    <p:tab id="diagnosesTab" title="#{msg['hcer.tab.diagnoses.title']}">
+                        <p:dataTable id="diagnosesDataTable"
+                                     value="#{diagnoses.list}"
+                                     var="diag"
+                                     rowKey="#{diag.key}"
+                                     selection="#{diagnoses.selectedDiagnosis}"
+                                     selectionMode="single"
+                                     emptyMessage="#{msg['hcer.diagnoses.datatable.empty']}">
+                            <f:facet name="header">
+                                #{msg["hcer.diagnoses.datatable.title"]}
+                            </f:facet>
+                            <p:column sortBy="#{diag.problemCode}" headerText="#{msg['hcer.diagnosis.problem.code']}">
+                                <h:outputText value="#{diag.problemCode}"/>
+                            </p:column>
+                            <p:column sortBy="#{diag.problem}" headerText="#{msg['hcer.diagnosis.problem.display']}">
+                                <h:outputText value="#{diag.problem}"/>
+                            </p:column>
+                            <p:column sortBy="#{diag.status}" headerText="#{msg['hcer.diagnosis.status']}">
+                                <h:outputText value="#{diag.status}"/>
+                            </p:column>
+                            <p:column sortBy="#{diag.onset}" headerText="#{msg['hcer.diagnosis.onset']}">
+                                <h:outputText value="#{diag.formattedOnset}"/>
+                            </p:column>
+                            <p:column sortBy="#{diag.resolution}" headerText="#{msg['hcer.diagnosis.resolution']}">
+                                <h:outputText value="#{diag.formattedResolution}"/>
+                            </p:column>
+                            <p:column sortBy="#{diag.selectedObservations[0].value}" headerText="#{msg['hcer.diagnosis.observation.code']}">
+                                <h:outputText value="#{diag.selectedObservations[0].value}"/>
+                            </p:column>
+                            <p:column sortBy="#{diag.selectedObservations[0].key}" headerText="#{msg['hcer.diagnosis.observation.display']}">
+                                <h:outputText value="#{diag.selectedObservations[0].key}"/>
+                            </p:column>
+                            <p:column sortBy="#{diag.description}" headerText="#{msg['hcer.diagnosis.description']}">
+                                <h:outputText value="#{diag.description}"/>
+                            </p:column>
+                        </p:dataTable>
+                        <p:contextMenu for="diagnosesDataTable">
+                            <p:menuitem value="#{msg['hcer.diagnosis.menu.view']}"
+                                        update="diagnosisViewPanel" icon="ui-icon-search" oncomplete="diagnosisViewDlg.show()"/>  
+                            <p:menuitem value="#{msg['hcer.diagnosis.menu.delete']}"
+                                        icon="ui-icon-close" oncomplete="diagnosisDeleteDlg.show()"/>
+                        </p:contextMenu>
+                        <p:dialog id="diagnosisViewDialog"
+                                  header="#{msg['hcer.diagnosis.dialog.view.title']}"
+                                  widgetVar="diagnosisViewDlg">
+                            <h:panelGroup id="diagnosisViewPanel">
+                                <p:panelGrid>
+                                    <p:row>
+                                        <p:column>
+                                            <h:outputText value="#{msg['hcer.diagnosis.problem.code']}:"/>
+                                        </p:column>
+                                        <p:column>
+                                            <h:outputText value="#{diagnoses.selectedDiagnosis.problemCode}" style="font-weight:bold"/>
+                                        </p:column>
+                                    </p:row>
+                                    <p:row>
+                                        <p:column>
+                                            <h:outputText value="#{msg['hcer.diagnosis.problem.display']}:"/>
+                                        </p:column>
+                                        <p:column>
+                                            <h:outputText value="#{diagnoses.selectedDiagnosis.problem}" style="font-weight:bold"/>
+                                        </p:column>
+                                    </p:row>
+                                    <p:row>
+                                        <p:column>
+                                            <h:outputText value="#{msg['hcer.diagnosis.status']}:"/>
+                                        </p:column>
+                                        <p:column>
+                                            <h:outputText value="#{diagnoses.selectedDiagnosis.status}" style="font-weight:bold"/>
+                                        </p:column>
+                                    </p:row>
+                                    <p:row>
+                                        <p:column>
+                                            <h:outputText value="#{msg['hcer.diagnosis.onset']}:"/>
+                                        </p:column>
+                                        <p:column>
+                                            <h:outputText value="#{diagnoses.selectedDiagnosis.formattedOnset}" style="font-weight:bold"/>
+                                        </p:column>
+                                    </p:row>
+                                    <p:row>
+                                        <p:column>
+                                            <h:outputText value="#{msg['hcer.diagnosis.resolution']}:"/>
+                                        </p:column>
+                                        <p:column>
+                                            <h:outputText value="#{diagnoses.selectedDiagnosis.formattedResolution}" style="font-weight:bold"/>
+                                        </p:column>
+                                    </p:row>
+                                    <p:row>
+                                        <p:column colspan="2">
+                                            <p:dataTable value="#{diagnoses.selectedDiagnosis.selectedObservations}" var="observation">
+                                                <f:facet name="header">
+                                                    #{msg["hcer.diagnosis.observations.datatable.title"]}
+                                                </f:facet>
+                                                <p:column headerText="#{msg['hcer.diagnosis.observations.datatable.code']}">
+                                                    <h:outputText value="#{observation.value}"/>
+                                                </p:column>
+                                                <p:column headerText="#{msg['hcer.diagnosis.observations.datatable.display']}">
+                                                    <h:outputText value="#{observation.key}"/>
+                                                </p:column>
+                                            </p:dataTable>
+                                        </p:column>
+                                    </p:row>
+                                </p:panelGrid>
+                                <hr/>
+                                <h:outputText value="#{msg['hcer.diagnosis.description']}:"/><br/>
+                                <h:outputText value="#{diagnoses.selectedDiagnosis.description}" style="font-weight:bold"/>
+                                <hr/>
+                                <p:commandButton id="viewOKButton" value="#{msg['hcer.diagnosis.dialog.ok']}" onclick="diagnosisViewDlg.hide()"/>
+                            </h:panelGroup>
+                        </p:dialog>
+                        <p:confirmDialog id="diagnosisDeleteDialog"
+                                         header="#{msg['hcer.diagnosis.dialog.delete.title']}"
+                                         message="#{msg['hcer.diagnosis.dialog.delete.message']}"
+                                         widgetVar="diagnosisDeleteDlg">
+                            <p:commandButton id="deleteOKButton" update="@form diagnosesDataTable" value="#{msg['hcer.diagnosis.dialog.ok']}" actionListener="#{diagnoses.delete}" oncomplete="diagnosisDeleteDlg.hide()"/>
+                            <p:commandButton id="deleteCancelButton" value="#{msg['hcer.diagnosis.dialog.cancel']}" onclick="diagnosisDeleteDlg.hide()"/>
+                        </p:confirmDialog>
+                        <hr/>
+                        <p:commandButton id="addDiagnosisButton"
+                                         type="button"
+                                         value="#{msg['hcer.diagnosis.add']}"
+                                         onclick="diagnosisAddDlg.show()"/>
+                        <p:dialog id="diagnosisAddDialog"
+                                  header="#{msg['hcer.diagnosis.dialog.add.title']}"
+                                  widgetVar="diagnosisAddDlg" modal="true">
+                            <p:messages id="validationMessages"/>
+                            <p:panelGrid columns="2">
+                                <p:outputLabel value="#{msg['hcer.diagnosis.problem.display']}*:"
+                                               for="problem"/>
+                                <p:selectOneMenu id="problem" value="#{diagnosis.problem}">
+                                    <f:selectItems value="#{diagnosis.availableProblems}"/>
+                                </p:selectOneMenu>
+                                <p:outputLabel value="#{msg['hcer.diagnosis.status']}*:"
+                                               for="status"/>
+                                <p:selectOneMenu id="status"
+                                                 value="#{diagnosis.status}">
+                                    <f:selectItems value="#{diagnosis.availableStatuses}"/>
+                                </p:selectOneMenu>
+                                <p:outputLabel value="#{msg['hcer.diagnosis.onset']}*:"
+                                               for="onset"/>
+                                <p:calendar id="onset"
+                                            value="#{diagnosis.onset}"
+                                            showOn="button"
+                                            size="15"
+                                            />
+                                <p:outputLabel value="#{msg['hcer.diagnosis.resolution']}**:"
+                                               for="resolution"/>
+                                <p:calendar id="resolution"
+                                            value="#{diagnosis.resolution}"
+                                            showOn="button"
+                                            size="15"
+                                            />
+                                <p:outputLabel value="#{msg['hcer.diagnosis.observations.display']}*:"
+                                               for="observations"/>
+                                <p:autoComplete id="observations"
+                                                value="#{diagnosis.observations}"
+                                                completeMethod="#{diagnosis.complete}"
+                                                multiple="true"
+                                                maxlength="50" size="50"
+                                                queryDelay="500"
+                                                scrollHeight="300"
+                                                />
+                                <p:outputLabel value="#{msg['hcer.diagnosis.description']}:"
+                                               for="description"/>
+                                <p:inputTextarea id="description" value="#{diagnosis.description}" rows="10" cols="70"/>
+                            </p:panelGrid>
+                            *#{msg['hcer.diagnosis.dialog.fields.required']}<br/>
+                            **#{msg['hcer.diagnosis.dialog.fields.resolution.required']}
+                            <hr/>
+                            <p:commandButton id="addDiagnosisSaveButton"
+                                             update="@form diagnosesDataTable validationMessages"
+                                             value="#{msg['hcer.diagnosis.dialog.add.save']}"
+                                             actionListener="#{diagnosis.save}"
+                                             oncomplete="handleAddRequest(xhr, status, args)"/>
+                            <p:commandButton id="addDiagnosisCancelButton"
+                                             value="#{msg['hcer.diagnosis.dialog.add.cancel']}"
+                                             onclick="diagnosisAddDlg.hide()"/>
+                            <script type="text/javascript">
+                                function handleAddRequest(xhr, status, args) {
+                                    if(args.validationFailed || !args.passed) {
+                                        diagnosisAddDlg.show();
+                                    } else {
+                                        diagnosisAddDlg.hide();
+                                    }
+                                }
+                            </script>
+                        </p:dialog>
+                    </p:tab>
+                </p:tabView>
+                <hr/>
+                
+                <p:commandButton id="saveButton" ajax="false"            
+                 value="#{msg['hcer.submit.button.save']}"
+                 disabled="#{not hcerController.filled}"
+                 actionListener="#{hcerController.save}"
+                    />
+                
+                <p:commandButton id="submitButton"
+                                 type="button"
+                                 value="#{msg['hcer.submit.button.title']}"
+                                 disabled="#{not hcerController.filled}"
+                                 onclick="submitDlg.show()"/>
+                <p:confirmDialog id="submitDialog"
+                                 header="#{msg['hcer.sumbit.dialog.title']}"
+                                 message="#{msg['hcer.submit.dialog.message']}"
+                                 widgetVar="submitDlg">
+                    <p:commandButton id="submitOKButton"
+                                     update="@form"
+                                     value="#{msg['hcer.submit.dialog.ok']}"
+                                     actionListener="#{hcerController.submit}"
+                                     oncomplete="handleSubmitRequest(xhr, status, args)"/>
+                    <p:commandButton id="submitCancelButton"
+                                     value="#{msg['hcer.submit.dialog.cancel']}"
+                                     onclick="submitDlg.hide()"/>
+                    <script type="text/javascript">
+                        function handleSubmitRequest(xhr, status, args) {
+                            if(args.validationFailed || !args.submitted) {
+                                submitDlg.hide();
+                                failedSubmissionDlg.show();
+                            } else {
+                                submitDlg.hide();
+                                succeededSubmissionDlg.show();
+                            }
+                        }
+                    </script>
+                </p:confirmDialog>
+                <p:dialog id="succeededSubmissionDialog"
+                          header="#{msg['hcer.diagnosis.dialog.submission.title']}"
+                          widgetVar="succeededSubmissionDlg">
+                    #{msg['hcer.diagnosis.dialog.submission.succeeded.message']}
+                    <hr/>
+                    <p:commandButton id="succeededSubmissionOKButton" value="#{msg['hcer.diagnosis.dialog.ok']}" onclick="succeededSubmissionDlg.hide()"/>
+                </p:dialog>
+                <p:dialog id="failedSubmissionDialog"
+                          header="#{msg['hcer.diagnosis.dialog.submission.title']}"
+                          widgetVar="failedSubmissionDlg">
+                    #{msg['hcer.diagnosis.dialog.submission.failed.message']}
+                    <hr/>
+                    <p:commandButton id="failedSubmissionOKButton" value="#{msg['hcer.diagnosis.dialog.ok']}" onclick="failedSubmissionDlg.hide()"/>
+                </p:dialog>
+            </h:panelGroup>
+        </h:form>
+<script>
+document.getElementById("_portalb_WAR_epsosportal_:j_idt36:tabs:observations_hinput").style.display = "none";
+</script>
+    </h:body>
+</html>
+

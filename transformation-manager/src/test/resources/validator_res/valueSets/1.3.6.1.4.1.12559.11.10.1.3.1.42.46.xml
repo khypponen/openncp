@@ -1,0 +1,181 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSDisplayLabel" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.46" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Active Ingredient"/>
+			<Concept code="1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Active Ingredient (label)"/>
+			<Concept code="10" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Clinical Manifestation"/>
+			<Concept code="10" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Clinical Manifestation (label)"/>
+			<Concept code="107" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="I confirm that the patient –data subject has consented to the following statement: ‘I agree that my Patient Summary may be transferred to a registered Health Professional in [COUNTRY B] for the purposes of providing me with medical care and/or medication’"/>
+			<Concept code="107" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="I confirm that the patient –data subject has consented to the following statement: ‘I agree that my Patient Summary may be transferred to a registered Health Professional in [COUNTRY B] for the purposes of providing me with medical care and/or medication"/>
+			<Concept code="11" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Closed/Inactive Problem"/>
+			<Concept code="11" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Closed/Inactive Problem (label)"/>
+			<Concept code="12" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Contact Information"/>
+			<Concept code="12" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Contact Information (label)"/>
+			<Concept code="13" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Country"/>
+			<Concept code="13" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Country (label)"/>
+			<Concept code="14" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Country A Medicinal Product Code"/>
+			<Concept code="14" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Country A Medicinal Product Code (label)"/>
+			<Concept code="15" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Creation Date"/>
+			<Concept code="15" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Creation Date (label)"/>
+			<Concept code="16" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Custodian"/>
+			<Concept code="16" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Custodian (label)"/>
+			<Concept code="17" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Date"/>
+			<Concept code="17" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Date (label)"/>
+			<Concept code="18" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Date To"/>
+			<Concept code="18" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Date To (label)"/>
+			<Concept code="19" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Date of Birth"/>
+			<Concept code="19" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Date of Birth (label)"/>
+			<Concept code="2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Active Problem"/>
+			<Concept code="2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Active Problem (label)"/>
+			<Concept code="20" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Date of Prescription"/>
+			<Concept code="20" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Date of Prescription (label)"/>
+			<Concept code="21" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Device/Implant"/>
+			<Concept code="21" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Device/Implant (label)"/>
+			<Concept code="22" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Dispense"/>
+			<Concept code="22" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Dispense (label)"/>
+			<Concept code="23" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Dispensed Package Size"/>
+			<Concept code="23" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Dispensed Package Size (label)"/>
+			<Concept code="24" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Dispensed Product"/>
+			<Concept code="24" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Dispensed Product (label)"/>
+			<Concept code="25" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Dose Form"/>
+			<Concept code="25" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Dose Form (label)"/>
+			<Concept code="26" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="End Date"/>
+			<Concept code="26" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="End Date (label)"/>
+			<Concept code="27" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Every"/>
+			<Concept code="27" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Every (label)"/>
+			<Concept code="28" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Facility ID"/>
+			<Concept code="28" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Facility ID (label)"/>
+			<Concept code="29" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Facility Name"/>
+			<Concept code="29" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Facility Name (label)"/>
+			<Concept code="3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Address"/>
+			<Concept code="3" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Address (label)"/>
+			<Concept code="30" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Family Name"/>
+			<Concept code="30" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Family Name (label)"/>
+			<Concept code="31" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="for"/>
+			<Concept code="31" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="for (label)"/>
+			<Concept code="32" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Frequency of Intakes"/>
+			<Concept code="32" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Frequency of Intakes (label)"/>
+			<Concept code="33" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Gender"/>
+			<Concept code="33" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Gender (label)"/>
+			<Concept code="34" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Given Name"/>
+			<Concept code="34" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Given Name (label)"/>
+			<Concept code="35" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Guardian"/>
+			<Concept code="35" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Guardian (label)"/>
+			<Concept code="36" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Implant Date"/>
+			<Concept code="36" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Implant Date (label)"/>
+			<Concept code="37" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Instructions to patient"/>
+			<Concept code="37" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Instructions to patient (label)"/>
+			<Concept code="38" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Is substitution of brand name allowed?"/>
+			<Concept code="38" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Is substitution of brand name allowed? (label)"/>
+			<Concept code="39" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Last Update"/>
+			<Concept code="39" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Last Update (label)"/>
+			<Concept code="4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Advise to the dispenser"/>
+			<Concept code="4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Advise to the dispenser (label)"/>
+			<Concept code="40" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Legal Authenticator"/>
+			<Concept code="40" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Legal Authenticator (label)"/>
+			<Concept code="41" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="National Insurance Number"/>
+			<Concept code="41" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="National Insurance Number (label)"/>
+			<Concept code="42" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="No"/>
+			<Concept code="42" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="No (label)"/>
+			<Concept code="43" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Number of packages"/>
+			<Concept code="43" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Number of packages (label)"/>
+			<Concept code="44" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Observation Type"/>
+			<Concept code="44" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Observation Type (label)"/>
+			<Concept code="45" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Onset Date"/>
+			<Concept code="45" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Onset Date (label)"/>
+			<Concept code="46" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Organisation Identifier"/>
+			<Concept code="46" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Organisation Identifier (label)"/>
+			<Concept code="47" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Organisation Name"/>
+			<Concept code="47" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Organisation Name (label)"/>
+			<Concept code="48" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Other Active Ingredients"/>
+			<Concept code="48" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Other Active Ingredients (label)"/>
+			<Concept code="49" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Other Contacts"/>
+			<Concept code="49" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Other Contacts (label)"/>
+			<Concept code="5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Agent"/>
+			<Concept code="5" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Agent (label)"/>
+			<Concept code="50" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Package Size"/>
+			<Concept code="50" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Package Size (label)"/>
+			<Concept code="51" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Patient"/>
+			<Concept code="51" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Patient (label)"/>
+			<Concept code="52" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Patient IDs"/>
+			<Concept code="52" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Patient IDs (label)"/>
+			<Concept code="53" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="per unit"/>
+			<Concept code="53" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="per unit (label)"/>
+			<Concept code="54" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Preferred HCP/Legal organization to contact"/>
+			<Concept code="54" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Preferred HCP/Legal organization to contact (label)"/>
+			<Concept code="55" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prefix"/>
+			<Concept code="55" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prefix (label)"/>
+			<Concept code="56" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prescriber"/>
+			<Concept code="56" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prescriber (label)"/>
+			<Concept code="57" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prescriber details"/>
+			<Concept code="57" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prescriber details (label)"/>
+			<Concept code="58" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prescription ID"/>
+			<Concept code="58" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prescription ID (label)"/>
+			<Concept code="59" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prescription Item Details"/>
+			<Concept code="59" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prescription Item Details (label)"/>
+			<Concept code="6" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="at"/>
+			<Concept code="6" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="at (label)"/>
+			<Concept code="60" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prescription Item ID"/>
+			<Concept code="60" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prescription Item ID (label)"/>
+			<Concept code="61" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prescription Items List"/>
+			<Concept code="61" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Prescription Items List (label)"/>
+			<Concept code="62" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Procedure"/>
+			<Concept code="62" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Procedure (label)"/>
+			<Concept code="63" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Procedure Date"/>
+			<Concept code="63" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Procedure Date (label)"/>
+			<Concept code="64" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Profession"/>
+			<Concept code="64" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Profession (label)"/>
+			<Concept code="65" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Reaction Type"/>
+			<Concept code="65" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Reaction Type (label)"/>
+			<Concept code="66" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Regional/National Health ID"/>
+			<Concept code="66" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Regional/National Health ID (label)"/>
+			<Concept code="67" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Route of Administration"/>
+			<Concept code="67" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Route of Administration (label)"/>
+			<Concept code="68" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="See details"/>
+			<Concept code="68" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="See details (label)"/>
+			<Concept code="69" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Specialty"/>
+			<Concept code="69" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Specialty (label)"/>
+			<Concept code="7" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Author (HCP)"/>
+			<Concept code="7" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Author (HCP) (label)"/>
+			<Concept code="70" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Strength"/>
+			<Concept code="70" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Strength (label)"/>
+			<Concept code="71" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Substitute"/>
+			<Concept code="71" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Substitute (label)"/>
+			<Concept code="72" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="The Active Problem section is missing !"/>
+			<Concept code="72" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="The Active Problem section is missing ! (label)"/>
+			<Concept code="73" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="The Allergies, adverse reactions, alerts section is missing !"/>
+			<Concept code="73" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="The Allergies, adverse reactions, alerts section is missing ! (label)"/>
+			<Concept code="74" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="The Medical Devices and implants section is missing !"/>
+			<Concept code="74" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="The Medical Devices and implants section is missing ! (label)"/>
+			<Concept code="75" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="The Medication Summary section is missing !"/>
+			<Concept code="75" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="The Medication Summary section is missing ! (label)"/>
+			<Concept code="76" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="The History of Procedures section is missing !"/>
+			<Concept code="76" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="The History of Procedures section is missing ! (label)"/>
+			<Concept code="77" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="unit(s)"/>
+			<Concept code="77" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="unit(s) (label)"/>
+			<Concept code="78" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Units per intake"/>
+			<Concept code="78" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Units per intake (label)"/>
+			<Concept code="79" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Vaccination"/>
+			<Concept code="79" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Vaccination (label)"/>
+			<Concept code="8" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Authoring Device"/>
+			<Concept code="8" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Authoring Device (label)"/>
+			<Concept code="80" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Vaccination Date"/>
+			<Concept code="80" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Vaccination Date (label)"/>
+			<Concept code="81" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Yes"/>
+			<Concept code="81" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Yes (label)"/>
+			<Concept code="82" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="I have identified the patient-data subject"/>
+			<Concept code="82" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="I have identified the patient-data subject (label)"/>
+			<Concept code="83" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="I confirm that the patient –data subject has consented to the following statement: ‘I agree that my ePrescription may be transferred to a registered Health Professional in [COUNTRY B] for the purposes of providing me with medical care and/or medication’"/>
+			<Concept code="83" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="I confirm that the patient –data subject has consented to the following statement: ‘I agree that my ePrescription may be transferred to a registered Health Professional in [COUNTRY B] for the purposes of providing me with medical care and/or medication’ "/>
+			<Concept code="84" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Observation Value"/>
+			<Concept code="84" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Observation Value (label)"/>
+			<Concept code="85" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Date From"/>
+			<Concept code="85" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Date From (label)"/>
+			<Concept code="9" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Brand Name"/>
+			<Concept code="9" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Brand Name (label)"/>
+			<Concept code="99" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Physical Findings"/>
+			<Concept code="99" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.4" codeSystemName="epSOS Display Labels" displayName="Physical Findings (label)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

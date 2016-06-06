@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rest-client version="3.5"><request><http-version>1.1</http-version><http-follow-redirects/><URL>http://localhost:8080/epsosportal/rest/search/documents/ps/NOFCgxZ25s9Q6GUd2KSABg%3D%3D</URL><method>POST</method><headers><header key="Authorization" value="YWRtaW46YWRtaW4="/></headers><body><string content-type="application/x-www-form-urlencoded" charset="UTF-8">extension=CRRPLA47H13A794V&amp;root=2.16.17.710.806.1000.990.1&amp;country=IT</string></body></request></rest-client>

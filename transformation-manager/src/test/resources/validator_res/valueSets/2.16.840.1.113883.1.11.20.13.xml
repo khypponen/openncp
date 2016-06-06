@@ -1,0 +1,14 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.13" displayName="ProblemStatusCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="55561003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Active"/>
+			<Concept code="73425007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Inactive"/>
+			<Concept code="90734009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chronic"/>
+			<Concept code="7087005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Intermittent"/>
+			<Concept code="255227004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Recurrent"/>
+			<Concept code="415684004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rule out"/>
+			<Concept code="410516002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ruled out"/>
+			<Concept code="413322009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Resolved"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

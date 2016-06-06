@@ -1,0 +1,153 @@
+<?xml version="1.0" ?>
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 ../SVS.Support.Materials.v2/schema/IHE/SVS.xsd">
+	<ValueSet displayName="epSOSRouteofAdministration" id="1.3.6.1.4.1.12559.11.10.1.3.1.42.12" version="20111026">
+		<ConceptList xml:lang="en-US">
+			<Concept code="20001000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Auricular use"/>
+			<Concept code="20001000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Auricular use (edqm)"/>
+			<Concept code="20002500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Buccal use"/>
+			<Concept code="20002500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Buccal use (edqm)"/>
+			<Concept code="20003000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous use"/>
+			<Concept code="20003000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Cutaneous use (edqm)"/>
+			<Concept code="20004000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental use"/>
+			<Concept code="20004000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Dental use (edqm)"/>
+			<Concept code="20006000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endocervical use"/>
+			<Concept code="20006000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endocervical use (edqm)"/>
+			<Concept code="20007000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endosinusial use"/>
+			<Concept code="20007000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endosinusial use (edqm)"/>
+			<Concept code="20008000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endotracheopulmonary use"/>
+			<Concept code="20008000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Endotracheopulmonary use (edqm)"/>
+			<Concept code="20009000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Epidural use"/>
+			<Concept code="20009000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Epidural use (edqm)"/>
+			<Concept code="20010000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Epilesional use"/>
+			<Concept code="20010000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Epilesional use (edqm)"/>
+			<Concept code="20011000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Extraamniotic use"/>
+			<Concept code="20011000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Extraamniotic use (edqm)"/>
+			<Concept code="20011500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Extracorporeal use"/>
+			<Concept code="20011500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Extracorporeal use (edqm)"/>
+			<Concept code="20013000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastroenteral use"/>
+			<Concept code="20013000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastroenteral use (edqm)"/>
+			<Concept code="20013500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastric use"/>
+			<Concept code="20013500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gastric use (edqm)"/>
+			<Concept code="20014000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gingival use"/>
+			<Concept code="20014000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Gingival use (edqm)"/>
+			<Concept code="20015000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Hemodialysis"/>
+			<Concept code="20015000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Hemodialysis (edqm)"/>
+			<Concept code="20015500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Implantation"/>
+			<Concept code="20015500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Implantation (edqm)"/>
+			<Concept code="20020000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation use"/>
+			<Concept code="20020000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalation use (edqm)"/>
+			<Concept code="20021000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intestinal use"/>
+			<Concept code="20021000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intestinal use (edqm)"/>
+			<Concept code="20022000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraamniotic use"/>
+			<Concept code="20022000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraamniotic use (edqm)"/>
+			<Concept code="20023000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraarterial use"/>
+			<Concept code="20023000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraarterial use (edqm)"/>
+			<Concept code="20024000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraarticular use"/>
+			<Concept code="20024000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraarticular use (edqm)"/>
+			<Concept code="20025000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrabursal use"/>
+			<Concept code="20025000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrabursal use (edqm)"/>
+			<Concept code="20026000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracardiac use"/>
+			<Concept code="20026000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracardiac use (edqm)"/>
+			<Concept code="20026500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracartilaginous use"/>
+			<Concept code="20026500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracartilaginous use (edqm)"/>
+			<Concept code="20027000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracavernous use"/>
+			<Concept code="20027000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracavernous use (edqm)"/>
+			<Concept code="20027010" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracerebral use"/>
+			<Concept code="20027010" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracerebral use (edqm)"/>
+			<Concept code="20028000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracervical use"/>
+			<Concept code="20028000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracervical use (edqm)"/>
+			<Concept code="20028500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracisternal use"/>
+			<Concept code="20028500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracisternal use (edqm)"/>
+			<Concept code="20029000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracoronary use"/>
+			<Concept code="20029000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intracoronary use (edqm)"/>
+			<Concept code="20030000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intradermal use"/>
+			<Concept code="20030000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intradermal use (edqm)"/>
+			<Concept code="20031000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intradiscal use"/>
+			<Concept code="20031000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intradiscal use (edqm)"/>
+			<Concept code="20031500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraepidermal use"/>
+			<Concept code="20031500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraepidermal use (edqm)"/>
+			<Concept code="20032000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intralesional use"/>
+			<Concept code="20032000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intralesional use (edqm)"/>
+			<Concept code="20033000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intralymphatic use"/>
+			<Concept code="20033000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intralymphatic use (edqm)"/>
+			<Concept code="20035000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intramuscular use"/>
+			<Concept code="20035000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intramuscular use (edqm)"/>
+			<Concept code="20036000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraocular use"/>
+			<Concept code="20036000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraocular use (edqm)"/>
+			<Concept code="20036500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraosseous use"/>
+			<Concept code="20036500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraosseous use (edqm)"/>
+			<Concept code="20037000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrapericardial use"/>
+			<Concept code="20037000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrapericardial use (edqm)"/>
+			<Concept code="20038000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraperitoneal use"/>
+			<Concept code="20038000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraperitoneal use (edqm)"/>
+			<Concept code="20039000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrapleural use"/>
+			<Concept code="20039000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrapleural use (edqm)"/>
+			<Concept code="20039500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraprostatic use"/>
+			<Concept code="20039500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intraprostatic use (edqm)"/>
+			<Concept code="20041000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrasternal use"/>
+			<Concept code="20041000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrasternal use (edqm)"/>
+			<Concept code="20042000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrathecal use"/>
+			<Concept code="20042000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrathecal use (edqm)"/>
+			<Concept code="20043000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intratumoral use"/>
+			<Concept code="20043000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intratumoral use (edqm)"/>
+			<Concept code="20044000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine use"/>
+			<Concept code="20044000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intrauterine use (edqm)"/>
+			<Concept code="20045000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intravenous use"/>
+			<Concept code="20045000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intravenous use (edqm)"/>
+			<Concept code="20046000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intravesical use"/>
+			<Concept code="20046000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intravesical use (edqm)"/>
+			<Concept code="20047000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intravitreal use"/>
+			<Concept code="20047000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Intravitreal use (edqm)"/>
+			<Concept code="20047500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Iontophoresis"/>
+			<Concept code="20047500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Iontophoresis (edqm)"/>
+			<Concept code="20048000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Laryngopharyngeal use"/>
+			<Concept code="20048000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Laryngopharyngeal use (edqm)"/>
+			<Concept code="20049000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal use"/>
+			<Concept code="20049000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nasal use (edqm)"/>
+			<Concept code="20050000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebulisation use"/>
+			<Concept code="20050000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebulisation use (edqm)"/>
+			<Concept code="20051000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ocular use"/>
+			<Concept code="20051000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Ocular use (edqm)"/>
+			<Concept code="20053000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral use"/>
+			<Concept code="20053000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oral use (edqm)"/>
+			<Concept code="20054000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal use"/>
+			<Concept code="20054000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oromucosal use (edqm)"/>
+			<Concept code="20055000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oropharyngeal use"/>
+			<Concept code="20055000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Oropharyngeal use (edqm)"/>
+			<Concept code="20056000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Paravertebral use"/>
+			<Concept code="20056000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Paravertebral use (edqm)"/>
+			<Concept code="20057000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Periarticular use"/>
+			<Concept code="20057000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Periarticular use (edqm)"/>
+			<Concept code="20058000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Perineural use"/>
+			<Concept code="20058000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Perineural use (edqm)"/>
+			<Concept code="20059000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Periodontal use"/>
+			<Concept code="20059000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Periodontal use (edqm)"/>
+			<Concept code="20059300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Periosseous use"/>
+			<Concept code="20059300" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Periosseous use (edqm)"/>
+			<Concept code="20059500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Posterior juxtascleral use"/>
+			<Concept code="20059500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Posterior juxtascleral use (edqm)"/>
+			<Concept code="20061000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal use"/>
+			<Concept code="20061000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Rectal use (edqm)"/>
+			<Concept code="20061500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Retrobulbar use"/>
+			<Concept code="20061500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Retrobulbar use (edqm)"/>
+			<Concept code="20062000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Route of administration not applicable"/>
+			<Concept code="20062000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Route of administration not applicable (edqm)"/>
+			<Concept code="20063000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Skin scarification"/>
+			<Concept code="20063000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Skin scarification (edqm)"/>
+			<Concept code="20065000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Subconjunctival use"/>
+			<Concept code="20065000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Subconjunctival use (edqm)"/>
+			<Concept code="20066000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Subcutaneous use"/>
+			<Concept code="20066000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Subcutaneous use (edqm)"/>
+			<Concept code="20067000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Sublingual use"/>
+			<Concept code="20067000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Sublingual use (edqm)"/>
+			<Concept code="20067500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Submucosal use"/>
+			<Concept code="20067500" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Submucosal use (edqm)"/>
+			<Concept code="20070000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Transdermal use"/>
+			<Concept code="20070000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Transdermal use (edqm)"/>
+			<Concept code="20071000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Urethral use"/>
+			<Concept code="20071000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Urethral use (edqm)"/>
+			<Concept code="20072000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal use"/>
+			<Concept code="20072000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Vaginal use (edqm)"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

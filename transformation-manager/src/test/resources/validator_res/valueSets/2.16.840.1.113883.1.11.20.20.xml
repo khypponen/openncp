@@ -1,0 +1,8 @@
+<RetrieveValueSetResponse xmlns="urn:ihe:iti:svs:2008">
+	<ValueSet id="2.16.840.1.113883.1.11.20.20" displayName="TestTypeCode">
+		<ConceptList xml:lang="en-US">
+			<Concept code="71388002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Observation"/>
+			<Concept code="404684003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Result"/>
+		</ConceptList>
+	</ValueSet>
+</RetrieveValueSetResponse>

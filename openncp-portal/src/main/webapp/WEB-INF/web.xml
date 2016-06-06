@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+
+
+    <listener>
+        <listener-class>com.gnomon.epsos.MyServletContextListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>jersey-serlvet</servlet-name>
+        <servlet-class>
+            com.sun.jersey.spi.container.servlet.ServletContainer
+        </servlet-class>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>com.gnomon.epsos.rest</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>HCERServlet</servlet-name>
+        <servlet-class>com.gnomon.epsos.servlet.HCERServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>consentServlet</servlet-name>
+        <servlet-class>com.gnomon.epsos.servlet.ConsentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>pdfServlet</servlet-name>
+        <servlet-class>com.gnomon.epsos.servlet.PDFServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cdaServlet</servlet-name>
+        <servlet-class>com.gnomon.epsos.servlet.CDAServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>dispenseServlet</servlet-name>
+        <servlet-class>com.gnomon.epsos.servlet.DispenseServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ccdServlet</servlet-name>
+        <servlet-class>com.gnomon.epsos.servlet.CCDServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cdaServlet</servlet-name>
+        <url-pattern>/cdaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ccdServlet</servlet-name>
+        <url-pattern>/ccdServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>pdfServlet</servlet-name>
+        <url-pattern>/pdfServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>dispenseServlet</servlet-name>
+        <url-pattern>/dispenseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>consentServlet</servlet-name>
+        <url-pattern>/consentServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>jersey-serlvet</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+
+    <!--    <session-config>
+        <cookie-config>
+            <path>/</path>
+        </cookie-config>
+    </session-config>-->
+    <!-- To enable CORS for the FutureID client -->
+
+    <filter>
+        <filter-name>CorsFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CorsFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>com.gnomon.epsos.filter.RestAuthenticationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/rest/*</url-pattern>
+    </filter-mapping>
+
+</web-app>

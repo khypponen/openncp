@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configuration using DISABLED Coded Element List @see tm_CEL_disabled.properties -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd	">
+
+	<!--
+		allow the user of properties from application.properties throughout
+		this configuration file(s)
+	-->
+	<bean id="placeholderConfig"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:tm_CEL_disabled.properties</value>
+				<value>classpath:tsam.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="tmConfiguration" class="epsos.ccd.posam.tm.util.TMConfiguration"
+		factory-method="getInstance">
+		<property name="patientSummaryCode">
+			<value>${tm.documenttype.patientsummary}</value>
+		</property>
+		<property name="ePrescriptionCode">
+			<value>${tm.documenttype.eprescription}</value>
+		</property>
+		<property name="eDispensationCode">
+			<value>${tm.documenttype.edispensation}</value>
+		</property>
+		<property name="schemaFilePath">
+			<value>${tm.schemafilepath}</value>
+		</property>
+		<!--
+		<property name="patientSummarySchematronPath">
+			<value>${tm.schematron.path.patientsummary}</value>
+		</property>
+		
+		<property name="ePrescriptionSchematronPath">
+			<value>${tm.schematron.path.eprescription}</value>
+		</property>
+		
+		<property name="eDispensationSchematronPath">
+			<value>${tm.schematron.path.edispensation}</value>
+		</property>
+		-->
+		
+		<property name="schematronValidationEnabled">
+			<value>${tm.schematron.validation.enabled}</value>
+		</property>
+		<property name="schemaValidationEnabled">
+			<value>${tm.schema.validation.enabled}</value>
+		</property>				
+	</bean>
+
+	<bean id="codedElementList" class="epsos.ccd.posam.tm.util.CodedElementList"
+		factory-method="getInstance">
+		<property name="configurableElementIdentification">
+			<value>${tm.codedelementlist.enabled}</value>
+		</property>
+		<property name="codedElementListPath">
+			<value>${tm.codedelementlist.path}</value>
+		</property>
+	</bean>
+	
+	<bean id="schematronValidator" class="epsos.ccd.posam.tm.util.SchematronValidator"
+		factory-method="getInstance">
+		<property name="xslDirectoryPath">
+			<value>${tm.schematron.path.xsldir}</value>
+		</property>
+	</bean>
+	
+
+	<!-- ::: Service ::: -->
+	<import resource="ctx_tsam_test.xml" />
+
+	<bean class="epsos.ccd.posam.tm.service.impl.TransformationService"
+		id="epsos.ccd.posam.tm.service.ITransformationService">
+		<property name="tsamApi"
+			ref="epsos.ccd.posam.tsam.service.ITerminologyService" />
+	</bean>
+</beans>

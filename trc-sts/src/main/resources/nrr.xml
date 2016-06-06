@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:AcceptanceRejectionByRecipient version="1" xmlns="http://www.w3.org/2000/09/xmldsig#" xmlns:ns2="http://uri.etsi.org/02640/v1#" xmlns:ns3="http://uri.etsi.org/02231/v2#" xmlns:ns4="http://uri.etsi.org/01903/v1.3.2#">
+    <ns2:EventCode>Rejection</ns2:EventCode>
+    <ns2:EvidenceIdentifier>$evidenceIdentifier</ns2:EvidenceIdentifier>
+    <ns2:EvidenceIssuerPolicyID>
+        <ns2:PolicyID>$policyId</ns2:PolicyID>
+    </ns2:EvidenceIssuerPolicyID>
+    <ns2:EvidenceIssuerDetails>
+        <ns2:CertificateDetails>
+            <ns2:X509Certificate>$evidenceIssuerCertificate</ns2:X509Certificate>
+        </ns2:CertificateDetails>
+    </ns2:EvidenceIssuerDetails>
+    <ns2:SenderAuthenticationDetails>
+        <ns2:AuthenticationTime>$authenticationTime</ns2:AuthenticationTime>
+        <ns2:AuthenticationMethod>$authenticationMethod</ns2:AuthenticationMethod>
+    </ns2:SenderAuthenticationDetails>
+    <ns2:EventTime>$dateTool.get('yyyy-MM-dd HH:mm:ss.SSS')</ns2:EventTime>
+    <ns2:SubmissionTime>$dateTool.get('yyyy-MM-dd HH:mm:ss.SSS')</ns2:SubmissionTime>
+    <ns2:SenderDetails>
+        <ns2:CertificateDetails>
+            <ns2:X509Certificate>$senderCertificateDetails</ns2:X509Certificate>
+        </ns2:CertificateDetails>
+    </ns2:SenderDetails>
+    <ns2:RecipientsDetails>
+        <ns2:EntityDetails>
+            <ns2:CertificateDetails>
+                <ns2:X509Certificate>$recipientCertificateDetails</ns2:X509Certificate>
+            </ns2:CertificateDetails>
+        </ns2:EntityDetails>
+    </ns2:RecipientsDetails>
+    <ns2:SenderMessageDetails isNotification="false">
+        <ns2:MessageSubject>$evidenceEvent</ns2:MessageSubject>
+        <ns2:UAMessageIdentifier>$uaMessageIdentifier</ns2:UAMessageIdentifier>
+        <ns2:MessageIdentifierByREMMD>$uaMessageIdentifier</ns2:MessageIdentifierByREMMD>
+        <DigestMethod Algorithm="SHA1"/>
+        <DigestValue>$digestValue</DigestValue>
+    </ns2:SenderMessageDetails>
+   
+</ns2:AcceptanceRejectionByRecipient>

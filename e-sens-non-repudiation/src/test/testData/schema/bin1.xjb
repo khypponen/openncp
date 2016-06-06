@@ -1,0 +1,23 @@
+<jxb:bindings version="2.1"
+               xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               jxb:extensionBindingPrefixes="xjc">
+  <jxb:globalBindings>
+    <xjc:simple/>
+  </jxb:globalBindings>
+  <jxb:bindings schemaLocation="etsirem.xsd">
+    <jxb:schemaBindings>
+      <jxb:package name="eu.esens.abb.nonrep.etsi.rem"/>
+    </jxb:schemaBindings>
+    <jxb:bindings node="//xs:complexType[@name='PostalAddressType']">
+      <jxb:class name="PostalAddressTypeREM"/>
+    </jxb:bindings> 
+    <jxb:bindings node="//xs:complexType[@name='ExtensionType']">
+      <jxb:class name="ExtensionTypeREM"/>
+    </jxb:bindings> 
+   <!-- <jxb:bindings node="//xs:complexType[@name='AnyType']">
+      <jxb:class name="AnyTypeREM"/>
+    </jxb:bindings> -->
+  </jxb:bindings>
+</jxb:bindings>

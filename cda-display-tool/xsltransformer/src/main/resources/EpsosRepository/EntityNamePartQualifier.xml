@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<EntityNamePartQualifierInformation>
+<EntityNamePartQualifierEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.33' epsosName='epSOSEntityNamePartQualifier' code='AC'>
+<displayName lang='en'>academic</displayName>
+</EntityNamePartQualifierEntry>
+<EntityNamePartQualifierEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.33' epsosName='epSOSEntityNamePartQualifier' code='AD'>
+<displayName lang='en'>adopted</displayName>
+</EntityNamePartQualifierEntry>
+<EntityNamePartQualifierEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.33' epsosName='epSOSEntityNamePartQualifier' code='BR'>
+<displayName lang='en'>birth</displayName>
+</EntityNamePartQualifierEntry>
+<EntityNamePartQualifierEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.33' epsosName='epSOSEntityNamePartQualifier' code='CL'>
+<displayName lang='en'>callme</displayName>
+</EntityNamePartQualifierEntry>
+<EntityNamePartQualifierEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.33' epsosName='epSOSEntityNamePartQualifier' code='IN'>
+<displayName lang='en'>initial</displayName>
+</EntityNamePartQualifierEntry>
+<EntityNamePartQualifierEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.33' epsosName='epSOSEntityNamePartQualifier' code='LS'>
+<displayName lang='en'>legal status</displayName>
+</EntityNamePartQualifierEntry>
+<EntityNamePartQualifierEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.33' epsosName='epSOSEntityNamePartQualifier' code='NB'>
+<displayName lang='en'>nobility</displayName>
+</EntityNamePartQualifierEntry>
+<EntityNamePartQualifierEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.33' epsosName='epSOSEntityNamePartQualifier' code='PR'>
+<displayName lang='en'>professional</displayName>
+</EntityNamePartQualifierEntry>
+<EntityNamePartQualifierEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.33' epsosName='epSOSEntityNamePartQualifier' code='SP'>
+<displayName lang='en'>spouse</displayName>
+</EntityNamePartQualifierEntry>
+<EntityNamePartQualifierEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.33' epsosName='epSOSEntityNamePartQualifier' code='TITLE'>
+<displayName lang='en'>title</displayName>
+</EntityNamePartQualifierEntry>
+<EntityNamePartQualifierEntry oid='1.3.6.1.4.1.12559.11.10.1.3.1.42.33' epsosName='epSOSEntityNamePartQualifier' code='VV'>
+<displayName lang='en'>voorvoegsel</displayName>
+</EntityNamePartQualifierEntry>
+</EntityNamePartQualifierInformation>
