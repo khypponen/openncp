@@ -5,17 +5,17 @@
 
     <parent>
         <artifactId>openncp</artifactId>
-        <groupId>eu.europa.ec.joinup.ecc</groupId>
-        <version>4.0.0-SNAPSHOT</version>
+        <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+        <version>2.4.2-SNAPSHOT</version>
     </parent>
 
     <!-- The project OpenATNA has been initially developed by OpenHeathTools.
     Since the OpenNCP project have needed to make some changes to the project,
     the OpenNCP Community have decided to change the groupId from org.openhealthtools.openatna
-    to eu.europa.ec.joinup.ecc.epsos-openatna and the artifactId from openatna
+    to eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna and the artifactId from openatna
     to epsos-openatna and publish the new artifacts on the EU JoinUP repository
     (https://joinup.ec.europa.eu/nexus/content/repositories/releases/eu/europa/ec/joinup/ecc/); -->
-    <groupId>eu.europa.ec.joinup.ecc.epsos-openatna</groupId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna</groupId>
     <artifactId>epsos-openatna</artifactId>
     <packaging>pom</packaging>
     <name>OpenATNA</name>

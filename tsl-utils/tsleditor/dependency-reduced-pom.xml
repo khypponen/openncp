@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
     <artifactId>epsos-tslutils</artifactId>
-    <groupId>eu.europa.ec.joinup.ecc</groupId>
-    <version>4.0.0-SNAPSHOT</version>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+    <version>2.4.2-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>eu.europa.ec.joinup.ecc.epsos-tslutils</groupId>
+  <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-tslutils</groupId>
   <artifactId>epsos-tsl-editor</artifactId>
   <name>TSLEditor</name>
   <url>http://maven.apache.org</url>
@@ -147,7 +147,7 @@
       <artifactId>eid-tsl-core</artifactId>
       <version>1.0.0-SNAPSHOT</version>
       <scope>system</scope>
-      <systemPath>/home/ubuntu/git/openncp/tsl-utils/tsleditor/lib/eid-tsl-core-1.0.0-SNAPSHOT.jar</systemPath>
+      <systemPath>/Users/kostaskarkaletsis/Documents/git/openncp-ehealth/ehealth/tsl-utils/tsleditor/lib/eid-tsl-core-1.0.0-SNAPSHOT.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

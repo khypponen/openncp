@@ -3,12 +3,12 @@
 
     <parent>
         <artifactId>openncp</artifactId>
-        <groupId>eu.europa.ec.joinup.ecc</groupId>
-        <version>4.0.0-SNAPSHOT</version>
+        <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+        <version>2.4.2-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>eu.europa.ec.joinup.ecc</groupId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
     <artifactId>epsos-configuration-manager</artifactId>
     <packaging>jar</packaging>
     <name>configurationmanager</name>

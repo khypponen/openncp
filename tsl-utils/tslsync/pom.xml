@@ -2,14 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>eu.europa.ec.joinup.ecc.epsos-tslutils</groupId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-tslutils</groupId>
     <artifactId>epsos-tsl-sync</artifactId>
     <packaging>jar</packaging>
 
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc</groupId>
+        <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
         <artifactId>epsos-tslutils</artifactId>
-        <version>4.0.0-SNAPSHOT</version>
+        <version>2.4.2-SNAPSHOT</version>
     </parent>
 
     <name>TSLSync</name>
@@ -53,17 +53,17 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
             <artifactId>epsos-audit-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
             <artifactId>epsos-util</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
             <artifactId>evidence-emitter</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -74,7 +74,7 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
             <artifactId>epsos-security-manager</artifactId>
             <version>${project.version}</version>
         </dependency>

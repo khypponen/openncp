@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <artifactId>openncp</artifactId>
-        <groupId>eu.europa.ec.joinup.ecc</groupId>
-        <version>4.0.0-SNAPSHOT</version>
+        <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+        <version>2.4.2-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>eu.europa.ec.joinup.ecc</groupId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
     <artifactId>openncp-portal</artifactId>
     <packaging>war</packaging>
     <name>OpenNCP Portal</name>
@@ -257,13 +257,13 @@
             <version>1.18.1</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
             <artifactId>OPENSTORK.UTILS</artifactId>
             <version>${project.version}</version>
             <type>jar</type>
             <exclusions>
                 <exclusion>
-                    <groupId>eu.europa.ec.joinup.ecc</groupId>
+                    <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
                     <artifactId>epsos-data-model</artifactId>
                 </exclusion>
             </exclusions>
@@ -423,12 +423,12 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
             <artifactId>epsos-data-model</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
             <artifactId>epsos-configuration-manager</artifactId>
             <version>${project.version}</version>
             <exclusions>
@@ -439,13 +439,13 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
             <artifactId>epsos-util</artifactId>
             <version>${project.version}</version>
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-cdadisplaytool</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-cdadisplaytool</groupId>
             <artifactId>epsos-xsltransformer</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -461,7 +461,7 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
             <artifactId>epsos-trc-sts-client</artifactId>
             <version>${project.version}</version>
             <exclusions>
@@ -472,12 +472,12 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
             <artifactId>epsos-audit-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
             <artifactId>epsos-ncp-pt-client-consumer</artifactId>
             <version>${project.version}</version>
             <type>jar</type>
@@ -514,12 +514,12 @@
             <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/arial.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
             <artifactId>epsos-transformation-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-cdadisplaytool</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-cdadisplaytool</groupId>
             <artifactId>epsos-cdautils</artifactId>
             <version>${project.version}</version>
         </dependency>

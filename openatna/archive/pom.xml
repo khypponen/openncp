@@ -3,11 +3,11 @@
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.epsos-openatna</groupId>
+        <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna</groupId>
         <artifactId>epsos-openatna</artifactId>
-        <version>4.0.0-SNAPSHOT</version>
+        <version>2.4.2-SNAPSHOT</version>
     </parent>
-    <groupId>eu.europa.ec.joinup.ecc.epsos-openatna</groupId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna</groupId>
     <artifactId>openatna-archive</artifactId>
 
     <packaging>jar</packaging>
@@ -45,17 +45,17 @@
             <version>1.2.14</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-openatna</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna</groupId>
             <artifactId>openatna-anom</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-openatna</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna</groupId>
             <artifactId>openatna-audit</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-openatna</groupId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna</groupId>
             <artifactId>openatna-jaxb</artifactId>
             <version>${project.version}</version>
         </dependency>
