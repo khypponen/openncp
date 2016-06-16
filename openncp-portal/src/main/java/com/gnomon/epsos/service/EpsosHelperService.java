@@ -1949,7 +1949,8 @@ public class EpsosHelperService {
                 id.setLabel(EpsosHelperService.getPortalTranslation(
                         ((Demographics) vec.get(i)).getLabel(), language) + "*");
             } else {
-                id.setLabel(((Demographics) vec.get(i)).getLabel());
+                id.setLabel(EpsosHelperService.getPortalTranslation(
+                        ((Demographics) vec.get(i)).getLabel(), language));
             }
             id.setLength(((Demographics) vec.get(i)).getLength());
             id.setKey(((Demographics) vec.get(i)).getKey());
