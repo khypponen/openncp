@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.StringWriter;
-import java.security.cert.CertificateEncodingException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -41,7 +40,6 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.namespace.QName;
 
 import org.apache.commons.codec.binary.Hex;
-import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -57,10 +55,10 @@ import org.bouncycastle.asn1.x509.SubjectKeyIdentifier;
 import org.bouncycastle.asn1.x509.X509Extensions;
 import org.bouncycastle.openssl.PEMWriter;
 import org.etsi.uri._01903.v1_3.ObjectIdentifierType;
-import org.etsi.uri._02231.v2_.AdditionalServiceInformationType;
-import org.etsi.uri._02231.v2_.ExtensionType;
-import org.etsi.uri._02231.v2_.NonEmptyMultiLangURIType;
-import org.etsi.uri._02231.v2_.PostalAddressType;
+import org.etsi.uri._02231.v2.AdditionalServiceInformationType;
+import org.etsi.uri._02231.v2.ExtensionType;
+import org.etsi.uri._02231.v2.NonEmptyMultiLangURIType;
+import org.etsi.uri._02231.v2.PostalAddressType;
 import org.etsi.uri.trstsvc.svcinfoext.esigdir_1999_93_ec_trustedlist.CriteriaListType;
 import org.etsi.uri.trstsvc.svcinfoext.esigdir_1999_93_ec_trustedlist.PoliciesListType;
 import org.etsi.uri.trstsvc.svcinfoext.esigdir_1999_93_ec_trustedlist.QualificationElementType;
@@ -155,7 +153,7 @@ public class Tsl2PdfExporter {
 
 	/**
 	 * Produce a human readable export of the given tsl to the given file.
-	 * 
+	 *
 	 * @param tsl
 	 *            the TrustServiceList to export
 	 * @param pdfFile

@@ -1,0 +1,102 @@
+#
+# ETSI LDAP schema for TSL repository as defined in TS 102 231
+#  (syntax: partial-RFC 2849 and RFC 4517)
+#
+#                  ****** NOTICE ******
+# This document is part of ETSI TS 102 231. In the event that any
+# part of this document in conflict with the text of TS 102 231 
+# then that text shall prevail as the authoritative source
+#   
+# NOTE: the schema defined in this file is partially compliant with the 
+#       LDIF (RFC 2849) syntax, with relation to the assignment of the
+#       values to the attributes 'attributeTypes', 'objectClasses',
+#       of the subschema entries.
+#       The values assigned to these two attributes are respectively 
+#       compliant with the 'AttributeTypeDescription' and
+#       'ObjectClassDescription' syntaxes.
+#       The mentioned attributes and syntaxes are defined in RFC 4517.
+#
+# To obtain a file:
+#
+# 1) fully compliant with the LDIF (RFC 2849) syntax, ready for updating
+#    the schema of an LDAP server, the lines starting with '##' must be
+#    un-commented and the leading spaces must be removed; the following 
+#    Unix shell command performs such un-commenting task:
+#
+#    $ sed -e "s/^## //gI" this_schemafile > RFC 2849_schemafile
+#
+#    Moreover the placeholder delimited by '>>>' and '<<<' must be replaced
+#    by the Distinguished Name of the subschema entry that contains the 
+#    schema of the LDAP server (see RFC 4517).
+#
+#    
+# 2) fully compliant with the openldap schema file format, each occurrence
+#    of 'attributeTypes:' must be replaced by 'attributetype' and each
+#    occurrence of 'objectClasses:' must be replaced by 'objectclass'; 
+#    the following Unix shell command performs such replacements:
+#
+#    $ sed -e "s/^attributeTypes:/attributetype /gI" \
+#    -e "s/^objectClasses:/objectclass /gI" \
+#    this_schemafile > openldap_schemafile
+#
+
+
+
+#
+# Attribute definition
+#
+
+# UN-COMMENT the following lines to get a file fully compliant with RFC 2849
+## version: 1
+## dn: >>>put here the DN of the LDAP server subschema entry with schema<<<
+## changetype: modify
+## add: attributeTypes 
+attributeTypes: ( 0.4.0.2231.5.2 
+      NAME 'tslTag' 
+      DESC 'Indexed. Indicates that the entry contains a TSL (the value of the OID is 0.4.0.2231.1.1)'
+      SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+      EQUALITY objectIdentifierMatch
+      SINGLE-VALUE
+)
+attributeTypes: ( 0.4.0.2231.5.3 
+      NAME 'tslDer' 
+      DESC 'DER-encoded TSL'
+      SYNTAX 1.3.6.1.4.1.1466.115.121.1.40
+      EQUALITY octetStringMatch
+      SINGLE-VALUE
+)
+attributeTypes: ( 0.4.0.2231.5.4 
+      NAME 'tslXml' 
+      DESC 'XML-encoded TSL'
+      SYNTAX 1.3.6.1.4.1.1466.115.121.1.40
+      EQUALITY octetStringMatch
+      SINGLE-VALUE
+)
+attributeTypes: ( 0.4.0.2231.5.5
+      NAME 'tslPdf' 
+      DESC ' PDF/A-encoded TSL'
+      SYNTAX 1.3.6.1.4.1.1466.115.121.1.40
+      EQUALITY octetStringMatch
+      SINGLE-VALUE
+)
+
+# UN-COMMENT the following line to get a file fully compliant with RFC 2849
+## -
+
+#
+# Object Class definition
+#
+
+# UN-COMMENT the following line to get a file fully compliant with RFC 2849
+## add: objectClasses 
+objectClasses: ( 0.4.0.2231.5.1 
+      NAME 'tslDistributionPoint'
+      DESC 'OC containing the TSL'
+      STRUCTURAL  
+      SUP top 
+      MUST ( cn $ tslTag )
+      MAY  ( tslDer $ tslXml $ tslPdf )
+)
+# UN-COMMENT the following line to get a file fully compliant with RFC 2849
+## -
+

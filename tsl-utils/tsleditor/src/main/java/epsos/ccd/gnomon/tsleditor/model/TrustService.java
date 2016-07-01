@@ -14,7 +14,8 @@
 *KIND, either express or implied.  See the License for the
 *specific language governing permissions and limitations
 *under the License.
-**/package epsos.ccd.gnomon.tsleditor.model;
+**/
+package epsos.ccd.gnomon.tsleditor.model;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -40,17 +41,17 @@ import org.bouncycastle.asn1.x509.X509Extensions;
 import org.bouncycastle.x509.extension.SubjectKeyIdentifierStructure;
 import org.etsi.uri._01903.v1_3.IdentifierType;
 import org.etsi.uri._01903.v1_3.ObjectIdentifierType;
-import org.etsi.uri._02231.v2_.AdditionalServiceInformationType;
-import org.etsi.uri._02231.v2_.DigitalIdentityListType;
-import org.etsi.uri._02231.v2_.DigitalIdentityType;
-import org.etsi.uri._02231.v2_.ExtensionType;
-import org.etsi.uri._02231.v2_.ExtensionsListType;
-import org.etsi.uri._02231.v2_.InternationalNamesType;
-import org.etsi.uri._02231.v2_.MultiLangNormStringType;
-import org.etsi.uri._02231.v2_.NonEmptyMultiLangURIType;
-import org.etsi.uri._02231.v2_.ObjectFactory;
-import org.etsi.uri._02231.v2_.TSPServiceInformationType;
-import org.etsi.uri._02231.v2_.TSPServiceType;
+import org.etsi.uri._02231.v2.AdditionalServiceInformationType;
+import org.etsi.uri._02231.v2.DigitalIdentityListType;
+import org.etsi.uri._02231.v2.DigitalIdentityType;
+import org.etsi.uri._02231.v2.ExtensionType;
+import org.etsi.uri._02231.v2.ExtensionsListType;
+import org.etsi.uri._02231.v2.InternationalNamesType;
+import org.etsi.uri._02231.v2.MultiLangNormStringType;
+import org.etsi.uri._02231.v2.NonEmptyMultiLangURIType;
+import org.etsi.uri._02231.v2.ObjectFactory;
+import org.etsi.uri._02231.v2.TSPServiceInformationType;
+import org.etsi.uri._02231.v2.TSPServiceType;
 import org.etsi.uri.trstsvc.svcinfoext.esigdir_1999_93_ec_trustedlist.CriteriaListType;
 import org.etsi.uri.trstsvc.svcinfoext.esigdir_1999_93_ec_trustedlist.PoliciesListType;
 import org.etsi.uri.trstsvc.svcinfoext.esigdir_1999_93_ec_trustedlist.QualificationElementType;
@@ -87,8 +88,7 @@ public class TrustService {
 		try {
 			this.datatypeFactory = DatatypeFactory.newInstance();
 		} catch (DatatypeConfigurationException e) {
-			throw new RuntimeException("datatype config error: "
-					+ e.getMessage(), e);
+			throw new RuntimeException("datatype config error: " + e.getMessage(), e);
 		}
 		this.qcSSCDStatusAsInCertOids = new LinkedList<String>();
 		this.eccObjectFactory = new org.etsi.uri.trstsvc.svcinfoext.esigdir_1999_93_ec_trustedlist.ObjectFactory();
@@ -109,23 +109,18 @@ public class TrustService {
 		try {
 			this.datatypeFactory = DatatypeFactory.newInstance();
 		} catch (DatatypeConfigurationException e) {
-			throw new RuntimeException("datatype config error: "
-					+ e.getMessage(), e);
+			throw new RuntimeException("datatype config error: " + e.getMessage(), e);
 		}
 		this.eccObjectFactory = new org.etsi.uri.trstsvc.svcinfoext.esigdir_1999_93_ec_trustedlist.ObjectFactory();
 		this.xadesObjectFactory = new org.etsi.uri._01903.v1_3.ObjectFactory();
 
 		this.tspService = this.objectFactory.createTSPServiceType();
-		TSPServiceInformationType tspServiceInformation = this.objectFactory
-				.createTSPServiceInformationType();
+		TSPServiceInformationType tspServiceInformation = this.objectFactory.createTSPServiceInformationType();
 		this.tspService.setServiceInformation(tspServiceInformation);
-		tspServiceInformation
-				.setServiceTypeIdentifier("http://uri.etsi.org/TrstSvc/Svctype/CA/QC");
-		InternationalNamesType i18nServiceName = this.objectFactory
-				.createInternationalNamesType();
+		tspServiceInformation.setServiceTypeIdentifier("http://uri.etsi.org/TrstSvc/Svctype/CA/QC");
+		InternationalNamesType i18nServiceName = this.objectFactory.createInternationalNamesType();
 		List<MultiLangNormStringType> serviceNames = i18nServiceName.getName();
-		MultiLangNormStringType serviceName = this.objectFactory
-				.createMultiLangNormStringType();
+		MultiLangNormStringType serviceName = this.objectFactory.createMultiLangNormStringType();
 		serviceNames.add(serviceName);
 		serviceName.setLang(Locale.ENGLISH.getLanguage());
 		serviceName.setValue(certificate.getSubjectX500Principal().toString());
@@ -134,61 +129,46 @@ public class TrustService {
 		DigitalIdentityListType digitalIdentityList = createDigitalIdentity(certificate);
 		tspServiceInformation.setServiceDigitalIdentity(digitalIdentityList);
 
-		tspServiceInformation
-				.setServiceStatus("http://uri.etsi.org/TrstSvc/eSigDir-1999-93-EC-TrustedList/Svcstatus/undersupervision");
+		tspServiceInformation.setServiceStatus(
+				"http://uri.etsi.org/TrstSvc/eSigDir-1999-93-EC-TrustedList/Svcstatus/undersupervision");
 
-		GregorianCalendar statusStartingCalendar = new DateTime(certificate
-				.getNotBefore()).toGregorianCalendar();
+		GregorianCalendar statusStartingCalendar = new DateTime(certificate.getNotBefore()).toGregorianCalendar();
 		statusStartingCalendar.setTimeZone(TimeZone.getTimeZone("Z"));
-		XMLGregorianCalendar statusStartingTime = this.datatypeFactory
-				.newXMLGregorianCalendar(statusStartingCalendar);
+		XMLGregorianCalendar statusStartingTime = this.datatypeFactory.newXMLGregorianCalendar(statusStartingCalendar);
 		tspServiceInformation.setStatusStartingTime(statusStartingTime);
 
 		if (false == this.qcSSCDStatusAsInCertOids.isEmpty()) {
-			ExtensionsListType extensionsList = this.objectFactory
-					.createExtensionsListType();
-			tspServiceInformation
-					.setServiceInformationExtensions(extensionsList);
+			ExtensionsListType extensionsList = this.objectFactory.createExtensionsListType();
+			tspServiceInformation.setServiceInformationExtensions(extensionsList);
 			List<ExtensionType> extensions = extensionsList.getExtension();
 			ExtensionType extension = this.objectFactory.createExtensionType();
 			extension.setCritical(true);
 			extensions.add(extension);
 
-			QualificationsType qualifications = this.eccObjectFactory
-					.createQualificationsType();
-			extension.getContent().add(
-					this.eccObjectFactory.createQualifications(qualifications));
-			List<QualificationElementType> qualificationElements = qualifications
-					.getQualificationElement();
+			QualificationsType qualifications = this.eccObjectFactory.createQualificationsType();
+			extension.getContent().add(this.eccObjectFactory.createQualifications(qualifications));
+			List<QualificationElementType> qualificationElements = qualifications.getQualificationElement();
 
-			QualificationElementType qualificationElement = this.eccObjectFactory
-					.createQualificationElementType();
+			QualificationElementType qualificationElement = this.eccObjectFactory.createQualificationElementType();
 			qualificationElements.add(qualificationElement);
 
-			QualifiersType qualifiers = this.eccObjectFactory
-					.createQualifiersType();
+			QualifiersType qualifiers = this.eccObjectFactory.createQualifiersType();
 			List<QualifierType> qualifierList = qualifiers.getQualifier();
-			QualifierType qcSscdStatusInCertqualifier = this.eccObjectFactory
-					.createQualifierType();
+			QualifierType qcSscdStatusInCertqualifier = this.eccObjectFactory.createQualifierType();
 			qualifierList.add(qcSscdStatusInCertqualifier);
-			qcSscdStatusInCertqualifier
-					.setUri(QC_SSCD_STATUS_AS_IN_CERT_QUALIFIER_URI);
+			qcSscdStatusInCertqualifier.setUri(QC_SSCD_STATUS_AS_IN_CERT_QUALIFIER_URI);
 			qualificationElement.setQualifiers(qualifiers);
 
-			CriteriaListType criteriaList = this.eccObjectFactory
-					.createCriteriaListType();
+			CriteriaListType criteriaList = this.eccObjectFactory.createCriteriaListType();
 			qualificationElement.setCriteriaList(criteriaList);
 			criteriaList.setAssert("atLeastOne");
 
 			List<PoliciesListType> policySet = criteriaList.getPolicySet();
-			PoliciesListType policiesList = this.eccObjectFactory
-					.createPoliciesListType();
+			PoliciesListType policiesList = this.eccObjectFactory.createPoliciesListType();
 			policySet.add(policiesList);
 			for (String oid : this.qcSSCDStatusAsInCertOids) {
-				ObjectIdentifierType objectIdentifier = this.xadesObjectFactory
-						.createObjectIdentifierType();
-				IdentifierType identifier = this.xadesObjectFactory
-						.createIdentifierType();
+				ObjectIdentifierType objectIdentifier = this.xadesObjectFactory.createObjectIdentifierType();
+				IdentifierType identifier = this.xadesObjectFactory.createIdentifierType();
 				identifier.setValue(oid);
 				objectIdentifier.setIdentifier(identifier);
 				policiesList.getPolicyIdentifier().add(objectIdentifier);
@@ -201,50 +181,36 @@ public class TrustService {
 			additionalServiceInformationUri.setLang("en");
 			additionalServiceInformationUri
 					.setValue("http://uri.etsi.org/TrstSvc/eSigDir-1999-93-EC-TrustedList/SvcInfoExt/RootCA-QC");
-			additionalServiceInformation
-					.setURI(additionalServiceInformationUri);
-			extension
-					.getContent()
-					.add(
-							this.objectFactory
-									.createAdditionalServiceInformation(additionalServiceInformation));
+			additionalServiceInformation.setURI(additionalServiceInformationUri);
+			extension.getContent()
+					.add(this.objectFactory.createAdditionalServiceInformation(additionalServiceInformation));
 		}
 	}
 
-	private DigitalIdentityListType createDigitalIdentity(
-			X509Certificate certificate) {
-		DigitalIdentityListType digitalIdentityList = this.objectFactory
-				.createDigitalIdentityListType();
-		List<DigitalIdentityType> digitalIdentities = digitalIdentityList
-				.getDigitalId();
-		DigitalIdentityType digitalIdentity = this.objectFactory
-				.createDigitalIdentityType();
+	private DigitalIdentityListType createDigitalIdentity(X509Certificate certificate) {
+		DigitalIdentityListType digitalIdentityList = this.objectFactory.createDigitalIdentityListType();
+		List<DigitalIdentityType> digitalIdentities = digitalIdentityList.getDigitalId();
+		DigitalIdentityType digitalIdentity = this.objectFactory.createDigitalIdentityType();
 		try {
 			digitalIdentity.setX509Certificate(certificate.getEncoded());
 		} catch (CertificateEncodingException e) {
-			throw new RuntimeException(
-					"X509 encoding error: " + e.getMessage(), e);
+			throw new RuntimeException("X509 encoding error: " + e.getMessage(), e);
 		}
 		digitalIdentities.add(digitalIdentity);
 
 		digitalIdentity = this.objectFactory.createDigitalIdentityType();
-		digitalIdentity.setX509SubjectName(certificate
-				.getSubjectX500Principal().getName());
+		digitalIdentity.setX509SubjectName(certificate.getSubjectX500Principal().getName());
 		digitalIdentities.add(digitalIdentity);
 
 		digitalIdentity = this.objectFactory.createDigitalIdentityType();
-		byte[] skiValue = certificate
-				.getExtensionValue(X509Extensions.SubjectKeyIdentifier.getId());
+		byte[] skiValue = certificate.getExtensionValue(X509Extensions.SubjectKeyIdentifier.getId());
 		SubjectKeyIdentifierStructure subjectKeyIdentifierStructure;
 		try {
-			subjectKeyIdentifierStructure = new SubjectKeyIdentifierStructure(
-					skiValue);
+			subjectKeyIdentifierStructure = new SubjectKeyIdentifierStructure(skiValue);
 		} catch (IOException e) {
-			throw new RuntimeException("X509 SKI decoding error: "
-					+ e.getMessage(), e);
+			throw new RuntimeException("X509 SKI decoding error: " + e.getMessage(), e);
 		}
-		digitalIdentity.setX509SKI(subjectKeyIdentifierStructure
-				.getKeyIdentifier());
+		digitalIdentity.setX509SKI(subjectKeyIdentifierStructure.getKeyIdentifier());
 		digitalIdentities.add(digitalIdentity);
 
 		return digitalIdentityList;
@@ -255,12 +221,9 @@ public class TrustService {
 	}
 
 	public String getName(Locale locale) {
-		TSPServiceInformationType tspServiceInformation = this.tspService
-				.getServiceInformation();
-		InternationalNamesType i18nServiceName = tspServiceInformation
-				.getServiceName();
-		String serviceName = TrustServiceListUtils.getValue(i18nServiceName,
-				locale);
+		TSPServiceInformationType tspServiceInformation = this.tspService.getServiceInformation();
+		InternationalNamesType i18nServiceName = tspServiceInformation.getServiceName();
+		String serviceName = TrustServiceListUtils.getValue(i18nServiceName, locale);
 		return serviceName;
 	}
 
@@ -270,18 +233,14 @@ public class TrustService {
 	}
 
 	public String getType() {
-		TSPServiceInformationType tspServiceInformation = this.tspService
-				.getServiceInformation();
-		String serviceTypeIdentifier = tspServiceInformation
-				.getServiceTypeIdentifier();
+		TSPServiceInformationType tspServiceInformation = this.tspService.getServiceInformation();
+		String serviceTypeIdentifier = tspServiceInformation.getServiceTypeIdentifier();
 		return serviceTypeIdentifier;
 	}
 
 	public List<ExtensionType> getExtensions() {
-		TSPServiceInformationType tspServiceInformation = this.tspService
-				.getServiceInformation();
-		ExtensionsListType extensionsList = tspServiceInformation
-				.getServiceInformationExtensions();
+		TSPServiceInformationType tspServiceInformation = this.tspService.getServiceInformation();
+		ExtensionsListType extensionsList = tspServiceInformation.getServiceInformationExtensions();
 		if (null == extensionsList) {
 			return new LinkedList<ExtensionType>();
 		}
@@ -291,46 +250,38 @@ public class TrustService {
 
 	public String getStatus() {
 		TSPServiceInformationType tspServiceInformation = this.tspService.getServiceInformation();
-                String status = null;
-                if (tspServiceInformation != null)
-                    status = tspServiceInformation.getServiceStatus();
+		String status = null;
+		if (tspServiceInformation != null)
+			status = tspServiceInformation.getServiceStatus();
 		return status;
 	}
 
 	public DateTime getStatusStartingTime() {
 		TSPServiceInformationType tspServiceInformation = this.tspService.getServiceInformation();
-                if (tspServiceInformation != null)
-                {
-		    XMLGregorianCalendar statusStartingTimeXmlCalendar = tspServiceInformation.getStatusStartingTime();
-                    if (statusStartingTimeXmlCalendar == null) return null;
-                    DateTime statusStartingTimeDateTime = new DateTime(statusStartingTimeXmlCalendar.toGregorianCalendar());
-                    return statusStartingTimeDateTime;
-                }
-                else
-                    return null;
+		if (tspServiceInformation != null) {
+			XMLGregorianCalendar statusStartingTimeXmlCalendar = tspServiceInformation.getStatusStartingTime();
+			if (statusStartingTimeXmlCalendar == null)
+				return null;
+			DateTime statusStartingTimeDateTime = new DateTime(statusStartingTimeXmlCalendar.toGregorianCalendar());
+			return statusStartingTimeDateTime;
+		} else
+			return null;
 	}
 
 	public X509Certificate getServiceDigitalIdentity() {
-		TSPServiceInformationType tspServiceInformation = this.tspService
-				.getServiceInformation();
-		DigitalIdentityListType digitalIdentityList = tspServiceInformation
-				.getServiceDigitalIdentity();
+		TSPServiceInformationType tspServiceInformation = this.tspService.getServiceInformation();
+		DigitalIdentityListType digitalIdentityList = tspServiceInformation.getServiceDigitalIdentity();
 		try {
-			final CertificateFactory certificateFactory = CertificateFactory
-					.getInstance("X.509");
-			for (final DigitalIdentityType digitalIdentity : digitalIdentityList
-					.getDigitalId()) {
-				byte[] x509CertificateData = digitalIdentity
-						.getX509Certificate();
+			final CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
+			for (final DigitalIdentityType digitalIdentity : digitalIdentityList.getDigitalId()) {
+				byte[] x509CertificateData = digitalIdentity.getX509Certificate();
 				if (x509CertificateData != null) {
 					try {
 						X509Certificate certificate = (X509Certificate) certificateFactory
-								.generateCertificate(new ByteArrayInputStream(
-										x509CertificateData));
+								.generateCertificate(new ByteArrayInputStream(x509CertificateData));
 						return certificate;
 					} catch (CertificateException e) {
-						throw new RuntimeException("X509 error: "
-								+ e.getMessage(), e);
+						throw new RuntimeException("X509 error: " + e.getMessage(), e);
 					}
 				}
 			}
@@ -341,26 +292,19 @@ public class TrustService {
 	}
 
 	public byte[] getServiceDigitalIdentityData() {
-		TSPServiceInformationType tspServiceInformation = this.tspService
-				.getServiceInformation();
-		DigitalIdentityListType digitalIdentityList = tspServiceInformation
-				.getServiceDigitalIdentity();
+		TSPServiceInformationType tspServiceInformation = this.tspService.getServiceInformation();
+		DigitalIdentityListType digitalIdentityList = tspServiceInformation.getServiceDigitalIdentity();
 		try {
-			final CertificateFactory certificateFactory = CertificateFactory
-					.getInstance("X.509");
-			for (final DigitalIdentityType digitalIdentity : digitalIdentityList
-					.getDigitalId()) {
-				byte[] x509CertificateData = digitalIdentity
-						.getX509Certificate();
+			final CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
+			for (final DigitalIdentityType digitalIdentity : digitalIdentityList.getDigitalId()) {
+				byte[] x509CertificateData = digitalIdentity.getX509Certificate();
 				if (x509CertificateData != null) {
 					try {
 						X509Certificate certificate = (X509Certificate) certificateFactory
-								.generateCertificate(new ByteArrayInputStream(
-										x509CertificateData));
+								.generateCertificate(new ByteArrayInputStream(x509CertificateData));
 						return x509CertificateData;
 					} catch (CertificateException e) {
-						throw new RuntimeException("X509 error: "
-								+ e.getMessage(), e);
+						throw new RuntimeException("X509 error: " + e.getMessage(), e);
 					}
 				}
 			}
@@ -376,22 +320,18 @@ public class TrustService {
 	}
 
 	private static final QName qualifiersName = new QName(
-			"http://uri.etsi.org/TrstSvc/SvcInfoExt/eSigDir-1999-93-EC-TrustedList/#",
-			"Qualifications");
+			"http://uri.etsi.org/TrstSvc/SvcInfoExt/eSigDir-1999-93-EC-TrustedList/#", "Qualifications");
 
 	public void addOIDForQCSSCDStatusAsInCert(String oid) {
 		addOIDForQCSSCDStatusAsInCert(oid, null);
 	}
 
 	public void addOIDForQCSSCDStatusAsInCert(String oid, String description) {
-		TSPServiceInformationType tspServiceInformation = this.tspService
-				.getServiceInformation();
-		ExtensionsListType extensionsList = tspServiceInformation
-				.getServiceInformationExtensions();
+		TSPServiceInformationType tspServiceInformation = this.tspService.getServiceInformation();
+		ExtensionsListType extensionsList = tspServiceInformation.getServiceInformationExtensions();
 		if (null == extensionsList) {
 			extensionsList = this.objectFactory.createExtensionsListType();
-			tspServiceInformation
-					.setServiceInformationExtensions(extensionsList);
+			tspServiceInformation.setServiceInformationExtensions(extensionsList);
 		}
 		List<ExtensionType> extensions = extensionsList.getExtension();
 		for (ExtensionType extension : extensions) {
@@ -405,46 +345,35 @@ public class TrustService {
 				LOG.debug("extension name: " + extensionName);
 				if (qualifiersName.equals(extensionName)) {
 					LOG.debug("extension found");
-					QualificationsType qualifications = (QualificationsType) extensionElement
-							.getValue();
-					List<QualificationElementType> qualificationElements = qualifications
-							.getQualificationElement();
+					QualificationsType qualifications = (QualificationsType) extensionElement.getValue();
+					List<QualificationElementType> qualificationElements = qualifications.getQualificationElement();
 					for (QualificationElementType qualificationElement : qualificationElements) {
-						QualifiersType qualifiers = qualificationElement
-								.getQualifiers();
-						List<QualifierType> qualifierList = qualifiers
-								.getQualifier();
+						QualifiersType qualifiers = qualificationElement.getQualifiers();
+						List<QualifierType> qualifierList = qualifiers.getQualifier();
 						boolean qcSscdStatusAsInCertQualifier = false;
 						boolean qcForLegalPersonQualifier = false;
 						for (QualifierType qualifier : qualifierList) {
-							if (QC_SSCD_STATUS_AS_IN_CERT_QUALIFIER_URI
-									.equals(qualifier.getUri())) {
+							if (QC_SSCD_STATUS_AS_IN_CERT_QUALIFIER_URI.equals(qualifier.getUri())) {
 								qcSscdStatusAsInCertQualifier = true;
 							}
-							if (QC_FOR_LEGAL_PERSON_QUALIFIER_URI
-									.equals(qualifier.getUri())) {
+							if (QC_FOR_LEGAL_PERSON_QUALIFIER_URI.equals(qualifier.getUri())) {
 								qcForLegalPersonQualifier = true;
 							}
 						}
-						if (qcSscdStatusAsInCertQualifier
-								&& !qcForLegalPersonQualifier) {
-							CriteriaListType criteriaList = qualificationElement
-									.getCriteriaList();
-							List<PoliciesListType> policySet = criteriaList
-									.getPolicySet();
+						if (qcSscdStatusAsInCertQualifier && !qcForLegalPersonQualifier) {
+							CriteriaListType criteriaList = qualificationElement.getCriteriaList();
+							List<PoliciesListType> policySet = criteriaList.getPolicySet();
 							PoliciesListType policiesList = policySet.get(0);
 
 							ObjectIdentifierType objectIdentifier = this.xadesObjectFactory
 									.createObjectIdentifierType();
-							IdentifierType identifier = this.xadesObjectFactory
-									.createIdentifierType();
+							IdentifierType identifier = this.xadesObjectFactory.createIdentifierType();
 							identifier.setValue(oid);
 							objectIdentifier.setIdentifier(identifier);
 							if (null != description) {
 								objectIdentifier.setDescription(description);
 							}
-							policiesList.getPolicyIdentifier().add(
-									objectIdentifier);
+							policiesList.getPolicyIdentifier().add(objectIdentifier);
 							return;
 						}
 					}
@@ -455,40 +384,29 @@ public class TrustService {
 		extension.setCritical(true);
 		extensions.add(extension);
 
-		QualificationsType qualifications = this.eccObjectFactory
-				.createQualificationsType();
-		extension.getContent().add(
-				this.eccObjectFactory.createQualifications(qualifications));
-		List<QualificationElementType> qualificationElements = qualifications
-				.getQualificationElement();
+		QualificationsType qualifications = this.eccObjectFactory.createQualificationsType();
+		extension.getContent().add(this.eccObjectFactory.createQualifications(qualifications));
+		List<QualificationElementType> qualificationElements = qualifications.getQualificationElement();
 
-		QualificationElementType qualificationElement = this.eccObjectFactory
-				.createQualificationElementType();
+		QualificationElementType qualificationElement = this.eccObjectFactory.createQualificationElementType();
 		qualificationElements.add(qualificationElement);
 
-		QualifiersType qualifiers = this.eccObjectFactory
-				.createQualifiersType();
+		QualifiersType qualifiers = this.eccObjectFactory.createQualifiersType();
 		List<QualifierType> qualifierList = qualifiers.getQualifier();
-		QualifierType qcSscdStatusInCertqualifier = this.eccObjectFactory
-				.createQualifierType();
+		QualifierType qcSscdStatusInCertqualifier = this.eccObjectFactory.createQualifierType();
 		qualifierList.add(qcSscdStatusInCertqualifier);
-		qcSscdStatusInCertqualifier
-				.setUri(QC_SSCD_STATUS_AS_IN_CERT_QUALIFIER_URI);
+		qcSscdStatusInCertqualifier.setUri(QC_SSCD_STATUS_AS_IN_CERT_QUALIFIER_URI);
 		qualificationElement.setQualifiers(qualifiers);
 
-		CriteriaListType criteriaList = this.eccObjectFactory
-				.createCriteriaListType();
+		CriteriaListType criteriaList = this.eccObjectFactory.createCriteriaListType();
 		qualificationElement.setCriteriaList(criteriaList);
 		criteriaList.setAssert("atLeastOne");
 
 		List<PoliciesListType> policySet = criteriaList.getPolicySet();
-		PoliciesListType policiesList = this.eccObjectFactory
-				.createPoliciesListType();
+		PoliciesListType policiesList = this.eccObjectFactory.createPoliciesListType();
 		policySet.add(policiesList);
-		ObjectIdentifierType objectIdentifier = this.xadesObjectFactory
-				.createObjectIdentifierType();
-		IdentifierType identifier = this.xadesObjectFactory
-				.createIdentifierType();
+		ObjectIdentifierType objectIdentifier = this.xadesObjectFactory.createObjectIdentifierType();
+		IdentifierType identifier = this.xadesObjectFactory.createIdentifierType();
 		identifier.setValue(oid);
 		objectIdentifier.setDescription(description);
 		objectIdentifier.setIdentifier(identifier);
@@ -496,29 +414,21 @@ public class TrustService {
 
 		AdditionalServiceInformationType additionalServiceInformation = this.objectFactory
 				.createAdditionalServiceInformationType();
-		NonEmptyMultiLangURIType additionalServiceInformationUri = this.objectFactory
-				.createNonEmptyMultiLangURIType();
+		NonEmptyMultiLangURIType additionalServiceInformationUri = this.objectFactory.createNonEmptyMultiLangURIType();
 		additionalServiceInformationUri.setLang("en");
 		additionalServiceInformationUri
 				.setValue("http://uri.etsi.org/TrstSvc/eSigDir-1999-93-EC-TrustedList/SvcInfoExt/RootCA-QC");
 		additionalServiceInformation.setURI(additionalServiceInformationUri);
-		extension
-				.getContent()
-				.add(
-						this.objectFactory
-								.createAdditionalServiceInformation(additionalServiceInformation));
+		extension.getContent().add(this.objectFactory.createAdditionalServiceInformation(additionalServiceInformation));
 
 	}
 
 	public void addOIDForQCForLegalPerson(String oid) {
-		TSPServiceInformationType tspServiceInformation = this.tspService
-				.getServiceInformation();
-		ExtensionsListType extensionsList = tspServiceInformation
-				.getServiceInformationExtensions();
+		TSPServiceInformationType tspServiceInformation = this.tspService.getServiceInformation();
+		ExtensionsListType extensionsList = tspServiceInformation.getServiceInformationExtensions();
 		if (null == extensionsList) {
 			extensionsList = this.objectFactory.createExtensionsListType();
-			tspServiceInformation
-					.setServiceInformationExtensions(extensionsList);
+			tspServiceInformation.setServiceInformationExtensions(extensionsList);
 		}
 		List<ExtensionType> extensions = extensionsList.getExtension();
 		for (ExtensionType extension : extensions) {
@@ -532,33 +442,23 @@ public class TrustService {
 				LOG.debug("extension name: " + extensionName);
 				if (qualifiersName.equals(extensionName)) {
 					LOG.debug("extension found");
-					QualificationsType qualifications = (QualificationsType) extensionElement
-							.getValue();
-					List<QualificationElementType> qualificationElements = qualifications
-							.getQualificationElement();
+					QualificationsType qualifications = (QualificationsType) extensionElement.getValue();
+					List<QualificationElementType> qualificationElements = qualifications.getQualificationElement();
 					for (QualificationElementType qualificationElement : qualificationElements) {
-						QualifiersType qualifiers = qualificationElement
-								.getQualifiers();
-						List<QualifierType> qualifierList = qualifiers
-								.getQualifier();
+						QualifiersType qualifiers = qualificationElement.getQualifiers();
+						List<QualifierType> qualifierList = qualifiers.getQualifier();
 						for (QualifierType qualifier : qualifierList) {
-							if (QC_FOR_LEGAL_PERSON_QUALIFIER_URI
-									.equals(qualifier.getUri())) {
-								CriteriaListType criteriaList = qualificationElement
-										.getCriteriaList();
-								List<PoliciesListType> policySet = criteriaList
-										.getPolicySet();
-								PoliciesListType policiesList = policySet
-										.get(0);
+							if (QC_FOR_LEGAL_PERSON_QUALIFIER_URI.equals(qualifier.getUri())) {
+								CriteriaListType criteriaList = qualificationElement.getCriteriaList();
+								List<PoliciesListType> policySet = criteriaList.getPolicySet();
+								PoliciesListType policiesList = policySet.get(0);
 
 								ObjectIdentifierType objectIdentifier = this.xadesObjectFactory
 										.createObjectIdentifierType();
-								IdentifierType identifier = this.xadesObjectFactory
-										.createIdentifierType();
+								IdentifierType identifier = this.xadesObjectFactory.createIdentifierType();
 								identifier.setValue(oid);
 								objectIdentifier.setIdentifier(identifier);
-								policiesList.getPolicyIdentifier().add(
-										objectIdentifier);
+								policiesList.getPolicyIdentifier().add(objectIdentifier);
 								return;
 							}
 						}
@@ -570,22 +470,16 @@ public class TrustService {
 		extension.setCritical(true);
 		extensions.add(extension);
 
-		QualificationsType qualifications = this.eccObjectFactory
-				.createQualificationsType();
-		extension.getContent().add(
-				this.eccObjectFactory.createQualifications(qualifications));
-		List<QualificationElementType> qualificationElements = qualifications
-				.getQualificationElement();
+		QualificationsType qualifications = this.eccObjectFactory.createQualificationsType();
+		extension.getContent().add(this.eccObjectFactory.createQualifications(qualifications));
+		List<QualificationElementType> qualificationElements = qualifications.getQualificationElement();
 
-		QualificationElementType qualificationElement = this.eccObjectFactory
-				.createQualificationElementType();
+		QualificationElementType qualificationElement = this.eccObjectFactory.createQualificationElementType();
 		qualificationElements.add(qualificationElement);
 
-		QualifiersType qualifiers = this.eccObjectFactory
-				.createQualifiersType();
+		QualifiersType qualifiers = this.eccObjectFactory.createQualifiersType();
 		List<QualifierType> qualifierList = qualifiers.getQualifier();
-		QualifierType qcForLegalPersonqualifier = this.eccObjectFactory
-				.createQualifierType();
+		QualifierType qcForLegalPersonqualifier = this.eccObjectFactory.createQualifierType();
 		qualifierList.add(qcForLegalPersonqualifier);
 		qcForLegalPersonqualifier.setUri(QC_FOR_LEGAL_PERSON_QUALIFIER_URI);
 		// QualifierType qcSscdStatusInCertqualifier = this.eccObjectFactory
@@ -595,35 +489,26 @@ public class TrustService {
 		// .setUri(QC_SSCD_STATUS_AS_IN_CERT_QUALIFIER_URI);
 		qualificationElement.setQualifiers(qualifiers);
 
-		CriteriaListType criteriaList = this.eccObjectFactory
-				.createCriteriaListType();
+		CriteriaListType criteriaList = this.eccObjectFactory.createCriteriaListType();
 		qualificationElement.setCriteriaList(criteriaList);
 		criteriaList.setAssert("atLeastOne");
 
 		List<PoliciesListType> policySet = criteriaList.getPolicySet();
-		PoliciesListType policiesList = this.eccObjectFactory
-				.createPoliciesListType();
+		PoliciesListType policiesList = this.eccObjectFactory.createPoliciesListType();
 		policySet.add(policiesList);
-		ObjectIdentifierType objectIdentifier = this.xadesObjectFactory
-				.createObjectIdentifierType();
-		IdentifierType identifier = this.xadesObjectFactory
-				.createIdentifierType();
+		ObjectIdentifierType objectIdentifier = this.xadesObjectFactory.createObjectIdentifierType();
+		IdentifierType identifier = this.xadesObjectFactory.createIdentifierType();
 		identifier.setValue(oid);
 		objectIdentifier.setIdentifier(identifier);
 		policiesList.getPolicyIdentifier().add(objectIdentifier);
 
 		AdditionalServiceInformationType additionalServiceInformation = this.objectFactory
 				.createAdditionalServiceInformationType();
-		NonEmptyMultiLangURIType additionalServiceInformationUri = this.objectFactory
-				.createNonEmptyMultiLangURIType();
+		NonEmptyMultiLangURIType additionalServiceInformationUri = this.objectFactory.createNonEmptyMultiLangURIType();
 		additionalServiceInformationUri.setLang("en");
 		additionalServiceInformationUri
 				.setValue("http://uri.etsi.org/TrstSvc/eSigDir-1999-93-EC-TrustedList/SvcInfoExt/RootCA-QC");
 		additionalServiceInformation.setURI(additionalServiceInformationUri);
-		extension
-				.getContent()
-				.add(
-						this.objectFactory
-								.createAdditionalServiceInformation(additionalServiceInformation));
+		extension.getContent().add(this.objectFactory.createAdditionalServiceInformation(additionalServiceInformation));
 	}
 }

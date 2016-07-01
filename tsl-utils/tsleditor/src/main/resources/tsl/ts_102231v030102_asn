@@ -1,0 +1,320 @@
+ETSI-TSL-v2-88syntax {itu-t(0) identified-organization(4) etsi(0)
+  tsl-specification(2231) id-mod(0) v2-88syntax(1)} 
+
+--                   ****** NOTICE ******
+-- This document is part of ETSI TS 102 231. In the event that any
+-- part of this document in conflict with the text of TS 102 231 
+-- then that text shall prevail as the authoritative source
+
+DEFINITIONS EXPLICIT TAGS ::=
+
+BEGIN
+
+-- EXPORTS All
+IMPORTS
+  -- Internet X.509 Public Key Infrastructure - Certificate and CRL Profile: RFC 3280
+  Extensions, Certificate, CertificateSerialNumber, AlgorithmIdentifier,
+    UTF8String, SubjectPublicKeyInfo, Name
+    FROM PKIX1Explicit88 {iso(1) identified-organization(3) dod(6) internet(1)
+      security(5) mechanisms(5) pkix(7) id-mod(0) id-pkix1-explicit(18)}
+  KeyIdentifier
+    FROM PKIX1Implicit88 {iso(1) identified-organization(3) dod(6) internet(1)
+      security(5) mechanisms(5) pkix(7) id-mod(0) id-pkix1-implicit(19)}
+  -- Cryptographic Message Syntax (CMS): RFC 3852
+  ContentInfo, ContentType, id-signedData, SignedData, EncapsulatedContentInfo,
+    SignerInfo
+    FROM CryptographicMessageSyntax2004 { iso(1) member-body(2) us(840) rsadsi(113549)
+      pkcs(1) pkcs-9(9) smime(16) modules(0) cms-2004(24) };
+
+-- TSL OID tree
+   id-tsl OBJECT IDENTIFIER ::= { itu-t(0) identified-organization(4)
+       etsi(0) tsl-specification (2231) }
+
+-- OID for eContentType
+id-eContentType-signedTSL OBJECT IDENTIFIER ::=
+         { id-tsl identifiers(1) tsl-info(0) }
+
+-- OIDs for type in IdentityAttributeTypeAndValue
+id-certificateIdentityType OBJECT IDENTIFIER ::=
+         { id-tsl identity-types(2) certificate(0) }
+
+id-publicKeyIdentityType OBJECT IDENTIFIER ::=
+         { id-tsl identity-types(2) public-key(1) }
+
+id-keyIdentifierIdentityType OBJECT IDENTIFIER ::=
+         { id-tsl identity-types(2) key-identifier(2) }
+
+id-directoryNameIdentityType OBJECT IDENTIFIER ::=
+         { id-tsl identity-types(2) directory-name(3) }
+
+-- OID for TSL extensions
+id-te OBJECT IDENTIFIER ::=
+         { id-tsl 4 }
+
+-- OID for TSLDistributionPoints extension
+id-te-tSLDistributionPoints OBJECT IDENTIFIER ::=
+         { id-te 0 }
+
+-- OID for ExpiredCertsRevocationInfo extension
+id-te-expiredCertsRevocationInfo OBJECT IDENTIFIER ::=
+         { id-te 1 }
+
+-- OID for AdditionalServiceInformation extension
+id-te-additionalServiceInformation OBJECT IDENTIFIER ::=
+         { id-te 2 }
+
+-- string for TSLTag
+tslTag-value NonEmptyURI ::= "http://uri.etsi.org/02231/TSLTag"
+
+-- Mapping between type and value of IdentityAttributeTypeAndValue
+
+--===================================================================
+-- 'type' (OID)        |  type of 'value' (ANY DEFINED BY type)
+--===================================================================
+--
+-- 0.4.0.2231.2.0      |  'Certificate' from RFC3280
+-- 0.4.0.2231.2.1      |  'SubjectPublicKeyInfo' from RFC3280, whose
+--                     |         value is defined by RFC3279/RFC4055
+-- 0.4.0.2231.2.2      |  'KeyIdentifier' from RFC3280
+-- 0.4.0.2231.2.3      |  'Name' from RFC3280
+--
+--===================================================================
+
+TSL ::= ContentInfo
+
+-- ContentInfo is the CMS outer type defined in RFC3852
+
+-- contentType is id-signedData as defined in CMS RFC3852
+-- content is SignedData as defined in CMS RFC3852
+-- eContentType within SignedData is id-trustServiceStatusListIdentifier
+-- eContent within SignedData is ToBeSignedTSL
+
+--
+-- The CMS SignerInfo version number must assume the following
+-- values. If the 'SignerIdentifier' is
+-- the 'issuerAndSerialNumber', then the version MUST be 1. If the
+-- 'SignerIdentifier' is 'subjectKeyIdentifier', then the version
+-- MUST be 3.
+--
+
+
+ToBeSignedTSL ::= SEQUENCE {
+  tSLTag                            TSLTag,
+  version                           Version,
+  sequenceNumber                    SequenceNumber,
+  tSLtype                           TSLtype,
+  schemeOperatorName                SchemeOperatorName,
+  schemeOperatorAddress             SchemeOperatorAddress,
+  schemeName                        SchemeName,
+  schemeInformationURI              SchemeInformationURI,
+  statusDeterminationApproach       StatusDeterminationApproach,
+  schemeTypeCommunityRules          [0] SchemeTypeCommunityRules OPTIONAL,
+  schemeTerritory                   [1] SchemeTerritory OPTIONAL, 
+  tSLpolicy                         [2] TSLpolicy OPTIONAL, 
+  historicalInformationPeriod       HistoricalInformationPeriod,
+  pointersToOtherTSLs               [3] PointersToOtherTSLs OPTIONAL,
+  listIssueDateTime                 ListIssueDateTime,
+  nextUpdate                        NextUpdate,
+  schemeExtensions                  [4] Extensions OPTIONAL,
+  distributionPoint                 [5] DistributionPoints OPTIONAL,
+  tSPlist                           TSPlist OPTIONAL
+  }
+
+-- tSLTag MUST assume the value tslTag-value
+TSLTag ::= NonEmptyURI
+
+Version ::= INTEGER  {  v3(3)  }
+
+SequenceNumber ::= INTEGER (1..MAX)
+
+TSLtype ::= NonEmptyURI
+
+NonEmptyURI ::= IA5String (SIZE(1..MAX))
+
+SchemeOperatorName ::= MultiLangString
+
+MultiLangString ::= SEQUENCE SIZE (1..MAX) OF LangString
+
+LangString ::= SEQUENCE {
+  languageTag  LanguageTag,
+  string       UTF8String (SIZE(1..MAX))
+  }
+
+LanguageTag ::= PrintableString (SIZE(1..MAX))
+
+SchemeOperatorAddress ::= PhysicalAndElectronicAddress
+
+PhysicalAndElectronicAddress ::= SEQUENCE {
+  physicalDeliveryAddress  MultiLangAddress,
+  electronicAddresses      ElectronicAddresses
+  } 
+
+ElectronicAddresses ::= SEQUENCE SIZE (1..MAX) OF NonEmptyURI
+
+MultiLangAddress ::= SEQUENCE SIZE (1..MAX) OF LangAddress 
+
+LangAddress ::= SEQUENCE {
+  languageTag 	     LanguageTag,
+  streetAddress      UTF8String (SIZE(1..MAX)),
+  locality           UTF8String (SIZE(1..MAX)),
+  stateOrProvince    UTF8String (SIZE(1..MAX)) OPTIONAL,
+  postalCode         UTF8String (SIZE(1..MAX)),
+  countryName        CountryCode
+  }
+
+CountryCode ::= PrintableString (SIZE(2))
+
+SchemeName ::= MultiLangString
+
+SchemeInformationURI ::= MultiLangPointer
+
+MultiLangPointer ::= SEQUENCE SIZE (1..MAX) OF LangPointer
+
+LangPointer ::= SEQUENCE {
+  languageTag LanguageTag,
+  uRI         NonEmptyURI
+  }
+
+SchemeTypeCommunityRules ::= SEQUENCE SIZE (1..MAX) OF NonEmptyURI 
+
+StatusDeterminationApproach ::= NonEmptyURI
+
+SchemeTerritory ::= CountryCode
+
+TSLpolicy ::= CHOICE {
+  pointer   [0] MultiLangPointer,
+  text      [1] MultiLangString
+  }
+
+HistoricalInformationPeriod ::= INTEGER (1..MAX)
+
+PointersToOtherTSLs ::= SEQUENCE SIZE (1..MAX) OF OtherTSLPointer
+
+OtherTSLPointer ::= SEQUENCE {
+  tSLLocation            NonEmptyURI,
+  additionalInformation  TSLqualifiers
+  }
+
+TSLqualifiers ::= SEQUENCE SIZE (1..MAX) OF TSLqualifier
+
+TSLqualifier ::= CHOICE {
+  textualQualifier 	[0] MultiLangString,
+  otherQualifier	[1] OtherQualifier
+  }
+
+OtherQualifier ::= SEQUENCE {
+  type         OBJECT IDENTIFIER,
+  value        ANY DEFINED BY type
+  }
+
+ListIssueDateTime ::= GeneralizedTime
+
+NextUpdate ::= CHOICE {
+  never  NULL,
+  update GeneralizedTime
+  }
+
+DistributionPoints  ::= SEQUENCE SIZE (1..MAX) OF NonEmptyURI
+
+-- zero instances of TrustServiceProviderInformation is allowed:
+--    when DER-encoding only the SEQUENCE OF tag with the length  
+--    set to zero will be present 
+TSPlist ::= SEQUENCE SIZE (1..MAX) OF TrustServiceProviderInformation
+
+TrustServiceProviderInformation ::= SEQUENCE {
+  tSPname            TSPname,
+  tradeName          [0] TSPtradeName OPTIONAL,
+  tSPaddress         TSPaddress,
+  tSPinformationURI  TSPinformationURI,
+  tSPextensions      [1] Extensions OPTIONAL,
+  listOfServices     [2] ListOfServices
+  }
+
+TSPname ::= MultiLangString
+
+TSPtradeName ::= MultiLangString
+
+TSPaddress ::= PhysicalAndElectronicAddress
+
+TSPinformationURI ::= MultiLangPointer
+
+ListOfServices ::= SEQUENCE SIZE (1..MAX) OF TSPserviceInformation
+
+TSPserviceInformation ::= SEQUENCE {
+  serviceType                ServiceType,
+  serviceName                ServiceName,
+  serviceDigitalIdentity     ServiceDigitalIdentity,
+  currentServiceStatus       ServiceStatus,
+  currentStatusStartingTime  StatusStartingTime,
+  schemeURI                  [0] SchemeURI OPTIONAL,
+  tspURI                     [1] TspURI OPTIONAL,
+  serviceSupplyPoints        [2] ServiceSupplyPoints OPTIONAL,
+  srvcExtensions             [3] Extensions OPTIONAL,
+  serviceApprovalHistory     [4] ServiceApprovalHistory OPTIONAL
+  }
+
+
+ServiceType ::= NonEmptyURI
+
+ServiceName ::= MultiLangString
+
+ServiceStatus ::= NonEmptyURI
+
+ServiceDigitalIdentity ::= IdentityAttributeTypeAndValues
+
+-- zero instances of IdentityAttributeTypeAndValue is allowed:
+--    when DER-encoding this field, only the SET OF Tag with the Length  
+--    set to zero will be present, no Value
+IdentityAttributeTypeAndValues ::= SET OF IdentityAttributeTypeAndValue
+
+IdentityAttributeTypeAndValue ::= SEQUENCE {
+  type   OBJECT IDENTIFIER,
+  value  ANY DEFINED BY type
+  }
+
+StatusStartingTime ::= GeneralizedTime
+
+SchemeURI ::= MultiLangPointer
+
+TspURI ::= MultiLangPointer 
+
+ServiceSupplyPoints ::= SEQUENCE SIZE (1..MAX) OF ServiceSupplyPoint
+
+ServiceSupplyPoint ::= NonEmptyURI
+
+ServiceApprovalHistory ::= SEQUENCE OF TSPhistoryInformation
+
+TSPhistoryInformation ::= SEQUENCE {
+  serviceType                 ServiceType,
+  serviceName                 ServiceName,
+  serviceDigitalIdentity      ServiceDigitalIdentity,
+  previousStatus              ServiceStatus,
+  previousStatusStartingTime  StatusStartingTime,
+  srvcExtensions              [0] Extensions OPTIONAL
+  }
+
+-- Extensions defined in TS 102 231 v3.1.1
+
+-- TSLDistributionPoints extension definition
+   tSLDistributionPoints EXTENSION ::= {
+       SYNTAX TSLDistributionPoints
+       IDENTIFIED BY id-te-tSLDistributionPoints }
+   TSLDistributionPoints ::= SEQUENCE SIZE(1..MAX) OF NonEmptyURI
+
+-- expiredCertsRevocationInfo extension definition
+   expiredCertsRevocationInfo EXTENSION ::= {
+       SYNTAX ExpiredCertsRevocationInfo
+       IDENTIFIED BY id-te-expiredCertsRevocationInfo }
+   ExpiredCertsRevocationInfo ::= GeneralizedTime
+
+-- additionalServiceInformation extension definition
+   additionalServiceInformation EXTENSION ::= {
+       SYNTAX AdditionalServiceInformation
+       IDENTIFIED BY id-te-additionalServiceInformation }   
+   AdditionalServiceInformation ::= SEQUENCE {
+       additionalServiceInformationURI MultiLangPointer,
+       informationValue UTF8String (SIZE(1..MAX)),
+       otherQualifier OtherQualifier OPTIONAL
+
+END
+

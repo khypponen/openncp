@@ -1,0 +1,40 @@
+StopWatch '--> method loadPropertiesFromPropertyFile()': running time (millis) = 11
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00010  091 %  --> method loadResources()
+00001  009 %  --> method iterateProperties()
+
+StopWatch '--> method loadPropertiesFromDatabase()': running time (millis) = 932
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00886  095 %  --> method getConnection()
+00042  005 %  --> method executeQuery()
+00004  000 %  --> method iterateResultset()
+
+StopWatch '--> method loadPropertiesFromDatabase()': running time (millis) = 8
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000 %  --> method getConnection()
+00004  050 %  --> method executeQuery()
+00004  050 %  --> method iterateResultset()
+
+StopWatch '--> method loadPropertiesFromDatabase()': running time (millis) = 6
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00001  017 %  --> method getConnection()
+00001  017 %  --> method executeQuery()
+00004  067 %  --> method iterateResultset()
+
+StopWatch '--> method loadPropertiesFromPropertyFile()': running time (millis) = 985
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00038  004 %  --> method loadPropertiesFromPropertyFile()
+00933  095 %  --> method loadPropertiesFromDatabase(1)
+00008  001 %  --> method loadPropertiesFromDatabase(2)
+00006  001 %  --> method loadPropertiesFromDatabase(3)
+

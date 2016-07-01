@@ -14,21 +14,21 @@
 *KIND, either express or implied.  See the License for the
 *specific language governing permissions and limitations
 *under the License.
-**/package epsos.ccd.gnomon.tsleditor.model;
+**/
+package epsos.ccd.gnomon.tsleditor.model;
 
 import java.util.List;
 import java.util.Locale;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.etsi.uri._02231.v2_.InternationalNamesType;
-import org.etsi.uri._02231.v2_.MultiLangNormStringType;
-import org.etsi.uri._02231.v2_.ObjectFactory;
+import org.etsi.uri._02231.v2.InternationalNamesType;
+import org.etsi.uri._02231.v2.MultiLangNormStringType;
+import org.etsi.uri._02231.v2.ObjectFactory;
 
 public class TrustServiceListUtils {
 
-	private static final Log LOG = LogFactory
-			.getLog(TrustServiceListUtils.class);
+	private static final Log LOG = LogFactory.getLog(TrustServiceListUtils.class);
 
 	private TrustServiceListUtils() {
 		super();
@@ -36,7 +36,7 @@ public class TrustServiceListUtils {
 
 	/**
 	 * Gives back the value according to the given locale.
-	 * 
+	 *
 	 * @param i18nName
 	 * @param locale
 	 * @return
@@ -64,13 +64,12 @@ public class TrustServiceListUtils {
 
 	/**
 	 * Sets the value according to the given locale.
-	 * 
+	 *
 	 * @param value
 	 * @param locale
 	 * @param i18nName
 	 */
-	public static void setValue(String value, Locale locale,
-			InternationalNamesType i18nName) {
+	public static void setValue(String value, Locale locale, InternationalNamesType i18nName) {
 		LOG.debug("set value for locale: " + locale.getLanguage());
 		List<MultiLangNormStringType> names = i18nName.getName();
 		/*

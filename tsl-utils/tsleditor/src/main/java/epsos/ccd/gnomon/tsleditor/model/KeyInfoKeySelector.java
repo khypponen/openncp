@@ -14,7 +14,8 @@
 *KIND, either express or implied.  See the License for the
 *specific language governing permissions and limitations
 *under the License.
-**/package epsos.ccd.gnomon.tsleditor.model;
+**/
+package epsos.ccd.gnomon.tsleditor.model;
 
 import java.security.Key;
 import java.security.cert.X509Certificate;
@@ -32,16 +33,14 @@ import javax.xml.crypto.dsig.keyinfo.X509Data;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-public class KeyInfoKeySelector extends KeySelector implements
-		KeySelectorResult {
+public class KeyInfoKeySelector extends KeySelector implements KeySelectorResult {
 
 	private static final Log LOG = LogFactory.getLog(KeyInfoKeySelector.class);
 
 	private X509Certificate certificate;
 
 	@Override
-	public KeySelectorResult select(KeyInfo keyInfo, Purpose purpose,
-			AlgorithmMethod method, XMLCryptoContext context)
+	public KeySelectorResult select(KeyInfo keyInfo, Purpose purpose, AlgorithmMethod method, XMLCryptoContext context)
 			throws KeySelectorException {
 		LOG.debug("select key");
 		List<XMLStructure> keyInfoContent = keyInfo.getContent();

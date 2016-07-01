@@ -14,7 +14,8 @@
 *KIND, either express or implied.  See the License for the
 *specific language governing permissions and limitations
 *under the License.
-**/package epsos.ccd.gnomon.tsleditor.model;
+**/
+package epsos.ccd.gnomon.tsleditor.model;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,15 +31,14 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.etsi.uri._02231.v2_.ObjectFactory;
-import org.etsi.uri._02231.v2_.TrustStatusListType;
+import org.etsi.uri._02231.v2.ObjectFactory;
+import org.etsi.uri._02231.v2.TrustStatusListType;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 public class TrustServiceListFactory {
 
-	private static final Log LOG = LogFactory
-			.getLog(TrustServiceListFactory.class);
+	private static final Log LOG = LogFactory.getLog(TrustServiceListFactory.class);
 
 	private TrustServiceListFactory() {
 		super();
@@ -46,7 +46,7 @@ public class TrustServiceListFactory {
 
 	/**
 	 * Creates a new trust service list from the given file.
-	 * 
+	 *
 	 * @param tslFile
 	 * @return
 	 * @throws IOException
@@ -67,15 +67,14 @@ public class TrustServiceListFactory {
 
 	/**
 	 * Creates a trust service list from a given DOM document.
-	 * 
+	 *
 	 * @param tslDocument
 	 *            the DOM TSL document.
-	 * 
+	 *
 	 * @return
 	 * @throws IOException
 	 */
-	public static TrustServiceList newInstance(Document tslDocument,
-			File tslFile) throws IOException {
+	public static TrustServiceList newInstance(Document tslDocument, File tslFile) throws IOException {
 		if (null == tslDocument) {
 			throw new IllegalArgumentException();
 		}
@@ -85,28 +84,22 @@ public class TrustServiceListFactory {
 		} catch (JAXBException e) {
 			throw new IOException("TSL parse error: " + e.getMessage(), e);
 		}
-		return new TrustServiceList(trustServiceStatusList, tslDocument,
-				tslFile);
+		return new TrustServiceList(trustServiceStatusList, tslDocument, tslFile);
 	}
 
-	public static TrustServiceList newInstance(Document tslDocument)
-			throws IOException {
+	public static TrustServiceList newInstance(Document tslDocument) throws IOException {
 		return newInstance(tslDocument, null);
 	}
 
-	private static Document parseDocument(File file)
-			throws ParserConfigurationException, SAXException, IOException {
-		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory
-				.newInstance();
+	private static Document parseDocument(File file) throws ParserConfigurationException, SAXException, IOException {
+		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 		documentBuilderFactory.setNamespaceAware(true);
-		DocumentBuilder documentBuilder = documentBuilderFactory
-				.newDocumentBuilder();
+		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 		Document document = documentBuilder.parse(file);
 		return document;
 	}
 
-	private static TrustStatusListType parseTslDocument(Document tslDocument)
-			throws JAXBException {
+	private static TrustStatusListType parseTslDocument(Document tslDocument) throws JAXBException {
 		Unmarshaller unmarshaller = getUnmarshaller();
 		JAXBElement<TrustStatusListType> jaxbElement = (JAXBElement<TrustStatusListType>) unmarshaller
 				.unmarshal(tslDocument);
@@ -122,17 +115,15 @@ public class TrustServiceListFactory {
 
 	/**
 	 * Creates a new empty trust service list.
-	 * 
+	 *
 	 * @return
 	 */
 	public static TrustServiceList newInstance() {
 		return new TrustServiceList();
 	}
 
-	public static TrustServiceProvider createTrustServiceProvider(String name,
-			String tradeName) {
-		TrustServiceProvider trustServiceProvider = new TrustServiceProvider(
-				name, tradeName);
+	public static TrustServiceProvider createTrustServiceProvider(String name, String tradeName) {
+		TrustServiceProvider trustServiceProvider = new TrustServiceProvider(name, tradeName);
 		return trustServiceProvider;
 	}
 
@@ -141,8 +132,7 @@ public class TrustServiceListFactory {
 		return trustService;
 	}
 
-	public static TrustService createTrustService(X509Certificate certificate,
-			String... oids) {
+	public static TrustService createTrustService(X509Certificate certificate, String... oids) {
 		TrustService trustService = new TrustService(certificate, oids);
 		return trustService;
 	}
