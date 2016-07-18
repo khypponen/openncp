@@ -5,23 +5,15 @@
  */
 package eu.ehealth.ccd.smp;
 
+import eu.ehealth.ccd.exceptions.SignatureCancelledException;
 import java.awt.Dimension;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.attribute.BasicFileAttributeView;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
@@ -30,18 +22,30 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ListModel;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMResult;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
- *
+ * Class representing the main SMP JFrame. Adds the features of:
+ * 1) TSL-to-SMP transformation
+ * 2) Signing of SMP files
+ * 3) Upload of SMP files to SMP server
+ * 
  * @author joao.cunha
  */
 public class TransformatorUI extends javax.swing.JFrame {
@@ -207,6 +211,7 @@ public class TransformatorUI extends javax.swing.JFrame {
         privateKeyPassPasswordField.setEnabled(false);
 
         transformButton.setText("Transform");
+        transformButton.setEnabled(false);
         transformButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 transformButtonActionPerformed(evt);
@@ -397,6 +402,7 @@ public class TransformatorUI extends javax.swing.JFrame {
             tslFile = tslFileChooser.getSelectedFile();
             String tslFileLocation = tslFile.getAbsolutePath();
             tslFileTextField.setText(tslFileLocation);
+            this.enableTransformButton();
         }
     }                                               
 
@@ -412,6 +418,7 @@ public class TransformatorUI extends javax.swing.JFrame {
             ismFile = ismFileChooser.getSelectedFile();
             String ismFileLocation = ismFile.getAbsolutePath();
             ismFileTextField.setText(ismFileLocation);
+            this.enableTransformButton();
         }
     }                                               
 
@@ -426,6 +433,7 @@ public class TransformatorUI extends javax.swing.JFrame {
             outputFolder = outputFolderChooser.getSelectedFile();
             String outputFolderLocation = outputFolder.getAbsolutePath();
             outputFolderTextField.setText(outputFolderLocation);
+            this.enableTransformButton();
         }
     }                                                        
 
@@ -446,7 +454,7 @@ public class TransformatorUI extends javax.swing.JFrame {
         }
     }                                            
 
-    private void transformButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    private void transformButtonActionPerformed(java.awt.event.ActionEvent evt) {      
         //         TODO add your handling code here:
         try {
             //            TransformerFactory factory = TransformerFactory.newInstance();
@@ -459,17 +467,29 @@ public class TransformatorUI extends javax.swing.JFrame {
             transformer.setParameter("ism", ismFile != null ? ismFile.toURI() : null);
             transformer.setParameter("ismCreationDate", ismFile != null ? GenericUtils.getCreationTime(ismFile.getAbsolutePath()) : null);
             transformer.setParameter("outputFolder", outputFolder.getAbsolutePath());
-            transformer.setParameter("sign", signCheckbox.isSelected());
             
             logger.info("Going to transform...\nISM URI: " + (ismFile != null ? ismFile.toURI() : "null") + 
             		"\n" + (ismFile != null ? GenericUtils.convertFileToString(ismFile) : "null") + 
             		"\nISM CreationDate: " + (ismFile != null ? GenericUtils.getCreationTime(ismFile.getAbsolutePath()) : "null"));
             
             Source text = new StreamSource(tslFile);
+            // transform TSL file into SMP files. XSLT is the artifact that generates the files
             transformer.transform(text, new DOMResult());
 
             // check if we should sign SMP files
             if (signCheckbox.isSelected()) {
+                // At this moment the XSLT already generated the unsigned SMP files in the SMP output folder
+                String country = tslFile.getName().substring(tslFile.getName().length()-7, tslFile.getName().length()-5);
+                File smpOutputFolder = new File(outputFolder.getAbsolutePath(), country);
+                
+                // show signature confirmation dialog
+                SignatureConfirmationDialog signatureConfirmationDialog = new SignatureConfirmationDialog(this, true, smpOutputFolder);
+                signatureConfirmationDialog.setVisible(true);
+                boolean userConfirm = signatureConfirmationDialog.isUserConfirm();
+                if (!userConfirm) {
+                    throw new SignatureCancelledException("Signature cancelled by user (scheme operator)!");
+                }
+                
                 // get signing information
                 char[] keystorePasswordArray = keystorePassPasswordField.getPassword();
                 String keystorePassword = new String(keystorePasswordArray);
@@ -477,12 +497,26 @@ public class TransformatorUI extends javax.swing.JFrame {
                 char[] privateKeyPasswordArray = privateKeyPassPasswordField.getPassword();
                 String privateKeyPassword = new String(privateKeyPasswordArray);
                 
-                String country = tslFile.getName().substring(tslFile.getName().length()-7, tslFile.getName().length()-5);
-                File smpOutputFolder = new File(outputFolder.getAbsolutePath(), country);
                 for (File file : smpOutputFolder.listFiles()) {
-                    final InputStream fileInputStream = new FileInputStream(file);
-//                    SignatureUtils.output(sign(fileInputStream, TransformatorUI.class.getResourceAsStream("/resources/pt-signature-keystore.jks")), file.getAbsolutePath());
-                    SignatureUtils.output(SignatureUtils.sign(fileInputStream, keystoreFile, keystorePassword, privateKeyAlias, privateKeyPassword), file.getAbsolutePath());
+                    final InputStream fileInputStream = new FileInputStream(file);                 
+//                    SignatureUtils.output(SignatureUtils.sign(fileInputStream, keystoreFile, keystorePassword, privateKeyAlias, privateKeyPassword), file.getAbsolutePath());
+                    
+                    // obtain reference to <Extension> and sign it
+                    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+                    dbf.setNamespaceAware(true);
+                    DocumentBuilder db = dbf.newDocumentBuilder();
+                    Document smpRecord = db.parse(fileInputStream);
+                    // find the pointer.
+                    final String ns = "http://busdox.org/serviceMetadata/publishing/1.0/";
+                    NodeList elements = smpRecord.getElementsByTagNameNS(ns, "Extension");
+                    Node n = elements.item(0);
+                    Element xtPointer = (Element) n;
+                    
+                    SignatureUtils.sign(xtPointer, fileInputStream, keystoreFile, keystorePassword, privateKeyAlias, privateKeyPassword);
+                    // Output the resulting document.
+                    TransformerFactory tf = TransformerFactory.newInstance();
+                    Transformer trans = tf.newTransformer();
+                    trans.transform(new DOMSource(smpRecord), new StreamResult(file));
                 }
                 // Zero out the possible passwords, for security.
                 Arrays.fill(keystorePasswordArray, '0');
@@ -492,6 +526,8 @@ public class TransformatorUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Transformation successfully made. SMP files have been generated at " +
                 outputFolder.getAbsolutePath(), "Info", JOptionPane.INFORMATION_MESSAGE);
 
+        } catch (SignatureCancelledException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Signature Cancelled", JOptionPane.ERROR_MESSAGE);
         } catch (TransformerException e) {
             String stackTrace = GenericUtils.printExceptionStackTrace(e);
             JOptionPane.showMessageDialog(this, createScrollablePane(stackTrace), "Error",JOptionPane.ERROR_MESSAGE);
@@ -589,6 +625,13 @@ public class TransformatorUI extends javax.swing.JFrame {
             }
         };
         return jsp;
+    }
+    
+    private void enableTransformButton() {
+        boolean enabled = (this.tslFileTextField.getText() != null && !this.tslFileTextField.getText().isEmpty()) && 
+                (this.ismFileTextField.getText() != null && !this.ismFileTextField.getText().isEmpty()) && 
+                (this.outputFolderTextField.getText() != null && !this.outputFolderTextField.getText().isEmpty());
+        transformButton.setEnabled(enabled);
     }
     
     /**
