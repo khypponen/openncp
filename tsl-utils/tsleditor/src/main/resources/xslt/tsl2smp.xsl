@@ -12,7 +12,7 @@
     xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
     xmlns:ids="http://busdox.org/transport/identifiers/1.0/"
     xmlns:wsa="http://www.w3.org/2005/08/addressing"
-    exclude-result-prefixes="xs tsl ecc tslx xades"
+    exclude-result-prefixes="xs tsl ecc tslx"
     version="2.0">
     <xsl:output indent="yes"/>
     <xsl:strip-space elements="*"/>
@@ -22,7 +22,6 @@
     <xsl:param name="ism"/>
     <xsl:param name="ismCreationDate"/>
     <xsl:param name="outputFolder"/>
-    <xsl:param name="sign"/>
 
     <xsl:template match="/">
         <xsl:variable name="country" select="substring-after(tsl:TrustServiceStatusList/@Id, 'NCPConfiguration-')"/>
@@ -50,7 +49,7 @@
                     <xsl:variable name="serviceName" select="substring-after($serviceTypeIdentifier, 'http://uri.epsos.eu/Svc/Svctype/')"/>
                     <xsl:variable name="activationDate" select="tsl:ServiceInformation/tsl:StatusStartingTime"/>
                     <xsl:if test="$serviceName = 'VPNGateway'">
-                        <xsl:call-template name="SignedServiceMetadata">
+                        <xsl:call-template name="ServiceMetadata">
                             <xsl:with-param name="country" select="$country"/>
                             <xsl:with-param name="documentIdentifier" select="'epsos::105'"/>
                             <xsl:with-param name="processIdentifier" select="'urn:ehealth:ncp:vpngateway'"/>
@@ -64,8 +63,8 @@
                             <xsl:with-param name="filename" select="'VPN_Gateway_A'"/>
                         </xsl:call-template>
                     </xsl:if>
-                    <xsl:if test="$serviceName = 'PatientIdenitificationService'"> <!-- Fix this typo after TSL-Editor/Sync are fixed -->
-                        <xsl:call-template name="SignedServiceMetadata">
+                    <xsl:if test="$serviceName = 'PatientIdenitificationService'"> <!-- TODO: Fix this typo after TSL-Editor/Sync are fixed -->
+                        <xsl:call-template name="ServiceMetadata">
                             <xsl:with-param name="country" select="$country"/>
                             <xsl:with-param name="documentIdentifier" select="'epsos::11'"/>
                             <xsl:with-param name="processIdentifier" select="'urn:epsosIdentityService::FindIdentityByTraits'"/>
@@ -80,7 +79,7 @@
                         </xsl:call-template>
                     </xsl:if>
                     <xsl:if test="$serviceName = 'PatientService'">
-                        <xsl:call-template name="SignedServiceMetadata">
+                        <xsl:call-template name="ServiceMetadata">
                             <xsl:with-param name="country" select="$country"/>
                             <xsl:with-param name="documentIdentifier" select="'epsos::21'"/>
                             <xsl:with-param name="processIdentifier" select="'urn:epsosPatientService::List'"/>
@@ -95,7 +94,7 @@
                         </xsl:call-template>
                     </xsl:if>
                     <xsl:if test="$serviceName = 'OrderService'">
-                        <xsl:call-template name="SignedServiceMetadata">
+                        <xsl:call-template name="ServiceMetadata">
                             <xsl:with-param name="country" select="$country"/>
                             <xsl:with-param name="documentIdentifier" select="'epsos::31'"/>
                             <xsl:with-param name="processIdentifier" select="'urn:epsosOrderService::List'"/>
@@ -110,7 +109,7 @@
                         </xsl:call-template>
                     </xsl:if>
                     <xsl:if test="$serviceName = 'DispensationService'">
-                        <xsl:call-template name="SignedServiceMetadata">
+                        <xsl:call-template name="ServiceMetadata">
                             <xsl:with-param name="country" select="$country"/>
                             <xsl:with-param name="documentIdentifier" select="'epsos::41'"/>
                             <xsl:with-param name="processIdentifier" select="'urn:epsosDispensationService::Initialize'"/>
@@ -123,7 +122,7 @@
                             <xsl:with-param name="hasServiceSupplyPoints" select="true()"/>
                             <xsl:with-param name="filename" select="'Dispensation_Service_Initialize'"/>
                         </xsl:call-template>  
-                        <xsl:call-template name="SignedServiceMetadata">
+                        <xsl:call-template name="ServiceMetadata">
                             <xsl:with-param name="country" select="$country"/>
                             <xsl:with-param name="documentIdentifier" select="'epsos::42'"/>
                             <xsl:with-param name="processIdentifier" select="'urn:epsosDispensationService::Discard'"/>
@@ -138,7 +137,7 @@
                         </xsl:call-template>
                     </xsl:if>
                     <xsl:if test="$serviceName = 'ConsentService'">
-                        <xsl:call-template name="SignedServiceMetadata">
+                        <xsl:call-template name="ServiceMetadata">
                             <xsl:with-param name="country" select="$country"/>
                             <xsl:with-param name="documentIdentifier" select="'epsos::51'"/>
                             <xsl:with-param name="processIdentifier" select="'urn:epsosConsentService::Put'"/>
@@ -151,7 +150,7 @@
                             <xsl:with-param name="hasServiceSupplyPoints" select="true()"/>
                             <xsl:with-param name="filename" select="'Consent_Service_Put'"/>
                         </xsl:call-template>  
-                        <xsl:call-template name="SignedServiceMetadata">
+                        <xsl:call-template name="ServiceMetadata">
                             <xsl:with-param name="country" select="$country"/>
                             <xsl:with-param name="documentIdentifier" select="'epsos::52'"/>
                             <xsl:with-param name="processIdentifier" select="'urn:epsosConsentService::Discard'"/>
@@ -168,7 +167,7 @@
                 </xsl:for-each>
                 <!-- We only need to generate the ISM for countries that have NCP-A and if they provide ISM -->
                 <xsl:if test="$ism and $ismCreationDate">
-	                <xsl:call-template name="SignedServiceMetadata">
+	                <xsl:call-template name="ServiceMetadata">
 	                    <xsl:with-param name="country" select="$country"/>
 	                    <xsl:with-param name="documentIdentifier" select="'epsos::107'"/>
 	                    <xsl:with-param name="processIdentifier" select="concat('urn:ehealth:ncp:',lower-case($country),':ism')"/>
@@ -190,7 +189,7 @@
                     <xsl:variable name="serviceName" select="substring-after($serviceTypeIdentifier, 'http://uri.epsos.eu/Svc/Svctype/')"/>
                     <xsl:variable name="activationDate" select="tsl:ServiceInformation/tsl:StatusStartingTime"/>
                     <xsl:if test="$serviceName = 'VPNGateway'">
-                        <xsl:call-template name="SignedServiceMetadata">
+                        <xsl:call-template name="ServiceMetadata">
                             <xsl:with-param name="country" select="$country"/>
                             <xsl:with-param name="documentIdentifier" select="'epsos::106'"/>
                             <xsl:with-param name="processIdentifier" select="'urn:ehealth:ncp:vpngateway'"/>
@@ -206,7 +205,7 @@
                     </xsl:if>
                     <!-- Some countries have a misconfigured entry for this (e.g. 'IdP' vs 'IdV') -->
                     <xsl:if test="$serviceName = 'IdV' or $serviceName = 'IdP'">
-                        <xsl:call-template name="SignedServiceMetadata">
+                        <xsl:call-template name="ServiceMetadata">
                             <xsl:with-param name="country" select="$country"/>
                             <xsl:with-param name="documentIdentifier" select="'epsos::91'"/>
                             <xsl:with-param name="processIdentifier" select="concat('urn:ehealth:ncp:',lower-case($country),':ncpb-idp')"/>
@@ -225,7 +224,7 @@
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template name="SignedServiceMetadata">
+    <xsl:template name="ServiceMetadata">
         <xsl:param name="country"/>
         <xsl:param name="documentIdentifier"/>
         <xsl:param name="processIdentifier"/>
@@ -239,41 +238,27 @@
         <xsl:param name="endpointExtension"/>
         <xsl:param name="filename"/>
         <xsl:result-document href="{concat('file:///',$outputFolder,'/',$country,'/',$filename,'_',$country,'.xml')}">
-            <xsl:variable name="ServiceMetadata">
-                <ServiceMetadata>
-                    <ServiceInformation>
-                        <xsl:call-template name="ParticipantIdentifier">
-                            <xsl:with-param name="country" select="$country"/>
-                        </xsl:call-template>
-                        <xsl:call-template name="DocumentIdentifier">
-                            <xsl:with-param name="documentIdentifier" select="$documentIdentifier"/>
-                        </xsl:call-template>
-                        <xsl:call-template name="ProcessList">
-                            <xsl:with-param name="processIdentifier" select="$processIdentifier"/>
-                            <xsl:with-param name="transportProfile" select="$transportProfile"/>
-                            <xsl:with-param name="endpointURI" select="$endpointURI"/>
-                            <xsl:with-param name="serviceActivationDate" select="$serviceActivationDate"/>
-                            <xsl:with-param name="certificate" select="$certificate"/>
-                            <xsl:with-param name="serviceDescription" select="$serviceDescription"/>
-                            <xsl:with-param name="technicalContactUrl" select="$technicalContactUrl"/>
-                            <xsl:with-param name="hasServiceSupplyPoints" select="$hasServiceSupplyPoints"/>
-                            <xsl:with-param name="endpointExtension" select="$endpointExtension"/>
-                        </xsl:call-template>
-                    </ServiceInformation>
-                </ServiceMetadata>
-            </xsl:variable>
-            <xsl:choose>
-                <xsl:when test="$sign = true()">
-                    <!-- Generate SignedServiceMetadata with the ServiceMetadata -->
-                    <SignedServiceMetadata>
-                        <xsl:copy-of select="$ServiceMetadata"/>
-                    </SignedServiceMetadata>
-                </xsl:when>
-                <xsl:otherwise>
-                    <!-- Generate only the ServiceMetadata -->
-                    <xsl:copy-of select="$ServiceMetadata"/>
-                </xsl:otherwise>
-            </xsl:choose>
+            <ServiceMetadata>
+                <ServiceInformation>
+                    <xsl:call-template name="ParticipantIdentifier">
+                        <xsl:with-param name="country" select="$country"/>
+                    </xsl:call-template>
+                    <xsl:call-template name="DocumentIdentifier">
+                        <xsl:with-param name="documentIdentifier" select="$documentIdentifier"/>
+                    </xsl:call-template>
+                    <xsl:call-template name="ProcessList">
+                        <xsl:with-param name="processIdentifier" select="$processIdentifier"/>
+                        <xsl:with-param name="transportProfile" select="$transportProfile"/>
+                        <xsl:with-param name="endpointURI" select="$endpointURI"/>
+                        <xsl:with-param name="serviceActivationDate" select="$serviceActivationDate"/>
+                        <xsl:with-param name="certificate" select="$certificate"/>
+                        <xsl:with-param name="serviceDescription" select="$serviceDescription"/>
+                        <xsl:with-param name="technicalContactUrl" select="$technicalContactUrl"/>
+                        <xsl:with-param name="hasServiceSupplyPoints" select="$hasServiceSupplyPoints"/>
+                        <xsl:with-param name="endpointExtension" select="$endpointExtension"/>
+                    </xsl:call-template>
+                </ServiceInformation>
+            </ServiceMetadata>
         </xsl:result-document>
         <!-- newline: <xsl:text>&#xa;</xsl:text> -->
     </xsl:template>
@@ -359,10 +344,8 @@
             <ServiceDescription><xsl:value-of select="$serviceDescription"/></ServiceDescription>
             <TechnicalContactUrl><xsl:value-of select="$technicalContactUrl"/></TechnicalContactUrl>
             <TechnicalInformationUrl><xsl:value-of select="$technicalContactUrl"/></TechnicalInformationUrl>
-            <!-- We only add <Extension> element if there's any content to add there -->
-            <xsl:if test="$endpointExtension">
-                <Extension><xsl:copy-of select="$endpointExtension"/></Extension>
-            </xsl:if>
+            <!-- Every SMP file will have Endpoint/Extension, either empty or not (e.g. search mask) -->
+            <Extension><xsl:copy-of select="$endpointExtension"/></Extension>
         </Endpoint>
     </xsl:template>
  
