@@ -512,7 +512,7 @@ public class TransformatorUI extends javax.swing.JFrame {
                     Node n = elements.item(0);
                     Element xtPointer = (Element) n;
                     
-                    SignatureUtils.sign(xtPointer, fileInputStream, keystoreFile, keystorePassword, privateKeyAlias, privateKeyPassword);
+                    SignatureUtils.sign(xtPointer, keystoreFile, keystorePassword, privateKeyAlias, privateKeyPassword);
                     // Output the resulting document.
                     TransformerFactory tf = TransformerFactory.newInstance();
                     Transformer trans = tf.newTransformer();

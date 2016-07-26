@@ -218,14 +218,13 @@ public class SignatureUtils {
     /**
      * Method used to sign the Extension element of SMP files.
      * @param xtPointer Reference to the Element where the Signature should be stored.
-     * @param xmlFile XML input file.
      * @param privateKeyFile Path to the keystore (JKS).
      * @param keystorePassword Keystore password.
      * @param privateKeyAlias Alias of the private key stored in the keystore.
      * @param privateKeyPassword Password to access the private key stored in the keystore.
      * @throws Exception 
      */
-    public static void sign(Element xtPointer, InputStream xmlFile, File privateKeyFile, String keystorePassword, String privateKeyAlias, String privateKeyPassword) throws Exception {
+    public static void sign(Element xtPointer, File privateKeyFile, String keystorePassword, String privateKeyAlias, String privateKeyPassword) throws Exception {
         try (FileInputStream ksfis = new FileInputStream(privateKeyFile)) {
             XMLSignatureFactory fac = XMLSignatureFactory.getInstance("DOM");
  
