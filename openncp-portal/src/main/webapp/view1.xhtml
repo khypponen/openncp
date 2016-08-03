@@ -43,7 +43,7 @@
                                                  value="#{demographic.userValue}" required="#{demographic.mandatory}"/>
                             </c:when>
                             <c:when test="#{demographic.type=='calendar'}">
-                                    <p:calendar id="#{not empty demographic.friendlyName ? demographic.friendlyName : '_'.concat('userDateValue2-').concat(demographicsLoop.index)}" 
+                                    <p:calendar id="#{not empty demographic.friendlyName ? demographic.friendlyName : ''.concat('userDateValue2-').concat(demographicsLoop.index)}" 
                                                 value="#{demographic.userDateValue}" yearRange="c-100:c+0" pattern="yyyyMMdd" navigator="true" >
                                             <f:convertDateTime pattern="yyyyMMdd"/>
                                     </p:calendar>
