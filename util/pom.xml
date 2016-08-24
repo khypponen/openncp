@@ -8,8 +8,8 @@
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>epsos-util</artifactId>
-	<name>SRDC epSOS Utilities Package</name>
+	<artifactId>openncp-util</artifactId>
+	<name>OpenNCP Util</name>
 	<organization>
 		<name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
 		<url>www.srdc.com.tr</url>

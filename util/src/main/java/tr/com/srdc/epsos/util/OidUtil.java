@@ -25,132 +25,123 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpression;
-import javax.xml.xpath.XPathFactory;
+
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+/**
+ *
+ * @author DG-Sante A4
+ *
+ */
 public class OidUtil {
 
-    private static Logger logger = Logger.getLogger(OidUtil.class);
-    // This config service is also responsible for accessing country code <-> OID mappings.
-    private static final String pn2oidMapFilePathSubString = "pn-oid.xml";
-    private static HashMap<String, String> oid2CountryCodeMap;
+	private static Logger logger = Logger.getLogger(OidUtil.class);
+	// This configuration service is also responsible for accessing country code
+	// <-> OID mappings.
+	private static final String pn2oidMapFilePathSubString = "pn-oid.xml";
+	private static HashMap<String, String> oid2CountryCodeMap;
 
-    static {
-        readCountryOid2CodeMappingFile();
-    }
+	static {
+		readCountryOid2CodeMappingFile();
+	}
 
-    /**
-     *
-     * @param countryOid foreign Home Community Id
-     * @return 2-letter ISO code of the country, such as tr, pt, at.
-     */
-    public static String getCountryCode(String countryOid) {
-        return oid2CountryCodeMap.get(countryOid);
-    }
+	/**
+	 *
+	 * @param countryOid
+	 *            foreign Home Community Id
+	 * @return 2-letter ISO code of the country, such as tr, pt, at.
+	 */
+	public static String getCountryCode(String countryOid) {
+		return oid2CountryCodeMap.get(countryOid);
+	}
 
-    /**
-     * Converts a country code into a HomeCommunityId
-     *
-     * @param countryCode 2-letter ISO code of the country, such as tr, pt, at.
-     * @return foreign HomeCommunityId
-     */
-    public static String getHomeCommunityId(String countryCode) {
-        for (Map.Entry<String, String> entry : oid2CountryCodeMap.entrySet()) {
-            if (entry.getValue().equals(countryCode)) {
-                return entry.getKey();
-            }
-        }
+	/**
+	 * Converts a country code into a HomeCommunityId
+	 *
+	 * @param countryCode
+	 *            2-letter ISO code of the country, such as tr, pt, at.
+	 * @return foreign HomeCommunityId
+	 */
+	public static String getHomeCommunityId(String countryCode) {
+		for (Map.Entry<String, String> entry : oid2CountryCodeMap.entrySet()) {
+			if (entry.getValue().equals(countryCode)) {
+				return entry.getKey();
+			}
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    /**
-     *
-     * @param countryOid
-     * @return 2-letter ISO code of the country, but in uppercase, such as TR,
-     * PT, AT.
-     */
-    public static String getCountryCodeUpperCase(String countryOid) {
-        String countryCode = getCountryCode(countryOid);
-        return countryCode.toUpperCase(Locale.ENGLISH);
-    }
+	/**
+	 *
+	 * @param countryOid
+	 * @return 2-letter ISO code of the country, but in uppercase, such as TR,
+	 *         PT, AT.
+	 */
+	public static String getCountryCodeUpperCase(String countryOid) {
 
-    private static void readCountryOid2CodeMappingFile() {
-        DocumentBuilder dBuilder = null;
-        Document doc = null;
+		String countryCode = getCountryCode(countryOid);
+		return countryCode.toUpperCase(Locale.ENGLISH);
+	}
 
-        oid2CountryCodeMap = new HashMap<String, String>();
-        String mapFilePath = Constants.EPSOS_PROPS_PATH + pn2oidMapFilePathSubString;
+	/**
+	 *
+	 */
+	private static void readCountryOid2CodeMappingFile() {
 
-        File mapFile = new File(mapFilePath);
-        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        try {
-            dBuilder = dbFactory.newDocumentBuilder();
-            doc = dBuilder.parse(mapFile);
-        } catch (ParserConfigurationException e) {
-            logger.error("", e);
-        } catch (SAXException e) {
-            logger.error("", e);
-        } catch (IOException e) {
-            logger.error("", e);
-        }
+		DocumentBuilder dBuilder = null;
+		Document doc = null;
 
-        doc.getDocumentElement().normalize();
-        Node mappings = doc.getDocumentElement();
+		oid2CountryCodeMap = new HashMap<String, String>();
+		String mapFilePath = Constants.EPSOS_PROPS_PATH + pn2oidMapFilePathSubString;
 
-        NodeList childs = mappings.getChildNodes();
+		File mapFile = new File(mapFilePath);
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		try {
+			dBuilder = dbFactory.newDocumentBuilder();
+			doc = dBuilder.parse(mapFile);
+		} catch (ParserConfigurationException e) {
+			logger.error("", e);
+		} catch (SAXException e) {
+			logger.error("", e);
+		} catch (IOException e) {
+			logger.error("", e);
+		}
 
-        for (int i = 0; i < childs.getLength(); i++) {
-            if (childs.item(i).getNodeType() == Node.ELEMENT_NODE) {
-                Node mapping = childs.item(i);
+		doc.getDocumentElement().normalize();
+		Node mappings = doc.getDocumentElement();
 
-                String countryOid = mapping.getAttributes().getNamedItem("domainId").getNodeValue().trim();
-                String countryCode = mapping.getAttributes().getNamedItem("country").getNodeValue().trim();
+		NodeList childs = mappings.getChildNodes();
 
-                oid2CountryCodeMap.put(countryOid, countryCode);
-            }
-        }
-    }
+		for (int i = 0; i < childs.getLength(); i++) {
+			if (childs.item(i).getNodeType() == Node.ELEMENT_NODE) {
+				Node mapping = childs.item(i);
 
-    public static String getCountryName(String countryCode) {
+				String countryOid = mapping.getAttributes().getNamedItem("domainId").getNodeValue().trim();
+				String countryCode = mapping.getAttributes().getNamedItem("country").getNodeValue().trim();
 
-        try {
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(new File(Constants.EPSOS_PROPS_PATH + "ISO_3166-1.xml"));
-            doc.getDocumentElement().normalize();
+				oid2CountryCodeMap.put(countryOid, countryCode);
+			}
+		}
+	}
 
-            XPath xpath = XPathFactory.newInstance().newXPath();
+	/**
+	 *
+	 * @param uuid
+	 * @return
+	 */
+	public static String convertUuidToOid(String uuid) {
 
-            XPathExpression countryExpr = xpath.compile("/Codes/CodeType[@name='countryCode']/Code[@code='" + countryCode + "']/@display");
-            String countryName = (String) countryExpr.evaluate(doc, XPathConstants.STRING);
-            if (countryName != null) {
-                countryName = countryName.trim();
-            }
-            return countryName;
-
-        } catch (Exception ex) {
-            logger.info(ex);
-        }
-
-        return null;
-
-    }
-    
-    public static String convertUuidToOid(String uuid)
-    {
-        uuid = uuid.replaceAll("-", "");        
-        BigInteger integer = new BigInteger(uuid,16);
-        return "2.25." + integer.toString();
-    }
+		uuid = uuid.replaceAll("-", "");
+		BigInteger integer = new BigInteger(uuid, 16);
+		return "2.25." + integer.toString();
+	}
 }
