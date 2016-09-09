@@ -126,6 +126,11 @@
             <version>9.1-901.jdbc4</version>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+           <groupId>eu.europa.ec.joinup.ecc.epsos-tslutils</groupId>
+           <artifactId>epsos-tsl-sync</artifactId>
+           <version>3.1.5</version>
+       </dependency>
         <!-- Testing dependencies -->
         <dependency>
             <groupId>com.h2database</groupId>
