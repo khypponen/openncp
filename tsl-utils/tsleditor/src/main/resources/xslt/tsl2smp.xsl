@@ -14,7 +14,7 @@
     xmlns:wsa="http://www.w3.org/2005/08/addressing"
     exclude-result-prefixes="xs tsl ecc tslx"
     version="2.0">
-    <xsl:output indent="yes"/>
+    <xsl:output indent="no"/>
     <xsl:strip-space elements="*"/>
     <!-- removed namespace:  xmlns="http://docs.oasis-open.org/bdxr/ns/SMP/2014/07" -->
 
@@ -257,6 +257,7 @@
                         <xsl:with-param name="hasServiceSupplyPoints" select="$hasServiceSupplyPoints"/>
                         <xsl:with-param name="endpointExtension" select="$endpointExtension"/>
                     </xsl:call-template>
+                    <Extension/>
                 </ServiceInformation>
             </ServiceMetadata>
         </xsl:result-document>
@@ -337,15 +338,15 @@
             </wsa:EndpointReference>
             <RequireBusinessLevelSignature>false</RequireBusinessLevelSignature>
             <MinimumAuthenticationLevel>urn:epSOS:loa:1</MinimumAuthenticationLevel>
-            <ServiceActivationDate><xsl:value-of select="$serviceActivationDate"/></ServiceActivationDate>
+            <ServiceActivationDate><xsl:value-of select="format-dateTime($serviceActivationDate, '[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01]Z')"/></ServiceActivationDate>
             <!-- Service will expire 10 years after its activation date -->
-            <ServiceExpirationDate><xsl:value-of select="xs:dateTime($serviceActivationDate) + xs:yearMonthDuration('P10Y')"/></ServiceExpirationDate>
+            <ServiceExpirationDate><xsl:value-of select="format-dateTime(xs:dateTime($serviceActivationDate) + xs:yearMonthDuration('P10Y'), '[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01]Z')"/></ServiceExpirationDate>
             <Certificate><xsl:value-of select="$certificate"/></Certificate>
             <ServiceDescription><xsl:value-of select="$serviceDescription"/></ServiceDescription>
             <TechnicalContactUrl><xsl:value-of select="$technicalContactUrl"/></TechnicalContactUrl>
             <TechnicalInformationUrl><xsl:value-of select="$technicalContactUrl"/></TechnicalInformationUrl>
             <!-- Every SMP file will have Endpoint/Extension, either empty or not (e.g. search mask) -->
-            <Extension><xsl:copy-of select="$endpointExtension"/></Extension>
+            <Extension><xsl:element name="root" namespace=""><xsl:copy-of select="$endpointExtension"/></xsl:element></Extension>
         </Endpoint>
     </xsl:template>
  

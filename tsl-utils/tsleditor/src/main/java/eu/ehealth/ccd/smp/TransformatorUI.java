@@ -508,8 +508,9 @@ public class TransformatorUI extends javax.swing.JFrame {
                     Document smpRecord = db.parse(fileInputStream);
                     // find the pointer.
                     final String ns = "http://busdox.org/serviceMetadata/publishing/1.0/";
-                    NodeList elements = smpRecord.getElementsByTagNameNS(ns, "Extension");
-                    Node n = elements.item(0);
+                    NodeList elements = smpRecord.getElementsByTagNameNS(ns, "ServiceInformation");
+                    Node serviceInformation = elements.item(0);
+                    Node n = serviceInformation.getLastChild();
                     Element xtPointer = (Element) n;
                     
                     SignatureUtils.sign(xtPointer, keystoreFile, keystorePassword, privateKeyAlias, privateKeyPassword);
