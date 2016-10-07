@@ -1,0 +1,4 @@
+2016-10-07 15:45:45,456 INFO  [DatabaseAccessTest] - START: Read Properties
+2016-10-07 15:45:45,531 INFO  [DatabaseAccessTest] - START: Update Property
+2016-10-07 15:45:45,532 INFO  [DatabaseAccessTest] - START: Store Properties With Comma
+2016-10-07 15:45:45,533 INFO  [DatabaseAccessTest] - START: Writing Properties
