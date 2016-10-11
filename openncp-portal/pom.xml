@@ -261,13 +261,13 @@
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-			<artifactId>OPENSTORK.UTILS</artifactId>
+			<artifactId>openncp-openstork-utils</artifactId>
 			<version>${project.version}</version>
 			<type>jar</type>
 			<exclusions>
 				<exclusion>
 					<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-					<artifactId>epsos-data-model</artifactId>
+					<artifactId>openncp-data-model</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -427,12 +427,12 @@
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-			<artifactId>epsos-data-model</artifactId>
+			<artifactId>openncp-data-model</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-			<artifactId>epsos-configuration-manager</artifactId>
+			<artifactId>openncp-configuration-manager</artifactId>
 			<version>${project.version}</version>
 			<exclusions>
 				<exclusion>
@@ -443,13 +443,13 @@
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-			<artifactId>epsos-util</artifactId>
+			<artifactId>openncp-util</artifactId>
 			<version>${project.version}</version>
 			<type>jar</type>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-cdadisplaytool</groupId>
-			<artifactId>epsos-xsltransformer</artifactId>
+			<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-cdadisplaytool</groupId>
+			<artifactId>openncp-xsltransformer</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
@@ -465,7 +465,7 @@
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-			<artifactId>epsos-trc-sts-client</artifactId>
+			<artifactId>openncp-trc-sts-client</artifactId>
 			<version>${project.version}</version>
 			<exclusions>
 				<exclusion>
@@ -476,12 +476,12 @@
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-			<artifactId>epsos-audit-manager</artifactId>
+			<artifactId>openncp-audit-manager</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-			<artifactId>epsos-ncp-pt-client-consumer</artifactId>
+			<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+			<artifactId>openncp-ncp-pt-client-consumer</artifactId>
 			<version>${project.version}</version>
 			<type>jar</type>
 		</dependency>
@@ -518,12 +518,12 @@
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-			<artifactId>epsos-transformation-manager</artifactId>
+			<artifactId>openncp-transformation-manager</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-cdadisplaytool</groupId>
-			<artifactId>epsos-cdautils</artifactId>
+			<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-cdadisplaytool</groupId>
+			<artifactId>openncp-cdautils</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
@@ -559,9 +559,6 @@
 			<artifactId>microsoft-translator-java-api</artifactId>
 			<version>0.6.2</version>
 		</dependency>
-		<!-- <dependency> <groupId>com.gnomon.epsos</groupId> <artifactId>hcercontrol</artifactId>
-			<version>0.0.1-SNAPSHOT</version> <exclusions> <exclusion> <artifactId>orm</artifactId>
-			<groupId>com.gnomon.epsos.orm</groupId> </exclusion> </exclusions> </dependency> -->
 		<dependency>
 			<groupId>eu.stork</groupId>
 			<artifactId>Commons</artifactId>

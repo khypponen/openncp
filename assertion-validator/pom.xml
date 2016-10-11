@@ -8,8 +8,7 @@
     </parent>
     <!-- General Information -->
     <modelVersion>4.0.0</modelVersion>
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-    <artifactId>epsos-assertion-validator</artifactId>
+    <artifactId>openncp-assertion-validator</artifactId>
     <packaging>jar</packaging>
     <name>SRDC epSOS SAML Assertion Validator Implementation</name>
     <organization>
@@ -25,12 +24,12 @@
     <dependencies>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-security-manager</artifactId>
+            <artifactId>openncp-security-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-util</artifactId>
+            <artifactId>openncp-util</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

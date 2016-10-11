@@ -9,9 +9,9 @@
 		<version>2.4.2-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>openncp-configuration-portal</artifactId>
+	<artifactId>openncp-gateway</artifactId>
 	<packaging>war</packaging>
-	<name>ConfigurationPortal</name>
+	<name>OpenNCP Gateway</name>
 
 	<build>
 		<plugins>

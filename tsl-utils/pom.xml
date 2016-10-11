@@ -7,7 +7,7 @@
 		<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
 		<version>2.4.2-SNAPSHOT</version>
 	</parent>
-	<artifactId>epsos-tslutils</artifactId>
+	<artifactId>openncp-tslutils</artifactId>
 	<name>TSL-UTILS</name>
 	<packaging>pom</packaging>
 

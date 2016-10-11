@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-		<artifactId>epsos-tslutils</artifactId>
+		<artifactId>openncp-tslutils</artifactId>
 		<version>2.4.2-SNAPSHOT</version>
 	</parent>
-	<groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-tslutils</groupId>
-	<artifactId>epsos-tsl-sync</artifactId>
+	<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-tslutils</groupId>
+	<artifactId>openncp-tsl-sync</artifactId>
 	<packaging>jar</packaging>
 	<name>TSLSync</name>
 
@@ -52,17 +52,17 @@
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-			<artifactId>epsos-audit-manager</artifactId>
+			<artifactId>openncp-audit-manager</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-			<artifactId>epsos-util</artifactId>
+			<artifactId>openncp-util</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-			<artifactId>evidence-emitter</artifactId>
+			<artifactId>openncp-evidence-emitter</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
@@ -73,7 +73,7 @@
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-			<artifactId>epsos-security-manager</artifactId>
+			<artifactId>openncp-security-manager</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>

@@ -8,12 +8,12 @@
     ================== -->
     <parent>
         <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-        <artifactId>epsos-protocol-terminators</artifactId>
+        <artifactId>openncp-protocol-terminators</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-    <artifactId>epsos-ncp-client</artifactId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+    <artifactId>openncp-ncp-client</artifactId>
 
     <packaging>pom</packaging>
     <name>EpSOS CC Web Services Client</name>

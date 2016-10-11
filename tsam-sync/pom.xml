@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-    <artifactId>epsos-tsam-sync</artifactId>
+    <artifactId>openncp-tsam-sync</artifactId>
     <packaging>jar</packaging>
     <name>TSAM Synchronizer</name>
     <url>https://code.google.com/p/epsos-common-components.tsam-sync</url>
@@ -56,12 +56,12 @@
     <dependencies>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-audit-manager</artifactId>
+            <artifactId>openncp-audit-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-util</artifactId>
+            <artifactId>openncp-util</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

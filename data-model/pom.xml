@@ -9,7 +9,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-    <artifactId>epsos-data-model</artifactId>
+    <artifactId>openncp-data-model</artifactId>
     <name>SRDC epSOS Data Model</name>
     <organization>
         <name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-util</artifactId>
+            <artifactId>openncp-util</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

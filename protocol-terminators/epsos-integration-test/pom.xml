@@ -4,12 +4,12 @@
 
     <parent>
         <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-        <artifactId>epsos-protocol-terminators</artifactId>
+        <artifactId>openncp-protocol-terminators</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-    <artifactId>epsos-integration-test</artifactId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+    <artifactId>openncp-integration-test</artifactId>
     <name>XCPD, XCA and XDR Integration Test Utils</name>
     <description>Utlity classes used for integration test of XCPD. XCA and XDR client and server components</description>
     <organization>
@@ -62,19 +62,19 @@
     <dependencies>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-assertion-validator</artifactId>
+            <artifactId>openncp-assertion-validator</artifactId>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-defaultpolicymanager</artifactId>
+            <artifactId>openncp-defaultpolicymanager</artifactId>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-data-model</artifactId>
+            <artifactId>openncp-data-model</artifactId>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-util</artifactId>
+            <artifactId>openncp-util</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>

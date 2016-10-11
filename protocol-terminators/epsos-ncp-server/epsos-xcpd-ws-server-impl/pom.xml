@@ -7,13 +7,13 @@
        Artifact
     ================== -->
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-        <artifactId>epsos-ncp-server</artifactId>
+        <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+        <artifactId>openncp-ncp-server</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators.epsos-ncp-server</groupId>
-    <artifactId>epsos-xcpd-ws-server-impl</artifactId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+    <artifactId>openncp-xcpd-ws-server-impl</artifactId>
     <name>EpSOS CC IHE-XCPD Service Interface Implementation</name>
     <organization>
         <name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
@@ -26,8 +26,8 @@
             <artifactId>axis2-kernel</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators.epsos-ncp-server</groupId>
-            <artifactId>epsos-interface</artifactId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+            <artifactId>openncp-interface</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -35,15 +35,15 @@
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-assertion-validator</artifactId>
+            <artifactId>openncp-assertion-validator</artifactId>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-defaultpolicymanager</artifactId>
+            <artifactId>openncp-defaultpolicymanager</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-            <artifactId>epsos-integration-test</artifactId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+            <artifactId>openncp-integration-test</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>

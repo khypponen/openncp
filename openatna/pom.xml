@@ -15,8 +15,8 @@
     to eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna and the artifactId from openatna
     to epsos-openatna and publish the new artifacts on the EU JoinUP repository
     (https://joinup.ec.europa.eu/nexus/content/repositories/releases/eu/europa/ec/joinup/ecc/); -->
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna</groupId>
-    <artifactId>epsos-openatna</artifactId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-openatna</groupId>
+    <artifactId>openncp-openatna</artifactId>
     <packaging>pom</packaging>
     <name>OpenATNA</name>
     <url>https://openatna.projects.openhealthtools.org</url>
@@ -104,17 +104,6 @@
             <id>trianacode-maven-repos</id>
             <url>http://trianacode.org/maven</url>
         </repository>
-        <!--<repository> -->
-        <!--<id>java.net</id> -->
-        <!--<url>http://download.java.net/maven/1</url> -->
-        <!--<layout>legacy</layout> -->
-        <!--<snapshots> -->
-        <!--<enabled>false</enabled> -->
-        <!--</snapshots> -->
-        <!--<releases> -->
-        <!--<enabled>true</enabled> -->
-        <!--</releases> -->
-        <!--</repository> -->
         <repository>
             <id>ibilio</id>
             <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
@@ -310,7 +299,4 @@
             </build>
         </profile>
     </profiles>
-
-
-
 </project>

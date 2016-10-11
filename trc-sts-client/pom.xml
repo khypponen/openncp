@@ -9,7 +9,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-    <artifactId>epsos-trc-sts-client</artifactId>
+    <artifactId>openncp-trc-sts-client</artifactId>
     <packaging>jar</packaging>
     <name>TRC-STS-client</name>
     <url>http://maven.apache.org</url>
@@ -96,7 +96,7 @@
         <!--Configuration Manager and audit manager pseudo-dependencies -->
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-configuration-manager</artifactId>
+            <artifactId>openncp-configuration-manager</artifactId>
             <version>${project.version}</version>
             <exclusions>
                 <exclusion>
@@ -107,7 +107,7 @@
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-security-manager</artifactId>
+            <artifactId>openncp-security-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

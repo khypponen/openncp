@@ -8,15 +8,15 @@
         Artifact
     ================== -->
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-        <artifactId>epsos-ncp-client</artifactId>
+        <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+        <artifactId>openncp-ncp-client</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators.epsos-ncp-client</groupId>
-    <artifactId>epsos-xcpd-ws-client</artifactId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
+    <artifactId>openncp-xcpd-ws-client</artifactId>
 
-    <name>EpSOS CC IHE-XCPD Service Client</name>
+    <name>OpenNCP CC IHE-XCPD Service Client</name>
     <inceptionYear>2012</inceptionYear>
     <packaging>jar</packaging>
     <url>epsos.eu</url>
@@ -45,14 +45,14 @@
     ================== -->
     <dependencies>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-            <artifactId>epsos-ncp-pt-utils</artifactId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+            <artifactId>openncp-ncp-pt-utils</artifactId>
         </dependency>
 
         <!-- epsos -->
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-util</artifactId>
+            <artifactId>openncp-util</artifactId>
             <exclusions>
                 <exclusion>
                     <artifactId>log4j</artifactId>
@@ -62,7 +62,7 @@
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-audit-manager</artifactId>
+            <artifactId>openncp-audit-manager</artifactId>
             <exclusions>
                 <exclusion>
                     <artifactId>log4j</artifactId>
@@ -76,11 +76,11 @@
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-data-model</artifactId>
+            <artifactId>openncp-data-model</artifactId>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-assertion-validator</artifactId>
+            <artifactId>openncp-assertion-validator</artifactId>
             <exclusions>
                 <exclusion>
                     <artifactId>log4j-over-slf4j</artifactId>
@@ -94,11 +94,11 @@
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-defaultpolicymanager</artifactId>
+            <artifactId>openncp-defaultpolicymanager</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-            <artifactId>epsos-integration-test</artifactId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+            <artifactId>openncp-integration-test</artifactId>
             <scope>test</scope>
         </dependency>
 

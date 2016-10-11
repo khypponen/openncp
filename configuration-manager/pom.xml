@@ -8,8 +8,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-    <artifactId>epsos-configuration-manager</artifactId>
+    <artifactId>openncp-configuration-manager</artifactId>
     <packaging>jar</packaging>
     <name>configurationmanager</name>
 
@@ -126,11 +125,11 @@
             <version>9.1-901.jdbc4</version>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-           <groupId>eu.europa.ec.joinup.ecc.epsos-tslutils</groupId>
-           <artifactId>epsos-tsl-sync</artifactId>
-           <version>3.1.5</version>
-       </dependency>
+<!--         <dependency> -->
+<!--            <groupId>eu.europa.ec.joinup.ecc.epsos-tslutils</groupId> -->
+<!--            <artifactId>epsos-tsl-sync</artifactId> -->
+<!--            <version>3.1.5</version> -->
+<!--        </dependency> -->
         <!-- Testing dependencies -->
         <dependency>
             <groupId>com.h2database</groupId>

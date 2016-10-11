@@ -8,7 +8,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-    <artifactId>epsos-defaultpolicymanager</artifactId>
+    <artifactId>openncp-defaultpolicymanager</artifactId>
     <name>Default policy manager implementation</name>
     <organization>
         <name>Kela (Social insurance institution of Finland).</name>
@@ -59,22 +59,22 @@
     <dependencies>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-assertion-validator</artifactId>
+            <artifactId>openncp-assertion-validator</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-security-manager</artifactId>
+            <artifactId>openncp-security-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-util</artifactId>
+            <artifactId>openncp-util</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-audit-manager</artifactId>
+            <artifactId>openncp-audit-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

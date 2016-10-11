@@ -8,7 +8,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-    <artifactId>epsos-consent</artifactId>
+    <artifactId>openncp-consent</artifactId>
     <name>SRDC epSOS Consent Manager</name>
     <organization>
         <name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
@@ -32,7 +32,7 @@
     <dependencies>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-util</artifactId>
+            <artifactId>openncp-util</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
