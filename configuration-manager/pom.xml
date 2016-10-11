@@ -138,6 +138,12 @@
             <type>jar</type>
             <scope>test</scope>
         </dependency>
+        <!-- PEPPOL-SMP workaround dependencies -->
+        <dependency>
+            <groupId>net.sf.saxon</groupId>
+            <artifactId>Saxon-HE</artifactId>
+            <version>9.5.1-8</version>
+        </dependency>
     </dependencies>
 
     <!-- ==================
