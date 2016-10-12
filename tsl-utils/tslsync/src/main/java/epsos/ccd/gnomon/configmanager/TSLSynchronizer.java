@@ -89,10 +89,46 @@ public class TSLSynchronizer {
         return sb;
     }
 
-    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, CertificateException {
-        String sb = sync().toString();
-        System.out.println("TSL SYNC FINISHED");
-        System.exit(0);
+    /* If args is provided, then we want to run TSL-Sync for a specific country. Otherwise we just run it for every country in ncp.countries */
+    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, CertificateException, Exception {
+        if (args != null && args.length > 0) {
+            String arg = args[0];
+            if (arg.length() != 2) {
+                throw new Exception("Argument must be a 2-letter country-code!");
+            } else {
+                syncCountry(arg.toLowerCase());
+                System.out.println("TSL SYNC FINISHED");
+                System.exit(0);
+            }
+        } else {   
+            String sb = sync().toString();
+            System.out.println("TSL SYNC FINISHED");
+            System.exit(0);
+        }
+    }
+    
+    /* Sync info for a specified country */
+    public static String syncCountry(String country) {
+        System.out.println("Synchronizing a specific country...");
+        StringBuilder sb1 = new StringBuilder();
+        String sb = "";
+        ConfigurationManagerService cms = ConfigurationManagerService.getInstance();
+        String ncp = cms.getProperty("ncp.country");
+        String ncpemail = cms.getProperty("ncp.email");
+
+        if (ncp.equals("")) {
+            ncp = "GR-12";
+            cms.updateProperty("ncp.country", ncp);
+        }
+        if (ncpemail.equals("")) {
+            ncpemail = "ncpgr@epsos.gr";
+            cms.updateProperty("ncp.email", ncpemail);
+        }
+      
+        System.out.println("Exporting configuration for : " + country);
+        sb = exportCountryConfig(sb1, country);
+        
+        return sb;
     }
 
     /**

@@ -46,6 +46,8 @@ public class SyncJob implements Job {
             Logger.getLogger(SyncJob.class.getName()).log(Level.SEVERE, null, ex);
         } catch (CertificateException ex) {
             Logger.getLogger(SyncJob.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(SyncJob.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
