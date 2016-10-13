@@ -8,7 +8,6 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
     <artifactId>openncp-trc-sts-client</artifactId>
     <packaging>jar</packaging>
     <name>TRC-STS-client</name>

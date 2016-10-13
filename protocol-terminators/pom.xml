@@ -12,7 +12,6 @@
 
 
 	<!-- ================== Artifact ================== -->
-	<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
 	<artifactId>openncp-protocol-terminators</artifactId>
 	<name>OpenNCP CC Protocol Terminators</name>
 	<inceptionYear>2012</inceptionYear>
