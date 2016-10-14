@@ -84,6 +84,7 @@ public class AtnaObjectDetail implements Serializable {
         return result;
     }
 
+    @Override
     public String toString() {
         byte[] bytes = getValue();
         if (bytes == null) {

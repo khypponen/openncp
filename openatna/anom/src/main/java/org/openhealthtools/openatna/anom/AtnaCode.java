@@ -135,6 +135,7 @@ public class AtnaCode implements Serializable {
         return result;
     }
 
+    @Override
     public String toString() {
         return new StringBuilder("[").append(getClass().getName())
                 .append(" code type=").append(getCodeType())

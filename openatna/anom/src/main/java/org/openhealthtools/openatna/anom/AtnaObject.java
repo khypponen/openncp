@@ -38,12 +38,12 @@ public class AtnaObject implements Serializable {
 
     private AtnaCode objectIdTypeCode;
     private String objectName;
-    private List<String> objectDetailTypes = new ArrayList<String>();
+    private List<String> objectDetailTypes = new ArrayList<>();
     private ObjectType objectTypeCode;
     private String objectId;
     private ObjectTypeCodeRole objectTypeCodeRole;
     private String objectSensitivity;
-    private List<ObjectDescription> descriptions = new ArrayList<ObjectDescription>();
+    private List<ObjectDescription> descriptions = new ArrayList<>();
 
     public AtnaObject(String objectId, AtnaCode objectIdTypeCode) {
         this.objectId = objectId;
@@ -69,7 +69,7 @@ public class AtnaObject implements Serializable {
     }
 
     public List<ObjectDescription> getDescriptions() {
-        return new ArrayList(descriptions);
+        return new ArrayList<>(descriptions);
     }
 
     public void addObjectDescription(ObjectDescription desc) {
@@ -81,7 +81,7 @@ public class AtnaObject implements Serializable {
     }
 
     public List<String> getObjectDetailTypes() {
-        return new ArrayList<String>(objectDetailTypes);
+        return new ArrayList<>(objectDetailTypes);
     }
 
     public AtnaObject addObjectDetailType(String objectDetailType) {
@@ -178,6 +178,7 @@ public class AtnaObject implements Serializable {
         return result;
     }
 
+    @Override
     public String toString() {
         return new StringBuilder().append("[")
                 .append(getClass().getName())
