@@ -46,20 +46,20 @@ import org.apache.log4j.Logger;
  *
  */
 @Deprecated
-public class ConfigurationManager implements ConfigurationManagerInt {
+public class OLDConfigurationManager implements ConfigurationManagerInt {
 
     static Logger logger = Logger.getLogger(ConfigurationManagerService.class);
     private static String ERROR_MSG_NO_CONFIG_FILE = "NO CONFIGURATION FILE EXISTS";
-    private volatile static ConfigurationManager instance;
+    private volatile static OLDConfigurationManager instance;
 
-    public ConfigurationManager() {
+    public OLDConfigurationManager() {
     }
 
-    public static synchronized ConfigurationManager getInstance() {
+    public static synchronized OLDConfigurationManager getInstance() {
         if (instance == null) {
-            synchronized (ConfigurationManager.class) {
+            synchronized (OLDConfigurationManager.class) {
                 if (instance == null) {
-                    instance = new ConfigurationManager();
+                    instance = new OLDConfigurationManager();
                 }
             }
         }

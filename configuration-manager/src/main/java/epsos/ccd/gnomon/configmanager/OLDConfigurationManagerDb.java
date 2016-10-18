@@ -30,10 +30,10 @@ import org.slf4j.LoggerFactory;
  *
  * @author Marcelo Fonseca<code> - marcelo.fonseca@iuz.pt</code>
  */
-public class ConfigurationManagerDb implements ConfigurationManagerInt {
+public class OLDConfigurationManagerDb implements ConfigurationManagerInt {
 
     private static Logger logger = LoggerFactory.getLogger(ConfigurationManagerService.class);
-    private volatile static ConfigurationManagerDb instance;
+    private volatile static OLDConfigurationManagerDb instance;
 
     /**
      * Returns a ConfigurationManagerDb instance, newly creating it if
@@ -41,10 +41,10 @@ public class ConfigurationManagerDb implements ConfigurationManagerInt {
      *
      * @return a ConfigurationManagerDb instance.
      */
-    public static synchronized ConfigurationManagerDb getInstance() {
+    public static synchronized OLDConfigurationManagerDb getInstance() {
         if (instance == null) {
-            synchronized (ConfigurationManagerDb.class) {
-                instance = new ConfigurationManagerDb();
+            synchronized (OLDConfigurationManagerDb.class) {
+                instance = new OLDConfigurationManagerDb();
             }
         }
         return instance;
