@@ -4,12 +4,11 @@
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna</groupId>
-        <artifactId>epsos-openatna</artifactId>
+        <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-openatna</groupId>
+        <artifactId>openncp-openatna</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna</groupId>
     <artifactId>syslog</artifactId>
     <name>Syslog</name>
     <url>https://openatna.projects.openhealthtools.org</url>

@@ -8,8 +8,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-    <artifactId>epsos-cdadisplaytool</artifactId>
+    <artifactId>openncp-cdadisplaytool</artifactId>
     <packaging>pom</packaging>
     <name>cdadisplaytool</name>
     <modules>

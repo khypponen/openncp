@@ -11,9 +11,8 @@
     <!-- ==================
        Artifact
     ================== -->
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-    <artifactId>OPENSTORK</artifactId>
-    <name>OPENSTORK</name>
+    <artifactId>openncp-openstork</artifactId>
+    <name>OpenSTORK</name>
     <packaging>pom</packaging>
     <inceptionYear>2014</inceptionYear>
 
@@ -112,6 +111,4 @@
             <uniqueVersion>true</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
-
-
 </project>

@@ -8,8 +8,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-    <artifactId>epsos-trc-sts</artifactId>
+    <artifactId>openncp-trc-sts</artifactId>
     <packaging>war</packaging>
     <name>TRC-STS</name>
 
@@ -22,7 +21,7 @@
         <!-- epsos CCD dependencies -->
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-audit-manager</artifactId>
+            <artifactId>openncp-audit-manager</artifactId>
             <version>${project.version}</version>
             <exclusions>
                 <exclusion>
@@ -37,12 +36,12 @@
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>evidence-emitter</artifactId>
+            <artifactId>openncp-evidence-emitter</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-security-manager</artifactId>
+            <artifactId>openncp-security-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
 

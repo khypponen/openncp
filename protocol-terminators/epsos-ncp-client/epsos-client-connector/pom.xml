@@ -7,15 +7,15 @@
        Artifact
     ================== -->
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-        <artifactId>epsos-ncp-client</artifactId>
+        <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+        <artifactId>openncp-ncp-client</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators.epsos-ncp-client</groupId>
-    <artifactId>epsos-client-connector</artifactId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
+    <artifactId>openncp-client-connector</artifactId>
 
-    <name>EpSOS CC Client Connector</name>
+    <name>OpenNCP CC Client Connector</name>
     <inceptionYear>2012</inceptionYear>
     <packaging>war</packaging>
     <url>epsos.eu</url>
@@ -51,19 +51,19 @@
         <!-- epSOS -->
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>epsos-xcpd-ws-client</artifactId>
+            <artifactId>openncp-xcpd-ws-client</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>epsos-xca-ws-client</artifactId>
+            <artifactId>openncp-xca-ws-client</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>epsos-xdr-ws-client</artifactId>
+            <artifactId>openncp-xdr-ws-client</artifactId>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-data-model</artifactId>
+            <artifactId>openncp-data-model</artifactId>
         </dependency>
 
         <!-- axis2 -->
@@ -111,8 +111,8 @@
             <artifactId>junit</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-            <artifactId>epsos-ncp-pt-client-consumer</artifactId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+            <artifactId>openncp-ncp-pt-client-consumer</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -120,8 +120,8 @@
             <artifactId>commons-configuration</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-            <artifactId>epsos-integration-test</artifactId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+            <artifactId>openncp-integration-test</artifactId>
         </dependency>
 
         <!-- Ohter -->
@@ -333,8 +333,8 @@
 
             <dependencies>
                 <dependency>
-                    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-                    <artifactId>epsos-integration-test</artifactId>
+                    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+                    <artifactId>openncp-integration-test</artifactId>
                 </dependency>
                 <dependency>
                     <groupId>org.springframework</groupId>

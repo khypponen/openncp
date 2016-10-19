@@ -7,11 +7,11 @@
 		<version>2.4.2-SNAPSHOT</version>
 	</parent>
 
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-	<artifactId>epsos-configuration-manager</artifactId>
-	<packaging>jar</packaging>
-	<name>configurationmanager</name>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>openncp-configuration-manager</artifactId>
+    <packaging>jar</packaging>
+    <name>configurationmanager</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -55,6 +55,7 @@
 			</snapshots>
 		</repository>
 	</repositories>
+
 
 	<dependencies>
 		<dependency>
@@ -160,6 +161,7 @@
 			<version>9.5.1-8</version>
 		</dependency>
 	</dependencies>
+
 
 	<!-- ================== Build plugins ================== -->
 

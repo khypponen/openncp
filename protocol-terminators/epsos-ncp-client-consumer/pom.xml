@@ -6,12 +6,12 @@
     <!-- ================== Artifact ================== -->
     <parent>
         <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-        <artifactId>epsos-protocol-terminators</artifactId>
+        <artifactId>openncp-protocol-terminators</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-    <artifactId>epsos-ncp-pt-client-consumer</artifactId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+    <artifactId>openncp-ncp-pt-client-consumer</artifactId>
 
     <name>EpSOS CC Web Services Client Consumer</name>
     <inceptionYear>2012</inceptionYear>
@@ -24,16 +24,16 @@
         <!-- epSOS -->
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-assertion-validator</artifactId>
+            <artifactId>openncp-assertion-validator</artifactId>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-defaultpolicymanager</artifactId>
+            <artifactId>openncp-defaultpolicymanager</artifactId>
         </dependency>
 
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-util</artifactId>
+            <artifactId>openncp-util</artifactId>
         </dependency>
 
         <!-- axis2 -->

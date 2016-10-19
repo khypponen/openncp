@@ -8,13 +8,13 @@
        Artifact
     ================== -->
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-        <artifactId>epsos-ncp-client</artifactId>
+        <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+        <artifactId>openncp-ncp-client</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators.epsos-ncp-client</groupId>
-    <artifactId>epsos-xdr-ws-client</artifactId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
+    <artifactId>openncp-xdr-ws-client</artifactId>
 
     <name>EpSOS CC IHE-XDR Service Client</name>
     <inceptionYear>2012</inceptionYear>
@@ -48,14 +48,14 @@
         <!-- epSOS -->
 
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-            <artifactId>epsos-ncp-pt-utils</artifactId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+            <artifactId>openncp-ncp-pt-utils</artifactId>
         </dependency>
 
         <!-- epsos -->
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-util</artifactId>
+            <artifactId>openncp-util</artifactId>
             <exclusions>
                 <exclusion>
                     <artifactId>log4j</artifactId>
@@ -65,7 +65,7 @@
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-audit-manager</artifactId>
+            <artifactId>openncp-audit-manager</artifactId>
             <exclusions>
                 <exclusion>
                     <artifactId>log4j</artifactId>
@@ -75,16 +75,16 @@
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-data-model</artifactId>
+            <artifactId>openncp-data-model</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-protocol-terminators</groupId>
-            <artifactId>epsos-integration-test</artifactId>
+            <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+            <artifactId>openncp-integration-test</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-terminology-service-access-manager</artifactId>
+            <artifactId>openncp-terminology-service-access-manager</artifactId>
             <exclusions>
                 <exclusion>
                     <artifactId>slf4j-api</artifactId>
@@ -102,7 +102,7 @@
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-transformation-manager</artifactId>
+            <artifactId>openncp-transformation-manager</artifactId>
             <exclusions>
                 <exclusion>
                     <artifactId>slf4j-api</artifactId>

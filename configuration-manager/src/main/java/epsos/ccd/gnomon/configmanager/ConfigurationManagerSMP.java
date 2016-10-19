@@ -13,11 +13,11 @@ import eu.epsos.configmanager.database.model.Property;
 
 /**
  * ConfigurationManagerSMP. Obtain a configuration value. Usage: <br/>
- * 
+ *
  * <pre>
  * ConfigurationManagerSMP.getInstance().getProperty(sampleKey);
  * </pre>
- * 
+ *
  * This class uses <a href=
  * "http://docs.oasis-open.org/bdxr/bdx-smp/v1.0/cs01/bdx-smp-v1.0-cs01.html">BDXR-SMP</a>
  * and <a href=
@@ -42,7 +42,7 @@ import eu.epsos.configmanager.database.model.Property;
  * SSLPeerUnverified), the SMP query is performed</li>
  * </ol>
  * One point of intervention would be to add a TTL to a value in the hashmap.
- * 
+ *
  * @author massimiliano.masi@bmg.gv.at
  *
  */
@@ -291,4 +291,5 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 		OLDConfigurationManagerDb.getInstance().updateProperty(key, value);
 		return value;
 	}
+
 }

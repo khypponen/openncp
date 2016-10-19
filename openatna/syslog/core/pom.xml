@@ -3,12 +3,12 @@
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna</groupId>
+        <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-openatna</groupId>
         <artifactId>syslog</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
     <artifactId>syslog-core</artifactId>
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna</groupId>
+    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-openatna</groupId>
 
     <packaging>jar</packaging>
     <name>Syslog Core</name>

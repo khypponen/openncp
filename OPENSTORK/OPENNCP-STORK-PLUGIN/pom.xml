@@ -8,14 +8,13 @@
     ================== -->
     <parent>
         <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-        <artifactId>OPENSTORK</artifactId>
+        <artifactId>openncp-openstork</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-    <artifactId>stork-plugin</artifactId>
+    <artifactId>openncp-openstork-plugin</artifactId>
     <packaging>war</packaging>
-    <name>openncp-stork-plugin</name>
+    <name>openncp-openstork-plugin</name>
     <ciManagement>
         <system>hudson</system>
         <url>http://dev.iuz.pt:14001/openncp-jenkins/job/DEVELOP-epSOS.STORK.Plugin/</url>
@@ -49,6 +48,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <source>1.7</source>
@@ -239,17 +239,17 @@
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-configuration-manager</artifactId>
+            <artifactId>openncp-configuration-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-security-manager</artifactId>
+            <artifactId>openncp-security-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-util</artifactId>
+            <artifactId>openncp-util</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
@@ -259,13 +259,13 @@
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-assertion-validator</artifactId>
+            <artifactId>openncp-assertion-validator</artifactId>
             <version>${project.version}</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-data-model</artifactId>
+            <artifactId>openncp-data-model</artifactId>
             <version>${project.version}</version>
             <type>jar</type>
         </dependency>
@@ -282,7 +282,7 @@
             <exclusions>
                 <exclusion>
                     <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-                    <artifactId>epsos-trc-sts-client</artifactId>
+                    <artifactId>openncp-trc-sts-client</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>-->
@@ -294,7 +294,7 @@
         </dependency>-->
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi.</groupId>
-            <artifactId>OPENSTORK.UTILS</artifactId>
+            <artifactId>openncp-openstork-utils</artifactId>
             <version>${project.version}</version>
             <type>jar</type>
         </dependency>
@@ -324,7 +324,7 @@
         </dependency>
         <dependency>
             <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-            <artifactId>epsos-trc-sts-client</artifactId>
+            <artifactId>openncp-trc-sts-client</artifactId>
             <version>${project.version}</version>
             <type>jar</type>
         </dependency>
