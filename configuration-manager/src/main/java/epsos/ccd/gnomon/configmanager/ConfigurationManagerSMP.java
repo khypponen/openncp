@@ -141,7 +141,7 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 			String value = property.getValue();
 			PropertySearchableContainer psc = new PropertySearchableContainer();
 			psc.setValue(value);
-			psc.setSearchable(property.isSMP());
+//			psc.setSearchable(property.isSMP());
 			configuration.put(name, psc);
 			l.debug("Added the couple (name, value); " + name + ":" + value);
 		}
