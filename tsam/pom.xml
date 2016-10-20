@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <artifactId>openncp</artifactId>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+        <groupId>eu.europa.ec.sante.ehdsi</groupId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -121,17 +121,5 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
-
-    <distributionManagement>
-        <repository>
-            <id>joinup-releases</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>joinup-snapshots</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 </project>

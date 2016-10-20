@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+        <groupId>eu.europa.ec.sante.ehdsi</groupId>
         <artifactId>openncp-protocol-terminators</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+    <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
     <artifactId>openncp-ncp-server</artifactId>
     <packaging>pom</packaging>
     <name>EpSOS CC Web Services Server</name>

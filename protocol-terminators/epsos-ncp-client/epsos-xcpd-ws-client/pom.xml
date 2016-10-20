@@ -3,17 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
 
-
     <!-- ==================
         Artifact
     ================== -->
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+        <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
         <artifactId>openncp-ncp-client</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
+    <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
     <artifactId>openncp-xcpd-ws-client</artifactId>
 
     <name>OpenNCP CC IHE-XCPD Service Client</name>
@@ -45,13 +44,13 @@
     ================== -->
     <dependencies>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
             <artifactId>openncp-ncp-pt-utils</artifactId>
         </dependency>
 
         <!-- epsos -->
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-util</artifactId>
             <exclusions>
                 <exclusion>
@@ -61,7 +60,7 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-audit-manager</artifactId>
             <exclusions>
                 <exclusion>
@@ -75,11 +74,11 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-data-model</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-assertion-validator</artifactId>
             <exclusions>
                 <exclusion>
@@ -93,11 +92,11 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-defaultpolicymanager</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
             <artifactId>openncp-integration-test</artifactId>
             <scope>test</scope>
         </dependency>

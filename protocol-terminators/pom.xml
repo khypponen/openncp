@@ -4,12 +4,11 @@
 
 	<parent>
 		<artifactId>openncp</artifactId>
-		<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+		<groupId>eu.europa.ec.sante.ehdsi</groupId>
 		<version>2.4.2-SNAPSHOT</version>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-
 
 	<!-- ================== Artifact ================== -->
 	<artifactId>openncp-protocol-terminators</artifactId>
@@ -30,104 +29,102 @@
 		<dependencies>
 			<!-- epsos protocol terminators -->
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
 				<artifactId>openncp-integration-test</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
 				<artifactId>openncp-interface</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
 				<artifactId>openncp-xcpd-ws-server-impl</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
 				<artifactId>openncp-xca-ws-server-impl</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
 				<artifactId>openncp-xdr-ws-server-impl</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
 				<artifactId>openncp-nc-mock-it</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
 				<artifactId>openncp-xcpd-ws-client</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
 				<artifactId>openncp-xca-ws-client</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
 				<artifactId>openncp-xdr-ws-client</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
 				<artifactId>openncp-ncp-pt-client-consumer</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
 				<artifactId>openncp-ncp-pt-utils</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-
-			<!-- other -->
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
 				<artifactId>openncp-data-model</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
 				<artifactId>openncp-util</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
 				<artifactId>openncp-transformation-manager</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
 				<artifactId>openncp-terminology-service-access-manager</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
 				<artifactId>openncp-assertion-validator</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
 				<artifactId>openncp-defaultpolicymanager</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
 				<artifactId>openncp-audit-manager</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
 				<artifactId>openncp-adc</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
 				<artifactId>openncp-configuration-manager</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -172,7 +169,6 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
-
 			<!-- external dependencies -->
 			<dependency>
 				<groupId>org.herasaf.xacml.core</groupId>
@@ -199,7 +195,6 @@
 				<artifactId>junit</artifactId>
 				<version>4.10</version>
 			</dependency>
-
 			<!-- axis2 -->
 			<dependency>
 				<groupId>org.apache.axis2</groupId>
@@ -361,27 +356,11 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
-				<configuration>
-					<source>${project.source.version}</source>
-					<target>${project.target.version}</target>
-					<optimize>true</optimize>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>2.6</version>
 				<configuration>
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.5.1</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -424,16 +403,6 @@
 	<!-- ================== Repositories ================== -->
 	<repositories>
 		<repository>
-			<id>joinup-releases</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
 			<name>Official OpenSaml Repository</name>
 			<id>openSamlRep</id>
 			<url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
@@ -459,28 +428,7 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-		<!-- <repository> <id>gnomon-lib-snapshot</id> <url>http://artifactory.gnomon.com.gr/artifactory/libs-snapshot-local/</url>
-			<releases> <enabled>false</enabled> </releases> <snapshots> <enabled>true</enabled>
-			<updatePolicy>always</updatePolicy> </snapshots> </repository> <repository>
-			<id>gnomon-lib-release</id> <url>http://artifactory.gnomon.com.gr/artifactory/libs-release-local/</url>
-			<releases> <enabled>true</enabled> </releases> <snapshots> <enabled>false</enabled>
-			</snapshots> </repository> -->
 	</repositories>
-	<!-- <distributionManagement> <repository> <id>gnomon-lib-release</id> <name>gnomon</name>
-		<url>http://artifactory.gnomon.com.gr/artifactory/libs-release-local</url>
-		</repository> <snapshotRepository> <id>gnomon-lib-snapshot</id> <url>http://artifactory.gnomon.com.gr/artifactory/libs-snapshot-local/</url>
-		</snapshotRepository> </distributionManagement> -->
-	<distributionManagement>
-		<repository>
-			<id>joinup-releases</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>joinup-snapshots</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-			<uniqueVersion>true</uniqueVersion>
-		</snapshotRepository>
-	</distributionManagement>
 	<!-- ================== Developers ================== -->
 	<developers>
 		<developer>

@@ -5,7 +5,7 @@
        Parent
     ================== -->
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+        <groupId>eu.europa.ec.sante.ehdsi</groupId>
         <artifactId>openncp-openstork</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
@@ -41,24 +41,24 @@
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-data-model</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-configuration-manager</artifactId>
             <version>${project.version}</version>
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-assertion-validator</artifactId>
             <version>${project.version}</version>
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-util</artifactId>
             <version>${project.version}</version>
             <type>jar</type>

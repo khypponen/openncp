@@ -7,12 +7,12 @@
        Artifact
     ================== -->
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+        <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
         <artifactId>openncp-ncp-client</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
+    <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
     <artifactId>openncp-client-connector</artifactId>
 
     <name>OpenNCP CC Client Connector</name>
@@ -62,7 +62,7 @@
             <artifactId>openncp-xdr-ws-client</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-data-model</artifactId>
         </dependency>
 
@@ -111,7 +111,7 @@
             <artifactId>junit</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
             <artifactId>openncp-ncp-pt-client-consumer</artifactId>
             <scope>test</scope>
         </dependency>
@@ -120,7 +120,7 @@
             <artifactId>commons-configuration</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
             <artifactId>openncp-integration-test</artifactId>
         </dependency>
 
@@ -333,7 +333,7 @@
 
             <dependencies>
                 <dependency>
-                    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+                    <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
                     <artifactId>openncp-integration-test</artifactId>
                 </dependency>
                 <dependency>

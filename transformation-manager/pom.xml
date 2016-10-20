@@ -3,7 +3,7 @@
 
     <parent>
         <artifactId>openncp</artifactId>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+        <groupId>eu.europa.ec.sante.ehdsi</groupId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -68,32 +68,32 @@
     </build>
     <dependencies>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-terminology-service-access-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-audit-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-util</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-evidence-emitter</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-configuration-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-security-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -178,27 +178,6 @@
             </snapshots>
         </repository>
         <repository>
-            <id>joinup-releases</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>joinup-snapshots</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-        <repository>
             <url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
             <id>openSamlRep</id>
             <name>Official OpenSaml Repository</name>
@@ -210,15 +189,4 @@
             <name>Official OpenSaml Repository</name>
         </repository>
     </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>joinup-releases</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>joinup-snapshots</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 </project>

@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+        <groupId>eu.europa.ec.sante.ehdsi</groupId>
         <artifactId>openncp-cdadisplaytool</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-cdadisplaytool</groupId>
+    <groupId>eu.europa.ec.sante.ehdsi.openncp-cdadisplaytool</groupId>
     <artifactId>openncp-xsltransformer</artifactId>
     <url>http://maven.apache.org</url>
     <name>xsltransformer</name>
@@ -59,15 +59,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
             <!-- Set version to 2.9 of maven-surefire-plugin because the execution
             of tests fails by using an up-to-date version -->
             <plugin>

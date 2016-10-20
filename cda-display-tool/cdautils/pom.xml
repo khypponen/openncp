@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+        <groupId>eu.europa.ec.sante.ehdsi</groupId>
         <artifactId>openncp-cdadisplaytool</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-cdadisplaytool</groupId>
+    <groupId>eu.europa.ec.sante.ehdsi.openncp-cdadisplaytool</groupId>
     <artifactId>openncp-cdautils</artifactId>
     <url>http://maven.apache.org</url>
     <name>cdautils</name>

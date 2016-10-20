@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+        <groupId>eu.europa.ec.sante.ehdsi</groupId>
         <artifactId>openncp-common-components</artifactId>
         <version>2.4.2-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>

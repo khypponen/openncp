@@ -3,7 +3,7 @@
 
 	<parent>
 		<artifactId>openncp</artifactId>
-		<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+		<groupId>eu.europa.ec.sante.ehdsi</groupId>
 		<version>2.4.2-SNAPSHOT</version>
 	</parent>
 
@@ -189,7 +189,7 @@
 			<version>2.7.1</version>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-configuration-manager</artifactId>
 			<version>${project.version}</version>
 		</dependency>
@@ -220,13 +220,13 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-security-manager</artifactId>
 			<version>${project.version}</version>
 			<type>jar</type>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-evidence-emitter</artifactId>
 			<version>${project.version}</version>
 			<type>jar</type>
@@ -271,43 +271,4 @@
 		<javaxServletVersion>2.3</javaxServletVersion>
 		<log4jVersion>1.2.17</log4jVersion>
 	</properties>
-
-	<!-- ================== Repositories ================== -->
-	<repositories>
-		<!-- <repository> <id>maven.herasaf.org-releases</id> <url>http://maven.herasaf.org/herasaf-release</url>
-			<releases> <enabled>true</enabled> </releases> <snapshots> <enabled>false</enabled>
-			</snapshots> </repository> -->
-		<repository>
-			<id>joinup-releases</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>joinup-snapshots</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-
-	<!-- ================== Distribution Management ================== -->
-	<distributionManagement>
-		<repository>
-			<id>joinup-releases</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>joinup-snapshots</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
 </project>

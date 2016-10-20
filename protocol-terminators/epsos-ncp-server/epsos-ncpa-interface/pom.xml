@@ -1,7 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+    <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
     <artifactId>openncp-interface</artifactId>
     <name>EpSOS CC WS Interface Declarations</name>
     <organization>
@@ -9,13 +10,13 @@
         <url>www.srdc.com.tr</url>
     </organization>
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+        <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
         <artifactId>openncp-ncp-server</artifactId>
         <version>2.4.2-SNAPSHOT</version>
     </parent>
     <dependencies>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-data-model</artifactId>
         </dependency>
         <dependency>
@@ -31,11 +32,11 @@
             <artifactId>axiom-dom</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-audit-manager</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-assertion-validator</artifactId>
         </dependency>
         <dependency>
