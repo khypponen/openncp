@@ -5,6 +5,8 @@
  */
 package eu.europa.ec.sante.ehdsi.peppol.smp.workaround;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -126,6 +128,20 @@ public class SmpXslt {
         transformer.transform(smpFile, new StreamResult(new FileOutputStream(new File(outputFile))));
     }
     
+    public static Document applyXsltToSmp(Document smpRecord) throws TransformerConfigurationException, TransformerException, SAXException, IOException, ParserConfigurationException {
+        logger.info("Applying XSLT...");
+        TransformerFactory factory = new net.sf.saxon.TransformerFactoryImpl();
+        Source smpFile = new DOMSource(smpRecord);
+        Source xslt = new StreamSource(SmpXslt.class.getResourceAsStream("/xslt/format-smp.xsl"));
+        Transformer transformer = factory.newTransformer(xslt);
+        transformer.setErrorListener(new SmpXsltListener());
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        transformer.transform(smpFile, new StreamResult(baos));
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        dbf.setNamespaceAware(true);
+        return dbf.newDocumentBuilder().parse(new ByteArrayInputStream(baos.toByteArray()));
+    }
+    
     public static void validateSignature(final Document smpRecord, Element xtPointer) throws Exception {
         logger.info("Starting signature validation...");
         // Find Signature element.
@@ -205,6 +221,16 @@ public class SmpXslt {
             logger.debug("+++ Signature passed core validation +++ ");
         }
  
+    }
+    // TODO MASSI REFACTOR A LOT
+    public static void validateXml(Document doc, String namespace, String element) throws FileNotFoundException, ParserConfigurationException, SAXException, IOException, Exception {
+        
+            NodeList elements = doc.getElementsByTagNameNS(namespace, element);
+            Node serviceInformation = elements.item(0);
+            Node n = serviceInformation.getLastChild();
+            Element xtPointer = (Element) n;
+            validateSignature(doc, xtPointer);
+        
     }
     
     public static void validateXml(String file, String namespace, String element) throws FileNotFoundException, ParserConfigurationException, SAXException, IOException, Exception {

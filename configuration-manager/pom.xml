@@ -62,6 +62,16 @@
 			<version>1.7</version>
 		</dependency>
 		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
+		</dependency>
+		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
@@ -130,6 +140,12 @@
 		<!-- <artifactId>epsos-tsl-sync</artifactId> -->
 		<!-- <version>3.1.5</version> -->
 		<!-- </dependency> -->
+		<!-- This is the PEPPOL client, supporting OASIS BDXL -->
+		<dependency> 
+			<groupId>no.difi.vefa</groupId>
+			<artifactId>peppol-lookup</artifactId>
+			<version>0.9.5</version>
+		</dependency>
 		<!-- Testing dependencies -->
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -144,7 +160,7 @@
 			<artifactId>Saxon-HE</artifactId>
 			<version>9.5.1-8</version>
 		</dependency>
-	</dependencies>
+	</dependencies>	
 
 	<!-- ================== Build plugins ================== -->
 	<build>
