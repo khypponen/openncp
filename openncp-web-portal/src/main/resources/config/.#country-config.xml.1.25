@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<CountryConfigManager>
+		<country>
+			<ME homeCommuity="2.16.17.710.811.1000.990.1">
+				<text>Detta är mockad patientdata för Shelob.</text>
+                <HelpTextForTest>Tillgängliga testpatienter: 
+                	190001011234
+			    </HelpTextForTest>
+			</ME>
+			<AT homeCommuity="2.16.840.1.113883.2.16.3.1.3.100.990.1">
+				<text>Ange personens SSN (Social Security Number) och CRR (Central Register of Residents)</text>
+                <HelpTextForTest>Tillgängliga test patienter: sök utan att fylla i något</HelpTextForTest>
+			</AT>
+			<CZ homeCommuity="2.16.17.710.804.1000.990.1">
+				<text>Ange personens förnamn, efternamn och identitetsnummer</text>
+                <HelpTextForTest>Tillgängliga testpatienter: 
+                	Nina/Zárubová/6212122627 
+                	František/Dobrota/6212122638 
+                	Ondřej/Karafiát/6212122616 
+                	Antonie/Nedošínská/6212122539
+                </HelpTextForTest>
+			</CZ>
+			<DK homeCommuity="2.16.17.710.802.1000.990.1">
+				<text>Ange personens Social Security Number (CPR-nummer) med 10 siffror utan bindestrecke eller blanksteg</text>
+                <HelpTextForTest>Tillgängliga testpatienter: 
+                	2601010001 
+                	2601010002 
+                	2601010003 
+                	2512484916 CTD: 0205500SS5 0510770PP1 0711470VV1 2512484916 0909860AS6
+                </HelpTextForTest>
+			</DK>
+			<ES homeCommuity="2.16.17.710.801.1000.990.1">
+				<text></text>
+                <HelpTextForTest>Tillgängliga test patienter: 
+                    1199925/803409 
+                    2146789/803409 
+                    TRHR710430916029/803411 
+                    QLRQ900715904010/803411 
+                    MSPS/803000 
+                </HelpTextForTest>
+			</ES>
+			<FR homeCommuity="2.16.17.710.790.1000.990.1">
+				<text>Ange personens INSEE code</text>
+                <HelpTextForTest>Tillgänlgia testpatienter: 
+                	0754687958480625816364 
+                	0467172911163665402182
+                </HelpTextForTest>
+			</FR>
+			<IT homeCommuity="2.16.17.710.806.1000.990.1">
+				<text>Ange personens Codice fiscale (format: SSSNNNYYMDDZZZZX) and "area"</text>
+                <HelpTextForTest>Tillgängliga testpatienter: 
+                    NTSDNN80A19D612X/64681 
+                    NTSDTT80A18G273W/64707 
+                    NTSNVO80A49F839Z/64715 
+                    NTSTDC80A53G478W/64699 
+                    NTSTNT80B04A944P/64749 
+                    NTSTNT80B05H501F/64731 
+                    NTSVTS80A67G478G/64756
+                </HelpTextForTest>
+			</IT>
+			<SE homeCommuity="2.16.17.710.807.1000.990.1">
+				<text>Ange ett personnummer med 12 siffor utan bindestreck eller blanksteg</text>
+                <HelpTextForTest>Tillgängliga testpatienter: 
+	                192405038569 
+	                193508249079 
+	                199701312390 
+	                199701292394
+	                195011052478
+                </HelpTextForTest>
+			</SE>
+            <FI homeCommuity="1.2.246.556.12001.4.1000.990.1">
+                <text>IDs are of the form 041082-995W (birth date, then sign -, + or A, then three numbers, and the last character can be a number or a letter)</text>
+                <HelpTextForTest>Tillgängliga testpatienter:
+                    031082-9958
+                    041082-995W
+                    051082-995J
+                    061082-9956
+                </HelpTextForTest>
+            </FI>
+        </country>
+	</CountryConfigManager>
+</Configuration>

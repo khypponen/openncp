@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<value>
+		<NI GB="NoInformation" SE="Ingen information" FI="Ei tietoa"/>
+		<OTH GB="Other" SE="Övrigt" FI="Muu"/>
+		<NINF GB="Negative infinity" SE="Negativ oändlighet" FI="Negatiivinen äärettömyys"/>
+		<PINF GB="Positive infinity" SE="Positiv oändlighet" FI="Positiivinen äärettömyys"/>
+		<UNK GB="Unknown" SE="Okänd" FI="Tuntematon"/>
+		<ASKU GB="Asked, but unknown" SE="Efterfrågad men okänd" FI="Kysytty, tuntematon"/>
+		<NAV GB="Temporarily unavailable" SE="Tillfälligt otillgänglig" FI="Tietoa ei saatavilla juuri nyt"/>
+		<NASK GB="Not asked" SE="Ej efterfrågad" FI="Ei kysytty"/>
+		<TRC GB="Trace" SE="Spår" FI="Arvo on nollaa suurempi, mutta liian pieni jotta arvo voitaisiin määrittää"/>
+		<MSK GB="Masked" SE="Dold" FI="Peitetty"/>
+		<NA GB="Not applicable" SE="Ej applicerbar" FI="Ei sovellettavissa"/>
+		<NP GB="Not present" SE="Saknas" FI="Tietoa ei mukana"/>
+	</value>
+</Configuration>

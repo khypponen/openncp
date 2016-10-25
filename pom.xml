@@ -29,6 +29,7 @@
 		<module>protocol-terminators</module>
 		<module>openatna</module>
 		<module>openncp-portal</module>
+		<module>openncp-web-portal</module>
 		<module>epsos-common-components</module>
 		<module>OPENSTORK</module>
 		<module>openncp-gateway</module>

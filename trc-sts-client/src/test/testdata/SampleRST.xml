@@ -1,102 +1,184 @@
-<S:Envelope xmlns:S="http://www.w3.org/2003/05/soap-envelope" xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-   <S:Header>
-      <MessageID xmlns="http://www.w3.org/2005/08/addressing">uuid:3dfe5344-2b7e-490b-8a51-a93e7824a9c5</MessageID>
-      <wsse:Security S:mustUnderstand="1">
-<saml2:Assertion xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" ID="_4cb0c86a-e727-495f-a815-66f1a873b7c0" IssueInstant="2010-08-12T11:51:04.416Z" Version="2.0"><saml2:Issuer NameQualifier="urn:epsos:wp34:assertions" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">issuer</saml2:Issuer><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-<ds:SignedInfo>
-<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
-<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-<ds:Reference URI="#_4cb0c86a-e727-495f-a815-66f1a873b7c0">
-<ds:Transforms>
-<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="ds saml2 xs xsi"/></ds:Transform>
-</ds:Transforms>
-<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-<ds:DigestValue>IDbx8H9LKHzI8B8hQPTREmQ/oWY=</ds:DigestValue>
-</ds:Reference>
-</ds:SignedInfo>
-<ds:SignatureValue>
-4nXq4qtL5dUtxMWRK68CjylWPYiIHnvzRm7ehLVX++vt5jLtRNHju++Sexh4zILjdXStgFqT3i7c
-qcV+A3BhIfsvG9sH/01pdahjfKc5Jl1NgzR26CHmjyRMmI3OZNdhWLncOsfp44hrORCYE3+jio4S
-jKLqDFQ+NkVTVurjSR8=
-</ds:SignatureValue>
-<ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIDwzCCAqugAwIBAgIBATANBgkqhkiG9w0BAQUFADCBuDELMAkGA1UEBhMCQVQxEDAOBgNVBAgT
-B0F1c3RyaWExDzANBgNVBAcTBlZpZW5uYTEVMBMGA1UEChMMVGlhbmkgU3Bpcml0MRowGAYDVQQL
-ExFUZXN0IENlcnRpZmljYXRlczEgMB4GA1UEAxMXQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkxMTAv
-BgkqhkiG9w0BCQEWIm1hc3NpbWlsaWFuby5tYXNpQHRpYW5pLXNwaXJpdC5jb20wHhcNMTAwNTI1
-MTI1NzMxWhcNMzUwMTE0MTI1NzMxWjCBlzELMAkGA1UEBhMCQVQxEDAOBgNVBAgTB0F1c3RyaWEx
-FTATBgNVBAoTDFRpYW5pIFNwaXJpdDEaMBgGA1UECxMRVGVzdCBDZXJ0aWZpY2F0ZXMxEDAOBgNV
-BAMTB3NlcnZlcjExMTAvBgkqhkiG9w0BCQEWIm1hc3NpbWlsaWFuby5tYXNpQHRpYW5pLXNwaXJp
-dC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAOKFHKAWDiI4GC4W1WFAHGkNuE3hzaMp
-KaEkDYm9yJDqqEpw758iuiyOZdfRRiQuTmP6lNpT5DlJiQOLYhG5U9TS72VuK3rIncmtvAG0PPur
-jsFyggbeuV169iRnkdbU2pyhu046gAINCVoJfp+9kb9EZHlDmcEs4NznFj+NtojHAgMBAAGjezB5
-MAkGA1UdEwQCMAAwLAYJYIZIAYb4QgENBB8WHU9wZW5TU0wgR2VuZXJhdGVkIENlcnRpZmljYXRl
-MB0GA1UdDgQWBBRcW+6sHYHdEZ69MdjUQ7ovetYeTzAfBgNVHSMEGDAWgBRPsGnZxUG4UGFrj7qu
-E2FoiwZLQDANBgkqhkiG9w0BAQUFAAOCAQEAsqp5FZiRrkUZ72UB7lgxBxzh9Psuvb8cLoYbS/FZ
-94DOrMyMscj4Nog9F006WFaVWX90NQFRPKlYRPeH52BkBGL/Dq7vbMmgAgnDAKj59BCQuPA9V8lR
-ImdA9sZKH5wKjYXlonV9yIHsZFWlV0P9IEPX4RquAJXSE8ym3JwqCs65nXXDvSuaNDKRuVjkHu57
-V1U7wxDDiu4aj8h4BjxkRuAf+h7PsefRycctQGhLhMPxgj+xUQzv+ribIn8cMulmxU5GvkhVmNVB
-i2L1GLR8sgzv6IFsXRsIAmKUU7FS9eWx5UMZ9U5O1dZedgXFpASHQecHf0cbJqDG1jsURodZCw==</ds:X509Certificate></ds:X509Data></ds:KeyInfo></ds:Signature><saml2:Subject xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
-        <saml2:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">massi</saml2:NameID>
-        <saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:sender-vouches"/>
-    </saml2:Subject><saml2:Conditions NotBefore="2010-10-12T11:51:04.416Z" NotOnOrAfter="2012-11-12T12:41:04.416Z" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
-        <saml2:AudienceRestriction>
-            <saml2:Audience>a</saml2:Audience>
-        </saml2:AudienceRestriction>
-    </saml2:Conditions><saml2:AuthnStatement AuthnInstant="2010-10-11T11:51:04.416Z" SessionNotOnOrAfter="2012-10-31T12:41:04.416Z" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
-        <saml2:AuthnContext>
-            <saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:Kerberos</saml2:AuthnContextClassRef>
-        </saml2:AuthnContext>
-    </saml2:AuthnStatement><saml2:AttributeStatement xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
-        <saml2:Attribute FriendlyName="XSPA Subject" Name="urn:oasis:names:tc:xacml:1.0:subject:subject-id" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
-            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaSubject</saml2:AttributeValue>
-        </saml2:Attribute>
-        <saml2:Attribute FriendlyName="XSPA Role" Name="urn:oasis:names:tc:xacml:2.0:subject:role" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
-            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">pharmacist</saml2:AttributeValue>
-        </saml2:Attribute>
-        <saml2:Attribute FriendlyName="Hl7 Permissions" Name="urn:oasis:names:tc:xspa:1.0:subject:hl7:permission" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
-            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">PRD-006</saml2:AttributeValue>
-            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">PRD-004</saml2:AttributeValue>
-            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">PRD-010</saml2:AttributeValue>
-            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">PPD-046</saml2:AttributeValue>
-        </saml2:Attribute>
-        <saml2:Attribute FriendlyName="HITSP Clinical Speciality" Name="urn:epsos:names:wp3.4:subject:clinical-speciality" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
-            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaSpeciality</saml2:AttributeValue>
-        </saml2:Attribute>
-        <saml2:Attribute FriendlyName="XSPA Organization" Name="urn:oasis:names:tc:xspa:1.0:subject:organization" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
-            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaOrganization</saml2:AttributeValue>
-        </saml2:Attribute>
-        <saml2:Attribute FriendlyName="XSPA Organization ID" Name="urn:oasis:names:tc:xspa:1.0:subject:organization-id" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
-            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyURI">xspaOrganizationId</saml2:AttributeValue>
-        </saml2:Attribute>
-        <saml2:Attribute FriendlyName="epSOS Healthcare Facility Type" Name="urn:epsos:names:wp3.4:subject:healthcare-facility-type" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
-            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaType</saml2:AttributeValue>
-        </saml2:Attribute>
-        <saml2:Attribute FriendlyName="XSPA Purpose of Use" Name="urn:oasis:names:tc:xspa:1.0:subject:purposeofuse" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
-            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">TREATMENT</saml2:AttributeValue>
-        </saml2:Attribute>
-        <saml2:Attribute FriendlyName="XSPA Locality" Name="urn:oasis:names:tc:xspa:1.0:environment:locality" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
-            <saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaLocality</saml2:AttributeValue>
-        </saml2:Attribute>
-    </saml2:AttributeStatement></saml2:Assertion>
-      </wsse:Security>
-   </S:Header>
-   <S:Body>
-      <trust:RequestSecurityToken xmlns:ns12="http://www.w3.org/2001/10/xml-exc-c14n#" xmlns:ns4="http://docs.oasis-open.org/ws-sx/ws-trust/200512/" xmlns:ns8="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity" xmlns:ns9="http://www.w3.org/2000/09/xmldsig#" xmlns:sc="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512" xmlns:trust="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust">
-        <trust:RequestType>http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue</trust:RequestType>
-        <trust:TokenType>urn:oasis:names:tc:SAML:2.0:assertion</trust:TokenType>
-        <trc:TRCParameters xmlns:trc="http://epsos.eu/trc">
-            <trc:PurposeOfUse>TREATMENT</trc:PurposeOfUse>
-            <trc:PatientId>123423423223452323321235t</trc:PatientId>
-         </trc:TRCParameters>
-      </trust:RequestSecurityToken>
-   </S:Body>
+<S:Envelope xmlns:S="http://www.w3.org/2003/05/soap-envelope"
+	xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd"
+	xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<S:Header>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">uuid:3dfe5344-2b7e-490b-8a51-a93e7824a9c5
+		</MessageID>
+		<wsse:Security S:mustUnderstand="1">
+			<saml2:Assertion xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
+				ID="_4cb0c86a-e727-495f-a815-66f1a873b7c0" IssueInstant="2010-08-12T11:51:04.416Z"
+				Version="2.0">
+				<saml2:Issuer NameQualifier="urn:epsos:wp34:assertions"
+					xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">issuer</saml2:Issuer>
+				<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+					<ds:SignedInfo>
+						<ds:CanonicalizationMethod
+							Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments" />
+						<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+						<ds:Reference URI="#_4cb0c86a-e727-495f-a815-66f1a873b7c0">
+							<ds:Transforms>
+								<ds:Transform
+									Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+								<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+									<ec:InclusiveNamespaces
+										xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="ds saml2 xs xsi" />
+								</ds:Transform>
+							</ds:Transforms>
+							<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+							<ds:DigestValue>IDbx8H9LKHzI8B8hQPTREmQ/oWY=</ds:DigestValue>
+						</ds:Reference>
+					</ds:SignedInfo>
+					<ds:SignatureValue>
+						4nXq4qtL5dUtxMWRK68CjylWPYiIHnvzRm7ehLVX++vt5jLtRNHju++Sexh4zILjdXStgFqT3i7c
+						qcV+A3BhIfsvG9sH/01pdahjfKc5Jl1NgzR26CHmjyRMmI3OZNdhWLncOsfp44hrORCYE3+jio4S
+						jKLqDFQ+NkVTVurjSR8=
+					</ds:SignatureValue>
+					<ds:KeyInfo>
+						<ds:X509Data>
+							<ds:X509Certificate>MIIDwzCCAqugAwIBAgIBATANBgkqhkiG9w0BAQUFADCBuDELMAkGA1UEBhMCQVQxEDAOBgNVBAgT
+								B0F1c3RyaWExDzANBgNVBAcTBlZpZW5uYTEVMBMGA1UEChMMVGlhbmkgU3Bpcml0MRowGAYDVQQL
+								ExFUZXN0IENlcnRpZmljYXRlczEgMB4GA1UEAxMXQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkxMTAv
+								BgkqhkiG9w0BCQEWIm1hc3NpbWlsaWFuby5tYXNpQHRpYW5pLXNwaXJpdC5jb20wHhcNMTAwNTI1
+								MTI1NzMxWhcNMzUwMTE0MTI1NzMxWjCBlzELMAkGA1UEBhMCQVQxEDAOBgNVBAgTB0F1c3RyaWEx
+								FTATBgNVBAoTDFRpYW5pIFNwaXJpdDEaMBgGA1UECxMRVGVzdCBDZXJ0aWZpY2F0ZXMxEDAOBgNV
+								BAMTB3NlcnZlcjExMTAvBgkqhkiG9w0BCQEWIm1hc3NpbWlsaWFuby5tYXNpQHRpYW5pLXNwaXJp
+								dC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAOKFHKAWDiI4GC4W1WFAHGkNuE3hzaMp
+								KaEkDYm9yJDqqEpw758iuiyOZdfRRiQuTmP6lNpT5DlJiQOLYhG5U9TS72VuK3rIncmtvAG0PPur
+								jsFyggbeuV169iRnkdbU2pyhu046gAINCVoJfp+9kb9EZHlDmcEs4NznFj+NtojHAgMBAAGjezB5
+								MAkGA1UdEwQCMAAwLAYJYIZIAYb4QgENBB8WHU9wZW5TU0wgR2VuZXJhdGVkIENlcnRpZmljYXRl
+								MB0GA1UdDgQWBBRcW+6sHYHdEZ69MdjUQ7ovetYeTzAfBgNVHSMEGDAWgBRPsGnZxUG4UGFrj7qu
+								E2FoiwZLQDANBgkqhkiG9w0BAQUFAAOCAQEAsqp5FZiRrkUZ72UB7lgxBxzh9Psuvb8cLoYbS/FZ
+								94DOrMyMscj4Nog9F006WFaVWX90NQFRPKlYRPeH52BkBGL/Dq7vbMmgAgnDAKj59BCQuPA9V8lR
+								ImdA9sZKH5wKjYXlonV9yIHsZFWlV0P9IEPX4RquAJXSE8ym3JwqCs65nXXDvSuaNDKRuVjkHu57
+								V1U7wxDDiu4aj8h4BjxkRuAf+h7PsefRycctQGhLhMPxgj+xUQzv+ribIn8cMulmxU5GvkhVmNVB
+								i2L1GLR8sgzv6IFsXRsIAmKUU7FS9eWx5UMZ9U5O1dZedgXFpASHQecHf0cbJqDG1jsURodZCw==
+							</ds:X509Certificate>
+						</ds:X509Data>
+					</ds:KeyInfo>
+				</ds:Signature>
+				<saml2:Subject xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
+					<saml2:NameID
+						Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">massi</saml2:NameID>
+					<saml2:SubjectConfirmation
+						Method="urn:oasis:names:tc:SAML:2.0:cm:sender-vouches" />
+				</saml2:Subject>
+				<saml2:Conditions NotBefore="2010-10-12T11:51:04.416Z"
+					NotOnOrAfter="2012-11-12T12:41:04.416Z" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
+					<saml2:AudienceRestriction>
+						<saml2:Audience>a</saml2:Audience>
+					</saml2:AudienceRestriction>
+				</saml2:Conditions>
+				<saml2:AuthnStatement AuthnInstant="2010-10-11T11:51:04.416Z"
+					SessionNotOnOrAfter="2012-10-31T12:41:04.416Z" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
+					<saml2:AuthnContext>
+						<saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:Kerberos
+						</saml2:AuthnContextClassRef>
+					</saml2:AuthnContext>
+				</saml2:AuthnStatement>
+				<saml2:AttributeStatement xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
+					<saml2:Attribute FriendlyName="XSPA Subject"
+						Name="urn:oasis:names:tc:xacml:1.0:subject:subject-id" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+						<saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaSubject
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute FriendlyName="XSPA Role"
+						Name="urn:oasis:names:tc:xacml:2.0:subject:role" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+						<saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">pharmacist
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute FriendlyName="Hl7 Permissions"
+						Name="urn:oasis:names:tc:xspa:1.0:subject:hl7:permission"
+						NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+						<saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">PRD-006
+						</saml2:AttributeValue>
+						<saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">PRD-004
+						</saml2:AttributeValue>
+						<saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">PRD-010
+						</saml2:AttributeValue>
+						<saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">PPD-046
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute FriendlyName="HITSP Clinical Speciality"
+						Name="urn:epsos:names:wp3.4:subject:clinical-speciality"
+						NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+						<saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaSpeciality
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute FriendlyName="XSPA Organization"
+						Name="urn:oasis:names:tc:xspa:1.0:subject:organization"
+						NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+						<saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaOrganization
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute FriendlyName="XSPA Organization ID"
+						Name="urn:oasis:names:tc:xspa:1.0:subject:organization-id"
+						NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+						<saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyURI">xspaOrganizationId
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute FriendlyName="epSOS Healthcare Facility Type"
+						Name="urn:epsos:names:wp3.4:subject:healthcare-facility-type"
+						NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+						<saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaType
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute FriendlyName="XSPA Purpose of Use"
+						Name="urn:oasis:names:tc:xspa:1.0:subject:purposeofuse"
+						NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+						<saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">TREATMENT
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+					<saml2:Attribute FriendlyName="XSPA Locality"
+						Name="urn:oasis:names:tc:xspa:1.0:environment:locality"
+						NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+						<saml2:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">xspaLocality
+						</saml2:AttributeValue>
+					</saml2:Attribute>
+				</saml2:AttributeStatement>
+			</saml2:Assertion>
+		</wsse:Security>
+	</S:Header>
+	<S:Body>
+		<trust:RequestSecurityToken xmlns:ns12="http://www.w3.org/2001/10/xml-exc-c14n#"
+			xmlns:ns4="http://docs.oasis-open.org/ws-sx/ws-trust/200512/"
+			xmlns:ns8="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity"
+			xmlns:ns9="http://www.w3.org/2000/09/xmldsig#"
+			xmlns:sc="http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512"
+			xmlns:trust="http://docs.oasis-open.org/ws-sx/ws-trust/200512"
+			xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+			xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust">
+			<trust:RequestType>http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue
+			</trust:RequestType>
+			<trust:TokenType>urn:oasis:names:tc:SAML:2.0:assertion
+			</trust:TokenType>
+			<trc:TRCParameters xmlns:trc="http://epsos.eu/trc">
+				<trc:PurposeOfUse>TREATMENT</trc:PurposeOfUse>
+				<trc:PatientId>123423423223452323321235t</trc:PatientId>
+			</trc:TRCParameters>
+		</trust:RequestSecurityToken>
+	</S:Body>
 </S:Envelope>
 
 <env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
-    <env:Header>
-        <wsa:MessageID xmlns:wsa="http://www.w3.org/2005/08/addressing">uuid:4572cb82-1cf6-4f62-8b2b-19b4f2cc0a8a</wsa:MessageID>
-        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
-    </env:Header>
-    <env:Body/>
-    </env:Envelope>
+	<env:Header>
+		<wsa:MessageID xmlns:wsa="http://www.w3.org/2005/08/addressing">uuid:4572cb82-1cf6-4f62-8b2b-19b4f2cc0a8a
+		</wsa:MessageID>
+		<wsse:Security
+			xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" />
+	</env:Header>
+	<env:Body />
+</env:Envelope>

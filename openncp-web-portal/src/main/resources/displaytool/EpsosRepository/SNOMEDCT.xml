@@ -1,0 +1,2219 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<SNOMEDCTInformation>
+<SNOMEDCTEntry code='271003'>
+<displayName lang='en'>Bone plate</displayName>
+<displayName lang='sv-SE'>skelettplatta</displayName>
+<displayName lang='el-GR'>????? ?????</displayName>
+<displayName lang='sv-SE'>skelettplatta</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='2282003'>
+<displayName lang='en'>Breast prosthesis</displayName>
+<displayName lang='el-GR'>??????? ???????</displayName>
+<displayName lang='sv-SE'>bröstprotes</displayName>
+<displayName lang='sv-SE'>bröstprotes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='3418002'>
+<displayName lang='en'>Chondrectomy of spine</displayName>
+<displayName lang='sv-SE'>kondrektomi från ryggraden</displayName>
+<displayName lang='el-GR'>?????????? ???????????</displayName>
+<displayName lang='sv-SE'>kondrektomi från ryggraden</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='4386001'>
+<displayName lang='en'>Bronchospasm</displayName>
+<displayName lang='sv-SE'>bronkospasm</displayName>
+<displayName lang='el-GR'>?????????????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='4770005'>
+<displayName lang='en'>Colporrhaphy for repair of urethrocele</displayName>
+<displayName lang='sv-SE'>kolporafi med operation av uretrocele</displayName>
+<displayName lang='el-GR'>?????????? ??? ??????????? ????????????</displayName>
+<displayName lang='sv-SE'>kolporafi med operation av uretrocele</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='6025007'>
+<displayName lang='en-US'>Laparoscopic appendectomy</displayName>
+<displayName lang='en-GB'>Laparoscopic appendicectomy</displayName>
+<displayName lang='sv-SE'>laparoskopisk appendektomi</displayName>
+<displayName lang='el-GR'>????????????? ?????? ????????????? ????????</displayName>
+<displayName lang='sv-SE'>laparoskopisk appendektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='6736007'>
+<displayName lang='en'>Moderate</displayName>
+<displayName lang='sv-SE'>medelsvår</displayName>
+<displayName lang='el-GR'>??????</displayName>
+<displayName lang='sv-SE'>medelsvår</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='7791007'>
+<displayName lang='en'>Soy protein</displayName>
+<displayName lang='el-GR'>????????? ??????</displayName>
+<displayName lang='sv-SE'>sojaprotein</displayName>
+<displayName lang='sv-SE'>sojaprotein</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='9021002'>
+<displayName lang='en'>Carbaryl</displayName>
+<displayName lang='el-GR'>?????????</displayName>
+<displayName lang='sv-SE'>karbaryl</displayName>
+<displayName lang='sv-SE'>karbaryl</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='9888007'>
+<displayName lang='en'>Excision of intracranial lesion</displayName>
+<displayName lang='sv-SE'>excision av intrakraniell lesion</displayName>
+<displayName lang='el-GR'>?????? ????????????? ????????? (??????)</displayName>
+<displayName lang='sv-SE'>excision av intrakraniell lesion</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='10458001'>
+<displayName lang='en-US'>Evacuation of intracerebral hematoma</displayName>
+<displayName lang='en-GB'>Evacuation of intracerebral haematoma</displayName>
+<displayName lang='sv-SE'>utrymning av intracerebralt hematom</displayName>
+<displayName lang='el-GR'>???????? ??????????????? ???????????</displayName>
+<displayName lang='sv-SE'>utrymning av intracerebralt hematom</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='10847001'>
+<displayName lang='en'>Bronchoscopy</displayName>
+<displayName lang='sv-SE'>bronkoskopi</displayName>
+<displayName lang='el-GR'>?????????????</displayName>
+<displayName lang='sv-SE'>bronkoskopi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='11466000'>
+<displayName lang='en-US'>Cesarean section</displayName>
+<displayName lang='en-GB'>Caesarean section</displayName>
+<displayName lang='sv-SE'>kejsarsnitt</displayName>
+<displayName lang='el-GR'>????????? ????</displayName>
+<displayName lang='sv-SE'>kejsarsnitt</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='11526002'>
+<displayName lang='en'>Aspartame</displayName>
+<displayName lang='el-GR'>?????????</displayName>
+<displayName lang='sv-SE'>aspartam</displayName>
+<displayName lang='sv-SE'>aspartam</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='11894001'>
+<displayName lang='en'>Clostridium botulinum toxin</displayName>
+<displayName lang='el-GR'>?????? ??????????? ??? ??????????</displayName>
+<displayName lang='sv-SE'>Clostridium botulinum-toxin</displayName>
+<displayName lang='sv-SE'>Clostridium botulinum-toxin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='12503006'>
+<displayName lang='en-US'>Aluminum</displayName>
+<displayName lang='en-GB'>Aluminium</displayName>
+<displayName lang='el-GR'>?????????</displayName>
+<displayName lang='sv-SE'>aluminium</displayName>
+<displayName lang='sv-SE'>aluminium</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='12658000'>
+<displayName lang='en'>Operation on female genital organs</displayName>
+<displayName lang='sv-SE'>operation av kvinnliga könsorgan</displayName>
+<displayName lang='el-GR'>???????? ??? ????????? ????????? ???????</displayName>
+<displayName lang='sv-SE'>operation av kvinnliga könsorgan</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='13577000'>
+<displayName lang='en'>Nut</displayName>
+<displayName lang='el-GR'>????? ??????</displayName>
+<displayName lang='sv-SE'>nöt</displayName>
+<displayName lang='sv-SE'>nöt</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='13619001'>
+<displayName lang='en'>Thyroidectomy</displayName>
+<displayName lang='sv-SE'>tyreoidektomi</displayName>
+<displayName lang='el-GR'>??????????????</displayName>
+<displayName lang='sv-SE'>tyreoidektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='13652007'>
+<displayName lang='en'>Silicone</displayName>
+<displayName lang='el-GR'>????????</displayName>
+<displayName lang='sv-SE'>silikon</displayName>
+<displayName lang='sv-SE'>silikon</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='14402002'>
+<displayName lang='en'>Wood</displayName>
+<displayName lang='el-GR'>????</displayName>
+<displayName lang='sv-SE'>trä</displayName>
+<displayName lang='sv-SE'>trä</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='14423008'>
+<displayName lang='en'>Adhesive bandage</displayName>
+<displayName lang='el-GR'>???????????? ?????????</displayName>
+<displayName lang='sv-SE'>självhäftande bandage</displayName>
+<displayName lang='sv-SE'>självhäftande bandage</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='14745005'>
+<displayName lang='en'>Hepatitis A virus vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot hepatit A-virus</displayName>
+<displayName lang='el-GR'>??????? ??? ??? ??? ?????????? ?</displayName>
+<displayName lang='sv-SE'>vaccin mot hepatit A-virus</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='15018006'>
+<displayName lang='en'>Laparoscopic repair of inguinal hernia</displayName>
+<displayName lang='sv-SE'>operation av inguinalbråck via laparoskop</displayName>
+<displayName lang='el-GR'>????????????? ??????????? ????????????</displayName>
+<displayName lang='sv-SE'>operation av inguinalbråck via laparoskop</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='16545005'>
+<displayName lang='en'>Operation on nervous system</displayName>
+<displayName lang='sv-SE'>operation av nervsystemet</displayName>
+<displayName lang='el-GR'>???????? ??? ??????? ???????</displayName>
+<displayName lang='sv-SE'>operation av nervsystemet</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='17107009'>
+<displayName lang='en'>Mitral valve prosthesis</displayName>
+<displayName lang='el-GR'>??????? ??????????? ????????</displayName>
+<displayName lang='sv-SE'>mitralklaffprotes</displayName>
+<displayName lang='sv-SE'>mitralklaffprotes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='19063003'>
+<displayName lang='en'>Arthroplasty of knee</displayName>
+<displayName lang='sv-SE'>artroplastik i knä</displayName>
+<displayName lang='el-GR'>?????? ???????????? ????????? (??????)</displayName>
+<displayName lang='sv-SE'>artroplastik i knä</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='21134002'>
+<displayName lang='en'>Disability</displayName>
+<displayName lang='sv-SE'>funktionsnedsättning</displayName>
+<displayName lang='el-GR'>????????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='21371007'>
+<displayName lang='en'>Operation on abdominal region</displayName>
+<displayName lang='sv-SE'>bukoperation</displayName>
+<displayName lang='el-GR'>???????? ???? ???????? ???????</displayName>
+<displayName lang='sv-SE'>bukoperation</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='23968004'>
+<displayName lang='en'>Colectomy</displayName>
+<displayName lang='sv-SE'>kolektomi</displayName>
+<displayName lang='el-GR'>?????????</displayName>
+<displayName lang='sv-SE'>kolektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='24073000'>
+<displayName lang='en'>Artificial cardiac valve prosthesis</displayName>
+<displayName lang='sv-SE'>konstgjord hjärtklaffprotes</displayName>
+<displayName lang='el-GR'>??????? ???????? ????????? ????????</displayName>
+<displayName lang='sv-SE'>konstgjord hjärtklaffprotes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='24484000'>
+<displayName lang='en'>Severe</displayName>
+<displayName lang='sv-SE'>svår</displayName>
+<displayName lang='el-GR'>??????</displayName>
+<displayName lang='sv-SE'>svår</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='26476002'>
+<displayName lang='en'>Operation on bronchus</displayName>
+<displayName lang='sv-SE'>operation av bronk</displayName>
+<displayName lang='el-GR'>???????? ????? ???????? (??????????)</displayName>
+<displayName lang='sv-SE'>operation av bronk</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='30904006'>
+<displayName lang='en'>Vascular surgery procedure</displayName>
+<displayName lang='sv-SE'>kärlkirurgisk åtgärd</displayName>
+<displayName lang='el-GR'>????????? ???????????? ?????????</displayName>
+<displayName lang='sv-SE'>kärlkirurgisk åtgärd</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='31006001'>
+<displayName lang='en'>Kingdom Plantae</displayName>
+<displayName lang='el-GR'>?????? B???????</displayName>
+<displayName lang='sv-SE'>växt</displayName>
+<displayName lang='sv-SE'>växt</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='31031000'>
+<displayName lang='en-US'>Orthopedic internal fixation system</displayName>
+<displayName lang='en-GB'>Orthopaedic internal fixation system</displayName>
+<displayName lang='el-GR'>?????????? ????????? ?????????? ?????????</displayName>
+<displayName lang='sv-SE'>ortopediskt internt fixeringssystem</displayName>
+<displayName lang='sv-SE'>ortopediskt internt fixeringssystem</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='33008008'>
+<displayName lang='en'>Dust</displayName>
+<displayName lang='el-GR'>?????</displayName>
+<displayName lang='sv-SE'>damm</displayName>
+<displayName lang='sv-SE'>damm</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='33234009'>
+<displayName lang='en'>Smallpox vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot smittkoppor</displayName>
+<displayName lang='el-GR'>??????? ??? ????????</displayName>
+<displayName lang='sv-SE'>vaccin mot smittkoppor</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='34689006'>
+<displayName lang='en'>Hepatitis B virus vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot hepatit B-virus</displayName>
+<displayName lang='el-GR'>??????? ??? ??? ??? ?????????? ?</displayName>
+<displayName lang='sv-SE'>vaccin mot hepatit B-virus</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='34969007'>
+<displayName lang='en'>Operation on retroperitoneum</displayName>
+<displayName lang='sv-SE'>operation av retroperitoneum</displayName>
+<displayName lang='el-GR'>???????? ?????????????????? ????? (??????????)</displayName>
+<displayName lang='sv-SE'>operation av retroperitoneum</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='35736007'>
+<displayName lang='en'>Cholera vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot kolera</displayName>
+<displayName lang='el-GR'>??????? ???????</displayName>
+<displayName lang='sv-SE'>vaccin mot kolera</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='36228007'>
+<displayName lang='en'>Ophthalmic examination and evaluation</displayName>
+<displayName lang='sv-SE'>oftalmologisk undersökning och bedömning</displayName>
+<displayName lang='el-GR'>????????? ??????? ??? ?????????? (??????????)</displayName>
+<displayName lang='sv-SE'>oftalmologisk undersökning och bedömning</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='37508003'>
+<displayName lang='en'>Operation on neck</displayName>
+<displayName lang='sv-SE'>halsoperation</displayName>
+<displayName lang='el-GR'>???????? ???? ???????</displayName>
+<displayName lang='sv-SE'>halsoperation</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='38102005'>
+<displayName lang='en'>Cholecystectomy</displayName>
+<displayName lang='sv-SE'>kolecystektomi</displayName>
+<displayName lang='el-GR'>??????????????</displayName>
+<displayName lang='sv-SE'>kolecystektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='39579001'>
+<displayName lang='en'>Anaphylaxis</displayName>
+<displayName lang='sv-SE'>anafylaktisk reaktion</displayName>
+<displayName lang='el-GR'>??????????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='41291007'>
+<displayName lang='en-US'>Angioedema</displayName>
+<displayName lang='en-GB'>Angio-oedema</displayName>
+<displayName lang='sv-SE'>angioödem</displayName>
+<displayName lang='el-GR'>?????????????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='43116000'>
+<displayName lang='en'>Eczema</displayName>
+<displayName lang='sv-SE'>eksem</displayName>
+<displayName lang='el-GR'>??????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='43230003'>
+<displayName lang='en'>Rubber</displayName>
+<displayName lang='el-GR'>?????????</displayName>
+<displayName lang='sv-SE'>gummi</displayName>
+<displayName lang='sv-SE'>gummi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='43735007'>
+<displayName lang='en-US'>Sulfur</displayName>
+<displayName lang='en-GB'>Sulphur</displayName>
+<displayName lang='el-GR'>????</displayName>
+<displayName lang='sv-SE'>svavel</displayName>
+<displayName lang='sv-SE'>svavel</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='44027008'>
+<displayName lang='en'>Seafood</displayName>
+<displayName lang='el-GR'>?????????</displayName>
+<displayName lang='sv-SE'>Seafood</displayName>
+<displayName lang='sv-SE'>Seafood</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='44558001'>
+<displayName lang='en'>Repair of inguinal hernia</displayName>
+<displayName lang='sv-SE'>operation av inguinalbråck</displayName>
+<displayName lang='el-GR'>??????????? ????????????</displayName>
+<displayName lang='sv-SE'>operation av inguinalbråck</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='45595009'>
+<displayName lang='en'>Laparoscopic cholecystectomy</displayName>
+<displayName lang='sv-SE'>laparoskopisk kolecystektomi</displayName>
+<displayName lang='el-GR'>????????????? ??????????????</displayName>
+<displayName lang='sv-SE'>laparoskopisk kolecystektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='45633005'>
+<displayName lang='en-US'>Peritoneal dialyzer</displayName>
+<displayName lang='en-GB'>Peritoneal dialyser</displayName>
+<displayName lang='el-GR'>??????? ???????????? ????????</displayName>
+<displayName lang='sv-SE'>peritoneal dialysator</displayName>
+<displayName lang='sv-SE'>peritoneal dialysator</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='46116005'>
+<displayName lang='en-US'>Excision of malignant tumor of breast</displayName>
+<displayName lang='en-GB'>Excision of malignant tumour of breast</displayName>
+<displayName lang='sv-SE'>excision av malign brösttumör</displayName>
+<displayName lang='el-GR'>?????? ????????? ????? ??? ??????</displayName>
+<displayName lang='sv-SE'>excision av malign brösttumör</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='46233009'>
+<displayName lang='sv-SE'>vaccin mot influensavirus</displayName>
+<displayName lang='el-GR'>???????  ??? ??? ??? ??????</displayName>
+<displayName lang='sv-SE'>vaccin mot influensavirus</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='47534009'>
+<displayName lang='en'>Decompression of median nerve</displayName>
+<displayName lang='sv-SE'>dekompression av nervus medianus</displayName>
+<displayName lang='el-GR'>??????????? ????? ??????</displayName>
+<displayName lang='sv-SE'>dekompression av nervus medianus</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='49509003'>
+<displayName lang='en'>Operation on lymphatic structure</displayName>
+<displayName lang='sv-SE'>operation av lymfatisk struktur</displayName>
+<displayName lang='el-GR'>???????? ?? ???? ??? ???????? ??????????</displayName>
+<displayName lang='sv-SE'>operation av lymfatisk struktur</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='52454007'>
+<displayName lang='en'>Albumin</displayName>
+<displayName lang='el-GR'>?????????</displayName>
+<displayName lang='sv-SE'>albumin</displayName>
+<displayName lang='sv-SE'>albumin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='53266006'>
+<displayName lang='en'>Operation on diaphragm</displayName>
+<displayName lang='sv-SE'>operation av diafragma</displayName>
+<displayName lang='el-GR'>???????? ??? ?????????</displayName>
+<displayName lang='sv-SE'>operation av diafragma</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='54885007'>
+<displayName lang='en'>Extraction of cataract</displayName>
+<displayName lang='sv-SE'>extraktion av katarakt</displayName>
+<displayName lang='el-GR'>??????? ??????????</displayName>
+<displayName lang='sv-SE'>extraktion av katarakt</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='55561003'>
+<displayName lang='en'>Active</displayName>
+<displayName lang='sv-SE'>aktiv</displayName>
+<displayName lang='el-GR'>???????</displayName>
+<displayName lang='sv-SE'>aktiv</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='55607006'>
+<displayName lang='en'>Problem</displayName>
+<displayName lang='el-GR'>????????</displayName>
+<displayName lang='sv-SE'>problem</displayName>
+<displayName lang='sv-SE'>problem</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='56361007'>
+<displayName lang='en'>Excision of soft tissue</displayName>
+<displayName lang='sv-SE'>excision av mjukdelar</displayName>
+<displayName lang='el-GR'>?????? ??????? ?????</displayName>
+<displayName lang='sv-SE'>excision av mjukdelar</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='56844000'>
+<displayName lang='en'>Yellow fever vaccine</displayName>
+<displayName lang='el-GR'>??????? ???????? ???????</displayName>
+<displayName lang='sv-SE'>vaccin mot gula febern</displayName>
+<displayName lang='sv-SE'>vaccin mot gula febern</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='57168000'>
+<displayName lang='en'>Operation on bone</displayName>
+<displayName lang='sv-SE'>operation på skelettben</displayName>
+<displayName lang='el-GR'>???????? ?? ????</displayName>
+<displayName lang='sv-SE'>operation på skelettben</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='58460004'>
+<displayName lang='en'>Blood group O</displayName>
+<displayName lang='el-GR'>????? ??????? O</displayName>
+<displayName lang='sv-SE'>blodgrupp 0</displayName>
+<displayName lang='sv-SE'>blodgrupp O</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='59037007'>
+<displayName lang='en'>Drug intolerance</displayName>
+<displayName lang='el-GR'>???????????? ?????????</displayName>
+<displayName lang='sv-SE'>läkemedelsintolerans</displayName>
+<displayName lang='sv-SE'>läkemedelsintolerans</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='59300005'>
+<displayName lang='en'>Operation on spleen</displayName>
+<displayName lang='sv-SE'>mjältoperation</displayName>
+<displayName lang='el-GR'>???????? ??? ??????</displayName>
+<displayName lang='sv-SE'>mjältoperation</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='59351004'>
+<displayName lang='en'>Citrate</displayName>
+<displayName lang='el-GR'>??????? ????</displayName>
+<displayName lang='sv-SE'>citrat</displayName>
+<displayName lang='sv-SE'>citrat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='59545008'>
+<displayName lang='en'>Pesticide</displayName>
+<displayName lang='el-GR'>??????????</displayName>
+<displayName lang='sv-SE'>pesticid</displayName>
+<displayName lang='sv-SE'>pesticid</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='59712006'>
+<displayName lang='en-US'>Evacuation of subdural hematoma</displayName>
+<displayName lang='en-GB'>Evacuation of subdural haematoma</displayName>
+<displayName lang='sv-SE'>utrymning av subduralhematom</displayName>
+<displayName lang='el-GR'>???????? ????????????? ???????????</displayName>
+<displayName lang='sv-SE'>utrymning av subduralhematom</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='61153008'>
+<displayName lang='en-US'>Measles, mumps and rubella vaccine</displayName>
+<displayName lang='en-GB'>Measles + Mumps + Rubella vaccine</displayName>
+<displayName lang='el-GR'>??????? ??????, ??????????? ??? ??? ???????</displayName>
+<displayName lang='sv-SE'>vaccin mot mässling, påssjuka och röda hund</displayName>
+<displayName lang='sv-SE'>vaccin mot mässling</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='61602008'>
+<displayName lang='en'>Pertussis vaccine</displayName>
+<displayName lang='el-GR'>??????? ???????</displayName>
+<displayName lang='sv-SE'>vaccin mot kikhosta</displayName>
+<displayName lang='sv-SE'>vaccin mot kikhosta</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='61789006'>
+<displayName lang='en'>Dye</displayName>
+<displayName lang='el-GR'>????</displayName>
+<displayName lang='sv-SE'>färgämne</displayName>
+<displayName lang='sv-SE'>färgämne</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='63016009'>
+<displayName lang='en'>Complete cystectomy</displayName>
+<displayName lang='sv-SE'>fullständig cystektomi</displayName>
+<displayName lang='el-GR'>????? ??????????</displayName>
+<displayName lang='sv-SE'>fullständig cystektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='63112008'>
+<displayName lang='en'>Bone wire</displayName>
+<displayName lang='sv-SE'>skelettråd</displayName>
+<displayName lang='el-GR'>????? ?????</displayName>
+<displayName lang='sv-SE'>skelettråd</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='63289001'>
+<displayName lang='en'>Surgical metal nail, device</displayName>
+<displayName lang='el-GR'>??????????? ????????? ?????, ???????</displayName>
+<displayName lang='sv-SE'>kirurgisk metallspik, utrustning</displayName>
+<displayName lang='sv-SE'>kirurgisk metallspik, utrustning</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='64253000'>
+<displayName lang='en'>Implantation of heart assist system</displayName>
+<displayName lang='sv-SE'>implantation av mekaniskt cirkulationsstödsystem</displayName>
+<displayName lang='el-GR'>????????? ?????????? ????????? ??????????</displayName>
+<displayName lang='sv-SE'>implantation av mekaniskt cirkulationsstödsystem</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='64368001'>
+<displayName lang='en'>Partial mastectomy</displayName>
+<displayName lang='sv-SE'>partiell mastektomi</displayName>
+<displayName lang='el-GR'>?????? ??????????</displayName>
+<displayName lang='sv-SE'>partiell mastektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='64572001'>
+<displayName lang='en'>Disease</displayName>
+<displayName lang='el-GR'>????????</displayName>
+<displayName lang='sv-SE'>sjukdom och annat avvikande tillstånd</displayName>
+<displayName lang='sv-SE'>sjukdom och annat avvikande tillstånd</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='64970000'>
+<displayName lang='en'>Substance type unknown</displayName>
+<displayName lang='sv-SE'>okänd substanstyp</displayName>
+<displayName lang='el-GR'>??????? ?????</displayName>
+<displayName lang='sv-SE'>okänd substanstyp</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='66951008'>
+<displayName lang='en'>Carotid endarterectomy</displayName>
+<displayName lang='sv-SE'>endartärektomi i karotisartär</displayName>
+<displayName lang='el-GR'>?????????? ??????????????</displayName>
+<displayName lang='sv-SE'>endartärektomi i karotisartär</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='67270000'>
+<displayName lang='en'>Hip prosthesis</displayName>
+<displayName lang='sv-SE'>höftprotes</displayName>
+<displayName lang='el-GR'>??????? ???????</displayName>
+<displayName lang='sv-SE'>höftprotes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='68183006'>
+<displayName lang='en'>Bone screw</displayName>
+<displayName lang='sv-SE'>skelettskruv</displayName>
+<displayName lang='el-GR'>???? ?????</displayName>
+<displayName lang='sv-SE'>skelettskruv</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='70183006'>
+<displayName lang='en'>Subcutaneous mastectomy</displayName>
+<displayName lang='sv-SE'>subkutan mastektomi</displayName>
+<displayName lang='el-GR'>????????? ??????????</displayName>
+<displayName lang='sv-SE'>subkutan mastektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='70536003'>
+<displayName lang='en'>Transplant of kidney</displayName>
+<displayName lang='sv-SE'>njurtransplantation</displayName>
+<displayName lang='el-GR'>???????????? ??????</displayName>
+<displayName lang='sv-SE'>njurtransplantation</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='72506001'>
+<displayName lang='en'>Implantable defibrillator</displayName>
+<displayName lang='el-GR'>???????????? ??????????</displayName>
+<displayName lang='sv-SE'>implanterbar defibrillator</displayName>
+<displayName lang='sv-SE'>implanterbar defibrillator</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='72511004'>
+<displayName lang='en'>Fruit</displayName>
+<displayName lang='el-GR'>??????</displayName>
+<displayName lang='sv-SE'>frukt</displayName>
+<displayName lang='sv-SE'>frukt</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='73761001'>
+<displayName lang='en'>Colonoscopy</displayName>
+<displayName lang='sv-SE'>koloskopi</displayName>
+<displayName lang='el-GR'>?????????????</displayName>
+<displayName lang='sv-SE'>koloskopi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='74444006'>
+<displayName lang='en'>Limb prosthesis</displayName>
+<displayName lang='sv-SE'>protes för extremitet</displayName>
+<displayName lang='el-GR'>??????? ???????</displayName>
+<displayName lang='sv-SE'>protes för extremitet</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='76575003'>
+<displayName lang='en'>Podophyllotoxin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='76810006'>
+<displayName lang='en'>Diagnostic dilation and curettage of uterus</displayName>
+<displayName lang='sv-SE'>diagnostisk dilatation och kyrettage av uterus</displayName>
+<displayName lang='el-GR'>??????????? ???????? ??? ??????? ??????</displayName>
+<displayName lang='sv-SE'>diagnostisk dilatation och kyrettage av uterus</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='77444004'>
+<displayName lang='en'>Bone pin</displayName>
+<displayName lang='sv-SE'>benstift</displayName>
+<displayName lang='el-GR'>Bone Pin</displayName>
+<displayName lang='sv-SE'>benstift</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='77777004'>
+<displayName lang='en'>Bone staple</displayName>
+<displayName lang='el-GR'>Bone staple</displayName>
+<displayName lang='sv-SE'>skelettmärla</displayName>
+<displayName lang='sv-SE'>skelettmärla</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='78418002'>
+<displayName lang='en'>Operation on heart and pericardium</displayName>
+<displayName lang='sv-SE'>operation av hjärta och perikardium</displayName>
+<displayName lang='el-GR'>???????? ???? ?????? ??? ?? ??????????</displayName>
+<displayName lang='sv-SE'>operation av hjärta och perikardium</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='79522001'>
+<displayName lang='en'>Carbamate pesticide</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='80146002'>
+<displayName lang='en-US'>Appendectomy</displayName>
+<displayName lang='en-GB'>Appendicectomy</displayName>
+<displayName lang='sv-SE'>appendektomi</displayName>
+<displayName lang='el-GR'>????????????????</displayName>
+<displayName lang='sv-SE'>appendektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='81323004'>
+<displayName lang='en'>Normal general body function</displayName>
+<displayName lang='sv-SE'>normal allmän kroppsfunktion</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='83619009'>
+<displayName lang='en'>Polyvinyl alcohol</displayName>
+<displayName lang='el-GR'>???????????? ???????</displayName>
+<displayName lang='sv-SE'>polyvinylalkohol</displayName>
+<displayName lang='sv-SE'>polyvinylalkohol</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='84683006'>
+<displayName lang='en'>Aortic valve prosthesis</displayName>
+<displayName lang='el-GR'>??????? ???????? ????????</displayName>
+<displayName lang='sv-SE'>aortaklaffprotes</displayName>
+<displayName lang='sv-SE'>aortaklaffprotes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='84877006'>
+<displayName lang='en'>Arthroscopy of knee with meniscus repair</displayName>
+<displayName lang='sv-SE'>artroskopi av knä med operation av menisk</displayName>
+<displayName lang='el-GR'>????????????? ??????? ?? ??????????? ????????</displayName>
+<displayName lang='sv-SE'>artroskopi av knä med operation av menisk</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='85548006'>
+<displayName lang='en'>Episiotomy</displayName>
+<displayName lang='sv-SE'>episiotomi</displayName>
+<displayName lang='el-GR'>???? ?????? ???? ?? ?????</displayName>
+<displayName lang='sv-SE'>episiotomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='85921004'>
+<displayName lang='en'>Puncture procedure</displayName>
+<displayName lang='sv-SE'>punktionsåtgärd</displayName>
+<displayName lang='el-GR'>???????????</displayName>
+<displayName lang='sv-SE'>punktionsåtgärd</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='86273004'>
+<displayName lang='en'>Biopsy</displayName>
+<displayName lang='sv-SE'>biopsi</displayName>
+<displayName lang='el-GR'>??????</displayName>
+<displayName lang='sv-SE'>biopsi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='86749008'>
+<displayName lang='en'>Stripping and ligation</displayName>
+<displayName lang='sv-SE'>strippning och ligatur</displayName>
+<displayName lang='el-GR'>????????? ??? ?????????</displayName>
+<displayName lang='sv-SE'>strippning och ligatur</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='86800006'>
+<displayName lang='en'>Operation on trachea</displayName>
+<displayName lang='sv-SE'>operation av trakea</displayName>
+<displayName lang='el-GR'>???????? ???? ???????</displayName>
+<displayName lang='sv-SE'>operation av trakea</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='87205003'>
+<displayName lang='en'>Malathion</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='89428009'>
+<displayName lang='en'>Typhoid vaccine</displayName>
+<displayName lang='el-GR'>??????? ??????????</displayName>
+<displayName lang='sv-SE'>vaccin mot tyfus</displayName>
+<displayName lang='sv-SE'>vaccin mot tyfus</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='90043005'>
+<displayName lang='en'>Mumps live virus vaccine</displayName>
+<displayName lang='el-GR'>??????? ??????? ??? ??? ??? ???????????</displayName>
+<displayName lang='sv-SE'>levande vaccin mot påssjukevirus</displayName>
+<displayName lang='sv-SE'>levande vaccin mot påssjukevirus</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='90134004'>
+<displayName lang='en'>Metal periosteal implant</displayName>
+<displayName lang='el-GR'>????????? ?????????? ?????????</displayName>
+<displayName lang='sv-SE'>periostealt metallimplantat</displayName>
+<displayName lang='sv-SE'>periostealt metallimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='90199006'>
+<displayName lang='en'>Transurethral prostatectomy</displayName>
+<displayName lang='sv-SE'>transuretral prostatektomi</displayName>
+<displayName lang='el-GR'>??????????? ?????????????</displayName>
+<displayName lang='sv-SE'>transuretral prostatektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='90470006'>
+<displayName lang='en'>Prostatectomy</displayName>
+<displayName lang='sv-SE'>prostatektomi</displayName>
+<displayName lang='el-GR'>?????????????</displayName>
+<displayName lang='sv-SE'>prostatektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='102259006'>
+<displayName lang='en'>Citrus fruit</displayName>
+<displayName lang='el-GR'>????????????</displayName>
+<displayName lang='sv-SE'>citrusfrukt</displayName>
+<displayName lang='sv-SE'>citrusfrukt</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='102261002'>
+<displayName lang='en'>Strawberry</displayName>
+<displayName lang='el-GR'>Strawberry</displayName>
+<displayName lang='sv-SE'>jordgubbar</displayName>
+<displayName lang='sv-SE'>jordgubbar</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='102262009'>
+<displayName lang='en'>Chocolate</displayName>
+<displayName lang='el-GR'>????????</displayName>
+<displayName lang='sv-SE'>Chocolate</displayName>
+<displayName lang='sv-SE'>choklad</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='102263004'>
+<displayName lang='en'>Eggs (edible)</displayName>
+<displayName lang='el-GR'>???? (???????)</displayName>
+<displayName lang='sv-SE'>ägg, ätliga</displayName>
+<displayName lang='sv-SE'>ägg, ätliga</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='102264005'>
+<displayName lang='en'>Cheese</displayName>
+<displayName lang='el-GR'>????</displayName>
+<displayName lang='sv-SE'>ost</displayName>
+<displayName lang='sv-SE'>ost</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='102303004'>
+<displayName lang='en'>Vascular prosthesis</displayName>
+<displayName lang='el-GR'>???????? ???????</displayName>
+<displayName lang='sv-SE'>kärlprotes</displayName>
+<displayName lang='sv-SE'>kärlprotes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='102314001'>
+<displayName lang='en-US'>Embolization coil</displayName>
+<displayName lang='en-GB'>Embolisation coil</displayName>
+<displayName lang='sv-SE'>emboliseringscoil</displayName>
+<displayName lang='el-GR'>????? ??????????</displayName>
+<displayName lang='sv-SE'>emboliseringscoil</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='107907001'>
+<displayName lang='en'>Operative procedure on digestive system</displayName>
+<displayName lang='sv-SE'>operativ åtgärd avseende matsmältningssystemet</displayName>
+<displayName lang='el-GR'>??????????? ????????? ??? ??????? ???????</displayName>
+<displayName lang='sv-SE'>operativ åtgärd avseende matsmältningssystemet</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='108021004'>
+<displayName lang='en'>Operative procedure on male genitourinary system</displayName>
+<displayName lang='sv-SE'>operativ åtgärd avseende manliga urin- och könsorgan</displayName>
+<displayName lang='el-GR'>??????????? ????????? ??? ??????? ????????? ??? ???????????? ???????</displayName>
+<displayName lang='sv-SE'>operativ åtgärd avseende manliga urin- och könsorgan</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='108729007'>
+<displayName lang='en-US'>Varicella virus vaccine</displayName>
+<displayName lang='en-GB'>Varicella vaccine</displayName>
+<displayName lang='el-GR'>??????? ???? ??? ??? ??? ????????????</displayName>
+<displayName lang='sv-SE'>vaccin mot varicellavirus</displayName>
+<displayName lang='sv-SE'>vaccin mot varicellavirus</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='109262008'>
+<displayName lang='en'>Acute mucositis</displayName>
+<displayName lang='sv-SE'>akut mukosit</displayName>
+<displayName lang='el-GR'>????? ?????????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='111088007'>
+<displayName lang='en'>Latex</displayName>
+<displayName lang='el-GR'>?????</displayName>
+<displayName lang='sv-SE'>latex</displayName>
+<displayName lang='sv-SE'>latex</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='111164008'>
+<displayName lang='en'>Poliovirus vaccine</displayName>
+<displayName lang='el-GR'>??????? ??? ??? ??? ???????????????</displayName>
+<displayName lang='sv-SE'>vaccin mot polio</displayName>
+<displayName lang='sv-SE'>vaccin mot polio</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='112144000'>
+<displayName lang='en'>Blood group A</displayName>
+<displayName lang='el-GR'>????? ??????? A</displayName>
+<displayName lang='sv-SE'>blodgrupp A</displayName>
+<displayName lang='sv-SE'>blodgrupp A</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='112149005'>
+<displayName lang='en'>Blood group B</displayName>
+<displayName lang='el-GR'>????? ??????? B</displayName>
+<displayName lang='sv-SE'>blodgrupp B</displayName>
+<displayName lang='sv-SE'>blodgrupp B</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='112698002'>
+<displayName lang='en'>Operation on joint</displayName>
+<displayName lang='sv-SE'>operation på led</displayName>
+<displayName lang='el-GR'>???????? ?? ???????</displayName>
+<displayName lang='sv-SE'>operation på led</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='112727005'>
+<displayName lang='en'>Revision of hip replacement</displayName>
+<displayName lang='sv-SE'>revision av totalprotes i höftled</displayName>
+<displayName lang='el-GR'>?????????? (????????) ?????????????? ??????</displayName>
+<displayName lang='sv-SE'>revision av totalprotes i höftled</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='112802009'>
+<displayName lang='en'>Cardiovascular surgical procedure</displayName>
+<displayName lang='sv-SE'>kirurgisk åtgärd avseende hjärt-kärlsystemet</displayName>
+<displayName lang='el-GR'>????????????? ?????????? ?????????</displayName>
+<displayName lang='sv-SE'>kirurgisk åtgärd avseende hjärt-kärlsystemet</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='112828007'>
+<displayName lang='en'>Femoral-popliteal artery bypass graft</displayName>
+<displayName lang='sv-SE'>femoropopliteal bypass</displayName>
+<displayName lang='el-GR'>????????? ???????????? ???????? ?? ????? ???????????</displayName>
+<displayName lang='sv-SE'>femoropopliteal bypass</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='115589000'>
+<displayName lang='en'>Ethanolamine</displayName>
+<displayName lang='el-GR'>????????????</displayName>
+<displayName lang='sv-SE'>etanolamin</displayName>
+<displayName lang='sv-SE'>etanolamin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='116077000'>
+<displayName lang='en'>Rotavirus vaccine</displayName>
+<displayName lang='el-GR'>??????? ??? ???????</displayName>
+<displayName lang='sv-SE'>vaccin mot rotavirus</displayName>
+<displayName lang='sv-SE'>vaccin mot rotavirus</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='116273005'>
+<displayName lang='en'>Dietary substance</displayName>
+<displayName lang='el-GR'>??????????? ??????</displayName>
+<displayName lang='sv-SE'>födoämnessubstans</displayName>
+<displayName lang='sv-SE'>födoämnessubstans</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='116549003'>
+<displayName lang='en'>Organochlorine pesticide</displayName>
+<displayName lang='el-GR'>???????????????? ???????????</displayName>
+<displayName lang='sv-SE'>klororganiska pesticider</displayName>
+<displayName lang='sv-SE'>klororganiska pesticider</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='118374007'>
+<displayName lang='en'>Silicone implant</displayName>
+<displayName lang='el-GR'>????????? ?????????</displayName>
+<displayName lang='sv-SE'>silikonimplantat</displayName>
+<displayName lang='sv-SE'>silikonimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='118382007'>
+<displayName lang='en'>Neuropacemaker device</displayName>
+<displayName lang='el-GR'>??????? ??????????????????</displayName>
+<displayName lang='sv-SE'>neuropacemakeranordning</displayName>
+<displayName lang='sv-SE'>neuropacemakeranordning</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='118425005'>
+<displayName lang='en'>Ventricular reservoir</displayName>
+<displayName lang='el-GR'>???????? ???????</displayName>
+<displayName lang='sv-SE'>ventrikulär reservoar</displayName>
+<displayName lang='sv-SE'>Ventricular reservoir</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='118675001'>
+<displayName lang='en'>Procedure on female genital system</displayName>
+<displayName lang='sv-SE'>åtgärd på kvinnliga könsorgan</displayName>
+<displayName lang='el-GR'>????????? ??? ????????? ????????? ???????</displayName>
+<displayName lang='sv-SE'>åtgärd på kvinnliga könsorgan</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='118683007'>
+<displayName lang='en'>Procedure on ear and related structures</displayName>
+<displayName lang='sv-SE'>åtgärd på öra och relaterade strukturer</displayName>
+<displayName lang='el-GR'>????????? ??? ???? ??? ?? ???????? ?????</displayName>
+<displayName lang='sv-SE'>åtgärd på öra och relaterade strukturer</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='118716003'>
+<displayName lang='en'>Procedure on foot</displayName>
+<displayName lang='sv-SE'>åtgärd på fot</displayName>
+<displayName lang='el-GR'>????????? ??? ????</displayName>
+<displayName lang='sv-SE'>åtgärd på fot</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='118795000'>
+<displayName lang='en'>Procedure on pleura</displayName>
+<displayName lang='sv-SE'>åtgärd på pleura</displayName>
+<displayName lang='el-GR'>???????? ??? ??????</displayName>
+<displayName lang='sv-SE'>åtgärd på pleura</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='118804001'>
+<displayName lang='en'>Procedure on blood vessel</displayName>
+<displayName lang='sv-SE'>åtgärd på blodkärl</displayName>
+<displayName lang='el-GR'>????????? ??? ???????? ??????</displayName>
+<displayName lang='sv-SE'>åtgärd på blodkärl</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='118831003'>
+<displayName lang='en'>Procedure on intestine</displayName>
+<displayName lang='sv-SE'>åtgärd på tarm</displayName>
+<displayName lang='el-GR'>????????? ??? ??????</displayName>
+<displayName lang='sv-SE'>åtgärd på tarm</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='118949002'>
+<displayName lang='en'>Procedure on extremity</displayName>
+<displayName lang='sv-SE'>åtgärd avseende extremitet</displayName>
+<displayName lang='el-GR'>????????? ??? ????</displayName>
+<displayName lang='sv-SE'>åtgärd avseende extremitet</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='118950002'>
+<displayName lang='en'>Procedure on head AND/OR neck</displayName>
+<displayName lang='sv-SE'>åtgärd avseende huvud och/eller hals</displayName>
+<displayName lang='el-GR'>????????? ??? ?????? ???/? ???? ???????</displayName>
+<displayName lang='sv-SE'>åtgärd avseende huvud och/eller hals</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='118955007'>
+<displayName lang='en'>Implantation to cardiovascular system</displayName>
+<displayName lang='sv-SE'>implantation i hjärt-kärlsystemet</displayName>
+<displayName lang='el-GR'>????????? ??? ????????????? ???????</displayName>
+<displayName lang='sv-SE'>implantation i hjärt-kärlsystemet</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='119417004'>
+<displayName lang='en'>Organophosphate insecticide</displayName>
+<displayName lang='el-GR'>??????????????? ???????????</displayName>
+<displayName lang='sv-SE'>organofosfatinsekticid</displayName>
+<displayName lang='sv-SE'>organofosfatinsekticid</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='119922005'>
+<displayName lang='en'>Biliary tract endoscopy</displayName>
+<displayName lang='sv-SE'>endoskopi av gallvägarna</displayName>
+<displayName lang='el-GR'>??????????? ????????? ??????????</displayName>
+<displayName lang='sv-SE'>endoskopi av gallvägarna</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='122470005'>
+<displayName lang='en'>Reduction of closed fracture</displayName>
+<displayName lang='sv-SE'>reposition av sluten fraktur</displayName>
+<displayName lang='el-GR'>??????? ???????? ??????????</displayName>
+<displayName lang='sv-SE'>reposition av sluten fraktur</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='122471009'>
+<displayName lang='en'>Reduction of open fracture</displayName>
+<displayName lang='sv-SE'>reposition av öppen fraktur</displayName>
+<displayName lang='el-GR'>??????? ???????? ??????????</displayName>
+<displayName lang='sv-SE'>reposition av öppen fraktur</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='128488006'>
+<displayName lang='en'>House dust</displayName>
+<displayName lang='el-GR'>??????? ?????</displayName>
+<displayName lang='sv-SE'>husdamm</displayName>
+<displayName lang='sv-SE'>husdamm</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='160243008'>
+<displayName lang='en'>No medical history</displayName>
+<displayName lang='sv-SE'>ingen tidigare anamnes</displayName>
+<displayName lang='el-GR'>????? ??????? ????????</displayName>
+<displayName lang='sv-SE'>ingen tidigare anamnes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='160244002'>
+<displayName lang='en'>No known allergies</displayName>
+<displayName lang='sv-SE'>inga kända allergier</displayName>
+<displayName lang='el-GR'>????? ??????? ?????????</displayName>
+<displayName lang='sv-SE'>inga kända allergier</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='160245001'>
+<displayName lang='en'>No current problems or disability</displayName>
+<displayName lang='sv-SE'>för närvarande varken besvär eller funktionsnedsättning</displayName>
+<displayName lang='el-GR'>????? ???????? ? ???????? ??? ?????</displayName>
+<displayName lang='sv-SE'>för närvarande varken besvär eller funktionsnedsättning</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='160573003'>
+<displayName lang='en'>Alcohol intake</displayName>
+<displayName lang='sv-SE'>intag av alkohol</displayName>
+<displayName lang='el-GR'>????? ??????</displayName>
+<displayName lang='sv-SE'>intag av alkohol</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='161045001'>
+<displayName lang='en'>Disability - severe</displayName>
+<displayName lang='sv-SE'>svår funktionsnedsättning</displayName>
+<displayName lang='el-GR'>????????-??????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='161901003'>
+<displayName lang='en'>Chronic sick</displayName>
+<displayName lang='sv-SE'>kroniskt sjuk</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='162467007'>
+<displayName lang='en'>Free of symptoms</displayName>
+<displayName lang='sv-SE'>symtomfri</displayName>
+<displayName lang='el-GR'>????????? ???????????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='165743006'>
+<displayName lang='en'>Blood group AB</displayName>
+<displayName lang='el-GR'>????? ??????? AB</displayName>
+<displayName lang='sv-SE'>blodgrupp AB</displayName>
+<displayName lang='sv-SE'>blodgrupp AB</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='173171007'>
+<displayName lang='en'>Lobectomy of lung</displayName>
+<displayName lang='sv-SE'>lobektomi av lunga</displayName>
+<displayName lang='el-GR'>????????? ????????</displayName>
+<displayName lang='sv-SE'>lobektomi av lunga</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='173422009'>
+<displayName lang='en'>Tonsillectomy</displayName>
+<displayName lang='sv-SE'>tonsillektomi</displayName>
+<displayName lang='el-GR'>?????????????</displayName>
+<displayName lang='sv-SE'>tonsillektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='182849000'>
+<displayName lang='en'>No drug therapy prescribed</displayName>
+<displayName lang='el-GR'>????? ???????????? ?????</displayName>
+<displayName lang='sv-SE'>ingen läkemedelsbehandling förskriven</displayName>
+<displayName lang='sv-SE'>ingen läkemedelsbehandling förskriven</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='182904002'>
+<displayName lang='en'>Drug treatment unknown</displayName>
+<displayName lang='el-GR'>??????? ???????????? ?????</displayName>
+<displayName lang='sv-SE'>okänd läkemedelsbehandling</displayName>
+<displayName lang='sv-SE'>okänd läkemedelsbehandling</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='200769008'>
+<displayName lang='en'>Atopic dermatitis and related conditions</displayName>
+<displayName lang='sv-SE'>atopisk dermatit och relaterade tillstånd</displayName>
+<displayName lang='el-GR'>??????? ??????????? ??? ???????? ???????????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='226359003'>
+<displayName lang='en'>Fish oil - dietary</displayName>
+<displayName lang='el-GR'>????????? - ???????????</displayName>
+<displayName lang='sv-SE'>fiskolja i kosten</displayName>
+<displayName lang='sv-SE'>fiskolja i kosten</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='226491003'>
+<displayName lang='en'>Apple juice</displayName>
+<displayName lang='el-GR'>????? ?????</displayName>
+<displayName lang='sv-SE'>äppeljuice</displayName>
+<displayName lang='sv-SE'>äppeljuice</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='226760005'>
+<displayName lang='en'>Dairy foods</displayName>
+<displayName lang='el-GR'>?????????????</displayName>
+<displayName lang='sv-SE'>mejeriprodukter</displayName>
+<displayName lang='sv-SE'>mejeriprodukter</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='226915003'>
+<displayName lang='en'>Red meat</displayName>
+<displayName lang='el-GR'>??????? ?????</displayName>
+<displayName lang='sv-SE'>Red meat</displayName>
+<displayName lang='sv-SE'>Red meat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='226934003'>
+<displayName lang='en'>Pork</displayName>
+<displayName lang='el-GR'>???????</displayName>
+<displayName lang='sv-SE'>Pork</displayName>
+<displayName lang='sv-SE'>fläsk</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='227037002'>
+<displayName lang='en'>Fish - dietary</displayName>
+<displayName lang='el-GR'>???? - ???????????</displayName>
+<displayName lang='sv-SE'>fisk i kosten</displayName>
+<displayName lang='sv-SE'>fisk i kosten</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='227146005'>
+<displayName lang='en'>Shellfish - dietary</displayName>
+<displayName lang='el-GR'>??????????? - ???????????</displayName>
+<displayName lang='sv-SE'>skaldjur i kosten</displayName>
+<displayName lang='sv-SE'>skaldjur i kosten</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='227313005'>
+<displayName lang='en'>Pulse vegetables</displayName>
+<displayName lang='el-GR'>?????? ? ??????</displayName>
+<displayName lang='sv-SE'>Pulse vegetables</displayName>
+<displayName lang='sv-SE'>Pulse vegetables</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='227388008'>
+<displayName lang='en'>Cinnamon</displayName>
+<displayName lang='el-GR'>??????</displayName>
+<displayName lang='sv-SE'>Cinnamon</displayName>
+<displayName lang='sv-SE'>kanel</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='228272008'>
+<displayName lang='en-GB'>Health-related behaviour</displayName>
+<displayName lang='en-US'>Health-related behavior</displayName>
+<displayName lang='sv-SE'>hälsorelaterat beteende</displayName>
+<displayName lang='el-GR'>??????????? ??????????? ?? ??? ?????</displayName>
+<displayName lang='sv-SE'>hälsorelaterat beteende</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='229819007'>
+<displayName lang='en'>Tobacco use and exposure</displayName>
+<displayName lang='sv-SE'>användning av och exponering för tobak</displayName>
+<displayName lang='el-GR'>????? ??? ?????? ?? ?????</displayName>
+<displayName lang='sv-SE'>användning av och exponering för tobak</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='230031005'>
+<displayName lang='en'>Lobster - dietary</displayName>
+<displayName lang='el-GR'>??????? - ???????????</displayName>
+<displayName lang='sv-SE'>hummer i kosten</displayName>
+<displayName lang='sv-SE'>hummer i kosten</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='230032003'>
+<displayName lang='en'>Oyster - dietary</displayName>
+<displayName lang='el-GR'>??????? - ???????????</displayName>
+<displayName lang='sv-SE'>ostron i kosten</displayName>
+<displayName lang='sv-SE'>ostron i kosten</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='232632009'>
+<displayName lang='en'>Wedge excision of lung</displayName>
+<displayName lang='sv-SE'>kilexcision av lunga</displayName>
+<displayName lang='el-GR'>?????????? ?????? ????????</displayName>
+<displayName lang='sv-SE'>kilexcision av lunga</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='232717009'>
+<displayName lang='en'>Coronary artery bypass graft</displayName>
+<displayName lang='sv-SE'>koronar bypassoperation</displayName>
+<displayName lang='el-GR'>????????? ??????????? ???????? ?? ????? ???????????</displayName>
+<displayName lang='sv-SE'>koronar bypassoperation</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='234336002'>
+<displayName lang='en-US'>Hemopoietic stem cell transplant</displayName>
+<displayName lang='en-GB'>Haemopoietic stem cell transplant</displayName>
+<displayName lang='sv-SE'>transplantation av hematopoetiska stamceller</displayName>
+<displayName lang='el-GR'>???????????? ????????????? ??????????????</displayName>
+<displayName lang='sv-SE'>transplantation av hematopoetiska stamceller</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='235719002'>
+<displayName lang='en'>Food intolerance</displayName>
+<displayName lang='el-GR'>??????? ?????????</displayName>
+<displayName lang='sv-SE'>födoämnesintolerans</displayName>
+<displayName lang='sv-SE'>födoämnesintolerans</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='236886002'>
+<displayName lang='en'>Hysterectomy</displayName>
+<displayName lang='sv-SE'>hysterektomi</displayName>
+<displayName lang='el-GR'>???????????</displayName>
+<displayName lang='sv-SE'>hysterektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='236887006'>
+<displayName lang='en'>Laparoscopic hysterectomy</displayName>
+<displayName lang='sv-SE'>laparoskopisk hysterektomi</displayName>
+<displayName lang='el-GR'>????????????? ???????????</displayName>
+<displayName lang='sv-SE'>laparoskopisk hysterektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='247472004'>
+<displayName lang='en'>Weal</displayName>
+<displayName lang='sv-SE'>nässelfeber</displayName>
+<displayName lang='el-GR'>???????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='248536006'>
+<displayName lang='en'>Finding of functional performance and activity</displayName>
+<displayName lang='el-GR'>?????? ??????? ?? ??? ??????????? ??????? ??? ?????????????</displayName>
+<displayName lang='sv-SE'>fynd som rör funktionellt utförande och aktivitet</displayName>
+<displayName lang='sv-SE'>fynd som rör funktionellt utförande och aktivitet</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='255594003'>
+<displayName lang='en'>Complete</displayName>
+<displayName lang='sv-SE'>fullständig</displayName>
+<displayName lang='el-GR'>??????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='255604002'>
+<displayName lang='en'>Mild</displayName>
+<displayName lang='sv-SE'>lindrig</displayName>
+<displayName lang='el-GR'>?????</displayName>
+<displayName lang='sv-SE'>lindrig</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='255640000'>
+<displayName lang='en'>Biocide</displayName>
+<displayName lang='el-GR'>????????</displayName>
+<displayName lang='sv-SE'>biocid</displayName>
+<displayName lang='sv-SE'>biocid</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='255667006'>
+<displayName lang='en'>Paraffin</displayName>
+<displayName lang='el-GR'>????????</displayName>
+<displayName lang='sv-SE'>paraffin</displayName>
+<displayName lang='sv-SE'>paraffin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256235009'>
+<displayName lang='en'>Exercise</displayName>
+<displayName lang='sv-SE'>träning</displayName>
+<displayName lang='el-GR'>??????</displayName>
+<displayName lang='sv-SE'>träning</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256259004'>
+<displayName lang='en'>Pollen</displayName>
+<displayName lang='el-GR'>????</displayName>
+<displayName lang='sv-SE'>pollen</displayName>
+<displayName lang='sv-SE'>pollen</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256260009'>
+<displayName lang='en'>Tree and shrub pollen</displayName>
+<displayName lang='el-GR'>???? ??????? ??? ??????</displayName>
+<displayName lang='sv-SE'>träd- och buskpollen</displayName>
+<displayName lang='sv-SE'>träd- och buskpollen</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256277009'>
+<displayName lang='en'>Grass pollen</displayName>
+<displayName lang='el-GR'>???? ??????</displayName>
+<displayName lang='sv-SE'>gräspollen</displayName>
+<displayName lang='sv-SE'>gräspollen</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256292005'>
+<displayName lang='en'>Flower and weed pollen</displayName>
+<displayName lang='el-GR'>???? ?????????? ??? ????????</displayName>
+<displayName lang='sv-SE'>blom- och ogräspollen</displayName>
+<displayName lang='sv-SE'>blom- och ogräspollen</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256303006'>
+<displayName lang='en'>Ragweed pollen</displayName>
+<displayName lang='el-GR'>???? ???????????</displayName>
+<displayName lang='sv-SE'>malörtsambrosiapollen</displayName>
+<displayName lang='sv-SE'>malörtsambrosiapollen</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256305004'>
+<displayName lang='en'>Tree resin</displayName>
+<displayName lang='el-GR'>?????? ???????</displayName>
+<displayName lang='sv-SE'>träharts</displayName>
+<displayName lang='sv-SE'>träharts</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256310000'>
+<displayName lang='en'>Cherry - dietary</displayName>
+<displayName lang='el-GR'>?????? - ???????????</displayName>
+<displayName lang='sv-SE'>körsbär i kosten</displayName>
+<displayName lang='sv-SE'>körsbär i kosten</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256319004'>
+<displayName lang='en'>Carrot</displayName>
+<displayName lang='el-GR'>??????</displayName>
+<displayName lang='sv-SE'>Carrot</displayName>
+<displayName lang='sv-SE'>morot</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256327008'>
+<displayName lang='en'>Tomato - dietary</displayName>
+<displayName lang='el-GR'>??????? - ???????????</displayName>
+<displayName lang='sv-SE'>Tomato - dietary</displayName>
+<displayName lang='sv-SE'>tomat, i kosten</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256349002'>
+<displayName lang='en'>Peanut - dietary</displayName>
+<displayName lang='el-GR'>???????? - ???????????</displayName>
+<displayName lang='sv-SE'>jordnötter i kosten</displayName>
+<displayName lang='sv-SE'>jordnötter i kosten</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256352005'>
+<displayName lang='en'>Walnut - nut</displayName>
+<displayName lang='el-GR'>??????? - ????? ??????</displayName>
+<displayName lang='sv-SE'>valnöt</displayName>
+<displayName lang='sv-SE'>valnöt</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256417003'>
+<displayName lang='en'>Horse dander</displayName>
+<displayName lang='el-GR'>???????????? ??????</displayName>
+<displayName lang='sv-SE'>hästmjäll</displayName>
+<displayName lang='sv-SE'>hästmjäll</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256435007'>
+<displayName lang='en'>Feathers</displayName>
+<displayName lang='el-GR'>?????</displayName>
+<displayName lang='sv-SE'>fjädrar</displayName>
+<displayName lang='sv-SE'>fjädrar</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='256440004'>
+<displayName lang='en'>Wasp venom</displayName>
+<displayName lang='el-GR'>????????? ??????</displayName>
+<displayName lang='sv-SE'>gift från geting</displayName>
+<displayName lang='sv-SE'>gift från geting</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='257275005'>
+<displayName lang='en'>Spinal cage</displayName>
+<displayName lang='el-GR'>??????? ??????</displayName>
+<displayName lang='sv-SE'>spinalt korgimplantat</displayName>
+<displayName lang='sv-SE'>spinalt korgimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='257282009'>
+<displayName lang='en'>Non-valved conduit</displayName>
+<displayName lang='el-GR'>?? ?????????? ??????</displayName>
+<displayName lang='sv-SE'>conduit utan klaff</displayName>
+<displayName lang='sv-SE'>conduit utan klaff</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='257283004'>
+<displayName lang='en'>Valved cardiac conduit</displayName>
+<displayName lang='el-GR'>?????????? ????????? ??????</displayName>
+<displayName lang='sv-SE'>klafförsedd kardiell conduit</displayName>
+<displayName lang='sv-SE'>klafförsedd kardiell conduit</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='257343005'>
+<displayName lang='en'>Xenograft cardiac valve</displayName>
+<displayName lang='el-GR'>???????? ??????? Xenograft</displayName>
+<displayName lang='sv-SE'>hjärtklaffprotes, xenotransplantat</displayName>
+<displayName lang='sv-SE'>hjärtklaffprotes, xenotransplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='257366006'>
+<displayName lang='en'>JJ-stent</displayName>
+<displayName lang='sv-SE'>JJ-stent</displayName>
+<displayName lang='el-GR'>????????????? JJ</displayName>
+<displayName lang='sv-SE'>JJ-stent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='257822003'>
+<displayName lang='en'>Extracapsular extraction</displayName>
+<displayName lang='sv-SE'>extrakapsulär extraktion</displayName>
+<displayName lang='el-GR'>????????? ???????</displayName>
+<displayName lang='sv-SE'>extrakapsulär extraktion</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='258593008'>
+<displayName lang='en'>Ventricular shunt</displayName>
+<displayName lang='el-GR'>????????? ???????</displayName>
+<displayName lang='sv-SE'>ventrikelshunt</displayName>
+<displayName lang='sv-SE'>ventrikelshunt</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='260152009'>
+<displayName lang='en'>Cat dander</displayName>
+<displayName lang='el-GR'>???????????? ?????</displayName>
+<displayName lang='sv-SE'>kattmjäll</displayName>
+<displayName lang='sv-SE'>kattmjäll</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='260154005'>
+<displayName lang='en'>Dog dander</displayName>
+<displayName lang='el-GR'>???????????? ??????</displayName>
+<displayName lang='sv-SE'>hundmjäll</displayName>
+<displayName lang='sv-SE'>hundmjäll</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='260170007'>
+<displayName lang='en'>Potato - dietary</displayName>
+<displayName lang='el-GR'>?????? - ???????????</displayName>
+<displayName lang='sv-SE'>Potato - dietary</displayName>
+<displayName lang='sv-SE'>potatis, i kosten</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='264287008'>
+<displayName lang='en'>Animal dander</displayName>
+<displayName lang='el-GR'>???????? ????</displayName>
+<displayName lang='sv-SE'>djurmjäll</displayName>
+<displayName lang='sv-SE'>djurmjäll</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='264295007'>
+<displayName lang='en'>Cow's milk protein</displayName>
+<displayName lang='el-GR'>???????? ?????????? ????????</displayName>
+<displayName lang='sv-SE'>komjölksprotein</displayName>
+<displayName lang='sv-SE'>komjölksprotein</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='264337003'>
+<displayName lang='en'>Seed</displayName>
+<displayName lang='el-GR'>??????</displayName>
+<displayName lang='sv-SE'>frö</displayName>
+<displayName lang='sv-SE'>frö</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='264824009'>
+<displayName lang='en'>Cardiac conduit</displayName>
+<displayName lang='el-GR'>?????????? ????????? ??????</displayName>
+<displayName lang='sv-SE'>kardiell conduit</displayName>
+<displayName lang='sv-SE'>kardiell conduit</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='265703000'>
+<displayName lang='en'>Jaw and temporomandibular joint operations</displayName>
+<displayName lang='sv-SE'>käk- och käkledsoperationer</displayName>
+<displayName lang='el-GR'>?????????? ??? ????? ??? ??? ?????????????? ???????</displayName>
+<displayName lang='sv-SE'>käk- och käkledsoperationer</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='267804004'>
+<displayName lang='en'>Pruritus NOS</displayName>
+<displayName lang='sv-SE'>Pruritus NOS</displayName>
+<displayName lang='el-GR'>??????? NOS</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='271593001'>
+<displayName lang='en'>Moribund</displayName>
+<displayName lang='sv-SE'>döende</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='272245008'>
+<displayName lang='en'>Maxillofacial prosthesis/appliance</displayName>
+<displayName lang='el-GR'>?????????????? ??????? / ???????</displayName>
+<displayName lang='sv-SE'>maxillofacial protes eller apparatur</displayName>
+<displayName lang='sv-SE'>maxillofacial protes eller apparatur</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='276310004'>
+<displayName lang='en'>Animal hair</displayName>
+<displayName lang='el-GR'>??????? ????</displayName>
+<displayName lang='sv-SE'>djurhår</displayName>
+<displayName lang='sv-SE'>djurhår</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='278147001'>
+<displayName lang='en'>Blood group O Rh(D) positive</displayName>
+<displayName lang='el-GR'>????? ??????? O Rh(D) ??????</displayName>
+<displayName lang='sv-SE'>blodgrupp O RhD+</displayName>
+<displayName lang='sv-SE'>blodgrupp O RhD+</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='278148006'>
+<displayName lang='en'>Blood group O Rh(D) negative</displayName>
+<displayName lang='el-GR'>????? ??????? O Rh(D) ????????</displayName>
+<displayName lang='sv-SE'>blodgrupp O RhD-</displayName>
+<displayName lang='sv-SE'>blodgrupp O RhD-</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='278149003'>
+<displayName lang='en'>Blood group A Rh(D) positive</displayName>
+<displayName lang='el-GR'>????? ??????? A Rh(D) ??????</displayName>
+<displayName lang='sv-SE'>blodgrupp A RhD+</displayName>
+<displayName lang='sv-SE'>blodgrupp A RhD+</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='278150003'>
+<displayName lang='en'>Blood group B Rh(D) positive</displayName>
+<displayName lang='el-GR'>????? ??????? B Rh(D) ??????</displayName>
+<displayName lang='sv-SE'>blodgrupp B RhD+</displayName>
+<displayName lang='sv-SE'>blodgrupp B RhD+</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='278151004'>
+<displayName lang='en'>Blood group AB Rh(D) positive</displayName>
+<displayName lang='el-GR'>????? ??????? AB Rh(D) ??????</displayName>
+<displayName lang='sv-SE'>blodgrupp AB RhD+</displayName>
+<displayName lang='sv-SE'>blodgrupp AB RhD+</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='278152006'>
+<displayName lang='en'>Blood group A Rh(D) negative</displayName>
+<displayName lang='el-GR'>????? ??????? A Rh(D) ????????</displayName>
+<displayName lang='sv-SE'>blodgrupp A RhD-</displayName>
+<displayName lang='sv-SE'>blodgrupp A RhD-</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='278153001'>
+<displayName lang='en'>Blood group B Rh(D) negative</displayName>
+<displayName lang='el-GR'>????? ??????? B Rh(D) ????????</displayName>
+<displayName lang='sv-SE'>blodgrupp B RhD-</displayName>
+<displayName lang='sv-SE'>blodgrupp B RhD-</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='278154007'>
+<displayName lang='en'>Blood group AB Rh(D) negative</displayName>
+<displayName lang='el-GR'>????? ??????? AB Rh(D) ????????</displayName>
+<displayName lang='sv-SE'>blodgrupp AB RhD-</displayName>
+<displayName lang='sv-SE'>blodgrupp AB RhD-</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='278840001'>
+<displayName lang='en'>Shrimp product</displayName>
+<displayName lang='el-GR'>???????? ???????</displayName>
+<displayName lang='sv-SE'>räkprodukt</displayName>
+<displayName lang='sv-SE'>räkprodukt</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='282291009'>
+<displayName lang='en'>Diagnosis interpretation</displayName>
+<displayName lang='el-GR'>????????</displayName>
+<displayName lang='sv-SE'>tolkning av diagnos</displayName>
+<displayName lang='sv-SE'>tolkning av diagnos</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='286558002'>
+<displayName lang='en'>Ureteric stent</displayName>
+<displayName lang='el-GR'>????????????? ????????</displayName>
+<displayName lang='sv-SE'>uretärstent</displayName>
+<displayName lang='sv-SE'>uretärstent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='286576009'>
+<displayName lang='en'>Urethral stent</displayName>
+<displayName lang='el-GR'>????????????? ????????</displayName>
+<displayName lang='sv-SE'>uretrastent</displayName>
+<displayName lang='sv-SE'>uretrastent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='287310004'>
+<displayName lang='en-GB'>Lung tumour excision</displayName>
+<displayName lang='en-US'>Lung tumor excision</displayName>
+<displayName lang='sv-SE'>excision av lungtumör</displayName>
+<displayName lang='el-GR'>?????? ????? ????????</displayName>
+<displayName lang='sv-SE'>excision av lungtumör</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='288328004'>
+<displayName lang='en'>Bee venom</displayName>
+<displayName lang='el-GR'>????????? ????????</displayName>
+<displayName lang='sv-SE'>gift från bi</displayName>
+<displayName lang='sv-SE'>gift från bi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='289122001'>
+<displayName lang='en'>Cosmetic material</displayName>
+<displayName lang='el-GR'>????? ??????????</displayName>
+<displayName lang='sv-SE'>kosmetika</displayName>
+<displayName lang='sv-SE'>kosmetika</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='302343007'>
+<displayName lang='en'>Insertion of prosthesis for breast</displayName>
+<displayName lang='sv-SE'>insättning av bröstprotes</displayName>
+<displayName lang='el-GR'>????????? ?? ??????? ??? ??????</displayName>
+<displayName lang='sv-SE'>insättning av bröstprotes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303277008'>
+<displayName lang='en'>Fallopian tube prosthesis</displayName>
+<displayName lang='el-GR'>??????? ?????????</displayName>
+<displayName lang='sv-SE'>äggledarprotes</displayName>
+<displayName lang='sv-SE'>äggledarprotes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303300008'>
+<displayName lang='en'>Egg protein</displayName>
+<displayName lang='el-GR'>????????? ?????</displayName>
+<displayName lang='sv-SE'>äggprotein</displayName>
+<displayName lang='sv-SE'>äggprotein</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303314008'>
+<displayName lang='en'>Scorpion venom</displayName>
+<displayName lang='el-GR'>????????? ????????</displayName>
+<displayName lang='sv-SE'>skorpiongift</displayName>
+<displayName lang='sv-SE'>skorpiongift</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303315009'>
+<displayName lang='en'>Spider venom</displayName>
+<displayName lang='el-GR'>????????? ???????</displayName>
+<displayName lang='sv-SE'>spindelgift</displayName>
+<displayName lang='sv-SE'>spindelgift</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303490004'>
+<displayName lang='en'>Cardiovascular implant</displayName>
+<displayName lang='sv-SE'>kardiovaskulärt implantat</displayName>
+<displayName lang='el-GR'>????????????? ?????????</displayName>
+<displayName lang='sv-SE'>kardiovaskulärt implantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303497001'>
+<displayName lang='en'>Urogenital implant</displayName>
+<displayName lang='el-GR'>????????????? ?????????</displayName>
+<displayName lang='sv-SE'>urogenitalt implantat</displayName>
+<displayName lang='sv-SE'>urogenitalt implantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303499003'>
+<displayName lang='en'>Gastrointestinal implant</displayName>
+<displayName lang='el-GR'>????????????? ?????????</displayName>
+<displayName lang='sv-SE'>gastrointestinalt implantat</displayName>
+<displayName lang='sv-SE'>gastrointestinalt implantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303500007'>
+<displayName lang='en'>Auditory implant</displayName>
+<displayName lang='sv-SE'>auditivt implantat</displayName>
+<displayName lang='el-GR'>????????? ?????????</displayName>
+<displayName lang='sv-SE'>auditivt implantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303503009'>
+<displayName lang='en'>Musculoskeletal implant</displayName>
+<displayName lang='el-GR'>???????????? ?????????</displayName>
+<displayName lang='sv-SE'>muskuloskeletalt implantat</displayName>
+<displayName lang='sv-SE'>muskuloskeletalt implantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303515008'>
+<displayName lang='en'>Orbital implant</displayName>
+<displayName lang='el-GR'>????????? ??????</displayName>
+<displayName lang='sv-SE'>orbitaimplantat</displayName>
+<displayName lang='sv-SE'>orbitaimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303533002'>
+<displayName lang='en'>Hip joint implant</displayName>
+<displayName lang='el-GR'>????????? ??????</displayName>
+<displayName lang='sv-SE'>höftledsimplantat</displayName>
+<displayName lang='sv-SE'>höftledsimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303608005'>
+<displayName lang='en'>Ophthalmological implant</displayName>
+<displayName lang='el-GR'>????????????? ?????????</displayName>
+<displayName lang='sv-SE'>oftalmologiskt implantat</displayName>
+<displayName lang='sv-SE'>oftalmologiskt implantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303617005'>
+<displayName lang='en'>Vascular implant</displayName>
+<displayName lang='el-GR'>???????? ???????????</displayName>
+<displayName lang='sv-SE'>kärlimplantat</displayName>
+<displayName lang='sv-SE'>larynximplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303618000'>
+<displayName lang='en'>Nervous system implant</displayName>
+<displayName lang='el-GR'>????????? ???????? ??????????</displayName>
+<displayName lang='sv-SE'>nervsystemsimplantat</displayName>
+<displayName lang='sv-SE'>nervsystemsimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303619008'>
+<displayName lang='en'>Cardiac implant</displayName>
+<displayName lang='sv-SE'>hjärtimplantat</displayName>
+<displayName lang='el-GR'>???????? ??????????</displayName>
+<displayName lang='sv-SE'>hjärtimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303726000'>
+<displayName lang='en'>Shoulder joint prosthesis</displayName>
+<displayName lang='el-GR'>??????? ????</displayName>
+<displayName lang='sv-SE'>axelledsprotes</displayName>
+<displayName lang='sv-SE'>axelledsprotes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='303947005'>
+<displayName lang='en'>Rod fixation system</displayName>
+<displayName lang='el-GR'>??????? ????????? Rod</displayName>
+<displayName lang='sv-SE'>stavfixeringssystem</displayName>
+<displayName lang='sv-SE'>stavfixeringssystem</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='304070008'>
+<displayName lang='en'>Body wall implant</displayName>
+<displayName lang='sv-SE'>kroppsväggsimplantat</displayName>
+<displayName lang='el-GR'>????????? ????????</displayName>
+<displayName lang='sv-SE'>kroppsväggsimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='304120007'>
+<displayName lang='en'>Total hip replacement prosthesis</displayName>
+<displayName lang='el-GR'>??????? ?????? ?????????????? ??????</displayName>
+<displayName lang='sv-SE'>total höftprotes</displayName>
+<displayName lang='sv-SE'>total höftprotes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='304121006'>
+<displayName lang='en'>Femoral head prosthesis</displayName>
+<displayName lang='sv-SE'>caput femori-protes</displayName>
+<displayName lang='el-GR'>??????? ??????? ????????</displayName>
+<displayName lang='sv-SE'>caput femori-protes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='304124003'>
+<displayName lang='en'>Shoulder joint implant</displayName>
+<displayName lang='el-GR'>????????? ????</displayName>
+<displayName lang='sv-SE'>axelledsimplantat</displayName>
+<displayName lang='sv-SE'>axelledsimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='304184000'>
+<displayName lang='en'>Ankle joint implant</displayName>
+<displayName lang='el-GR'>????????? ??????????</displayName>
+<displayName lang='sv-SE'>fotledsimplantat</displayName>
+<displayName lang='sv-SE'>fotledsimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='304185004'>
+<displayName lang='en'>Foot joint implant</displayName>
+<displayName lang='sv-SE'>implantat för led i fot</displayName>
+<displayName lang='el-GR'>?????????  ????? ?????</displayName>
+<displayName lang='sv-SE'>implantat för led i fot</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='304186003'>
+<displayName lang='en'>Hand joint implant</displayName>
+<displayName lang='el-GR'>?????????  ????? ??????</displayName>
+<displayName lang='sv-SE'>implantat för led i hand</displayName>
+<displayName lang='sv-SE'>implantat för led i hand</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='309641003'>
+<displayName lang='en'>Aneroid sphygmomanometer</displayName>
+<displayName lang='sv-SE'>aneroid sfygmomanometer</displayName>
+<displayName lang='el-GR'>?????????? ???? ??????????</displayName>
+<displayName lang='sv-SE'>Aneroid sphygmomanometer</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='309642005'>
+<displayName lang='en'>Mercury sphygmomanometer</displayName>
+<displayName lang='sv-SE'>kvicksilversfygmomanometer</displayName>
+<displayName lang='el-GR'>??????????  ??????????</displayName>
+<displayName lang='sv-SE'>Mercury sphygmomanometer</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='311846002'>
+<displayName lang='en'>Pyrethroid insecticide</displayName>
+<displayName lang='el-GR'>Pyrethroid insecticide</displayName>
+<displayName lang='sv-SE'>pyretroid insekticid</displayName>
+<displayName lang='sv-SE'>pyretroid insekticid</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='312775003'>
+<displayName lang='en'>Debridement of ulcer</displayName>
+<displayName lang='sv-SE'>debridering av sår</displayName>
+<displayName lang='el-GR'>??????????? ???????? ??????</displayName>
+<displayName lang='sv-SE'>debridering av sår</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='313386006'>
+<displayName lang='en'>Patient in remission</displayName>
+<displayName lang='sv-SE'>patient i remission</displayName>
+<displayName lang='el-GR'>??????? ?? ?????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='314523008'>
+<displayName lang='en'>Joint implant</displayName>
+<displayName lang='sv-SE'>ledimplantat</displayName>
+<displayName lang='el-GR'>????????? ????????</displayName>
+<displayName lang='sv-SE'>ledimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='333598008'>
+<displayName lang='en'>Pneumococcal vaccine</displayName>
+<displayName lang='el-GR'>??????? ??? ???????????????</displayName>
+<displayName lang='sv-SE'>vaccin mot pneumokocker</displayName>
+<displayName lang='sv-SE'>vaccin mot pneumokocker</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='333606008'>
+<displayName lang='en'>Rabies vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot rabies</displayName>
+<displayName lang='el-GR'>??????? ??????</displayName>
+<displayName lang='sv-SE'>vaccin mot rabies</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='333621002'>
+<displayName lang='en'>Tetanus vaccine</displayName>
+<displayName lang='el-GR'>??????? ???????</displayName>
+<displayName lang='sv-SE'>vaccin mot stelkramp</displayName>
+<displayName lang='sv-SE'>vaccin mot stelkramp</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='333680004'>
+<displayName lang='en'>Haemophilus influenzae Type b vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot Haemophilus influenzae typ B</displayName>
+<displayName lang='el-GR'>??????? ????????? ??? ?????? ????? b</displayName>
+<displayName lang='sv-SE'>vaccin mot Haemophilus influenzae typ B</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='333697005'>
+<displayName lang='en'>Japanese B encephalitis vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot japanskt encefalitvirus typ B</displayName>
+<displayName lang='el-GR'>??????? ????????? ????????????? ?</displayName>
+<displayName lang='sv-SE'>vaccin mot japanskt encefalitvirus typ B</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='333699008'>
+<displayName lang='en'>Tick-borne encephalitis vaccine</displayName>
+<displayName lang='el-GR'>??????? ???? ??? ????????????? ??? ???????????? ?? ??????????</displayName>
+<displayName lang='sv-SE'>vaccin mot fästingburen encefalit</displayName>
+<displayName lang='sv-SE'>vaccin mot fästingburen encefalit</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='333702001'>
+<displayName lang='en'>Hepatitis A+B vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot hepatit A- och B-virus</displayName>
+<displayName lang='el-GR'>??????? ?????????? ? + ?</displayName>
+<displayName lang='sv-SE'>vaccin mot hepatit A- och B-virus</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='349915008'>
+<displayName lang='en'>Low grade</displayName>
+<displayName lang='sv-SE'>låggradig</displayName>
+<displayName lang='el-GR'>??????? ??????</displayName>
+<displayName lang='sv-SE'>låggradig</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='350327004'>
+<displayName lang='en'>Diphtheria + tetanus vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot difteri och stelkramp</displayName>
+<displayName lang='el-GR'>??????? ???????????? + ???????</displayName>
+<displayName lang='sv-SE'>vaccin mot difteri och stelkramp</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='359612003'>
+<displayName lang='en'>Implantation of cochlear prosthetic device</displayName>
+<displayName lang='sv-SE'>insättning av kokleaimplantat</displayName>
+<displayName lang='el-GR'>????????? ????????? ??????????? ????????</displayName>
+<displayName lang='sv-SE'>insättning av kokleaimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='359623004'>
+<displayName lang='en'>Total lobectomy of lung</displayName>
+<displayName lang='sv-SE'>total lobektomi av lunga</displayName>
+<displayName lang='el-GR'>????? ????????? ????????</displayName>
+<displayName lang='sv-SE'>total lobektomi av lunga</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='360041000'>
+<displayName lang='en'>Implanted drug delivery system</displayName>
+<displayName lang='el-GR'>???????????? ??????? ??????? ????????</displayName>
+<displayName lang='sv-SE'>implanterat system för läkemedelstillförsel</displayName>
+<displayName lang='sv-SE'>implanterat system för läkemedelstillförsel</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='360046005'>
+<displayName lang='en'>Arterial stent</displayName>
+<displayName lang='sv-SE'>artärstent</displayName>
+<displayName lang='el-GR'>?????????? ?????????????</displayName>
+<displayName lang='sv-SE'>artärstent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='360058005'>
+<displayName lang='en'>Intraventricular pump</displayName>
+<displayName lang='el-GR'>???????????? ??????</displayName>
+<displayName lang='sv-SE'>intraventrikulär pump</displayName>
+<displayName lang='sv-SE'>intraventrikulär pump</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='360070009'>
+<displayName lang='en'>Laryngeal implant</displayName>
+<displayName lang='el-GR'>????????? ?????????</displayName>
+<displayName lang='sv-SE'>larynximplantat</displayName>
+<displayName lang='sv-SE'>larynximplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='360100007'>
+<displayName lang='en'>Tracheal stent</displayName>
+<displayName lang='el-GR'>????????????? ????????</displayName>
+<displayName lang='sv-SE'>trakeal stent</displayName>
+<displayName lang='sv-SE'>trakeal stent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='360117000'>
+<displayName lang='en'>Gastric bubble</displayName>
+<displayName lang='sv-SE'>magsäcksbubbla</displayName>
+<displayName lang='el-GR'>???????? ?????????</displayName>
+<displayName lang='sv-SE'>magsäcksbubbla</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='360123005'>
+<displayName lang='en'>Biliary stent</displayName>
+<displayName lang='el-GR'>????????????? ?????????</displayName>
+<displayName lang='sv-SE'>gallvägsstent</displayName>
+<displayName lang='sv-SE'>gallvägsstent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='360145006'>
+<displayName lang='en'>Bone prosthesis</displayName>
+<displayName lang='sv-SE'>skelettbenprotes</displayName>
+<displayName lang='el-GR'>??????? ?????</displayName>
+<displayName lang='sv-SE'>skelettbenprotes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='360329004'>
+<displayName lang='en'>Dacron graft</displayName>
+<displayName lang='el-GR'>Dacron graft</displayName>
+<displayName lang='sv-SE'>dacronimplantat</displayName>
+<displayName lang='sv-SE'>dacronimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='363187007'>
+<displayName lang='en'>Limb operation</displayName>
+<displayName lang='sv-SE'>operation av extremitet</displayName>
+<displayName lang='el-GR'>???????? ?? ????</displayName>
+<displayName lang='sv-SE'>operation av extremitet</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='363908000'>
+<displayName lang='en-US'>Details of drug misuse behavior</displayName>
+<displayName lang='en-GB'>Details of drug misuse behaviour</displayName>
+<displayName lang='sv-SE'>uppgifter om beteende vid drog- eller läkemedelsmissbruk</displayName>
+<displayName lang='el-GR'>???????? ?????????????? ?????? ????????</displayName>
+<displayName lang='sv-SE'>uppgifter om beteende vid drog- eller läkemedelsmissbruk</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='364393001'>
+<displayName lang='en'>Nutritional observable</displayName>
+<displayName lang='sv-SE'>observabel som rör nutrition</displayName>
+<displayName lang='el-GR'>?????????? ?????????</displayName>
+<displayName lang='sv-SE'>observabel som rör nutrition</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='364703007'>
+<displayName lang='en'>Employment detail</displayName>
+<displayName lang='sv-SE'>uppgift om anställning</displayName>
+<displayName lang='el-GR'>???????? ???????????</displayName>
+<displayName lang='sv-SE'>uppgift om anställning</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='370611004'>
+<displayName lang='en'>Excision of malignant neoplasm</displayName>
+<displayName lang='sv-SE'>excision av malign tumör</displayName>
+<displayName lang='el-GR'>?????? ????????? ????????????</displayName>
+<displayName lang='sv-SE'>excision av malign tumör</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='371923003'>
+<displayName lang='en'>Mild to moderate</displayName>
+<displayName lang='sv-SE'>lindrig till medelsvår</displayName>
+<displayName lang='el-GR'>???? ??? ??????</displayName>
+<displayName lang='sv-SE'>lindrig till medelsvår</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='371924009'>
+<displayName lang='en'>Moderate to severe</displayName>
+<displayName lang='sv-SE'>medelsvår till svår</displayName>
+<displayName lang='el-GR'>?????? ??? ??????</displayName>
+<displayName lang='sv-SE'>medelsvår till svår</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='373353005'>
+<displayName lang='en'>Surgical procedure on eye proper</displayName>
+<displayName lang='sv-SE'>kirurgisk åtgärd på öga</displayName>
+<displayName lang='el-GR'>???????????? ????????? ???? ???????</displayName>
+<displayName lang='sv-SE'>kirurgisk åtgärd på öga</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='384723003'>
+<displayName lang='en'>Radical mastectomy</displayName>
+<displayName lang='sv-SE'>radikal mastektomi</displayName>
+<displayName lang='el-GR'>?????? ??????????</displayName>
+<displayName lang='sv-SE'>radikal mastektomi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='385487005'>
+<displayName lang='en'>Surgical procedure on thorax</displayName>
+<displayName lang='sv-SE'>kirurgisk åtgärd på torax</displayName>
+<displayName lang='el-GR'>???????????? ????????? ??? ??????</displayName>
+<displayName lang='sv-SE'>kirurgisk åtgärd på torax</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='385488000'>
+<displayName lang='en'>Surgical procedure on chest wall</displayName>
+<displayName lang='sv-SE'>kirurgisk åtgärd på bröstkorgsväggen</displayName>
+<displayName lang='el-GR'>???????????? ????????? ??? ???????? ???????</displayName>
+<displayName lang='sv-SE'>kirurgisk åtgärd på bröstkorgsväggen</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='385655000'>
+<displayName lang='en'>Suspended</displayName>
+<displayName lang='sv-SE'>inställd</displayName>
+<displayName lang='el-GR'>??????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='386012008'>
+<displayName lang='en'>Measles vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot mässling</displayName>
+<displayName lang='el-GR'>??????? ??????</displayName>
+<displayName lang='sv-SE'>vaccin mot mässling</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='386013003'>
+<displayName lang='en'>Rubella vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot röda hund</displayName>
+<displayName lang='el-GR'>??????? ???????</displayName>
+<displayName lang='sv-SE'>vaccin mot röda hund</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='386638009'>
+<displayName lang='en'>Obstetric operation</displayName>
+<displayName lang='sv-SE'>kirurgisk obstetrisk åtgärd</displayName>
+<displayName lang='el-GR'>????????? ?????????</displayName>
+<displayName lang='sv-SE'>kirurgisk obstetrisk åtgärd</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='386765006'>
+<displayName lang='en'>Operation on mediastinum</displayName>
+<displayName lang='sv-SE'>operation av mediastinum</displayName>
+<displayName lang='el-GR'>???????? ??? ???????????</displayName>
+<displayName lang='sv-SE'>operation av mediastinum</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='387307005'>
+<displayName lang='en'>Calcium carbonate</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='387322000'>
+<displayName lang='en'>Dihydrocodeine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='387398009'>
+<displayName lang='en'>Podophyllum resin</displayName>
+<displayName lang='el-GR'>?????????? ??????</displayName>
+<displayName lang='sv-SE'>podofyllumharts</displayName>
+<displayName lang='sv-SE'>podofyllumharts</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='387494007'>
+<displayName lang='en'>Codeine</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='387572002'>
+<displayName lang='en'>Clobazam</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='387714009'>
+<displayName lang='en'>Operation on lung</displayName>
+<displayName lang='sv-SE'>lungoperation</displayName>
+<displayName lang='el-GR'>???????? ???? ????????</displayName>
+<displayName lang='sv-SE'>lungoperation</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='391737006'>
+<displayName lang='en'>Almond oil</displayName>
+<displayName lang='el-GR'>????????????</displayName>
+<displayName lang='sv-SE'>Almond oil</displayName>
+<displayName lang='sv-SE'>mandelolja</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='392011001'>
+<displayName lang='en'>Operation on skin</displayName>
+<displayName lang='sv-SE'>operation av hud</displayName>
+<displayName lang='el-GR'>???????? ??? ?????</displayName>
+<displayName lang='sv-SE'>operation av hud</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='392048005'>
+<displayName lang='en'>Operation on urinary system</displayName>
+<displayName lang='sv-SE'>operation på urinvägarna</displayName>
+<displayName lang='el-GR'>???????? ??? ???????????? ???????</displayName>
+<displayName lang='sv-SE'>operation på urinvägarna</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='392090004'>
+<displayName lang='en'>Operation on breast</displayName>
+<displayName lang='sv-SE'>operation av bröst</displayName>
+<displayName lang='el-GR'>???????? ??? ?????</displayName>
+<displayName lang='sv-SE'>operation av bröst</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='392236004'>
+<displayName lang='en'>Operative procedure on spinal structure</displayName>
+<displayName lang='sv-SE'>operativ åtgärd på ryggmärgsstrukturer</displayName>
+<displayName lang='el-GR'>??????????? ????????? ?? ?????????? ????</displayName>
+<displayName lang='sv-SE'>operativ åtgärd på ryggmärgsstrukturer</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='395826008'>
+<displayName lang='en'>Phenothrin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='395835001'>
+<displayName lang='en'>Plasma protein</displayName>
+<displayName lang='el-GR'>????????? ?????????</displayName>
+<displayName lang='sv-SE'>plasmaprotein</displayName>
+<displayName lang='sv-SE'>plasmaprotein</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='395922006'>
+<displayName lang='en'>Wool alcohols</displayName>
+<displayName lang='el-GR'>???????? ???????</displayName>
+<displayName lang='sv-SE'>ullfettalkoholer</displayName>
+<displayName lang='sv-SE'>ullfettalkoholer</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='396031000'>
+<displayName lang='en'>Dimeticone</displayName>
+<displayName lang='el-GR'>??????????</displayName>
+<displayName lang='sv-SE'>dimetikon</displayName>
+<displayName lang='sv-SE'>dimetikon</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='396782006'>
+<displayName lang='en'>Medical history unknown</displayName>
+<displayName lang='sv-SE'>anamnes okänd</displayName>
+<displayName lang='el-GR'>??????? ??????? ????????</displayName>
+<displayName lang='sv-SE'>anamnes okänd</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='397956004'>
+<displayName lang='en'>Prosthetic arthroplasty of the hip</displayName>
+<displayName lang='sv-SE'>artroplastik med protes i höft</displayName>
+<displayName lang='el-GR'>?????????? ????????????? ??????</displayName>
+<displayName lang='sv-SE'>artroplastik med protes i höft</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='404684003'>
+<displayName lang='en'>Clinical finding</displayName>
+<displayName lang='el-GR'>??????? ??????</displayName>
+<displayName lang='sv-SE'>kliniskt fynd</displayName>
+<displayName lang='sv-SE'>kliniskt fynd</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='405525004'>
+<displayName lang='en'>Repair of aneurysm of abdominal aorta</displayName>
+<displayName lang='sv-SE'>operation av bukaortaaneurysm</displayName>
+<displayName lang='el-GR'>??????????? ???????????? ????????? ??????</displayName>
+<displayName lang='sv-SE'>operation av bukaortaaneurysm</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='406771001'>
+<displayName lang='en-GB'>Sulphite and/or sulphite derivative</displayName>
+<displayName lang='en-US'>Sulfite and/or sulfite derivative</displayName>
+<displayName lang='el-GR'>???????</displayName>
+<displayName lang='sv-SE'>sulfit och/eller sulfitderivat</displayName>
+<displayName lang='sv-SE'>sulfit och/eller sulfitderivat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='406774009'>
+<displayName lang='en'>Fish derived omega 3 fatty acid</displayName>
+<displayName lang='el-GR'>????? ??? ????????? ?????-3 ?????? ????</displayName>
+<displayName lang='sv-SE'>omega 3-fettsyra från fisk</displayName>
+<displayName lang='sv-SE'>omega 3-fettsyra från fisk</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='407559004'>
+<displayName lang='en'>Family history unknown</displayName>
+<displayName lang='sv-SE'>okänd familjeanamnes</displayName>
+<displayName lang='el-GR'>??????? ???????????? ????????</displayName>
+<displayName lang='sv-SE'>okänd familjeanamnes</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='408350003'>
+<displayName lang='en'>Patient not on self-medication</displayName>
+<displayName lang='el-GR'>? ??????? ??? ??????? ???????????? ????? ??? ????? ???</displayName>
+<displayName lang='sv-SE'>patienten självmedicinerar inte</displayName>
+<displayName lang='sv-SE'>patienten självmedicinerar inte</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='409137002'>
+<displayName lang='en'>No known drug allergies</displayName>
+<displayName lang='sv-SE'>inga kända läkemedelsallergier</displayName>
+<displayName lang='el-GR'>????? ??????? ????????? ?? ???????</displayName>
+<displayName lang='sv-SE'>inga kända läkemedelsallergier</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='409586006'>
+<displayName lang='en'>Complaint</displayName>
+<displayName lang='el-GR'>????????</displayName>
+<displayName lang='sv-SE'>besvär</displayName>
+<displayName lang='sv-SE'>besvär</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='410457007'>
+<displayName lang='en'>Permethrin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='410545000'>
+<displayName lang='en'>Stopped before completion</displayName>
+<displayName lang='sv-SE'>stoppad före slutförande</displayName>
+<displayName lang='el-GR'>??????? ??? ??? ???????????</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='410853002'>
+<displayName lang='en'>Perfluorochemical</displayName>
+<displayName lang='el-GR'>?????????? ??? ?????</displayName>
+<displayName lang='sv-SE'>perfluorkemikalie</displayName>
+<displayName lang='sv-SE'>perfluorkemikalie</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='412068007'>
+<displayName lang='en'>Rye</displayName>
+<displayName lang='el-GR'>??????</displayName>
+<displayName lang='sv-SE'>råg</displayName>
+<displayName lang='sv-SE'>råg</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='412069004'>
+<displayName lang='en-GB'>Flavouring agent</displayName>
+<displayName lang='en-US'>Flavoring agent</displayName>
+<displayName lang='el-GR'>?????????? ??????</displayName>
+<displayName lang='sv-SE'>smaktillsats</displayName>
+<displayName lang='sv-SE'>smaktillsats</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='412071004'>
+<displayName lang='en'>Wheat</displayName>
+<displayName lang='el-GR'>??????</displayName>
+<displayName lang='sv-SE'>vete</displayName>
+<displayName lang='sv-SE'>vete</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='412161004'>
+<displayName lang='en'>Wool</displayName>
+<displayName lang='el-GR'>?????</displayName>
+<displayName lang='sv-SE'>ull</displayName>
+<displayName lang='sv-SE'>ull</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='412357001'>
+<displayName lang='en'>Corn</displayName>
+<displayName lang='el-GR'>?????????</displayName>
+<displayName lang='sv-SE'>majs</displayName>
+<displayName lang='sv-SE'>majs</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='413766009'>
+<displayName lang='en'>Carotid stent</displayName>
+<displayName lang='el-GR'>??????????? ?????????????</displayName>
+<displayName lang='sv-SE'>arteria carotis-stent</displayName>
+<displayName lang='sv-SE'>arteria carotis-stent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='414285001'>
+<displayName lang='en'>Food allergy</displayName>
+<displayName lang='el-GR'>??????? ????????</displayName>
+<displayName lang='sv-SE'>födoämnesallergi</displayName>
+<displayName lang='sv-SE'>födoämnesallergi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='414580007'>
+<displayName lang='en'>Laryngeal keel</displayName>
+<displayName lang='sv-SE'>laryngeal keel</displayName>
+<displayName lang='el-GR'>????????? ??????</displayName>
+<displayName lang='sv-SE'>laryngeal keel</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='415710007'>
+<displayName lang='en'>Terpene</displayName>
+<displayName lang='el-GR'>????????</displayName>
+<displayName lang='sv-SE'>terpen</displayName>
+<displayName lang='sv-SE'>terpen</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='416098002'>
+<displayName lang='en'>Drug allergy</displayName>
+<displayName lang='el-GR'>???????????? ????????</displayName>
+<displayName lang='sv-SE'>läkemedelsallergi</displayName>
+<displayName lang='sv-SE'>läkemedelsallergi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='418038007'>
+<displayName lang='en'>Propensity to adverse reactions to substance</displayName>
+<displayName lang='el-GR'>?????????? ??? ???????????? ??????????? ?? ?????</displayName>
+<displayName lang='sv-SE'>benägenhet för biverkningar av substans</displayName>
+<displayName lang='sv-SE'>benägenhet för biverkningar av substans</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='418266005'>
+<displayName lang='en'>Yellow paraffin</displayName>
+<displayName lang='el-GR'>??????? ????????</displayName>
+<displayName lang='sv-SE'>gult paraffin</displayName>
+<displayName lang='sv-SE'>gult paraffin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='418471000'>
+<displayName lang='en'>Propensity to adverse reactions to food</displayName>
+<displayName lang='el-GR'>?????????? ??? ???????????? ??????????? ?? ?????</displayName>
+<displayName lang='sv-SE'>benägenhet för biverkningar av livsmedel</displayName>
+<displayName lang='sv-SE'>benägenhet för biverkningar av livsmedel</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='418504009'>
+<displayName lang='en'>Oats</displayName>
+<displayName lang='el-GR'>?????</displayName>
+<displayName lang='sv-SE'>havre</displayName>
+<displayName lang='sv-SE'>havre</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='418785009'>
+<displayName lang='en'>Perfume</displayName>
+<displayName lang='el-GR'>?????</displayName>
+<displayName lang='sv-SE'>parfym</displayName>
+<displayName lang='sv-SE'>parfym</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='418799008'>
+<displayName lang='en'>Finding reported by subject or history provider</displayName>
+<displayName lang='el-GR'>?????? ?? ????? ?????????? ??? ??? ?????? ? ??? ???????? ??? ????????? ???</displayName>
+<displayName lang='sv-SE'>fynd som meddelats av patient eller tredje person</displayName>
+<displayName lang='sv-SE'>fynd som meddelats av patient eller tredje person</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='418920007'>
+<displayName lang='en'>Adhesive agent</displayName>
+<displayName lang='el-GR'>???????????? ?????</displayName>
+<displayName lang='sv-SE'>adhesivt medel</displayName>
+<displayName lang='sv-SE'>adhesivt medel</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='418990001'>
+<displayName lang='en'>Tryptophan agent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='419099009'>
+<displayName lang='en'>Dead</displayName>
+<displayName lang='sv-SE'>död</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='419199007'>
+<displayName lang='en'>Allergy to substance</displayName>
+<displayName lang='el-GR'>???????? ?? ?????</displayName>
+<displayName lang='sv-SE'>substansallergi</displayName>
+<displayName lang='sv-SE'>substansallergi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='419420009'>
+<displayName lang='en'>Watermelon</displayName>
+<displayName lang='el-GR'>????????</displayName>
+<displayName lang='sv-SE'>vattenmelon</displayName>
+<displayName lang='sv-SE'>vattenmelon</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='419511003'>
+<displayName lang='en'>Propensity to adverse reactions to drug</displayName>
+<displayName lang='el-GR'>?????????? ??? ???????????? ??????????? ?? ???????</displayName>
+<displayName lang='sv-SE'>benägenhet för läkemedelsbiverkningar</displayName>
+<displayName lang='sv-SE'>benägenhet för läkemedelsbiverkningar</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='419633007'>
+<displayName lang='en'>White paraffin</displayName>
+<displayName lang='el-GR'>????? ????????</displayName>
+<displayName lang='sv-SE'>vitt paraffin</displayName>
+<displayName lang='sv-SE'>vitt paraffin</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='420111002'>
+<displayName lang='en'>Contact metal agent</displayName>
+<displayName lang='el-GR'>????? ?? ??????????? ??????????</displayName>
+<displayName lang='sv-SE'>Contact metal agent</displayName>
+<displayName lang='sv-SE'>Contact metal agent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='420134006'>
+<displayName lang='en'>Propensity to adverse reactions</displayName>
+<displayName lang='el-GR'>?????????? ??? ???????????? ???????????</displayName>
+<displayName lang='sv-SE'>benägenhet för biverkningar</displayName>
+<displayName lang='sv-SE'>benägenhet för biverkningar</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='420538001'>
+<displayName lang='en'>Tuberculosis vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot tuberkulos</displayName>
+<displayName lang='el-GR'>??????? ??????????</displayName>
+<displayName lang='sv-SE'>vaccin mot tuberkulos</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='421168009'>
+<displayName lang='en'>Eye sphere implant</displayName>
+<displayName lang='sv-SE'>ögonsfärsimplantat</displayName>
+<displayName lang='el-GR'>????????? ??????</displayName>
+<displayName lang='sv-SE'>ögonsfärsimplantat</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='421245007'>
+<displayName lang='en'>Diphtheria + pertussis + tetanus vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot difteri, kikhosta och stelkramp</displayName>
+<displayName lang='el-GR'>??????? ???????????? + ??????? + ???????</displayName>
+<displayName lang='sv-SE'>vaccin mot difteri, kikhosta och stelkramp</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='423449009'>
+<displayName lang='en'>Pulmonary valve prosthesis, device</displayName>
+<displayName lang='sv-SE'>pulmonalklaffprotes, produkt</displayName>
+<displayName lang='el-GR'>??????? ??????????? ????????, ???????</displayName>
+<displayName lang='sv-SE'>pulmonalklaffprotes, produkt</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='423531006'>
+<displayName lang='en'>Meningococcus vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot meningokocker</displayName>
+<displayName lang='el-GR'>??????? ?????????????????</displayName>
+<displayName lang='sv-SE'>vaccin mot meningokocker</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='423827005'>
+<displayName lang='en'>Endoscopy</displayName>
+<displayName lang='sv-SE'>endoskopi</displayName>
+<displayName lang='el-GR'>???????????</displayName>
+<displayName lang='sv-SE'>endoskopi</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='424519000'>
+<displayName lang='en'>Human papillomavirus vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot humant papillomvirus</displayName>
+<displayName lang='el-GR'>??????? ??? ??? ??? ?????????? ?????????</displayName>
+<displayName lang='sv-SE'>vaccin mot humant papillomvirus</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='424921004'>
+<displayName lang='en'>Permanent cardiac pacemaker, device</displayName>
+<displayName lang='el-GR'>?????? ????????? ???????????, ???????</displayName>
+<displayName lang='sv-SE'>permanent pacemaker</displayName>
+<displayName lang='sv-SE'>Permanent cardiac pacemaker, device</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='425400000'>
+<displayName lang='en'>Toxic exposure status</displayName>
+<displayName lang='sv-SE'>status för giftexponering</displayName>
+<displayName lang='el-GR'>????????? ??????? ?? ??????? ??????</displayName>
+<displayName lang='sv-SE'>status för giftexponering</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='426153007'>
+<displayName lang='en'>Insertion of artificial airway</displayName>
+<displayName lang='sv-SE'>inläggning av artificiell luftväg</displayName>
+<displayName lang='el-GR'>????????? ?? ??????? ????????</displayName>
+<displayName lang='sv-SE'>inläggning av artificiell luftväg</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='427036009'>
+<displayName lang='en'>Influenza virus H5N1 vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot influensavirus H5N1</displayName>
+<displayName lang='el-GR'>??????? ??? ??? ??? ?????? H5N1</displayName>
+<displayName lang='sv-SE'>vaccin mot influensavirus H5N1</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='428214002'>
+<displayName lang='en'>Diphtheria vaccine</displayName>
+<displayName lang='sv-SE'>vaccin mot difteri</displayName>
+<displayName lang='el-GR'>??????? ????????????</displayName>
+<displayName lang='sv-SE'>vaccin mot difteri</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='429639007'>
+<displayName lang='en'>Percutaneous transluminal balloon angioplasty with insertion of stent into coronary artery</displayName>
+<displayName lang='sv-SE'>perkutan transluminal ballongvidgning med inläggning av stent i koronarartär</displayName>
+<displayName lang='el-GR'>?????????? ?????????????? ?? ??????? ??? ?????????? stent ??? ?????????? ???????</displayName>
+<displayName lang='sv-SE'>perkutan transluminal ballongvidgning med inläggning av stent i koronarartär</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='429798007'>
+<displayName lang='en'>Artificial vertebral disc</displayName>
+<displayName lang='sv-SE'>konstgjord intervertebraldisk</displayName>
+<displayName lang='el-GR'>???????? ??????????? ??????</displayName>
+<displayName lang='sv-SE'>konstgjord intervertebraldisk</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='441612006'>
+<displayName lang='en'>Repair of infrarenal abdominal aortic aneurysm with insertion of endovascular stent</displayName>
+<displayName lang='sv-SE'>operation av infrarenalt bukaortaaneurysm med inläggning av endovaskulär stent</displayName>
+<displayName lang='el-GR'>??????????? ??????????? ????????? ???????? ???????????? ?? ????????? ???????????? stent</displayName>
+<displayName lang='sv-SE'>operation av infrarenalt bukaortaaneurysm med inläggning av endovaskulär stent</displayName>
+</SNOMEDCTEntry>
+<SNOMEDCTEntry code='442452003'>
+<displayName lang='en'>Life threatening severity</displayName>
+<displayName lang='sv-SE'>livshotande svårighetsgrad</displayName>
+<displayName lang='el-GR'>??????????? ??? ?? ???</displayName>
+<displayName lang='sv-SE'>livshotande svårighetsgrad</displayName>
+</SNOMEDCTEntry>
+</SNOMEDCTInformation>

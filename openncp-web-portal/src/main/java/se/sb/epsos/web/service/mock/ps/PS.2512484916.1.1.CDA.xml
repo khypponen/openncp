@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ClinicalDocument classCode="DOCCLIN" moodCode="EVN" xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA_extended.xsd">
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3"/>
+  <id assigningAuthorityName="ncp.dk" displayable="true" extension="2512484916.cda.ps.1.0:1" root="2.16.840.1.113883.2.24.2.30"/>
+  <code code="60591-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Patentöversikt">
+    <translation displayName="Patient Summary"/>
+  </code>
+  <title>epSOS Patient Resume - epSOS Patient Summary</title>
+  <effectiveTime value="20120109"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" codeSystemVersion="913-20091020" displayName="normal"/>
+  <languageCode code="da-DK"/>
+  <setId assigningAuthorityName="ncp.dk" displayable="true" extension="2512484916.ps.1" root="2.16.840.1.113883.2.24.2.30"/>
+  <versionNumber value="1"/>
+  <recordTarget>
+    <patientRole classCode="PAT">
+      <id assigningAuthorityName="cpr.dk" displayable="true" extension="2512484916" root="2.16.840.1.113883.2.24.4.3.2"/>
+      <addr use="HP">
+        <state nullFlavor="NI"/>
+        <city>UNKNOWN</city>
+        <country>UNKNOWN</country>
+        <postalCode>UNKNOWN</postalCode>
+        <streetAddressLine>UNKNOWN</streetAddressLine>
+      </addr>
+      <telecom nullFlavor="NI"/>
+      <patient>
+        <name>
+          <family>UNKNOWN</family>
+          <given>UNKNOWN</given>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="913-20091020" displayName="Kvinna">
+          <translation displayName="Female"/>
+        </administrativeGenderCode>
+        <birthTime value="19481225"/>
+        <guardian nullFlavor="NA">
+          <guardianPerson nullFlavor="NA"/>
+        </guardian>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO" codeSystemVersion="2008" displayName="Läkare">
+      <translation displayName="Medical doctors"/>
+    </functionCode>
+    <time value="20120109"/>
+    <assignedAuthor classCode="ASSIGNED">
+      <id assigningAuthorityName="National Board of E-Health" displayable="false" extension="5798000362734" root="2.16.840.1.113883.2.24.4.3.2"/>
+      <telecom nullFlavor="NI"/>
+      <assignedAuthoringDevice>
+        <code code="WST" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Workstation"/>
+        <manufacturerModelName>NCP.dk PAT1 version</manufacturerModelName>
+        <softwareName>Danish National Connector</softwareName>
+      </assignedAuthoringDevice>
+      <representedOrganization>
+        <id assigningAuthorityName="National Board of E-Health" displayable="false" extension="5798000362734" root="2.16.840.1.113883.2.24.4.1.1"/>
+        <name>National Board of E-Health</name>
+        <telecom use="MC" value="tel:+4572216800"/>
+        <addr>
+          <state nullFlavor="NI"/>
+          <city>Copenhagen S</city>
+          <country>DK</country>
+          <postalCode>2300</postalCode>
+          <streetAddressLine>Islands Brygge 39</streetAddressLine>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id extension="5798000362734" root="2.16.840.1.113883.2.24.4.1.1"/>
+        <name>National Board of E-Health</name>
+        <telecom use="MC" value="tel:+4572216800"/>
+        <addr>
+          <state nullFlavor="NI"/>
+          <city>Copenhagen S</city>
+          <country>DK</country>
+          <postalCode>2300</postalCode>
+          <streetAddressLine>Islands Brygge 39</streetAddressLine>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value="20120109"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id assigningAuthorityName="National Board of E-Health" displayable="false" extension="5798000362734" root="2.16.840.1.113883.2.24.4.3.2"/>
+      <telecom nullFlavor="NI"/>
+      <assignedPerson>
+        <name>
+          <family>Otto</family>
+          <given>Larsen</given>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id assigningAuthorityName="National Board of E-Health" displayable="false" extension="5798000362734" root="2.16.840.1.113883.2.24.4.1.1"/>
+        <name>National Board of E-Health</name>
+        <telecom use="MC" value="tel:+4572216840"/>
+        <addr>
+          <state nullFlavor="NI"/>
+          <city>Copenhagen S</city>
+          <country>DK</country>
+          <postalCode>2300</postalCode>
+          <streetAddressLine>Islands Brygge 39</streetAddressLine>
+        </addr>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <participant typeCode="IND">
+    <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88"/>
+    <associatedEntity classCode="PRS">
+      <id extension="UNKNOWN" root="1.2.250.1.71"/>
+      <addr use="WP">
+        <streetAddressLine>Hold An Vej 34</streetAddressLine>
+        <postalCode>2750</postalCode>
+        <city>Ballerup</city>
+        <state nullFlavor="NA"/>
+        <country>DK</country>
+      </addr>
+      <telecom use="WP" value="tel:+4523242526"/>
+      <associatedPerson>
+        <name>
+          <given>Hans</given>
+          <family>Sørensen</family>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <relatedDocument typeCode="XFRM">
+    <parentDocument>
+      <id extension="2512484916.pdf.ps.1.0:1" root="2.16.840.1.113883.2.24.2.30"/>
+    </parentDocument>
+  </relatedDocument>
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.2"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+          <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Alleriger och överkänsligheter">
+            <translation displayName="Allergies, adverse reactions, alerts"/>
+          </code>
+          <title>Allergier, bivirkninger, advarsler</title>
+          <text>
+            <list>
+              <item ID="ID_ALLERGY_1">NA</item>
+              <item ID="TYPE_ALLERGY_1">Ingen allergi registreringer i DK</item>
+              <item ID="TYPE_REAKTION_1">Ingen allergi registreringer i DK</item>
+            </list>
+          </text>
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+              <id extension="2512484916.cda.ps.1.0:1.0" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low nullFlavor="UNK"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="2512484916.cda.ps.1.0:1.1" root="2.16.840.1.113883.2.24.2.30.3.1.3.1"/>
+                  <code nullFlavor="NI">
+                    <originalText>
+                      <reference value="#ID_ALLERGY_1"/>
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#ID_ALLERGY_1"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low nullFlavor="UNK"/>
+                  </effectiveTime>
+                  <value nullFlavor="NI" xsi:type="CD"/>
+                  <participant typeCode="CSM">
+                    <participantRole classCode="MANU">
+                      <playingEntity classCode="MMAT">
+                        <code nullFlavor="NA">
+                          <originalText>
+                            <reference value="#ID_ALLERGY_1"/>
+                          </originalText>
+                        </code>
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.8"/>
+          <code code="11348-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Sjukdomshistorik">
+            <translation displayName="History of past illness">
+              <translation displayName="Tidligere sygdomsforløb"/>
+            </translation>
+          </code>
+          <title>Tidligere sygdomsforløb</title>
+          <text>
+            <list>
+              <item ID="HistoryOfPastIllness1">Diagnosis Date: 20091203 - Retrognathia mandibulae (DK071F)  - SKS (2.16.17.710.802.1000.2.1000.2) </item>
+            </list>
+            <list>
+              <item ID="HistoryOfPastIllness2">Diagnosis Date: 20091203 - Overbid, ekstremt (DK072K)  - SKS (2.16.17.710.802.1000.2.1000.2) </item>
+            </list>
+            <list>
+              <item ID="HistoryOfPastIllness3">Diagnosis Date: 20091203 - Okklusion af tænder, mesial (bidanomali) (DK072H)  - SKS (2.16.17.710.802.1000.2.1000.2) </item>
+            </list>
+          </text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="2512484916.cda.ps.1.0:1.2" root="2.16.840.1.113883.2.24.2.30.3.1.3.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20091203"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                  <id extension="2512484916.cda.ps.1.0:1.3" root="1.2.250.1.197"/>
+                  <code code="K07" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Tand- och käkmissbildningar med malocklusion (felaktig sammanbitning)">
+                    <translation displayName="Dentofacial anomalies [including malocclusion]">
+                      <translation code="DK071F" codeSystem="2.16.17.710.802.1000.2.1000.2" codeSystemName="SKS" displayName="Retrognathia mandibulae"/>
+                    </translation>
+                  </code>
+                  <text>
+                    <reference value="#HistoryOfPastIllness1"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="200603"/>
+                    <high nullFlavor="UNK"/>
+                  </effectiveTime>
+                  <value code="K07" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Tand- och käkmissbildningar med malocklusion (felaktig sammanbitning)" xsi:type="CD">
+                    <translation displayName="Dentofacial anomalies [including malocclusion]">
+                      <translation code="DK071F" codeSystem="2.16.17.710.802.1000.2.1000.2" codeSystemName="SKS" displayName="Retrognathia mandibulae"/>
+                    </translation>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="2512484916.cda.ps.1.0:1.4" root="2.16.840.1.113883.2.24.2.30.3.1.3.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20091203"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                  <id extension="2512484916.cda.ps.1.0:1.5" root="1.2.250.1.197"/>
+                  <code code="K07" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Tand- och käkmissbildningar med malocklusion (felaktig sammanbitning)">
+                    <translation displayName="Dentofacial anomalies [including malocclusion]">
+                      <translation code="DK072K" codeSystem="2.16.17.710.802.1000.2.1000.2" codeSystemName="SKS" displayName="Overbid, ekstremt"/>
+                    </translation>
+                  </code>
+                  <text>
+                    <reference value="#HistoryOfPastIllness2"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="200603"/>
+                    <high nullFlavor="UNK"/>
+                  </effectiveTime>
+                  <value code="K07" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Tand- och käkmissbildningar med malocklusion (felaktig sammanbitning)" xsi:type="CD">
+                    <translation displayName="Dentofacial anomalies [including malocclusion]">
+                      <translation code="DK072K" codeSystem="2.16.17.710.802.1000.2.1000.2" codeSystemName="SKS" displayName="Overbid, ekstremt"/>
+                    </translation>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="2512484916.cda.ps.1.0:1.6" root="2.16.840.1.113883.2.24.2.30.3.1.3.1"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20091203"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                  <id extension="2512484916.cda.ps.1.0:1.7" root="1.2.250.1.197"/>
+                  <code code="K07" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Tand- och käkmissbildningar med malocklusion (felaktig sammanbitning)">
+                    <translation displayName="Dentofacial anomalies [including malocclusion]">
+                      <translation code="DK072H" codeSystem="2.16.17.710.802.1000.2.1000.2" codeSystemName="SKS" displayName="Okklusion af tænder, mesial (bidanomali)"/>
+                    </translation>
+                  </code>
+                  <text>
+                    <reference value="#HistoryOfPastIllness3"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="200603"/>
+                    <high nullFlavor="UNK"/>
+                  </effectiveTime>
+                  <value code="K07" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Tand- och käkmissbildningar med malocklusion (felaktig sammanbitning)" xsi:type="CD">
+                    <translation displayName="Dentofacial anomalies [including malocclusion]">
+                      <translation code="DK072H" codeSystem="2.16.17.710.802.1000.2.1000.2" codeSystemName="SKS" displayName="Okklusion af tænder, mesial (bidanomali)"/>
+                    </translation>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+          <templateId root="2.16.840.1.113883.10.20.1.12"/>
+          <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Behandlingshistorik">
+            <translation displayName="History of Procedures ">
+              <translation displayName="Tidligere kirurgiske behandlinger"/>
+            </translation>
+          </code>
+          <title>Tidligere kirurgiske behandlinger</title>
+          <text>
+            <list>
+              <item ID="SURGERIES1">Procedure Date: 20091202 - Sagittal osteotomi på ramus mandibulae (KEDC10)  - SKS (2.16.17.710.802.1000.2.1000.2) </item>
+            </list>
+          </text>
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <id extension="2512484916.cda.ps.1.0:1.8" root="1.2.250.1.197"/>
+              <code code="265703000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="käk- och käkledsoperationer">
+                <translation displayName="Jaw and temporomandibular joint operations">
+                  <translation code="KEDC10" codeSystem="2.16.17.710.802.1000.2.1000.2" codeSystemName="SKS" displayName="Sagittal osteotomi på ramus mandibulae"/>
+                </translation>
+              </code>
+              <text>
+                <reference value="#SURGERIES1"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="20091202"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+            </procedure>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.8"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+          <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Läkemedelshistorik">
+            <translation displayName="History of medication use"/>
+          </code>
+          <title>Medicin resumé</title>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <id extension="UNKNOWN" root="1.2.250.1.197"/>
+              <text>UNKNOWN</text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low nullFlavor="UNK"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="UNK"/>
+              <doseQuantity nullFlavor="UNK"/>
+              <consumable>
+                <manufacturedProduct>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial>
+                    <code nullFlavor="NA"/>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.11"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+          <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Medicinska problem - rapporterade">
+            <translation displayName="Problem list">
+              <translation displayName="Aktuelle problemer"/>
+            </translation>
+          </code>
+          <title>Aktuelle problemer</title>
+          <text>
+            <list>
+              <item ID="ACTIVEPROBLEMS1">Diagnosis Date: 20091203 - Retrognathia mandibulae (DK071F)  - SKS (2.16.17.710.802.1000.2.1000.2) </item>
+            </list>
+            <list>
+              <item ID="ACTIVEPROBLEMS2">Diagnosis Date: 20091203 - Overbid, ekstremt (DK072K)  - SKS (2.16.17.710.802.1000.2.1000.2) </item>
+            </list>
+            <list>
+              <item ID="ACTIVEPROBLEMS3">Diagnosis Date: 20091203 - Okklusion af tænder, mesial (bidanomali) (DK072H)  - SKS (2.16.17.710.802.1000.2.1000.2) </item>
+            </list>
+          </text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="2512484916.cda.ps.1.0:1.9" root="1.2.250.1.197"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20091203"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="2512484916.cda.ps.1.0:1.10" root="1.2.250.1.197"/>
+                  <code code="K07" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Tand- och käkmissbildningar med malocklusion (felaktig sammanbitning)">
+                    <translation displayName="Dentofacial anomalies [including malocclusion]">
+                      <translation code="DK071F" codeSystem="2.16.17.710.802.1000.2.1000.2" codeSystemName="SKS" displayName="Retrognathia mandibulae"/>
+                    </translation>
+                  </code>
+                  <text>
+                    <reference value="#ACTIVEPROBLEMS1"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20090326"/>
+                  </effectiveTime>
+                  <value code="K07" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Tand- och käkmissbildningar med malocklusion (felaktig sammanbitning)" xsi:type="CD">
+                    <translation displayName="Dentofacial anomalies [including malocclusion]">
+                      <translation code="DK071F" codeSystem="2.16.17.710.802.1000.2.1000.2" codeSystemName="SKS" displayName="Retrognathia mandibulae"/>
+                    </translation>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="2512484916.cda.ps.1.0:1.11" root="1.2.250.1.197"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20091203"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="2512484916.cda.ps.1.0:1.12" root="1.2.250.1.197"/>
+                  <code code="K07" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Tand- och käkmissbildningar med malocklusion (felaktig sammanbitning)">
+                    <translation displayName="Dentofacial anomalies [including malocclusion]">
+                      <translation code="DK072K" codeSystem="2.16.17.710.802.1000.2.1000.2" codeSystemName="SKS" displayName="Overbid, ekstremt"/>
+                    </translation>
+                  </code>
+                  <text>
+                    <reference value="#ACTIVEPROBLEMS2"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20090326"/>
+                  </effectiveTime>
+                  <value code="K07" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Tand- och käkmissbildningar med malocklusion (felaktig sammanbitning)" xsi:type="CD">
+                    <translation displayName="Dentofacial anomalies [including malocclusion]">
+                      <translation code="DK072K" codeSystem="2.16.17.710.802.1000.2.1000.2" codeSystemName="SKS" displayName="Overbid, ekstremt"/>
+                    </translation>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <id extension="2512484916.cda.ps.1.0:1.13" root="1.2.250.1.197"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20091203"/>
+              </effectiveTime>
+              <entryRelationship inversionInd="false" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="2512484916.cda.ps.1.0:1.14" root="1.2.250.1.197"/>
+                  <code code="K07" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Tand- och käkmissbildningar med malocklusion (felaktig sammanbitning)">
+                    <translation displayName="Dentofacial anomalies [including malocclusion]">
+                      <translation code="DK072H" codeSystem="2.16.17.710.802.1000.2.1000.2" codeSystemName="SKS" displayName="Okklusion af tænder, mesial (bidanomali)"/>
+                    </translation>
+                  </code>
+                  <text>
+                    <reference value="#ACTIVEPROBLEMS3"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20090326"/>
+                  </effectiveTime>
+                  <value code="K07" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" codeSystemVersion="2008" displayName="Tand- och käkmissbildningar med malocklusion (felaktig sammanbitning)" xsi:type="CD">
+                    <translation displayName="Dentofacial anomalies [including malocclusion]">
+                      <translation code="DK072H" codeSystem="2.16.17.710.802.1000.2.1000.2" codeSystemName="SKS" displayName="Okklusion af tænder, mesial (bidanomali)"/>
+                    </translation>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.1.7"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4"/>
+          <id extension="UNKNOWN" root="2.16.840.1.113883.2.24.2.30.3.1.3.1"/>
+          <code code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Implantat och medicinska redskap">
+            <translation displayName="History of medical device use">
+              <translation displayName="HISTORY OF MEDICAL DEVICE USE"/>
+            </translation>
+          </code>
+          <title>Tidligere brug af implantater o.lign.</title>
+          <text>
+            <list>
+              <item>NA</item>
+            </list>
+          </text>
+          <entry>
+            <supply classCode="SPLY" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5"/>
+              <effectiveTime nullFlavor="NA"/>
+              <participant typeCode="DEV">
+                <participantRole classCode="MANU">
+                  <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                    <code nullFlavor="NA"/>
+                  </playingDevice>
+                </participantRole>
+              </participant>
+            </supply>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

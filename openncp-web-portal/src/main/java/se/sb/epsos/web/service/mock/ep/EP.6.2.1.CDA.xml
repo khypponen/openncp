@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:mif="urn:hl7-org:v3/mif" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA_extended.xsd">
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.1"/>
+  <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.1"/>
+  <id assigningAuthorityName="ncp.dk" displayable="true" extension="2601010001.cda.ep.52105778124.52105778125:39" root="2.16.840.1.113883.2.24.2.30"/>
+  <code code="57833-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="eRecept">
+    <translation displayName="ePrescription"/>
+  </code>
+  <title>epSOS elektronisk recept - epSOS ePrescription</title>
+  <effectiveTime value="20120109"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" codeSystemVersion="913-20091020" displayName="normal"/>
+  <languageCode code="da-DK"/>
+  <setId assigningAuthorityName="ncp.dk" displayable="true" extension="2601010001.ep.52105778124" root="2.16.840.1.113883.2.24.2.30"/>
+  <versionNumber value="1"/>
+  <recordTarget>
+    <patientRole classCode="PAT">
+      <id assigningAuthorityName="cpr.dk" displayable="true" extension="2601010001" root="2.16.840.1.113883.2.24.4.3.2"/>
+      <addr use="HP">
+        <state nullFlavor="NI"/>
+        <city>Århus C</city>
+        <country>DK</country>
+        <postalCode>8000</postalCode>
+        <streetAddressLine>Høegh-Guldbergs Gade 39, 1,-16</streetAddressLine>
+      </addr>
+      <telecom nullFlavor="NI"/>
+      <patient>
+        <name>
+          <family>EPSOS001             </family>
+          <given>EPSOS001</given>
+        </name>
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="913-20091020" displayName="Man">
+          <translation displayName="Male"/>
+        </administrativeGenderCode>
+        <birthTime value="19010126"/>
+        <guardian nullFlavor="NA">
+          <guardianPerson nullFlavor="NA"/>
+        </guardian>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO" codeSystemVersion="2008" displayName="Läkare">
+      <translation displayName="Medical doctors"/>
+    </functionCode>
+    <time value="20120109"/>
+    <assignedAuthor classCode="ASSIGNED">
+      <id assigningAuthorityName="National Board of E-Health" displayable="false" extension="F7NGV" root="2.16.840.1.113883.2.24.4.3.2"/>
+      <telecom nullFlavor="NI"/>
+      <assignedPerson>
+        <name>
+          <family>Dalsgaard</family>
+          <given>Terri</given>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id assigningAuthorityName="National Board of E-Health" displayable="false" extension="sygehusafdelingsnummer: 1234" root="2.16.840.1.113883.2.24.4.1.1"/>
+        <name>Test sygehus</name>
+        <telecom use="MC" value="tel:+45222222222"/>
+        <addr>
+          <state nullFlavor="NI"/>
+          <city>Copenhagen S</city>
+          <country>DK</country>
+          <postalCode>2300</postalCode>
+          <streetAddressLine>Islands Brygge 39</streetAddressLine>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id extension="5798000362734" root="2.16.840.1.113883.2.24.4.1.1"/>
+        <name>National Board of E-Health</name>
+        <telecom use="MC" value="tel:+4572216800"/>
+        <addr>
+          <state nullFlavor="NI"/>
+          <city>Copenhagen S</city>
+          <country>DK</country>
+          <postalCode>2300</postalCode>
+          <streetAddressLine>Islands Brygge 39</streetAddressLine>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value="20120109"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id assigningAuthorityName="National Board of E-Health" displayable="false" extension="5798000362178" root="2.16.840.1.113883.2.24.4.3.2"/>
+      <telecom nullFlavor="NI"/>
+      <assignedPerson>
+        <name>
+          <family>Jytte</family>
+          <given>Lyngvig</given>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id assigningAuthorityName="National Board of E-Health" displayable="false" extension="5798000362178" root="2.16.840.1.113883.2.24.4.1.1"/>
+        <name>Danish Medicines Agency</name>
+        <telecom use="MC" value="tel:+4544889595"/>
+        <addr>
+          <state nullFlavor="NI"/>
+          <city>Copenhagen S</city>
+          <country>DK</country>
+          <postalCode>2300</postalCode>
+          <streetAddressLine>Axel Heides Gade 1 </streetAddressLine>
+        </addr>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <participant typeCode="IND">
+    <associatedEntity classCode="CAREGIVER">
+      <addr>
+        <state nullFlavor="NI"/>
+        <streetAddressLine nullFlavor="NI"/>
+        <city nullFlavor="NI"/>
+        <postalCode nullFlavor="NI"/>
+        <country>DK</country>
+      </addr>
+      <telecom use="MC" value="tel:+4565432030"/>
+    </associatedEntity>
+  </participant>
+  <documentationOf>
+    <serviceEvent classCode="PCPR">
+      <effectiveTime>
+        <low nullFlavor="NI"/>
+        <high value="20101014"/>
+      </effectiveTime>
+      <performer typeCode="PRF">
+        <functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO" codeSystemVersion="2008" displayName="Läkare">
+          <translation displayName="Medical doctors"/>
+        </functionCode>
+        <assignedEntity>
+          <id assigningAuthorityName="National Board of E-Health" displayable="false" extension="5798000362734 " root="2.16.840.1.113883.2.24.4.3.2"/>
+          <telecom nullFlavor="NI"/>
+          <assignedPerson>
+            <name>
+              <family>Otto</family>
+              <given>Larsen</given>
+            </name>
+          </assignedPerson>
+          <representedOrganization>
+            <id assigningAuthorityName="National Board of E-Health" displayable="false" extension="5798000362734 " root="2.16.840.1.113883.2.24.4.1.1"/>
+            <name>National Board of E-Health</name>
+            <telecom use="MC" value="tel:+4565432030"/>
+            <addr>
+              <state nullFlavor="NI"/>
+              <city>Copenhagen S</city>
+              <country>DK</country>
+              <postalCode>2300</postalCode>
+              <streetAddressLine>Islands Brygge 39</streetAddressLine>
+            </addr>
+          </representedOrganization>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+  <relatedDocument typeCode="XFRM">
+    <parentDocument>
+      <id extension="2601010001.pdf.ep.52105778124.52105778125:39" root="2.16.840.1.113883.2.24.2.30"/>
+    </parentDocument>
+  </relatedDocument>
+  <component contextConductionInd="true" typeCode="COMP">
+    <structuredBody classCode="DOCBODY" moodCode="EVN">
+      <component contextConductionInd="true" typeCode="COMP">
+        <section classCode="DOCSECT" moodCode="EVN">
+          <templateId root="2.16.840.1.113883.10.20.1.8"/>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.1"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+          <id extension="52105778124" root="2.16.840.1.113883.2.24.2.30.3.1.3.1"/>
+          <code code="57828-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Recept">
+            <translation displayName="Prescriptions"/>
+          </code>
+          <title>Electronic Prescription: 52105778124, medication: 52105778125, version: 39</title>
+          <text>
+            <list>
+              <item ID="SUBSTANCEADMINISTRATION3"></item>
+              <item ID="MATERIAL4">Name of Drug: 'Fosavance' Dosage From: 'tabletter' Drug Strength: '70 mg + 70 mikrogram'</item>
+              <item ID="INSTRUCTIONS2">1 stk morgen (mod osteoporose)</item>
+              <item ID="FULLFILLMENT1">Please give instructions to patient in written form, these are in Danish.</item>
+              <item ID="INDICATIONS5">mod osteoporose</item>
+              <item ID="ROUTECODE_ORIGINALTEXT1">Oral anvendelse (OR)</item>
+              <item ID="NATIONALBRANDCODE_ORIGINALTEXT1">Alendronsyre og colecalciferol</item>
+              <item ID="DOSAGEFORMCODE_ORIGINALTEXT1">tabletter</item>
+            </list>
+          </text>
+          <author>
+            <functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO" codeSystemVersion="2008" displayName="Läkare">
+              <translation displayName="Medical doctors"/>
+            </functionCode>
+            <time value="20101019"/>
+            <assignedAuthor classCode="ASSIGNED">
+              <id assigningAuthorityName="National Board of E-Health" displayable="false" extension="F7NGV" root="2.16.840.1.113883.2.24.4.3.2"/>
+              <telecom nullFlavor="NI"/>
+              <assignedPerson>
+                <name>
+                  <family>Dalsgaard</family>
+                  <given>Terri</given>
+                </name>
+              </assignedPerson>
+              <representedOrganization>
+                <id assigningAuthorityName="National Board of E-Health" displayable="false" extension="sygehusafdelingsnummer: 1234" root="2.16.840.1.113883.2.24.4.1.1"/>
+                <name>Test sygehus</name>
+                <telecom use="MC" value="tel:+45222222222"/>
+                <addr>
+                  <state nullFlavor="NI"/>
+                  <city>Copenhagen S</city>
+                  <country>DK</country>
+                  <postalCode>2300</postalCode>
+                  <streetAddressLine>Islands Brygge 39</streetAddressLine>
+                </addr>
+              </representedOrganization>
+            </assignedAuthor>
+          </author>
+          <entry contextConductionInd="true" typeCode="COMP">
+            <substanceAdministration classCode="SBADM" moodCode="INT">
+              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.2"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <id extension="2601010001.cda.ep.52105778124.52105778125:39" root="2.16.840.1.113883.2.24.2.30.3.1.3.1"/>
+              <text>
+                <reference value="#SUBSTANCEADMINISTRATION3"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20110330"/>
+                <high value="20110330"/>
+              </effectiveTime>
+              <effectiveTime nullFlavor="NI" operator="A" xsi:type="PIVL_TS"/>
+              <routeCode nullFlavor="OTH">
+                <originalText>
+                  <reference value="#ROUTECODE_ORIGINALTEXT1"/>
+                </originalText>
+              </routeCode>
+              <doseQuantity nullFlavor="NI"/>
+              <consumable>
+                <manufacturedProduct classCode="MANU" xmlns:epsos="urn:epsos-org:ep:medication">
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                    <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+                    <code code="031770" codeSystem="2.16.17.710.802.1000.2.1000.0" codeSystemName="Danske Varenumre" displayName="DK Varenummer/PackageIdentifier (031770)">
+                      <originalText>
+                        <reference value="#NATIONALBRANDCODE_ORIGINALTEXT1"/>
+                      </originalText>
+                    </code>
+                    <name>Fosavance</name>
+                    <epsos:desc>Name of Drug: 'Fosavance' Dosage From: 'tabletter' Drug Strength: '70 mg + 70 mikrogram'</epsos:desc>
+                    <epsos:formCode code="10219000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="Tablett">
+                      <epsos:originalText>
+                        <epsos:reference value="#DOSAGEFORMCODE_ORIGINALTEXT1"/>
+                      </epsos:originalText>
+                      <epsos:translation displayName="Tablet">
+                        <epsos:translation code="TAB" codeSystem="2.16.17.710.802.1000.2.1000.4" codeSystemName="Doseform - LMS22" displayName="tabletter"/>
+                      </epsos:translation>
+                    </epsos:formCode>
+                    <epsos:asContent classCode="CONT">
+                      <epsos:containerPackagedMedicine classCode="CONT" determinerCode="INSTANCE">
+                        <epsos:formCode code="30007000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="Blister">
+                          <epsos:translation code="BLI" codeSystem="2.16.17.710.802.1000.2.1000.5" codeSystemName="Pakketyper - LMS14"/>
+                        </epsos:formCode>
+                        <epsos:capacityQuantity unit="1" value="4"/>
+                      </epsos:containerPackagedMedicine>
+                    </epsos:asContent>
+                    <epsos:asSpecializedKind classCode="GRIC">
+                      <epsos:generalizedMedicineClass classCode="MMAT">
+                        <epsos:code nullFlavor="NA"/>
+                        <epsos:name>Alendronsyre og colecalciferol</epsos:name>
+                      </epsos:generalizedMedicineClass>
+                    </epsos:asSpecializedKind>
+                    <epsos:ingredient classCode="ACTI">
+                      <epsos:quantity nullFlavor="OTH">
+                        <epsos:numerator nullFlavor="OTH" xsi:type="epsos:PQ"/>
+                        <epsos:denominator nullFlavor="OTH" xsi:type="epsos:PQ"/>
+                      </epsos:quantity>
+                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                        <epsos:code code="031770" codeSystem="2.16.17.710.802.1000.2.1000.1" codeSystemName="Danske Varenumre" displayName="Alendronsyre og colecalciferol"/>
+                        <epsos:name>Alendronsyre og colecalciferol</epsos:name>
+                      </epsos:ingredient>
+                    </epsos:ingredient>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+              <entryRelationship typeCode="COMP">
+                <supply classCode="SPLY" moodCode="RQO">
+                  <independentInd value="false"/>
+                  <quantity unit="1" value="1"/>
+                </supply>
+              </entryRelationship>
+              <entryRelationship inversionInd="true" typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="SUBST" codeSystem="2.16.840.1.113883.5.6" codeSystemName="HL7 ActClass" displayName="Substitution"/>
+                  <value code="G" codeSystem="2.16.840.1.113883.5.1070" codeSystemName="SubstanceAdminSubstitution" codeSystemVersion="913-20091020" displayName="Generisk" xsi:type="CE">
+                    <translation displayName="Generic">
+                      <translation displayName="generic"/>
+                    </translation>
+                  </value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship inversionInd="true" typeCode="SUBJ">
+                <act classCode="ACT" moodCode="INT">
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.3"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.49"/>
+                  <code code="PINSTRUCT" codeSystem="1.3.5.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode" codeSystemVersion="August 2009 (R5)" displayName="This is the act of providing instructions to a patient regarding the use of medication.">
+                    <translation displayName=""/>
+                  </code>
+                  <text>
+                    <reference value="#INSTRUCTIONS2"/>
+                  </text>
+                  <statusCode code="completed"/>
+                </act>
+              </entryRelationship>
+              <entryRelationship inversionInd="true" typeCode="SUBJ">
+                <act classCode="ACT" moodCode="INT">
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.3.1"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.43"/>
+                  <code code="FINSTRUCT" codeSystem="1.3.5.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode" codeSystemVersion="August 2009 (R5)" displayName="This is the act of providing instructions to the supplier regarding the fulfillment of the medication order.">
+                    <translation displayName=""/>
+                  </code>
+                  <text>
+                    <reference value="#FULLFILLMENT1"/>
+                  </text>
+                  <statusCode code="completed"/>
+                </act>
+              </entryRelationship>
+              <entryRelationship inversionInd="true" typeCode="RSON">
+                <act classCode="ACT" moodCode="EVN">
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.4.1"/>
+                  <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                  <id extension="0" root="2.16.840.1.113883.2.24.4.3.256"/>
+                  <code code="COMMENT" codeSystem="1.3.5.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode" codeSystemVersion="August 2009 (R5)" displayName="This is the act of commenting on another act.">
+                    <translation displayName=""/>
+                  </code>
+                </act>
+              </entryRelationship>
+              <entryRelationship inversionInd="true" typeCode="RSON">
+                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <id extension="0" root="2.16.840.1.113883.2.24.4.3.256"/>
+                  <code code="404684003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="kliniskt fynd">
+                    <translation displayName="Clinical finding">
+                      <translation displayName="Finding"/>
+                    </translation>
+                  </code>
+                  <text>
+                    <reference value="#INDICATIONS5"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime xsi:type="IVL_TS">
+                    <low value="20091107"/>
+                    <high value="20091107"/>
+                  </effectiveTime>
+                  <value nullFlavor="OTH" xsi:type="CD">
+                    <originalText>
+                      <reference value="#INDICATIONS5"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>
