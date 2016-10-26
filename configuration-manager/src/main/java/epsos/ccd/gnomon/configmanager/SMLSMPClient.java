@@ -47,41 +47,46 @@ import com.google.common.io.BaseEncoding;
  * configuration manager in order to retrieve the capabilities of a remote
  * endpoint (NPCeH). It performs first an SML query, and then an SMP query.
  * <br/>
- * 
+ *
  * <h3>The SML Query</h3> The SML query is a DNS query looking for the NAPTR
  * record type, according with rfc4848. The NAPTR will return the link to the
  * specific SMP server which contains the ServiceGroup, a list of entries for
  * each service.
- * 
- * 
+ *
+ *
  * <h3>The SMP Query</h3> The SMP query is a HTTP GET towards the given SML URL,
  * to retrieve the service group. After that, each service is again fetched
  * using HTTP GET. Then the Signed Information is retrieved. Here two signatures
  * are validated: the first is the signature of the SMP (which assures the SMP
  * record to be genuine, from a trusted SMP), and the second is the signature of
  * the National Infrastructure, to enforce the epSOS Brokered Trust model.
- * 
- * 
- * 
+ *
  * <h3>Relevant specifications</h3>
  * <ul>
- * <li>Service Metadata Lookup: <a href=
- * "http://docs.oasis-open.org/bdxr/BDX-Location/v1.0/BDX-Location-v1.0.html">SML</a>
- * <li>Service Metadata Publishing: <a href=
- * "http://docs.oasis-open.org/bdxr/bdx-smp/v1.0/cs01/bdx-smp-v1.0-cs01.html">SMP</a>
- * <li>rfc 4848</li>
- * <li>e-SENS Implementing guideline:
- * <a href="http://wiki.ds.unipi.gr/display/ESENS/PR+-+BDXL">PR BDXL</a></li>
- * 
- * </ul>
- * 
- * <b>It is worth noticing that this class is in constant evolution, as the
- * available server implementations moves from PEPPOL SMP to OASIS</b> <br/>
- * <br/>
- * Due to licensing problems, the available SML / SMP clients can't be used.
- * They are usually licensed under EUPL or MPL, which clashes with the OpenNCP
- * licensing. <br/>
- * 
+ * <li>Service Metadata Lookup:
+ *
+ * @see <a href=
+ *      "http://docs.oasis-open.org/bdxr/BDX-Location/v1.0/BDX-Location-v1.0.html">
+ *      SML</a>
+ *      <li>Service Metadata Publishing:
+ * @see <a href=
+ *      "http://docs.oasis-open.org/bdxr/bdx-smp/v1.0/cs01/bdx-smp-v1.0-cs01.html">
+ *      SMP</a>
+ *      <li>rfc 4848</li>
+ *      <li>e-SENS Implementing guideline:
+ * @see <a href="http://wiki.ds.unipi.gr/display/ESENS/PR+-+BDXL">PR BDXL</a>
+ *      </li>
+ *
+ *      </ul>
+ *
+ *      <b>It is worth noticing that this class is in constant evolution, as the
+ *      available server implementations moves from PEPPOL SMP to OASIS</b>
+ *      <br/>
+ *      <br/>
+ *      Due to licensing problems, the available SML / SMP clients can't be
+ *      used. They are usually licensed under EUPL or MPL, which clashes with
+ *      the OpenNCP licensing. <br/>
+ *
  * @author max
  *
  */
@@ -124,7 +129,7 @@ public class SMLSMPClient {
 
 	/**
 	 * After performed the lookup, this is the remote endpoint.
-	 * 
+	 *
 	 * @see {@link #lookup(String, String, boolean)}
 	 * @return the endpoint
 	 */
@@ -134,11 +139,11 @@ public class SMLSMPClient {
 
 	/**
 	 * After performed the lookup, this is the certificate
-	 * 
+	 *
 	 * @see {@link #lookup(String, String, boolean)}
-	 * 
+	 *
 	 * @return the certificate of the endpoint
-	 * 
+	 *
 	 */
 	public X509Certificate getCertificate() {
 		return this.cert;
@@ -161,7 +166,7 @@ public class SMLSMPClient {
 	/**
 	 * Performs the SML / SMP lookup flow. The results obtained from the SMP
 	 * query can be obtained by using the get/set methods.
-	 * 
+	 *
 	 * @param countryCode
 	 *            The two digits code of the country which we're searching for
 	 *            capabilities. Example: "pt", "at".
@@ -181,14 +186,14 @@ public class SMLSMPClient {
 			String hostToLookup = prepareSmlQuery(countryCode);
 			String serviceGroupUrl = doDNSQuery(hostToLookup);
 			long end = System.currentTimeMillis();
-			long total = end-start;
+			long total = end - start;
 			L.debug("SML ends. Took " + total + " msec");
 			L.debug("SMP begins");
 			start = System.currentTimeMillis();
 			URL signedInfoURL = getServiceGroup(serviceGroupUrl, epsosAction);
 			getSignedServiceInformation(signedInfoURL);
 			end = System.currentTimeMillis();
-			total = end-start;
+			total = end - start;
 			L.debug("SMP ends. Took " + total + " msec");
 		} catch (TransformerException | UnsupportedEncodingException | DecoderException | TextParseException
 				| EncoderException e) {
@@ -207,7 +212,7 @@ public class SMLSMPClient {
 	/**
 	 * This method obtains the ServiceGroup from the given URL, and returns the
 	 * SignedServiceInformation file containing the values to be retrieved.
-	 * 
+	 *
 	 * @param serviceGroupUrl
 	 *            The url of the service group.
 	 * @param epSOSaction
@@ -225,7 +230,7 @@ public class SMLSMPClient {
 		L.debug("Creating the epSOS action");
 		String ep1 = epSOSaction.replace("-", "::");
 		String finalDocumentIdentifier = SMP_PREFIX + ep1.toLowerCase();
-		
+
 		L.debug("Final document identifier is: " + finalDocumentIdentifier);
 
 		L.debug("Obtaining the Service Group");
@@ -257,19 +262,18 @@ public class SMLSMPClient {
 				 */
 
 				if (serviceName.contains(finalDocumentIdentifier)) {
-					System.out.println("Found the service which I'm looking for. Fetching the document");
+					L.info("Found the service which I'm looking for. Fetching the document");
 					return url;
 				}
 			}
 		}
 		throw new SMLSMPClientException("No service group can be found");
-
 	}
 
 	/**
 	 * Obtain a Document from HTTP. This code is coming from an example of
 	 * apache httpclient. TODO: here we can improve a lot
-	 * 
+	 *
 	 * @param url
 	 *            The url of the DOM.
 	 * @return the Document returned from the GET.
@@ -285,7 +289,7 @@ public class SMLSMPClient {
 		try {
 			response1 = httpclient.execute(httpGet);
 		} catch (IOException e) {
-			
+
 			e.printStackTrace();
 			L.error("Unable to get the SMP record", e);
 			throw e;
@@ -317,7 +321,7 @@ public class SMLSMPClient {
 	/**
 	 * This is SML. This is the DNS Query to obtain the NAPTR record pointing to
 	 * the service group.
-	 * 
+	 *
 	 * @param hostToLookup
 	 *            The hostname ready for SML.
 	 * @return The URL of the service group.
@@ -385,13 +389,12 @@ public class SMLSMPClient {
 			L.error("DNS query failed: " + l.getErrorString());
 			throw new RuntimeException("DNS Query Failed");
 		}
-
 	}
 
 	/**
 	 * Set the SML domain. This value will be appended to the calculated hash.
 	 * This should be the DNS for which the SMP has fed the data.
-	 * 
+	 *
 	 * @param domain
 	 *            The DNS domain. It MUST be preceded with a dot ".". Example
 	 *            is: .ehealth-actorid-qns.acc.edelivery.tech.ec.europa.eu
@@ -409,7 +412,7 @@ public class SMLSMPClient {
 	 * <li>Any trailing '=' padding characters added in (2) in the encoded
 	 * digest are removed</li>
 	 * </ol>
-	 * 
+	 *
 	 * @param countryCode
 	 * @return
 	 * @throws UnsupportedEncodingException
@@ -441,7 +444,7 @@ public class SMLSMPClient {
 	/**
 	 * This method retrieves the service information, verify its signatures, and
 	 * then fills the values.
-	 * 
+	 *
 	 * @param url
 	 *            the url used to fetch the signedServiceInformation
 	 * @throws IOException
@@ -526,12 +529,9 @@ public class SMLSMPClient {
 									.generateCertificate(new ByteArrayInputStream(tc1));
 							break;
 						}
-
 					}
-
 				}
 			}
 		}
-
 	}
 }
