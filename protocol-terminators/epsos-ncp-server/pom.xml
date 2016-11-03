@@ -11,7 +11,7 @@
     <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
     <artifactId>openncp-ncp-server</artifactId>
     <packaging>pom</packaging>
-    <name>EpSOS CC Web Services Server</name>
+    <name>OpenNCP CC Web Services Server</name>
 
     <modules>
         <module>epsos-ncpa-interface</module>

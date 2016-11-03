@@ -18,7 +18,6 @@
     <name>OpenNCP CC Client Connector</name>
     <inceptionYear>2012</inceptionYear>
     <packaging>war</packaging>
-    <url>epsos.eu</url>
 
     <properties>
         <service.class.mock/> <!-- LP: in order use mock version use -Dservice.class.mock=Mock during maven build -->
@@ -164,7 +163,6 @@
 
 
         <plugins>
-
             <plugin>
                 <!-- Maven compiler plugin -->
                 <groupId>org.apache.maven.plugins</groupId>

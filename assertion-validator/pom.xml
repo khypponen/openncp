@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>openncp-assertion-validator</artifactId>
     <packaging>jar</packaging>
-    <name>SRDC epSOS SAML Assertion Validator Implementation</name>
+    <name>SRDC OpenNCP SAML Assertion Validator Implementation</name>
     <organization>
         <name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
         <url>www.srdc.com.tr</url>

@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>openncp-terminology-service-access-manager</artifactId>
-    <name>epSOS CC Terminology Services Access Manager</name>
+    <name>OpenNCP CC Terminology Services Access Manager</name>
     <description>Terminology Services Acces Manager</description>
 
     <repositories>
@@ -27,16 +27,6 @@
 
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.5.1</version>
-                    <configuration>
-                        <!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
-                        <source>1.7</source>
-                        <target>1.7</target>
-                    </configuration>
-                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>

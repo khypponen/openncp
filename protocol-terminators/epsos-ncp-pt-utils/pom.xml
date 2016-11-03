@@ -14,7 +14,7 @@
     <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
     <artifactId>openncp-ncp-pt-utils</artifactId>
 
-    <name>EpSOS CC Web Services Utils</name>
+    <name>OpenNCP CC Web Services Utils</name>
 
     <!-- ================== Dependencies ================== -->
     <dependencies>

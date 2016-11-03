@@ -10,7 +10,7 @@
 
     <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
     <artifactId>openncp-nc-mock-it</artifactId>
-    <name>epSOS CC National Connector Mock IT</name>
+    <name>OpenNCP CC National Connector Mock IT</name>
 
     <dependencies>
         <dependency>

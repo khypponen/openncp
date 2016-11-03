@@ -12,7 +12,7 @@
 
     <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
     <artifactId>openncp-xca-ws-server-impl</artifactId>
-    <name>EpSOS CC IHE-XCA Service Interface Implementation</name>
+    <name>OpenNCP CC IHE-XCA Service Interface Implementation</name>
     <organization>
         <name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
         <url>www.srdc.com.tr</url>

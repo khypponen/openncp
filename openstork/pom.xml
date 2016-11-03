@@ -20,8 +20,8 @@
        Modules
     ================== -->
     <modules>
-        <module>OPENSTORK.UTILS</module>
-        <module>OPENNCP-STORK-PLUGIN</module>
+        <module>openstork-util</module>
+        <module>openstork-plugin</module>
     </modules>
 
     <!--    <build>

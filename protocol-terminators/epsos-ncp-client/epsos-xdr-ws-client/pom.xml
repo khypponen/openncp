@@ -15,7 +15,7 @@
     <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
     <artifactId>openncp-xdr-ws-client</artifactId>
 
-    <name>EpSOS CC IHE-XDR Service Client</name>
+    <name>OpenNCP CC IHE-XDR Service Client</name>
     <inceptionYear>2012</inceptionYear>
 
 

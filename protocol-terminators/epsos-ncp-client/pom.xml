@@ -15,7 +15,7 @@
     <artifactId>openncp-ncp-client</artifactId>
 
     <packaging>pom</packaging>
-    <name>EpSOS CC Web Services Client</name>
+    <name>OpenNCP CC Web Services Client</name>
 
     <modules>
         <module>epsos-xcpd-ws-client</module>

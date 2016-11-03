@@ -14,7 +14,7 @@
     <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
     <artifactId>openncp-ws-server</artifactId>
 
-    <name>EpSOS CC Web Services (IHE XCPD, XCA, XDR)</name>
+    <name>OpenNCP CC Web Services (IHE XCPD, XCA, XDR)</name>
     <packaging>war</packaging>
     <organization>
         <name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>

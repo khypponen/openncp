@@ -8,6 +8,8 @@
 	<version>2.4.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<name>OpenNCP Reference Implementation</name>
+
 	<modules>
 		<module>configuration-manager</module>
 		<module>e-sens-non-repudiation</module>
@@ -30,8 +32,8 @@
 		<module>openatna</module>
 		<module>openncp-portal</module>
 		<module>openncp-web-portal</module>
-		<module>epsos-common-components</module>
-		<module>OPENSTORK</module>
+		<module>openncp-common-components</module>
+		<module>openstork</module>
 		<module>openncp-gateway</module>
 	</modules>
 
@@ -123,6 +125,7 @@
 					<target>${java.version}</target>
 					<optimize>${java.optimize}</optimize>
 					<encoding>${project.build.sourceEncoding}</encoding>
+					<showDeprecation>true</showDeprecation>
 				</configuration>
 			</plugin>
 			<plugin>
