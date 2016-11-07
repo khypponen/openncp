@@ -408,17 +408,6 @@
 			<url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
 		</repository>
 		<repository>
-			<id>joinup-snapshots</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
-		</repository>
-		<repository>
 			<id>www2.ph.ed.ac.uk</id>
 			<url>http://www2.ph.ed.ac.uk/maven2/</url>
 			<releases>

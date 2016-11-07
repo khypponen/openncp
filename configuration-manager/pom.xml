@@ -42,19 +42,6 @@
 		<url>https://ec.europa.eu/cefdigital/tracker/projects/OPENNCP</url>
 	</issueManagement>
 
-	<repositories>
-		<repository>
-			<id>joinup-releases</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-
 	<dependencies>
 		<dependency>
 			<groupId>commons-configuration</groupId>
@@ -141,7 +128,7 @@
 		<!-- <version>3.1.5</version> -->
 		<!-- </dependency> -->
 		<!-- This is the PEPPOL client, supporting OASIS BDXL -->
-		<dependency> 
+		<dependency>
 			<groupId>no.difi.vefa</groupId>
 			<artifactId>peppol-lookup</artifactId>
 			<version>0.9.5</version>
@@ -160,7 +147,7 @@
 			<artifactId>Saxon-HE</artifactId>
 			<version>9.5.1-8</version>
 		</dependency>
-	</dependencies>	
+	</dependencies>
 
 	<!-- ================== Build plugins ================== -->
 	<build>

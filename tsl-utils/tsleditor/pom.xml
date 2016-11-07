@@ -15,7 +15,6 @@
 			<id>Jsch</id>
 			<url>http://jsch.sf.net/maven2/</url>
 		</repository>
-
 		<!-- SMP client JAR repository -->
 		<repository>
 			<id>joinup.nexus</id>
