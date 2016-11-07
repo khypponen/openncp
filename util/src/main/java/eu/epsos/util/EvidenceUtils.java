@@ -175,10 +175,12 @@ public class EvidenceUtils {
         ks.load(keyStream, keyPassword.toCharArray());
         X509Certificate cert = (X509Certificate) ks.getCertificate(certAlias);
         context.setIssuerCertificate(cert);
+        context.setSenderCertificate(cert);
+        context.setRecipientCertificate(cert);
         PrivateKey key = (PrivateKey) ks.getKey(certAlias, keyPassword.toCharArray());
         context.setSigningKey(key);
         context.setSubmissionTime(submissionTime);
-        context.setEpsosEvent(eventType);
+        context.setEvent(eventType);
         context.setMessageUUID(msguuid);
         context.setAuthenticationMethod("3");
         context.setRequest(request);
@@ -341,10 +343,13 @@ public class EvidenceUtils {
         ks.load(keyStream, keyPassword.toCharArray());
         X509Certificate cert = (X509Certificate) ks.getCertificate(certAlias);
         context.setIssuerCertificate(cert);
+        context.setSenderCertificate(cert);
+        context.setRecipientCertificate(cert);
+
         PrivateKey key = (PrivateKey) ks.getKey(certAlias, keyPassword.toCharArray());
         context.setSigningKey(key);
         context.setSubmissionTime(submissionTime);
-        context.setEpsosEvent(eventType);
+        context.setEvent(eventType);
         context.setMessageUUID(msguuid);
         context.setAuthenticationMethod("3");
         context.setRequest(request);

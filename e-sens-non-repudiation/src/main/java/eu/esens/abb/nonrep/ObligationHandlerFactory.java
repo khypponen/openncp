@@ -62,6 +62,8 @@ public class ObligationHandlerFactory {
 				list.add(new ETSIREMObligationHandler(messageType, obligations, context));
 			} else if ( obligationId.equals("urn:eSENS:obligations:nro:ETSIREM")) {
 				list.add(new ETSIREMObligationHandler(messageType, obligations, context));
+			} else if ( obligationId.equals("urn:eSENS:obligations:nrd:ETSIREM")) {
+				list.add(new ETSIREMObligationHandler(messageType, obligations, context));
 			} else {
 			
 				list.add(new NullObligationHandler());

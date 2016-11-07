@@ -340,9 +340,11 @@ public class EvidenceEmitterTest {
         Context context = new Context();
         context.setIncomingMsg(message);
         context.setIssuerCertificate(cert);
+        context.setSenderCertificate(cert);
+        context.setRecipientCertificate(cert);
         context.setSigningKey(key);
         context.setSubmissionTime(new DateTime());
-        context.setEpsosEvent("epSOS-31");
+        context.setEvent("epSOS-31");
         context.setMessageUUID(messageInspector.getMessageUUID());
         context.setAuthenticationMethod("3");
         context.setRequest(request); // here I pass the XML in order to give to
@@ -496,9 +498,11 @@ public class EvidenceEmitterTest {
         Context context = new Context();
         context.setIncomingMsg(incomingMsg);
         context.setIssuerCertificate(cert);
+        context.setSenderCertificate(cert);
+        context.setRecipientCertificate(cert);
         context.setSigningKey(key);
         context.setSubmissionTime(new DateTime());
-        context.setEpsosEvent("epSOS-31");
+        context.setEvent("epSOS-31");
         context.setMessageUUID(messageInspector.getMessageUUID());
         context.setAuthenticationMethod("3");
         context.setRequest(request); // here I pass the XML in order to give to
@@ -533,6 +537,166 @@ public class EvidenceEmitterTest {
         return handlers.get(0).getMessage();
     }
 
+    @Test
+    public void testGenerateRemNRD() throws ParserConfigurationException,
+            SAXException, IOException, MalformedIHESOAPException,
+            URISyntaxException, TOElementException, EnforcePolicyException,
+            ObligationDischargeException, SOAPException, MalformedMIMEMessageException, SyntaxException {
+        testGenerateREMNRD();
+    }
+    /**
+     * This method issue a REM NRD evidence
+     *
+     * @return
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     * @throws MalformedIHESOAPException
+     * @throws URISyntaxException
+     * @throws TOElementException
+     * @throws EnforcePolicyException
+     * @throws ObligationDischargeException
+     * @throws SOAPException
+     * @throws MalformedMIMEMessageException
+     * @throws SyntaxException
+     */
+    public Document testGenerateREMNRD() throws ParserConfigurationException,
+            SAXException, IOException, MalformedIHESOAPException,
+            URISyntaxException, TOElementException, EnforcePolicyException,
+            ObligationDischargeException, SOAPException, MalformedMIMEMessageException, SyntaxException {
+
+
+        /*
+         * The flow is as follows (imagine that the PEP is a facade in front of
+         * the Corner). The message is inspected, the relevant information is
+         * retrieved and placed into the XACML request. The PDP evaluates the
+         * request and returns the pointer of the obligation handler.
+         */
+        simplePDP = SimplePDPFactory.getSimplePDP();
+        UnorderedPolicyRepository polrep = (UnorderedPolicyRepository) simplePDP
+                .getPolicyRepository();
+
+        JAXBMarshallerConfiguration conf = new JAXBMarshallerConfiguration();
+        conf.setValidateParsing(false);
+        conf.setValidateWriting(false);
+        PolicyMarshaller.setJAXBMarshallerConfiguration(conf);
+
+        // Populate the policy repository
+        Document policy = readMessage("src/test/testData/samplePolicyNRD.xml");
+
+        polrep.deploy(PolicyMarshaller.unmarshal(policy));
+
+        // Configure Log4j
+        BasicConfigurator.configure();
+
+        // Read the message as it arrives at the facade
+//		Document incomingMsg = readMessage("test/testData/audit.xml");
+        Document incomingMsg = readMessage("src/test/testData/incomingMsg.xml");
+
+        SOAPMessage message = Utilities.toSoap(incomingMsg, null);
+
+        /*
+         * Instantiate the message inspector, to see which type of message is
+         */
+        MessageInspector messageInspector = new MessageInspector(message);
+        MessageType messageType = messageInspector.getMessageType();
+        assertNotNull(messageType);
+	//	assertNotNull(messageInspector.getMessageUUID());
+//		assertEquals("uuid:C3F5A03D-1A0C-4F62-ADC7-F3C007CD50CF",messageInspector.getMessageUUID());
+
+        /*
+         * In this mock, we have an IHE
+         */
+        //	checkCorrectnessofIHEXCA(messageType);
+
+        /*
+         * Now create the XACML request
+         */
+        LinkedList<XACMLAttributes> actionList = new LinkedList<XACMLAttributes>();
+        XACMLAttributes action = new XACMLAttributes();
+        action.setDataType(new URI(DATATYPE_STRING));
+        action.setIdentifier(new URI(
+                "urn:eSENS:outcome"));
+        actionList.add(action);
+
+        // Here I imagine a table lookup or similar
+        action.setValue("success");
+
+        LinkedList<XACMLAttributes> environmentList = new LinkedList<XACMLAttributes>();
+        XACMLAttributes environment = new XACMLAttributes();
+        environment.setDataType(new URI(DATATYPE_DATETIME));
+        environment.setIdentifier(new URI("urn:esens:2014:event"));
+        environment.setValue(new DateTime().toString());
+        environmentList.add(environment);
+
+        XACMLRequestCreator requestCreator = new XACMLRequestCreator(
+                messageType, null, null, actionList, environmentList);
+
+        Element request = requestCreator.getRequest();
+        assertNotNull(request);
+
+        // just some printouts
+        Utilities.serialize(request);
+
+        /*
+         * Call the XACML engine.
+         *
+         * The policy has been deployed in the setupBeforeClass.
+         */
+        EnforcePolicy enforcePolicy = new EnforcePolicy(simplePDP);
+
+        enforcePolicy.decide(request);
+        assertNotNull(enforcePolicy.getResponseAsDocument());
+        assertNotNull(enforcePolicy.getResponseAsObject());
+        Utilities.serialize(enforcePolicy.getResponseAsDocument()
+                .getDocumentElement());
+
+        List<ESensObligation> obligations = enforcePolicy.getObligationList();
+        assertNotNull(obligations);
+
+        Context context = new Context();
+        context.setIncomingMsg(incomingMsg);
+        context.setIssuerCertificate(cert); 
+        context.setSenderCertificate(cert);
+        context.setRecipientCertificate(cert);
+        context.setSigningKey(key);
+        context.setSubmissionTime(new DateTime());
+        context.setEvent("epSOS-31"); // TODO, change to setEventCode
+        context.setMessageUUID(messageInspector.getMessageUUID());
+        context.setAuthenticationMethod("3");
+        context.setRequest(request); // here I pass the XML in order to give to
+        // the developers the posisbility
+        // to use their own implementation. Although an object is easier to get
+        // the relevant types (e.g., action
+        // environment
+        context.setEnforcer(enforcePolicy);
+//		context.setUsername("demo2");
+//		context.setCurrentHost("127.0.0.1");
+//		context.setRemoteHost("192.168.10.1");
+
+        ObligationHandlerFactory handlerFactory = ObligationHandlerFactory
+                .getInstance();
+        List<ObligationHandler> handlers = handlerFactory.createHandler(
+                messageType, obligations, context);
+
+        // Here I discharge manually. This behavior is to let free an
+        // implementation
+        // to still decide which handler to trigger
+        System.out.println(handlers.get(0).getClass().getName());
+
+        handlers.get(0).discharge();
+	//	handlers.get(1).discharge();
+
+        // Give me the ATNA, it's an ATNA test
+        assertNotNull(handlers.get(0).getMessage());
+        Utilities.serialize(handlers.get(0).getMessage().getDocumentElement());
+
+        // I think I need to return handler.getMessage() which will be the audit
+        // the audit will go to the server and get validated by another wrapper
+        return handlers.get(0).getMessage();
+    }
+
+    
     private static Document readMessage(String file)
             throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
