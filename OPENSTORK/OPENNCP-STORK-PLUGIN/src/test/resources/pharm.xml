@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<isHealthCareProfessional xmlns="urn:eu:stork:names:tc:STORK:1.0:assertion">
-   <typeOfHCP>dentist</typeOfHCP>
-   <nameOfOrganisation>name of organization</nameOfOrganisation>
-   <typeOfOrganisation>Unknown</typeOfOrganisation>
-   <AQAA>3</AQAA>
-</isHealthCareProfessional> 
