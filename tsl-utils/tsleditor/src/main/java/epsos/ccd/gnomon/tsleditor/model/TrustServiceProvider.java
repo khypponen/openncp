@@ -20,18 +20,18 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
-import org.etsi.uri._02231.v2_.AddressType;
-import org.etsi.uri._02231.v2_.ElectronicAddressType;
-import org.etsi.uri._02231.v2_.InternationalNamesType;
-import org.etsi.uri._02231.v2_.NonEmptyMultiLangURIListType;
-import org.etsi.uri._02231.v2_.NonEmptyMultiLangURIType;
-import org.etsi.uri._02231.v2_.ObjectFactory;
-import org.etsi.uri._02231.v2_.PostalAddressListType;
-import org.etsi.uri._02231.v2_.PostalAddressType;
-import org.etsi.uri._02231.v2_.TSPInformationType;
-import org.etsi.uri._02231.v2_.TSPServiceType;
-import org.etsi.uri._02231.v2_.TSPServicesListType;
-import org.etsi.uri._02231.v2_.TSPType;
+import org.etsi.uri._02231.v2.AddressType;
+import org.etsi.uri._02231.v2.ElectronicAddressType;
+import org.etsi.uri._02231.v2.InternationalNamesType;
+import org.etsi.uri._02231.v2.NonEmptyMultiLangURIListType;
+import org.etsi.uri._02231.v2.NonEmptyMultiLangURIType;
+import org.etsi.uri._02231.v2.ObjectFactory;
+import org.etsi.uri._02231.v2.PostalAddressListType;
+import org.etsi.uri._02231.v2.PostalAddressType;
+import org.etsi.uri._02231.v2.TSPInformationType;
+import org.etsi.uri._02231.v2.TSPServiceType;
+import org.etsi.uri._02231.v2.TSPServicesListType;
+import org.etsi.uri._02231.v2.TSPType;
 
 public class TrustServiceProvider {
 

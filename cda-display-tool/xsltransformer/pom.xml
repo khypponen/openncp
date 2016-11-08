@@ -3,13 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc</groupId>
-        <artifactId>epsos-cdadisplaytool</artifactId>
-        <version>4.0.0-SNAPSHOT</version>
+        <groupId>eu.europa.ec.sante.ehdsi</groupId>
+        <artifactId>openncp-cdadisplaytool</artifactId>
+        <version>2.4.2</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.epsos-cdadisplaytool</groupId>
-    <artifactId>epsos-xsltransformer</artifactId>
+    <groupId>eu.europa.ec.sante.ehdsi.openncp-cdadisplaytool</groupId>
+    <artifactId>openncp-xsltransformer</artifactId>
     <url>http://maven.apache.org</url>
     <name>xsltransformer</name>
     <properties>
@@ -59,15 +59,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
             <!-- Set version to 2.9 of maven-surefire-plugin because the execution
             of tests fails by using an up-to-date version -->
             <plugin>

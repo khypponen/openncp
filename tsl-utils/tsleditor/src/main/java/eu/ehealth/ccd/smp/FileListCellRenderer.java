@@ -12,10 +12,9 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 
 /**
- *
- * @author joao.cunha
- * 
  * JList Renderer for rendering the files in JList with their names
+ * 
+ * @author joao.cunha
  * 
  */
 public class FileListCellRenderer extends DefaultListCellRenderer {

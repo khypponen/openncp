@@ -1,0 +1,144 @@
+dn: ou=groups,dc=sepsos,dc=se
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=sepsos,dc=se
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=andreas,ou=people,dc=sepsos,dc=se
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Andreas Rehn
+sn: Rehn
+o: epSOS Test
+uid: andreas
+userPassword: 1234
+
+dn: uid=anders,ou=people,dc=sepsos,dc=se
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Anders Nyström
+sn: Nyström
+o: epSOS Test
+uid: anders
+userPassword: 1234
+
+dn: uid=stefan,ou=people,dc=sepsos,dc=se
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Stefan Gustafsson
+sn: Gustafsson
+o: epSOS Test
+uid: stefan
+userPassword: 1234
+
+dn: uid=oskar,ou=people,dc=sepsos,dc=se
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Oskar Thunman
+sn: Thunman
+o: epSOS Test
+uid: oskar
+userPassword: 1234
+
+dn: uid=annika,ou=people,dc=sepsos,dc=se
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Annika Ohlson
+sn: Ohlson
+o: epSOS Test
+uid: annika
+userPassword: 1234
+
+dn: uid=eva,ou=people,dc=sepsos,dc=se
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Eva Leach Elfgren
+sn: Leach Elfgren
+o: epSOS Test
+uid: eva
+userPassword: 1234
+
+dn: uid=apotek,ou=people,dc=sepsos,dc=se
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Apo Tekare
+sn: Tekare
+o: epSOS Test Apotek
+uid: apotek
+userPassword: 1234
+
+dn: uid=doktor,ou=people,dc=sepsos,dc=se
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Doktor Kosmos
+sn: Kosmos
+o: epSOS Test Sjukhus
+uid: doktor
+userPassword: 1234
+
+dn: uid=syster,ou=people,dc=sepsos,dc=se
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Syster Yster
+sn: Yster
+o: epSOS Test Sjukhus
+uid: syster
+userPassword: 1234
+
+dn: cn=pharmacist,ou=groups,dc=sepsos,dc=se
+objectclass: top
+objectclass: groupOfNames
+cn: pharmacist
+member: uid=andreas,ou=people,dc=sepsos,dc=se
+member: uid=anders,ou=people,dc=sepsos,dc=se
+member: uid=stefan,ou=people,dc=sepsos,dc=se
+member: uid=oskar,ou=people,dc=sepsos,dc=se
+member: uid=annika,ou=people,dc=sepsos,dc=se
+member: uid=eva,ou=people,dc=sepsos,dc=se
+member: uid=apotek,ou=people,dc=sepsos,dc=se
+
+dn: cn=doctor,ou=groups,dc=sepsos,dc=se
+objectclass: top
+objectclass: groupOfNames
+cn: doctor
+member: uid=andreas,ou=people,dc=sepsos,dc=se
+member: uid=anders,ou=people,dc=sepsos,dc=se
+member: uid=stefan,ou=people,dc=sepsos,dc=se
+member: uid=oskar,ou=people,dc=sepsos,dc=se
+member: uid=annika,ou=people,dc=sepsos,dc=se
+member: uid=eva,ou=people,dc=sepsos,dc=se
+member: uid=doktor,ou=people,dc=sepsos,dc=se
+
+dn: cn=nurse,ou=groups,dc=sepsos,dc=se
+objectclass: top
+objectclass: groupOfNames
+cn: nurse
+member: uid=andreas,ou=people,dc=sepsos,dc=se
+member: uid=anders,ou=people,dc=sepsos,dc=se
+member: uid=stefan,ou=people,dc=sepsos,dc=se
+member: uid=oskar,ou=people,dc=sepsos,dc=se
+member: uid=annika,ou=people,dc=sepsos,dc=se
+member: uid=eva,ou=people,dc=sepsos,dc=se
+member: uid=syster,ou=people,dc=sepsos,dc=se

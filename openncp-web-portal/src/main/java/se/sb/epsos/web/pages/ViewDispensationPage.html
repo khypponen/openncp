@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="Stylesheet" charset="utf-8" />
+</head>
+<body>
+	<fieldset class="dispensation">
+		<legend><wicket:message key="dispensation.pdf.person.title">[dispensation.pdf.person.title]</wicket:message></legend>
+		<table class="dataview">
+	        <tr>
+	            <th><label for="fullname"><wicket:message key="person.fullname">[Full Name]</wicket:message></label></th>
+	            <th><label for="gender"><wicket:message key="person.gender">[Sex]</wicket:message></label></th>
+	            <th><label for="birthdate"><wicket:message key="person.birthdate">[birthdate]</wicket:message></label></th>
+	            <th><label for="id"><wicket:message key="person.id">[Identification]</wicket:message></label></th>
+	            <th><label for="country"><wicket:message key="person.country">[Country]</wicket:message></label></th>
+	        </tr>
+	        <tr>
+	            <td><span wicket:id="fullname" id="fullname">[some name]</span></td>
+	            <td><span wicket:id="gender" id="gender">[Man]</span></td>
+	            <td><span wicket:id="birthdate" id="birthdate">[some birthdate]</span></td>
+	            <td><span wicket:id="id">[some id]</span></td>
+	            <td><span wicket:id="country" id="country">[some country]</span></td>
+	        </tr>       
+    	</table>
+	</fieldset>
+	
+		<fieldset class="dispensation">
+		<legend><wicket:message key="dispensation.pdf.prescription.title2">[dispensation.pdf.prescription.title2]</wicket:message></legend>
+    <table wicket:id="dispenseRows" class="dataview" width="100%">
+    	<tr>
+            <th colspan='1'><label><wicket:message key="dispensation.date">[dispensation.date]</wicket:message></label></th>
+            <td colspan='4'>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan='1'><span wicket:id="dispensationDate">2014</span></td>
+            <td colspan='4'>&nbsp;</td>
+        </tr>
+    	<tr>
+            <th class="dark" bgcolor="#9FBFDF" colspan='5' style="padding-left: 5px;">
+            	<label class="special2"><wicket:message key="dispensation.pdf.dispensation.title">[dispensation.pdf.dispensation.title]</wicket:message></label>
+            </th>
+        </tr>
+        <tr>
+			<th colspan='2'><label><wicket:message key="dispensation.productName">[dispensation.productName]</wicket:message></label></th>
+			<th><label><wicket:message key="dispensation.productId">[dispensation.productId]</wicket:message></label></th>
+			<th><label><wicket:message key="dispensation.packageSize">[dispensation.packageSize]</wicket:message></label></th>
+			<th><label><wicket:message key="dispensation.nbrPackages">[dispensation.nbrPackages]</wicket:message></label></th>
+		</tr>
+		<tr>
+			<td colspan='2'><span wicket:id="productName">Bricanyl Turbuhaler</span></td>
+			<td><span wicket:id="productId">012343</span></td>
+			<td><span wicket:id="packageSize.quantityValue">100</span>&nbsp;<span wicket:id="packageSize.quantityUnit">st</span></td>
+			<td><span wicket:id="nbrPackages.quantityValue">100</span>&nbsp;<span wicket:id="nbrPackages.quantityUnit">st</span></td>
+		</tr>
+		<tr>
+            <td colspan='5'>&nbsp;</td>
+        </tr>
+        <tr>
+            <th colspan='5' class="dark" style="padding-left: 5px;">
+                <label class="special2">
+                	<wicket:message key="dispensation.pdf.prescription.title">[dispensation.pdf.prescription.title]</wicket:message><br/>
+                    <span wicket:id="prescriptionRow.description">
+                        terbutaline 0.5 [mg]/1[dos] 200 [] Inhalation powder (Bricanyl® Turbuhaler®)
+                    </span>
+                </label>
+            </th>
+        </tr>
+        <tr>
+		    <th colspan="2"><label><wicket:message key="prescription.productName">Product Name</wicket:message></label></th>
+		    <th><label><wicket:message key="prescription.productId">Product Id</wicket:message></label></th>
+		    <th><label><wicket:message key="prescription.prescriptionid">Prescription Id</wicket:message></label></th>
+		    <th><label><wicket:message key="prescription.substitutionPermitted">Substitution allowed?</wicket:message></label></th>
+		</tr>
+		<tr>
+		    <td colspan="2"><span wicket:id="prescriptionRow.productName">Bricanyl Turbuhaler</span></td>
+		    <td><span wicket:id="prescriptionRow.productId">012343</span></td>
+		    <td><span wicket:id="prescriptionRow.prescriptionId">123.1.2</span></td>
+		    <td><span wicket:id="prescriptionRow.substitutionPermittedText">Yes</span></td>
+		</tr>
+		<tr>
+			<th colspan="5"><label><wicket:message key="prescription.ingredient">[prescription.ingredient]</wicket:message></label></th>
+		</tr> 
+		<tr>
+			<td colspan="5"><table width="100%" class="dataview">
+		  <tr>
+		      <th bgcolor="#CCCCCC" colspan="2"><label><wicket:message key="prescription.activeIngredient">Active Ingredient</wicket:message></label></th>
+		      <th bgcolor="#CCCCCC" width="30%"><label><wicket:message key="prescription.strength">Strength</wicket:message></label></th>
+		  </tr> 
+				<tr wicket:id="ingredientRow">
+					<td colspan="2"><span wicket:id="activeIngredient">Diklofenakk</span></td>
+		    		<td width="30%"><span wicket:id="strength">50mg</span></td>
+		    	</tr>
+			</table></td>
+		</tr>
+		<tr>
+			<th colspan="2"><label><wicket:message key="prescription.form">Dose form</wicket:message></label></th>
+		    <th><label><wicket:message key="prescription.typeOfPackage">Type Of Package</wicket:message></label></th>
+		    <th><label><wicket:message key="prescription.quantity">Package size</wicket:message></label></th>
+		    <th><label><wicket:message key="prescription.nbrOfPackages">Number Of Packages</wicket:message></label></th>
+		</tr> 
+		<tr>
+			<td colspan="2"><span wicket:id="prescriptionRow.formName">Tablett</span></td>
+		    <td><span wicket:id="prescriptionRow.typeOfPackage"></span></td>
+		    <td><span wicket:id="prescriptionRow.packageSize.quantityValue">100</span> <span wicket:id="prescriptionRow.packageSize.quantityUnit">st</span></td>
+		    <td><span wicket:id="prescriptionRow.nbrPackages.quantityValue">2</span> <span wicket:id="prescriptionRow.nbrPackages.quantityUnit">st</span></td>
+		</tr>
+		<tr>
+		    <th><label><wicket:message key="prescription.min">Onset date</wicket:message></label></th>
+		    <th><label><wicket:message key="prescription.max">End date</wicket:message></label></th>        
+		    <th><label><wicket:message key="prescription.frequency">Frequency</wicket:message></label></th>
+		    <th><label><wicket:message key="prescription.dosage">Dosage</wicket:message></label></th>
+		    <th><label><wicket:message key="prescription.route">Route of administration</wicket:message></label></th>
+		</tr>
+		<tr>
+		    <td><span wicket:id="prescriptionRow.startDate">2011-08-23</span></td>
+		    <td><span wicket:id="prescriptionRow.endDate">2012-04-13</span></td>
+		    <td><span wicket:id="prescriptionRow.frequency">daily</span></td>
+		    <td><span wicket:id="prescriptionRow.dosage">2</span></td>
+		    <td><span wicket:id="prescriptionRow.route">Oral</span></td>
+		</tr>
+		<tr>
+		    <th colspan="5"><label><wicket:message key="prescription.patientInstructions">Instructions to patient</wicket:message></label></th>
+		</tr>
+		<tr>
+		    <td colspan="5"><span wicket:id="prescriptionRow.patientInstructions">Some patient instruction...</span>&nbsp;</td>
+		</tr>
+		<tr>
+		    <th colspan="5"><label><wicket:message key="prescription.pharmacistInstructions">Instructions to pharmacist</wicket:message></label></th>
+		</tr>
+		<tr>
+		    <td colspan="5"><span wicket:id="prescriptionRow.pharmacistInstructions">Some pharmacist instruction...</span>&nbsp;</td>
+		</tr>
+	</table>   
+	</fieldset>
+	
+	<fieldset>
+		<legend><wicket:message key="dispensation.pdf.pharmacist.title">[dispensation.pdf.pharmacist.title]</wicket:message></legend>
+		<table class="dataview" width="100%">
+			<tr>
+				<th><label><wicket:message key="userdetails.commonname">[userdetails.commonname]</wicket:message></label></th>
+				<th><label><wicket:message key="userdetails.organisationname">[userdetails.organisationname]</wicket:message></label></th>
+				<th colspan="2"><label><wicket:message key="userdetails.organisationid">[userdetails.organisationid]</wicket:message></label></th>
+			</tr>
+			<tr>
+				<td><span wicket:id="commonName">Sven Svensson</span></td>
+				<td><span wicket:id="organizationName">Svea</span></td>
+				<td colspan="2"><span wicket:id="organizationId">1234</span></td>
+			</tr>
+			<tr>
+				<th><label><wicket:message key="userdetails.telecom">[userdetails.telecom]</wicket:message></label></th>
+				<th><label><wicket:message key="userdetails.streetaddress">[userdetails.streetaddress]</wicket:message></label></th>
+				<th><label><wicket:message key="userdetails.city">[userdetails.city]</wicket:message></label></th>
+				<th><label><wicket:message key="userdetails.postalcode">[userdetails.postalcode]</wicket:message></label></th>
+			</tr>
+			<tr>
+				<td><span wicket:id="telecom">+461234</span></td>
+				<td><span wicket:id="streetaddress">Ringvägen 10</span></td>
+				<td><span wicket:id="city">Stockholm</span></td>
+				<td><span wicket:id="postalCode">12345</span></td>
+			</tr>
+		</table>
+	</fieldset>
+</body>
+</html>

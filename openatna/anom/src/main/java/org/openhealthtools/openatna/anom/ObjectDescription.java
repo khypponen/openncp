@@ -33,16 +33,16 @@ import java.util.Set;
 
 public class ObjectDescription {
 
-    private Set<String> mppsUids = new HashSet<String>();
-    private List<String> accessionNumbers = new ArrayList<String>();
-    private List<SopClass> sopClasses = new ArrayList<SopClass>();
+    private Set<String> mppsUids = new HashSet<>();
+    private List<String> accessionNumbers = new ArrayList<>();
+    private List<SopClass> sopClasses = new ArrayList<>();
 
     public ObjectDescription() {
+		super();
+	}
 
-    }
-
-    public List<String> getMppsUids() {
-        return new ArrayList<String>(mppsUids);
+	public List<String> getMppsUids() {
+        return new ArrayList<>(mppsUids);
     }
 
     public List<String> getAccessionNumbers() {

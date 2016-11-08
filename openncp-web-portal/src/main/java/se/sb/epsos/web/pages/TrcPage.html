@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<wicket:extend>
+	<fieldset>
+		<legend><wicket:message key="person.title">[Person Details]</wicket:message></legend>
+		<div wicket:id="personinfo">[Person details]</div>
+	</fieldset>
+	<fieldset>
+		<legend><wicket:message key="trc.tile">[TRC]</wicket:message></legend>
+		<form wicket:id="trcForm" id="trcForm">
+			<table class="center">
+				<tr>
+					<td>
+					    <span wicket:id="confirmText">[Confirm text]</span>
+					</td>
+				</tr>
+			</table>
+			<table class="prescriptionlinks">
+		        <tr>
+		        	<td id="aright"><input type="submit" name="confirmButton" id="confirmButton" wicket:id="confirmButton" wicket:message="value:form.button.confirm"></td>
+		        </tr>
+		    </table>
+		</form>	
+	</fieldset>
+</wicket:extend>
+</body>
+</html>

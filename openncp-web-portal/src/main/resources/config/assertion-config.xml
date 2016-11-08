@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Configuration>
+	<AssertionHandlerConfigManager>
+      <PurposeOfUse>TREATMENT</PurposeOfUse>
+      <XspaLocality>POC</XspaLocality>
+      <RolePermissions>
+          <PermissionsPrefix>urn:oasis:names:tc:xspa:1.0:subject:hl7:permission:</PermissionsPrefix>
+          <ROLE_PHARMACIST displayName="pharmacist" workPlace="Pharmacy">PRD-006,PRD-004,PRD-010,PPD-046</ROLE_PHARMACIST>
+          <ROLE_DOCTOR displayName="medical doctor" workPlace="Hospital">PRD-006,PRD-003,PRD-004,PRD-005,PRD-010,PRD-016,PPD-032,PPD-033</ROLE_DOCTOR>
+          <ROLE_NURSE displayName="nurse" workPlace="Hospital">PRD-006</ROLE_NURSE>
+      </RolePermissions>
+	</AssertionHandlerConfigManager>
+</Configuration>

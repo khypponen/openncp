@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://158.166.85.18:3306/ehealth_properties?useUnicode=true&amp;characterEncoding=UTF-8&amp;useFastDateParsing=false</property>
+        <property name="hibernate.connection.username">ehealth</property>
+        <property name="hibernate.connection.password">MyEhealthPwd</property>
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">yes</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+        <property name="hibernate.c3p0.min_size">1</property>
+        <property name="hibernate.c3p0.max_size">50</property>
+        <property name="hibernate.c3p0.timeout">7200</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.validate">true</property>
+        <property name="hibernate.c3p0.idle_test_period">30</property>
+        <property name="hibernate.c3p0.preferredTestQuery">SELECT 1 FROM DUAL</property>
+        <mapping class="eu.epsos.configmanager.database.model.Property"/>
+    </session-factory>
+</hibernate-configuration>

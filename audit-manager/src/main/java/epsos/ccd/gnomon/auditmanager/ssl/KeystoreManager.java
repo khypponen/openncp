@@ -95,6 +95,7 @@ public class KeystoreManager {
             if (pass == null) {
                 pass = "changeit";
             }
+            //TODO: check if this condition is required? because certs cound not be null at this stage of the code? Perhaps exist() method would be more appropriate?
             if (certs != null) {
                 KeyStore ks = KeyStore.getInstance("jks");
                 ks.load(new FileInputStream(certs), pass.toCharArray());

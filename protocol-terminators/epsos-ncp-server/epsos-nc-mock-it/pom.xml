@@ -3,27 +3,27 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-        <artifactId>epsos-ncp-server</artifactId>
-        <version>4.0.0-SNAPSHOT</version>
+        <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+        <artifactId>openncp-ncp-server</artifactId>
+        <version>2.4.2</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-    <artifactId>epsos-nc-mock-it</artifactId>
-    <name>epSOS CC National Connector Mock IT</name>
+    <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+    <artifactId>openncp-nc-mock-it</artifactId>
+    <name>OpenNCP CC National Connector Mock IT</name>
 
     <dependencies>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
-            <artifactId>epsos-util</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
+            <artifactId>openncp-util</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-            <artifactId>epsos-interface</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+            <artifactId>openncp-interface</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-            <artifactId>epsos-integration-test</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+            <artifactId>openncp-integration-test</artifactId>
         </dependency>
     </dependencies>
 </project>

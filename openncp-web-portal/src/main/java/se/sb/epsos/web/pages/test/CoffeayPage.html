@@ -1,0 +1,41 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Test Page for Loadable Detachale Models</h1>
+        <div>
+            <h2>Current model is:</h2>
+            Id: <span wicket:id="id"/><br/>
+            Type: <span wicket:id="type"/><br/>
+            Size: <span wicket:id="size"/><br/>
+            Bytes: <span wicket:id="bytes"/><br/>
+            <br/>
+            <a wicket:id="popup1">Popup page 1</a><br/>
+            <a wicket:id="popup2">Popup page 2</a><br/>
+            <br/>
+            <table cellspacing="0" class="dataview">
+                <tr>
+                    <th>Id</th>
+                    <th>Type</th>
+                    <th>Size</th>
+                </tr>
+                <tr wicket:id="list">
+                    <td><span wicket:id="id">[actions]</span></td>
+                    <td><span wicket:id="type">[contactid]</span> </td>
+                    <td><span wicket:id="size">[firstname]</span></td>
+                </tr>
+            </table>
+            <br/>
+            <a wicket:id="cuppuchino">Go to cuppuchino page</a><br/>
+            <a wicket:id="cortado">Go to cortado page</a><br/>
+            <a wicket:id="espresso">Go to espresso page</a><br/>
+        </div>
+    </body>
+</html>

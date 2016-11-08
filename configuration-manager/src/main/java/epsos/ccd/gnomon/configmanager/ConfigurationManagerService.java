@@ -66,7 +66,7 @@ public class ConfigurationManagerService {
      * @return the string value of the key
      */
     public String getProperty(String key) {
-        return ConfigurationManagerDb.getInstance().getProperty(key);
+        return ConfigurationManagerSMP.getInstance().getProperty(key);
     }
 
     /**
@@ -79,7 +79,7 @@ public class ConfigurationManagerService {
     public String updateProperty(
             String key,
             String value) {
-        return ConfigurationManagerDb.getInstance().updateProperty(key, value);
+        return ConfigurationManagerSMP.getInstance().updateProperty(key, value);
     }
 
     /**

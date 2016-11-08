@@ -6,15 +6,15 @@
        Artifact
     ================== -->
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-        <artifactId>epsos-ncp-server</artifactId>
-        <version>4.0.0-SNAPSHOT</version>
+        <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+        <artifactId>openncp-ncp-server</artifactId>
+        <version>2.4.2</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-    <artifactId>epsos-ws-server</artifactId>
+    <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+    <artifactId>openncp-ws-server</artifactId>
 
-    <name>EpSOS CC Web Services (IHE XCPD, XCA, XDR)</name>
+    <name>OpenNCP CC Web Services (IHE XCPD, XCA, XDR)</name>
     <packaging>war</packaging>
     <organization>
         <name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
@@ -84,8 +84,8 @@
     </build>
     <dependencies>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-            <artifactId>epsos-xcpd-ws-server-impl</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+            <artifactId>openncp-xcpd-ws-server-impl</artifactId>
             <exclusions>
                 <exclusion>
                     <artifactId>log4j</artifactId>
@@ -106,8 +106,8 @@
             <artifactId>commons-codec</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-            <artifactId>epsos-xca-ws-server-impl</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+            <artifactId>openncp-xca-ws-server-impl</artifactId>
             <exclusions>
                 <exclusion>
                     <artifactId>log4j-over-slf4j</artifactId>
@@ -116,12 +116,12 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-            <artifactId>epsos-xdr-ws-server-impl</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+            <artifactId>openncp-xdr-ws-server-impl</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
-            <artifactId>epsos-util</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
+            <artifactId>openncp-util</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.axis2</groupId>
@@ -151,8 +151,8 @@
             <artifactId>commons-configuration</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
-            <artifactId>epsos-defaultpolicymanager</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
+            <artifactId>openncp-defaultpolicymanager</artifactId>
         </dependency>
         <dependency>
             <groupId>xerces</groupId>
@@ -163,12 +163,12 @@
             <artifactId>xml-apis</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-            <artifactId>epsos-ncp-pt-utils</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+            <artifactId>openncp-ncp-pt-utils</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-            <artifactId>epsos-integration-test</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+            <artifactId>openncp-integration-test</artifactId>
         </dependency>
     </dependencies>
 
@@ -189,8 +189,8 @@
             <id>national-connector-mock-impl</id>
             <dependencies>
                 <dependency>
-                    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-                    <artifactId>epsos-nc-mock-it</artifactId>
+                    <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+                    <artifactId>openncp-nc-mock-it</artifactId>
                     <scope>runtime</scope>
                 </dependency>
             </dependencies>
@@ -215,7 +215,7 @@
             <dependencies>
                 <dependency>
                     <groupId>gi9.ccd.gnomon.epsos</groupId>
-                    <artifactId>epsos-nc-lu</artifactId>
+                    <artifactId>openncp-nc-lu</artifactId>
                     <version>1.0.0-SNAPSHOT</version>
                     <scope>runtime</scope>
                 </dependency>
@@ -228,22 +228,22 @@
 
             <dependencies>
                 <dependency>
-                    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-                    <artifactId>epsos-nc-mock-it</artifactId>
+                    <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+                    <artifactId>openncp-nc-mock-it</artifactId>
                 </dependency>
                 <dependency>
-                    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-client</groupId>
-                    <artifactId>epsos-xcpd-ws-client</artifactId>
+                    <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
+                    <artifactId>openncp-xcpd-ws-client</artifactId>
                     <scope>test</scope>
                 </dependency>
                 <dependency>
-                    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-                    <artifactId>epsos-ncp-pt-client-consumer</artifactId>
+                    <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+                    <artifactId>openncp-ncp-pt-client-consumer</artifactId>
                     <scope>test</scope>
                 </dependency>
                 <dependency>
-                    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-                    <artifactId>epsos-integration-test</artifactId>
+                    <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+                    <artifactId>openncp-integration-test</artifactId>
                 </dependency>
             </dependencies>
 
@@ -254,6 +254,7 @@
                         <!-- Maven compiler plugin -->
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.5.1</version>
                         <executions>
                             <execution>
                                 <id>iTest-testCompile</id>

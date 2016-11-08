@@ -30,50 +30,28 @@
 
         <h:form prependId="false" id="searchPatient">
             <h3>#{msg['ui.searchmask.info']}</h3>
-            <c:choose>
-                <c:when test="#{myBean.selectedCountry eq 'PT'}">
-                    <ui:include src="/forms/PT.xhtml"/>
-                </c:when>
-                <c:when test="#{myBean.selectedCountry eq 'IT'}">
-                    <ui:include src="/forms/IT.xhtml"/>
-                </c:when>    
-                <c:when test="#{myBean.selectedCountry eq 'AT'}">
-                    <ui:include src="/forms/AT.xhtml"/>
-                </c:when>    
-                <c:otherwise>
-                    <h:panelGrid columns="2" >
-                        <ui:repeat value="#{myBean.identifiers}" var="identifier">
-                            <h:outputLabel value="#{identifier.key}" />
-                            <p:inputText id="uservalue" value="#{identifier.userValue}" required="true" />
-                        </ui:repeat>
-                    </h:panelGrid>
-                    <h:panelGrid columns="2" id="aa">
-                        <ui:repeat value="#{myBean.demographics}" var="demographic">
-                            <h:outputLabel value="#{demographic.label}" rendered="#{myBean.showDemographics}"/>
-                            <p:inputText id="userValue2" value="#{demographic.userValue}" 
-                                         required="#{demographic.mandatory}" rendered="#{demographic.type=='text'}" />
-                            <p:calendar value="#{demographic.userDateValue}" id="userDateValue2" 
-                                        rendered="#{demographic.type=='calendar'}" yearRange="c-100:c+0" pattern="yyyyMMdd" 
-                                        navigator="true" >
-                                <f:convertDateTime pattern="yyyyMMdd"/>  
-                            </p:calendar>			
-                        </ui:repeat>
-                    </h:panelGrid>
-                </c:otherwise>
-            </c:choose>
-
-            <!--h:panelGrid columns="2" id="aa">
-                <ui:repeat value="#{myBean.demographics}" var="demographic">
-                    <h:outputLabel value="#{demographic.label}" rendered="#{myBean.showDemographics}"/>
-                    <p:inputText id="userValue2" value="#{demographic.userValue}" 
-                                 required="#{demographic.mandatory}" rendered="#{demographic.type=='text'}" />
-                    <p:calendar value="#{demographic.userDateValue}" id="userDateValue2" 
-                                rendered="#{demographic.type=='calendar'}" yearRange="c-100:c+0" pattern="yyyyMMdd" 
-                                navigator="true" >
-                        <f:convertDateTime pattern="yyyyMMdd"/>  
-                    </p:calendar>			
-                </ui:repeat>
-            </h:panelGrid-->                
+                <h:panelGrid columns="2" >
+                    <c:forEach items="#{myBean.identifiers}" var="identifier" varStatus="idLoop">
+                        <h:outputLabel value="#{identifier.key}"/>
+                        <p:inputText id="#{not empty identifier.friendlyName ? identifier.friendlyName : ''.concat('uservalue-').concat(idLoop.index)}" value="#{identifier.userValue}" required="true"/>
+                    </c:forEach>
+                    <c:forEach items="#{myBean.demographics}" var="demographic" varStatus="demographicsLoop">
+                        <h:outputLabel value="#{demographic.label}:" rendered="#{myBean.showDemographics}"/>
+                        <c:choose>
+                            <c:when test="#{demographic.type=='text'}">
+                                    <p:inputText id="#{not empty demographic.friendlyName ? demographic.friendlyName : ''.concat('userValue2-').concat(demographicsLoop.index)}" 
+                                                 value="#{demographic.userValue}" required="#{demographic.mandatory}"/>
+                            </c:when>
+                            <c:when test="#{demographic.type=='calendar'}">
+                                    <p:calendar id="#{not empty demographic.friendlyName ? demographic.friendlyName : ''.concat('userDateValue2-').concat(demographicsLoop.index)}" 
+                                                value="#{demographic.userDateValue}" yearRange="c-100:c+0" pattern="yyyyMMdd" navigator="true" >
+                                            <f:convertDateTime pattern="yyyyMMdd"/>
+                                    </p:calendar>
+                            </c:when>
+                        </c:choose>
+                    </c:forEach>
+                </h:panelGrid>
+                <a id="sc_link" target="_blank" href="/jnlp/openecard.jnlp">#{msg['patient.search.downloadeid']}</a>             
 
             <p:commandButton 
                 id="submitPatient" value="#{msg['ui.search.info']}"
@@ -266,11 +244,20 @@
                 //var short_selector = selector.split(":")[2];
                 //var request = "input[title='" + short_selector + "']";
                 console.log(identifier[selector]);
-                $("input[id = '<portlet:namespace/>:healthInsuranceId']").val(identifier[selector]).attr("readonly", true);
-                $("input[id = '<portlet:namespace/>:fiscalNumber']").val(payload['http://www.esens.eu/attributes/smartcard/FiscalNumber']).attr("readonly", true);
                 $("input[id = '<portlet:namespace/>:cardId']").val(payload['http://www.esens.eu/attributes/smartcard/CardId']).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:healthInsuranceId']").val(identifier[selector]).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:healthInsuranceCompanyId']").val(payload['http://www.esens.eu/attributes/smartcard/HealthInsuranceCompanyId']).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:healthInsuranceCompanyName']").val(payload['http://www.esens.eu/attributes/smartcard/HealthInsuranceCompanyName']).attr("readonly", true);
                 $("input[id = '<portlet:namespace/>:givenName']").val(payload['http://eidas.europa.eu/attributes/naturalperson/CurrentGivenName']).attr("readonly", true);
                 $("input[id = '<portlet:namespace/>:surname']").val(payload['http://eidas.europa.eu/attributes/naturalperson/CurrentFamilyName']).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:dateOfBirth']").val(payload['http://eidas.europa.eu/attributes/naturalperson/DateOfBirth']).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:gender']").val(payload['http://eidas.europa.eu/attributes/naturalperson/Gender']).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:fiscalNumber']").val(payload['http://www.esens.eu/attributes/smartcard/FiscalNumber']).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:socialSecurityNumber']").val(payload['http://www.esens.eu/attributes/smartcard/SocialSecurityNumber']).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:civilianIdNumber']").val(payload['http://www.esens.eu/attributes/smartcard/CivilianIdNumber']).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:ehicValidity']").val(payload['http://www.esens.eu/attributes/smartcard/EhicValidity']).attr("readonly", true);
+                $("input[id = '<portlet:namespace/>:ehicBenefactor']").val(payload['http://www.esens.eu/attributes/smartcard/ehicBenefactor']).attr("readonly", true);
+                
 
                 //$(request).attr("value", identifier[selector]);
                 return 0;

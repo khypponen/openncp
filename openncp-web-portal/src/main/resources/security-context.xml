@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                    http://www.springframework.org/schema/security
+                    http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+                    
+   	<http use-expressions="true">
+        <intercept-url pattern="/**" access="permitAll" />
+        <form-login login-page="/LoginPage" />
+        <logout/>
+    </http>
+    
+    <beans:bean id="simpleUserDetailsService" class="se.sb.epsos.web.auth.SimpleUserDetailsService" >
+        <beans:property name="usersXML" value="classpath:users.xml"/>
+    </beans:bean>
+
+    <beans:bean id="daoAuthenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+        <beans:property name="userDetailsService" ref="simpleUserDetailsService"/>
+    </beans:bean>
+    
+	<!-- SWEDISH JAAS -->
+	<!-- mvn clean install -DserviceFacadeClass=se.sb.epsos.web.service.mock.NcpServiceFacadeMock -DskipTests=true -->	
+
+    <authentication-manager alias="authenticationManager">
+        <!-- authentication-provider ref="jaasAuthProvider" /-->
+        <authentication-provider ref="daoAuthenticationProvider" />
+    </authentication-manager>
+
+    <beans:bean id="jaasAuthProvider" class="org.springframework.security.authentication.jaas.JaasAuthenticationProvider">
+        <beans:property name="loginConfig" value="classpath:jaas.config" />
+            <beans:property name="authorityGranters">
+                <beans:list>
+                    <beans:bean class="se.sb.epsos.web.auth.jaas.EpsosAuthorityGranter" />
+                </beans:list>
+            </beans:property>
+        <beans:property name="loginContextName" value="EpsosLoginXX" />
+        <beans:property name="callbackHandlers">
+            <beans:list>
+                <beans:bean class="org.springframework.security.authentication.jaas.JaasNameCallbackHandler" />
+                <beans:bean class="org.springframework.security.authentication.jaas.JaasPasswordCallbackHandler" />
+            </beans:list>
+        </beans:property>
+    </beans:bean>
+    
+</beans:beans>

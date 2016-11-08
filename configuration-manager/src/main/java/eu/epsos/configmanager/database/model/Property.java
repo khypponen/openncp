@@ -19,6 +19,9 @@ public class Property implements java.io.Serializable {
     @Column(name = "value")
     private String value;
 
+    @Column(name = "isSmp")
+    private Boolean isSMP;
+    
     public Property() {
     }
 
@@ -45,5 +48,9 @@ public class Property implements java.io.Serializable {
 
     public void setValue(String value) {
         this.value = value;
+    }
+    
+    public Boolean isSMP() {
+    	return this.isSMP;
     }
 }

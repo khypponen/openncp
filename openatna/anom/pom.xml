@@ -3,12 +3,11 @@
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.epsos-openatna</groupId>
-        <artifactId>epsos-openatna</artifactId>
-        <version>4.0.0-SNAPSHOT</version>
+        <groupId>eu.europa.ec.sante.ehdsi.openncp-openatna</groupId>
+        <artifactId>openncp-openatna</artifactId>
+        <version>2.4.2</version>
     </parent>
     <artifactId>openatna-anom</artifactId>
-    <groupId>eu.europa.ec.joinup.ecc.epsos-openatna</groupId>
 
     <packaging>jar</packaging>
     <name>OpenATNA ANOM</name>
@@ -22,5 +21,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 </project>

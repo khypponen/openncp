@@ -6,10 +6,10 @@
 package eu.ehealth.ccd.smp;
 
 /**
- *
+ * Instances of this class store the necessary information to connect to an SMP server using HTTP Basic AuthN
+ * 
  * @author joao.cunha
  * 
- * Instances of this class store the necessary information to connect to an SMP server
  */
 public class SMPConnection {
     private String uri;

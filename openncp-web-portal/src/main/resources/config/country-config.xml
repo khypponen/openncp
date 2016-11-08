@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<CountryConfigManager>
+		<country>
+			<AT homeCommuity="2.16.840.1.113883.2.16.3.1.3.100.990.1">
+				<text>Ange personens SSN (Social Security Number) och CRR (Central Register of Residents)</text>
+                <HelpTextForTest>Tillgängliga test patienter: sök utan att fylla i något</HelpTextForTest>
+			</AT>
+			<CZ homeCommuity="2.16.17.710.804.1000.990.1">
+				<text>Ange personens förnamn, efternamn och identitetsnummer</text>
+                <HelpTextForTest>Tillgängliga testpatienter: 
+                	Nina/Zárubová/6212122627 
+                	František/Dobrota/6212122638 
+                	Ondřej/Karafiát/6212122616 
+                	Antonie/Nedošínská/6212122539
+                </HelpTextForTest>
+			</CZ>
+			<DK homeCommuity="2.16.17.710.802.1000.990.1">
+				<text>Ange personens Social Security Number (CPR-nummer) med 10 siffror utan bindestrecke eller blanksteg</text>
+                <HelpTextForTest>Tillgängliga testpatienter: 
+                	2601010001 
+                	2601010002 
+                	2601010003 
+                	2512484916 CTD: 0205500SS5 0510770PP1 0711470VV1 2512484916 0909860AS6
+                </HelpTextForTest>
+			</DK>
+			<ES homeCommuity="2.16.17.710.801.1000.990.1">
+				<text></text>
+                <HelpTextForTest>Tillgängliga test patienter: 
+                    1199925/803409 
+                    2146789/803409 
+                    TRHR710430916029/803411 
+                    QLRQ900715904010/803411 
+                    MSPS/803000 
+                </HelpTextForTest>
+			</ES>
+			<FR homeCommuity="2.16.17.710.790.1000.990.1">
+				<text>Ange personens INSEE code</text>
+                <HelpTextForTest>Tillgänlgia testpatienter: 
+                	0754687958480625816364 
+                	0467172911163665402182
+                </HelpTextForTest>
+			</FR>
+			<IT homeCommuity="2.16.17.710.806.1000.990.1">
+				<text>Ange personens Codice fiscale (format: SSSNNNYYMDDZZZZX) and "area"</text>
+                <HelpTextForTest>Tillgängliga testpatienter: 
+                    NTSDNN80A19D612X/64681 
+                    NTSDTT80A18G273W/64707 
+                    NTSNVO80A49F839Z/64715 
+                    NTSTDC80A53G478W/64699 
+                    NTSTNT80B04A944P/64749 
+                    NTSTNT80B05H501F/64731 
+                    NTSVTS80A67G478G/64756
+                </HelpTextForTest>
+			</IT>
+			<SE homeCommuity="2.16.17.710.807.1000.990.1">
+				<text>Ange ett personnummer med 12 siffor utan bindestreck eller blanksteg</text>
+                <HelpTextForTest>Tillgängliga testpatienter: 
+	                192405038569 
+	                193508249079 
+	                199701312390 
+	                199701292394
+	                195011052478
+                </HelpTextForTest>
+                <IdentificationHelpLink>http://www.ehalsomyndigheten.se/</IdentificationHelpLink>
+			</SE>
+            <FI homeCommuity="1.2.246.556.12001.4.1000.990.1">
+                <text>IDs are of the form 041082-995W (birth date then sign -/+/A then three numbers and the last character which can be a number or a letter)</text>
+                <HelpTextForTest>Tillgängliga testpatienter:
+                    031082-9958
+                    041082-995W
+                    051082-995J
+                    061082-9956
+                </HelpTextForTest>
+                <IdentificationHelpLink>http://www.kanta.fi/</IdentificationHelpLink>
+            </FI>
+            <PT homeCommuity="2.16.17.710.820.1000.990.1">
+                <text>IDs have 9 digits</text>
+                <HelpTextForTest>Test patients:
+                    192419714 (ROSALINA MARIA PALACIOS PEREZ VASQUEZ VASCO)
+					182581814 (ISAURA MARTINS ALVES ALMEIDA)
+					184669922 (LILIANA MARGARIDA VALENTE PIRES)
+					187771502 (DUARTE NUNO ANTUNES BUKNER VIEIRA)
+					192625884 (ALBERTINA MARIA ALVES LOURENCO SOUSA)
+                </HelpTextForTest>
+            </PT>
+            <SI homeCommuity="2.16.17.710.830.1000.990.1">
+                <text>IDs have 13 digits</text>
+                <HelpTextForTest>Test patients:
+                      2209981500231
+                </HelpTextForTest>
+            </SI>
+            <MT homeCommuity="2.16.470.1.100.1.1.1000.990.1">
+                <text>IDs have 10 digits</text>
+                <HelpTextForTest>Test patients:
+                 2209981500
+                </HelpTextForTest>
+            </MT>
+            <CH homeCommuity="2.16.17.710.814.1000.990.1">
+                <text>IDs have 20 digits</text>
+                <HelpTextForTest>Test patients:
+					80756999999999993000
+					80756999999999993001
+					80756999999999993002
+					80756999999999993003
+					80756999999999993004
+                </HelpTextForTest>
+            </CH>
+            <HR homeCommuity="2.16.17.710.840.1000.990.1">
+                <text>IDs have 9 digits</text>
+                <HelpTextForTest>Test patients:
+					990000485
+					143958737
+					990000555
+					990000108
+					149164447
+					140335343
+					120618752
+					939393950
+					939393946
+					150596658
+					149214644
+                </HelpTextForTest>
+            </HR>
+            <IH homeCommuity="2.16.17.710.812.1000.990.1">
+                <text>IHE Simulator</text>
+                <HelpTextForTest>Test patients:
+					2469772
+                </HelpTextForTest>
+            </IH>
+        </country>
+	</CountryConfigManager>
+</Configuration>

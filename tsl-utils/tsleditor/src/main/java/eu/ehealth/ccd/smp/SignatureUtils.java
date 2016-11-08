@@ -10,7 +10,21 @@ import java.security.Key;
 import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import javax.xml.crypto.dsig.DigestMethod;
+import javax.xml.crypto.dsig.Reference;
+import javax.xml.crypto.dsig.SignatureMethod;
+import javax.xml.crypto.dsig.SignedInfo;
+import javax.xml.crypto.dsig.Transform;
+import javax.xml.crypto.dsig.XMLSignatureFactory;
+import javax.xml.crypto.dsig.dom.DOMSignContext;
+import javax.xml.crypto.dsig.keyinfo.KeyInfo;
+import javax.xml.crypto.dsig.keyinfo.KeyInfoFactory;
+import javax.xml.crypto.dsig.keyinfo.X509Data;
+import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
+import javax.xml.crypto.dsig.spec.TransformParameterSpec;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
@@ -26,9 +40,12 @@ import org.apache.xml.security.transforms.Transforms;
 import org.apache.xml.security.utils.Constants;
 import org.apache.xml.security.utils.ElementProxy;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 /**
- *
+ * This class contains some methods that can be used to apply XML Digital Signatures to files.
+ * Only the last method is currently used by other classes, the others are just experiments with APIs.
+ * 
  * @author joao.cunha
  */
 public class SignatureUtils {
@@ -195,6 +212,56 @@ public class SignatureUtils {
         }
         finally {
             IOUtils.closeQuietly(fileInputStream);
+        }
+    }
+    
+    /**
+     * Method used to sign the Extension element of SMP files.
+     * @param xtPointer Reference to the Element where the Signature should be stored.
+     * @param privateKeyFile Path to the keystore (JKS).
+     * @param keystorePassword Keystore password.
+     * @param privateKeyAlias Alias of the private key stored in the keystore.
+     * @param privateKeyPassword Password to access the private key stored in the keystore.
+     * @throws Exception 
+     */
+    public static void sign(Element xtPointer, File privateKeyFile, String keystorePassword, String privateKeyAlias, String privateKeyPassword) throws Exception {
+        try (FileInputStream ksfis = new FileInputStream(privateKeyFile)) {
+            XMLSignatureFactory fac = XMLSignatureFactory.getInstance("DOM");
+ 
+            Reference ref = fac.newReference("", fac.newDigestMethod(DigestMethod.SHA256, null),
+                    Collections.singletonList(fac.newTransform(Transform.ENVELOPED, (TransformParameterSpec) null)),
+                    null, null);
+ 
+            // Create the SignedInfo.
+            SignedInfo si = fac.newSignedInfo(fac.newCanonicalizationMethod(Canonicalizer.ALGO_ID_C14N_WITH_COMMENTS, (C14NMethodParameterSpec) null),
+                    fac.newSignatureMethod(SignatureMethod.RSA_SHA1, null), Collections.singletonList(ref));
+ 
+            // Load the KeyStore and get the signing key and certificate.
+            KeyStore ks = KeyStore.getInstance(KEY_STORE_TYPE);
+            ks.load(ksfis, keystorePassword.toCharArray());
+            KeyStore.PrivateKeyEntry keyEntry = (KeyStore.PrivateKeyEntry) ks.getEntry(privateKeyAlias,
+                    new KeyStore.PasswordProtection(privateKeyPassword.toCharArray()));
+            X509Certificate cert = (X509Certificate) keyEntry.getCertificate();
+ 
+            // Create the KeyInfo containing the X509Data.
+            KeyInfoFactory kif = fac.getKeyInfoFactory();
+            List x509Content = new ArrayList();
+            x509Content.add(cert.getSubjectX500Principal().getName());
+            x509Content.add(cert);
+            X509Data xd = kif.newX509Data(x509Content);
+            KeyInfo ki = kif.newKeyInfo(Collections.singletonList(xd));
+ 
+            // Create a DOMSignContext and specify the RSA PrivateKey and
+            // location of the resulting XMLSignature's parent element.
+            DOMSignContext dsc = new DOMSignContext(keyEntry.getPrivateKey(), xtPointer);
+ 
+            // Create the XMLSignature, but don't sign it yet.
+            javax.xml.crypto.dsig.XMLSignature signature = fac.newXMLSignature(si, ki);
+ 
+            // Marshal, generate, and sign the enveloped signature.
+            signature.sign(dsc);
+        } catch (Exception e) {
+            throw e;
         }
     }
 }

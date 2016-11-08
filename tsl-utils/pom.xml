@@ -1,56 +1,18 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <parent>
-        <artifactId>openncp</artifactId>
-        <groupId>eu.europa.ec.joinup.ecc</groupId>
-        <version>4.0.0-SNAPSHOT</version>
-    </parent>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>openncp</artifactId>
+		<groupId>eu.europa.ec.sante.ehdsi</groupId>
+		<version>2.4.2</version>
+	</parent>
+	<artifactId>openncp-tslutils</artifactId>
+	<name>TSL-UTILS</name>
+	<packaging>pom</packaging>
 
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>eu.europa.ec.joinup.ecc</groupId>
-    <artifactId>epsos-tslutils</artifactId>
-    <name>TSL-UTILS</name>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>tsleditor</module>
-        <module>tslsync</module>
-    </modules>
-
-    <repositories>
-        <repository>
-            <id>joinup-releases</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>joinup-snapshots</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <!-- Added EU JoinUP distribution repository -->
-    <distributionManagement>
-        <repository>
-            <id>joinup-releases</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>joinup-snapshots</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
+	<modules>
+		<module>tsleditor</module>
+		<module>tslsync</module>
+	</modules>
 </project>

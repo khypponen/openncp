@@ -1,450 +1,421 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
+	<!-- ================== Artifact ================== -->
+	<parent>
+		<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+		<artifactId>openncp-ncp-client</artifactId>
+		<version>2.4.2</version>
+	</parent>
 
-    <!-- ==================
-       Artifact
-    ================== -->
-    <parent>
-        <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-        <artifactId>epsos-ncp-client</artifactId>
-        <version>4.0.0-SNAPSHOT</version>
-    </parent>
+	<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
+	<artifactId>openncp-client-connector</artifactId>
 
-    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-client</groupId>
-    <artifactId>epsos-client-connector</artifactId>
+	<name>OpenNCP CC Client Connector</name>
+	<inceptionYear>2012</inceptionYear>
+	<packaging>war</packaging>
 
-    <name>EpSOS CC Client Connector</name>
-    <inceptionYear>2012</inceptionYear>
-    <packaging>war</packaging>
-    <url>epsos.eu</url>
+	<properties>
+		<service.class.mock /> <!-- LP: in order use mock version use -Dservice.class.mock=Mock during maven
+			build -->
+	</properties>
 
-    <properties>
-        <service.class.mock/> <!-- LP: in order use mock version use -Dservice.class.mock=Mock during maven build -->
-    </properties>
+	<!-- ================== Development ================== -->
+	<licenses>
+		<license>
+			<name>GNU Public License, Version 3.0</name>
+			<url>http://www.gnu.org/copyleft/gpl.html</url>
+		</license>
+	</licenses>
+	<scm>
+		<connection>git clone https://code.google.com/p/epsos-common-components.protocolterminators/</connection>
+		<url>http://code.google.com/p/epsos-common-components.protocolterminators/source/browse/</url>
+	</scm>
+	<issueManagement>
+		<system>JIRA</system>
+		<url>https://openncp.atlassian.net/browse/PT</url>
+	</issueManagement>
 
+	<!-- ================== Dependencies ================== -->
+	<dependencies>
 
-    <!-- ==================
-       Development
-    ================== -->
-    <licenses>
-        <license>
-            <name>GNU Public License, Version 3.0</name>
-            <url>http://www.gnu.org/copyleft/gpl.html</url>
-        </license>
-    </licenses>
-    <scm>
-        <connection>git clone https://code.google.com/p/epsos-common-components.protocolterminators/</connection>
-        <url>http://code.google.com/p/epsos-common-components.protocolterminators/source/browse/</url>
-    </scm>
-    <issueManagement>
-        <system>JIRA</system>
-        <url>https://openncp.atlassian.net/browse/PT</url>
-    </issueManagement>
+		<!-- OpenNCP -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>openncp-xcpd-ws-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>openncp-xca-ws-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>openncp-xdr-ws-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>eu.europa.ec.sante.ehdsi</groupId>
+			<artifactId>openncp-data-model</artifactId>
+		</dependency>
 
-    <!-- ==================
-       Dependencies
-    ================== -->
-    <dependencies>
+		<!-- axis2 -->
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-webapp</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>serializer</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.neethi</groupId>
+			<artifactId>neethi</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>stax-api</artifactId>
+					<groupId>javax.xml.stream</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 
-        <!-- epSOS -->
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>epsos-xcpd-ws-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>epsos-xca-ws-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>epsos-xdr-ws-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
-            <artifactId>epsos-data-model</artifactId>
-        </dependency>
+		<!-- log -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
 
-        <!-- axis2 -->
-        <dependency>
-            <groupId>org.apache.axis2</groupId>
-            <artifactId>axis2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.xmlbeans</groupId>
-            <artifactId>xmlbeans</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.axis2</groupId>
-            <artifactId>axis2-webapp</artifactId>
-            <type>war</type>
-        </dependency>
-        <dependency>
-            <groupId>xalan</groupId>
-            <artifactId>serializer</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.neethi</groupId>
-            <artifactId>neethi</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>stax-api</artifactId>
-                    <groupId>javax.xml.stream</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+		<!-- tests -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+			<artifactId>openncp-ncp-pt-client-consumer</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+			<artifactId>openncp-integration-test</artifactId>
+		</dependency>
 
-        <!-- log -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-        </dependency>
+		<!-- Ohter -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.saxon</groupId>
+			<artifactId>saxon9-dom</artifactId>
+			<version>9.1.0.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>4.1.1.RELEASE</version>
+			<scope>test</scope>
+			<type>jar</type>
+		</dependency>
 
-        <!-- tests -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-            <artifactId>epsos-ncp-pt-client-consumer</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-configuration</groupId>
-            <artifactId>commons-configuration</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-            <artifactId>epsos-integration-test</artifactId>
-        </dependency>
+	</dependencies>
 
-        <!-- Ohter -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.sf.saxon</groupId>
-            <artifactId>saxon9-dom</artifactId>
-            <version>9.1.0.8</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>4.1.1.RELEASE</version>
-            <scope>test</scope>
-            <type>jar</type>
-        </dependency>
+	<!-- ================== Build ================== -->
+	<build>
+		<finalName>${project.artifactId}</finalName>
 
-    </dependencies>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>${project.build.directory}/generated-sources/resources</directory>
+			</resource>
+		</resources>
 
+		<plugins>
+			<plugin>
+				<!-- Maven compiler plugin -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-testCompile</id>
+						<phase>test-compile</phase>
+						<configuration>
+							<testExcludes>
+								<exclude>**/*IT.java</exclude>
+							</testExcludes>
+						</configuration>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
-    <!-- ==================
-       Build
-    ================== -->
-    <build>
-        <finalName>${project.artifactId}</finalName>
+			<!-- aar -->
+			<plugin>
+				<groupId>org.apache.axis2</groupId>
+				<artifactId>axis2-aar-maven-plugin</artifactId>
+				<version>${project.axis2ReleaseVersion}</version>
+				<extensions>true</extensions>
+				<executions>
+					<execution>
+						<id>package-aar</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>aar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<fileSets>
+						<fileSet>
+							<directory>${project.basedir}/src/main/resources/wsdl</directory>
+							<outputDirectory>META-INF</outputDirectory>
+							<includes>
+								<include>**/*.xsd</include>
+							</includes>
+						</fileSet>
+					</fileSets>
+					<servicesXmlFile>${project.build.outputDirectory}/axis2/services.xml</servicesXmlFile>
+					<wsdlFile>${project.build.outputDirectory}/wsdl/ClientConnectorService.wsdl</wsdlFile>
+				</configuration>
+			</plugin>
 
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-            <resource>
-                <directory>${project.build.directory}/generated-sources/resources</directory>
-            </resource>
-        </resources>
+			<!-- war -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<webResources>
+						<resource>
+							<directory>target</directory>
+							<includes>
+								<include>${project.build.finalName}.aar</include>
+							</includes>
+							<targetPath>WEB-INF/services</targetPath>
+						</resource>
+					</webResources>
+					<packagingExcludes>
+						WEB-INF/lib/antlr-2.7.6.jar,
+						WEB-INF/lib/commons-codec-1.3.jar,
+						WEB-INF/lib/jaxen-1.1.1.jar,
+						WEB-INF/lib/log4j-1.2.15.jar,
+						WEB-INF/lib/saxon9-dom-9.1.0.8.jar,
+						WEB-INF/lib/xalan-2.7.0.jar,
+						WEB-INF/lib/xmlbeans-2.3.0.jar
+					</packagingExcludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
+	<!-- ================== Profiles ================== -->
+	<profiles>
+		<!-- Axis source code -->
+		<profile>
+			<id>generate-source</id>
+			<activation>
+				<property>
+					<name>!no-wsdl2code</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.axis2</groupId>
+						<artifactId>axis2-wsdl2code-maven-plugin</artifactId>
+						<version>${project.axis2ReleaseVersion}</version>
+						<executions>
+							<execution>
+								<id>Generate_Server_Code</id>
+								<goals>
+									<goal>wsdl2code</goal>
+								</goals>
+								<configuration>
+									<packageName>epsos.openncp.pt.client</packageName>
+									<wsdlFile>src/main/resources/wsdl/ClientConnectorService.wsdl</wsdlFile>
+									<databindingName>xmlbeans</databindingName>
+									<generateAllClasses>false</generateAllClasses>
+									<generateServerSide>false</generateServerSide>
+									<generateServerSideInterface>true</generateServerSideInterface>
+									<generateServicesXml>true</generateServicesXml>
+									<generateTestcase>false</generateTestcase>
+									<outputDirectory>target/generated-sources/</outputDirectory>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 
-        <plugins>
+		<!-- JavaDoc -->
+		<profile>
+			<id>generate-javadoc</id>
+			<activation>
+				<property>
+					<name>javadoc</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.8.1</version>
+						<configuration>
+							<quiet>true</quiet>
+							<reportOutputDirectory>target/${project.artifactId}</reportOutputDirectory>
+							<destDir>javadoc</destDir>
+							<excludePackageNames>
+								epsos.openncp.protocolterminator.clientconnector.imp.*:epsos.openncp.pt.client:eu.epsos.pt.cc.dts:org.w3.www._2004._06.xmlmime:org.w3.www._2004._06.xmlmime.impl:org.xmlsoap.schemas.soap.encoding:org.xmlsoap.schemas.soap.encoding.impl:pt.spms.epsos.utils.logging
+							</excludePackageNames>
+						</configuration>
+						<executions>
+							<execution>
+								<id>generate-javadoc</id>
+								<goals>
+									<goal>javadoc</goal>
+								</goals>
+								<phase>prepare-package</phase>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 
-            <plugin>
-                <!-- Maven compiler plugin -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>default-testCompile</id>
-                        <phase>test-compile</phase>
-                        <configuration>
-                            <testExcludes>
-                                <exclude>**/*IT.java</exclude>
-                            </testExcludes>
-                        </configuration>
-                        <goals>
-                            <goal>testCompile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- aar -->
-            <plugin>
-                <groupId>org.apache.axis2</groupId>
-                <artifactId>axis2-aar-maven-plugin</artifactId>
-                <version>${project.axis2ReleaseVersion}</version>
-                <extensions>true</extensions>
-                <executions>
-                    <execution>
-                        <id>package-aar</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>aar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <fileSets>
-                        <fileSet>
-                            <directory>${project.basedir}/src/main/resources/wsdl</directory>
-                            <outputDirectory>META-INF</outputDirectory>
-                            <includes>
-                                <include>**/*.xsd</include>
-                            </includes>
-                        </fileSet>
-                    </fileSets>
-                    <servicesXmlFile>${project.build.outputDirectory}/axis2/services.xml</servicesXmlFile>
-                    <wsdlFile>${project.build.outputDirectory}/wsdl/ClientConnectorService.wsdl</wsdlFile>
-                </configuration>
-            </plugin>
-
-            <!-- war -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <webResources>
-                        <resource>
-                            <directory>target</directory>
-                            <includes>
-                                <include>${project.build.finalName}.aar</include>
-                            </includes>
-                            <targetPath>WEB-INF/services</targetPath>
-                        </resource>
-                    </webResources>
-                    <packagingExcludes>
-                        WEB-INF/lib/antlr-2.7.6.jar,
-                        WEB-INF/lib/commons-codec-1.3.jar,
-                        WEB-INF/lib/jaxen-1.1.1.jar,
-                        WEB-INF/lib/log4j-1.2.15.jar,
-                        WEB-INF/lib/saxon9-dom-9.1.0.8.jar,
-                        WEB-INF/lib/xalan-2.7.0.jar,
-                        WEB-INF/lib/xmlbeans-2.3.0.jar
-                    </packagingExcludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
-
-    <!-- ==================
-       Profiles
-    ================== -->
-    <profiles>
-
-        <!-- Axis source code -->
-        <profile>
-            <id>generate-source</id>
-
-            <activation>
-                <property>
-                    <name>!no-wsdl2code</name>
-                </property>
-            </activation>
-
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.axis2</groupId>
-                        <artifactId>axis2-wsdl2code-maven-plugin</artifactId>
-                        <version>${project.axis2ReleaseVersion}</version>
-                        <executions>
-                            <execution>
-                                <id>Generate_Server_Code</id>
-                                <goals>
-                                    <goal>wsdl2code</goal>
-                                </goals>
-                                <configuration>
-                                    <packageName>epsos.openncp.pt.client</packageName>
-                                    <wsdlFile>src/main/resources/wsdl/ClientConnectorService.wsdl</wsdlFile>
-                                    <databindingName>xmlbeans</databindingName>
-                                    <generateAllClasses>false</generateAllClasses>
-                                    <generateServerSide>false</generateServerSide>
-                                    <generateServerSideInterface>true</generateServerSideInterface>
-                                    <generateServicesXml>true</generateServicesXml>
-                                    <generateTestcase>false</generateTestcase>
-                                    <outputDirectory>target/generated-sources/</outputDirectory>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <!-- JavaDoc -->
-        <profile>
-            <id>generate-javadoc</id>
-
-            <activation>
-                <property>
-                    <name>javadoc</name>
-                </property>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.8.1</version>
-                        <configuration>
-                            <quiet>true</quiet>
-                            <reportOutputDirectory>target/${project.artifactId}</reportOutputDirectory>
-                            <destDir>javadoc</destDir>
-                            <excludePackageNames>
-                                epsos.openncp.protocolterminator.clientconnector.imp.*:epsos.openncp.pt.client:eu.epsos.pt.cc.dts:org.w3.www._2004._06.xmlmime:org.w3.www._2004._06.xmlmime.impl:org.xmlsoap.schemas.soap.encoding:org.xmlsoap.schemas.soap.encoding.impl:pt.spms.epsos.utils.logging
-                            </excludePackageNames>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>generate-javadoc</id>
-                                <goals>
-                                    <goal>javadoc</goal>
-                                </goals>
-                                <phase>prepare-package</phase>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <!-- Integration Tests -->
-        <profile>
-            <id>integration-tests</id>
-
-            <dependencies>
-                <dependency>
-                    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-                    <artifactId>epsos-integration-test</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-test</artifactId>
-                    <version>3.0.5.RELEASE</version>
-                    <scope>test</scope>
-                    <type>jar</type>
-                </dependency>
-            </dependencies>
-
-            <build>
-                <testResources>
-                    <testResource>
-                        <directory>src/test/resources</directory>
-                    </testResource>
-                    <testResource>
-                        <directory>src/test/resources-it</directory>
-                        <targetPath>${project.build.testOutputDirectory}</targetPath>
-                        <filtering>true</filtering>
-                    </testResource>
-                </testResources>
-
-                <plugins>
-
-                    <plugin>
-                        <!-- Maven compiler plugin -->
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>iTest-testCompile</id>
-                                <phase>test-compile</phase>
-                                <configuration>
-                                    <testIncludes>
-                                        <include>**/*IT*</include>
-                                    </testIncludes>
-                                </configuration>
-                                <goals>
-                                    <goal>testCompile</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <plugin>
-                        <groupId>org.codehaus.cargo</groupId>
-                        <artifactId>cargo-maven2-plugin</artifactId>
-                        <version>1.2.3</version>
-
-                        <configuration>
-                            <container>
-                                <containerId>tomcat7x</containerId>
-                                <type>remote</type>
-                            </container>
-                            <configuration>
-                                <type>runtime</type>
-                                <properties>
-                                    <cargo.hostname>${remote.hostname}</cargo.hostname>
-                                    <cargo.servlet.port>${remote.port}</cargo.servlet.port>
-                                    <cargo.remote.username>${remote.user}</cargo.remote.username>
-                                    <cargo.remote.password>${remote.pass}</cargo.remote.password>
-                                </properties>
-                            </configuration>
-                        </configuration>
-
-                        <executions>
-                            <execution>
-                                <id>deploy-cargo</id>
-                                <phase>pre-integration-test</phase>
-                                <goals>
-                                    <goal>redeploy</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>undeploy-cargo</id>
-                                <phase>post-integration-test</phase>
-                                <goals>
-                                    <goal>undeploy</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <!-- failsafe -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-failsafe-plugin</artifactId>
-                        <version>2.12.2</version>
-                        <configuration>
-                            <encoding>${project.build.sourceEncoding}</encoding>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>iTest</id>
-                                <goals>
-                                    <goal>integration-test</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>iVerify</id>
-                                <goals>
-                                    <goal>verify</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                </plugins>
-            </build>
-
-        </profile>
-    </profiles>
+		<!-- Integration Tests -->
+		<profile>
+			<id>integration-tests</id>
+			<dependencies>
+				<dependency>
+					<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+					<artifactId>openncp-integration-test</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-test</artifactId>
+					<version>3.0.5.RELEASE</version>
+					<scope>test</scope>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+			<build>
+				<testResources>
+					<testResource>
+						<directory>src/test/resources</directory>
+					</testResource>
+					<testResource>
+						<directory>src/test/resources-it</directory>
+						<targetPath>${project.build.testOutputDirectory}</targetPath>
+						<filtering>true</filtering>
+					</testResource>
+				</testResources>
+				<plugins>
+					<plugin>
+						<!-- Maven compiler plugin -->
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>iTest-testCompile</id>
+								<phase>test-compile</phase>
+								<configuration>
+									<testIncludes>
+										<include>**/*IT*</include>
+									</testIncludes>
+								</configuration>
+								<goals>
+									<goal>testCompile</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.cargo</groupId>
+						<artifactId>cargo-maven2-plugin</artifactId>
+						<version>1.2.3</version>
+						<configuration>
+							<container>
+								<containerId>tomcat7x</containerId>
+								<type>remote</type>
+							</container>
+							<configuration>
+								<type>runtime</type>
+								<properties>
+									<cargo.hostname>${remote.hostname}</cargo.hostname>
+									<cargo.servlet.port>${remote.port}</cargo.servlet.port>
+									<cargo.remote.username>${remote.user}</cargo.remote.username>
+									<cargo.remote.password>${remote.pass}</cargo.remote.password>
+								</properties>
+							</configuration>
+						</configuration>
+						<executions>
+							<execution>
+								<id>deploy-cargo</id>
+								<phase>pre-integration-test</phase>
+								<goals>
+									<goal>redeploy</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>undeploy-cargo</id>
+								<phase>post-integration-test</phase>
+								<goals>
+									<goal>undeploy</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- failsafe -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>2.12.2</version>
+						<configuration>
+							<encoding>${project.build.sourceEncoding}</encoding>
+						</configuration>
+						<executions>
+							<execution>
+								<id>iTest</id>
+								<goals>
+									<goal>integration-test</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>iVerify</id>
+								<goals>
+									<goal>verify</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Configuration>
+    <ApplicationConfigManager>
+        <DisplayTool>
+            <XmlResourcePath>/Users/andreas/EpsosRepository</XmlResourcePath>
+        </DisplayTool>
+        <GraphiteLogger>
+            <graphiteHost>localhost</graphiteHost>
+            <graphitePort>2003</graphitePort>
+        </GraphiteLogger>
+        <locale>en_GB</locale>
+        <LogoutUrl>http://www.google.com</LogoutUrl>
+    </ApplicationConfigManager>
+</Configuration>

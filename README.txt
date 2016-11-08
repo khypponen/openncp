@@ -24,18 +24,16 @@ tsl-utils
 protocol-terminators
 openatna
 openncp-portal
-epsos-common-components
-OPENSTORK
+openncp-common-components
+openstork
 
 Maven Configuration
 -------------------
 export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=350m"
-mvn clean package install -DskipTests -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true  
+mvn clean package install -DskipTests -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true
 
 The ssl.insecure flags are for allowing IHE Gazelle endpoints needed for parsing ws endpoints
 
 Tips for creating new versions
 ------------------------------
 From the root directory just run the following command mvn versions:set -DnewVersion=<new version>
-
-

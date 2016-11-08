@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<CountryConfigManager>
+		<country>
+			<AT homeCommuity="2.16.17.710.780.1000.990.1">
+				<DisplayName>Österike</DisplayName>
+				<PatientIdentifier type="RRI">SSN</PatientIdentifier>
+				<PatientIdentifier type="RRI2">CRR</PatientIdentifier>
+				<text>Ange personens SSN (Social Security Number) och CRR (Central Register of Residents)</text>
+			</AT>
+			<CZ homeCommuity="2.16.17.710.804.1000.990.1">
+				<DisplayName>Tjeckien</DisplayName>
+				<PatientIdentifier type="RRI">Birth Number (RČ)</PatientIdentifier>
+				<PatientIdentifier type="RRI1">Identification Card Number (ČOP)</PatientIdentifier>
+				<text>Ange personens birth number (Rodné číslo, RČ) och identification card number (Číslo občianskeho preukazu, ČOP)</text>
+			</CZ>
+			<DK homeCommuity="2.16.17.710.802.1000.990.1">
+				<DisplayName>Danmark</DisplayName>
+				<PatientIdentifier type="2.16.17.710.802.1000.990.1" pattern="^\\d{10}">CPR-nummer</PatientIdentifier>
+				<text>Ange personens Social Security Number (CPR-nummer) med 10 siffror utan bindestrecke eller blanksteg</text>
+			</DK>
+			<ES homeCommuity="2.16.17.710.801.1000.990.1">
+				<DisplayName>Spanien</DisplayName>
+				<PatientIdentifier type="2.16.724.4.41">Documento Nacional de Identidad (DNI)</PatientIdentifier>
+				<PatientIdentifier type="2.16.724.4.42">Número de Identificación de Extranjeros (NIE)</PatientIdentifier>
+				<text>Ange personens DNI (format: 00000000-A (where 0 is a digit and A is a checksum letter)) 
+				och NIE (format: X-0000000-A (again, 0 is a digit, A is a checksum letter, 
+				X is a letter, generally X, and lately also Y))</text>
+			</ES>
+			<FR homeCommuity="2.16.17.710.790.1000.990.1">
+				<DisplayName>Frankrike</DisplayName>
+				<PatientIdentifier type="RRI">INSEE code</PatientIdentifier>
+				<text>Ange personens INSEE code</text>
+			</FR>
+			<IT homeCommuity="2.16.17.710.806.1000.990.1">
+				<DisplayName>Italien</DisplayName>
+				<PatientIdentifier type="RRI">Codice fiscale</PatientIdentifier>
+				<PatientIdentifier type="RRI2">Area</PatientIdentifier>
+				<text>Ange personens Codice fiscale (format: SSSNNNYYMDDZZZZX) and "area"</text>
+			</IT>
+			<SE homeCommuity="2.16.17.710.807.1000.990.1">
+				<DisplayName>Sverige</DisplayName>
+				<PatientIdentifier type="2.16.17.710.807.1000.990.1" pattern="^\\d{12}">Personnummer</PatientIdentifier>
+				<text>Ange ett personnummer med 12 siffor utan bindestreck eller blanksteg</text>
+			</SE>
+			<IHE homeCommuity="2.16.17.710.812.1000.990.1">
+				<DisplayName>IHE</DisplayName>
+				<PatientIdentifier type="RRI">ID</PatientIdentifier>
+				<text>Ange ID</text>
+			</IHE>
+		</country>
+	</CountryConfigManager>
+</Configuration>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:wicket="http://wicket.apache.org/">
+<head>
+    <title></title>
+</head>
+<body>
+<wicket:extend>
+	<fieldset>
+		<legend><wicket:message key="label.signIn">[label.signIn]</wicket:message></legend>
+		<form id="loginForm" method="post" wicket:id="loginForm">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="username"><wicket:message key="label.username">[label.username]</wicket:message></label></td>
+						<td colspan="2"><input class="textfield" type="text" id="username" wicket:id="username" /></td>
+					</tr>
+					<tr>
+						<td><label for="password"><wicket:message key="label.password">[label.password]</wicket:message></label></td>
+						<td colspan="2">
+		                    <input class="textfield" type="password" id="password" wicket:id="password" />
+		                </td>
+					</tr>
+		            <tr>
+		                <td>
+		                    <label for="rememberme"><wicket:message key="label.rememberMe">[label.rememberMe]</wicket:message></label>
+		                </td>
+		                <td>
+		                    <input type="checkbox" class="checkbox" name="rememberme" id="rememberme" wicket:id="rememberMe" />
+		                </td>
+		                <td style="text-align: right;">
+		                    <input name="submitButton" type="submit" id="submitButton" wicket:id="submitButton" wicket:message="value:label.signIn"/>
+		                </td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</fieldset>
+</wicket:extend>
+
+</body>
+</html>

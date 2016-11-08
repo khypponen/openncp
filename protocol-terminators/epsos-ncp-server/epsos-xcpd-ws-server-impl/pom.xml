@@ -7,14 +7,14 @@
        Artifact
     ================== -->
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-        <artifactId>epsos-ncp-server</artifactId>
-        <version>4.0.0-SNAPSHOT</version>
+        <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+        <artifactId>openncp-ncp-server</artifactId>
+        <version>2.4.2</version>
     </parent>
 
-    <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-    <artifactId>epsos-xcpd-ws-server-impl</artifactId>
-    <name>EpSOS CC IHE-XCPD Service Interface Implementation</name>
+    <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+    <artifactId>openncp-xcpd-ws-server-impl</artifactId>
+    <name>OpenNCP CC IHE-XCPD Service Interface Implementation</name>
     <organization>
         <name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
         <url>www.srdc.com.tr</url>
@@ -26,24 +26,24 @@
             <artifactId>axis2-kernel</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-            <artifactId>epsos-interface</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+            <artifactId>openncp-interface</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
-            <artifactId>epsos-assertion-validator</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
+            <artifactId>openncp-assertion-validator</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc</groupId>
-            <artifactId>epsos-defaultpolicymanager</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi</groupId>
+            <artifactId>openncp-defaultpolicymanager</artifactId>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-            <artifactId>epsos-integration-test</artifactId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+            <artifactId>openncp-integration-test</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>

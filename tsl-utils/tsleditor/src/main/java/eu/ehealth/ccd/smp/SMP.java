@@ -61,6 +61,7 @@ import eu.europa.ec.cipa.smp.client.tools.SMPUtils;
 public class SMP {
     private static final Logger logger = LoggerFactory.getLogger(SMP.class);
     private static final ConfigFile configurationsFile = ConfigFile.getInstance();
+    private static final String IDENTIFIERS_NAMESPACE = "http://busdox.org/transport/identifiers/1.0/";
     
     private SMPServiceCaller aClient;
     private SMPConnection smpConnection;
@@ -215,8 +216,8 @@ public class SMP {
     }
     
     // Return value of XML tag, given a root element
-    private String getString(String tagName, Element element) {
-        NodeList list = element.getElementsByTagName(tagName);
+    private String getXmlTagValue(String tagName, String namespace, Element element) {
+        NodeList list = element.getElementsByTagNameNS(namespace, tagName);
         if (list != null && list.getLength() > 0) {
             NodeList subList = list.item(0).getChildNodes();
 
@@ -230,10 +231,11 @@ public class SMP {
     
     public String getCountryFromSmpFile(File smpFile) throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(true);
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.parse(smpFile);
         Element rootElement = document.getDocumentElement();
-        String participantIdentifier = getString("ids:ParticipantIdentifier", rootElement);
+        String participantIdentifier = getXmlTagValue("ParticipantIdentifier", IDENTIFIERS_NAMESPACE, rootElement);
         String country = participantIdentifier.split(":")[2]; // E.g., urn:ehealth:lu:ncpb-idp -> lu   
         logger.info("Country: " + country);
         return country;
@@ -241,10 +243,11 @@ public class SMP {
     
     public String getDocumentSubtypeIdFromSmpFile(File smpFile) throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(true);
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.parse(smpFile);
         Element rootElement = document.getDocumentElement();
-        String documentIdentifier = getString("ids:DocumentIdentifier", rootElement);
+        String documentIdentifier = getXmlTagValue("DocumentIdentifier", IDENTIFIERS_NAMESPACE, rootElement);
         String documentSubtypeID = documentIdentifier.split("(?<!:):(?!:)")[2]; // split with single colon but not double colon. E.g., urn::epsos##services:extended:epsos::11 -> epsos::11     
         logger.info("DocumentSubtypeID: " + documentSubtypeID);
         return documentSubtypeID;

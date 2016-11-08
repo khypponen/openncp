@@ -6,7 +6,9 @@
 package eu.ehealth.ccd.exceptions;
 
 /**
- *
+ * Custom exception to be thrown when there's no ServiceGroup for a certain
+ * country in the SMP server
+ * 
  * @author joao.cunha
  */
 public class NoServiceGroupException extends Exception {

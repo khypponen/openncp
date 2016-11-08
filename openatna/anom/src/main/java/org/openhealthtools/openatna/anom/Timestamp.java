@@ -43,8 +43,11 @@ public class Timestamp {
 
     private static DateFormat df = new SimpleDateFormat("yyy-MM-dd HH:mm:ss.SSS");
 
+    private Timestamp() {
+		super();
+	}
 
-    /**
+	/**
      * misc. numeric formats used in formatting
      */
     private static final DecimalFormat XX_FORMAT = new DecimalFormat("00");
@@ -59,7 +62,7 @@ public class Timestamp {
         try {
             return df.parse(text);
         } catch (ParseException e) {
-
+        	//TODO: Manage the exception: either throw or log?
         }
         return null;
     }
@@ -99,8 +102,15 @@ public class Timestamp {
          * parsing because it can't handle years <= 0 and TZD's
          */
 
-        int year, month, day, hour, min, sec, ms;
+        int year;
+        int month;
+        int day;
+        int hour;
+        int min;
+        int sec;
+        int ms;
         String tzID;
+
         try {
             // year (YYYY)
             year = Integer.parseInt(text.substring(start, start + 4));
@@ -157,15 +167,17 @@ public class Timestamp {
             if (text.charAt(start) == '+' || text.charAt(start) == '-') {
                 // offset to UTC specified in the format +00:00/-00:00
                 tzID = "GMT" + text.substring(start);
-            } else if (text.substring(start).equals("Z")) {
+            } else if ("Z".equals(text.substring(start))) {
                 tzID = "GMT";
             } else {
                 // invalid time zone designator
                 return null;
             }
         } catch (IndexOutOfBoundsException e) {
+        	//TODO: Manage Exception: either log or re-throw.
             return null;
         } catch (NumberFormatException e) {
+        	//TODO: Manage Exception: either log or re-throw.
             return null;
         }
 
@@ -212,6 +224,7 @@ public class Timestamp {
              */
             getYear(cal);
         } catch (IllegalArgumentException e) {
+        	//TODO: Manage Exception: either log or re-throw.
             return null;
         }
 
@@ -234,7 +247,7 @@ public class Timestamp {
      *                                  or the calendar cannot be represented as defined by ISO 8601 (i.e. year
      *                                  with more than four digits).
      */
-    public static String format(Calendar cal) throws IllegalArgumentException {
+    public static String format(Calendar cal) {
         if (cal == null) {
             throw new IllegalArgumentException("argument can not be null");
         }
@@ -246,7 +259,8 @@ public class Timestamp {
          * note that we cannot use java.text.SimpleDateFormat for
          * formatting because it can't handle years <= 0 and TZD's
          */
-        StringBuffer buf = new StringBuffer();
+        //StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
         // year ([-]YYYY)
         buf.append(XXXX_FORMAT.format(getYear(cal)));
         buf.append('-');
@@ -285,7 +299,7 @@ public class Timestamp {
     }
 
     /**
-     * Returns the astonomical year of the given calendar.
+     * Returns the astronomical year of the given calendar.
      *
      * @param cal a calendar instance.
      * @return the astronomical year.
@@ -293,7 +307,7 @@ public class Timestamp {
      *                                  defined by ISO 8601 (i.e. year with more
      *                                  than four digits).
      */
-    public static int getYear(Calendar cal) throws IllegalArgumentException {
+    public static int getYear(Calendar cal) {
         // determine era and adjust year if necessary
         int year = cal.get(Calendar.YEAR);
         if (cal.isSet(Calendar.ERA)

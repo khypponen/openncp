@@ -1,563 +1,494 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <parent>
-        <artifactId>openncp</artifactId>
-        <groupId>eu.europa.ec.joinup.ecc</groupId>
-        <version>4.0.0-SNAPSHOT</version>
-    </parent>
+	<parent>
+		<artifactId>openncp</artifactId>
+		<groupId>eu.europa.ec.sante.ehdsi</groupId>
+		<version>2.4.2</version>
+	</parent>
 
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
+	<!-- ================== Artifact ================== -->
+	<artifactId>openncp-protocol-terminators</artifactId>
+	<name>OpenNCP CC Protocol Terminators</name>
+	<inceptionYear>2012</inceptionYear>
+	<packaging>pom</packaging>
+	<url>http://code.google.com/p/epsos-common-components.protocolterminators/</url>
 
-    <!-- ================== Artifact ================== -->
-    <groupId>eu.europa.ec.joinup.ecc</groupId>
-    <artifactId>epsos-protocol-terminators</artifactId>
-    <name>Epsos CC Protocol Terminators</name>
-    <inceptionYear>2012</inceptionYear>
-    <packaging>pom</packaging>
-    <url>http://code.google.com/p/epsos-common-components.protocolterminators/</url>
+	<modules>
+		<module>epsos-ncp-pt-utils</module>
+		<module>epsos-integration-test</module>
+		<module>epsos-ncp-client</module>
+		<module>epsos-ncp-server</module>
+		<module>epsos-ncp-client-consumer</module>
+	</modules>
 
-    <modules>
-        <module>epsos-ncp-pt-utils</module>
-        <module>epsos-integration-test</module>
-        <module>epsos-ncp-client</module>
-        <module>epsos-ncp-server</module>
-        <module>epsos-ncp-client-consumer</module>
-    </modules>
+	<dependencyManagement>
+		<dependencies>
+			<!-- epsos protocol terminators -->
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+				<artifactId>openncp-integration-test</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+				<artifactId>openncp-interface</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+				<artifactId>openncp-xcpd-ws-server-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+				<artifactId>openncp-xca-ws-server-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+				<artifactId>openncp-xdr-ws-server-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
+				<artifactId>openncp-nc-mock-it</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
+				<artifactId>openncp-xcpd-ws-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
+				<artifactId>openncp-xca-ws-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-client</groupId>
+				<artifactId>openncp-xdr-ws-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+				<artifactId>openncp-ncp-pt-client-consumer</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
+				<artifactId>openncp-ncp-pt-utils</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
+				<artifactId>openncp-data-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
+				<artifactId>openncp-util</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
+				<artifactId>openncp-transformation-manager</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
+				<artifactId>openncp-terminology-service-access-manager</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
+				<artifactId>openncp-assertion-validator</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
+				<artifactId>openncp-defaultpolicymanager</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
+				<artifactId>openncp-audit-manager</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
+				<artifactId>openncp-adc</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>eu.europa.ec.sante.ehdsi</groupId>
+				<artifactId>openncp-configuration-manager</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- epsos protocol terminators -->
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-                <artifactId>epsos-integration-test</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-                <artifactId>epsos-interface</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-                <artifactId>epsos-xcpd-ws-server-impl</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-                <artifactId>epsos-xca-ws-server-impl</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-                <artifactId>epsos-xdr-ws-server-impl</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-server</groupId>
-                <artifactId>epsos-nc-mock-it</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-client</groupId>
-                <artifactId>epsos-xcpd-ws-client</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-client</groupId>
-                <artifactId>epsos-xca-ws-client</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators.epsos-ncp-client</groupId>
-                <artifactId>epsos-xdr-ws-client</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-                <artifactId>epsos-ncp-pt-client-consumer</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc.epsos-protocol-terminators</groupId>
-                <artifactId>epsos-ncp-pt-utils</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+			<!-- SAML -->
+			<dependency>
+				<groupId>org.opensaml</groupId>
+				<artifactId>opensaml</artifactId>
+				<version>2.5.3</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.apache.xerces</groupId>
+						<artifactId>xercesImpl</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.xerces</groupId>
+						<artifactId>xml-apis</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.xerces</groupId>
+						<artifactId>serializer</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.xalan</groupId>
+						<artifactId>xalan</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>javax.servlet</groupId>
+						<artifactId>servlet-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<artifactId>log4j</artifactId>
+						<groupId>log4j</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>slf4j-jdk14</artifactId>
+						<groupId>org.slf4j</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>log4j-over-slf4j</artifactId>
+						<groupId>org.slf4j</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!-- external dependencies -->
+			<dependency>
+				<groupId>org.herasaf.xacml.core</groupId>
+				<artifactId>herasaf-xacml-core</artifactId>
+				<version>1.0.1.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.17</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.6.6</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.6.6</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.10</version>
+			</dependency>
+			<!-- axis2 -->
+			<dependency>
+				<groupId>org.apache.axis2</groupId>
+				<artifactId>axis2</artifactId>
+				<version>${project.axis2ReleaseVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.axis2</groupId>
+				<artifactId>axis2-transport-http</artifactId>
+				<version>${project.axis2ReleaseVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.axis2</groupId>
+				<artifactId>axis2-transport-local</artifactId>
+				<version>${project.axis2ReleaseVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.axis2</groupId>
+				<artifactId>axis2-kernel</artifactId>
+				<version>${project.axis2ReleaseVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.axis2</groupId>
+				<artifactId>axis2-xmlbeans</artifactId>
+				<version>${project.axis2ReleaseVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.ws.commons.axiom</groupId>
+				<artifactId>axiom-api</artifactId>
+				<version>${project.axiomReleaseVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.ws.commons.axiom</groupId>
+				<artifactId>axiom-impl</artifactId>
+				<version>${project.axiomReleaseVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.ws.commons.axiom</groupId>
+				<artifactId>axiom-dom</artifactId>
+				<version>${project.axiomReleaseVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.axis2</groupId>
+				<artifactId>axis2-webapp</artifactId>
+				<version>${project.axis2ReleaseVersion}</version>
+				<type>war</type>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.xmlbeans</groupId>
+				<artifactId>xmlbeans</artifactId>
+				<version>2.4.0</version>
+			</dependency>
+			<dependency>
+				<groupId>xalan</groupId>
+				<artifactId>serializer</artifactId>
+				<version>2.7.1</version>
+			</dependency>
+			<dependency>
+				<groupId>xalan</groupId>
+				<artifactId>xalan</artifactId>
+				<version>2.7.1</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-configuration</groupId>
+				<artifactId>commons-configuration</artifactId>
+				<version>1.7</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>3.2.1</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>2.6</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>1.6</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.5</version>
+				<!-- updated from 2.3 to 2.5 openncp-client-connector uses this version -->
+			</dependency>
+			<dependency>
+				<groupId>wsdl4j</groupId>
+				<artifactId>wsdl4j</artifactId>
+				<!-- eclipse and possibly also netbeans package this in their builds,
+					but from the cmd.line we need it ;) -->
+				<version>1.6.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.neethi</groupId>
+				<artifactId>neethi</artifactId>
+				<version>3.0.2</version>
+			</dependency>
+			<dependency>
+				<groupId>xerces</groupId>
+				<artifactId>xercesImpl</artifactId>
+				<version>2.10.0</version>
+			</dependency>
+			<dependency>
+				<groupId>xml-apis</groupId>
+				<artifactId>xml-apis</artifactId>
+				<version>1.4.01</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
-            <!-- other -->
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc</groupId>
-                <artifactId>epsos-data-model</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc</groupId>
-                <artifactId>epsos-util</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc</groupId>
-                <artifactId>epsos-transformation-manager</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc</groupId>
-                <artifactId>epsos-terminology-service-access-manager</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc</groupId>
-                <artifactId>epsos-assertion-validator</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc</groupId>
-                <artifactId>epsos-defaultpolicymanager</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc</groupId>
-                <artifactId>epsos-audit-manager</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc</groupId>
-                <artifactId>epsos-adc</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.europa.ec.joinup.ecc</groupId>
-                <artifactId>epsos-configuration-manager</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+	<!-- ================== Properties ================== -->
+	<properties>
+		<!-- project -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.source.version>1.7</project.source.version>
+		<project.target.version>1.7</project.target.version>
+		<project.axis2ReleaseVersion>1.6.2</project.axis2ReleaseVersion>
+		<project.axiomReleaseVersion>1.2.13</project.axiomReleaseVersion>
 
-            <!-- SAML -->
-            <dependency>
-                <groupId>org.opensaml</groupId>
-                <artifactId>opensaml</artifactId>
-                <version>2.5.3</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.apache.xerces</groupId>
-                        <artifactId>xercesImpl</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.xerces</groupId>
-                        <artifactId>xml-apis</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.xerces</groupId>
-                        <artifactId>serializer</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.xalan</groupId>
-                        <artifactId>xalan</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>servlet-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>log4j</artifactId>
-                        <groupId>log4j</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>slf4j-jdk14</artifactId>
-                        <groupId>org.slf4j</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>log4j-over-slf4j</artifactId>
-                        <groupId>org.slf4j</groupId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
+		<!-- OpenNCP -->
+		<!-- <project.dataModelVersion>1.1.2</project.dataModelVersion> <project.utilsVersion>1.4.2</project.utilsVersion>
+			<project.interfaceVersion>1.1.0</project.interfaceVersion> <project.consentVersion>0.3.4</project.consentVersion>
+			<project.tsamVersion>2.0.0</project.tsamVersion> <project.tmVersion>3.1.2</project.tmVersion>
+			<project.assertionValidatorVersion>1.1.2</project.assertionValidatorVersion>
+			<project.auditManagerVersion>4.2.3</project.auditManagerVersion> <project.integrationTestVersion>1.0.1</project.integrationTestVersion>
+			<project.configurationManagerVersion>2.0.2</project.configurationManagerVersion>
+			<project.securityManagerVersion>2.1.1</project.securityManagerVersion> <project.defaultPolicyManagerVersion>1.2.1</project.defaultPolicyManagerVersion>
+			<project.eadcVersion>1.0.3</project.eadcVersion> -->
+		<!-- log -->
+		<project.log4jVersion>1.2.17</project.log4jVersion>
+		<project.slf4j-log4j12Version>1.6.6</project.slf4j-log4j12Version>
+		<!-- tests -->
+		<project.jUnitVersion>4.10</project.jUnitVersion>
+	</properties>
 
-            <!-- external dependencies -->
-            <dependency>
-                <groupId>org.herasaf.xacml.core</groupId>
-                <artifactId>herasaf-xacml-core</artifactId>
-                <version>1.0.1.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>log4j</groupId>
-                <artifactId>log4j</artifactId>
-                <version>1.2.17</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>1.6.6</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.6.6</version>
-            </dependency>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.10</version>
-            </dependency>
-
-            <!-- axis2 -->
-            <dependency>
-                <groupId>org.apache.axis2</groupId>
-                <artifactId>axis2</artifactId>
-                <version>${project.axis2ReleaseVersion}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.axis2</groupId>
-                <artifactId>axis2-transport-http</artifactId>
-                <version>${project.axis2ReleaseVersion}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.axis2</groupId>
-                <artifactId>axis2-transport-local</artifactId>
-                <version>${project.axis2ReleaseVersion}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.axis2</groupId>
-                <artifactId>axis2-kernel</artifactId>
-                <version>${project.axis2ReleaseVersion}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.axis2</groupId>
-                <artifactId>axis2-xmlbeans</artifactId>
-                <version>${project.axis2ReleaseVersion}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.ws.commons.axiom</groupId>
-                <artifactId>axiom-api</artifactId>
-                <version>${project.axiomReleaseVersion}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.ws.commons.axiom</groupId>
-                <artifactId>axiom-impl</artifactId>
-                <version>${project.axiomReleaseVersion}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.ws.commons.axiom</groupId>
-                <artifactId>axiom-dom</artifactId>
-                <version>${project.axiomReleaseVersion}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.axis2</groupId>
-                <artifactId>axis2-webapp</artifactId>
-                <version>${project.axis2ReleaseVersion}</version>
-                <type>war</type>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.xmlbeans</groupId>
-                <artifactId>xmlbeans</artifactId>
-                <version>2.4.0</version>
-            </dependency>
-            <dependency>
-                <groupId>xalan</groupId>
-                <artifactId>serializer</artifactId>
-                <version>2.7.1</version>
-            </dependency>
-            <dependency>
-                <groupId>xalan</groupId>
-                <artifactId>xalan</artifactId>
-                <version>2.7.1</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-configuration</groupId>
-                <artifactId>commons-configuration</artifactId>
-                <version>1.7</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-collections</groupId>
-                <artifactId>commons-collections</artifactId>
-                <version>3.2.1</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-lang</groupId>
-                <artifactId>commons-lang</artifactId>
-                <version>2.6</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-codec</groupId>
-                <artifactId>commons-codec</artifactId>
-                <version>1.6</version>
-            </dependency>
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>servlet-api</artifactId>
-                <version>2.5</version>
-                <!-- updated from 2.3 to 2.5 epsos-client-connector uses this version -->
-            </dependency>
-            <dependency>
-                <groupId>wsdl4j</groupId>
-                <artifactId>wsdl4j</artifactId>
-                <!-- eclipse and possibly also netbeans package this in their builds,
-                but from the cmd.line we need it ;) -->
-                <version>1.6.2</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.neethi</groupId>
-                <artifactId>neethi</artifactId>
-                <version>3.0.2</version>
-            </dependency>
-            <dependency>
-                <groupId>xerces</groupId>
-                <artifactId>xercesImpl</artifactId>
-                <version>2.10.0</version>
-            </dependency>
-            <dependency>
-                <groupId>xml-apis</groupId>
-                <artifactId>xml-apis</artifactId>
-                <version>1.4.01</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <!-- ================== Properties ================== -->
-    <properties>
-        <!-- project -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.source.version>1.7</project.source.version>
-        <project.target.version>1.7</project.target.version>
-        <project.axis2ReleaseVersion>1.6.2</project.axis2ReleaseVersion>
-        <project.axiomReleaseVersion>1.2.13</project.axiomReleaseVersion>
-
-        <!-- epsos -->
-        <!--        <project.dataModelVersion>1.1.2</project.dataModelVersion>
-        <project.utilsVersion>1.4.2</project.utilsVersion>
-        <project.interfaceVersion>1.1.0</project.interfaceVersion>
-        <project.consentVersion>0.3.4</project.consentVersion>
-        <project.tsamVersion>2.0.0</project.tsamVersion>
-        <project.tmVersion>3.1.2</project.tmVersion>
-        <project.assertionValidatorVersion>1.1.2</project.assertionValidatorVersion>
-        <project.auditManagerVersion>4.2.3</project.auditManagerVersion>
-         <project.integrationTestVersion>1.0.1</project.integrationTestVersion>
-        <project.configurationManagerVersion>2.0.2</project.configurationManagerVersion>
-        <project.securityManagerVersion>2.1.1</project.securityManagerVersion>
-        <project.defaultPolicyManagerVersion>1.2.1</project.defaultPolicyManagerVersion>
-        <project.eadcVersion>1.0.3</project.eadcVersion>-->
-        <!-- log -->
-        <project.log4jVersion>1.2.17</project.log4jVersion>
-        <project.slf4j-log4j12Version>1.6.6</project.slf4j-log4j12Version>
-        <!-- tests -->
-        <project.jUnitVersion>4.10</project.jUnitVersion>
-    </properties>
-
-    <!-- ================== Development ================== -->
-    <licenses>
-        <license>
-            <name>GNU Public License, Version 3.0</name>
-            <url>http://www.gnu.org/copyleft/gpl.html</url>
-        </license>
-    </licenses>
-    <scm>
-        <connection>git clone https://code.google.com/p/epsos-common-components.protocolterminators/</connection>
-        <url>http://code.google.com/p/epsos-common-components.protocolterminators/source/browse/</url>
-    </scm>
-    <issueManagement>
-        <system>JIRA</system>
-        <url>https://openncp.atlassian.net/browse/PT</url>
-    </issueManagement>
+	<!-- ================== Development ================== -->
+	<licenses>
+		<license>
+			<name>GNU Public License, Version 3.0</name>
+			<url>http://www.gnu.org/copyleft/gpl.html</url>
+		</license>
+	</licenses>
+	<scm>
+		<connection>git clone https://code.google.com/p/epsos-common-components.protocolterminators/</connection>
+		<url>http://code.google.com/p/epsos-common-components.protocolterminators/source/browse/</url>
+	</scm>
+	<issueManagement>
+		<system>JIRA</system>
+		<url>https://openncp.atlassian.net/browse/PT</url>
+	</issueManagement>
 
 
-    <!-- ================== Build ================== -->
-    <build>
-        <!--<finalName>${project.artifactId}</finalName> -->
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
-                <configuration>
-                    <source>${project.source.version}</source>
-                    <target>${project.target.version}</target>
-                    <optimize>true</optimize>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.6</version>
-                <configuration>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.5.1</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.9.1</version>
-                <configuration>
-                    <consoleOutput>true</consoleOutput>
-                    <configLocation>http://dev.iuz.pt/openncp-jenkins/checkstyle.xml</configLocation>
-                    <failsOnError>false</failsOnError>
-                    <excludes>**/resources/**/*,**/generated-sources/**/*,**/target/**/*</excludes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>2.7.1</version>
-                <configuration>
-                    <linkXRef>true</linkXRef>
-                    <targetJdk>${project.source.version}</targetJdk>
-                    <excludes>
-                        <exclude>**/resources/**/*</exclude>
-                        <exclude>**/generated-sources/**/*</exclude>
-                        <exclude>**/target/**/*</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.5.2</version>
-                <configuration>
-                    <onlyAnalyze>tr.com.srdc.epsos.-,eu.epsos.-,fi.kela.se.epsos.-,pt.spms.epsos.utils.logging.-,_2007.xds_b.iti.ihe.-,_2009.xcpd.iti.ihe.-</onlyAnalyze>
-                    <xmlOutput>true</xmlOutput>
-                    <xmlOutputDirectory>target/site</xmlOutputDirectory>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+	<!-- ================== Build ================== -->
+	<build>
+		<!--<finalName>${project.artifactId}</finalName> -->
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.17</version>
+				<configuration>
+					<consoleOutput>true</consoleOutput>
+					<!-- <configLocation>http://dev.iuz.pt/openncp-jenkins/checkstyle.xml</configLocation> -->
+					<failsOnError>false</failsOnError>
+					<excludes>**/resources/**/*,**/generated-sources/**/*,**/target/**/*</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>2.7.1</version>
+				<configuration>
+					<linkXRef>true</linkXRef>
+					<targetJdk>${project.source.version}</targetJdk>
+					<excludes>
+						<exclude>**/resources/**/*</exclude>
+						<exclude>**/generated-sources/**/*</exclude>
+						<exclude>**/target/**/*</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>2.5.2</version>
+				<configuration>
+					<onlyAnalyze>tr.com.srdc.epsos.-,eu.epsos.-,fi.kela.se.epsos.-,pt.spms.epsos.utils.logging.-,_2007.xds_b.iti.ihe.-,_2009.xcpd.iti.ihe.-</onlyAnalyze>
+					<xmlOutput>true</xmlOutput>
+					<xmlOutputDirectory>target/site</xmlOutputDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-    <!-- ================== Repositories ================== -->
-    <repositories>
-        <repository>
-            <id>joinup-releases</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <name>Official OpenSaml Repository</name>
-            <id>openSamlRep</id>
-            <url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
-        </repository>
-        <repository>
-            <id>joinup-snapshots</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>www2.ph.ed.ac.uk</id>
-            <url>http://www2.ph.ed.ac.uk/maven2/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <!-- <repository> <id>gnomon-lib-snapshot</id> <url>http://artifactory.gnomon.com.gr/artifactory/libs-snapshot-local/</url>
-        <releases> <enabled>false</enabled> </releases> <snapshots> <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy> </snapshots> </repository> <repository>
-        <id>gnomon-lib-release</id> <url>http://artifactory.gnomon.com.gr/artifactory/libs-release-local/</url>
-        <releases> <enabled>true</enabled> </releases> <snapshots> <enabled>false</enabled>
-        </snapshots> </repository> -->
-    </repositories>
-    <!-- <distributionManagement> <repository> <id>gnomon-lib-release</id> <name>gnomon</name>
-    <url>http://artifactory.gnomon.com.gr/artifactory/libs-release-local</url>
-    </repository> <snapshotRepository> <id>gnomon-lib-snapshot</id> <url>http://artifactory.gnomon.com.gr/artifactory/libs-snapshot-local/</url>
-    </snapshotRepository> </distributionManagement> -->
-    <distributionManagement>
-        <repository>
-            <id>joinup-releases</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>joinup-snapshots</id>
-            <url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-            <uniqueVersion>true</uniqueVersion>
-        </snapshotRepository>
-    </distributionManagement>
-    <!-- ================== Developers ================== -->
-    <developers>
-        <developer>
-            <id>steen@manniche.net</id>
-            <email>stm@nsi.dk</email>
-            <name>Steen Manniche</name>
-            <organization>National Board of E-Health, Denmark</organization>
-            <organizationUrl>http://www.nsi.dk</organizationUrl>
-        </developer>
-        <developer>
-            <id>andreas@diabol.se</id>
-            <email>andreas@diabol.se</email>
-            <name>Andreas Rehn</name>
-            <organization>Apotekens Service, Sweden</organization>
-            <organizationUrl>http://www.apotekensservice.se</organizationUrl>
-        </developer>
-        <developer>
-            <id>anders.nystrom@apotekensservice.se</id>
-            <email>anders.nystrom@apotekensservice.se</email>
-            <name>Anders Nystrom</name>
-            <organization>Apotekens Service, Sweden</organization>
-            <organizationUrl>http://www.apotekensservice.se</organizationUrl>
-        </developer>
-        <developer>
-            <id>gareth.woodham@apotekensservice.se</id>
-            <email>gareth.woodham@apotekensservice.se</email>
-            <name>Gareth Woodham</name>
-            <organization>Apotekens Service, Sweden</organization>
-            <organizationUrl>http://www.apotekensservice.se</organizationUrl>
-        </developer>
-        <developer>
-            <id>fredrik.dahlman@gmail.com</id>
-            <email>fredrik.dahlman@cag.se</email>
-            <name>Fredrik Dahlman</name>
-            <organization>Apotekens Service, Sweden</organization>
-            <organizationUrl>http://www.apotekensservice.se</organizationUrl>
-        </developer>
-        <developer>
-            <id>konstantin.hypponen@kela.fi</id>
-            <email>konstantin.hypponen@kela.fi</email>
-            <name>Konstantin Hyppönen</name>
-            <organization>Kela (The Social Insurance Institution of Finland)</organization>
-            <organizationUrl>http://www.kanta.fi</organizationUrl>
-        </developer>
-        <developer>
-            <id>luis.pinto@iuz.pt</id>
-            <email>luis.pinto@iuz.pt</email>
-            <name>Luis M. B. Pinto</name>
-            <organization>SPMS, Portugal</organization>
-            <organizationUrl>http://www.spms.pt</organizationUrl>
-        </developer>
-        <developer>
-            <id>marcelo.fonseca@iuz.pt</id>
-            <email>marcelo.fonseca@iuz.pt</email>
-            <name>Marcelo Fonseca</name>
-            <organization>SPMS, Portugal</organization>
-            <organizationUrl>http://www.spms.pt</organizationUrl>
-        </developer>
-        <developer>
-            <id>ivo.pinheiro@iuz.pt</id>
-            <email>ivo.pinheiro@iuz.pt</email>
-            <name>Ivo Pinheiro</name>
-            <organization>SPMS, Portugal</organization>
-            <organizationUrl>http://www.spms.pt</organizationUrl>
-        </developer>
-        <developer>
-            <id>k.karkaletsis@gnomon.com.gr</id>
-            <email>k.karkaletsis@gnomon.com.gr</email>
-            <name>Kostas Karkaletsis</name>
-            <organization>Gnomon Informatics SA</organization>
-            <organizationUrl>http://www.gnomon.com.gr</organizationUrl>
-        </developer>
-    </developers>
+	<!-- ================== Repositories ================== -->
+	<repositories>
+		<repository>
+			<name>Official OpenSaml Repository</name>
+			<id>openSamlRep</id>
+			<url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
+		</repository>
+		<repository>
+			<id>www2.ph.ed.ac.uk</id>
+			<url>http://www2.ph.ed.ac.uk/maven2/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<!-- ================== Developers ================== -->
+	<developers>
+		<developer>
+			<id>steen@manniche.net</id>
+			<email>stm@nsi.dk</email>
+			<name>Steen Manniche</name>
+			<organization>National Board of E-Health, Denmark</organization>
+			<organizationUrl>http://www.nsi.dk</organizationUrl>
+		</developer>
+		<developer>
+			<id>andreas@diabol.se</id>
+			<email>andreas@diabol.se</email>
+			<name>Andreas Rehn</name>
+			<organization>Apotekens Service, Sweden</organization>
+			<organizationUrl>http://www.apotekensservice.se</organizationUrl>
+		</developer>
+		<developer>
+			<id>anders.nystrom@apotekensservice.se</id>
+			<email>anders.nystrom@apotekensservice.se</email>
+			<name>Anders Nystrom</name>
+			<organization>Apotekens Service, Sweden</organization>
+			<organizationUrl>http://www.apotekensservice.se</organizationUrl>
+		</developer>
+		<developer>
+			<id>gareth.woodham@apotekensservice.se</id>
+			<email>gareth.woodham@apotekensservice.se</email>
+			<name>Gareth Woodham</name>
+			<organization>Apotekens Service, Sweden</organization>
+			<organizationUrl>http://www.apotekensservice.se</organizationUrl>
+		</developer>
+		<developer>
+			<id>fredrik.dahlman@gmail.com</id>
+			<email>fredrik.dahlman@cag.se</email>
+			<name>Fredrik Dahlman</name>
+			<organization>Apotekens Service, Sweden</organization>
+			<organizationUrl>http://www.apotekensservice.se</organizationUrl>
+		</developer>
+		<developer>
+			<id>konstantin.hypponen@kela.fi</id>
+			<email>konstantin.hypponen@kela.fi</email>
+			<name>Konstantin Hyppönen</name>
+			<organization>Kela (The Social Insurance Institution of Finland)</organization>
+			<organizationUrl>http://www.kanta.fi</organizationUrl>
+		</developer>
+		<developer>
+			<id>luis.pinto@iuz.pt</id>
+			<email>luis.pinto@iuz.pt</email>
+			<name>Luis M. B. Pinto</name>
+			<organization>SPMS, Portugal</organization>
+			<organizationUrl>http://www.spms.pt</organizationUrl>
+		</developer>
+		<developer>
+			<id>marcelo.fonseca@iuz.pt</id>
+			<email>marcelo.fonseca@iuz.pt</email>
+			<name>Marcelo Fonseca</name>
+			<organization>SPMS, Portugal</organization>
+			<organizationUrl>http://www.spms.pt</organizationUrl>
+		</developer>
+		<developer>
+			<id>ivo.pinheiro@iuz.pt</id>
+			<email>ivo.pinheiro@iuz.pt</email>
+			<name>Ivo Pinheiro</name>
+			<organization>SPMS, Portugal</organization>
+			<organizationUrl>http://www.spms.pt</organizationUrl>
+		</developer>
+		<developer>
+			<id>k.karkaletsis@gnomon.com.gr</id>
+			<email>k.karkaletsis@gnomon.com.gr</email>
+			<name>Kostas Karkaletsis</name>
+			<organization>Gnomon Informatics SA</organization>
+			<organizationUrl>http://www.gnomon.com.gr</organizationUrl>
+		</developer>
+	</developers>
 </project>

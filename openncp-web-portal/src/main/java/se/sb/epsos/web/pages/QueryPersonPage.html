@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+<wicket:extend>
+    <form action="" wicket:id="form">
+        <fieldset>
+            <legend>
+                <wicket:message key="queryPersonPage.title">[page.title]</wicket:message>
+            </legend>
+            <table>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><label for="country">
+                                    <wicket:message key="person.country">[person.country]</wicket:message>
+                                </label></td>
+                                <td><select id="country" wicket:id="country"></select></td>
+                            </tr>
+                            <tr wicket:id="patientIds">
+                                <td><label wicket:id="idLabel">[person.id]</label></td>
+                                <td><input type="text" AUTOCOMPLETE = "off" wicket:id="idTextField"/></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="right">
+                                    <input type="submit" name="queryButton" id="submit" wicket:id="submit" wicket:message="value:form.button.search">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                    	<div class="prescriptionlinks"><a wicket:id="helpLink"><span wicket:id="helpLabel">[bla]</span></a></div>
+                        <p wicket:id="countryInfo">[country specific text]</p>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <div wicket:id="personInfoModalWindow">[PersonInfoModalWindow]</div>
+    <table wicket:id="dataTable" class="dataview">[dataTable]</table>
+</wicket:extend>
+</body>
+</html>

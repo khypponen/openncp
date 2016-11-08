@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd"
+      xml:lang="en" lang="en">
+<head></head>
+<body>
+<wicket:panel style="width:100%">
+	<div wicket:id="personInfoModalWindow">[PersonInfoModalWindow]</div>
+    <table class="dataview">
+        <tr>
+            <th><label for="fullname"><wicket:message key="person.fullname">[Full Name]</wicket:message></label></th>
+            <th><label for="gender"><wicket:message key="person.gender">[Sex]</wicket:message></label></th>
+            <th><label for="birthdate"><wicket:message key="person.birthdate">[birthdate]</wicket:message></label></th>
+            <th><label for="id"><wicket:message key="person.id">[Identification]</wicket:message></label></th>
+            <th><label for="country"><wicket:message key="person.country">[Country]</wicket:message></label></th>
+        </tr>
+        <tr>
+            <td><span wicket:id="fullname" id="fullname">[some name]</span></td>
+            <td><span wicket:id="gender" id="gender">[Man]</span></td>
+            <td><span wicket:id="birthdate" id="birthdate">[some birthdate]</span></td>
+            <td><span wicket:id="id">[some id]</span></td>
+            <td><span wicket:id="country" id="country">[some country]</span></td>
+        </tr>       
+    </table>
+    <table class="prescriptionlinks">
+        <tr>
+        	<td id="aleft"><span wicket:id="trc" id="trc">[trc]</span></td>
+            <td width="20%"><span wicket:id="moreInfo" id="moreInfo">[moreInfo]</span></td>
+        </tr>
+    </table>
+</wicket:panel>
+</body>
+</html>
