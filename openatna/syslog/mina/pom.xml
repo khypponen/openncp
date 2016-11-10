@@ -3,12 +3,12 @@
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-openatna</groupId>
+        <groupId>eu.europa.ec.sante.ehdsi.openncp-openatna</groupId>
         <artifactId>syslog</artifactId>
-        <version>2.4.2-SNAPSHOT</version>
+        <version>2.5.0-SNAPSHOT</version>
     </parent>
     <artifactId>syslog-mina</artifactId>
-    <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-openatna</groupId>
+    <groupId>eu.europa.ec.sante.ehdsi.openncp-openatna</groupId>
 
     <packaging>jar</packaging>
     <name>Syslog Mina</name>
@@ -16,7 +16,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-openatna</groupId>
+            <groupId>eu.europa.ec.sante.ehdsi.openncp-openatna</groupId>
             <artifactId>syslog-core</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -50,5 +50,4 @@
 
         </plugins>
     </build>
-
 </project>

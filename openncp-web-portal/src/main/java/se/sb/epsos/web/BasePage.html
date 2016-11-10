@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title wicket:id="application.artifactId">[application.artifactId]</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="Stylesheet" charset="utf-8" />
+		<link rel="stylesheet" href="css/style_print.css" type="text/css" media="print" title="Stylesheet" charset="utf-8" />
+        <link rel="stylesheet" href="css/style_small.css" type="text/css" media="only screen and (max-width: 1129px), only screen and (max-device-width: 1024px)" title="Stylesheet" charset="utf-8" />
+        <script type="text/javascript" src="script/epsos-web.js"></script>
+    </head>
+    <body>
+        <div id="hd">
+            <div id="logo">
+                <div class="name"><img id="epsos" src="images/epsos-logo.png"/>Web</div>
+                <div class="info"><span id="userinfo" wicket:id="userinfo">[User Info]</span></div>
+            </div>
+            <img id="eu" src="images/eu.jpg"/>
+            <img id="itcpsp" src="images/2cd18a64b1.gif"/>
+        </div>
+        <div id="navigation">
+            <div id="bc"><span wicket:id="breadcrumb">[BreadCrumb]</span></div>
+        </div>
+        <div id="bd">
+            <div id="showWarningsIcon">
+                <a href="#" wicket:id="showWarningsIcon">
+                    <img id="warningsIcon" width="40" height="28" src="images/warningIcon.png"/>
+                </a>
+            </div>
+            <div id="errorFeedback" wicket:id="errorFeedback">[Error Feedback panel]</div>
+            <div id="feedback" wicket:id="feedback">[Feedback panel]</div>
+            <div id="mainBody">
+                <wicket:child/>
+            </div>
+        </div>
+        <div id="ft">
+            <div id="links">
+                <table class="center">
+                    <tr>
+                        <td>
+                            <a wicket:id="evaluationLink"><wicket:message key="label.evaluationLink">[evaluation link]</wicket:message></a>
+                            &nbsp;|&nbsp;
+                            <a wicket:id="evaluationLinkPatient"><wicket:message key="label.evaluationLinkPatient">[evaluation link]</wicket:message></a>
+                            &nbsp;|&nbsp;
+                            <a wicket:id="helpLink"><wicket:message key="label.helplink">[help link]</wicket:message></a>
+                            &nbsp;|&nbsp;
+                            <a wicket:id="epsosLink"><wicket:message key="label.epsoslink">[epsos link]</wicket:message></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span wicket:id="application.version">[application.version]</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

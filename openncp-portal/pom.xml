@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<parent>
 		<artifactId>openncp</artifactId>
-		<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-		<version>2.4.2-SNAPSHOT</version>
+		<groupId>eu.europa.ec.sante.ehdsi</groupId>
+		<version>2.5.0-SNAPSHOT</version>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
@@ -33,17 +33,6 @@
 			<url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
 		</repository>
 		<repository>
-			<id>joinup-releases</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
 			<name>Official OpenSaml Repository</name>
 			<id>openSamlRep</id>
 			<url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
@@ -55,28 +44,15 @@
 			</snapshots>
 		</repository>
 		<repository>
-			<id>joinup-snapshots</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-
-		<repository>
 			<id>prime-repo</id>
 			<name>PrimeFaces Maven Repository</name>
 			<url>http://repository.primefaces.org</url>
 			<layout>default</layout>
 		</repository>
-
 		<repository>
 			<id>informatics-releases</id>
 			<url>http://informatics.mayo.edu/maven/content/repositories/releases</url>
 		</repository>
-
 		<repository>
 			<id>gnomon-lib-snapshot</id>
 			<url>http://artifactory.gnomon.com.gr/artifactory/libs-snapshot-local/</url>
@@ -97,7 +73,6 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-
 	</repositories>
 
 	<build>
@@ -181,15 +156,6 @@
 					</configuration>
 				</plugin>
 				<plugin>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.5.1</version>
-					<configuration>
-						<encoding>UTF-8</encoding>
-						<source>1.7</source>
-						<target>1.7</target>
-					</configuration>
-				</plugin>
-				<plugin>
 					<artifactId>maven-resources-plugin</artifactId>
 					<version>2.6</version>
 					<configuration>
@@ -260,13 +226,13 @@
 			<version>1.18.1</version>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-openstork-utils</artifactId>
 			<version>${project.version}</version>
 			<type>jar</type>
 			<exclusions>
 				<exclusion>
-					<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+					<groupId>eu.europa.ec.sante.ehdsi</groupId>
 					<artifactId>openncp-data-model</artifactId>
 				</exclusion>
 			</exclusions>
@@ -426,12 +392,12 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-data-model</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-configuration-manager</artifactId>
 			<version>${project.version}</version>
 			<exclusions>
@@ -442,13 +408,13 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-util</artifactId>
 			<version>${project.version}</version>
 			<type>jar</type>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-cdadisplaytool</groupId>
+			<groupId>eu.europa.ec.sante.ehdsi.openncp-cdadisplaytool</groupId>
 			<artifactId>openncp-xsltransformer</artifactId>
 			<version>${project.version}</version>
 		</dependency>
@@ -464,7 +430,7 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-trc-sts-client</artifactId>
 			<version>${project.version}</version>
 			<exclusions>
@@ -475,12 +441,12 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-audit-manager</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-protocol-terminators</groupId>
+			<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
 			<artifactId>openncp-ncp-pt-client-consumer</artifactId>
 			<version>${project.version}</version>
 			<type>jar</type>
@@ -517,12 +483,12 @@
 			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/arial.jar</systemPath>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
+			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-transformation-manager</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>eu.europa.ec.joinup.ecc.ehdsi.openncp-cdadisplaytool</groupId>
+			<groupId>eu.europa.ec.sante.ehdsi.openncp-cdadisplaytool</groupId>
 			<artifactId>openncp-cdautils</artifactId>
 			<version>${project.version}</version>
 		</dependency>
@@ -602,16 +568,4 @@
 		<name>Kostas Karkaletsis</name>
 		<url>http://www.gnomon.com.gr</url>
 	</organization>
-
-	<distributionManagement>
-		<repository>
-			<id>joinup-releases</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>joinup-snapshots</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-			<uniqueVersion>true</uniqueVersion>
-		</snapshotRepository>
-	</distributionManagement>
 </project>

@@ -1,0 +1,38 @@
+/***    Copyright 2011-2013 Apotekens Service AB <epsos@apotekensservice.se>
+*
+*    This file is part of epSOS-WEB.
+*
+*    epSOS-WEB is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+*
+*    epSOS-WEB is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+*
+*    You should have received a copy of the GNU General Public License along with epSOS-WEB. If not, see http://www.gnu.org/licenses/.
+**/package se.sb.epsos.web.service;
+
+import static org.junit.Assert.*;
+
+import org.junit.Ignore;
+import org.junit.Test;
+
+import se.sb.epsos.shelob.ws.client.jaxws.ClientConnectorServiceService;
+
+import java.net.URL;
+
+/**
+ * Webservice has to be deployed to be able to do these tests. 
+ * @author anders
+ *
+ */
+public class ShelobClientConnectorTest {
+	
+	/**
+	 * Should be ignored if server aint running. Used to see if you can access the wsdl
+	 */
+	@Test
+	@Ignore
+	public void createClientConnectorTest() {
+		ClientConnectorServiceService service = NcpClientConnector.createClientConnector();
+		assertNotNull(service);
+	}
+	
+}

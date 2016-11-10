@@ -44,12 +44,14 @@ public class CodeParser {
 
     static Log log = LogFactory.getLog("org.openhealthtools.openatna.anom.codes.CodeParser");
 
+    private CodeParser() {
+		super();
+	}
 
-    public static void parse(String codes) {
-        ArrayList<String> s = new ArrayList<String>();
+	public static void parse(String codes) {
+        ArrayList<String> s = new ArrayList<>();
         s.add(codes);
         parse(s);
-
     }
 
     public static void parse(Collection<String> codes) {
@@ -62,7 +64,7 @@ public class CodeParser {
                 try {
                     URL url = new URL(code);
                     InputSource input = new InputSource(url.openStream());
-                    input.setSystemId(code.toString());
+                    input.setSystemId(code);
                     sp.parse(input, handler);
                 } catch (Exception e) {
                     log.warn("Error parsing codes at:" + code);
@@ -77,10 +79,11 @@ public class CodeParser {
 
         private String currType = null;
 
+        @Override
         public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
-            if (qName.equals("CodeType")) {
+            if ("CodeType".equals(qName)) {
                 currType = atts.getValue("", "name");
-            } else if (qName.equals("Code")) {
+            } else if ("Code".equals(qName)) {
                 String code = atts.getValue("", "code");
                 if (currType == null || code == null) {
                     throw new SAXException("Invalid XML. No type or code defined.");
@@ -91,9 +94,6 @@ public class CodeParser {
                 AtnaCode ac = new AtnaCode(currType, code, system, systemName, display, null);
                 CodeRegistry.addCode(ac);
             }
-
         }
     }
-
-
 }

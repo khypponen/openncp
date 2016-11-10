@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:wicket="http://wicket.apache.org/">
+    <head>
+    </head>
+    <wicket:head>
+        <script type="text/javascript" src="script/jquery-1.5.2.min.js"></script>
+        <script type="text/javascript" src="script/jquery.color.js"></script>
+        <script type="text/javascript">
+            function animateYellow(){
+                $(".status").animate({ backgroundColor: "yellow" }, "slow");
+            }
+            function highlightSuccess(id){
+                $("#"+id).animate({ backgroundColor: "green" }, "slow");
+            }
+            function highlightFailure(id){
+                $("#"+id).animate({ backgroundColor: "red" }, "slow");
+            }
+        </script>
+    </wicket:head>
+    <body>
+    <wicket:extend>
+        <div class="status" wicket:id="statusList">
+            <div style="text-align: center;" wicket:id="title">title</div>
+        </div>
+    </wicket:extend>
+</body>
+</html>

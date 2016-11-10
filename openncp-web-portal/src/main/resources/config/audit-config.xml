@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Configuration>
+	<AuditHandlerConfigManager>
+            <NCPIp>95.131.200.23</NCPIp>
+            <SECountryCode>SE-AB</SECountryCode>
+	</AuditHandlerConfigManager>
+</Configuration>

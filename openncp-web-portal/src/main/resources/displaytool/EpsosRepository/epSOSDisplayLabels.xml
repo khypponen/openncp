@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<epSOSDisplayLabelsInformation>
+<epSOSDisplayLabelsEntry code='1'>
+<displayName lang='en'>Active Ingredient</displayName>
+<displayName lang='sv-SE'>Aktiv substans</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='2'>
+<displayName lang='en'>Active Problem</displayName>
+<displayName lang='sv-SE'>Aktuellt hälsoproblem</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='3'>
+<displayName lang='sv-SE'>Adress</displayName>
+<displayName lang='en'>Address</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='4'>
+<displayName lang='sv-SE'>Instruktion till farmaceut</displayName>
+<displayName lang='en'>Advise to the dispenser</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='5'>
+<displayName lang='en'>Agent</displayName>
+<displayName lang='sv-SE'>Aktör</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='6'>
+<displayName lang='sv-SE'>vid</displayName>
+<displayName lang='en'>at</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='7'>
+<displayName lang='sv-SE'>Författare</displayName>
+<displayName lang='en'>Author (HCP)</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='8'>
+<displayName lang='en'>Authoring Device</displayName>
+<displayName lang='sv-SE'>Utfärdande utrustning/system</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='9'>
+<displayName lang='sv-SE'>Varunamn</displayName>
+<displayName lang='en'>Brand Name</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='10'>
+<displayName lang='en'>Clinical Manifestation</displayName>
+<displayName lang='sv-SE'>Klinisk manifestation</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='11'>
+<displayName lang='en'>Closed/Inactive Problem</displayName>
+<displayName lang='sv-SE'>Tidigare/ej aktuellt hälsoproblem</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='12'>
+<displayName lang='sv-SE'>Kontaktuppgifter</displayName>
+<displayName lang='en'>Contact Information</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='13'>
+<displayName lang='sv-SE'>Land</displayName>
+<displayName lang='en'>Country</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='14'>
+<displayName lang='sv-SE'>Varunummer i förskrivarens land</displayName>
+<displayName lang='en'>Country A Medicinal Product Code</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='15'>
+<displayName lang='sv-SE'>Skapaddatum</displayName>
+<displayName lang='en'>Creation Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='16'>
+<displayName lang='sv-SE'>Informationsägare</displayName>
+<displayName lang='en'>Custodian</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='17'>
+<displayName lang='sv-SE'>Datum</displayName>
+<displayName lang='en'>Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='99'>
+<displayName lang='sv-SE'>Fysiskt kliniskt fynd</displayName>
+<displayName lang='en'>Physical Findings</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='18'>
+<displayName lang='sv-SE'>T.o.m datum</displayName>
+<displayName lang='en'>Date To</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='19'>
+<displayName lang='sv-SE'>Födelsedatum</displayName>
+<displayName lang='en'>Date of Birth</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='20'>
+<displayName lang='sv-SE'>Förskrivningsdatum</displayName>
+<displayName lang='en'>Date of Prescription</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='21'>
+<displayName lang='sv-SE'>Hjälpmedel/implantat</displayName>
+<displayName lang='en'>Device/Implant</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='22'>
+<displayName lang='sv-SE'>Expedition</displayName>
+<displayName lang='en'>Dispense</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='23'>
+<displayName lang='sv-SE'>Förpackningsstorlek expedierad vara</displayName>
+<displayName lang='en'>Dispensed Package Size</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='24'>
+<displayName lang='sv-SE'>Expedierad vara</displayName>
+<displayName lang='en'>Dispensed Product</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='25'>
+<displayName lang='sv-SE'>Läkemedelsform</displayName>
+<displayName lang='en'>Dose Form</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='26'>
+<displayName lang='sv-SE'>Slutdatum</displayName>
+<displayName lang='en'>End Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='27'>
+<displayName lang='sv-SE'>varje</displayName>
+<displayName lang='en'>Every</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='28'>
+<displayName lang='sv-SE'>InrättningsId</displayName>
+<displayName lang='en'>Facility ID</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='29'>
+<displayName lang='sv-SE'>Inrättningsnamn</displayName>
+<displayName lang='en'>Facility Name</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='30'>
+<displayName lang='sv-SE'>Efternamn</displayName>
+<displayName lang='en'>Family Name</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='31'>
+<displayName lang='sv-SE'>under</displayName>
+<displayName lang='en'>for</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='32'>
+<displayName lang='sv-SE'>Doseringsintervall</displayName>
+<displayName lang='en'>Frequency of Intakes</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='33'>
+<displayName lang='sv-SE'>Kön</displayName>
+<displayName lang='en'>Gender</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='34'>
+<displayName lang='sv-SE'>Förnamn</displayName>
+<displayName lang='en'>Given Name</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='35'>
+<displayName lang='sv-SE'>Målsman/förmyndare</displayName>
+<displayName lang='en'>Guardian</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='36'>
+<displayName lang='sv-SE'>Datum för insättande av implantat</displayName>
+<displayName lang='en'>Implant Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='37'>
+<displayName lang='sv-SE'>Instruktion till patient</displayName>
+<displayName lang='en'>Instructions to patient</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='38'>
+<displayName lang='sv-SE'>Tillåts generisk substituering?</displayName>
+<displayName lang='en'>Is substitution of brand name allowed?</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='39'>
+<displayName lang='sv-SE'>Senast uppdaterad</displayName>
+<displayName lang='en'>Last Update</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='40'>
+<displayName lang='sv-SE'>Ansvarig utfärdare</displayName>
+<displayName lang='en'>Legal Authenticator</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='41'>
+<displayName lang='sv-SE'>Nationellt socialförsäkringsnummer</displayName>
+<displayName lang='en'>National Insurance Number</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='42'>
+<displayName lang='sv-SE'>Nej</displayName>
+<displayName lang='en'>No</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='43'>
+<displayName lang='sv-SE'>Antal förpackningar</displayName>
+<displayName lang='en'>Number of packages</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='44'>
+<displayName lang='sv-SE'>Observationstyp</displayName>
+<displayName lang='en'>Observation Type</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='45'>
+<displayName lang='sv-SE'>Debutdatum</displayName>
+<displayName lang='en'>Onset Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='46'>
+<displayName lang='sv-SE'>OrganisationsId</displayName>
+<displayName lang='en'>Organisation Identifier</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='47'>
+<displayName lang='sv-SE'>Organisationsnamn</displayName>
+<displayName lang='en'>Organisation Name</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='48'>
+<displayName lang='sv-SE'>Annan aktiv substand</displayName>
+<displayName lang='en'>Other Active Ingredients</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='49'>
+<displayName lang='sv-SE'>Övriga kontakter</displayName>
+<displayName lang='en'>Other Contacts</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='50'>
+<displayName lang='sv-SE'>Förpackningsstorlek</displayName>
+<displayName lang='en'>Package Size</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='51'>
+<displayName lang='sv-SE'>Patient</displayName>
+<displayName lang='en'>Patient</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='52'>
+<displayName lang='sv-SE'>Patientidentitet(er)</displayName>
+<displayName lang='en'>Patient IDs</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='53'>
+<displayName lang='sv-SE'>per enhet</displayName>
+<displayName lang='en'>per unit</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='54'>
+<displayName lang='sv-SE'>Föredragen sjukvårdsorganisation/juridisk organisation vid kontakt</displayName>
+<displayName lang='en'>Preferred HCP/Legal organization to contact</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='55'>
+<displayName lang='sv-SE'>Prefix</displayName>
+<displayName lang='en'>Prefix</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='56'>
+<displayName lang='sv-SE'>Förskrivare</displayName>
+<displayName lang='en'>Prescriber</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='57'>
+<displayName lang='sv-SE'>Förskrivardetaljer</displayName>
+<displayName lang='en'>Prescriber details</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='58'>
+<displayName lang='sv-SE'>ReceptID</displayName>
+<displayName lang='en'>Prescription ID</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='59'>
+<displayName lang='sv-SE'>Receptdetaljer</displayName>
+<displayName lang='en'>Prescription Item Details</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='60'>
+<displayName lang='sv-SE'>ReceptradsID</displayName>
+<displayName lang='en'>Prescription Item ID</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='61'>
+<displayName lang='sv-SE'>Receptrader</displayName>
+<displayName lang='en'>Prescription Items List</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='62'>
+<displayName lang='sv-SE'>Vårdaktivitet</displayName>
+<displayName lang='en'>Procedure</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='63'>
+<displayName lang='sv-SE'>Datum för vårdaktivitet</displayName>
+<displayName lang='en'>Procedure Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='64'>
+<displayName lang='sv-SE'>Profession</displayName>
+<displayName lang='en'>Profession</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='65'>
+<displayName lang='sv-SE'>Reaktionstyp</displayName>
+<displayName lang='en'>Reaction Type</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='66'>
+<displayName lang='sv-SE'>Regionalt/nationellt hälso- och sjukvårdsId</displayName>
+<displayName lang='en'>Regional/National Health ID</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='67'>
+<displayName lang='sv-SE'>Administrationsväg</displayName>
+<displayName lang='en'>Route of Administration</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='68'>
+<displayName lang='sv-SE'>Se detaljer</displayName>
+<displayName lang='en'>See details</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='69'>
+<displayName lang='sv-SE'>Specialitet</displayName>
+<displayName lang='en'>Specialty</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='70'>
+<displayName lang='sv-SE'>Styrka</displayName>
+<displayName lang='en'>Strength</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='71'>
+<displayName lang='sv-SE'>Substitution</displayName>
+<displayName lang='en'>Substitute</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='72'>
+<displayName lang='sv-SE'>Sektionen Aktuella Problem saknas</displayName>
+<displayName lang='en'>The Active Problem section is missing !</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='73'>
+<displayName lang='sv-SE'>Sektionen Allergier och Överkänsligheter saknas</displayName>
+<displayName lang='en'>The Allergies, adverse reactions, alerts section is missing !</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='74'>
+<displayName lang='sv-SE'>Sektionen Hjälpmedel och Implantat saknas</displayName>
+<displayName lang='en'>The Medical Devices and implants section is missing !</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='75'>
+<displayName lang='sv-SE'>Sektionen Läkemedelslista saknas</displayName>
+<displayName lang='en'>The Medication Summary section is missing !</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='76'>
+<displayName lang='sv-SE'>Sektionen Sjukdomshistorik saknas</displayName>
+<displayName lang='en'>The History of Procedures section is missing !</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='77'>
+<displayName lang='sv-SE'>enhet(er)</displayName>
+<displayName lang='en'>unit(s)</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='78'>
+<displayName lang='sv-SE'>Dos</displayName>
+<displayName lang='en'>Units per intake</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='79'>
+<displayName lang='sv-SE'>Vaccination</displayName>
+<displayName lang='en'>Vaccination</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='80'>
+<displayName lang='sv-SE'>Vaccinationsdatum</displayName>
+<displayName lang='en'>Vaccination Date</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='81'>
+<displayName lang='sv-SE'>Ja</displayName>
+<displayName lang='en'>Yes</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='82'>
+<displayName lang='sv-SE'>Patient-id är fastställd</displayName>
+<displayName lang='en'>I have identified the patient-data subject</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='83'>
+<displayName lang='sv-SE'>I confirm that the patient –data subject has consented to the following statement: ‘I agree that my ePrescription may be transferred to a registered Health Professional in [COUNTRY B] for the purposes of providing me with medical care and/or medication’</displayName>
+<displayName lang='en'>I confirm that the patient –data subject has consented to the following statement: ‘I agree that my ePrescription may be transferred to a registered Health Professional in [COUNTRY B] for the purposes of providing me with medical care and/or medication’</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='84'>
+<displayName lang='sv-SE'>Värde för observation</displayName>
+<displayName lang='en'>Observation Value</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='85'>
+<displayName lang='sv-SE'>Fr.o.m datum</displayName>
+<displayName lang='en'>Date From</displayName>
+</epSOSDisplayLabelsEntry>
+<epSOSDisplayLabelsEntry code='107'>
+<displayName lang='sv-SE'>I confirm that the patient –data subject has consented to the following statement: ‘I agree that my Patient Summary may be transferred to a registered Health Professional in [COUNTRY B] for the purposes of providing me with medical care and/or medication’</displayName>
+<displayName lang='en'>I confirm that the patient –data subject has consented to the following statement: ‘I agree that my Patient Summary may be transferred to a registered Health Professional in [COUNTRY B] for the purposes of providing me with medical care and/or medication’</displayName>
+</epSOSDisplayLabelsEntry>
+</epSOSDisplayLabelsInformation>

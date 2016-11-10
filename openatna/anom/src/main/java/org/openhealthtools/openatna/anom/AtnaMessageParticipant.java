@@ -117,6 +117,7 @@ public class AtnaMessageParticipant implements Serializable {
         return result;
     }
 
+    @Override
     public String toString() {
         return new StringBuilder().append("[")
                 .append(getClass().getName())

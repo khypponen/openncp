@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Configuration>
+	<FeatureFlagsManager>
+		<features>
+			<!-- just a dummy example on how to specify a feature flag -->
+			<EXAMPLE_FEATURE>true</EXAMPLE_FEATURE>
+			<!-- Show extra help text on QueryPersonPage that includes test aptient 
+				ids -->
+			<SHOW_HELP_TEXT_FOR_TEST>true</SHOW_HELP_TEXT_FOR_TEST>
+			<!-- Sends importand and useful metric to graphite for graphing -->
+			<SEND_METRICS_TO_GRAPHITE>false</SEND_METRICS_TO_GRAPHITE>
+			<SHOW_PARTIALERRORMESSAGES>true</SHOW_PARTIALERRORMESSAGES>
+            <ENABLE_STATUS_PAGE>true</ENABLE_STATUS_PAGE>
+            <ENABLE_SSL>false</ENABLE_SSL>
+            <ENABLE_SWEDISH_JAAS>false</ENABLE_SWEDISH_JAAS>
+		</features>
+	</FeatureFlagsManager>
+</Configuration>

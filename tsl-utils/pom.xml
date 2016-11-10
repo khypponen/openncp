@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<artifactId>openncp</artifactId>
-		<groupId>eu.europa.ec.joinup.ecc.ehdsi</groupId>
-		<version>2.4.2-SNAPSHOT</version>
+		<groupId>eu.europa.ec.sante.ehdsi</groupId>
+		<version>2.5.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>openncp-tslutils</artifactId>
 	<name>TSL-UTILS</name>
@@ -15,40 +15,4 @@
 		<module>tsleditor</module>
 		<module>tslsync</module>
 	</modules>
-
-	<!-- Added EU JoinUP distribution repository -->
-	<distributionManagement>
-		<repository>
-			<id>joinup-releases</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>joinup-snapshots</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
-
-	<repositories>
-		<repository>
-			<id>joinup-releases</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/releases/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>joinup-snapshots</id>
-			<url>https://joinup.ec.europa.eu/nexus/content/repositories/snapshots/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
-		</repository>
-	</repositories>
 </project>

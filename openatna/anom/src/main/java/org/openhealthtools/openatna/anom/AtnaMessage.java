@@ -41,18 +41,18 @@ public class AtnaMessage implements Serializable {
     private static final long serialVersionUID = -5502378798460439820L;
 
     private AtnaCode eventCode;
-    private Set<AtnaCode> eventTypeCodes = new HashSet<AtnaCode>();
+    private Set<AtnaCode> eventTypeCodes = new HashSet<>();
     private EventAction eventActionCode;
     private EventOutcome eventOutcome;
     private Date eventDateTime;
     private String sourceAddress;
-    
+
     private Long messageId;
 
-    private Set<AtnaMessageParticipant> participants = new HashSet<AtnaMessageParticipant>();
-    private Set<AtnaSource> sources = new HashSet<AtnaSource>();
-    private Set<AtnaMessageObject> objects = new HashSet<AtnaMessageObject>();
-    
+    private Set<AtnaMessageParticipant> participants = new HashSet<>();
+    private Set<AtnaSource> sources = new HashSet<>();
+    private Set<AtnaMessageObject> objects = new HashSet<>();
+
     private byte[] messageContent;
 
     public AtnaMessage(AtnaCode eventCode, EventOutcome eventOutcome) {
@@ -82,7 +82,7 @@ public class AtnaMessage implements Serializable {
     }
 
     public List<AtnaCode> getEventTypeCodes() {
-        return new ArrayList<AtnaCode>(eventTypeCodes);
+        return new ArrayList<>(eventTypeCodes);
     }
 
     public AtnaMessage addEventTypeCode(AtnaCode value) {
@@ -132,7 +132,7 @@ public class AtnaMessage implements Serializable {
     }
 
     public List<AtnaMessageParticipant> getParticipants() {
-        return new ArrayList<AtnaMessageParticipant>(participants);
+        return new ArrayList<>(participants);
     }
 
     public AtnaMessage addParticipant(AtnaMessageParticipant participant) {
@@ -155,7 +155,7 @@ public class AtnaMessage implements Serializable {
     }
 
     public List<AtnaSource> getSources() {
-        return new ArrayList<AtnaSource>(sources);
+        return new ArrayList<>(sources);
     }
 
     public AtnaMessage addSource(AtnaSource atnaSource) {
@@ -178,7 +178,7 @@ public class AtnaMessage implements Serializable {
     }
 
     public List<AtnaMessageObject> getObjects() {
-        return new ArrayList<AtnaMessageObject>(objects);
+        return new ArrayList<>(objects);
     }
 
     public AtnaMessage addObject(AtnaMessageObject object) {
@@ -251,6 +251,7 @@ public class AtnaMessage implements Serializable {
         return result;
     }
 
+    @Override
     public String toString() {
         return new StringBuilder().append("[")
                 .append(getClass().getName())

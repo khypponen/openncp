@@ -457,6 +457,7 @@ public enum AuditTrailUtils {
 		if (eventType.equals(epsos.ccd.gnomon.auditmanager.EventType.epsosMroRetrieve.getCode())) {
 			return epsos.ccd.gnomon.auditmanager.IHEEventType.epsosMroRetrieve.getCode();
 		}
+		// TODO: Fix this issue, does the mappedEventType should be initialized?
 		if (mappedEventType == null) {
 			return null;
 		} else {
@@ -522,6 +523,7 @@ public enum AuditTrailUtils {
 		if (name.equals(epsos.ccd.gnomon.auditmanager.TransactionName.epsosMroServiceRetrieve.getCode())) {
 			return epsos.ccd.gnomon.auditmanager.IHETransactionName.epsosMroServiceRetrieve.getCode();
 		}
+		// TODO: Fix this issue, does the mappedEventType should be initialized?
 		if (mappedEventType == null) {
 			return null;
 		} else {

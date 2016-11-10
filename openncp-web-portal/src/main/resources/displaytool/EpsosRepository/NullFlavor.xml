@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<NullFlavorInformation>
+<NullFlavorEntry code='ASKU'>
+<displayName lang='sv-SE'>Efterfrågat men okänd</displayName>
+<displayName lang='en'>Asked, but unknown</displayName>
+</NullFlavorEntry>
+<NullFlavorEntry code='MSK'>
+<displayName lang='sv-SE'>Dold</displayName>
+<displayName lang='en'>Masked</displayName>
+</NullFlavorEntry>
+<NullFlavorEntry code='NINF'>
+<displayName lang='sv-SE'>Negativ oändlighet</displayName>
+<displayName lang='en'>Negative infinity</displayName>
+</NullFlavorEntry>
+<NullFlavorEntry code='NI'>
+<displayName lang='sv-SE'>Ingen information</displayName>
+<displayName lang='en'>NoInformation</displayName>
+</NullFlavorEntry>
+<NullFlavorEntry code='NA'>
+<displayName lang='sv-SE'>Ej applicerbart</displayName>
+<displayName lang='en'>Not applicable</displayName>
+</NullFlavorEntry>
+<NullFlavorEntry code='NASK'>
+<displayName lang='sv-SE'>Ej efterfrågad</displayName>
+<displayName lang='en'>Not asked</displayName>
+</NullFlavorEntry>
+<NullFlavorEntry code='NP'>
+<displayName lang='sv-SE'>Saknas</displayName>
+<displayName lang='en'>Not present</displayName>
+</NullFlavorEntry>
+<NullFlavorEntry code='OTH'>
+<displayName lang='sv-SE'>Annan orsak</displayName>
+<displayName lang='en'>Other</displayName>
+</NullFlavorEntry>
+<NullFlavorEntry code='PINF'>
+<displayName lang='sv-SE'>Positiv oändlighet</displayName>
+<displayName lang='en'>Positive infinity</displayName>
+</NullFlavorEntry>
+<NullFlavorEntry code='NAV'>
+<displayName lang='sv-SE'>Tillfälligt otillgänglig</displayName>
+<displayName lang='en'>Temporarily unavailable</displayName>
+</NullFlavorEntry>
+<NullFlavorEntry code='TRC'>
+<displayName lang='sv-SE'>Spår</displayName>
+<displayName lang='en'>Trace</displayName>
+</NullFlavorEntry>
+<NullFlavorEntry code='UNK'>
+<displayName lang='sv-SE'>Okänd</displayName>
+<displayName lang='en'>Unknown</displayName>
+</NullFlavorEntry>
+</NullFlavorInformation>

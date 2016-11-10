@@ -38,7 +38,7 @@ public class AtnaParticipant implements Serializable {
 
     private static final long serialVersionUID = -3946094452860332441L;
 
-    private Set<AtnaCode> roleIdCodes = new HashSet<AtnaCode>();
+    private Set<AtnaCode> roleIdCodes = new HashSet<>();
     private String userId;
     private String alternativeUserId;
     private String userName;
@@ -48,7 +48,7 @@ public class AtnaParticipant implements Serializable {
     }
 
     public List<AtnaCode> getRoleIDCodes() {
-        return new ArrayList<AtnaCode>(roleIdCodes);
+        return new ArrayList<>(roleIdCodes);
     }
 
     public AtnaParticipant addRoleIDCode(AtnaCode value) {
@@ -124,6 +124,7 @@ public class AtnaParticipant implements Serializable {
         return result;
     }
 
+    @Override
     public String toString() {
         return new StringBuilder().append("[")
                 .append(getClass().getName())

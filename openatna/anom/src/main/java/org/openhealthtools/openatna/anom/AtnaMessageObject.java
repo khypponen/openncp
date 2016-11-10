@@ -40,7 +40,7 @@ public class AtnaMessageObject implements Serializable {
 
     private AtnaObject object;
     private byte[] objectQuery;
-    private List<AtnaObjectDetail> objectDetails = new ArrayList<AtnaObjectDetail>();
+    private List<AtnaObjectDetail> objectDetails = new ArrayList<>();
     private ObjectDataLifecycle objectDataLifeCycle;
 
     public AtnaMessageObject(AtnaObject object) {
@@ -65,7 +65,7 @@ public class AtnaMessageObject implements Serializable {
     }
 
     public List<AtnaObjectDetail> getObjectDetails() {
-        return new ArrayList<AtnaObjectDetail>(objectDetails);
+        return new ArrayList<>(objectDetails);
     }
 
     /**
@@ -75,7 +75,7 @@ public class AtnaMessageObject implements Serializable {
      * @return
      */
     public List<AtnaObjectDetail> getObjectDetails(String type) {
-        ArrayList<AtnaObjectDetail> ret = new ArrayList<AtnaObjectDetail>();
+        ArrayList<AtnaObjectDetail> ret = new ArrayList<>();
         for (AtnaObjectDetail objectDetail : objectDetails) {
             if (objectDetail.getType().equals(type)) {
                 ret.add(objectDetail);
@@ -140,6 +140,7 @@ public class AtnaMessageObject implements Serializable {
         return result;
     }
 
+    @Override
     public String toString() {
         byte[] bytes = getObjectQuery();
         if (bytes == null) {

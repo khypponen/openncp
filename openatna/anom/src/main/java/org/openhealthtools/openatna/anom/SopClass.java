@@ -35,7 +35,7 @@ public class SopClass {
 
     private String uid;
     private int numberOfInstances = 0;
-    private Set<String> instanceUids = new HashSet<String>();
+    private Set<String> instanceUids = new HashSet<>();
 
     public SopClass(String uid, int numberOfInstances) {
         this.uid = uid;
@@ -43,6 +43,7 @@ public class SopClass {
     }
 
     public SopClass() {
+    	super();
     }
 
     public String getUid() {
@@ -66,9 +67,8 @@ public class SopClass {
     }
 
     public List<String> getInstanceUids() {
-        return new ArrayList<String>(instanceUids);
+        return new ArrayList<>(instanceUids);
     }
-
 
     @Override
     public boolean equals(Object o) {

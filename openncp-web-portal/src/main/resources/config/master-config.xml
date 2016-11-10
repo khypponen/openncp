@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<configuration>
+	<system />
+    <xml fileName="${override-config.xml}" optional="true"/>
+    <xml fileName="InternationalSearch_SE.xml" />
+	<xml fileName="feature-flags.xml" />
+	<xml fileName="assertion-config.xml" listDelimiter="\u0000" />
+	<xml fileName="country-config.xml" />
+	<xml fileName="application-config.xml" />
+	<xml fileName="nullflavor-config.xml" />
+    <xml fileName="audit-config.xml"/>
+</configuration>
