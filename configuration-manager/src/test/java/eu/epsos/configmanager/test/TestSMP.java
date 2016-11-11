@@ -84,7 +84,7 @@ public class TestSMP {
 	public void testClass() throws SMLSMPClientException, CertificateException, MalformedURLException, IOException, TransformerException {
 		
 		SMLSMPClient client = new SMLSMPClient();
-		client.lookup("pt", "epSOS-21", false);
+		client.lookup("at", "epSOS-21", false);
 		assertNotNull(client.getCertificate());
 		assertNotNull(client.getEndpointReference());
 	

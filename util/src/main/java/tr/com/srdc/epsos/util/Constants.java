@@ -156,4 +156,8 @@ public class Constants {
 
         return path;
     }
+    public static void main (String[] args){
+    	Constants c = new Constants();
+    	
+    }
 }

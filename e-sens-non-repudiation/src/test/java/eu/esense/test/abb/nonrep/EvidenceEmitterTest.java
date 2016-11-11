@@ -345,6 +345,7 @@ public class EvidenceEmitterTest {
         context.setSigningKey(key);
         context.setSubmissionTime(new DateTime());
         context.setEvent("epSOS-31");
+        
         context.setMessageUUID(messageInspector.getMessageUUID());
         context.setAuthenticationMethod("3");
         context.setRequest(request); // here I pass the XML in order to give to

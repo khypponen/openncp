@@ -175,7 +175,7 @@ public class EvidenceUtils {
         ks.load(keyStream, keyPassword.toCharArray());
         X509Certificate cert = (X509Certificate) ks.getCertificate(certAlias);
         context.setIssuerCertificate(cert);
-        context.setSenderCertificate(cert);
+        context.setSenderCertificate(cert); // TODO: this is a bug
         context.setRecipientCertificate(cert);
         PrivateKey key = (PrivateKey) ks.getKey(certAlias, keyPassword.toCharArray());
         context.setSigningKey(key);
