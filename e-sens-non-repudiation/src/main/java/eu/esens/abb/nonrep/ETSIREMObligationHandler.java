@@ -258,6 +258,7 @@ public class ETSIREMObligationHandler implements ObligationHandler {
 		cd.setX509Certificate(context.getIssuerCertificate().getEncoded());
 		type.setEvidenceIssuerDetails(edt);
 
+		
 		// This is the T_g field
 		DateTime dt = new DateTime();
 		type.setEventTime(new XMLGregorianCalendarImpl(dt.toGregorianCalendar()));
