@@ -89,7 +89,7 @@
 					<version>2.17</version>
 					<configuration>
 						<consoleOutput>true</consoleOutput>
-<!-- 						<configLocation>http://jenkins.gnomon.com.gr/examples/checkstyle.xml</configLocation> -->
+						<!-- <configLocation>http://jenkins.gnomon.com.gr/examples/checkstyle.xml</configLocation> -->
 						<failsOnError>false</failsOnError>
 						<excludes>
 							**/resources/**/*,**/generated-sources/**/*,**/target/**/*
@@ -200,6 +200,17 @@
 	</build>
 
 	<dependencies>
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.15</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.15</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-kernel</artifactId>
@@ -486,6 +497,12 @@
 			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-transformation-manager</artifactId>
 			<version>${project.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>log4j-over-slf4j</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.sante.ehdsi.openncp-cdadisplaytool</groupId>
@@ -554,14 +571,12 @@
 			<version>6.0</version>
 			<scope>provided</scope>
 		</dependency>
-
-                <!-- https://mvnrepository.com/artifact/jstl/jstl -->
-                <dependency>
-                    <groupId>jstl</groupId>
-                    <artifactId>jstl</artifactId>
-                    <version>1.2</version>
-                </dependency>
-
+		<!-- https://mvnrepository.com/artifact/jstl/jstl -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 	</dependencies>
 
 	<organization>
