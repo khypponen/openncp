@@ -49,30 +49,30 @@
 			<url>http://repository.primefaces.org</url>
 			<layout>default</layout>
 		</repository>
-		<repository>
-			<id>informatics-releases</id>
-			<url>http://informatics.mayo.edu/maven/content/repositories/releases</url>
-		</repository>
-		<repository>
-			<id>gnomon-lib-snapshot</id>
-			<url>http://artifactory.gnomon.com.gr/artifactory/libs-snapshot-local/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>gnomon-lib-release</id>
-			<url>http://artifactory.gnomon.com.gr/artifactory/libs-release-local/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
+<!-- 		<repository> -->
+<!-- 			<id>informatics-releases</id> -->
+<!-- 			<url>http://informatics.mayo.edu/maven/content/repositories/releases</url> -->
+<!-- 		</repository> -->
+<!-- 		<repository> -->
+<!-- 			<id>gnomon-lib-snapshot</id> -->
+<!-- 			<url>http://artifactory.gnomon.com.gr/artifactory/libs-snapshot-local/</url> -->
+<!-- 			<releases> -->
+<!-- 				<enabled>false</enabled> -->
+<!-- 			</releases> -->
+<!-- 			<snapshots> -->
+<!-- 				<enabled>true</enabled> -->
+<!-- 			</snapshots> -->
+<!-- 		</repository> -->
+<!-- 		<repository> -->
+<!-- 			<id>gnomon-lib-release</id> -->
+<!-- 			<url>http://artifactory.gnomon.com.gr/artifactory/libs-release-local/</url> -->
+<!-- 			<releases> -->
+<!-- 				<enabled>true</enabled> -->
+<!-- 			</releases> -->
+<!-- 			<snapshots> -->
+<!-- 				<enabled>false</enabled> -->
+<!-- 			</snapshots> -->
+<!-- 		</repository> -->
 	</repositories>
 
 	<build>
@@ -448,6 +448,10 @@
 				<exclusion>
 					<artifactId>opensaml</artifactId>
 					<groupId>org.opensaml</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>slf4j-simple</artifactId>
+					<groupId>org.slf4j</groupId>
 				</exclusion>
 			</exclusions>
 		</dependency>

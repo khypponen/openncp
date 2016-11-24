@@ -81,6 +81,10 @@
 			</snapshots>
 		</repository>
 		<repository>
+			<id>cef-digital-third-party</id>
+			<url>https://ec.europa.eu/cefdigital/artifact/content/repositories/ehealth-third-party/</url>
+		</repository>
+		<repository>
 			<id>maven2-jasperreports.sourceforge.net</id>
 			<name>Jasper Reports Maven2 Repository</name>
 			<url>http://jasperreports.sourceforge.net/maven2/</url>
