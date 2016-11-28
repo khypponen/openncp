@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -10,11 +10,11 @@
     </parent>
 
     <!-- The project OpenATNA has been initially developed by OpenHeathTools.
-    Since the OpenNCP project have needed to make some changes to the project,
-    the OpenNCP Community have decided to change the groupId from org.openhealthtools.openatna
-    to eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna and the artifactId from openatna
-    to epsos-openatna and publish the new artifacts on the EU JoinUP repository
-    (https://joinup.ec.europa.eu/nexus/content/repositories/releases/eu/europa/ec/joinup/ecc/); -->
+        Since the OpenNCP project have needed to make some changes to the project,
+        the OpenNCP Community have decided to change the groupId from org.openhealthtools.openatna
+        to eu.europa.ec.joinup.ecc.ehdsi.epsos-openatna and the artifactId from openatna
+        to epsos-openatna and publish the new artifacts on the EU JoinUP repository
+        (https://joinup.ec.europa.eu/nexus/content/repositories/releases/eu/europa/ec/joinup/ecc/); -->
     <groupId>eu.europa.ec.sante.ehdsi.openncp-openatna</groupId>
     <artifactId>openncp-openatna</artifactId>
     <packaging>pom</packaging>
@@ -85,25 +85,29 @@
 
     <repositories>
         <repository>
-            <id>appfuse</id>
-            <url>http://static.appfuse.org/repository</url>
+            <id>bouncycastle</id>
+            <url>http://repo2.maven.org/maven2/org/bouncycastle</url>
         </repository>
-        <repository>
-            <id>sun</id>
-            <url>http://download.java.net/maven/2</url>
-        </repository>
-        <repository>
-            <id>trianacode-maven-repos</id>
-            <url>http://trianacode.org/maven</url>
-        </repository>
-        <repository>
-            <id>ibilio</id>
-            <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
-        </repository>
-        <repository>
-            <id>sonatype-staging</id>
-            <url>https://oss.sonatype.org/content/groups/staging</url>
-        </repository>
+        <!-- <repository> -->
+        <!-- <id>appfuse</id> -->
+        <!-- <url>http://static.appfuse.org/repository</url> -->
+        <!-- </repository> -->
+        <!-- <repository> -->
+        <!-- <id>sun</id> -->
+        <!-- <url>http://download.java.net/maven/2</url> -->
+        <!-- </repository> -->
+        <!-- <repository> -->
+        <!-- <id>trianacode-maven-repos</id> -->
+        <!-- <url>http://trianacode.org/maven</url> -->
+        <!-- </repository> -->
+        <!-- <repository> -->
+        <!-- <id>ibilio</id> -->
+        <!-- <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url> -->
+        <!-- </repository> -->
+        <!-- <repository> -->
+        <!-- <id>sonatype-staging</id> -->
+        <!-- <url>https://oss.sonatype.org/content/groups/staging</url> -->
+        <!-- </repository> -->
     </repositories>
 
     <dependencies>
@@ -132,7 +136,7 @@
     </properties>
 
     <!--===================LICENCE HEADER CHECK USE -P headers with mvn command
-    ======================== -->
+        ======================== -->
     <profiles>
         <profile>
             <id>headers</id>
@@ -183,8 +187,10 @@
                                 <id>cu</id>
                                 <configuration>
                                     <properties>
-                                        <company>University of Cardiff and others</company>
-                                        <contributor1>University of Cardiff - initial API and
+                                        <company>University of Cardiff
+                                            and others</company>
+                                        <contributor1>University of
+                                            Cardiff - initial API and
                                             implementation
                                         </contributor1>
                                         <contributor2>-</contributor2>
@@ -215,8 +221,10 @@
                                 <id>moss</id>
                                 <configuration>
                                     <properties>
-                                        <company>Misys Open Source Solutions (MOSS) and others</company>
-                                        <contributor1>Misys Open Source Solutions - initial API and
+                                        <company>Misys Open Source
+                                            Solutions (MOSS) and others</company>
+                                        <contributor1>Misys Open Source
+                                            Solutions - initial API and
                                             implementation
                                         </contributor1>
                                         <contributor2>-</contributor2>
