@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
         <artifactId>openncp</artifactId>
@@ -38,7 +38,7 @@
                 <version>2.17</version>
                 <configuration>
                     <consoleOutput>true</consoleOutput>
-<!--                     <configLocation>http://dev.iuz.pt/openncp-jenkins/checkstyle.xml</configLocation> -->
+                    <!-- <configLocation>http://dev.iuz.pt/openncp-jenkins/checkstyle.xml</configLocation> -->
                     <failsOnError>false</failsOnError>
                     <excludes>**/ihe/**/*,**/oasis/**/*,**/org/**/*</excludes>
                 </configuration>
@@ -49,7 +49,7 @@
                 <version>3.6</version>
                 <configuration>
                     <linkXRef>true</linkXRef>
-                    <targetJdk>1.7</targetJdk>
+                    <targetJdk>${java.version}</targetJdk>
                     <excludes>
                         <exclude>**/ihe/**/*</exclude>
                         <exclude>**/oasis/**/*</exclude>
