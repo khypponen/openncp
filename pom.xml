@@ -80,6 +80,27 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+        <repository>
+            <id>cef-digital-digit-releases</id>
+            <url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eDelivery/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>cef-digital-digit-snapshots</id>
+            <url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eDelivery-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
 		<repository>
 			<id>cef-digital-third-party</id>
 			<url>https://ec.europa.eu/cefdigital/artifact/content/repositories/ehealth-third-party/</url>
