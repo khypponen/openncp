@@ -12,7 +12,7 @@
     <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
     <artifactId>openncp-ncp-pt-client-consumer</artifactId>
 
-    <name>EpSOS CC Web Services Client Consumer</name>
+    <name>OpenNCP CC Web Services Client Consumer</name>
     <inceptionYear>2012</inceptionYear>
     <url>http://maven.apache.org</url>
 
