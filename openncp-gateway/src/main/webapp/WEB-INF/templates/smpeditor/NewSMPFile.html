@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>New File</title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" th:text="#{application.title}">OpenNCP Gateway2</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#" th:text="#{label.Home}">Home2</a></li>
+          <li><a href="#" th:href="@{/smpeditor/SMPEditor}" th:text="#{label.SmpEditor}">SMP Editor2</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              <span th:text="${#authentication.name}">John Smith</span>
+            </a>
+          </li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+        </ul>
+      </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Home/SMP Editor/Generate SMP File/New SMP File</li>
+        </ol>
+      </div>
+    </nav>
+    <!-- End Header -->
+    
+    <div style="margin-bottom: 50px;">
+      <h1 style="margin-left: 20px" th:text="${smpfile.type}"></h1>
+
+      <!-- th:action="@{/smpeditor/GenerateSMPfile}" -->
+      <form action="#"  th:action="@{/smpeditor/NewSMPFile}" th:object="${smpfile}"  method="post" >
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <div id="choosetype" class="form-group" style="margin-left: 150px; margin-top: 50px; margin-right: 900px;">
+          <label for="countryinput">Country</label>
+          <select class="form-control" th:field="*{{country}}">
+            <option th:each="country : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries).values()}" th:value="${{country}}" th:selected="${country == T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries)}" th:text="${country}">---</option>
+          </select> 
+        </div>
+
+        <h3 style="margin-left: 150px; margin-top: 50px;">Endpoint</h3>
+        <div class="form-group row" id="newfileinputs">
+          <label for="endpointuri" class="col-xs-2 col-form-label">Endpoint URI</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="url" id="uriinput" th:field="*{{endpoint_uri}}">
+          </div>
+        </div>
+        <div class="form-group row" id="newfileinputs">
+          <label for="dateact" class="col-xs-2 col-form-label">Service Activation Date</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="datetime-local" id="dateactinput" th:field="*{{service_activation_date}}" >
+          </div>
+        </div>
+        <div class="form-group row" id="newfileinputs">
+          <label for="dateexp" class="col-xs-2 col-form-label" >Service Expiration Date</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="datetime-local" id="dateexpinput" th:field="*{{service_expiration_date}}">
+          </div>
+        </div>
+        <div class="form-group row" id="newfileinputs">
+          <label for="certificate" class="col-xs-2 col-form-label">Certificate</label>
+          <div class="col-xs-5">
+            <input class="form-control" type="text" id="certificateinput" th:field="*{{certificate}}">
+          </div>
+          <div class="col-xs-4">
+            <input type="file" class="form-control-file" id="certificatefileinput">
+          </div>
+        </div>
+        <div class="form-group row" id="newfileinputs">
+          <label for="description" class="col-xs-2 col-form-label">Service Description</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="text" id="descriptioninput" th:field="*{{service_description}}">
+          </div>
+        </div>
+        <div class="form-group row" id="newfileinputs">
+          <label for="tcontact" class="col-xs-2 col-form-label">Technical Contact URL</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="email" id="tcontactinput" th:field="*{{technical_contact}}">
+          </div>
+        </div>
+        <div class="form-group row" id="newfileinputs">
+          <label for="tinformation" class="col-xs-2 col-form-label">Technical Information URL</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="email" id="tinformationinput" th:field="*{{technical_information}}">
+          </div>
+        </div>
+        <div class="form-group row" id="newfileinputs">
+          <label for="extensionfile" class="col-xs-2 col-form-label">Extension</label>
+          <div class="col-xs-9">
+            <input type="file" class="form-control-file" id="extensionfileinput" th:field="*{{extension}}">
+          </div>
+        </div>
+
+
+        <div id="btnformnsf">
+          <a href="#" th:href="@{/smpeditor/GenerateSMPfile}" class="btn btn-default" style="width:76px; background-color: #dddddd;">Cancel</a>
+          <button type="submit" class="btn" style="width:76px;">Ok</button>
+        </div>
+
+      </form>
+
+    </div>
+    <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>
+  </body>
+</html>

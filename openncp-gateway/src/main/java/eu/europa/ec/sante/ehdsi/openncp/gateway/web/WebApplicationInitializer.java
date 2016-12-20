@@ -1,7 +1,8 @@
-package eu.europa.ec.sante.ehdsi.openncp.web;
+package eu.europa.ec.sante.ehdsi.openncp.gateway.web;
 
-import eu.europa.ec.sante.ehdsi.openncp.cfg.WebMvcConfig;
-import eu.europa.ec.sante.ehdsi.openncp.cfg.WebSecurityConfig;
+import eu.europa.ec.sante.ehdsi.openncp.gateway.web.*;
+import eu.europa.ec.sante.ehdsi.openncp.gateway.cfg.WebMvcConfig;
+import eu.europa.ec.sante.ehdsi.openncp.gateway.cfg.WebSecurityConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {

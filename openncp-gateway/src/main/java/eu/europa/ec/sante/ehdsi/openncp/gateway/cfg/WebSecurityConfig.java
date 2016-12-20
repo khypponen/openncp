@@ -1,4 +1,4 @@
-package eu.europa.ec.sante.ehdsi.openncp.cfg;
+package eu.europa.ec.sante.ehdsi.openncp.gateway.cfg;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

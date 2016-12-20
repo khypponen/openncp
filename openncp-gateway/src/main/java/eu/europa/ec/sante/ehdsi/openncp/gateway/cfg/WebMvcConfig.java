@@ -1,4 +1,4 @@
-package eu.europa.ec.sante.ehdsi.openncp.cfg;
+package eu.europa.ec.sante.ehdsi.openncp.gateway.cfg;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -20,9 +20,13 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeUnit;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 
 @Configuration
 @EnableWebMvc
+@EnableAutoConfiguration
+@ComponentScan({"eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.*", "eu.europa.ec.sante.ehdsi.openncp.gateway.web"})
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
     @Override
@@ -30,13 +34,18 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         registry
                 .addResourceHandler("/resources/**")
                 .addResourceLocations("/public-resources/")
+                .addResourceLocations("/WEB-INF/")
                 .setCacheControl(CacheControl.maxAge(1, TimeUnit.HOURS).cachePublic());
     }
-
+    
+    
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");
+     //   registry.addViewController("/smpeditor/GenerateSMPfile/NewFile").setViewName("smpeditor/GenerateSMPfile/NewFile");
     }
+    
+    //smpeditor/GenerateSMPfile/NewFile
 
     @Bean
     public ViewResolver viewResolver() {
@@ -45,7 +54,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         viewResolver.setCharacterEncoding(StandardCharsets.UTF_8.name());
         return viewResolver;
     }
-
+    
+    
     @Bean
     public TemplateEngine templateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
@@ -53,7 +63,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         templateEngine.addDialect(new SpringSecurityDialect());
         return templateEngine;
     }
-
+    
+    
     @Bean
     public ITemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();

@@ -1,5 +1,6 @@
-package eu.europa.ec.sante.ehdsi.openncp.web;
+package eu.europa.ec.sante.ehdsi.openncp.gateway.web;
 
+import eu.europa.ec.sante.ehdsi.openncp.gateway.web.*;
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
 public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
