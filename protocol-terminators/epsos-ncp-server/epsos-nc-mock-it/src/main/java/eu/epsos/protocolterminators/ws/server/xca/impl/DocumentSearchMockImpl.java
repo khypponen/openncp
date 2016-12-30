@@ -75,7 +75,7 @@ public class DocumentSearchMockImpl extends NationalConnectorGateway implements 
                 logger.debug("Placed XML doc id=" + epdXml.getId() + ", HomeCommId=" + Constants.HOME_COMM_ID + ", Patient Id: " + pd.getId() + " into eP repository");
                 documents.add(DocumentFactory.createEPSOSDocument(epdXml.getPatientId(), epdXml.getClassCode(), xmlDoc));
 
-                EPDocumentMetaData epdPdf = DocumentFactory.createEPDocumentPDF(getOIDFromDocument(pdfDoc), pd.getId(), new Date(), Constants.HOME_COMM_ID, getTitleFromDocument(pdfDoc), "author");
+                EPDocumentMetaData epdPdf = DocumentFactory.createEPDocumentPDF(getOIDFromDocument(pdfDoc), pd.getId(), new Date(), Constants.HOME_COMM_ID, getTitleFromDocument(xmlDoc), "author");
                 logger.debug("Placed PDF doc id=" + epdPdf.getId() + " into eP repository");
                 documents.add(DocumentFactory.createEPSOSDocument(epdPdf.getPatientId(), epdPdf.getClassCode(), pdfDoc));
 
