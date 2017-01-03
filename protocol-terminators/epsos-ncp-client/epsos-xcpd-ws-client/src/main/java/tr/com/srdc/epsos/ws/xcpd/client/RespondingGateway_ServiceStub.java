@@ -271,8 +271,15 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             	OMElement headerOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Header"));
             	OMElement bodyOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Body"));
 
-            	newEnv.getBody().addChild(bodyOMElement);
-            	newEnv.getHeader().addChild(headerOMElement);
+            	
+            	Iterator<?> bodyit = bodyOMElement.getChildElements();
+            	while (bodyit.hasNext()) {
+                	newEnv.getBody().addChild((OMElement)bodyit.next()); 
+            	}
+            	Iterator<?> headit = headerOMElement.getChildElements();
+            	while (headit.hasNext()) {
+                	newEnv.getHeader().addChild((OMElement)headit.next());
+            	}
             	
                 messageContext.setEnvelope(newEnv);
 			} catch (Exception e1) {
@@ -286,6 +293,7 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             /* Log soap request */
             String logRequestBody;
             try {
+            	
                 String logRequestMsg = XMLUtil.prettyPrint(envCanonicalized);
                 LOG.debug(XCPDConstants.LOG.OUTGOING_XCPD_MESSAGE
                         + System.getProperty("line.separator") + logRequestMsg);
