@@ -144,7 +144,15 @@ public class XMLUtil {
         try {
             output.asDOMSerializer();
 
-            output.serialize((Element) node);
+            Element el = null;
+            if (node instanceof Element) {
+            	el = (Element)node;
+            } else if (node instanceof Document) {
+            	el = ((Document)node).getDocumentElement();
+            } else {
+            	throw new IllegalArgumentException("Invalid class given: " + node.getClass().getName());
+            }
+            output.serialize(el);
             result = baos.toString("UTF-8");
             baos.close();
         } catch (IOException e) {
