@@ -542,6 +542,12 @@ public class XCPDServiceImpl implements XCPDServiceInterface {
 
         // Set interaction id
         outputMessage.setInteractionId(of.createII());
+        System.out.println("MASSI checks the interaction ID: " + outputMessage);
+        System.out.println("MASSI checks the interaction ID: " + outputMessage.getInteractionId());
+        System.out.println("MASSI checks the interaction ID: " + inputMessage);
+        System.out.println("MASSI checks the interaction ID: " + inputMessage.getInteractionId());
+        System.out.println("MASSI checks the interaction ID: " + inputMessage.getInteractionId().getRoot());
+
         outputMessage.getInteractionId().setRoot(inputMessage.getInteractionId().getRoot());
         outputMessage.getInteractionId().setExtension("PRPA_IN201306UV02");
 

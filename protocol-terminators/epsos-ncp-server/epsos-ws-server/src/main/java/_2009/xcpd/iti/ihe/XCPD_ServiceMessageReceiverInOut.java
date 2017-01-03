@@ -141,6 +141,8 @@ public class XCPD_ServiceMessageReceiverInOut extends org.apache.axis2.receivers
                         new DateTime(),
                         EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
                         "NCPA_XCPD_REQ");
+                logger.debug("Pretty printing canonicalized");
+                XMLUtil.prettyPrint(envCanonicalized);
             } catch (Exception e) {
                 log.error(ExceptionUtils.getStackTrace(e));
             }
