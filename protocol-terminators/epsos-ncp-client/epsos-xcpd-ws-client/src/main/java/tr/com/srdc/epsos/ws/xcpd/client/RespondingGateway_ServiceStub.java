@@ -272,9 +272,16 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             	OMElement bodyOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Body"));
             	
             	LOG.debug("Adding the soap body and header to the newly created envelope");
-            	newEnv.addChild(headerOMElement);
-            	newEnv.addChild(bodyOMElement);
-            	            	
+
+            	Iterator it = headerOMElement.getChildElements();
+            	while (it.hasNext()) {
+            		OMElement el = (OMElement)it.next();
+            		OMNamespace nsel = el.getNamespace();
+            		SOAPHeaderBlock shbb = new SOAP12HeaderBlockImpl(el.getLocalName(), nsel, soapFactory);
+            		_serviceClient.addHeader(shbb);
+            	}
+            	newEnv.getBody().addChild(bodyOMElement.getFirstElement());
+            	LOG.debug("Envelope is: " + newEnv.toString());        	
                 messageContext.setEnvelope(newEnv);
 			} catch (Exception e1) {
 				throw new IllegalArgumentException(e1);
