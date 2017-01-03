@@ -126,9 +126,11 @@ public class XCPD_ServiceMessageReceiverInOut extends org.apache.axis2.receivers
             try {
             	logger.debug("Step 1: marshall it to document, since no c14n are available in OM");
             	Element envAsDom = XMLUtils.toDOM(env);
+            	logger.debug("Step 1: DOM element is: " + XMLUtil.prettyPrint(envAsDom));
             	logger.debug("Step 2: canonicalize it");
             	envCanonicalized = XMLUtil.canonicalize(envAsDom.getOwnerDocument());
-            	
+                logger.debug("Pretty printing canonicalized" + XMLUtil.prettyPrint(envCanonicalized));
+
 			} catch (Exception e1) {
 				throw new IllegalArgumentException(e1);
 			}
@@ -141,8 +143,7 @@ public class XCPD_ServiceMessageReceiverInOut extends org.apache.axis2.receivers
                         new DateTime(),
                         EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
                         "NCPA_XCPD_REQ");
-                logger.debug("Pretty printing canonicalized");
-                XMLUtil.prettyPrint(envCanonicalized);
+                
             } catch (Exception e) {
                 log.error(ExceptionUtils.getStackTrace(e));
             }
