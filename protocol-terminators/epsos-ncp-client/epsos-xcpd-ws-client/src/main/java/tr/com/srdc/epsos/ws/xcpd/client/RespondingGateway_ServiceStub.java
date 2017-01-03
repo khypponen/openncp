@@ -285,6 +285,8 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             operationClient.addMessageContext(messageContext);
 
             /* Log soap request */
+            
+            
             String logRequestBody;
             try {
             	
