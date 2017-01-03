@@ -266,7 +266,7 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             	LOG.debug("Step 3: remarshall to OM");
             	OMElement omCanonicalizedEnvelope = XMLUtils.toOM(envCanonicalized.getDocumentElement());
             	LOG.debug("Step 4: reconstruct the message");
-            	SOAPEnvelope newEnv = soapFactory.createSOAPEnvelope();
+            	SOAPEnvelope newEnv = soapFactory.getDefaultEnvelope();
             	
             	OMElement headerOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Header"));
             	OMElement bodyOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Body"));
