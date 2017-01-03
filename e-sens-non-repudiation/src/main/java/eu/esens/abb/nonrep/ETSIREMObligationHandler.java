@@ -40,7 +40,7 @@ import eu.esens.abb.nonrep.etsi.rem.REMEvidenceType;
 import eu.esens.abb.nonrep.etsi.rem.RecipientsDetails;
 
 /**
- * This class is a sample discharge of the Evidence Emitter. 
+ * This class is a sample discharge of the Evidence Emitter.
  * 
  * @author max
  *
@@ -48,7 +48,7 @@ import eu.esens.abb.nonrep.etsi.rem.RecipientsDetails;
 public class ETSIREMObligationHandler implements ObligationHandler {
 
 	private List<ESensObligation> obligations;
-	
+
 	// Prefixes, that matches the XACML policy
 	private static final String REM_NRR_PREFIX = "urn:eSENS:obligations:nrr:ETSIREM";
 	private static final String REM_NRO_PREFIX = "urn:eSENS:obligations:nro:ETSIREM";
@@ -90,7 +90,7 @@ public class ETSIREMObligationHandler implements ObligationHandler {
 
 		/*
 		 * For the e-SENS pilot we issue the NRO and NRR token to all the
-		 * incoming messages -> This is the per hop protocol. 
+		 * incoming messages -> This is the per hop protocol.
 		 */
 		try {
 			makeETSIREM();
@@ -242,10 +242,20 @@ public class ETSIREMObligationHandler implements ObligationHandler {
 		type.setSenderDetails(edt1);
 
 		// This is the B field, the recipient
+		/*
+		 * Made optional by a request from the eJustice domain
+		 */
 		EntityDetailsType edt2 = new EntityDetailsType();
-		CertificateDetails cd2 = new CertificateDetails();
-		edt2.setCertificateDetails(cd2);
-		cd2.setX509Certificate(context.getRecipientCertificate().getEncoded());
+		if (context.getRecipientCertificate() != null) {
+
+			CertificateDetails cd2 = new CertificateDetails();
+			edt2.setCertificateDetails(cd2);
+			cd2.setX509Certificate(context.getRecipientCertificate().getEncoded());
+		} 
+//		else {
+//			// it's an AnyType, 
+//			edt2.get
+//		}
 
 		RecipientsDetails rd = new RecipientsDetails();
 		rd.getEntityDetails().add(edt2);
@@ -307,8 +317,9 @@ public class ETSIREMObligationHandler implements ObligationHandler {
 
 		AuthenticationDetailsType adt = new AuthenticationDetailsType();
 		adt.setAuthenticationMethod(context.getAuthenticationMethod());
-		// this is the authentication time. I set it as "now", since it is required by the REM, but it is not used here.
-		adt.setAuthenticationTime((new XMLGregorianCalendarImpl(new DateTime().toGregorianCalendar()))); 
+		// this is the authentication time. I set it as "now", since it is
+		// required by the REM, but it is not used here.
+		adt.setAuthenticationTime((new XMLGregorianCalendarImpl(new DateTime().toGregorianCalendar())));
 
 		type.setSenderAuthenticationDetails(adt);
 

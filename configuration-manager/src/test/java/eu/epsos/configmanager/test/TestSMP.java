@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
@@ -47,8 +48,18 @@ import com.google.common.io.BaseEncoding;
 
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerSMP;
 import epsos.ccd.gnomon.configmanager.SMLSMPClient;
+import epsos.ccd.gnomon.configmanager.SMLSMPClient2;
 import epsos.ccd.gnomon.configmanager.SMLSMPClientException;
 import eu.epsos.configmanager.database.HibernateConfigFile;
+import eu.europa.ec.dynamicdiscovery.DynamicDiscovery;
+import eu.europa.ec.dynamicdiscovery.DynamicDiscoveryBuilder;
+import eu.europa.ec.dynamicdiscovery.core.locator.impl.DefaultBDXRLocator;
+import eu.europa.ec.dynamicdiscovery.core.reader.impl.DefaultBDXRReader;
+import eu.europa.ec.dynamicdiscovery.exception.TechnicalException;
+import eu.europa.ec.dynamicdiscovery.model.DocumentIdentifier;
+import eu.europa.ec.dynamicdiscovery.model.Endpoint;
+import eu.europa.ec.dynamicdiscovery.model.ParticipantIdentifier;
+import eu.europa.ec.dynamicdiscovery.model.ServiceMetadata;
 
 public class TestSMP {
 	private static final String ns = "http://busdox.org/serviceMetadata/publishing/1.0/";
@@ -58,13 +69,14 @@ public class TestSMP {
 		Logger rootLogger = Logger.getRootLogger();
 		if (!rootLogger.getAllAppenders().hasMoreElements()) {
 			rootLogger.setLevel(Level.OFF);
-		
+
 			Logger hornetLogger = rootLogger.getLoggerRepository().getLogger("org.hornetq.core.server");
 			hornetLogger.setLevel(Level.OFF);
 			hornetLogger.addAppender(new ConsoleAppender(new PatternLayout(PatternLayout.TTCC_CONVERSION_PATTERN)));
 
 		}
 	}
+
 	@Test
 	public void testNormalFlow() {
 		HibernateConfigFile.name = "src/test/resources/massi.hibernate.xml";
@@ -73,29 +85,93 @@ public class TestSMP {
 	}
 
 	/**
-	 * @throws SMLSMPClientException 
-	 * @throws TransformerException 
-	 * @throws IOException 
-	 * @throws MalformedURLException 
-	 * @throws CertificateException 
+	 * @throws SMLSMPClientException
+	 * @throws TransformerException
+	 * @throws IOException
+	 * @throws MalformedURLException
+	 * @throws CertificateException
+	 * @throws TechnicalException
 	 * 
 	 */
 	@Test
-	public void testClass() throws SMLSMPClientException, CertificateException, MalformedURLException, IOException, TransformerException {
-		
-		SMLSMPClient client = new SMLSMPClient();
-		client.lookup("at", "epSOS-21", false);
-		assertNotNull(client.getCertificate());
-		assertNotNull(client.getEndpointReference());
-	
-		
+	public void testClass() throws SMLSMPClientException, CertificateException, MalformedURLException, IOException,
+			TransformerException, TechnicalException {
+		try {
+			SMLSMPClient2 client = new SMLSMPClient2();
+			client.lookup("at", "epSOS-21", false);
+			// assertNotNull(client.getCertificate());
+			// assertNotNull(client.getEndpointReference());
+
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
 	}
-	
-	
-	
+
+	@Test
+	public void testMockServicesGetIdentifiers() throws TechnicalException {
+		// DynamicDiscovery smpClient =
+		// DynamicDiscoveryBuilder.newInstance().locator(new
+		// MockServiceLocatorForIdentifiers())
+		// .reader(new DefaultBDXRReader(new
+		// CustomizedSignatureValidator())).build();
+		//
+		// String processIdentifier = "urn:" + "poland" + ":ncpb-idp";
+		// // Should get the ServiceGroup
+		// ParticipantIdentifier participantIdentifier = new
+		// ParticipantIdentifier(processIdentifier,
+		// "ehealth-actorid-qns");
+		// List<DocumentIdentifier> documentIdentifiers =
+		// smpClient.getDocumentIdentifiers(participantIdentifier);
+		// for (int i=0; i<documentIdentifiers.size(); i++) {
+		// DocumentIdentifier documentIdentifier = documentIdentifiers.get(i);
+		// System.out.println(documentIdentifier.getFullIdentifier());
+		// }
+		ParticipantIdentifier participantIdentifier = new ParticipantIdentifier("urn:poland:ncpb",
+				"ehealth-actorid-qns");
+		DynamicDiscovery smpClient = DynamicDiscoveryBuilder.newInstance()
+				.locator(new DefaultBDXRLocator("ehealth.acc.edelivery.tech.ec.europa.eu")).build();
+		List<DocumentIdentifier> documentIdentifiers = smpClient.getDocumentIdentifiers(participantIdentifier);
+		System.out.println("" + documentIdentifiers.toString());
+	}
+
+	@Test
+	public void testMockServices() throws TechnicalException {
+		DynamicDiscovery smpClient = DynamicDiscoveryBuilder.newInstance().locator(
+				new DefaultBDXRLocator("ehealth.acc.edelivery.tech.ec.europa.eu"))
+				.reader(new DefaultBDXRReader(new CustomizedSignatureValidator())).build();
+
+		String processIdentifier = "urn:poland:ncpb";
+
+		ParticipantIdentifier participantIdentifier = new ParticipantIdentifier(processIdentifier,
+				"ehealth-actorid-qns");
+		// List<DocumentIdentifier> documentIdentifiers =
+		// smpClient.getDocumentIdentifiers(participantIdentifier);
+		// for (int i=0; i<documentIdentifiers.size(); i++) {
+		// DocumentIdentifier documentIdentifier = documentIdentifiers.get(i);
+		// System.out.println(documentIdentifier.getFullIdentifier());
+		// }
+		String SMP_PREFIX = "urn::epsos##services:extended:";
+
+		String epsosAction = "epsos-21";
+		String ep1 = epsosAction.replace("-", "::");
+		String finalDocumentIdentifier = SMP_PREFIX + ep1.toLowerCase();
+
+		ServiceMetadata sm = smpClient.getServiceMetadata(participantIdentifier,
+				new DocumentIdentifier(finalDocumentIdentifier, "epsos-docid-qns"));
+
+		List<Endpoint> endpoints = sm.getEndpoints();
+
+		for (int i = 0; i < endpoints.size(); i++) {
+			Endpoint e = endpoints.get(i);
+			System.out.println(e.getProcessIdentifier().getIdentifier());
+			System.out.println(e.getTransportProfile().getIdentifier());
+			System.out.println(e.getAddress());
+		}
+	}
+
 	@Test
 	public void testLookup() throws NoSuchAlgorithmException, UnsupportedEncodingException {
-	
+
 		String pid = "urn:ehealth:pt:ncpb-idp"; // TODO: this is wrong. It must
 												// be urn:ehealth:pt::ncpb.idp
 		String did = "urn::epsos##services:extended:epsos::21"; // TODO: this is
@@ -292,10 +368,10 @@ public class TestSMP {
 		TransformerFactory tf = TransformerFactory.newInstance();
 		Transformer trans = tf.newTransformer();
 		trans.transform(new DOMSource(signedServiceInfo), new StreamResult(System.out));
-		
-		// Here we should go with the jaxb, but for now I will not go, since the 
-		// schema is not yet defined (peppol, bdxl, the namespace changes. 
-		
+
+		// Here we should go with the jaxb, but for now I will not go, since the
+		// schema is not yet defined (peppol, bdxl, the namespace changes.
+
 		NodeList nl = signedServiceInfo.getElementsByTagNameNS(ns, "Process");
 		if (nl == null) {
 			throw new Exception("Wrong xml found, no process available");
@@ -303,50 +379,50 @@ public class TestSMP {
 
 		URL endpointReference = null;
 		X509Certificate cert = null;
-		
+
 		Node processNode = nl.item(0);
 		NodeList nll = processNode.getChildNodes();
 		int size = nll.getLength();
-		
-		for (int i=0; i<size; i++) {
+
+		for (int i = 0; i < size; i++) {
 			Node n = nll.item(i); // process
-			
-			if (n.getNodeType()==Node.ELEMENT_NODE) {
+
+			if (n.getNodeType() == Node.ELEMENT_NODE) {
 				String localName = n.getLocalName();
 				if (localName.equals("ServiceEndpointList")) {
-					Element sel = (Element)n;
+					Element sel = (Element) n;
 					NodeList endpoint = sel.getChildNodes();
 					int size1 = endpoint.getLength();
-					for (int j=0; j<size1; j++) {
+					for (int j = 0; j < size1; j++) {
 						Node localName1 = endpoint.item(j);
 						String localName11 = localName1.getLocalName();
 						if (localName11 != null && localName11.equals("Endpoint")) {
-							Element endpointEl = (Element)localName1;
-							NodeList nl2 = endpointEl.getElementsByTagNameNS("http://www.w3.org/2005/08/addressing", 
+							Element endpointEl = (Element) localName1;
+							NodeList nl2 = endpointEl.getElementsByTagNameNS("http://www.w3.org/2005/08/addressing",
 									"Address");
 							if (nl2 == null || nl2.getLength() == 0) {
 								throw new Exception("Unable to guess the Address");
 							}
-							Element address = (Element)nl2.item(0);
+							Element address = (Element) nl2.item(0);
 							endpointReference = new URL(address.getTextContent());
 							NodeList nl3 = endpointEl.getElementsByTagNameNS(ns, "Certificate");
 							if (nl3 == null || nl3.getLength() == 0) {
 								throw new Exception("Unable to guess the Certificate");
 							}
-							Element certificate = (Element)nl3.item(0);
+							Element certificate = (Element) nl3.item(0);
 							String tc = certificate.getTextContent();
 							byte[] tc1 = Base64.decode(tc);
-							cert = (X509Certificate)CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(tc1));
+							cert = (X509Certificate) CertificateFactory.getInstance("X.509")
+									.generateCertificate(new ByteArrayInputStream(tc1));
 							break;
 						}
-							
+
 					}
-					
+
 				}
 			}
 		}
-		
-		
+
 	}
 
 }

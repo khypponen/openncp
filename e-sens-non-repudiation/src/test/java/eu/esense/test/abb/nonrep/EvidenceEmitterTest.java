@@ -81,6 +81,7 @@ public class EvidenceEmitterTest {
         org.apache.xml.security.Init.init();
     }
 
+    
     /**
      * This test reads a sample message from the eHealth domain (XCA) and will
      * issue an ATNA-specific audit trail.

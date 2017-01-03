@@ -190,46 +190,46 @@ public class HCERController {
             //Setting the document bytecode
             document.setBase64Binary(bytes);
 
-            try {
-                EvidenceUtils.createEvidenceREMNRO(classCode.toString(),
-                        "NI_XDR_" + classCode.getValue(),
-                        new DateTime(),
-                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                        "NI_XDR_" + classCode.getValue() + "_REQ",
-                        trcAssertion.getID());
-            } catch (Exception e) {
-                LOGGER.error(org.apache.commons.lang.exception.ExceptionUtils.getStackTrace(e));
-            }
+//            try {
+//                EvidenceUtils.createEvidenceREMNRO(classCode.toString(),
+//                        "NI_XDR_" + classCode.getValue(),
+//                        new DateTime(),
+//                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                        "NI_XDR_" + classCode.getValue() + "_REQ",
+//                        trcAssertion.getID());
+//            } catch (Exception e) {
+//                LOGGER.error(org.apache.commons.lang.exception.ExceptionUtils.getStackTrace(e));
+//            }
 
             try {
                 //Submitting the HCER document
                 proxy.submitDocument(hcpAssertion, trcAssertion, selectedCountry, document, patient.getPatientDemographics());
-                try {
-                    EvidenceUtils.createEvidenceREMNRR(classCode.toString(),
-                            "NI_XDR" + classCode.getValue(),
-                            new DateTime(),
-                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                            "NI_XDR_" + classCode.getValue() + "_RES_SUCC",
-                            trcAssertion.getID());
-                } catch (Exception e) {
-                    LOGGER.error(org.apache.commons.lang.exception.ExceptionUtils.getStackTrace(e));
-                }
+//                try {
+//                    EvidenceUtils.createEvidenceREMNRR(classCode.toString(),
+//                            "NI_XDR" + classCode.getValue(),
+//                            new DateTime(),
+//                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                            "NI_XDR_" + classCode.getValue() + "_RES_SUCC",
+//                            trcAssertion.getID());
+//                } catch (Exception e) {
+//                    LOGGER.error(org.apache.commons.lang.exception.ExceptionUtils.getStackTrace(e));
+//                }
                 //Clearing the data table in the ui
                 diagnoses.clear();
 
                 //Adding the validation indicator back to the client
                 rc.addCallbackParam("submitted", true);
             } catch (Exception exc) {
-                try {
-                    EvidenceUtils.createEvidenceREMNRR(classCode.toString(),
-                            "NI_XDR" + classCode.getValue(),
-                            new DateTime(),
-                            EventOutcomeIndicator.TEMPORAL_FAILURE.getCode().toString(),
-                            "NI_XDR_" + classCode.getValue() + "_RES_FAIL",
-                            trcAssertion.getID());
-                } catch (Exception e) {
-                    LOGGER.error(org.apache.commons.lang.exception.ExceptionUtils.getStackTrace(e));
-                }
+//                try {
+//                    EvidenceUtils.createEvidenceREMNRR(classCode.toString(),
+//                            "NI_XDR" + classCode.getValue(),
+//                            new DateTime(),
+//                            EventOutcomeIndicator.TEMPORAL_FAILURE.getCode().toString(),
+//                            "NI_XDR_" + classCode.getValue() + "_RES_FAIL",
+//                            trcAssertion.getID());
+//                } catch (Exception e) {
+//                    LOGGER.error(org.apache.commons.lang.exception.ExceptionUtils.getStackTrace(e));
+//                }
                 LOGGER.error(ExceptionUtils.getStackTrace(exc));
                 LOGGER.error("[" + new Date() + "]" + " ERROR: " + "Submitting the HCER EPSOS document to the Client Connector.");
                 //Adding the validation indicator back to the client

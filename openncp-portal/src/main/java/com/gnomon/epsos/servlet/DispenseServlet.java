@@ -151,41 +151,41 @@ public class DispenseServlet extends HttpServlet {
                     document.setFormatCode(formatCode);
                     document.setBase64Binary(edBytes);
 
-                    try {
-                        EvidenceUtils.createEvidenceREMNRO(classCode.toString(),
-                                "NI_XDR_" + classCode.getValue(),
-                                new DateTime(),
-                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                                "NI_XDR_" + classCode.getValue() + "_REQ",
-                                trcAssertion.getID());
-                    } catch (Exception e) {
-                        log.error(ExceptionUtils.getStackTrace(e));
-                    }
+//                    try {
+//                        EvidenceUtils.createEvidenceREMNRO(classCode.toString(),
+//                                "NI_XDR_" + classCode.getValue(),
+//                                new DateTime(),
+//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                                "NI_XDR_" + classCode.getValue() + "_REQ",
+//                                trcAssertion.getID());
+//                    } catch (Exception e) {
+//                        log.error(ExceptionUtils.getStackTrace(e));
+//                    }
 
                     resp = proxy.submitDocument(hcpAssertion, trcAssertion, selectedCountry, document, patient.getPatientDemographics());
 
                     if (Validator.isNotNull(resp)) {
-                        try {
-                            EvidenceUtils.createEvidenceREMNRR(classCode.toString(),
-                                    "NI_XDR" + classCode.getValue(),
-                                    new DateTime(),
-                                    EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                                    "NI_XDR_" + classCode.getValue() + "_RES_SUCC",
-                                    trcAssertion.getID());
-                        } catch (Exception e) {
-                            log.error(ExceptionUtils.getStackTrace(e));
-                        }
+//                        try {
+//                            EvidenceUtils.createEvidenceREMNRR(classCode.toString(),
+//                                    "NI_XDR" + classCode.getValue(),
+//                                    new DateTime(),
+//                                    EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                                    "NI_XDR_" + classCode.getValue() + "_RES_SUCC",
+//                                    trcAssertion.getID());
+//                        } catch (Exception e) {
+//                            log.error(ExceptionUtils.getStackTrace(e));
+//                        }
                     } else {
-                        try {
-                            EvidenceUtils.createEvidenceREMNRR(classCode.toString(),
-                                    "NI_XDR" + classCode.getValue(),
-                                    new DateTime(),
-                                    EventOutcomeIndicator.TEMPORAL_FAILURE.getCode().toString(),
-                                    "NI_XDR_" + classCode.getValue() + "_RES_FAIL",
-                                    trcAssertion.getID());
-                        } catch (Exception e) {
-                            log.error(ExceptionUtils.getStackTrace(e));
-                        }
+//                        try {
+//                            EvidenceUtils.createEvidenceREMNRR(classCode.toString(),
+//                                    "NI_XDR" + classCode.getValue(),
+//                                    new DateTime(),
+//                                    EventOutcomeIndicator.TEMPORAL_FAILURE.getCode().toString(),
+//                                    "NI_XDR_" + classCode.getValue() + "_RES_FAIL",
+//                                    trcAssertion.getID());
+//                        } catch (Exception e) {
+//                            log.error(ExceptionUtils.getStackTrace(e));
+//                        }
 
                     }
                     res.setContentType("text/html");

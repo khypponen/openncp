@@ -82,7 +82,7 @@ public class Context {
 		this.requestDOM = request;
 	}
 	
-	public Element getRequest() {
+	public Element getRequest1() {
 		return this.requestDOM;
 	}
 

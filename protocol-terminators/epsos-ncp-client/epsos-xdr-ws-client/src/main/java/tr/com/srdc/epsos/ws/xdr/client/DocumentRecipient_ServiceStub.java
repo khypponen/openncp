@@ -37,6 +37,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import javax.activation.DataHandler;
+import javax.xml.namespace.QName;
 import javax.xml.parsers.ParserConfigurationException;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryErrorList;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType;
@@ -47,6 +48,7 @@ import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.OMFactory;
 import org.apache.axiom.om.OMNamespace;
 import org.apache.axiom.om.OMNode;
+import org.apache.axiom.soap.SOAPEnvelope;
 import org.apache.axiom.soap.SOAPFactory;
 import org.apache.axiom.soap.SOAPHeaderBlock;
 import org.apache.axiom.soap.impl.llom.soap12.SOAP12HeaderBlockImpl;
@@ -58,12 +60,18 @@ import org.apache.log4j.Logger;
 import org.hibernate.exception.ExceptionUtils;
 import org.joda.time.DateTime;
 import org.opensaml.saml2.core.Assertion;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import tr.com.srdc.epsos.util.DateUtil;
 import tr.com.srdc.epsos.util.XMLUtil;
 
 public class DocumentRecipient_ServiceStub extends org.apache.axis2.client.Stub {
 
+	static {
+		System.out.println("Loading the WS-Security init libraries in DocumentRecipient_ServiceStub");
+
+		org.apache.xml.security.Init.init(); // Massi added 3/1/2017. 
+	}
     private static Logger LOG = Logger.getLogger(DocumentRecipient_ServiceStub.class);
     private static int counter = 0;
     // http://servicelocation/DocumentRecipient_Service
@@ -226,10 +234,32 @@ public class DocumentRecipient_ServiceStub extends org.apache.axis2.client.Stub 
             _serviceClient.addHeader(id);
             _serviceClient.addHeadersToEnvelope(env);
 
+            // Massi changed for non repudiation
+            Document envCanonicalized = null;
+            try {
+            	LOG.debug("Step 1: marshall it to document, since no c14n are available in OM");
+            	Element envAsDom = XMLUtils.toDOM(env);
+            	LOG.debug("Step 2: canonicalize it");
+            	envCanonicalized = XMLUtil.canonicalize(envAsDom.getOwnerDocument());
+            	LOG.debug("Step 3: remarshall to OM");
+            	OMElement omCanonicalizedEnvelope = XMLUtils.toOM(envCanonicalized.getDocumentElement());
+            	LOG.debug("Step 4: reconstruct the message");
+            	SOAPEnvelope newEnv = toEnvelope(soapFactory);
+            	
+            	OMElement headerOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Header"));
+            	OMElement bodyOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Body"));
+
+            	newEnv.getBody().addChild(bodyOMElement);
+            	newEnv.getHeader().addChild(headerOMElement);
+            	
+                _messageContext.setEnvelope(newEnv);
+			} catch (Exception e1) {
+				throw new IllegalArgumentException(e1);
+			}
             /*
              * Prepare request
              */
-            _messageContext.setEnvelope(env);   // set the message context with that soap envelope
+//            _messageContext.setEnvelope(env);   // set the message context with that soap envelope
             _operationClient.addMessageContext(_messageContext);    // add the message contxt to the operation client
 
             /* Log soap request */
@@ -245,7 +275,7 @@ public class DocumentRecipient_ServiceStub extends org.apache.axis2.client.Stub 
 
             // NRO
             try {
-                EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(env)),
+                EvidenceUtils.createEvidenceREMNRO(envCanonicalized,
                         tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
                         tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
                         tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
@@ -312,19 +342,20 @@ public class DocumentRecipient_ServiceStub extends org.apache.axis2.client.Stub 
             EventLog eventLog = createAndSendEventLogConsent(provideAndRegisterDocumentSetRequest, registryResponse.getRegistryErrorList(),
                     _messageContext, returnEnv, env, idAssertion, trcAssertion, this._getServiceClient().getOptions().getTo().getAddress());
 
-            // Call to Evidence Emitter
-            try {
-                EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(returnEnv)),
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                        EventType.epsosDispensationServiceInitialize.getCode(),
-                        DateUtil.GregorianCalendarToJodaTime(eventLog.getEI_EventDateTime()),
-                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                        "NCPB_XDR_SUBMIT_RES");
-            } catch (Exception e) {
-                LOG.error(ExceptionUtils.getStackTrace(e));
-            }
+            // Massi changed for non repudiation
+//            // Call to Evidence Emitter
+//            try {
+//                EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(returnEnv)),
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                        EventType.epsosDispensationServiceInitialize.getCode(),
+//                        DateUtil.GregorianCalendarToJodaTime(eventLog.getEI_EventDateTime()),
+//                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                        "NCPB_XDR_SUBMIT_RES");
+//            } catch (Exception e) {
+//                LOG.error(ExceptionUtils.getStackTrace(e));
+//            }
 
             LOG.info("Submission Time is : " + eventLog.getEI_EventDateTime());
             LOG.info("EventType is : " + eventLog.getEventType());
@@ -370,7 +401,12 @@ public class DocumentRecipient_ServiceStub extends org.apache.axis2.client.Stub 
             }
         }
     }
-
+    /**
+     * get the default envelope
+     */
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory) {
+        return factory.getDefaultEnvelope();
+    }
     private boolean optimizeContent(javax.xml.namespace.QName opName) {
         if (opNameArray == null) {
             return false;

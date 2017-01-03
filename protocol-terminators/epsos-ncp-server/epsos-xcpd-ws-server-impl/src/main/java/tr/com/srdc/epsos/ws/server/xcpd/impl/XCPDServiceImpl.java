@@ -631,33 +631,33 @@ public class XCPDServiceImpl implements XCPDServiceInterface {
                 logger.debug("patientIdList.size: " + patientIdList.size());
 
                 // call to NI
-                try {
-                    EvidenceUtils.createEvidenceREMNRO(sb.toString(),
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                            EventType.epsosIdentificationServiceFindIdentityByTraits.getCode(),
-                            new DateTime(),
-                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                            "NI_XCPD_REQ",
-                            Helper.getHCPAssertion(shElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
-                } catch (Exception e) {
-                    logger.error(ExceptionUtils.getStackTrace(e));
-                }
+//                try {
+//                    EvidenceUtils.createEvidenceREMNRO(sb.toString(),
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                            EventType.epsosIdentificationServiceFindIdentityByTraits.getCode(),
+//                            new DateTime(),
+//                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                            "NI_XCPD_REQ",
+//                            Helper.getHCPAssertion(shElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
+//                } catch (Exception e) {
+//                    logger.error(ExceptionUtils.getStackTrace(e));
+//                }
                 List<PatientDemographics> pdList = patientSearchService.getPatientDemographics(patientIdList);
-                try {
-                    EvidenceUtils.createEvidenceREMNRR(sb.toString(),
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                            EventType.epsosIdentificationServiceFindIdentityByTraits.getCode(),
-                            new DateTime(),
-                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                            "NI_XCPD_RES",
-                            Helper.getHCPAssertion(shElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
-                } catch (Exception e) {
-                    logger.error(ExceptionUtils.getStackTrace(e));
-                }
+//                try {
+//                    EvidenceUtils.createEvidenceREMNRR(sb.toString(),
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                            EventType.epsosIdentificationServiceFindIdentityByTraits.getCode(),
+//                            new DateTime(),
+//                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                            "NI_XCPD_RES",
+//                            Helper.getHCPAssertion(shElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
+//                } catch (Exception e) {
+//                    logger.error(ExceptionUtils.getStackTrace(e));
+//                }
                 if (pdList.size() == 0) {
                     // Preparing answer not available error
                     fillOutputMessage(outputMessage, "No patient found.", ERROR_ANSWER_NOT_AVAILABLE, "NF");

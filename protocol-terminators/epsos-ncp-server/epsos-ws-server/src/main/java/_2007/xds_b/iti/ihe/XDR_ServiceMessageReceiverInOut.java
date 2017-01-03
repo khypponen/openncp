@@ -48,6 +48,9 @@ import org.apache.axis2.util.XMLUtils;
 import org.apache.log4j.Logger;
 import org.hibernate.exception.ExceptionUtils;
 import org.joda.time.DateTime;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import tr.com.srdc.epsos.util.Constants;
 import tr.com.srdc.epsos.util.DateUtil;
 import tr.com.srdc.epsos.util.XMLUtil;
@@ -57,7 +60,11 @@ import tr.com.srdc.epsos.util.http.HTTPUtil;
  * XDR_ServiceMessageReceiverInOut message receiver
  */
 public class XDR_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.AbstractInOutMessageReceiver {
+	static {
+		System.out.println("Loading the WS-Security init libraries in XDR 2007");
 
+		org.apache.xml.security.Init.init(); // Massi added 3/1/2017. 
+	}
     public static Logger logger = Logger.getLogger(XDR_ServiceMessageReceiverInOut.class);
 
     private String getIPofSender(org.apache.axis2.context.MessageContext msgContext) {
@@ -121,7 +128,17 @@ public class XDR_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.
                 logger.info("XDR Request Received. EVIDENCE NRR");
                 // Send NRR
                 try {
-                    EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(msgContext.getEnvelope())),
+                	 Document envCanonicalized = null;
+                     try {
+                     	logger.debug("Step 1: marshall it to document, since no c14n are available in OM");
+                     	Element envAsDom = XMLUtils.toDOM(msgContext.getEnvelope());
+                     	logger.debug("Step 2: canonicalize it");
+                     	envCanonicalized = XMLUtil.canonicalize(envAsDom.getOwnerDocument());
+                     	
+         			} catch (Exception e1) {
+         				throw new IllegalArgumentException(e1);
+         			}
+                    EvidenceUtils.createEvidenceREMNRR(envCanonicalized,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
@@ -165,18 +182,20 @@ public class XDR_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.
                     logger.debug("Outgoing XDR Response Message:\n" + XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)));
                     logger.info("XDR Response going to be sent. EVIDENCE NRO");
                     // Call to Evidence Emitter
-                    try {
-                        EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)),
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                                EventType.epsosDispensationServiceInitialize.getCode(),
-                                DateUtil.GregorianCalendarToJodaTime(eventLog.getEI_EventDateTime()),
-                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                                "NCPA_XDR_RES");
-                    } catch (Exception e) {
-                        logger.error(ExceptionUtils.getStackTrace(e));
-                    }
+                    
+                    // Massi commented out: call to NI
+//                    try {
+//                        EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)),
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                                EventType.epsosDispensationServiceInitialize.getCode(),
+//                                DateUtil.GregorianCalendarToJodaTime(eventLog.getEI_EventDateTime()),
+//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                                "NCPA_XDR_RES");
+//                    } catch (Exception e) {
+//                        logger.error(ExceptionUtils.getStackTrace(e));
+//                    }
 
                 } else {
                     throw new java.lang.RuntimeException("method not found");

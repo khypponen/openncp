@@ -23,15 +23,24 @@
  */
 package epsos.openncp.protocolterminator;
 
+import java.rmi.RemoteException;
+import java.util.Arrays;
+import java.util.List;
+
+import javax.xml.namespace.QName;
+
+import org.apache.axiom.om.OMAbstractFactory;
+import org.apache.axiom.om.OMElement;
+import org.apache.axiom.om.OMFactory;
+import org.apache.axis2.AxisFault;
+import org.apache.axis2.util.XMLUtils;
+import org.opensaml.saml2.core.Assertion;
+
 import epsos.openncp.protocolterminator.clientconnector.DocumentId;
 import epsos.openncp.protocolterminator.clientconnector.EpsosDocument1;
 import epsos.openncp.protocolterminator.clientconnector.GenericDocumentCode;
 import epsos.openncp.protocolterminator.clientconnector.PatientDemographics;
 import epsos.openncp.protocolterminator.clientconnector.PatientId;
-import epsos.openncp.protocolterminator.clientconnector.QueryDocumentRequest;
-import epsos.openncp.protocolterminator.clientconnector.QueryDocuments;
-import epsos.openncp.protocolterminator.clientconnector.QueryDocumentsDocument;
-import epsos.openncp.protocolterminator.clientconnector.QueryDocumentsResponseDocument;
 import epsos.openncp.protocolterminator.clientconnector.QueryPatientDocument;
 import epsos.openncp.protocolterminator.clientconnector.QueryPatientRequest;
 import epsos.openncp.protocolterminator.clientconnector.QueryPatientResponseDocument;
@@ -41,24 +50,11 @@ import epsos.openncp.protocolterminator.clientconnector.RetrieveDocumentRequest;
 import epsos.openncp.protocolterminator.clientconnector.RetrieveDocumentResponseDocument;
 import epsos.openncp.protocolterminator.clientconnector.SayHelloDocument;
 import epsos.openncp.protocolterminator.clientconnector.SayHelloResponseDocument;
+import epsos.openncp.protocolterminator.clientconnector.SubmitDocument1;
 import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentDocument1;
 import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentRequest;
-import epsos.openncp.protocolterminator.clientconnector.SubmitDocument1;
 import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentResponse;
 import epsos.openncp.pt.client.ClientConnectorServiceServiceStub;
-import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.xml.namespace.QName;
-import org.apache.axiom.om.OMAbstractFactory;
-import org.apache.axiom.om.OMElement;
-import org.apache.axiom.om.OMFactory;
-import org.apache.axis2.AxisFault;
-import org.apache.axis2.util.XMLUtils;
-import org.opensaml.saml2.core.Assertion;
 
 /*
  *  ClientConnectorServiceServiceTest Junit test case
@@ -77,36 +73,48 @@ public class ClientConnectorConsumer {
      */
     public List<EpsosDocument1> queryDocuments(Assertion idAssertion, Assertion trcAssertion, String countryCode,
                                                PatientId patientId, GenericDocumentCode classCode) {
-        ClientConnectorServiceServiceStub stub;
-        try {
-            stub = new ClientConnectorServiceServiceStub(epr);
-            stub._getServiceClient().getOptions().setTimeOutInMilliSeconds(TIMEOUT);
-        } catch (AxisFault ex) {
-            throw new RuntimeException(ex);
-        }
-        try {
-            addAssertions(stub, idAssertion, trcAssertion);
-        } catch (Exception ex) {
-            throw new RuntimeException(ex);
-        }
+    	
+    	
+//    	SPITianiCode.query();, everything will be in SVN. 
+//    	
+//    	Status of the SVN: bad, we need to copy, in which extent we copy it. 
+//    	ZPI, with one patient, ask harry to check the g4. 
+//    	ONe test facade with some document. type name = new type();
+//    	ETS, KBS. 
+//    	
+    	
 
-        QueryDocumentsDocument queryDocumentsDocument = QueryDocumentsDocument.Factory.newInstance();
-        QueryDocuments queryDocuments = queryDocumentsDocument.addNewQueryDocuments();
-        QueryDocumentRequest queryDocumentRequest = queryDocuments.addNewArg0();
-        queryDocumentRequest.setClassCode(classCode);
-        queryDocumentRequest.setPatientId(patientId);
-        queryDocumentRequest.setCountryCode(countryCode);
-
-        QueryDocumentsResponseDocument queryDocumentsResponseDocument;
-        try {
-            queryDocumentsResponseDocument = stub.queryDocuments(queryDocumentsDocument);
-        } catch (RemoteException ex) {
-            throw new RuntimeException(ex.getMessage(), ex);
-        }
-
-        EpsosDocument1[] docArray = queryDocumentsResponseDocument.getQueryDocumentsResponse().getReturnArray();
-        List<EpsosDocument1> result = Arrays.asList(docArray);
-        return result;
+//        ClientConnectorServiceServiceStub stub;
+//        try {
+//            stub = new ClientConnectorServiceServiceStub(epr);
+//            stub._getServiceClient().getOptions().setTimeOutInMilliSeconds(TIMEOUT);
+//        } catch (AxisFault ex) {
+//            throw new RuntimeException(ex);
+//        }
+//        try {
+//            addAssertions(stub, idAssertion, trcAssertion);
+//        } catch (Exception ex) {
+//            throw new RuntimeException(ex);
+//        }
+//
+//        QueryDocumentsDocument queryDocumentsDocument = QueryDocumentsDocument.Factory.newInstance();
+//        QueryDocuments queryDocuments = queryDocumentsDocument.addNewQueryDocuments();
+//        QueryDocumentRequest queryDocumentRequest = queryDocuments.addNewArg0();
+//        queryDocumentRequest.setClassCode(classCode);
+//        queryDocumentRequest.setPatientId(patientId);
+//        queryDocumentRequest.setCountryCode(countryCode);
+//
+//        QueryDocumentsResponseDocument queryDocumentsResponseDocument;
+//        try {
+//            queryDocumentsResponseDocument = stub.queryDocuments(queryDocumentsDocument);
+//        } catch (RemoteException ex) {
+//            throw new RuntimeException(ex.getMessage(), ex);
+//        }
+//
+//        EpsosDocument1[] docArray = queryDocumentsResponseDocument.getQueryDocumentsResponse().getReturnArray();
+//        List<EpsosDocument1> result = Arrays.asList(docArray);
+//        return result;
+    	return null;
     }
 
     /**

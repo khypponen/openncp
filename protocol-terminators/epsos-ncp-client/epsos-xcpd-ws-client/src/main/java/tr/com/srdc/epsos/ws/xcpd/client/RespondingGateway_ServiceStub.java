@@ -32,18 +32,42 @@ import eu.epsos.util.xcpd.XCPDConstants;
 import eu.epsos.validation.datamodel.common.NcpSide;
 import eu.epsos.validation.datamodel.hl7v3.Hl7v3Schematron;
 import eu.epsos.validation.services.XcpdValidationService;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.Reader;
+import java.io.Writer;
 import java.lang.reflect.Method;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.UUID;
 import java.util.logging.Level;
+
+import javax.xml.namespace.NamespaceContext;
+import javax.xml.namespace.QName;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
+import javax.xml.stream.XMLStreamWriter;
+import javax.xml.transform.sax.SAXSource;
+
 import org.apache.axiom.om.OMAbstractFactory;
 import org.apache.axiom.om.OMAttribute;
+import org.apache.axiom.om.OMContainer;
+import org.apache.axiom.om.OMElement;
+import org.apache.axiom.om.OMException;
 import org.apache.axiom.om.OMFactory;
 import org.apache.axiom.om.OMNamespace;
 import org.apache.axiom.om.OMNode;
+import org.apache.axiom.om.OMOutputFormat;
+import org.apache.axiom.om.OMXMLParserWrapper;
+import org.apache.axiom.om.OMXMLStreamReaderConfiguration;
+import org.apache.axiom.soap.SOAPBody;
+import org.apache.axiom.soap.SOAPEnvelope;
 import org.apache.axiom.soap.SOAPFactory;
+import org.apache.axiom.soap.SOAPHeader;
 import org.apache.axiom.soap.SOAPHeaderBlock;
+import org.apache.axiom.soap.SOAPVersion;
 import org.apache.axiom.soap.impl.llom.soap12.SOAP12HeaderBlockImpl;
 import org.apache.axis2.AxisFault;
 import org.apache.axis2.transport.http.HTTPConstants;
@@ -57,6 +81,9 @@ import org.hl7.v3.PRPAIN201305UV02;
 import org.hl7.v3.PRPAIN201306UV02;
 import org.joda.time.DateTime;
 import org.opensaml.saml2.core.Assertion;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import tr.com.srdc.epsos.util.Constants;
 import tr.com.srdc.epsos.util.XMLUtil;
 
@@ -70,6 +97,11 @@ import tr.com.srdc.epsos.util.XMLUtil;
  */
 public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub {
 
+	static {
+		System.out.println("Loading the WS-Security init libraries in RespondingGateway_ServiceStub xcpd");
+		org.apache.xml.security.Init.init(); // Massi added 3/1/2017. 
+	}
+	
     protected org.apache.axis2.description.AxisOperation[] _operations;
     // hashmaps to keep the fault mapping
     private java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
@@ -221,7 +253,32 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
 
             /* set the message context with that soap envelope */
             org.apache.axis2.context.MessageContext messageContext = new org.apache.axis2.context.MessageContext();
-            messageContext.setEnvelope(env);
+            
+            LOG.debug("Canonicalizing the message");
+            // Rationale: this envelope gets unmarshalled incorrectly, so I need
+            // to c14n before. 
+            Document envCanonicalized = null;
+            try {
+            	LOG.debug("Step 1: marshall it to document, since no c14n are available in OM");
+            	Element envAsDom = XMLUtils.toDOM(env);
+            	LOG.debug("Step 2: canonicalize it");
+            	envCanonicalized = XMLUtil.canonicalize(envAsDom.getOwnerDocument());
+            	LOG.debug("Step 3: remarshall to OM");
+            	OMElement omCanonicalizedEnvelope = XMLUtils.toOM(envCanonicalized.getDocumentElement());
+            	LOG.debug("Step 4: reconstruct the message");
+            	SOAPEnvelope newEnv = toEnvelope(soapFactory);
+            	
+            	OMElement headerOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Header"));
+            	OMElement bodyOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Body"));
+
+            	newEnv.getBody().addChild(bodyOMElement);
+            	newEnv.getHeader().addChild(headerOMElement);
+            	
+                messageContext.setEnvelope(newEnv);
+			} catch (Exception e1) {
+				throw new IllegalArgumentException(e1);
+			}
+            
 
             /* add the message contxt to the operation client */
             operationClient.addMessageContext(messageContext);
@@ -229,7 +286,7 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             /* Log soap request */
             String logRequestBody;
             try {
-                String logRequestMsg = XMLUtil.prettyPrint(XMLUtils.toDOM(env));
+                String logRequestMsg = XMLUtil.prettyPrint(envCanonicalized);
                 LOG.debug(XCPDConstants.LOG.OUTGOING_XCPD_MESSAGE
                         + System.getProperty("line.separator") + logRequestMsg);
                 logRequestBody = XMLUtil.prettyPrint(XMLUtils.toDOM(env.getBody().getFirstElement()));
@@ -237,7 +294,7 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
                 LOG.info("XCPD Request sent. EVIDENCE NRO");
                 // NRO
                 try {
-                    EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(env)),
+                    EvidenceUtils.createEvidenceREMNRO(envCanonicalized,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
@@ -319,20 +376,22 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             /*
              * Invoke NRR
              */
-            LOG.info("XCPD Response received. EVIDENCE NRR");
-            // NRR
-            try {
-                EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(env)),
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                        EventType.epsosIdentificationServiceFindIdentityByTraits.getCode(),
-                        new DateTime(),
-                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                        "NCPB_XCPD_RES");
-            } catch (Exception e) {
-                LOG.error(ExceptionUtils.getStackTrace(e));
-            }
+            
+            LOG.info("NOT doing NRR on the response. Anyway it was wrong, since it is made on the request message");
+//            LOG.info("XCPD Response received. EVIDENCE NRR");
+//            // NRR
+//            try {
+//                EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(env)),
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                        EventType.epsosIdentificationServiceFindIdentityByTraits.getCode(),
+//                        new DateTime(),
+//                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                        "NCPB_XCPD_RES");
+//            } catch (Exception e) {
+//                LOG.error(ExceptionUtils.getStackTrace(e));
+//            }
             /*
              * Invoque eADC
              */

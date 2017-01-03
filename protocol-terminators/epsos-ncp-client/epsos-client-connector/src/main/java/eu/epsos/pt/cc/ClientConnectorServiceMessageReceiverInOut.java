@@ -139,19 +139,19 @@ public class ClientConnectorServiceMessageReceiverInOut extends AbstractInOutMes
                         }
                     }
 
-                    try {
-                        EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(reqEnv)),
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                                "PORTAL_XDR_REQ",
-                                new DateTime(),
-                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                                "PORTAL_XDR_REQ_RECEIVED");
-
-                    } catch (Exception e) {
-                        LOG.error(ExceptionUtils.getStackTrace(e));
-                    }
+//                    try {
+//                        EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(reqEnv)),
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                                "PORTAL_XDR_REQ",
+//                                new DateTime(),
+//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                                "PORTAL_XDR_REQ_RECEIVED");
+//
+//                    } catch (Exception e) {
+//                        LOG.error(ExceptionUtils.getStackTrace(e));
+//                    }
 
                     SubmitDocumentResponseDocument submitDocumentResponse11;
                     SubmitDocumentDocument1 wrappedParam;
@@ -162,19 +162,19 @@ public class ClientConnectorServiceMessageReceiverInOut extends AbstractInOutMes
 
                     envelope = toEnvelope(getSOAPFactory(msgContext), submitDocumentResponse11);
 
-                    try {
-                        EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)),
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                                "NCPB_XDR_RES",
-                                new DateTime(),
-                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                                "NCPB_XDR_RES_SENT");
-
-                    } catch (Exception e) {
-                        LOG.error(ExceptionUtils.getStackTrace(e));
-                    }
+//                    try {
+//                        EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)),
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                                "NCPB_XDR_RES",
+//                                new DateTime(),
+//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                                "NCPB_XDR_RES_SENT");
+//
+//                    } catch (Exception e) {
+//                        LOG.error(ExceptionUtils.getStackTrace(e));
+//                    }
 
                     /* Query Patient */
                 } else if ("queryPatient".equals(methodName)) {
@@ -187,20 +187,20 @@ public class ClientConnectorServiceMessageReceiverInOut extends AbstractInOutMes
                         }
                     }
 
-                    try {
-                        EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(reqEnv)),
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                                "PORTAL_PD_REQ",
-                                new DateTime(),
-                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                                "PORTAL_PD_REQ_RECEIVED",
-                                hcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
-
-                    } catch (Exception e) {
-                        LOG.error(ExceptionUtils.getStackTrace(e));
-                    }
+//                    try {
+//                        EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(reqEnv)),
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                                "PORTAL_PD_REQ",
+//                                new DateTime(),
+//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                                "PORTAL_PD_REQ_RECEIVED",
+//                                hcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
+//
+//                    } catch (Exception e) {
+//                        LOG.error(ExceptionUtils.getStackTrace(e));
+//                    }
 
                     QueryPatientDocument wrappedParam;
                     wrappedParam = (QueryPatientDocument) fromOM(reqEnv.getBody().getFirstElement(),
@@ -210,19 +210,19 @@ public class ClientConnectorServiceMessageReceiverInOut extends AbstractInOutMes
                     QueryPatientResponseDocument queryPatientResponse13 = skel.queryPatient(wrappedParam, hcpAssertion);
                     envelope = toEnvelope(getSOAPFactory(msgContext), queryPatientResponse13);
 
-                    try {
-                        EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)),
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                                "NCPB_PD_RES",
-                                new DateTime(),
-                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                                "NCPB_PD_RES_SENT",
-                                hcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
-                    } catch (Exception e) {
-                        LOG.error(ExceptionUtils.getStackTrace(e));
-                    }
+//                    try {
+//                        EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)),
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                                "NCPB_PD_RES",
+//                                new DateTime(),
+//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                                "NCPB_PD_RES_SENT",
+//                                hcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
+//                    } catch (Exception e) {
+//                        LOG.error(ExceptionUtils.getStackTrace(e));
+//                    }
 
                     /* Say hello */
                 } else if ("sayHello".equals(methodName)) {
@@ -248,20 +248,20 @@ public class ClientConnectorServiceMessageReceiverInOut extends AbstractInOutMes
                         }
                     }
 
-                    try {
-                        EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(reqEnv)),
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                                "PORTAL_DQ_REQ",
-                                new DateTime(),
-                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                                "PORTAL_DQ_REQ_RECEIVED",
-                                hcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
-
-                    } catch (Exception e) {
-                        LOG.error(ExceptionUtils.getStackTrace(e));
-                    }
+//                    try {
+//                        EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(reqEnv)),
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                                "PORTAL_DQ_REQ",
+//                                new DateTime(),
+//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                                "PORTAL_DQ_REQ_RECEIVED",
+//                                hcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
+//
+//                    } catch (Exception e) {
+//                        LOG.error(ExceptionUtils.getStackTrace(e));
+//                    }
 
                     QueryDocumentsResponseDocument queryDocumentsResponse17;
 
@@ -273,20 +273,20 @@ public class ClientConnectorServiceMessageReceiverInOut extends AbstractInOutMes
 
                     envelope = toEnvelope(getSOAPFactory(msgContext), queryDocumentsResponse17);
 
-                    try {
-                        EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)),
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                                "NCPB_DQ_RES",
-                                new DateTime(),
-                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                                "NCPB_DQ_RES_SENT",
-                                hcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
-
-                    } catch (Exception e) {
-                        LOG.error(ExceptionUtils.getStackTrace(e));
-                    }
+//                    try {
+//                        EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)),
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                                "NCPB_DQ_RES",
+//                                new DateTime(),
+//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                                "NCPB_DQ_RES_SENT",
+//                                hcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
+//
+//                    } catch (Exception e) {
+//                        LOG.error(ExceptionUtils.getStackTrace(e));
+//                    }
 
                     /*
                      * Retrieve Document
@@ -303,19 +303,19 @@ public class ClientConnectorServiceMessageReceiverInOut extends AbstractInOutMes
                         }
                     }
 
-                    try {
-                        EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(reqEnv)),
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                                "PORTAL_DR_REQ",
-                                new DateTime(),
-                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                                "PORTAL_DR_REQ_RECEIVED",
-                                hcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
-                    } catch (Exception e) {
-                        LOG.error(ExceptionUtils.getStackTrace(e));
-                    }
+//                    try {
+//                        EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(reqEnv)),
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                                "PORTAL_DR_REQ",
+//                                new DateTime(),
+//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                                "PORTAL_DR_REQ_RECEIVED",
+//                                hcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
+//                    } catch (Exception e) {
+//                        LOG.error(ExceptionUtils.getStackTrace(e));
+//                    }
 
                     RetrieveDocumentResponseDocument retrieveDocumentResponse19;
                     RetrieveDocumentDocument1 wrappedParam;
@@ -326,20 +326,20 @@ public class ClientConnectorServiceMessageReceiverInOut extends AbstractInOutMes
 
                     envelope = toEnvelope(getSOAPFactory(msgContext), retrieveDocumentResponse19);
 
-                    try {
-                        EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)),
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                                "NCPB_DR_RES",
-                                new DateTime(),
-                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                                "NCPB_DR_RES_SENT",
-                                hcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
-
-                    } catch (Exception e) {
-                        LOG.error(ExceptionUtils.getStackTrace(e));
-                    }
+//                    try {
+//                        EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)),
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                                "NCPB_DR_RES",
+//                                new DateTime(),
+//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                                "NCPB_DR_RES_SENT",
+//                                hcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
+//
+//                    } catch (Exception e) {
+//                        LOG.error(ExceptionUtils.getStackTrace(e));
+//                    }
                     /*
                      * Else
                      */
@@ -357,20 +357,20 @@ public class ClientConnectorServiceMessageReceiverInOut extends AbstractInOutMes
 
                 } catch (Exception ex) {
                     LOG.debug(ex.getLocalizedMessage(), ex);
-                    try {
-                        EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)),
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                                "PORTAL_RES",
-                                new DateTime(),
-                                EventOutcomeIndicator.TEMPORAL_FAILURE.getCode().toString(),
-                                "PORTAL_RES_SENT",
-                                mainHcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
-
-                    } catch (Exception e) {
-                        LOG.error(ExceptionUtils.getStackTrace(e));
-                    }
+//                    try {
+//                        EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)),
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                                "PORTAL_RES",
+//                                new DateTime(),
+//                                EventOutcomeIndicator.TEMPORAL_FAILURE.getCode().toString(),
+//                                "PORTAL_RES_SENT",
+//                                mainHcpAssertion.getID() + "__" + DateUtil.getCurrentTimeGMT());
+//
+//                    } catch (Exception e) {
+//                        LOG.error(ExceptionUtils.getStackTrace(e));
+//                    }
                 }
                 newMsgContext.setEnvelope(envelope);
             }

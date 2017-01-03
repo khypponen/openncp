@@ -69,7 +69,7 @@ public class EvidenceUtils {
     }
 
     public static void createEvidenceREMNRR(
-            String incomingMsg,
+            Document incomingMsg,
             String keyStorePath,
             String keyPassword,
             String certAlias,
@@ -79,16 +79,15 @@ public class EvidenceUtils {
             String title
     ) throws MalformedMIMEMessageException, MalformedIHESOAPException, SOAPException, ParserConfigurationException, SAXException, IOException, URISyntaxException, TOElementException, EnforcePolicyException, ObligationDischargeException, TransformerException, SyntaxException, KeyStoreException, NoSuchAlgorithmException, CertificateException, UnrecoverableKeyException {
 
-        Document incomingSoap = XMLUtil.parseContent(incomingMsg);
 
         MessageType messageType = null;
         String msguuid = "";
         try {
-            MessageInspector messageInspector = new MessageInspector(incomingSoap);
+            MessageInspector messageInspector = new MessageInspector(incomingMsg);
             messageType = messageInspector.getMessageType();
             msguuid = messageInspector.getMessageUUID();
         } catch (Exception e) {
-            UnknownMessageType umt = new UnknownMessageType(incomingSoap);
+            UnknownMessageType umt = new UnknownMessageType(incomingMsg);
             messageType = umt;
             msguuid = UUID.randomUUID().toString();
         }
@@ -96,7 +95,7 @@ public class EvidenceUtils {
     }
 
     public static void createEvidenceREMNRR(
-            String incomingMsg,
+    		Document incomingMsg,
             String keyStorePath,
             String keyPassword,
             String certAlias,
@@ -110,7 +109,6 @@ public class EvidenceUtils {
         if (status.equals("0")) {
             statusmsg = "success";
         }
-        Document incomingSoap = XMLUtil.parseContent(incomingMsg);
 
         PDP simplePDP = SimplePDPFactory.getSimplePDP();
 
@@ -129,10 +127,10 @@ public class EvidenceUtils {
         MessageType messageType = null;
 //        String msguuid = "";
         try {
-            MessageInspector messageInspector = new MessageInspector(incomingSoap);
+            MessageInspector messageInspector = new MessageInspector(incomingMsg);
             messageType = messageInspector.getMessageType();
         } catch (Exception e) {
-            UnknownMessageType umt = new UnknownMessageType(incomingSoap);
+            UnknownMessageType umt = new UnknownMessageType(incomingMsg);
             messageType = umt;
         }
         /*
@@ -169,7 +167,7 @@ public class EvidenceUtils {
         List<ESensObligation> obligations = enforcePolicy.getObligationList();
 
         Context context = new Context();
-        context.setIncomingMsg(incomingSoap);
+        context.setIncomingMsg(incomingMsg);
         KeyStore ks = KeyStore.getInstance("JKS");
         InputStream keyStream = new FileInputStream(new File(keyStorePath));
         ks.load(keyStream, keyPassword.toCharArray());
@@ -208,7 +206,7 @@ public class EvidenceUtils {
     }
 
     public static void createEvidenceREMNRR(
-            String incomingSoap,
+            Document incomingSoap,
             String eventType,
             DateTime submissionTime,
             String status,
@@ -219,7 +217,7 @@ public class EvidenceUtils {
     }
 
     public static void createEvidenceREMNRO(
-            String incomingSoap,
+            Document incomingSoap,
             String eventType,
             DateTime submissionTime,
             String status,
@@ -231,7 +229,7 @@ public class EvidenceUtils {
     }
 
     public static void createEvidenceREMNRO(
-            String incomingSoap,
+            Document incomingSoap,
             String keyStorePath,
             String keyPassword,
             String certAlias,
@@ -240,16 +238,16 @@ public class EvidenceUtils {
             String status,
             String title) throws MalformedMIMEMessageException, MalformedIHESOAPException, SOAPException, ParserConfigurationException, SAXException, IOException, URISyntaxException, TOElementException, EnforcePolicyException, ObligationDischargeException, TransformerException, SyntaxException, KeyStoreException, NoSuchAlgorithmException, CertificateException, UnrecoverableKeyException {
 
-        Document incomingMsg = XMLUtil.parseContent(incomingSoap);
+//        Document incomingMsg = XMLUtil.parseContent(incomingSoap);
 
         MessageType messageType = null;
         String msguuid = "";
         try {
-            MessageInspector messageInspector = new MessageInspector(incomingMsg);
+            MessageInspector messageInspector = new MessageInspector(incomingSoap);
             messageType = messageInspector.getMessageType();
             msguuid = messageInspector.getMessageUUID();
         } catch (Exception e) {
-            UnknownMessageType umt = new UnknownMessageType(incomingMsg);
+            UnknownMessageType umt = new UnknownMessageType(incomingSoap);
             messageType = umt;
             msguuid = UUID.randomUUID().toString();
         }
@@ -258,7 +256,7 @@ public class EvidenceUtils {
     }
 
     public static void createEvidenceREMNRO(
-            String incomingSoap,
+            Document incomingSoap,
             String keyStorePath,
             String keyPassword,
             String certAlias,
@@ -272,7 +270,7 @@ public class EvidenceUtils {
         if (status.equals("0")) {
             statusmsg = "success";
         }
-        Document incomingMsg = XMLUtil.parseContent(incomingSoap);
+//        Document incomingMsg = XMLUtil.parseContent(incomingSoap);
         PDP simplePDP = SimplePDPFactory.getSimplePDP();
         UnorderedPolicyRepository polrep = (UnorderedPolicyRepository) simplePDP
                 .getPolicyRepository();
@@ -290,10 +288,10 @@ public class EvidenceUtils {
         // Read the message as it arrives at the facade
         MessageType messageType = null;
         try {
-            MessageInspector messageInspector = new MessageInspector(incomingMsg);
+            MessageInspector messageInspector = new MessageInspector(incomingSoap);
             messageType = messageInspector.getMessageType();
         } catch (Exception e) {
-            UnknownMessageType umt = new UnknownMessageType(incomingMsg);
+            UnknownMessageType umt = new UnknownMessageType(incomingSoap);
             messageType = umt;
         }
         if (checkCorrectnessofIHEXCA(messageType)) {
@@ -337,7 +335,7 @@ public class EvidenceUtils {
         List<ESensObligation> obligations = enforcePolicy.getObligationList();
 
         Context context = new Context();
-        context.setIncomingMsg(incomingMsg);
+        context.setIncomingMsg(incomingSoap);
         KeyStore ks = KeyStore.getInstance("JKS");
         InputStream keyStream = new FileInputStream(new File(keyStorePath));
         ks.load(keyStream, keyPassword.toCharArray());

@@ -98,43 +98,43 @@ public class CCDServlet extends HttpServlet {
 
             log.info("Portal language is : " + lang + " - " + lang1);
 
-            try {
-                EvidenceUtils.createEvidenceREMNRO(classCode.toString(),
-                        "NI_DR_" + classCode.getValue(),
-                        new DateTime(),
-                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                        "NI_DR_" + classCode.getValue() + "_REQ",
-                        trcAssertion.getID());
-            } catch (Exception e) {
-                log.error(ExceptionUtils.getStackTrace(e));
-            }
+//            try {
+//                EvidenceUtils.createEvidenceREMNRO(classCode.toString(),
+//                        "NI_DR_" + classCode.getValue(),
+//                        new DateTime(),
+//                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                        "NI_DR_" + classCode.getValue() + "_REQ",
+//                        trcAssertion.getID());
+//            } catch (Exception e) {
+//                log.error(ExceptionUtils.getStackTrace(e));
+//            }
 
             EpsosDocument1 eps = clientConectorConsumer.retrieveDocument(
                     hcpAssertion, trcAssertion, selectedCountry, documentId,
                     hcid, classCode, lang1);
 
             if (Validator.isNotNull(eps)) {
-                try {
-                    EvidenceUtils.createEvidenceREMNRR(classCode.toString(),
-                            "NI_DR" + classCode.getValue(),
-                            new DateTime(),
-                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                            "NI_DR_" + classCode.getValue() + "_RES_SUCC",
-                            trcAssertion.getID());
-                } catch (Exception e) {
-                    log.error(ExceptionUtils.getStackTrace(e));
-                }
+//                try {
+//                    EvidenceUtils.createEvidenceREMNRR(classCode.toString(),
+//                            "NI_DR" + classCode.getValue(),
+//                            new DateTime(),
+//                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                            "NI_DR_" + classCode.getValue() + "_RES_SUCC",
+//                            trcAssertion.getID());
+//                } catch (Exception e) {
+//                    log.error(ExceptionUtils.getStackTrace(e));
+//                }
             } else {
-                try {
-                    EvidenceUtils.createEvidenceREMNRR(classCode.toString(),
-                            "NI_DR" + classCode.getValue(),
-                            new DateTime(),
-                            EventOutcomeIndicator.TEMPORAL_FAILURE.getCode().toString(),
-                            "NI_DR_" + classCode.getValue() + "_RES_FAIL",
-                            trcAssertion.getID());
-                } catch (Exception e) {
-                    log.error(ExceptionUtils.getStackTrace(e));
-                }
+//                try {
+//                    EvidenceUtils.createEvidenceREMNRR(classCode.toString(),
+//                            "NI_DR" + classCode.getValue(),
+//                            new DateTime(),
+//                            EventOutcomeIndicator.TEMPORAL_FAILURE.getCode().toString(),
+//                            "NI_DR_" + classCode.getValue() + "_RES_FAIL",
+//                            trcAssertion.getID());
+//                } catch (Exception e) {
+//                    log.error(ExceptionUtils.getStackTrace(e));
+//                }
             }
 
             selectedEpsosDocument.setAuthor(eps.getAuthor() + "");

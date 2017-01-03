@@ -6,6 +6,19 @@
 		<groupId>eu.europa.ec.sante.ehdsi</groupId>
 		<version>2.5.0-SNAPSHOT</version>
 	</parent>
+    <repositories>
+       
+       <repository>
+        	<url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eDelivery/</url>
+        	<id>eDelivery-snapshots</id>
+        	<name>eDelivery Snapshots</name>
+        </repository>
+        <!-- repository>
+        	<url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eDelivery-snapshots/</url>
+        	<id>eDelivery-snapshots</id>
+        	<name>eDelivery Snapshots</name>
+        </repository-->
+    </repositories>
 
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>openncp-configuration-manager</artifactId>
@@ -43,6 +56,13 @@
 	</issueManagement>
 
 	<dependencies>
+	
+<dependency>
+  <groupId>eu.europa.ec.dynamic-discovery</groupId>
+  <artifactId>dynamic-discovery-client</artifactId>
+  <version>1.0</version>
+</dependency>
+
 		<dependency>
 			<groupId>commons-configuration</groupId>
 			<artifactId>commons-configuration</artifactId>

@@ -754,20 +754,20 @@ public class XCAServiceImpl implements XCAServiceInterface {
             rel.getRegistryError().add(createErrorMessage("4202", "Class code missing in XCA query request.", "", false));
         }
 
-        // call to NI
-        try {
-            EvidenceUtils.createEvidenceREMNRO(DocumentFactory.createSearchCriteria().add(Criteria.PatientId, patientId).toString(),
-                    tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                    tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                    tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                    EventType.epsosOrderServiceList.getCode(),
-                    new DateTime(),
-                    EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                    "NI_XCA_LIST_REQ",
-                    Helper.getTRCAssertion(shElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
-        } catch (Exception e) {
-            logger.error(ExceptionUtils.getStackTrace(e));
-        }
+//        // call to NI
+//        try {
+//            EvidenceUtils.createEvidenceREMNRO(DocumentFactory.createSearchCriteria().add(Criteria.PatientId, patientId).toString(),
+//                    tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                    tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                    tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                    EventType.epsosOrderServiceList.getCode(),
+//                    new DateTime(),
+//                    EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                    "NI_XCA_LIST_REQ",
+//                    Helper.getTRCAssertion(shElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
+//        } catch (Exception e) {
+//            logger.error(ExceptionUtils.getStackTrace(e));
+//        }
 
         if (rel.getRegistryError().size() > 0) {
             response.setRegistryErrorList(rel);
@@ -872,34 +872,34 @@ public class XCAServiceImpl implements XCAServiceInterface {
                         }
                     }
                 }
-                // call to NI
-                try {
-                    EvidenceUtils.createEvidenceREMNRO(DocumentFactory.createSearchCriteria().add(Criteria.PatientId, patientId).toString(),
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                            EventType.epsosOrderServiceList.getCode(),
-                            new DateTime(),
-                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                            "NI_XCA_LIST_RES",
-                            Helper.getTRCAssertion(shElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
-                } catch (Exception e) {
-                    logger.error(ExceptionUtils.getStackTrace(e));
-                }
+//                // call to NI
+//                try {
+//                    EvidenceUtils.createEvidenceREMNRO(DocumentFactory.createSearchCriteria().add(Criteria.PatientId, patientId).toString(),
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                            EventType.epsosOrderServiceList.getCode(),
+//                            new DateTime(),
+//                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                            "NI_XCA_LIST_RES",
+//                            Helper.getTRCAssertion(shElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
+//                } catch (Exception e) {
+//                    logger.error(ExceptionUtils.getStackTrace(e));
+//                }
             } else {
-                try {
-                    EvidenceUtils.createEvidenceREMNRO(DocumentFactory.createSearchCriteria().add(Criteria.PatientId, patientId).toString(),
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                            EventType.epsosOrderServiceList.getCode(),
-                            new DateTime(),
-                            EventOutcomeIndicator.TEMPORAL_FAILURE.getCode().toString(),
-                            "NI_XCA_LIST_RES_FAIL",
-                            Helper.getTRCAssertion(shElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
-                } catch (Exception e) {
-                    logger.error(ExceptionUtils.getStackTrace(e));
-                }
+//                try {
+//                    EvidenceUtils.createEvidenceREMNRO(DocumentFactory.createSearchCriteria().add(Criteria.PatientId, patientId).toString(),
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                            EventType.epsosOrderServiceList.getCode(),
+//                            new DateTime(),
+//                            EventOutcomeIndicator.TEMPORAL_FAILURE.getCode().toString(),
+//                            "NI_XCA_LIST_RES_FAIL",
+//                            Helper.getTRCAssertion(shElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
+//                } catch (Exception e) {
+//                    logger.error(ExceptionUtils.getStackTrace(e));
+//                }
 
                 rel.getRegistryError().add(createErrorMessage("4202", "Class code not supported for XCA query(" + classCodeValue + ").", "", false));
                 response.setRegistryErrorList(rel);
@@ -1040,57 +1040,57 @@ public class XCAServiceImpl implements XCAServiceInterface {
             }
 
             // call to NI
-            try {
-                EvidenceUtils.createEvidenceREMNRO(DocumentFactory.createSearchCriteria().add(Criteria.PatientId, patientId).toString(),
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                        EventType.epsosOrderServiceList.getCode(),
-                        new DateTime(),
-                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                        "NI_XCA_RETRIEVE_REQ",
-                        DateUtil.getCurrentTimeGMT());
-            } catch (Exception e) {
-                logger.error(ExceptionUtils.getStackTrace(e));
-            }
+//            try {
+//                EvidenceUtils.createEvidenceREMNRO(DocumentFactory.createSearchCriteria().add(Criteria.PatientId, patientId).toString(),
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                        EventType.epsosOrderServiceList.getCode(),
+//                        new DateTime(),
+//                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                        "NI_XCA_RETRIEVE_REQ",
+//                        DateUtil.getCurrentTimeGMT());
+//            } catch (Exception e) {
+//                logger.error(ExceptionUtils.getStackTrace(e));
+//            }
 
             EPSOSDocument epsosDoc = documentSearchService.getDocument(DocumentFactory.createSearchCriteria()
                     .add(Criteria.DocumentId, documentId)
                     .add(Criteria.PatientId, patientId)
                     .add(Criteria.RepositoryId, repositoryId));
             if (epsosDoc == null) {
-                // call to NI
-                try {
-                    EvidenceUtils.createEvidenceREMNRR(DocumentFactory.createSearchCriteria().add(Criteria.PatientId, patientId).toString(),
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                            EventType.epsosOrderServiceRetrieve.getCode(),
-                            new DateTime(),
-                            EventOutcomeIndicator.TEMPORAL_FAILURE.getCode().toString(),
-                            "NI_XCA_RETRIEVE_RES_FAIL",
-                            Helper.getTRCAssertion(soapHeaderElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
-                } catch (Exception e) {
-                    logger.error(ExceptionUtils.getStackTrace(e));
-                }
+//                // call to NI
+//                try {
+//                    EvidenceUtils.createEvidenceREMNRR(DocumentFactory.createSearchCriteria().add(Criteria.PatientId, patientId).toString(),
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                            EventType.epsosOrderServiceRetrieve.getCode(),
+//                            new DateTime(),
+//                            EventOutcomeIndicator.TEMPORAL_FAILURE.getCode().toString(),
+//                            "NI_XCA_RETRIEVE_RES_FAIL",
+//                            Helper.getTRCAssertion(soapHeaderElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
+//                } catch (Exception e) {
+//                    logger.error(ExceptionUtils.getStackTrace(e));
+//                }
                 registryErrorList.addChild(createErrorOMMessage(ns, "XDSMissingDocument", "Requested document not found.", "", false));
                 break processLabel;
             }
 
             // call to NI
-            try {
-                EvidenceUtils.createEvidenceREMNRR(DocumentFactory.createSearchCriteria().add(Criteria.PatientId, patientId).toString(),
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                        EventType.epsosOrderServiceRetrieve.getCode(),
-                        new DateTime(),
-                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                        "NI_XCA_RETRIEVE_RES_SUCC",
-                        DateUtil.getCurrentTimeGMT());
-            } catch (Exception e) {
-                logger.error(ExceptionUtils.getStackTrace(e));
-            }
+//            try {
+//                EvidenceUtils.createEvidenceREMNRR(DocumentFactory.createSearchCriteria().add(Criteria.PatientId, patientId).toString(),
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                        EventType.epsosOrderServiceRetrieve.getCode(),
+//                        new DateTime(),
+//                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                        "NI_XCA_RETRIEVE_RES_SUCC",
+//                        DateUtil.getCurrentTimeGMT());
+//            } catch (Exception e) {
+//                logger.error(ExceptionUtils.getStackTrace(e));
+//            }
 
             classCodeValue = epsosDoc.getClassCode();
 

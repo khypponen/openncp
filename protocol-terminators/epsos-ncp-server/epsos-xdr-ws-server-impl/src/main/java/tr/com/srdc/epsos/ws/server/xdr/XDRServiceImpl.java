@@ -441,33 +441,33 @@ public class XDRServiceImpl implements XDRServiceInterface {
                     org.w3c.dom.Document domDocument = TMServices.byteToDocument(docBytes);
                     EPSOSDocument epsosDocument = DocumentFactory.createEPSOSDocument(patientId, Constants.ED_CLASSCODE, domDocument);
                     // call to NI
-                    try {
-                        EvidenceUtils.createEvidenceREMNRO(epsosDocument.toString(),
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                                EventType.epsosDispensationServiceInitialize.getCode(),
-                                new DateTime(),
-                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                                "NI_XDR_DISP_REQ",
-                                Helper.getDocumentEntryPatientIdFromTRCAssertion(shElement) + "__" + DateUtil.getCurrentTimeGMT());
-                    } catch (Exception e) {
-                        logger.error(ExceptionUtils.getStackTrace(e));
-                    }
+//                    try {
+//                        EvidenceUtils.createEvidenceREMNRO(epsosDocument.toString(),
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                                EventType.epsosDispensationServiceInitialize.getCode(),
+//                                new DateTime(),
+//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                                "NI_XDR_DISP_REQ",
+//                                Helper.getDocumentEntryPatientIdFromTRCAssertion(shElement) + "__" + DateUtil.getCurrentTimeGMT());
+//                    } catch (Exception e) {
+//                        logger.error(ExceptionUtils.getStackTrace(e));
+//                    }
                     documentSubmitService.submitDispensation(epsosDocument);
-                    try {
-                        EvidenceUtils.createEvidenceREMNRR(epsosDocument.toString(),
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                                EventType.epsosDispensationServiceInitialize.getCode(),
-                                new DateTime(),
-                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                                "NI_XDR_DISP_RES",
-                                Helper.getDocumentEntryPatientIdFromTRCAssertion(shElement) + "__" + DateUtil.getCurrentTimeGMT());
-                    } catch (Exception e) {
-                        logger.error(ExceptionUtils.getStackTrace(e));
-                    }
+//                    try {
+//                        EvidenceUtils.createEvidenceREMNRR(epsosDocument.toString(),
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                                EventType.epsosDispensationServiceInitialize.getCode(),
+//                                new DateTime(),
+//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                                "NI_XDR_DISP_RES",
+//                                Helper.getDocumentEntryPatientIdFromTRCAssertion(shElement) + "__" + DateUtil.getCurrentTimeGMT());
+//                    } catch (Exception e) {
+//                        logger.error(ExceptionUtils.getStackTrace(e));
+//                    }
                 } catch (NIException e) {
                     rel.getRegistryError().add(createErrorMessage(e.getCode(), e.getMessage(), "", false));
                 } catch (Exception e) {
@@ -597,35 +597,35 @@ public class XDRServiceImpl implements XDRServiceInterface {
                 EPSOSDocument epsosDocument = DocumentFactory.createEPSOSDocument(patientId, Constants.CONSENT_CLASSCODE, domDocument);
 
                 // call to NI
-                try {
-                    EvidenceUtils.createEvidenceREMNRO(epsosDocument.toString(),
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                            EventType.epsosConsentServicePut.getCode(),
-                            new DateTime(),
-                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                            "NI_XDR_CONSENT_REQ",
-                            Helper.getDocumentEntryPatientIdFromTRCAssertion(shElement) + "__" + DateUtil.getCurrentTimeGMT());
-                } catch (Exception e) {
-                    logger.error(ExceptionUtils.getStackTrace(e));
-                }
+//                try {
+//                    EvidenceUtils.createEvidenceREMNRO(epsosDocument.toString(),
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                            EventType.epsosConsentServicePut.getCode(),
+//                            new DateTime(),
+//                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                            "NI_XDR_CONSENT_REQ",
+//                            Helper.getDocumentEntryPatientIdFromTRCAssertion(shElement) + "__" + DateUtil.getCurrentTimeGMT());
+//                } catch (Exception e) {
+//                    logger.error(ExceptionUtils.getStackTrace(e));
+//                }
 
                 documentSubmitService.submitPatientConsent(epsosDocument);
                 // call to NI
-                try {
-                    EvidenceUtils.createEvidenceREMNRR(epsosDocument.toString(),
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                            EventType.epsosConsentServicePut.getCode(),
-                            new DateTime(),
-                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                            "NI_XDR_CONSENT_RES",
-                            Helper.getDocumentEntryPatientIdFromTRCAssertion(shElement) + "__" + DateUtil.getCurrentTimeGMT());
-                } catch (Exception e) {
-                    logger.error(ExceptionUtils.getStackTrace(e));
-                }
+//                try {
+//                    EvidenceUtils.createEvidenceREMNRR(epsosDocument.toString(),
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                            EventType.epsosConsentServicePut.getCode(),
+//                            new DateTime(),
+//                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                            "NI_XDR_CONSENT_RES",
+//                            Helper.getDocumentEntryPatientIdFromTRCAssertion(shElement) + "__" + DateUtil.getCurrentTimeGMT());
+//                } catch (Exception e) {
+//                    logger.error(ExceptionUtils.getStackTrace(e));
+//                }
 
             } catch (DocumentProcessingException e) {
                 rel.getRegistryError().add(createErrorMessage(e.getCode(), e.getMessage(), "", false));

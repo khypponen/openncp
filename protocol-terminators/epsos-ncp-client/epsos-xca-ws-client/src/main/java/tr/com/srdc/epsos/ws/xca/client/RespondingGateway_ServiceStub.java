@@ -37,6 +37,8 @@ import ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType;
 import ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType;
 import java.util.Date;
 import java.util.UUID;
+
+import javax.xml.namespace.QName;
 import javax.xml.parsers.ParserConfigurationException;
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryRequest;
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryResponse;
@@ -46,6 +48,7 @@ import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.OMFactory;
 import org.apache.axiom.om.OMNamespace;
 import org.apache.axiom.om.OMNode;
+import org.apache.axiom.soap.SOAPEnvelope;
 import org.apache.axiom.soap.SOAPFactory;
 import org.apache.axiom.soap.SOAPHeaderBlock;
 import org.apache.axiom.soap.impl.llom.soap12.SOAP12HeaderBlockImpl;
@@ -64,7 +67,11 @@ import tr.com.srdc.epsos.util.XMLUtil;
  *  RespondingGateway_ServiceStub java implementation
  */
 public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub {
+	static {
+		System.out.println("Loading the WS-Security init libraries in RespondingGateway_ServiceStub xca");
 
+		org.apache.xml.security.Init.init(); // Massi added 3/1/2017. 
+	}
     protected org.apache.axis2.description.AxisOperation[] _operations;
     private static Logger LOG = Logger.getLogger(RespondingGateway_ServiceStub.class);
     private static int counter = 0;
@@ -250,7 +257,30 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             /*
              * Prepare request
              */
-            _messageContext.setEnvelope(env);   // set the message context with that soap envelope
+            
+            // Massi changed for non repudiation
+            Document envCanonicalized = null;
+            try {
+            	LOG.debug("Step 1: marshall it to document, since no c14n are available in OM");
+            	Element envAsDom = XMLUtils.toDOM(env);
+            	LOG.debug("Step 2: canonicalize it");
+            	envCanonicalized = XMLUtil.canonicalize(envAsDom.getOwnerDocument());
+            	LOG.debug("Step 3: remarshall to OM");
+            	OMElement omCanonicalizedEnvelope = XMLUtils.toOM(envCanonicalized.getDocumentElement());
+            	LOG.debug("Step 4: reconstruct the message");
+            	SOAPEnvelope newEnv = toEnvelope(soapFactory);
+            	
+            	OMElement headerOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Header"));
+            	OMElement bodyOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Body"));
+
+            	newEnv.getBody().addChild(bodyOMElement);
+            	newEnv.getHeader().addChild(headerOMElement);
+            	
+                _messageContext.setEnvelope(newEnv);
+			} catch (Exception e1) {
+				throw new IllegalArgumentException(e1);
+			}
+//            _messageContext.setEnvelope(env);   // set the message context with that soap envelope
             _operationClient.addMessageContext(_messageContext);    // add the message contxt to the operation client
 
             /* Log soap request */
@@ -262,7 +292,7 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
                 logRequestBody = XMLUtil.prettyPrint(XMLUtils.toDOM(env.getBody().getFirstElement()));
                 // NRO
                 try {
-                    EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(env)),
+                    EvidenceUtils.createEvidenceREMNRO(envCanonicalized,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
@@ -340,19 +370,20 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             // eADC start time
             start = System.currentTimeMillis();
 
-            // NRR
-            try {
-                EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(env)),
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                        EventType.epsosOrderServiceList.getCode(),
-                        new DateTime(),
-                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                        "NCPB_XCA_LIST_RES");
-            } catch (Exception e) {
-                LOG.error(ExceptionUtils.getStackTrace(e));
-            }
+            // Massi changed for non repudiation
+            //            // NRR
+//            try {
+//                EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(env)),
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                        EventType.epsosOrderServiceList.getCode(),
+//                        new DateTime(),
+//                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                        "NCPB_XCA_LIST_RES");
+//            } catch (Exception e) {
+//                LOG.error(ExceptionUtils.getStackTrace(e));
+//            }
 
             /*
              * Invoque eADC
@@ -537,7 +568,29 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             /*
              * Prepare request
              */
-            _messageContext.setEnvelope(env);   // set the message context with that soap envelope
+            // Massi changed for non repudiation
+            Document envCanonicalized = null;
+            try {
+            	LOG.debug("Step 1: marshall it to document, since no c14n are available in OM");
+            	Element envAsDom = XMLUtils.toDOM(env);
+            	LOG.debug("Step 2: canonicalize it");
+            	envCanonicalized = XMLUtil.canonicalize(envAsDom.getOwnerDocument());
+            	LOG.debug("Step 3: remarshall to OM");
+            	OMElement omCanonicalizedEnvelope = XMLUtils.toOM(envCanonicalized.getDocumentElement());
+            	LOG.debug("Step 4: reconstruct the message");
+            	SOAPEnvelope newEnv = toEnvelope(soapFactory);
+            	
+            	OMElement headerOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Header"));
+            	OMElement bodyOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Body"));
+
+            	newEnv.getBody().addChild(bodyOMElement);
+            	newEnv.getHeader().addChild(headerOMElement);
+            	
+                _messageContext.setEnvelope(newEnv);
+			} catch (Exception e1) {
+				throw new IllegalArgumentException(e1);
+			}
+//            _messageContext.setEnvelope(env);   // set the message context with that soap envelope
             _operationClient.addMessageContext(_messageContext);    // add the message contxt to the operation client
 
             /* Log soap request */
@@ -549,7 +602,7 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
                 logRequestBody = XMLUtil.prettyPrint(XMLUtils.toDOM(env.getBody().getFirstElement()));
                 // NRO
                 try {
-                    EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(env)),
+                    EvidenceUtils.createEvidenceREMNRO(envCanonicalized,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
@@ -602,19 +655,21 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             retrieveDocumentSetResponse = (RetrieveDocumentSetResponseType) object;
 
             LOG.info("XCA Retrieve Request received. EVIDENCE NRR");
-            // NRR
-            try {
-                EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(env)),
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                        EventType.epsosOrderServiceRetrieve.getCode(),
-                        new DateTime(),
-                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                        "NCPB_XCA_RETRIEVE_RES");
-            } catch (Exception e) {
-                LOG.error(ExceptionUtils.getStackTrace(e));
-            }
+            
+            // Massi changed non repudiation
+//            // NRR
+//            try {
+//                EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(env)),
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                        EventType.epsosOrderServiceRetrieve.getCode(),
+//                        new DateTime(),
+//                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                        "NCPB_XCA_RETRIEVE_RES");
+//            } catch (Exception e) {
+//                LOG.error(ExceptionUtils.getStackTrace(e));
+//            }
 
             /*
              * Invoque eADC
