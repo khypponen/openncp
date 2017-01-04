@@ -114,6 +114,16 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
     private Date transactionStartTime;
     private Date transactionEndTime;
 
+    private String endpoint;
+    
+    private synchronized void setEndpoint(String e) {
+    	this.endpoint = e;
+    }
+    
+    private synchronized String getEndpoint() {
+    	return this.endpoint;
+    }
+    
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }
@@ -168,6 +178,7 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
         }
 
         _serviceClient.getOptions().setTo(new org.apache.axis2.addressing.EndpointReference(targetEndpoint));
+        setEndpoint(targetEndpoint);
         _serviceClient.getOptions().setUseSeparateListener(useSeparateListener);
 
         _serviceClient.getOptions().setTimeOutInMilliSeconds(180000); //Wait time after which a client times out in a blocking scenario: 3 minutes
@@ -249,6 +260,8 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             }
             _serviceClient.addHeader(action);
             _serviceClient.addHeader(id);
+            _serviceClient.getOptions().setTo(new org.apache.axis2.addressing.EndpointReference(getEndpoint())); // added again, since it seems that after creating the soap, the to is lost
+
             _serviceClient.addHeadersToEnvelope(env);
 
             /* set the message context with that soap envelope */
@@ -258,6 +271,8 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             // Rationale: this envelope gets unmarshalled incorrectly, so I need
             // to c14n before. 
             Document envCanonicalized = null;
+        	SOAPEnvelope newEnv = soapFactory.getDefaultEnvelope();
+
             try {
             	LOG.debug("Step 1: marshall it to document, since no c14n are available in OM");
             	Element envAsDom = XMLUtils.toDOM(env);
@@ -266,7 +281,6 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             	LOG.debug("Step 3: remarshall to OM");
             	OMElement omCanonicalizedEnvelope = XMLUtils.toOM(envCanonicalized.getDocumentElement());
             	LOG.debug("Step 4: reconstruct the message");
-            	SOAPEnvelope newEnv = soapFactory.getDefaultEnvelope();
             	
             	OMElement headerOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Header"));
             	OMElement bodyOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Body"));
