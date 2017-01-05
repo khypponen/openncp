@@ -14,6 +14,7 @@ package eu.epsos.assertionvalidator;
  * Name:  urn:epsos:names:wp3.4:subject:on-behalf-of
  */
 public enum OnBehalfOf {
+
     DENTIST("dentist"),
     NURSE("nurse"),
     PHARMACIST("pharmacist"),
@@ -22,7 +23,7 @@ public enum OnBehalfOf {
 
     private final String role;
 
-    private OnBehalfOf(final String role) {
+    OnBehalfOf(final String role) {
         this.role = role;
     }
 
@@ -30,5 +31,4 @@ public enum OnBehalfOf {
     public String toString() {
         return role;
     }
-
 }

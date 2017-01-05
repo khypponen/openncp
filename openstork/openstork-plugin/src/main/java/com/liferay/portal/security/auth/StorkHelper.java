@@ -32,7 +32,7 @@ import java.net.URLEncoder;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -41,7 +41,7 @@ import java.util.logging.Logger;
 public class StorkHelper {
 
     private final String USER_AGENT = "Mozilla/5.0";
-    private static Logger log = Logger.getLogger(StorkHelper.class.getName());
+    private static Logger log = LoggerFactory.getLogger(StorkHelper.class.getName());
     private static long companyId = CompanyThreadLocal.getCompanyId();
 
     public static String getPepsURL() throws com.liferay.portal.kernel.exception.SystemException {

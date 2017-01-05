@@ -37,15 +37,16 @@ import org.apache.axis2.description.HandlerDescription;
 import org.apache.axis2.engine.AxisConfiguration;
 import org.apache.axis2.engine.Phase;
 import org.apache.axis2.phaseresolver.PhaseException;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import org.opensaml.saml2.core.Assertion;
 import org.opensaml.saml2.core.Attribute;
 import org.opensaml.saml2.core.AttributeStatement;
+import org.slf4j.LoggerFactory;
 import tr.com.srdc.epsos.util.http.HTTPUtil;
 
 public class EventLogClientUtil {
 
-    private static Logger LOG = Logger.getLogger(EventLogClientUtil.class);
+    private static Logger LOG = LoggerFactory.getLogger(EventLogClientUtil.class);
 
     public static void createDummyMustUnderstandHandler(org.apache.axis2.client.Stub stub) {
         HandlerDescription description = new HandlerDescription("DummyMustUnderstandHandler");
@@ -102,7 +103,7 @@ public class EventLogClientUtil {
             ipAddress = InetAddress.getLocalHost().getHostAddress();
         } catch (UnknownHostException e) {
             // TODO Auto-generated catch block
-            LOG.error(e, e);
+            LOG.error(null, e);
         }
         return ipAddress;
     }
@@ -115,7 +116,7 @@ public class EventLogClientUtil {
             ipAddress = InetAddress.getByName(url.getHost()).getHostAddress();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            LOG.error(e, e);
+            LOG.error(null, e);
         }
         return ipAddress;
     }

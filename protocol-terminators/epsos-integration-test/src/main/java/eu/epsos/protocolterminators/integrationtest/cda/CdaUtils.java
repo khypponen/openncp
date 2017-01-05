@@ -27,7 +27,8 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import tr.com.srdc.epsos.data.model.PatientDemographics;
@@ -41,7 +42,7 @@ import tr.com.srdc.epsos.data.model.PatientDemographics.Gender;
  */
 public class CdaUtils {
     
-    public static Logger logger = Logger.getLogger(CdaUtils.class);
+    public static Logger logger = LoggerFactory.getLogger(CdaUtils.class);
     
     private static NamespaceContext hl7 = new NamespaceContext() {
         public String getNamespaceURI(String prefix) {

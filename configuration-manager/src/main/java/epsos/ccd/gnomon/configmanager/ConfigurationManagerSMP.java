@@ -1,15 +1,15 @@
 package epsos.ccd.gnomon.configmanager;
 
+import eu.epsos.configmanager.database.HibernateUtil;
+import eu.epsos.configmanager.database.model.Property;
+import org.hibernate.PropertyNotFoundException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.net.URL;
 import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.List;
-
-import org.apache.log4j.Logger;
-import org.hibernate.PropertyNotFoundException;
-
-import eu.epsos.configmanager.database.HibernateUtil;
-import eu.epsos.configmanager.database.model.Property;
 
 /**
  * ConfigurationManagerSMP. Obtain a configuration value. Usage: <br/>
@@ -58,7 +58,7 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 	private static volatile ConfigurationManagerSMP instance;
 
 	/** This is the logger. */
-	private static final Logger l = Logger.getLogger(ConfigurationManagerSMP.class);
+	private static final Logger l = LoggerFactory.getLogger(ConfigurationManagerSMP.class);
 
 	private static final HashMap<String, ServiceProcessItem> mapMap = new HashMap<>();
 

@@ -35,8 +35,8 @@ import javax.portlet.WindowState;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.apache.commons.lang.LocaleUtils;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.apache.commons.lang.exception.ExceptionUtils;
 
 public class FacesService {
 
@@ -45,7 +45,7 @@ public class FacesService {
 	public static final int URL_MODE_RESOURCE = 2;
 	
 	
-	private static final Logger log = Logger.getLogger("FacesService");
+	private static final Logger log = LoggerFactory.getLogger("FacesService");
 	
 	public static PortletRequest getPortletRequest() {
 		FacesContext facesContext = FacesContext.getCurrentInstance();

@@ -21,7 +21,7 @@ import java.sql.Statement;
 
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.mchange.v2.c3p0.DataSources;
@@ -29,7 +29,7 @@ import org.apache.commons.lang.exception.ExceptionUtils;
 
 public class ConnectionPool {
 
-	private static Logger _log = Logger.getLogger("ConnectionPool");
+	private static Logger _log = LoggerFactory.getLogger("ConnectionPool");
 	public static void cleanUp(Connection con) {
 		_instance._cleanUp(con);
 	}

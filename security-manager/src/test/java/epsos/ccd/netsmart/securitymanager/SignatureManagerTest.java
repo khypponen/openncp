@@ -14,43 +14,40 @@
  *  limitations under the License.
  *  under the License.
  */
-
 package epsos.ccd.netsmart.securitymanager;
 
 import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
 import epsos.ccd.netsmart.securitymanager.key.impl.NSTestKeyStoreManager;
 import epsos.ccd.netsmart.securitymanager.key.impl.SPMSTestKeyStoreManager;
 import epsos.ccd.netsmart.securitymanager.key.impl.TianiTestKeyStoreManager;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
 import org.custommonkey.xmlunit.XMLUnit;
-
-import static org.junit.Assert.fail;
-
 import org.junit.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import static org.junit.Assert.fail;
+
 /**
- *
  * @author jerouris
  */
 public class SignatureManagerTest {
+
+    private static final Logger logger = LoggerFactory.getLogger(SignatureManagerTest.class);
 
     public SignatureManagerTest() {
     }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-       
+
     }
 
     @AfterClass
@@ -59,22 +56,21 @@ public class SignatureManagerTest {
 
     @Before
     public void setUp() {
-            
-            XMLUnit.setNormalizeWhitespace(true);
-            XMLUnit.setIgnoreWhitespace(true);
+
+        XMLUnit.setNormalizeWhitespace(true);
+        XMLUnit.setIgnoreWhitespace(true);
     }
 
     @After
     public void tearDown() {
     }
 
-
     /**
      * Test of signXMLWithEnvelopedSig method, of class SignatureManager.
      */
     @Ignore
     @Test
-    public void testSignXMLWithEnvelopedSig()  {
+    public void testSignXMLWithEnvelopedSig() {
         try {
 
             System.out.println("signXMLWithEnvelopedSig");
@@ -84,7 +80,7 @@ public class SignatureManagerTest {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             dbf.setNamespaceAware(true);
 
-            File f = new File ("mySignedFile.xml");
+            File f = new File("mySignedFile.xml");
             //f.deleteOnExit();
 
             Document doc;
@@ -93,7 +89,7 @@ public class SignatureManagerTest {
             SignatureManager smgr = new SignatureManager(new NSTestKeyStoreManager());
             smgr.signXMLWithEnvelopedSig(doc, keyAlias, keyPassword.toCharArray());
 
-            XMLUtils.sendXMLtoStream(doc,new FileOutputStream(f));
+            XMLUtils.sendXMLtoStream(doc, new FileOutputStream(f));
 
             smgr.verifyEnvelopedSignature(doc);
 
@@ -102,26 +98,24 @@ public class SignatureManagerTest {
 
             smgr.verifyEnvelopedSignature(signedDoc);
 
-        }
-        catch (SMgrException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SMgrException ex) {
+            logger.error(null, ex);
             fail(ex.getMessage());
-        }        catch (ParserConfigurationException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParserConfigurationException ex) {
+            logger.error(null, ex);
             fail(ex.getMessage());
-        }        catch (SAXException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            logger.error(null, ex);
             fail(ex.getMessage());
-        }
-        catch (IOException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            logger.error(null, ex);
             fail(ex.getMessage());
         }
     }
 
     @Ignore
     @Test
-    public void testSignXMLWithEnvelopedSigTiani()  {
+    public void testSignXMLWithEnvelopedSigTiani() {
         try {
 
             System.out.println("signXMLWithEnvelopedSigTiani");
@@ -140,26 +134,24 @@ public class SignatureManagerTest {
             smgr.verifyEnvelopedSignature(doc);
 
 
-        }
-        catch (SMgrException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-             fail(ex.getMessage());
-        }        catch (ParserConfigurationException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-             fail(ex.getMessage());
-        }        catch (SAXException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-             fail(ex.getMessage());
+        } catch (SMgrException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
+        } catch (ParserConfigurationException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
+        } catch (SAXException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
 
-        }
-        catch (IOException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-             fail(ex.getMessage());
+        } catch (IOException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
         }
     }
 
     @Test
-    public void testSignXMLWithEnvelopedSigSPMS()  {
+    public void testSignXMLWithEnvelopedSigSPMS() {
         try {
 
             System.out.println("signXMLWithEnvelopedSigSPMS");
@@ -178,21 +170,19 @@ public class SignatureManagerTest {
             smgr.verifyEnvelopedSignature(doc);
 
 
-        }
-        catch (SMgrException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-             fail(ex.getMessage());
-        }        catch (ParserConfigurationException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-             fail(ex.getMessage());
-        }        catch (SAXException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-             fail(ex.getMessage());
+        } catch (SMgrException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
+        } catch (ParserConfigurationException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
+        } catch (SAXException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
 
-        }
-        catch (IOException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-             fail(ex.getMessage());
+        } catch (IOException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
         }
     }
 
@@ -210,20 +200,18 @@ public class SignatureManagerTest {
             signedDoc = dbf.newDocumentBuilder().parse(ClassLoader.getSystemResourceAsStream("signed_ePsample_UNK.xml"));
             SignatureManager instance = new SignatureManager(new NSTestKeyStoreManager());
             instance.verifyEnvelopedSignature(signedDoc);
-        }
-        catch (SMgrException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SMgrException ex) {
+            logger.error(null, ex);
             fail(ex.getMessage());
-        }        catch (ParserConfigurationException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParserConfigurationException ex) {
+            logger.error(null, ex);
             fail(ex.getMessage());
-        }        catch (SAXException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            logger.error(null, ex);
             fail(ex.getMessage());
-        }
-        catch (IOException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-                        fail(ex.getMessage());
+        } catch (IOException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
         }
     }
 
@@ -240,20 +228,18 @@ public class SignatureManagerTest {
             // Provide a wrong keystore. This should make the signature invalid
             SignatureManager instance = new SignatureManager(new TianiTestKeyStoreManager());
             instance.verifyEnvelopedSignature(signedDoc);
-        }
-        catch (SMgrException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-           
-        }        catch (ParserConfigurationException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SMgrException ex) {
+            logger.error(null, ex);
+
+        } catch (ParserConfigurationException ex) {
+            logger.error(null, ex);
             fail(ex.getMessage());
-        }        catch (SAXException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            logger.error(null, ex);
             fail(ex.getMessage());
-        }
-        catch (IOException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-                        fail(ex.getMessage());
+        } catch (IOException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
         }
     }
 
@@ -270,25 +256,18 @@ public class SignatureManagerTest {
             // Provide a wrong keystore. This should make the signature invalid
             SignatureManager instance = new SignatureManager(new SPMSTestKeyStoreManager());
             instance.verifyEnvelopedSignature(signedDoc);
-        }
-        catch (SMgrException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-           
-        }        catch (ParserConfigurationException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SMgrException ex) {
+            logger.error(null, ex);
+
+        } catch (ParserConfigurationException ex) {
+            logger.error(null, ex);
             fail(ex.getMessage());
-        }        catch (SAXException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            logger.error(null, ex);
             fail(ex.getMessage());
-        }
-        catch (IOException ex) {
-            Logger.getLogger(SignatureManagerTest.class.getName()).log(Level.SEVERE, null, ex);
-                        fail(ex.getMessage());
+        } catch (IOException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
         }
     }
-   
-
-  
-    
-  
 }

@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.apache.commons.lang.exception.ExceptionUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import org.joda.time.DateTime;
 import org.opensaml.saml2.core.Assertion;
 import org.w3c.dom.Document;
@@ -37,7 +37,7 @@ public class CCDServlet extends HttpServlet {
      *
      */
     private static final long serialVersionUID = 1L;
-    private static Logger log = Logger.getLogger(CCDServlet.class.getName());
+    private static Logger log = LoggerFactory.getLogger(CCDServlet.class.getName());
 
     public void doGet(HttpServletRequest req,
             HttpServletResponse res)

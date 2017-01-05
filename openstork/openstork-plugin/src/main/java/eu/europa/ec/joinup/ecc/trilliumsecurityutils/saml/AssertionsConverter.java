@@ -26,7 +26,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 import java.util.Vector;
-import java.util.logging.Level;
+
 import javax.xml.namespace.QName;
 import org.joda.time.DateTime;
 import org.opensaml.DefaultBootstrap;
@@ -258,17 +258,17 @@ public class AssertionsConverter {
             try {
                 sman.verifySAMLAssestion(hcpIdentityAssertion);
             } catch (SMgrException ex) {
-                java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, null, ex);
+                java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, null, ex);
                 throw new SMgrException("SAML Assertion Validation Failed: " + ex.getMessage());
             }
             if (hcpIdentityAssertion.getConditions().getNotBefore().isAfterNow()) {
                 String msg = "Identity Assertion with ID " + hcpIdentityAssertion.getID() + " can't ne used before " + hcpIdentityAssertion.getConditions().getNotBefore();
-                java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, msg);
+                java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, msg);
                 throw new SMgrException(msg);
             }
             if (hcpIdentityAssertion.getConditions().getNotOnOrAfter().isBeforeNow()) {
                 String msg = "Identity Assertion with ID " + hcpIdentityAssertion.getID() + " can't be used after " + hcpIdentityAssertion.getConditions().getNotOnOrAfter();
-                java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, msg);
+                java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, msg);
                 throw new SMgrException(msg);
             }
 
@@ -380,39 +380,39 @@ public class AssertionsConverter {
 
             String poc = ((XSString) findStringInAttributeStatement(hcpIdentityAssertion.getAttributeStatements(), "urn:oasis:names:tc:xspa:1.0:subject:organization").getAttributeValues().get(0)).getValue();
 
-            java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Point of Care: {0}", poc);
+            java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Point of Care: {0}", poc);
             auditDataMap.put("pointOfCare", poc);
 
             String pocId = ((XSURI) findURIInAttributeStatement(hcpIdentityAssertion.getAttributeStatements(), "urn:oasis:names:tc:xspa:1.0:subject:organization-id").getAttributeValues().get(0)).getValue();
 
-            java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Point of Care id: {0}", pocId);
+            java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Point of Care id: {0}", pocId);
             auditDataMap.put("pointOfCareID", pocId);
 
             String hrRole = ((XSString) findStringInAttributeStatement(hcpIdentityAssertion.getAttributeStatements(), "urn:oasis:names:tc:xacml:2.0:subject:role").getAttributeValues().get(0)).getValue();
 
-            java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "HR Role {0}", hrRole);
+            java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "HR Role {0}", hrRole);
             auditDataMap.put("humanRequestorRole", hrRole);
 
             String facilityType = ((XSString) findStringInAttributeStatement(hcpIdentityAssertion.getAttributeStatements(),
                     "urn:epsos:names:wp3.4:subject:healthcare-facility-type").getAttributeValues().get(0)).getValue();
 
-            java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Facility Type {0}", facilityType);
+            java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Facility Type {0}", facilityType);
             auditDataMap.put("facilityType", facilityType);
 
             sman.signSAMLAssertion(trc);
             return trc;
         } catch (NoSuchAlgorithmException ex) {
-            java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, null, ex);
             throw new SMgrException(ex.getMessage());
         }
     }
 
     protected static Attribute findURIInAttributeStatement(List<AttributeStatement> statements, String attrName) {
-        java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Size:{0}", statements.size());
+        java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Size:{0}", statements.size());
         for (AttributeStatement stmt : statements) {
             for (Attribute attribute : stmt.getAttributes()) {
                 if (attribute.getName().equals(attrName)) {
-                    java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Attribute Name:{0}", attribute.getName());
+                    java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Attribute Name:{0}", attribute.getName());
                     Attribute attr = create(Attribute.class, Attribute.DEFAULT_ELEMENT_NAME);
 
                     attr.setFriendlyName(attribute.getFriendlyName());
@@ -435,12 +435,12 @@ public class AssertionsConverter {
     protected static NameID findProperNameID(Subject subject) throws SMgrException {
 
         String format = subject.getNameID().getFormat();
-        java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is email?: {0}", format.equals(NameID.EMAIL));
-        java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is x509 subject?: {0}", format.equals(NameID.X509_SUBJECT));
-        java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is Unspecified?: {0}", format.equals(NameID.UNSPECIFIED));
+        java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is email?: {0}", format.equals(NameID.EMAIL));
+        java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is x509 subject?: {0}", format.equals(NameID.X509_SUBJECT));
+        java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is Unspecified?: {0}", format.equals(NameID.UNSPECIFIED));
 
         //if (format.equals(NameID.EMAIL) || format.equals(NameID.X509_SUBJECT) || format.equals(NameID.UNSPECIFIED)) {
-        //        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Compatible NameID found");
+        //        LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Compatible NameID found");
         NameID n = create(NameID.class, NameID.DEFAULT_ELEMENT_NAME);
         n.setFormat(format);
         n.setValue(subject.getNameID().getValue());
@@ -812,11 +812,11 @@ public class AssertionsConverter {
     }
 
     protected static Attribute findStringInAttributeStatement(List<AttributeStatement> statements, String attrName) {
-        java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Size:{0}", statements.size());
+        java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Size:{0}", statements.size());
         for (AttributeStatement stmt : statements) {
             for (Attribute attribute : stmt.getAttributes()) {
                 if (attribute.getName().equals(attrName)) {
-                    java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Attribute Name:{0}", attribute.getName());
+                    java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Attribute Name:{0}", attribute.getName());
                     Attribute attr = create(Attribute.class, Attribute.DEFAULT_ELEMENT_NAME);
 
                     attr.setFriendlyName(attribute.getFriendlyName());

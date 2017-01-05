@@ -28,7 +28,7 @@ public class Client
     	}
     	
     	if (ApplicationController.isApplicationLocked()) {
-    		ApplicationController.LOG.warning("Application is locked, please wait until another instance is done or delete the pid file.");
+    		ApplicationController.LOG.warn("Application is locked, please wait until another instance is done or delete the pid file.");
     		System.exit(0); // Normal exit, because this is normal behavior.
     	}
     	

@@ -5,50 +5,43 @@
  * licenses this file to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * <p>
  * http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
  * License for the specific language governing permissions and limitations under
  * the License.
- *
  */
 package epsos.ccd.gnomon.configmanager;
 
+import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.configuration.reloading.FileChangedReloadingStrategy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Properties;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.configuration.PropertiesConfiguration;
-import org.apache.commons.configuration.reloading.FileChangedReloadingStrategy;
-import org.apache.log4j.Logger;
-
 /**
- *
  * This service provides access to the system defined properties
- * 
+ * <p>
  * Warning: This class is deprecated and will be removed in future versions. Please use ConfigurationManagerService instead.
  *
  * @author Kostas Karkaletsis
  * @author Organization: Gnomon
  * @author mail:k.karkaletsis@gnomon.com.gr
  * @version 1.0, 2010, 30 Jun
- *
  */
 @Deprecated
 public class OLDConfigurationManager implements ConfigurationManagerInt {
 
-    static Logger logger = Logger.getLogger(ConfigurationManagerService.class);
+    static Logger logger = LoggerFactory.getLogger(ConfigurationManagerService.class);
     private static String ERROR_MSG_NO_CONFIG_FILE = "NO CONFIGURATION FILE EXISTS";
     private volatile static OLDConfigurationManager instance;
 
@@ -140,15 +133,13 @@ public class OLDConfigurationManager implements ConfigurationManagerInt {
                 logger.error("ENVIRONMENT PROPERTY " + key + " NOT FOUND. RETURNS EMPTY STRING " + e2.getMessage());
             }
         }
-
-
         return returnStr;
     }
 
     /**
      * Updates a property of the properties file
      *
-     * @param key the key we want to update its value
+     * @param key   the key we want to update its value
      * @param value the new value of the property
      * @return
      */
@@ -181,7 +172,7 @@ public class OLDConfigurationManager implements ConfigurationManagerInt {
      * Get the endpoint URL for a specified country and a service name
      *
      * @param ISOCountryCode the iso country code
-     * @param ServiceName the service name
+     * @param ServiceName    the service name
      * @return
      */
     @Override
@@ -197,8 +188,8 @@ public class OLDConfigurationManager implements ConfigurationManagerInt {
      * service name the service endpoint
      *
      * @param ISOCountryCode the country code
-     * @param ServiceName the service name
-     * @param URL the endpoint url to be set
+     * @param ServiceName    the service name
+     * @param URL            the endpoint url to be set
      */
     @Override
     @Deprecated

@@ -21,8 +21,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.xml.namespace.QName;
 
@@ -53,6 +51,8 @@ import org.opensaml.xml.schema.XSURI;
 import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
 import epsos.ccd.netsmart.securitymanager.key.KeyStoreManager;
 import epsos.ccd.netsmart.securitymanager.key.impl.DefaultKeyStoreManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The TRC Assertion issuer is a subcomponent that issues Treatment Relationship
@@ -64,6 +64,8 @@ import epsos.ccd.netsmart.securitymanager.key.impl.DefaultKeyStoreManager;
  *
  */
 public class SamlTRCIssuer {
+
+    private static final Logger logger = LoggerFactory.getLogger(SamlTRCIssuer.class);
 
     KeyStoreManager ksm;
     HashMap<String, String> auditDataMap;
@@ -202,7 +204,7 @@ public class SamlTRCIssuer {
             return trc;
         }
         catch (Throwable ex) {
-            Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             throw new SMgrException(ex.getMessage());
         }
     }
@@ -242,17 +244,17 @@ public class SamlTRCIssuer {
                 sman.verifySAMLAssestion(hcpIdentityAssertion);
             }
             catch (SMgrException ex) {
-                Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(null, ex);
                 throw new SMgrException("SAML Assertion Validation Failed: " + ex.getMessage());
             }
             if (hcpIdentityAssertion.getConditions().getNotBefore().isAfterNow()) {
                 String msg = "Identity Assertion with ID " + hcpIdentityAssertion.getID() + " can't ne used before " + hcpIdentityAssertion.getConditions().getNotBefore();
-                Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, msg);
+                logger.error(msg);
                 throw new SMgrException(msg);
             }
             if (hcpIdentityAssertion.getConditions().getNotOnOrAfter().isBeforeNow()) {
                 String msg = "Identity Assertion with ID " + hcpIdentityAssertion.getID() + " can't be used after " + hcpIdentityAssertion.getConditions().getNotOnOrAfter();
-                Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, msg);
+                logger.error(msg);
                 throw new SMgrException(msg);
             }
 
@@ -362,30 +364,30 @@ public class SamlTRCIssuer {
 
             String poc = ( (XSString) findStringInAttributeStatement(hcpIdentityAssertion.getAttributeStatements(), "urn:oasis:names:tc:xspa:1.0:subject:organization").getAttributeValues().get(0) ).getValue();
 
-            Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Point of Care: {0}", poc);
+            logger.info("Point of Care: {0}", poc);
             auditDataMap.put("pointOfCare", poc);
 
             String pocId = ( (XSURI) findURIInAttributeStatement(hcpIdentityAssertion.getAttributeStatements(), "urn:oasis:names:tc:xspa:1.0:subject:organization-id").getAttributeValues().get(0) ).getValue();
 
-            Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Point of Care id: {0}", pocId);
+            logger.info("Point of Care id: {0}", pocId);
             auditDataMap.put("pointOfCareID", pocId);
 
             String hrRole = ( (XSString) findStringInAttributeStatement(hcpIdentityAssertion.getAttributeStatements(), "urn:oasis:names:tc:xacml:2.0:subject:role").getAttributeValues().get(0) ).getValue();
 
-            Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "HR Role {0}", hrRole);
+            logger.info("HR Role {0}", hrRole);
             auditDataMap.put("humanRequestorRole", hrRole);
 
             String facilityType = ( (XSString) findStringInAttributeStatement(hcpIdentityAssertion.getAttributeStatements(),
                     "urn:epsos:names:wp3.4:subject:healthcare-facility-type").getAttributeValues().get(0) ).getValue();
 
-            Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Facility Type {0}", facilityType);
+            logger.info("Facility Type {0}", facilityType);
             auditDataMap.put("facilityType", facilityType);
 
             sman.signSAMLAssertion(trc);
             return trc;
         }
         catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             throw new SMgrException(ex.getMessage());
         }
     }
@@ -431,11 +433,11 @@ public class SamlTRCIssuer {
     }
 
     protected Attribute findStringInAttributeStatement(List<AttributeStatement> statements, String attrName) {
-        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Size:{0}", statements.size());
+        logger.info("Size:{0}", statements.size());
         for (AttributeStatement stmt : statements) {
             for (Attribute attribute : stmt.getAttributes()) {
                 if (attribute.getName().equals(attrName)) {
-                    Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Attribute Name:{0}", attribute.getName());
+                    logger.info("Attribute Name:{0}", attribute.getName());
                     Attribute attr = create(Attribute.class, Attribute.DEFAULT_ELEMENT_NAME);
 
                     attr.setFriendlyName(attribute.getFriendlyName());
@@ -459,11 +461,11 @@ public class SamlTRCIssuer {
     }
 
     protected Attribute findURIInAttributeStatement(List<AttributeStatement> statements, String attrName) {
-        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Size:{0}", statements.size());
+        logger.info("Size:{0}", statements.size());
         for (AttributeStatement stmt : statements) {
             for (Attribute attribute : stmt.getAttributes()) {
                 if (attribute.getName().equals(attrName)) {
-                    Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Attribute Name:{0}", attribute.getName());
+                    logger.info("Attribute Name:{0}", attribute.getName());
                     Attribute attr = create(Attribute.class, Attribute.DEFAULT_ELEMENT_NAME);
 
                     attr.setFriendlyName(attribute.getFriendlyName());
@@ -487,12 +489,12 @@ public class SamlTRCIssuer {
     protected NameID findProperNameID(Subject subject) throws SMgrException {
 
         String format = subject.getNameID().getFormat();
-        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is email?: {0}", format.equals(NameID.EMAIL));
-        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is x509 subject?: {0}", format.equals(NameID.X509_SUBJECT));
-        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is Unspecified?: {0}", format.equals(NameID.UNSPECIFIED));
+        logger.info("is email?: {0}", format.equals(NameID.EMAIL));
+        logger.info("is x509 subject?: {0}", format.equals(NameID.X509_SUBJECT));
+        logger.info("is Unspecified?: {0}", format.equals(NameID.UNSPECIFIED));
 
         //if (format.equals(NameID.EMAIL) || format.equals(NameID.X509_SUBJECT) || format.equals(NameID.UNSPECIFIED)) {
-        //        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Compatible NameID found");
+        //        logger.info("Compatible NameID found");
         NameID n = create(NameID.class, NameID.DEFAULT_ELEMENT_NAME);
         n.setFormat(format);
         n.setValue(subject.getNameID().getValue());
@@ -526,32 +528,32 @@ public class SamlTRCIssuer {
     }
 
     public String getPointofCare() {
-        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Point Of Care: {0}", auditDataMap.get("pointOfCare"));
+        logger.info("Point Of Care: {0}", auditDataMap.get("pointOfCare"));
         return auditDataMap.get("pointOfCare");
     }
 
     public String getPointofCareID() {
-        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Point Of Care ID: {0}", auditDataMap.get("pointOfCareID"));
+        logger.info("Point Of Care ID: {0}", auditDataMap.get("pointOfCareID"));
         return auditDataMap.get("pointOfCareID");
     }
 
     public String getHumanRequestorNameId() {
-        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "human Requestor NameID: {0}", auditDataMap.get("humanRequestorNameID"));
+        logger.info("human Requestor NameID: {0}", auditDataMap.get("humanRequestorNameID"));
         return auditDataMap.get("humanRequestorNameID");
     }
 
     public String getHumanRequestorSubjectId() {
-        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "human Requestor subjectID: {0}", auditDataMap.get("humanRequestorSubjectID"));
+        logger.info("human Requestor subjectID: {0}", auditDataMap.get("humanRequestorSubjectID"));
         return auditDataMap.get("humanRequestorSubjectID");
     }
 
     public String getHRRole() {
-        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "human Requestor Role: {0}", auditDataMap.get("humanRequestorRole"));
+        logger.info("human Requestor Role: {0}", auditDataMap.get("humanRequestorRole"));
         return auditDataMap.get("humanRequestorRole");
     }
     
     public String getFacilityType() {
-        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Facility Type: {0}", auditDataMap.get("facilityType"));
+        logger.info("Facility Type: {0}", auditDataMap.get("facilityType"));
         return auditDataMap.get("facilityType");
     }
 }

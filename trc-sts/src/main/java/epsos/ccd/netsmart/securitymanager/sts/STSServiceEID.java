@@ -27,8 +27,8 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateEncodingException;
 import java.security.cert.X509Certificate;
 import java.util.UUID;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;

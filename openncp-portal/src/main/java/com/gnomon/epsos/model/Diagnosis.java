@@ -21,7 +21,7 @@ import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import org.primefaces.context.RequestContext;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -37,7 +37,7 @@ import org.w3c.dom.NodeList;
 public class Diagnosis {
 
     //Messages logger
-    private static final Logger log = Logger.getLogger("Diagnosis");
+    private static final Logger log = LoggerFactory.getLogger("Diagnosis");
     //System home path
     private static final String HOME_PATH;
     //Epsos repository path

@@ -24,9 +24,10 @@ import eu.epsos.validation.datamodel.dts.WsUnmarshaller;
 import eu.epsos.validation.datamodel.hl7v3.Hl7v3Model;
 import eu.epsos.validation.datamodel.hl7v3.Hl7v3Schematron;
 import eu.epsos.validation.reporting.ReportBuilder;
-import org.slf4j.LoggerFactory;
-import net.ihe.gazelle.validator.mb.ws.ModelBasedValidationWSService;
 import net.ihe.gazelle.validator.mb.ws.ModelBasedValidationWS;
+import net.ihe.gazelle.validator.mb.ws.ModelBasedValidationWSService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class represents the wrapper for the XCPD messages validation.
@@ -35,7 +36,7 @@ import net.ihe.gazelle.validator.mb.ws.ModelBasedValidationWS;
  */
 public class XcpdValidationService extends ValidationService {
 
-    private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(XcpdValidationService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(XcpdValidationService.class);
     private static XcpdValidationService instance;
 
     @Override
@@ -78,7 +79,7 @@ public class XcpdValidationService extends ValidationService {
             LOG.error("The specified schematron is not supported by the WebService.");
             return false;
         }
-        
+
         return super.validateSchematron(object, schematron, ncpSide);
     }
 

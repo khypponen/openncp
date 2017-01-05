@@ -33,14 +33,14 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
-import java.util.logging.Level;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathFactory;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import org.opensaml.saml2.core.Assertion;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
@@ -52,7 +52,7 @@ import org.xml.sax.InputSource;
  */
 public class StorkAutoLogin implements AutoLogin {
 
-    private static final Logger _log = Logger.getLogger(StorkHelper.class.getName());
+    private static final Logger _log = LoggerFactory.getLogger(StorkHelper.class.getName());
     private final String USER_AGENT = "Mozilla/5.0";
     private String SAMLResponse;
     private String samlResponseXML;
@@ -119,7 +119,7 @@ public class StorkAutoLogin implements AutoLogin {
         try {
             getSAMLAttributes(req);
         } catch (UnsupportedEncodingException ex) {
-            java.util.logging.Logger.getLogger(StorkAutoLogin.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.LoggerFactory.getLogger(StorkAutoLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println("#### USER IS " + getSurname() + " " + getEmailAddress());
         User user = null;

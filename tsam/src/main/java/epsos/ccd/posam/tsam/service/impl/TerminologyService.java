@@ -1,12 +1,5 @@
 package epsos.ccd.posam.tsam.service.impl;
 
-import java.util.List;
-
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-import org.apache.log4j.Logger;
-import org.springframework.transaction.annotation.Transactional;
-
 import epsos.ccd.posam.tsam.dao.ITsamDao;
 import epsos.ccd.posam.tsam.exception.TSAMError;
 import epsos.ccd.posam.tsam.exception.TSAMException;
@@ -19,20 +12,23 @@ import epsos.ccd.posam.tsam.response.TSAMResponseStructure;
 import epsos.ccd.posam.tsam.service.ITerminologyService;
 import epsos.ccd.posam.tsam.util.CodedElement;
 import epsos.ccd.posam.tsam.util.TsamConfiguration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
- * @see ITerminologyService
- *
  * @author Roman Repiscak
  * @author Organization: Posam
  * @author mail:roman.repiscak@posam.sk
- * @version 1.0, 2010, 11 August  
- *
+ * @version 1.0, 2010, 11 August
+ * @see ITerminologyService
  */
 @Transactional(readOnly = true)
 public class TerminologyService implements ITerminologyService {
 
-    private static final Logger log = Logger.getLogger(TerminologyService.class);
+    private static final Logger log = LoggerFactory.getLogger(TerminologyService.class);
     private static final String CURRENT = "current";
     private ITsamDao dao;
     private TsamConfiguration config;
@@ -234,7 +230,6 @@ public class TerminologyService implements ITerminologyService {
     }
 
     /**
-     *
      * @param concept
      * @param response
      */

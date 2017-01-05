@@ -16,31 +16,27 @@
  */
 package epsos.ccd.netsmart.securitymanager;
 
-//import com.mchange.v2.c3p0.ComboPooledDataSource;
 import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
 import epsos.ccd.netsmart.securitymanager.key.KeyStoreManager;
 import epsos.ccd.netsmart.securitymanager.key.impl.NSTestKeyStoreManager;
 import epsos.ccd.netsmart.securitymanager.key.impl.SPMSTestKeyStoreManager;
 import epsos.ccd.netsmart.securitymanager.key.impl.TianiTestKeyStoreManager;
+import org.junit.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.security.cert.X509Certificate;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
-import org.junit.*;
-import org.slf4j.LoggerFactory;
-
 /**
- *
  * @author Jerry Dimitriou <jerouris at netsmart.gr>
  */
 public class MockCertTest {
 
-    protected static final org.slf4j.Logger LOG = LoggerFactory.getLogger(MockCertTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(MockCertTest.class);
 
     public MockCertTest() {
     }
@@ -111,7 +107,7 @@ public class MockCertTest {
             cv.validateCertificate(cert);
             assertNull(ku);
         } catch (SMgrException ex) {
-            Logger.getLogger(MockCertTest.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.error(null, ex);
             fail(ex.getMessage());
         }
     }
@@ -127,11 +123,11 @@ public class MockCertTest {
             cv.validateCertificate(cert);
             assertNull(ku);
         } catch (SMgrException ex) {
-            Logger.getLogger(MockCertTest.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.error(null, ex);
             fail(ex.getMessage());
         }
     }
-    
+
     @Ignore
     @Test
     public void NSCertTest() throws IOException {
@@ -146,7 +142,7 @@ public class MockCertTest {
             CertificateValidator cv = new CertificateValidator(ksm.getTrustStore());
             cv.validateCertificate(cert);
         } catch (SMgrException ex) {
-            Logger.getLogger(MockCertTest.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.error(null, ex);
             fail(ex.getMessage());
         }
 
@@ -167,11 +163,9 @@ public class MockCertTest {
             CertificateValidator cv = new CertificateValidator(ksm.getTrustStore());
             cv.validateCertificate(cert);
         } catch (SMgrException ex) {
-            Logger.getLogger(MockCertTest.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.error(null, ex);
             fail(ex.getMessage());
         }
-
-
     }
 
     @Ignore
@@ -189,10 +183,8 @@ public class MockCertTest {
 
             System.out.println(ku);
         } catch (SMgrException ex) {
-            Logger.getLogger(MockCertTest.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.error(null, ex);
             fail(ex.getMessage());
         }
-
-
     }
 }

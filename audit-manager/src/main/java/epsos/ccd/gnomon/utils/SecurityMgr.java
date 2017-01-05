@@ -17,24 +17,13 @@
  **/
 package epsos.ccd.gnomon.utils;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.security.KeyStore;
-import java.security.PrivateKey;
-import java.security.Provider;
-import java.security.PublicKey;
-import java.security.cert.X509Certificate;
-import java.util.Collections;
-import java.util.List;
+import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
-import javax.xml.crypto.dsig.CanonicalizationMethod;
-import javax.xml.crypto.dsig.DigestMethod;
-import javax.xml.crypto.dsig.Reference;
-import javax.xml.crypto.dsig.SignatureMethod;
-import javax.xml.crypto.dsig.SignedInfo;
-import javax.xml.crypto.dsig.Transform;
-import javax.xml.crypto.dsig.XMLSignature;
-import javax.xml.crypto.dsig.XMLSignatureFactory;
+import javax.xml.crypto.dsig.*;
 import javax.xml.crypto.dsig.dom.DOMSignContext;
 import javax.xml.crypto.dsig.keyinfo.KeyInfo;
 import javax.xml.crypto.dsig.keyinfo.KeyInfoFactory;
@@ -46,16 +35,19 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-
-import org.apache.log4j.Logger;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-
-import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.security.KeyStore;
+import java.security.PrivateKey;
+import java.security.Provider;
+import java.security.PublicKey;
+import java.security.cert.X509Certificate;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Helper methods for signing documents and extraction of certificates
- * 
+ *
  * @author Kostas Karkaletsis
  * @author Organization: Gnomon
  * @author mail:k.karkaletsis@gnomon.com.gr
@@ -63,179 +55,179 @@ import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
  */
 
 public class SecurityMgr {
-	public static final String ENCODING = "UTF-8";
 
-	private static Logger log = Logger.getLogger(SecurityMgr.class);
+    public static final String ENCODING = "UTF-8";
 
-	private static String KEY_STORE_TYPE = "JKS";
-	private static String KEY_STORE_NAME = "C://mesa//test_keystore_server1.jks";
-	private static String KEY_STORE_PASS = "spirit";
-	private static String PRIVATE_KEY_PASS = "spirit";
-	private static String KEY_ALIAS = "server1";
+    private static Logger log = LoggerFactory.getLogger(SecurityMgr.class);
 
-	public static void init_variables() {
-		ConfigurationManagerService cms = ConfigurationManagerService.getInstance();
-		KEY_STORE_NAME = cms.getProperty("NCP_SIG_KEYSTORE_PATH");
-		KEY_STORE_PASS = cms.getProperty("NCP_SIG_KEYSTORE_PASSWORD");
-		PRIVATE_KEY_PASS = cms.getProperty("NCP_SIG_PRIVATEKEY_PASSWORD");
-		KEY_ALIAS = cms.getProperty("NCP_SIG_PRIVATEKEY_ALIAS");
-	}
+    private static String KEY_STORE_TYPE = "JKS";
+    private static String KEY_STORE_NAME = "C://mesa//test_keystore_server1.jks";
+    private static String KEY_STORE_PASS = "spirit";
+    private static String PRIVATE_KEY_PASS = "spirit";
+    private static String KEY_ALIAS = "server1";
 
-	public static String getSignedDocumentAsString(Document doc) {
-		ByteArrayOutputStream bas = null;
-		String signed = "";
-		try {
-			bas = new ByteArrayOutputStream();
-			Transformer trans = TransformerFactory.newInstance().newTransformer();
-			trans.transform(new DOMSource(doc), new StreamResult(bas));
-			signed = bas.toString();
-		} catch (Exception e) {
-			log.error(e.getMessage());
-		}
-		return signed;
-	}
+    public static void init_variables() {
+        ConfigurationManagerService cms = ConfigurationManagerService.getInstance();
+        KEY_STORE_NAME = cms.getProperty("NCP_SIG_KEYSTORE_PATH");
+        KEY_STORE_PASS = cms.getProperty("NCP_SIG_KEYSTORE_PASSWORD");
+        PRIVATE_KEY_PASS = cms.getProperty("NCP_SIG_PRIVATEKEY_PASSWORD");
+        KEY_ALIAS = cms.getProperty("NCP_SIG_PRIVATEKEY_ALIAS");
+    }
 
-	/**
-	 * This method signs the input Document
-	 * 
-	 * @param doc
-	 *            the document we want to be signed
-	 * @return the same docuement signed
-	 */
-	public static Document signDocumentEnveloped(Document doc) {
-		try {
-			init_variables();
+    public static String getSignedDocumentAsString(Document doc) {
+        ByteArrayOutputStream bas = null;
+        String signed = "";
+        try {
+            bas = new ByteArrayOutputStream();
+            Transformer trans = TransformerFactory.newInstance().newTransformer();
+            trans.transform(new DOMSource(doc), new StreamResult(bas));
+            signed = bas.toString();
+        } catch (Exception e) {
+            log.error(e.getMessage());
+        }
+        return signed;
+    }
 
-			// prepare signature factory
-			String providerName = System.getProperty("jsr105Provider", "org.jcp.xml.dsig.internal.dom.XMLDSigRI");
+    /**
+     * This method signs the input Document
+     *
+     * @param doc the document we want to be signed
+     * @return the same docuement signed
+     */
+    public static Document signDocumentEnveloped(Document doc) {
+        try {
+            init_variables();
 
-			final XMLSignatureFactory sigFactory = XMLSignatureFactory.getInstance("DOM",
-					(Provider) Class.forName(providerName).newInstance());
+            // prepare signature factory
+            String providerName = System.getProperty("jsr105Provider", "org.jcp.xml.dsig.internal.dom.XMLDSigRI");
 
-			Node sigParent = null;
-			List<Transform> transforms = null;
+            final XMLSignatureFactory sigFactory = XMLSignatureFactory.getInstance("DOM",
+                    (Provider) Class.forName(providerName).newInstance());
 
-			sigParent = doc.getDocumentElement();
-			transforms = Collections.singletonList(sigFactory.newTransform(Transform.ENVELOPED,
-					(TransformParameterSpec) null));
+            Node sigParent = null;
+            List<Transform> transforms = null;
 
-			// Retrieve signing key
-			KeyStore keyStore = KeyStore.getInstance(KEY_STORE_TYPE);
-			keyStore.load(new FileInputStream(KEY_STORE_NAME), KEY_STORE_PASS.toCharArray());
+            sigParent = doc.getDocumentElement();
+            transforms = Collections.singletonList(sigFactory.newTransform(Transform.ENVELOPED,
+                    (TransformParameterSpec) null));
 
-			PrivateKey privateKey = (PrivateKey) keyStore.getKey(KEY_ALIAS, PRIVATE_KEY_PASS.toCharArray());
+            // Retrieve signing key
+            KeyStore keyStore = KeyStore.getInstance(KEY_STORE_TYPE);
+            keyStore.load(new FileInputStream(KEY_STORE_NAME), KEY_STORE_PASS.toCharArray());
 
-			X509Certificate cert = (X509Certificate) keyStore.getCertificate(KEY_ALIAS);
-			PublicKey publicKey = cert.getPublicKey();
+            PrivateKey privateKey = (PrivateKey) keyStore.getKey(KEY_ALIAS, PRIVATE_KEY_PASS.toCharArray());
 
-			// Create a Reference to the enveloped document
-			Reference ref = sigFactory.newReference("", sigFactory.newDigestMethod(DigestMethod.SHA1, null),
-					transforms, null, null);
+            X509Certificate cert = (X509Certificate) keyStore.getCertificate(KEY_ALIAS);
+            PublicKey publicKey = cert.getPublicKey();
 
-			// Create the SignedInfo
-			SignedInfo signedInfo = sigFactory.newSignedInfo(sigFactory.newCanonicalizationMethod(
-					CanonicalizationMethod.INCLUSIVE_WITH_COMMENTS, (C14NMethodParameterSpec) null), sigFactory
-					.newSignatureMethod(SignatureMethod.RSA_SHA1, null), Collections.singletonList(ref));
+            // Create a Reference to the enveloped document
+            Reference ref = sigFactory.newReference("", sigFactory.newDigestMethod(DigestMethod.SHA1, null),
+                    transforms, null, null);
 
-			// Create a KeyValue containing the RSA PublicKey
-			KeyInfoFactory keyInfoFactory = sigFactory.getKeyInfoFactory();
-			KeyValue keyValue = keyInfoFactory.newKeyValue(publicKey);
+            // Create the SignedInfo
+            SignedInfo signedInfo = sigFactory.newSignedInfo(sigFactory.newCanonicalizationMethod(
+                    CanonicalizationMethod.INCLUSIVE_WITH_COMMENTS, (C14NMethodParameterSpec) null), sigFactory
+                    .newSignatureMethod(SignatureMethod.RSA_SHA1, null), Collections.singletonList(ref));
 
-			// Create a KeyInfo and add the KeyValue to it
-			KeyInfo keyInfo = keyInfoFactory.newKeyInfo(Collections.singletonList(keyValue));
+            // Create a KeyValue containing the RSA PublicKey
+            KeyInfoFactory keyInfoFactory = sigFactory.getKeyInfoFactory();
+            KeyValue keyValue = keyInfoFactory.newKeyValue(publicKey);
 
-			// Create a DOMSignContext and specify the RSA PrivateKey and
-			// location of the resulting XMLSignature's parent element
-			DOMSignContext dsc = new DOMSignContext(privateKey, sigParent);
+            // Create a KeyInfo and add the KeyValue to it
+            KeyInfo keyInfo = keyInfoFactory.newKeyInfo(Collections.singletonList(keyValue));
 
-			// Create the XMLSignature (but don't sign it yet)
-			XMLSignature signature = sigFactory.newXMLSignature(signedInfo, keyInfo);
+            // Create a DOMSignContext and specify the RSA PrivateKey and
+            // location of the resulting XMLSignature's parent element
+            DOMSignContext dsc = new DOMSignContext(privateKey, sigParent);
 
-			// Marshal, generate (and sign) the enveloped signature
-			signature.sign(dsc);
-		} catch (Exception e) {
-			log.error(e.getMessage(), e);
-		}
-		return doc;
-	}
+            // Create the XMLSignature (but don't sign it yet)
+            XMLSignature signature = sigFactory.newXMLSignature(signedInfo, keyInfo);
 
-	public static String signDocumentDetached(String inputFile) {
-		ByteArrayOutputStream bas = null;
-		String signed = "";
-		try {
-			init_variables();
-			// Instantiate the document to be signed
-			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-			dbFactory.setNamespaceAware(true);
+            // Marshal, generate (and sign) the enveloped signature
+            signature.sign(dsc);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
+        return doc;
+    }
 
-			Document doc = dbFactory.newDocumentBuilder().newDocument();
+    public static String signDocumentDetached(String inputFile) {
+        ByteArrayOutputStream bas = null;
+        String signed = "";
+        try {
+            init_variables();
+            // Instantiate the document to be signed
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            dbFactory.setNamespaceAware(true);
 
-			// prepare signature factory
-			String providerName = System.getProperty("jsr105Provider", "org.jcp.xml.dsig.internal.dom.XMLDSigRI");
-			final XMLSignatureFactory sigFactory = XMLSignatureFactory.getInstance("DOM",
-					(Provider) Class.forName(providerName).newInstance());
+            Document doc = dbFactory.newDocumentBuilder().newDocument();
 
-			List<Transform> transforms = null;
+            // prepare signature factory
+            String providerName = System.getProperty("jsr105Provider", "org.jcp.xml.dsig.internal.dom.XMLDSigRI");
+            final XMLSignatureFactory sigFactory = XMLSignatureFactory.getInstance("DOM",
+                    (Provider) Class.forName(providerName).newInstance());
 
-			transforms = Collections.singletonList(sigFactory.newTransform(Transform.ENVELOPED,
-					(TransformParameterSpec) null));
+            List<Transform> transforms = null;
 
-			// Retrieve signing key
-			KeyStore keyStore = KeyStore.getInstance(KEY_STORE_TYPE);
-			keyStore.load(new FileInputStream(KEY_STORE_NAME), KEY_STORE_PASS.toCharArray());
+            transforms = Collections.singletonList(sigFactory.newTransform(Transform.ENVELOPED,
+                    (TransformParameterSpec) null));
 
-			PrivateKey privateKey = (PrivateKey) keyStore.getKey(KEY_ALIAS, PRIVATE_KEY_PASS.toCharArray());
+            // Retrieve signing key
+            KeyStore keyStore = KeyStore.getInstance(KEY_STORE_TYPE);
+            keyStore.load(new FileInputStream(KEY_STORE_NAME), KEY_STORE_PASS.toCharArray());
 
-			X509Certificate cert = (X509Certificate) keyStore.getCertificate(KEY_ALIAS);
-			PublicKey publicKey = cert.getPublicKey();
+            PrivateKey privateKey = (PrivateKey) keyStore.getKey(KEY_ALIAS, PRIVATE_KEY_PASS.toCharArray());
 
-			// Create a Reference to the enveloped document
-			Reference ref = sigFactory.newReference("", sigFactory.newDigestMethod(DigestMethod.SHA1, null),
-					transforms, null, null);
+            X509Certificate cert = (X509Certificate) keyStore.getCertificate(KEY_ALIAS);
+            PublicKey publicKey = cert.getPublicKey();
 
-			// Create the SignedInfo
-			SignedInfo signedInfo = sigFactory.newSignedInfo(sigFactory.newCanonicalizationMethod(
-					CanonicalizationMethod.INCLUSIVE_WITH_COMMENTS, (C14NMethodParameterSpec) null), sigFactory
-					.newSignatureMethod(SignatureMethod.RSA_SHA1, null), Collections.singletonList(ref));
+            // Create a Reference to the enveloped document
+            Reference ref = sigFactory.newReference("", sigFactory.newDigestMethod(DigestMethod.SHA1, null),
+                    transforms, null, null);
 
-			sigFactory.newSignedInfo(sigFactory.newCanonicalizationMethod(
-					CanonicalizationMethod.INCLUSIVE_WITH_COMMENTS, (C14NMethodParameterSpec) null), sigFactory
-					.newSignatureMethod(SignatureMethod.DSA_SHA1, null), Collections.singletonList(ref));
+            // Create the SignedInfo
+            SignedInfo signedInfo = sigFactory.newSignedInfo(sigFactory.newCanonicalizationMethod(
+                    CanonicalizationMethod.INCLUSIVE_WITH_COMMENTS, (C14NMethodParameterSpec) null), sigFactory
+                    .newSignatureMethod(SignatureMethod.RSA_SHA1, null), Collections.singletonList(ref));
 
-			// Create a KeyValue containing the RSA PublicKey
-			KeyInfoFactory keyInfoFactory = sigFactory.getKeyInfoFactory();
-			KeyValue keyValue = keyInfoFactory.newKeyValue(publicKey);
+            sigFactory.newSignedInfo(sigFactory.newCanonicalizationMethod(
+                    CanonicalizationMethod.INCLUSIVE_WITH_COMMENTS, (C14NMethodParameterSpec) null), sigFactory
+                    .newSignatureMethod(SignatureMethod.DSA_SHA1, null), Collections.singletonList(ref));
 
-			// Create a KeyInfo and add the KeyValue to it
-			KeyInfo keyInfo = keyInfoFactory.newKeyInfo(Collections.singletonList(keyValue));
+            // Create a KeyValue containing the RSA PublicKey
+            KeyInfoFactory keyInfoFactory = sigFactory.getKeyInfoFactory();
+            KeyValue keyValue = keyInfoFactory.newKeyValue(publicKey);
 
-			// Create a DOMSignContext and specify the RSA PrivateKey and
-			// location of the resulting XMLSignature's parent element
-			new DOMSignContext(privateKey, doc);
+            // Create a KeyInfo and add the KeyValue to it
+            KeyInfo keyInfo = keyInfoFactory.newKeyInfo(Collections.singletonList(keyValue));
 
-			// Create the XMLSignature (but don't sign it yet)
-			XMLSignature signature = sigFactory.newXMLSignature(signedInfo, keyInfo);
+            // Create a DOMSignContext and specify the RSA PrivateKey and
+            // location of the resulting XMLSignature's parent element
+            new DOMSignContext(privateKey, doc);
 
-			// Create the Document that will hold the resulting XMLSignature
+            // Create the XMLSignature (but don't sign it yet)
+            XMLSignature signature = sigFactory.newXMLSignature(signedInfo, keyInfo);
 
-			// Create a DOMSignContext and set the signing Key to the DSA
-			// PrivateKey and specify where the XMLSignature should be inserted
-			// in the target document (in this case, the document root)
-			DOMSignContext signContext = new DOMSignContext(privateKey, doc);
+            // Create the Document that will hold the resulting XMLSignature
 
-			// Marshal, generate (and sign) the enveloped signature
-			signature.sign(signContext);
+            // Create a DOMSignContext and set the signing Key to the DSA
+            // PrivateKey and specify where the XMLSignature should be inserted
+            // in the target document (in this case, the document root)
+            DOMSignContext signContext = new DOMSignContext(privateKey, doc);
 
-			// output the resulting document
-			// FileOutputStream os = new FileOutputStream(outputFile);
-			bas = new ByteArrayOutputStream();
-			Transformer trans = TransformerFactory.newInstance().newTransformer();
-			trans.transform(new DOMSource(doc), new StreamResult(bas));
-			signed = bas.toString();
-		} catch (Exception e) {
-			log.error(e.getMessage(), e);
-		}
+            // Marshal, generate (and sign) the enveloped signature
+            signature.sign(signContext);
 
-		return signed;
-	}
+            // output the resulting document
+            // FileOutputStream os = new FileOutputStream(outputFile);
+            bas = new ByteArrayOutputStream();
+            Transformer trans = TransformerFactory.newInstance().newTransformer();
+            trans.transform(new DOMSource(doc), new StreamResult(bas));
+            signed = bas.toString();
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
+
+        return signed;
+    }
 }

@@ -11,14 +11,14 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import org.apache.commons.lang.exception.ExceptionUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import org.primefaces.event.RowEditEvent;
 
 @ManagedBean
 @SessionScoped
 public class ConfigurationManagerBean {
 
-    private static Logger log = Logger.getLogger("ConfigurationManagerBean");
+    private static Logger log = LoggerFactory.getLogger("ConfigurationManagerBean");
     private List<Property> properties;
     private String property;
     private String value;

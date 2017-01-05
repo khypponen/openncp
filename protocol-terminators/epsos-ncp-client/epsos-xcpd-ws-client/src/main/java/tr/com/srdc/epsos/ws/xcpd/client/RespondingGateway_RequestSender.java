@@ -69,6 +69,14 @@ public final class RespondingGateway_RequestSender {
         return sendRequest(epr, hl7Request, idAssertion, countryCode);
     }
 
+    /**
+     *
+     * @param epr
+     * @param pRPAIN201305UV022
+     * @param idAssertion
+     * @param countryCode
+     * @return
+     */
     private static PRPAIN201306UV02 sendRequest(String epr,
                                                PRPAIN201305UV02 pRPAIN201305UV022,
                                                Assertion idAssertion, final String countryCode) {

@@ -1,22 +1,15 @@
 package epsos.ccd.gnomon.tsam;
 
 import epsos.ccd.gnomon.tsam.configuration.Settings;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.*;
+import java.sql.*;
 
 public class XMLExporter {
 
-    public final static Logger LOG = Logger.getLogger("TSAM.Exporter");
+    public final static Logger LOG = LoggerFactory.getLogger("TSAM.Exporter");
     private static String UserHome = System.getenv("EPSOS_PROPS_PATH");
 
     public static String export() {
@@ -159,11 +152,10 @@ public class XMLExporter {
                     try {
                         conn.close();
                     } catch (SQLException ex) {
-                        java.util.logging.Logger.getLogger(XMLExporter.class.getName()).log(Level.SEVERE, null, ex);
+                        LOG.error(null, ex);
                     }
                 }
             }
-
         }
         return output.toString();
     }
@@ -172,7 +164,13 @@ public class XMLExporter {
         export();
     }
 
+    /**
+     * @param sb
+     * @param namespace
+     * @return
+     */
     public static String createFile(StringBuffer sb, String namespace) {
+
         boolean created = false;
         StringBuffer output = new StringBuffer();
         BufferedWriter out = null;
@@ -200,7 +198,6 @@ public class XMLExporter {
                 e.printStackTrace();
             }
         }
-
         return output.toString();
     }
 }

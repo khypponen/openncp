@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <artifactId>openncp</artifactId>
         <groupId>eu.europa.ec.sante.ehdsi</groupId>
-        <version>2.5.0-SNAPSHOT</version>
+        <version>2.4.3-SNAPSHOT</version>
     </parent>
 
     <!-- The project OpenATNA has been initially developed by OpenHeathTools.
@@ -37,8 +37,8 @@
         <url>https://www.projects.openhealthtools.org/svn/openatna/</url>
     </scm>
     <issueManagement>
-        <system />
-        <url />
+        <system/>
+        <url/>
     </issueManagement>
     <developers>
         <developer>
@@ -84,10 +84,10 @@
     </build>
 
     <repositories>
-        <repository>
+        <!--<repository>
             <id>bouncycastle</id>
             <url>http://repo2.maven.org/maven2/org/bouncycastle</url>
-        </repository>
+        </repository>-->
         <!-- <repository> -->
         <!-- <id>appfuse</id> -->
         <!-- <url>http://static.appfuse.org/repository</url> -->
@@ -111,11 +111,11 @@
     </repositories>
 
     <dependencies>
-        <dependency>
+<!--        <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>${commons.logging.version}</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <modules>
@@ -131,8 +131,9 @@
     </modules>
     <!-- Properties defined by OpenATNA -->
     <properties>
-        <commons.logging.version>1.1.1</commons.logging.version>
-        <log4Jlog.version>1.2.14</log4Jlog.version>
+        <spring.version>2.5.6.SEC03</spring.version>
+        <!--<commons.logging.version>1.1.1</commons.logging.version>-->
+        <!--<log4Jlog.version>1.2.14</log4Jlog.version>-->
     </properties>
 
     <!--===================LICENCE HEADER CHECK USE -P headers with mvn command
@@ -188,7 +189,8 @@
                                 <configuration>
                                     <properties>
                                         <company>University of Cardiff
-                                            and others</company>
+                                            and others
+                                        </company>
                                         <contributor1>University of
                                             Cardiff - initial API and
                                             implementation
@@ -222,7 +224,8 @@
                                 <configuration>
                                     <properties>
                                         <company>Misys Open Source
-                                            Solutions (MOSS) and others</company>
+                                            Solutions (MOSS) and others
+                                        </company>
                                         <contributor1>Misys Open Source
                                             Solutions - initial API and
                                             implementation

@@ -13,8 +13,8 @@ package eu.epsos.assertionvalidator;
  * FriendlyName:  XSPA Role
  * Name:  urn:oasis:names:tc:xacml:2.0:subject:role
  */
-
 public enum XSPARole {
+
     DENTIST("dentist"),
     NURSE("nurse"),
     PHARMACIST("pharmacist"),
@@ -27,7 +27,7 @@ public enum XSPARole {
 
     private final String role;
 
-    private XSPARole(final String role) {
+    XSPARole(final String role) {
         this.role = role;
     }
 

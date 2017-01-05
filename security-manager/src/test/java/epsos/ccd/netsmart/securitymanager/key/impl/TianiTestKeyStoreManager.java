@@ -20,27 +20,22 @@ package epsos.ccd.netsmart.securitymanager.key.impl;
 import epsos.ccd.netsmart.securitymanager.SignatureManager;
 import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
 import epsos.ccd.netsmart.securitymanager.key.KeyStoreManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.security.Key;
-import java.security.KeyPair;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.security.UnrecoverableKeyException;
+import java.security.*;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
-import org.apache.log4j.Logger;
 
 /**
- *
  * @author jerouris
  */
 public class TianiTestKeyStoreManager implements KeyStoreManager {
 
-   
+    private static final Logger logger = LoggerFactory.getLogger(TianiTestKeyStoreManager.class);
+
     private static final String TEST_KEYSTORE_LOCATION = "keystores/tiani/test_keystore_server1.jks";
     private static final String TEST_TRUSTSTORE_LOCATION = "keystores/tiani/test_truststore1.jks";
     private static final String TEST_KEYSTORE_PASSWORD = "spirit";
@@ -51,19 +46,16 @@ public class TianiTestKeyStoreManager implements KeyStoreManager {
     private KeyStore keyStore;
     private KeyStore trustStore;
 
-    public TianiTestKeyStoreManager()
-    {
+    public TianiTestKeyStoreManager() {
         // For testing purposes...
-            if (keyStore == null)
-            {
-                keyStore = getTestKeyStore();
-                trustStore = getTestTrustStore();
-            }
+        if (keyStore == null) {
+            keyStore = getTestKeyStore();
+            trustStore = getTestTrustStore();
+        }
     }
 
     @Override
     public KeyPair getPrivateKey(String alias, char[] password) {
-
 
         try {
 
@@ -79,17 +71,17 @@ public class TianiTestKeyStoreManager implements KeyStoreManager {
                 // Return a key pair
                 return new KeyPair(publicKey, (PrivateKey) key);
             }
-    } catch (UnrecoverableKeyException e) {
-            Logger.getLogger(SignatureManager.class.getName()).error(null, e);
+        } catch (UnrecoverableKeyException e) {
+            logger.error(null, e);
         } catch (NoSuchAlgorithmException e) {
-            Logger.getLogger(SignatureManager.class.getName()).error(null, e);
+            logger.error(null, e);
         } catch (KeyStoreException e) {
-            Logger.getLogger(SignatureManager.class.getName()).error(null, e);
+            logger.error(null, e);
         }
         return null;
     }
 
-     private KeyStore getTestKeyStore() {
+    private KeyStore getTestKeyStore() {
         try {
             keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
             InputStream keystoreStream = ClassLoader.getSystemResourceAsStream(TEST_KEYSTORE_LOCATION);
@@ -98,20 +90,20 @@ public class TianiTestKeyStoreManager implements KeyStoreManager {
             return keyStore;
 
         } catch (IOException ex) {
-            Logger.getLogger(SignatureManager.class.getName()).error(null, ex);
+            logger.error(null, ex);
         } catch (NoSuchAlgorithmException ex) {
-          Logger.getLogger(SignatureManager.class.getName()).error(null, ex);
+            logger.error(null, ex);
         } catch (CertificateException ex) {
-          Logger.getLogger(SignatureManager.class.getName()).error(null, ex);
+            logger.error(null, ex);
         } catch (KeyStoreException ex) {
-          Logger.getLogger(SignatureManager.class.getName()).error(null, ex);
+            logger.error(null, ex);
         }
         return null;
     }
 
     @Override
     public KeyStore getKeyStore() {
-       return keyStore;
+        return keyStore;
     }
 
     @Override
@@ -129,13 +121,13 @@ public class TianiTestKeyStoreManager implements KeyStoreManager {
             return trustStore;
 
         } catch (IOException ex) {
-            Logger.getLogger(SignatureManager.class.getName()).error(null, ex);
+            logger.error(null, ex);
         } catch (NoSuchAlgorithmException ex) {
-          Logger.getLogger(SignatureManager.class.getName()).error(null, ex);
+            logger.error(null, ex);
         } catch (CertificateException ex) {
-          Logger.getLogger(SignatureManager.class.getName()).error(null, ex);
+            logger.error(null, ex);
         } catch (KeyStoreException ex) {
-          Logger.getLogger(SignatureManager.class.getName()).error(null, ex);
+            logger.error(null, ex);
         }
         return null;
 
@@ -146,22 +138,19 @@ public class TianiTestKeyStoreManager implements KeyStoreManager {
         try {
             java.security.cert.Certificate cert = keyStore.getCertificate(alias);
             return cert;
+        } catch (KeyStoreException ex) {
+            logger.error(null, ex);
         }
-        catch (KeyStoreException ex) {
-            Logger.getLogger(NSTestKeyStoreManager.class.getName()).error(null, ex);
-        }
-
         return null;
-
     }
 
     @Override
-   public KeyPair getDefaultPrivateKey() throws SMgrException {
+    public KeyPair getDefaultPrivateKey() throws SMgrException {
         return getPrivateKey(TEST_PRIVATEKEY_ALIAS, TEST_PRIVATEKEY_PASSWORD.toCharArray());
     }
 
     @Override
- public Certificate getDefaultCertificate() throws SMgrException {
+    public Certificate getDefaultCertificate() throws SMgrException {
         return getCertificate(TEST_PRIVATEKEY_ALIAS);
     }
 }

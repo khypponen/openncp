@@ -3,8 +3,8 @@ package com.gnomon.epsos.filter;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 public class RestAuthenticationFilter implements javax.servlet.Filter {
 
     public static final String AUTHENTICATION_HEADER = "Authorization";
-    private static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("RestAuthenticationFilter");
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger("RestAuthenticationFilter");
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response,
@@ -56,7 +56,7 @@ public class RestAuthenticationFilter implements javax.servlet.Filter {
                         .authenticate(authCredentials);
                 log.info("Authentication status; " + authenticationStatus);
             } catch (ParseException ex) {
-                Logger.getLogger(RestAuthenticationFilter.class.getName()).log(Level.SEVERE, null, ex);
+                LoggerFactory.getLogger(RestAuthenticationFilter.class.getName()).log(Level.SEVERE, null, ex);
             }
             if (authenticationStatus) {
                 filter.doFilter(request, response);

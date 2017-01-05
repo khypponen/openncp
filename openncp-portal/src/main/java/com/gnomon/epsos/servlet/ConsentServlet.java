@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import org.opensaml.saml2.core.Assertion;
 
 public class ConsentServlet extends HttpServlet {
@@ -19,7 +19,7 @@ public class ConsentServlet extends HttpServlet {
      *
      */
     private static final long serialVersionUID = 1L;
-    private static Logger log = Logger.getLogger("consentServlet");
+    private static Logger log = LoggerFactory.getLogger("consentServlet");
 
     public void doGet(HttpServletRequest req,
             HttpServletResponse res)

@@ -1,21 +1,26 @@
 /**
  * Copyright (C) 2011, 2012 SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik
  * Tic. Ltd. Sti. <epsos@srdc.com.tr>
- *
+ * <p>
  * This file is part of SRDC epSOS NCP.
- *
+ * <p>
  * SRDC epSOS NCP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
  * Software Foundation, either version 3 of the License, or (at your option) any
  * later version.
- *
+ * <p>
  * SRDC epSOS NCP is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- *
+ * <p>
  * You should have received a copy of the GNU General Public License along with
  * SRDC epSOS NCP. If not, see <http://www.gnu.org/licenses/>.
+ * <p>
+ * XCA_ServiceMessageReceiverInOut.java
+ * <p>
+ * This file was auto-generated from WSDL by the Apache Axis2 version: 1.5.4
+ * Built on : Dec 19, 2010 (08:18:42 CET)
  */
 /**
  * XCA_ServiceMessageReceiverInOut.java
@@ -36,11 +41,6 @@ import eu.epsos.util.EvidenceUtils;
 import eu.epsos.validation.datamodel.common.NcpSide;
 import eu.epsos.validation.datamodel.xd.XdModel;
 import eu.epsos.validation.services.XcaValidationService;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.UUID;
-import javax.servlet.http.HttpServletRequest;
-import javax.xml.namespace.QName;
 import org.apache.axiom.om.OMAbstractFactory;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.OMFactory;
@@ -50,19 +50,26 @@ import org.apache.axis2.Constants;
 import org.apache.axis2.client.Options;
 import org.apache.axis2.transport.http.HTTPConstants;
 import org.apache.axis2.util.XMLUtils;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.joda.time.DateTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import tr.com.srdc.epsos.util.DateUtil;
 import tr.com.srdc.epsos.util.XMLUtil;
 import tr.com.srdc.epsos.util.http.HTTPUtil;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.xml.namespace.QName;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.UUID;
 
 /**
  * XCA_ServiceMessageReceiverInOut message receiver
  */
 public class XCA_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.AbstractInOutMessageReceiver {
 
-    public static Logger logger = Logger.getLogger(XCA_ServiceMessageReceiverInOut.class);
+    public static Logger logger = LoggerFactory.getLogger(XCA_ServiceMessageReceiverInOut.class);
 
     private String getIPofSender(org.apache.axis2.context.MessageContext msgContext) {
         String remoteAddress_IPConsumer = (String) msgContext.getProperty("REMOTE_ADDR");
@@ -148,7 +155,7 @@ public class XCA_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.
                     oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryResponse adhocQueryResponse1 = null;
                     oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryRequest wrappedParam = (oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryRequest) fromOM(
                             msgContext.getEnvelope().getBody()
-                            .getFirstElement(),
+                                    .getFirstElement(),
                             oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryRequest.class,
                             getEnvelopeNamespaces(msgContext.getEnvelope()));
 
@@ -204,7 +211,7 @@ public class XCA_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.
                     ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType retrieveDocumentSetResponse3 = null;
                     ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType wrappedParam = (ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType) fromOM(
                             msgContext.getEnvelope().getBody()
-                            .getFirstElement(),
+                                    .getFirstElement(),
                             ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType.class,
                             getEnvelopeNamespaces(msgContext.getEnvelope()));
 
@@ -280,6 +287,7 @@ public class XCA_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
     }
+
     //
     private static final javax.xml.bind.JAXBContext wsContext;
 
@@ -469,7 +477,7 @@ public class XCA_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.
     }
 
     private java.lang.Object fromOM(org.apache.axiom.om.OMElement param,
-            java.lang.Class type, java.util.Map extraNamespaces)
+                                    java.lang.Class type, java.util.Map extraNamespaces)
             throws org.apache.axis2.AxisFault {
         try {
             javax.xml.bind.JAXBContext context = wsContext;
@@ -513,7 +521,7 @@ public class XCA_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.
          * @param marshaller
          */
         public JaxbRIDataSource(Class clazz, Object obj,
-                javax.xml.bind.Marshaller marshaller, String nsuri, String name) {
+                                javax.xml.bind.Marshaller marshaller, String nsuri, String name) {
             this.outClazz = clazz;
             this.outObject = obj;
             this.marshaller = marshaller;
@@ -522,7 +530,7 @@ public class XCA_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.
         }
 
         public void serialize(java.io.OutputStream output,
-                org.apache.axiom.om.OMOutputFormat format)
+                              org.apache.axiom.om.OMOutputFormat format)
                 throws javax.xml.stream.XMLStreamException {
             try {
                 marshaller.marshal(new javax.xml.bind.JAXBElement(
@@ -535,7 +543,7 @@ public class XCA_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.
         }
 
         public void serialize(java.io.Writer writer,
-                org.apache.axiom.om.OMOutputFormat format)
+                              org.apache.axiom.om.OMOutputFormat format)
                 throws javax.xml.stream.XMLStreamException {
             try {
                 marshaller.marshal(new javax.xml.bind.JAXBElement(

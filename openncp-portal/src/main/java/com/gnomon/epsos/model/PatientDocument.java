@@ -1,12 +1,12 @@
 package com.gnomon.epsos.model;
 
 import epsos.openncp.protocolterminator.clientconnector.GenericDocumentCode;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import org.primefaces.model.StreamedContent;
 
 public class PatientDocument {
 
-    private static final Logger log = Logger.getLogger("PatientDocument");
+    private static final Logger log = LoggerFactory.getLogger("PatientDocument");
     private String title;
     private String description;
     private String author;

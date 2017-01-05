@@ -18,7 +18,7 @@ public class CustomProxySelector extends ProxySelector {
 
     private Logger logger = LoggerFactory.getLogger(CustomProxySelector.class);
 
-    private HashMap<SocketAddress, InnerProxy> proxies = new HashMap<SocketAddress, InnerProxy>();
+    private HashMap<SocketAddress, InnerProxy> proxies = new HashMap<>();
 
     private final ProxySelector defaultSelector;
 

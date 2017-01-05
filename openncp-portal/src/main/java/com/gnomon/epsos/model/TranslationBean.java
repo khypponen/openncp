@@ -14,13 +14,13 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import org.apache.commons.lang.exception.ExceptionUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 
 @ManagedBean
 @SessionScoped
 public class TranslationBean {
 
-    private static final Logger log = Logger.getLogger("TranslationBean");
+    private static final Logger log = LoggerFactory.getLogger("TranslationBean");
     private Properties properties;
 
     public TranslationBean() {

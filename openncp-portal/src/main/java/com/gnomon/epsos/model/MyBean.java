@@ -21,8 +21,8 @@ import javax.portlet.RenderRequest;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.joda.time.DateTime;
 import org.opensaml.DefaultBootstrap;
 import org.opensaml.saml2.core.Assertion;
@@ -107,7 +107,7 @@ public class MyBean implements Serializable {
 	private String errorUserAssertion;
 	private String cdaStylesheet;
 	private String signedTRC;
-	private static final Logger log = Logger.getLogger("MyBean");
+	private static final Logger log = LoggerFactory.getLogger("MyBean");
 
 	public MyBean() {
 		log.info("Initializing MyBean ...");

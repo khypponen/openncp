@@ -22,7 +22,8 @@ package eu.epsos.pt.cc;
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import tr.com.srdc.epsos.util.Constants;
 
 /**
@@ -36,7 +37,7 @@ import tr.com.srdc.epsos.util.Constants;
  */
 public class ClientConnectorInit extends HttpServlet {
 
-    static Logger logger = Logger.getLogger(ConfigurationManagerService.class);
+    static Logger logger = LoggerFactory.getLogger(ConfigurationManagerService.class);
     
     @Override
     public void init() throws ServletException {

@@ -36,7 +36,7 @@ import org.opensaml.saml2.core.Assertion;
 @Path("/stork")
 public class StorkRestService {
 
-    private static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("StorkRestService");
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger("StorkRestService");
 
     @Context
     private HttpServletRequest servletRequest;

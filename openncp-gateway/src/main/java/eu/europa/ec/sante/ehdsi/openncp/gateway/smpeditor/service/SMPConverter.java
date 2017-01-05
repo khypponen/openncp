@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -112,11 +112,11 @@ public class SMPConverter {
       System.out.println("==== docOriginal first child - " + docOriginal.getFirstChild());
       
     } catch (IOException ex) {
-      Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+      LoggerFactory.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
     } catch (SAXException ex) {
-      Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+      LoggerFactory.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
     } catch (ParserConfigurationException ex) {
-      Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+      LoggerFactory.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
     }
 
     extensionType.setAny((Element) docOriginal.getFirstChild()); //Set by user (upload file)
@@ -153,7 +153,7 @@ public class SMPConverter {
       jaxbMarshaller.marshal(serviceMetadata, file);
       jaxbMarshaller.marshal(serviceMetadata, System.out);
     } catch (JAXBException ex) {
-      Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+      LoggerFactory.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
     }
 
   }

@@ -25,15 +25,15 @@
 package _2007.xds_b.iti.ihe;
 
 import ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType;
-import ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType;
 
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryRequest;
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryResponse;
 
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.soap.SOAPHeader;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 
+import org.slf4j.LoggerFactory;
 import tr.com.srdc.epsos.ws.server.xca.impl.XCAServiceImpl;
 
 import epsos.ccd.gnomon.auditmanager.EventLog;
@@ -50,7 +50,7 @@ public class XCA_ServiceSkeleton {
 	 * @param adhocQueryRequest
 	 */
 
-	public static Logger logger = Logger.getLogger(XCA_ServiceSkeleton.class);
+	public static Logger logger = LoggerFactory.getLogger(XCA_ServiceSkeleton.class);
 
 	private XCAServiceInterface service = null;
 
@@ -84,5 +84,4 @@ public class XCA_ServiceSkeleton {
 		service.retrieveDocument(retrieveDocumentSetRequest, soapHeader,
 				eventLog, omElement);
 	}
-
 }

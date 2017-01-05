@@ -1,36 +1,38 @@
 /**
  * Copyright (C) 2011, 2012 SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik
  * Tic. Ltd. Sti. <epsos@srdc.com.tr>
- *
+ * <p>
  * This file is part of SRDC epSOS NCP.
- *
+ * <p>
  * SRDC epSOS NCP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
  * Software Foundation, either version 3 of the License, or (at your option) any
  * later version.
- *
+ * <p>
  * SRDC epSOS NCP is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- *
+ * <p>
  * You should have received a copy of the GNU General Public License along with
  * SRDC epSOS NCP. If not, see <http://www.gnu.org/licenses/>.
- *
+ * <p>
  * Modifications by Kela (The Social Insurance Institution of Finland) GNU
  * Public License v3
  */
 package tr.com.srdc.epsos.securityman.helper;
 
-import javax.xml.transform.dom.DOMSource;
-import org.apache.log4j.Logger;
 import org.opensaml.common.xml.SAMLSchemaBuilder;
 import org.opensaml.saml2.core.Assertion;
 import org.opensaml.saml2.core.Attribute;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import tr.com.srdc.epsos.securityman.exceptions.MissingFieldException;
 import tr.com.srdc.epsos.util.saml.SAML;
+
+import javax.xml.transform.dom.DOMSource;
 
 /**
  * TODO: improve the implementation by implementing a method which picks
@@ -38,7 +40,7 @@ import tr.com.srdc.epsos.util.saml.SAML;
  */
 public class Helper {
 
-    public static Logger logger = Logger.getLogger(Helper.class);
+    public static Logger logger = LoggerFactory.getLogger(Helper.class);
 
     public static Assertion getHCPAssertion(Element sh) {
         try {

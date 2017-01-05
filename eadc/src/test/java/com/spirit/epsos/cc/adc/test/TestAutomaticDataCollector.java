@@ -1,20 +1,19 @@
 package com.spirit.epsos.cc.adc.test;
 
 import com.spirit.epsos.cc.adc.db.EadcDbConnect;
-import java.io.File;
-import java.util.UUID;
-
-import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
+import com.spirit.epsos.cc.adc.extractor.AutomaticDataCollector;
+import com.spirit.epsos.cc.adc.extractor.XmlFileReader;
+import eu.epsos.pt.eadc.util.EadcFactory;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import com.spirit.epsos.cc.adc.extractor.AutomaticDataCollector;
-import com.spirit.epsos.cc.adc.extractor.XmlFileReader;
 
-import eu.epsos.pt.eadc.util.EadcFactory;
+import java.io.File;
+import java.util.UUID;
 
 /**
  * Test-class for testing the DataExtractionMechanism and storing the results
@@ -24,16 +23,18 @@ import eu.epsos.pt.eadc.util.EadcFactory;
  */
 public class TestAutomaticDataCollector extends BaseEadcTest {
 
-    private static Logger log = Logger.getLogger(TestAutomaticDataCollector.class);
+    private static Logger log = LoggerFactory.getLogger(TestAutomaticDataCollector.class);
     private static AutomaticDataCollector automaticDataCollectorInstance;
     private static Document transactionDemo;
     private static String basedir = "src/test/resources/EADC_resources";
     private EadcDbConnect con;
-    
+
     @Before
     public void setUp() throws Exception {
-        DOMConfigurator.configureAndWatch("log4j.xml",
-                                          60 * 1000);
+
+        //TODO: Check Logs Jerome
+        /*DOMConfigurator.configureAndWatch("log4j.xml",
+                60 * 1000);*/
 
         /* TEST DATABASE INSTANTIATION */
         con = EadcFactory.INSTANCE.createEadcDbConnect(DS_NAME);
@@ -41,18 +42,18 @@ public class TestAutomaticDataCollector extends BaseEadcTest {
         automaticDataCollectorInstance = EadcFactory.INSTANCE.createAutomaticDataCollector();
         transactionDemo = XmlFileReader.getInstance()
                 .readXmlDocumentFromFile(basedir + File.separator
-                                         + "demo"
-                                         + File.separator
-                                         + "TransactionDemo.xml");
+                        + "demo"
+                        + File.separator
+                        + "TransactionDemo.xml");
         // Insert the currently tested Transaction-Primary-Key into the TransactionDemo XML-Structure
         ((Element) (transactionDemo.getElementsByTagName("TransactionInfo").item(0))).setAttribute("Transaction_PK",
-                                                                                                     UUID.randomUUID()
-                .toString());
+                UUID.randomUUID()
+                        .toString());
     }
 
     @After
     public void tearDown() throws Exception {
-    	con.closeConnection();
+        con.closeConnection();
     }
 
     /**
@@ -159,12 +160,12 @@ public class TestAutomaticDataCollector extends BaseEadcTest {
 
         // Insert the currently tested code Attribute into the TransactionDemo XML-Structure
         ((Element) (transactionXmlStructure.getElementsByTagNameNS(AutomaticDataCollector.cdaNamespace,
-                                                                   "code").item(0))).setAttribute("codeSystem",
-                                                                                                  currentProcessedDocumentCodeSystem);
+                "code").item(0))).setAttribute("codeSystem",
+                currentProcessedDocumentCodeSystem);
         // Insert the currently tested codeSystem Attribute into the TransactionDemo XML-Structure
         ((Element) (transactionXmlStructure.getElementsByTagNameNS(AutomaticDataCollector.cdaNamespace,
-                                                                   "code").item(0))).setAttribute("code",
-                                                                                                  currentProcessedDocumentCode);
+                "code").item(0))).setAttribute("code",
+                currentProcessedDocumentCode);
     }
 
     /**

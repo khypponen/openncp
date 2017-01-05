@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
+
 
 import epsos.ccd.carecom.tsam.synchronizer.configuration.Settings;
 import epsos.ccd.carecom.tsam.synchronizer.configuration.SettingsFileNotAccessableException;

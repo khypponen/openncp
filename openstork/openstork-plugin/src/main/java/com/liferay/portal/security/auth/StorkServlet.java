@@ -33,13 +33,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
-import java.util.logging.Level;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.httpclient.NameValuePair;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 
 /**
  *
@@ -47,7 +47,7 @@ import org.apache.log4j.Logger;
  */
 public class StorkServlet extends HttpServlet {
 
-    private static Logger log = Logger.getLogger(StorkServlet.class.getName());
+    private static Logger log = LoggerFactory.getLogger(StorkServlet.class.getName());
 
     private final String USER_AGENT = "Mozilla/5.0";
     private String SAMLResponse;
@@ -132,9 +132,9 @@ public class StorkServlet extends HttpServlet {
 
             request.getRequestDispatcher("/stork.jsp").forward(request, response);
         } catch (PortalException ex) {
-            java.util.logging.Logger.getLogger(StorkServlet.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.LoggerFactory.getLogger(StorkServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SystemException ex) {
-            java.util.logging.Logger.getLogger(StorkServlet.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.LoggerFactory.getLogger(StorkServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

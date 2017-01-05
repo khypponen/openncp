@@ -1,24 +1,27 @@
 /**
- *  Copyright (c) 2009-2011 University of Cardiff and others
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
- *  implied. See the License for the specific language governing
- *  permissions and limitations under the License.
- *
- *  Contributors:
- *    University of Cardiff - initial API and implementation
- *    -
+ * Copyright (c) 2009-2011 University of Cardiff and others
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+ * implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ * <p>
+ * Contributors:
+ * University of Cardiff - initial API and implementation
+ * -
  */
 
 package org.openhealthtools.openatna.all.test.ssl;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -37,7 +40,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
-import java.util.logging.Logger;
+
 
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
@@ -55,12 +58,12 @@ import javax.net.ssl.X509TrustManager;
 
 public class KeystoreManager {
 
-    static Logger log = Logger.getLogger("org.wspeer.security.KeystoreManager");
+    static Logger log = LoggerFactory.getLogger(KeystoreManager.class);
 
     private static X509TrustManager sunTrustManager = null;
     private KeystoreDetails defaultKeyDetails;
-    private HashMap<String, KeystoreDetails> allKeys = new HashMap<String, KeystoreDetails>();
-    private HashMap<String, KeystoreDetails> allStores = new HashMap<String, KeystoreDetails>();
+    private HashMap<String, KeystoreDetails> allKeys = new HashMap<>();
+    private HashMap<String, KeystoreDetails> allStores = new HashMap<>();
 
     private File keysDir;
     private File certsDir;
@@ -111,17 +114,17 @@ public class KeystoreManager {
             }
 
         } catch (KeyStoreException e) {
-            log.fine("Exception thrown trying to create default trust manager:" + e.getMessage());
+            log.error("Exception thrown trying to create default trust manager:" + e.getMessage());
         } catch (NoSuchAlgorithmException e) {
-            log.fine("Exception thrown trying to create default trust manager:" + e.getMessage());
+            log.error("Exception thrown trying to create default trust manager:" + e.getMessage());
         } catch (CertificateException e) {
-            log.fine("Exception thrown trying to create default trust manager:" + e.getMessage());
+            log.error("Exception thrown trying to create default trust manager:" + e.getMessage());
         } catch (NoSuchProviderException e) {
-            log.fine("Exception thrown trying to create default trust manager:" + e.getMessage());
+            log.error("Exception thrown trying to create default trust manager:" + e.getMessage());
         } catch (FileNotFoundException e) {
-            log.fine("Exception thrown trying to create default trust manager:" + e.getMessage());
+            log.error("Exception thrown trying to create default trust manager:" + e.getMessage());
         } catch (IOException e) {
-            log.fine("Exception thrown trying to create default trust manager:" + e.getMessage());
+            log.error("Exception thrown trying to create default trust manager:" + e.getMessage());
         }
     }
 
@@ -250,10 +253,10 @@ public class KeystoreManager {
                 if (auth.endsWith("*")) {
                     String s = trimPort(host);
                     if (s != null) {
-                        log.fine("KeystoreManager.getKeyFileForHost trimmed port:" + s);
+                        log.info("KeystoreManager.getKeyFileForHost trimmed port:" + s);
                         String a = getAnyPort(auth);
                         if (a != null) {
-                            log.fine("KeystoreManager.getKeyFileForHost trimmed auth:" + a);
+                            log.info("KeystoreManager.getKeyFileForHost trimmed auth:" + a);
                             auth = a;
                             host = s;
                         }
@@ -275,8 +278,8 @@ public class KeystoreManager {
             try {
                 int port = Integer.parseInt(host.substring(colon + 1, host.length()), host.length());
                 host = host.substring(0, colon);
-                log.fine("KeystoreManager.trimPort up to colon:" + host);
-                log.fine("KeystoreManager.trimPort port:" + port);
+                log.info("KeystoreManager.trimPort up to colon:" + host);
+                log.info("KeystoreManager.trimPort port:" + port);
 
                 return host;
             } catch (NumberFormatException e) {

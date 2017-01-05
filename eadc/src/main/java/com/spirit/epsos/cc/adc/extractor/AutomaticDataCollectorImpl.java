@@ -3,7 +3,8 @@ package com.spirit.epsos.cc.adc.extractor;
 import java.io.File;
 import java.io.StringReader;
 import java.util.TreeMap;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -49,7 +50,7 @@ public class AutomaticDataCollectorImpl implements AutomaticDataCollector {
     // DOM structure for caching the config.xml
     private Document configXml = null;
     // Logger object for logging to log4j
-    private static Logger log = Logger.getLogger(AutomaticDataCollector.class);
+    private static Logger log = LoggerFactory.getLogger(AutomaticDataCollector.class);
 
     /**
      * Initialize a new AutomaticDataCollector

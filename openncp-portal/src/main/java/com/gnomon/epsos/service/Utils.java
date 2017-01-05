@@ -19,7 +19,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
-import java.util.logging.Level;
+
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
@@ -53,7 +53,7 @@ import sun.misc.BASE64Encoder;
 
 public class Utils {
 
-    private static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("Utils");
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger("Utils");
 
     public static String getDocumentAsXml(org.w3c.dom.Document doc, boolean header) {
         String resp = "";
@@ -105,7 +105,7 @@ public class Utils {
                 decrypted = decrypt(ticket, encryptionKey);
             } catch (Exception ex) {
                 log.error("An error has occured", ex);
-                java.util.logging.Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+                java.util.logging.LoggerFactory.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
             }
             log.info("### Decrypted String is " + decrypted);
             if (Validator.isNotNull(decrypted)) {
@@ -310,7 +310,7 @@ public class Utils {
         try {
             encrypted = encrypt(tick);
         } catch (Exception ex) {
-            java.util.logging.Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.LoggerFactory.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
         }
         log.info("Encrypted String is " + encrypted);
         ticket.setCreatedDate(formatDate(new Date()));
@@ -327,7 +327,7 @@ public class Utils {
             decrypted = decrypt(ticket);
         } catch (Exception ex) {
             log.error(ExceptionUtils.getStackTrace(ex));
-            java.util.logging.Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.LoggerFactory.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
         }
         log.info("Decrypted String is " + decrypted);
         Ticket ticket1 = StringToTicket(decrypted);
@@ -342,7 +342,7 @@ public class Utils {
         try {
             decrypted = decrypt(ticket);
         } catch (Exception ex) {
-            java.util.logging.Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.LoggerFactory.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
         }
         log.info("Decrypted String is " + decrypted);
         Ticket ticket1 = StringToTicket(decrypted);

@@ -1,34 +1,34 @@
 /**
  * Copyright (C) 2011, 2012 SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik
  * Tic. Ltd. Sti. <epsos@srdc.com.tr>
- *
+ * <p>
  * This file is part of SRDC epSOS NCP.
- *
+ * <p>
  * SRDC epSOS NCP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
  * Software Foundation, either version 3 of the License, or (at your option) any
  * later version.
- *
+ * <p>
  * SRDC epSOS NCP is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- *
+ * <p>
  * You should have received a copy of the GNU General Public License along with
  * SRDC epSOS NCP. If not, see <http://www.gnu.org/licenses/>.
  */
 package tr.com.srdc.epsos.util;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
+import org.apache.xml.serialize.OutputFormat;
+import org.apache.xml.serialize.XMLSerializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
@@ -44,18 +44,14 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
-import org.apache.log4j.Logger;
-import org.apache.xml.serialize.OutputFormat;
-import org.apache.xml.serialize.XMLSerializer;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
+import java.io.*;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 public class XMLUtil {
 
-    private static Logger logger = Logger.getLogger(XMLUtil.class);
+    private static Logger logger = LoggerFactory.getLogger(XMLUtil.class);
 
     /**
      * Creates a new instance of XMLUtil
@@ -275,5 +271,4 @@ public class XMLUtil {
         }
         return ret;
     }
-
 }

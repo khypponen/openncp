@@ -19,18 +19,14 @@
 
 package epsos.ccd.gnomon.auditmanager;
 
-import java.io.Serializable;
-
-import net.RFC3881.AuditMessage;
-import org.apache.log4j.Logger;
-
 import epsos.ccd.gnomon.utils.SerializableMessage;
+import eu.epsos.util.audit.*;
 import eu.epsos.util.audit.AuditLogSerializer.Type;
-import eu.epsos.util.audit.AuditLogSerializer;
-import eu.epsos.util.audit.AuditLogSerializerImpl;
-import eu.epsos.util.audit.FailedLogsHandlerService;
-import eu.epsos.util.audit.FailedLogsHandlerServiceImpl;
-import eu.epsos.util.audit.MessageHandlerListener;
+import net.RFC3881.AuditMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.Serializable;
 
 /**
  * 
@@ -47,7 +43,7 @@ public class AuditService implements MessageHandlerListener {
     public static final String KEY_TIME_BETWEEN_FAILED_LOGS_HANDLING = "time.between.failed.logs.handling";
     public static final long DEFAULT_TIME_BETWEEN = 1 * 60 * 60 * 1000; // 1h
 
-    private static Logger log = Logger.getLogger(AuditService.class);
+    private static Logger log = LoggerFactory.getLogger(AuditService.class);
 	private FailedLogsHandlerService failedLogsHandlerService;
 	private AuditLogSerializer auditLogSerializer;
 

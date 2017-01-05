@@ -57,7 +57,5 @@ public class XCPD_ServiceSkeleton {
 		}
 
 		return service.queryPatient(pRPA_IN201305UV02, sh, eventLog);
-
 	}
-
 }

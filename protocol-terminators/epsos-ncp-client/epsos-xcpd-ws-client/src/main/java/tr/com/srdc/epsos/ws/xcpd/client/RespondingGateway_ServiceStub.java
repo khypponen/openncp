@@ -32,16 +32,7 @@ import eu.epsos.util.xcpd.XCPDConstants;
 import eu.epsos.validation.datamodel.common.NcpSide;
 import eu.epsos.validation.datamodel.hl7v3.Hl7v3Schematron;
 import eu.epsos.validation.services.XcpdValidationService;
-import java.lang.reflect.Method;
-import java.util.Date;
-import java.util.UUID;
-import java.util.logging.Level;
-import javax.xml.parsers.ParserConfigurationException;
-import org.apache.axiom.om.OMAbstractFactory;
-import org.apache.axiom.om.OMAttribute;
-import org.apache.axiom.om.OMFactory;
-import org.apache.axiom.om.OMNamespace;
-import org.apache.axiom.om.OMNode;
+import org.apache.axiom.om.*;
 import org.apache.axiom.soap.SOAPFactory;
 import org.apache.axiom.soap.SOAPHeaderBlock;
 import org.apache.axiom.soap.impl.llom.soap12.SOAP12HeaderBlockImpl;
@@ -51,14 +42,20 @@ import org.apache.axis2.util.XMLUtils;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
 import org.apache.commons.httpclient.params.HttpConnectionManagerParams;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.hl7.v3.PRPAIN201305UV02;
 import org.hl7.v3.PRPAIN201306UV02;
 import org.joda.time.DateTime;
 import org.opensaml.saml2.core.Assertion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import tr.com.srdc.epsos.util.Constants;
 import tr.com.srdc.epsos.util.XMLUtil;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.lang.reflect.Method;
+import java.util.Date;
+import java.util.UUID;
 
 /**
  * RespondingGateway_ServiceStub java implementation.
@@ -66,7 +63,6 @@ import tr.com.srdc.epsos.util.XMLUtil;
  * @author SRDC<code> - epsos@srdc.com.tr>
  * @author Aarne Roosi<code> - Aarne.Roosi@Affecto.com</code>
  * @author Luís Pinto<code> - luis.pinto@iuz.pt</code>
- *
  */
 public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub {
 
@@ -76,7 +72,7 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
     private java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
     private java.util.HashMap faultMessageMap = new java.util.HashMap();
     private static int counter = 0;
-    private static Logger LOG = Logger.getLogger(RespondingGateway_ServiceStub.class);
+    private static Logger LOG = LoggerFactory.getLogger(RespondingGateway_ServiceStub.class);
     private static final javax.xml.bind.JAXBContext wsContext;
     private String countryCode;
     private Date transactionStartTime;
@@ -165,12 +161,11 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
     /**
      * Auto generated method signature
      *
-     * @see
-     * tr.com.srdc.epsos.ws.xcpd.client.RespondingGateway_Service#respondingGateway_PRPA_IN201305UV02
      * @param pRPA_IN201305UV02
      * @param idAssertion
      * @return
      * @throws java.rmi.RemoteException
+     * @see tr.com.srdc.epsos.ws.xcpd.client.RespondingGateway_Service#respondingGateway_PRPA_IN201305UV02
      */
     public org.hl7.v3.PRPAIN201306UV02 respondingGateway_PRPA_IN201305UV02(PRPAIN201305UV02 pRPA_IN201305UV02, Assertion idAssertion) {
         org.apache.axis2.context.MessageContext _messageContext = null;
@@ -367,7 +362,7 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
             try {
                 LOG.info("SOAP MESSAGE IS: " + XMLUtils.toDOM(_returnEnv));
             } catch (Exception ex) {
-                java.util.logging.Logger.getLogger(RespondingGateway_ServiceStub.class.getName()).log(Level.SEVERE, null, ex);
+                LOG.error(null, ex);
             }
 
             LOG.info("Submission Time is : " + eventLog.getEI_EventDateTime());
@@ -419,7 +414,7 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                 } catch (AxisFault ex) {
-                    LOG.info(ex);
+                    LOG.error(null, ex);
                 }
             }
         }
@@ -439,6 +434,7 @@ public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub 
 
         return returnMap;
     }
+
     private javax.xml.namespace.QName[] opNameArray = null;
 
     private boolean optimizeContent(javax.xml.namespace.QName opName) {

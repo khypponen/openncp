@@ -18,8 +18,8 @@
 package epsos.ccd.netsmart.securitymanager.sts;
 
 import java.io.OutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;

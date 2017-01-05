@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 
 import com.gnomon.epsos.util.ConnectionPool;
 import org.apache.commons.lang.exception.ExceptionUtils;
@@ -16,7 +16,7 @@ import org.apache.commons.lang.exception.ExceptionUtils;
 
 public class PropertyItemDAO {
 
-	private static final Logger log = Logger.getLogger("PropertyItemDAO");
+	private static final Logger log = LoggerFactory.getLogger("PropertyItemDAO");
 
 	public static CustomResponse deleteItem(String property) {
 		CustomResponse cr = new CustomResponse(); 

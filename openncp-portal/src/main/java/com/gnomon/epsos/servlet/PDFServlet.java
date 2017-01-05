@@ -20,14 +20,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.apache.commons.lang.exception.ExceptionUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import org.joda.time.DateTime;
 import org.opensaml.saml2.core.Assertion;
 import tr.com.srdc.epsos.util.Constants;
 
 public class PDFServlet extends HttpServlet {
 
-    private static Logger log = Logger.getLogger(PDFServlet.class.getName());
+    private static Logger log = LoggerFactory.getLogger(PDFServlet.class.getName());
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         byte[] pdf = null;

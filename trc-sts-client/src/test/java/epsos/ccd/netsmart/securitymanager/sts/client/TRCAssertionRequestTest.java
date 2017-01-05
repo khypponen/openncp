@@ -23,8 +23,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
 import javax.naming.NamingException;
 import javax.xml.parsers.DocumentBuilderFactory;
 import mockit.Mocked;

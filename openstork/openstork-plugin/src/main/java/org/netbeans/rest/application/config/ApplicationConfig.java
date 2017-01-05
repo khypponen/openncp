@@ -23,7 +23,7 @@ public class ApplicationConfig extends Application {
             Class jacksonProvider = Class.forName("org.codehaus.jackson.jaxrs.JacksonJsonProvider");
             resources.add(jacksonProvider);
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(getClass().getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.LoggerFactory.getLogger(getClass().getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         addRestResourceClasses(resources);
         return resources;
