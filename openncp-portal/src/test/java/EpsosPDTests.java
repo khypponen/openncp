@@ -3,18 +3,16 @@ import com.gnomon.epsos.model.Country;
 import com.gnomon.epsos.model.Identifier;
 import com.gnomon.epsos.service.Demographics;
 import com.gnomon.epsos.service.EpsosHelperService;
-import java.util.List;
+import org.junit.*;
 import org.slf4j.Logger;
-import org.junit.After;
-import org.junit.AfterClass;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 /**
- *
  * @author karkaletsis
  */
 public class EpsosPDTests {

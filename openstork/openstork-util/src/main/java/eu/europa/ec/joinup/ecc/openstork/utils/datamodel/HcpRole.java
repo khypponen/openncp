@@ -17,7 +17,7 @@
  * 
  *  Contact email: contact@iuz.pt, info@gnomon.com.gr
  */
-package com.liferay.portal.datamodel;
+package eu.europa.ec.joinup.ecc.openstork.utils.datamodel;
 
 import eu.epsos.assertionvalidator.XSPARole;
 

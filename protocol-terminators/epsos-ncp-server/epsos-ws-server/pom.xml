@@ -22,7 +22,7 @@
     </organization>
 
     <build>
-        <finalName>epsos-ws-server</finalName>
+        <finalName>openncp-ws-server</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -113,6 +113,10 @@
                     <artifactId>log4j-over-slf4j</artifactId>
                     <groupId>org.slf4j</groupId>
                 </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -153,6 +157,12 @@
         <dependency>
             <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-defaultpolicymanager</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>bcprov-jdk15</artifactId>
+                    <groupId>org.bouncycastle</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>xerces</groupId>
@@ -180,7 +190,6 @@
         <skip.deploy>true</skip.deploy>
     </properties>
 
-
     <profiles>
         <profile>
             <!-- This profile bundles the mock National Connector implementation -->
@@ -194,8 +203,8 @@
             </dependencies>
         </profile>
 
+        <!-- This profile bundles the real National Connector implementation -->
         <profile>
-            <!-- This profile bundles the real National Connector implementation -->
             <id>national-connector-impl</id>
             <dependencies>
                 <dependency>
@@ -207,8 +216,8 @@
             </dependencies>
         </profile>
 
+        <!-- This profile bundles the real National Connector implementation for Luxembourg -->
         <profile>
-            <!-- This profile bundles the real National Connector implementation for Luxembourg -->
             <id>national-connector-lu-impl</id>
             <dependencies>
                 <dependency>
@@ -223,7 +232,6 @@
         <!-- Integreation Tests -->
         <profile>
             <id>integration-tests</id>
-
             <dependencies>
                 <dependency>
                     <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators.openncp-ncp-server</groupId>
@@ -247,7 +255,6 @@
 
             <build>
                 <plugins>
-
                     <plugin>
                         <!-- Maven compiler plugin -->
                         <groupId>org.apache.maven.plugins</groupId>
@@ -267,12 +274,10 @@
                             </execution>
                         </executions>
                     </plugin>
-
                     <plugin>
                         <groupId>org.codehaus.cargo</groupId>
                         <artifactId>cargo-maven2-plugin</artifactId>
-                        <version>1.2.3</version>
-
+                        <version>1.6.1</version>
                         <configuration>
                             <container>
                                 <containerId>tomcat7x</containerId>
@@ -288,7 +293,6 @@
                                 </properties>
                             </configuration>
                         </configuration>
-
                         <executions>
                             <execution>
                                 <id>deploy-cargo</id>
@@ -312,7 +316,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-failsafe-plugin</artifactId>
-                        <version>2.12.2</version>
+                        <version>2.12.4</version>
                         <configuration>
                             <encoding>${project.build.sourceEncoding}</encoding>
                         </configuration>
@@ -331,7 +335,6 @@
                             </execution>
                         </executions>
                     </plugin>
-
                 </plugins>
             </build>
         </profile>

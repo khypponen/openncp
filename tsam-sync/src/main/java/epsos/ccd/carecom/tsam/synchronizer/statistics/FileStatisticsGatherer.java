@@ -1,6 +1,7 @@
 package epsos.ccd.carecom.tsam.synchronizer.statistics;
 
 import epsos.ccd.carecom.tsam.synchronizer.ApplicationController;
+import org.slf4j.event.Level;
 
 import java.io.File;
 import java.io.FileNotFoundException;

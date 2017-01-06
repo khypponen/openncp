@@ -35,7 +35,6 @@ import java.util.Hashtable;
 
 
 /**
- *
  * Synchronizes the countries tsl content to the configuration parameters Read
  * the list of countries from the configuration manager parameter name =
  * ncp.countries For each country reads again the configuration manager to find
@@ -48,7 +47,6 @@ import java.util.Hashtable;
  * @author Organization: Gnomon
  * @author mail:k.karkaletsis@gnomon.com.gr
  * @version 1.0, 2010, 30 Jun
- *
  */
 public class TSLSynchronizer {
 
@@ -186,7 +184,7 @@ public class TSLSynchronizer {
             try {
                 Thread.sleep(10000);
             } catch (InterruptedException ex) {
-                java.util.logging.Logger.getLogger(TSLSynchronizer.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(null, ex);
             }
         } catch (Exception e) {
             logger.error("Error sending audit for tslsync");

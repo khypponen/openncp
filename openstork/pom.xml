@@ -55,7 +55,7 @@
     <!-- ==================
        Properties
     ================== -->
-    <repositories>
+    <!--<repositories>
         <repository>
             <id>gnomon-lib-snapshot</id>
             <url>http://artifactory.gnomon.com.gr/artifactory/libs-snapshot-local/</url>
@@ -77,5 +77,5 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-    </repositories>
+    </repositories>-->
 </project>

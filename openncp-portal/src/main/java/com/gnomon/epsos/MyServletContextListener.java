@@ -11,6 +11,7 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import org.slf4j.Logger;
 import org.apache.commons.lang.exception.ExceptionUtils;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import tr.com.srdc.epsos.util.Constants;
 
@@ -100,5 +101,4 @@ public class MyServletContextListener implements ServletContextListener {
     public static void setEncryptionKey(String encryptionKey) {
         MyServletContextListener.encryptionKey = encryptionKey;
     }
-
 }

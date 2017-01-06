@@ -59,6 +59,7 @@ import org.opensaml.xml.schema.XSURI;
 import org.opensaml.xml.security.SecurityConfiguration;
 import org.opensaml.xml.security.SecurityHelper;
 import org.opensaml.xml.security.credential.Credential;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;

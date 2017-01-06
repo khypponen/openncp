@@ -1,8 +1,10 @@
 package com.gnomon.epsos.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import org.slf4j.Logger;
 
 @ManagedBean
 @SessionScoped
@@ -35,5 +37,4 @@ public class confirmationBean {
     public void setConfirm(String confirm) {
         this.confirm = confirm;
     }
-
 }

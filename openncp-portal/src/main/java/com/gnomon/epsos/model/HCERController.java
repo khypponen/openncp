@@ -7,22 +7,7 @@ import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.User;
 import com.liferay.portal.util.PortalUtil;
 import epsos.ccd.gnomon.auditmanager.EventOutcomeIndicator;
-import epsos.ccd.gnomon.cda.parser.beans.Address;
-import epsos.ccd.gnomon.cda.parser.beans.Author;
-import epsos.ccd.gnomon.cda.parser.beans.Birthdate;
-import epsos.ccd.gnomon.cda.parser.beans.Code;
-import epsos.ccd.gnomon.cda.parser.beans.Contact;
-import epsos.ccd.gnomon.cda.parser.beans.Custodian;
-import epsos.ccd.gnomon.cda.parser.beans.Gender;
-import epsos.ccd.gnomon.cda.parser.beans.GenericCode;
-import epsos.ccd.gnomon.cda.parser.beans.LegalAuthenticator;
-import epsos.ccd.gnomon.cda.parser.beans.MedicalComponent;
-import epsos.ccd.gnomon.cda.parser.beans.Name;
-import epsos.ccd.gnomon.cda.parser.beans.Observation;
-import epsos.ccd.gnomon.cda.parser.beans.Organization;
-import epsos.ccd.gnomon.cda.parser.beans.Problem;
-import epsos.ccd.gnomon.cda.parser.beans.RelatedDocument;
-import epsos.ccd.gnomon.cda.parser.beans.Time;
+import epsos.ccd.gnomon.cda.parser.beans.*;
 import epsos.ccd.gnomon.cda.parser.docs.ClinicalDocument;
 import epsos.ccd.gnomon.cda.parser.docs.HCEReport;
 import epsos.ccd.gnomon.cda.parser.enums.ContactUse;
@@ -33,16 +18,14 @@ import epsos.openncp.protocolterminator.clientconnector.EpsosDocument1;
 import epsos.openncp.protocolterminator.clientconnector.GenericDocumentCode;
 import eu.epsos.util.EvidenceUtils;
 import eu.epsos.util.IheConstants;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.joda.time.DateTime;
+import org.opensaml.saml2.core.Assertion;
+import org.primefaces.context.RequestContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.xml.sax.InputSource;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
@@ -57,12 +40,11 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.sax.SAXSource;
 import javax.xml.transform.sax.SAXTransformerFactory;
 import javax.xml.transform.stream.StreamResult;
-import org.slf4j.Logger;
-import org.apache.commons.lang.exception.ExceptionUtils;
-import org.joda.time.DateTime;
-import org.opensaml.saml2.core.Assertion;
-import org.primefaces.context.RequestContext;
-import org.xml.sax.InputSource;
+import java.io.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * A plain HCER controller.
@@ -248,10 +230,9 @@ public class HCERController {
     /**
      * A method parsing stored medical entries into a valid HCER document
      * submitting it to the client connector.
-     *
-     * @param event an action event.
      */
     public void save() throws IOException {
+
         //Getting the request context
         LOGGER.info("Saving the document");
         RequestContext rc = RequestContext.getCurrentInstance();

@@ -45,6 +45,12 @@
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>openncp-xcpd-ws-client</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>bcprov-jdk15</artifactId>
+					<groupId>org.bouncycastle</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
@@ -53,6 +59,12 @@
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>openncp-xdr-ws-client</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-log4j12</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.sante.ehdsi</groupId>
@@ -107,6 +119,12 @@
 			<groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
 			<artifactId>openncp-ncp-pt-client-consumer</artifactId>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>commons-configuration</groupId>

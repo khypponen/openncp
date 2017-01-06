@@ -8,6 +8,31 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.joda.time.DateTime;
+import org.joda.time.Seconds;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.xml.sax.EntityResolver;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
+
+import javax.crypto.*;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.PBEKeySpec;
+import javax.crypto.spec.SecretKeySpec;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -20,40 +45,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.IvParameterSpec;
-import javax.crypto.spec.PBEKeySpec;
-import javax.crypto.spec.SecretKeySpec;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.codec.binary.Hex;
-import org.apache.commons.lang.exception.ExceptionUtils;
-import org.joda.time.DateTime;
-import org.joda.time.Seconds;
-import org.w3c.dom.Document;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
-
 public class Utils {
 
-    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger("Utils");
+    private static final Logger log = LoggerFactory.getLogger("Utils");
 
     public static String getDocumentAsXml(org.w3c.dom.Document doc, boolean header) {
         String resp = "";
@@ -105,7 +99,7 @@ public class Utils {
                 decrypted = decrypt(ticket, encryptionKey);
             } catch (Exception ex) {
                 log.error("An error has occured", ex);
-                java.util.logging.LoggerFactory.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+//                java.util.logging.LoggerFactory.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
             }
             log.info("### Decrypted String is " + decrypted);
             if (Validator.isNotNull(decrypted)) {
@@ -224,7 +218,7 @@ public class Utils {
     private static final String ALGO = "AES";
     private static final byte[] keyValue
             = new byte[]{'T', 'h', '1', 'B', 'e', 's', 't',
-                'S', '1', '@', 'r', 'e', '$', 'K', '2', 'y'};
+            'S', '1', '@', 'r', 'e', '$', 'K', '2', 'y'};
 
     private static Key generateKey() throws Exception {
         Key key = new SecretKeySpec(keyValue, ALGO);
@@ -310,7 +304,7 @@ public class Utils {
         try {
             encrypted = encrypt(tick);
         } catch (Exception ex) {
-            java.util.logging.LoggerFactory.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+            log.error(null, ex);
         }
         log.info("Encrypted String is " + encrypted);
         ticket.setCreatedDate(formatDate(new Date()));
@@ -327,7 +321,7 @@ public class Utils {
             decrypted = decrypt(ticket);
         } catch (Exception ex) {
             log.error(ExceptionUtils.getStackTrace(ex));
-            java.util.logging.LoggerFactory.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+            log.error(null, ex);
         }
         log.info("Decrypted String is " + decrypted);
         Ticket ticket1 = StringToTicket(decrypted);
@@ -342,7 +336,7 @@ public class Utils {
         try {
             decrypted = decrypt(ticket);
         } catch (Exception ex) {
-            java.util.logging.LoggerFactory.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+            log.error(null, ex);
         }
         log.info("Decrypted String is " + decrypted);
         Ticket ticket1 = StringToTicket(decrypted);
@@ -374,6 +368,7 @@ public class Utils {
         //if (userId==user) ret=true;
         return ret;
     }
+
     public static String DATE_TIME_FORMAT = "dd-MM-yyyy HH:mm";
 
     public static String formatDate(Date date) {

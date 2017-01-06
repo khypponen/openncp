@@ -1,8 +1,9 @@
 package com.gnomon.epsos.model;
 
 import epsos.openncp.protocolterminator.clientconnector.GenericDocumentCode;
-import org.slf4j.Logger;
 import org.primefaces.model.StreamedContent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PatientDocument {
 
@@ -126,5 +127,4 @@ public class PatientDocument {
     public void setDocType(String docType) {
         this.docType = docType;
     }
-
 }

@@ -1,7 +1,6 @@
 package com.liferay.portal.security.auth;
 
 import com.liferay.portal.NoSuchUserException;
-import com.liferay.portal.datamodel.HcpRole;
 import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.Validator;
@@ -20,19 +19,17 @@ import com.liferay.portlet.expando.service.ExpandoTableLocalServiceUtil;
 import com.liferay.util.PwdGenerator;
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import eu.europa.ec.joinup.ecc.openstork.utils.StorkUtils;
+import eu.europa.ec.joinup.ecc.openstork.utils.datamodel.HcpRole;
 import eu.stork.peps.auth.commons.IPersonalAttributeList;
 import eu.stork.peps.auth.commons.PEPSUtil;
 import eu.stork.peps.auth.commons.PersonalAttribute;
 import eu.stork.peps.auth.commons.STORKAuthnResponse;
 import eu.stork.peps.auth.engine.STORKSAMLEngine;
-import java.io.StringReader;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Properties;
+import org.opensaml.saml2.core.Assertion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,10 +37,9 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathFactory;
-import org.slf4j.Logger;
-import org.opensaml.saml2.core.Assertion;
-import org.w3c.dom.Document;
-import org.xml.sax.InputSource;
+import java.io.StringReader;
+import java.io.UnsupportedEncodingException;
+import java.util.*;
 
 /**
  * Performs autologin based on the assertion provided by Stork Application.
@@ -66,7 +62,7 @@ public class StorkAutoLogin implements AutoLogin {
     private String emailAddress;
     private String HCPInfo;
     private static IPersonalAttributeList attrs;
-    private com.liferay.portal.datamodel.HcpRole hcpRole;
+    private HcpRole hcpRole;
 
     private void getSAMLAttributes(HttpServletRequest request) throws UnsupportedEncodingException {
         System.out.println("Getting saml attributes");
@@ -119,7 +115,8 @@ public class StorkAutoLogin implements AutoLogin {
         try {
             getSAMLAttributes(req);
         } catch (UnsupportedEncodingException ex) {
-            java.util.logging.LoggerFactory.getLogger(StorkAutoLogin.class.getName()).log(Level.SEVERE, null, ex);
+            //java.util.logging.LoggerFactory.getLogger(StorkAutoLogin.class.getName()).log(Level.SEVERE, null, ex);
+            _log.error(null, ex);
         }
         System.out.println("#### USER IS " + getSurname() + " " + getEmailAddress());
         User user = null;

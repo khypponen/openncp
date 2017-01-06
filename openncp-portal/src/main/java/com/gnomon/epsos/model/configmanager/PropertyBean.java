@@ -10,6 +10,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @ManagedBean
 @SessionScoped

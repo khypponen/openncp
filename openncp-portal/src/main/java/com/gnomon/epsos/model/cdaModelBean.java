@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.opensaml.saml2.core.Assertion;
+import org.slf4j.LoggerFactory;
 import tr.com.srdc.epsos.util.Constants;
 
 @ManagedBean

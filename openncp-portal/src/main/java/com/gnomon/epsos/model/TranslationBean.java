@@ -4,17 +4,19 @@ import com.gnomon.LiferayUtils;
 import com.gnomon.epsos.FacesService;
 import com.gnomon.epsos.service.EpsosHelperService;
 import com.liferay.portal.model.User;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import javax.faces.context.ExternalContext;
-import javax.faces.context.FacesContext;
-import org.apache.commons.lang.exception.ExceptionUtils;
-import org.slf4j.Logger;
 
 @ManagedBean
 @SessionScoped

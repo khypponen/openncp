@@ -40,6 +40,7 @@ import org.apache.commons.codec.binary.Base64InputStream;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.apache.commons.lang.exception.ExceptionUtils;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

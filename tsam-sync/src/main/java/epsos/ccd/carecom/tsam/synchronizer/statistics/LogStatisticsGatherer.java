@@ -1,6 +1,7 @@
 package epsos.ccd.carecom.tsam.synchronizer.statistics;
 
 import epsos.ccd.carecom.tsam.synchronizer.ApplicationController;
+import org.slf4j.event.Level;
 
 import java.util.Map;
 
@@ -23,9 +24,8 @@ public class LogStatisticsGatherer implements Gatherer {
     }
 
     /**
-     *
      * @param webMethodName
-     * @param filters A map of names and a numeric information that can be either the size or ID of the filter object.
+     * @param filters       A map of names and a numeric information that can be either the size or ID of the filter object.
      */
     public void registerActionStart(String webMethodName,
                                     Map<String, Long> filters) {
@@ -46,8 +46,7 @@ public class LogStatisticsGatherer implements Gatherer {
     }
 
     /**
-     *
-     * @param actionName Optional name of an action to end.
+     * @param actionName      Optional name of an action to end.
      * @param numberOfRecords Number of records fetched by the action.
      */
     public void registerActionEnd(String actionName, int numberOfRecords) {

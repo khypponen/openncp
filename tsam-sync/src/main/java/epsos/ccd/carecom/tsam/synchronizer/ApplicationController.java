@@ -7,7 +7,9 @@ import epsos.ccd.carecom.tsam.synchronizer.statistics.NotifierImpl;
 import epsos.ccd.carecom.tsam.synchronizer.statistics.WebMethodCallAuditGatherer;
 import epsos.ccd.gnomon.auditmanager.*;
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.event.Level;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -34,7 +36,7 @@ public final class ApplicationController {
     /**
      * This is the main log class used for logging by this application.
      */
-    public final static org.slf4j.Logger LOG = LoggerFactory.getLogger("TSAM.Synchronizer");
+    public final static Logger LOG = LoggerFactory.getLogger("TSAM.Synchronizer");
 
     /**
      * Default text used when shutting the application down.
@@ -52,13 +54,16 @@ public final class ApplicationController {
     public static int retryNumber;
 
     static {
-        Level logLevel = Level.parse(Settings.getInstance().getSettingValue("sync.statistics.log"));
+        //Level logLevel = Level.parse(Settings.getInstance().getSettingValue("sync.statistics.log"));
+        Level logLevel = Level.valueOf(Settings.getInstance().getSettingValue("sync.statistics.log"));
 
         retryNumber = Settings.getInstance().getRetryNumber();
 
-        if (logLevel != Level.OFF) {
+        //TODO: Check Logs initialization Jerome
+        /*if (logLevel != Level. OFF) {
             STATS.addGatherer(new LogStatisticsGatherer(logLevel));
-        }
+        }*/
+        STATS.addGatherer(new LogStatisticsGatherer(logLevel));
 
         if ("YES".equalsIgnoreCase(Settings.getInstance().getSettingValue("sync.auditmanager.enable"))) {
             STATS.addGatherer(new WebMethodCallAuditGatherer(

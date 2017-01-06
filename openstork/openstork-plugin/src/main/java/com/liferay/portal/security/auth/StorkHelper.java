@@ -8,21 +8,16 @@ import com.liferay.portal.model.ResourceConstants;
 import com.liferay.portal.model.User;
 import com.liferay.portal.security.permission.ActionKeys;
 import com.liferay.portal.service.ResourcePermissionLocalServiceUtil;
-import com.liferay.portlet.expando.model.ExpandoColumn;
-import com.liferay.portlet.expando.model.ExpandoColumnConstants;
-import com.liferay.portlet.expando.model.ExpandoTable;
-import com.liferay.portlet.expando.model.ExpandoTableConstants;
-import com.liferay.portlet.expando.model.ExpandoValue;
+import com.liferay.portlet.expando.model.*;
 import com.liferay.portlet.expando.service.ExpandoColumnLocalServiceUtil;
 import com.liferay.portlet.expando.service.ExpandoTableLocalServiceUtil;
 import com.liferay.portlet.expando.service.ExpandoValueLocalServiceUtil;
-import eu.stork.peps.auth.commons.IPersonalAttributeList;
-import eu.stork.peps.auth.commons.PEPSUtil;
-import eu.stork.peps.auth.commons.PersonalAttribute;
-import eu.stork.peps.auth.commons.PersonalAttributeList;
-import eu.stork.peps.auth.commons.STORKAuthnRequest;
+import eu.stork.peps.auth.commons.*;
 import eu.stork.peps.auth.engine.STORKSAMLEngine;
 import eu.stork.peps.exceptions.STORKSAMLEngineException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -35,7 +30,6 @@ import java.util.Set;
 
 
 /**
- *
  * @author karkaletsis
  */
 public class StorkHelper {
@@ -140,7 +134,7 @@ public class StorkHelper {
             authnRequest = engine.generateSTORKAuthnRequest(authnRequest);
         } catch (STORKSAMLEngineException e) {
             e.printStackTrace();
-            log.severe(e.getMessage());
+            log.error(e.getMessage());
         }
 
         token = authnRequest.getTokenSaml();
