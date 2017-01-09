@@ -137,10 +137,10 @@
             <artifactId>servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
-       <!-- <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-        </dependency>-->
+        <!-- <dependency>
+             <groupId>log4j</groupId>
+             <artifactId>log4j</artifactId>
+         </dependency>-->
         <dependency>
             <groupId>xalan</groupId>
             <artifactId>xalan</artifactId>
@@ -179,6 +179,13 @@
         <dependency>
             <groupId>eu.europa.ec.sante.ehdsi.openncp-protocol-terminators</groupId>
             <artifactId>openncp-integration-test</artifactId>
+        </dependency>
+        <!-- Runtime dependencies -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15</artifactId>
+            <version>1.46</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
