@@ -65,7 +65,8 @@ public class XMLExporter {
                 String distinctquery = "SELECT CODE_SYSTEM_CONCEPT.CODE "
                         + "FROM CODE_SYSTEM_VERSION INNER JOIN "
                         + " CODE_SYSTEM_CONCEPT ON CODE_SYSTEM_VERSION.ID = CODE_SYSTEM_CONCEPT.CODE_SYSTEM_VERSION_ID "
-                        + "WHERE CODE_SYSTEM_VERSION.CODE_SYSTEM_ID = '" + cs_id + "'";
+                		+ "WHERE CODE_SYSTEM_VERSION.CODE_SYSTEM_ID = '" + cs_id + "' "
+                		+ "AND CODE_SYSTEM_CONCEPT.ID in (SELECT CODE_SYSTEM_CONCEPT_ID FROM X_CONCEPT_VALUE_SET)";
 
                 stat1 = conn.createStatement();
                 resultcodes = stat1.executeQuery(distinctquery);
