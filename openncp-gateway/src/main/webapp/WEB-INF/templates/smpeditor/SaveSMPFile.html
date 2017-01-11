@@ -12,8 +12,8 @@
           <a class="navbar-brand" href="#" th:text="#{application.title}">OpenNCP Gateway2</a>
         </div>
         <ul class="nav navbar-nav">
-          <li><a href="#" th:text="#{label.Home}">Home2</a></li>
-          <li><a href="#" th:href="@{/smpeditor/SMPEditor}" th:text="#{label.SmpEditor}">SMP Editor2</a></li>
+          <li><a href="#" th:text="#{label.Home}">Home</a></li>
+          <li><a href="#" th:href="@{/smpeditor/SMPEditor}" th:text="#{label.SmpEditor}">SMP Editor</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
@@ -33,19 +33,22 @@
     </nav>
     <!-- End Header -->
     
-    <h3 style="margin-left: 20px" th:text="${smpfile.type}"></h3>
-    <h3 style="margin-left: 20px" th:text="${smpfile.endpoint_uri}"></h3>
-  <!--  <h3 style="margin-left: 20px" th:text="${smpfile.service_activation_date}"></h3>
-    <h3 style="margin-left: 20px" th:text="${smpfile.service_expiration_date}"></h3> -->
-    <h3 style="margin-left: 20px" th:text="${smpfile.certificate}"></h3>
-    <h3 style="margin-left: 20px" th:text="${smpfile.service_description}"></h3>
-    <h3 style="margin-left: 20px" th:text="${smpfile.technical_contact}"></h3>
-    <h3 style="margin-left: 20px" th:text="${smpfile.technical_information}"></h3>
-    <h3 style="margin-left: 20px" th:text="${smpfile.extension}"></h3>
+    <h2 style="margin-left: 20px">Generate SMP file</h2>
+    
+    <h3 th:text="${smpfile.type}" style="margin-left: 200px; margin-top: 50px;"></h3>
+       
+ 
+    <div style="text-align: center; margin-top: 50px;">
+      <p style="font-size: large;">Download File</p>
+      <a href="#" th:href="@{/smpeditor/SaveSMPFile/download}" class="btn btn-default" th:text="${smpfile.fileName}" style="background-color: #dddddd;">Download File</a> 
+    </div>
     
     
-    
-    
+    <div id="btnformnsf" style="margin-top: 150px;">
+      <a href="#" th:href="@{/smpeditor/NewSMPFile/clean}" class="btn btn-default" style="width:76px; background-color: #dddddd;">Back</a>
+      <a href="#" class="btn btn-default" style="width:76px; background-color:#dddddd;">Sign</a>
+      <a href="#" th:href="@{/smpeditor/SMPEditor/clean}" class="btn btn-default" style="width:76px; background-color: #dddddd;">Done</a>
+    </div>    
     
     <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>
   </body>

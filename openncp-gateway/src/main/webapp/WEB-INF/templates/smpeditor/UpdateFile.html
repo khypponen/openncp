@@ -30,37 +30,31 @@
 
         <div class="container">
           <ol class="breadcrumb">
-            <li class="active">Home/SMP Editor</li>
+            <li class="active">Home/Update File</li>
           </ol>
         </div>
     </nav>
 
-    <h1 style="text-align: center;">Choose one option</h1>
+    <h2 style="margin-left: 20px">Update SMP file</h2>
+    <h3 style="margin-left: 200px; margin-top: 50px;">Choose the file to update</h3>
+    
+    <form action="#"  th:action="@{/smpeditor/UpdateFile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpfileupdate}"  method="post"  enctype="multipart/form-data">  
+      
+      <div class="form-group row" id="newfileinputs">
+        <div class="form-group row" id="newfileinputs">
+          <label class="col-xs-2 col-form-label">SMP file</label>
+          <div class="col-xs-9">
+            <input type="file" accept=".xml" name="fileupdate" th:field="*{{updateFile}}" class="form-control-file" required>
+          </div>
+        </div>
+      </div>
 
-    <div id="homebuttons">
-      <a class="btn btn-default btn-lg homebuttons" type="button" th:href="@{/smpeditor/GenerateSMPfile}">
-        Generate SMP File  
-      </a>
-    </div>
-
-    <div id="homebuttons">
-      <a class="btn btn-default btn-lg homebuttons" type="button" th:href="@{/smpeditor/UpdateFile}">
-        Update SMP File  
-      </a>
-    </div>     
-
-    <div id="homebuttons">
-      <a class="btn btn-default btn-lg homebuttons" type="button">
-        Sign SMP File  
-      </a>
-    </div>
-
-    <div id="homebuttons">
-      <button class="btn btn-default btn-lg homebuttons" type="button">
-        Upload File to SMP Server  
-      </button>
-    </div>
-
+      <div id="btnformnsf">
+        <a href="#" th:href="@{/smpeditor/SMPEditor}" class="btn btn-default" style="width:76px; background-color: #dddddd;">Cancel</a>
+        <button type="submit" class="btn" style="width:76px;">Ok</button>
+      </div>  
+    </form>     
+      
     <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>
   </body>
 </html>
