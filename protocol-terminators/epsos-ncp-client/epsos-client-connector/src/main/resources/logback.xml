@@ -18,8 +18,23 @@
         </encoder>
     </appender>
 
+    <logger name="org.apache.axis2" level="ERROR" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
 
-    <root level="DEBUG">
+    <logger name="" level="" additivity="">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="" level="" additivity="">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="" level="" additivity="">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </root>
