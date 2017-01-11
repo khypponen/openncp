@@ -7,6 +7,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.cert.CertificateEncodingException;
 import java.security.cert.X509Certificate;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
 
@@ -33,8 +34,11 @@ import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl
 import eu.esens.abb.nonrep.etsi.rem.AuthenticationDetailsType;
 import eu.esens.abb.nonrep.etsi.rem.CertificateDetails;
 import eu.esens.abb.nonrep.etsi.rem.EntityDetailsType;
+import eu.esens.abb.nonrep.etsi.rem.EntityName;
 import eu.esens.abb.nonrep.etsi.rem.EvidenceIssuerPolicyID;
 import eu.esens.abb.nonrep.etsi.rem.MessageDetailsType;
+import eu.esens.abb.nonrep.etsi.rem.NamePostalAddress;
+import eu.esens.abb.nonrep.etsi.rem.NamesPostalAddresses;
 import eu.esens.abb.nonrep.etsi.rem.ObjectFactory;
 import eu.esens.abb.nonrep.etsi.rem.REMEvidenceType;
 import eu.esens.abb.nonrep.etsi.rem.RecipientsDetails;
@@ -198,7 +202,7 @@ public class ETSIREMObligationHandler implements ObligationHandler {
 				}
 				List<AttributeAssignmentType> listAttr = eSensObl.getAttributeAssignments();
 
-				type.setVersion(find(REM_NRO_PREFIX + ":version", listAttr));
+				type.setVersion(find(REM_NRD_PREFIX + ":version", listAttr));
 				type.setEventCode(outcome);
 
 				type.setEvidenceIdentifier(UUID.randomUUID().toString());
@@ -207,10 +211,12 @@ public class ETSIREMObligationHandler implements ObligationHandler {
 				 * ISO Token mappings
 				 */
 				// This is the Pol field of the ISO13888 token
-				EvidenceIssuerPolicyID eipid = new EvidenceIssuerPolicyID();
-				eipid.getPolicyIDs().add(find(REM_NRO_PREFIX + ":PolicyID", listAttr));
-				type.setEvidenceIssuerPolicyID(eipid);
-
+				String policyUrl = find(REM_NRD_PREFIX + ":PolicyID", listAttr);
+				if (policyUrl != null) {
+					EvidenceIssuerPolicyID eipid = new EvidenceIssuerPolicyID();
+					eipid.getPolicyIDs().add(policyUrl);
+					type.setEvidenceIssuerPolicyID(eipid);
+				}
 				mapToIso(type);
 
 				// Imp is the signature
@@ -236,26 +242,44 @@ public class ETSIREMObligationHandler implements ObligationHandler {
 		// The flag f1 is the AcceptanceRejection (the evidence type)
 		// This is the A field the originator
 		EntityDetailsType edt1 = new EntityDetailsType();
-		CertificateDetails cd1 = new CertificateDetails();
-		edt1.setCertificateDetails(cd1);
-		cd1.setX509Certificate(context.getSenderCertificate().getEncoded());
-		type.setSenderDetails(edt1);
+
+		if (context.getSenderCertificate() != null) {
+			CertificateDetails cd1 = new CertificateDetails();
+			edt1.setCertificateDetails(cd1);
+			cd1.setX509Certificate(context.getSenderCertificate().getEncoded());
+		}
+		type.setSenderDetails(edt1); // To check if null sender details is
+										// allowed
 
 		// This is the B field, the recipient
 		/*
 		 * Made optional by a request from the eJustice domain
 		 */
 		EntityDetailsType edt2 = new EntityDetailsType();
+
 		if (context.getRecipientCertificate() != null) {
 
 			CertificateDetails cd2 = new CertificateDetails();
 			edt2.setCertificateDetails(cd2);
 			cd2.setX509Certificate(context.getRecipientCertificate().getEncoded());
-		} 
-//		else {
-//			// it's an AnyType, 
-//			edt2.get
-//		}
+
+		}
+		if (context.getRecipientNamePostalAddress() != null) {
+			LinkedList<String> list = context.getRecipientNamePostalAddress();
+			int size = list.size();
+			
+			NamesPostalAddresses npas = new NamesPostalAddresses();
+
+			for (int i=0; i<size; i++) {
+				EntityName en = new EntityName();
+				en.getNames().add(list.get(i));
+				NamePostalAddress npa = new NamePostalAddress();
+				npa.setEntityName(en);
+				npas.getNamePostalAddresses().add(npa);
+
+			}
+			edt2.setNamesPostalAddresses(npas);
+		}
 
 		RecipientsDetails rd = new RecipientsDetails();
 		rd.getEntityDetails().add(edt2);

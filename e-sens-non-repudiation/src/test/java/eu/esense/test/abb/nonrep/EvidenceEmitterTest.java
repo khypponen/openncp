@@ -659,6 +659,8 @@ public class EvidenceEmitterTest {
         Context context = new Context();
         context.setIncomingMsg(incomingMsg);
         context.setIssuerCertificate(cert); 
+        
+        // Justice domain has them optional
         context.setSenderCertificate(cert);
         context.setRecipientCertificate(cert);
         context.setSigningKey(key);
@@ -675,6 +677,11 @@ public class EvidenceEmitterTest {
 //		context.setUsername("demo2");
 //		context.setCurrentHost("127.0.0.1");
 //		context.setRemoteHost("192.168.10.1");
+        LinkedList<String> namesPostalAddress = new LinkedList<>();
+        namesPostalAddress.add("Test");
+        namesPostalAddress.add("Test2");
+        
+        context.setRecipientNamePostalAddress(namesPostalAddress);
 
         ObligationHandlerFactory handlerFactory = ObligationHandlerFactory
                 .getInstance();
