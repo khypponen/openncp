@@ -15,6 +15,7 @@ import eu.esens.abb.nonrep.EnforcePolicy;
 
 public class Context {
 
+	
 	private SOAPMessage incomingMsg;
 	private Element requestDOM;
 	private XMLObject requestXMLObj;

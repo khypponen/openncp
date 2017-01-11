@@ -247,6 +247,7 @@ public class ETSIREMObligationHandler implements ObligationHandler {
 		edt2.setCertificateDetails(cd2);
 		cd2.setX509Certificate(context.getRecipientCertificate().getEncoded());
 
+		
 		RecipientsDetails rd = new RecipientsDetails();
 		rd.getEntityDetails().add(edt2);
 		type.setRecipientsDetails(rd);

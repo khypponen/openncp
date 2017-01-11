@@ -664,6 +664,8 @@ public class EvidenceEmitterTest {
 //		context.setCurrentHost("127.0.0.1");
 //		context.setRemoteHost("192.168.10.1");
 
+        
+        
         ObligationHandlerFactory handlerFactory = ObligationHandlerFactory
                 .getInstance();
         List<ObligationHandler> handlers = handlerFactory.createHandler(

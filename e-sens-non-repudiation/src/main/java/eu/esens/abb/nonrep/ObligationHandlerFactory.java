@@ -22,7 +22,8 @@ public class ObligationHandlerFactory {
 
                         throw new IllegalStateException(
                                 "Unable to instantiate the ObligationHandlerFactory: "
-                                        + e.getMessage(), e);
+ 
+                                		+ e.getMessage(), e);
                     }
                 }
             }
