@@ -1,6 +1,27 @@
 package eu.esense.test.abb.nonrep;
 
-import eu.esens.abb.nonrep.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.security.KeyStore;
+import java.security.PrivateKey;
+import java.security.cert.X509Certificate;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.soap.SOAPException;
+import javax.xml.soap.SOAPMessage;
+
+import org.apache.log4j.BasicConfigurator;
 import org.herasaf.xacml.core.SyntaxException;
 import org.herasaf.xacml.core.api.PDP;
 import org.herasaf.xacml.core.api.UnorderedPolicyRepository;
@@ -14,23 +35,22 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.soap.SOAPException;
-import javax.xml.soap.SOAPMessage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.security.KeyStore;
-import java.security.PrivateKey;
-import java.security.cert.X509Certificate;
-import java.util.LinkedList;
-import java.util.List;
-
-import static org.junit.Assert.*;
+import eu.esens.abb.nonrep.Context;
+import eu.esens.abb.nonrep.ESensObligation;
+import eu.esens.abb.nonrep.EnforcePolicy;
+import eu.esens.abb.nonrep.EnforcePolicyException;
+import eu.esens.abb.nonrep.IHEXCARetrieve;
+import eu.esens.abb.nonrep.MalformedIHESOAPException;
+import eu.esens.abb.nonrep.MalformedMIMEMessageException;
+import eu.esens.abb.nonrep.MessageInspector;
+import eu.esens.abb.nonrep.MessageType;
+import eu.esens.abb.nonrep.ObligationDischargeException;
+import eu.esens.abb.nonrep.ObligationHandler;
+import eu.esens.abb.nonrep.ObligationHandlerFactory;
+import eu.esens.abb.nonrep.TOElementException;
+import eu.esens.abb.nonrep.Utilities;
+import eu.esens.abb.nonrep.XACMLAttributes;
+import eu.esens.abb.nonrep.XACMLRequestCreator;
 
 public class EvidenceEmitterTest {
 
@@ -65,6 +85,7 @@ public class EvidenceEmitterTest {
         org.apache.xml.security.Init.init();
     }
 
+    
     /**
      * This test reads a sample message from the eHealth domain (XCA) and will
      * issue an ATNA-specific audit trail.
@@ -124,14 +145,13 @@ public class EvidenceEmitterTest {
          * request and returns the pointer of the obligation handler.
          */
         // Configure Log4j
-        //TODO: Check Logs Jerome
-        //BasicConfigurator.configure();
+        BasicConfigurator.configure();
 
         // Read the message as it arrives at the facade
 //		Document incomingMsg = readMessage("test/testData/incomingMsg.xml");
         Document incomingMsg = readMessage("src/test/testData/audit.xml");
         //	SOAPMessage message = Utilities.toSoap(incomingMsg, null);
-        /*
+		/*
          * Instantiate the message inspector, to see which type of message is
          */
         MessageInspector messageInspector = new MessageInspector(incomingMsg);
@@ -257,8 +277,7 @@ public class EvidenceEmitterTest {
          * request and returns the pointer of the obligation handler.
          */
         // Configure Log4j
-        //TODO: Check Logs Jerome
-        //BasicConfigurator.configure();
+        BasicConfigurator.configure();
 
         // Read the message as it arrives at the facade
         Document incomingMsg = readMessage("src/test/testData/incomingMsg.xml");
@@ -331,7 +350,7 @@ public class EvidenceEmitterTest {
         context.setSigningKey(key);
         context.setSubmissionTime(new DateTime());
         context.setEvent("epSOS-31");
-
+        
         context.setMessageUUID(messageInspector.getMessageUUID());
         context.setAuthenticationMethod("3");
         context.setRequest(request); // here I pass the XML in order to give to
@@ -415,8 +434,7 @@ public class EvidenceEmitterTest {
         polrep.deploy(PolicyMarshaller.unmarshal(policy));
 
         // Configure Log4j
-        //TODO: Check Logs Jerome
-        // BasicConfigurator.configure();
+        BasicConfigurator.configure();
 
         // Read the message as it arrives at the facade
 //		Document incomingMsg = readMessage("test/testData/audit.xml");
@@ -430,7 +448,7 @@ public class EvidenceEmitterTest {
         MessageInspector messageInspector = new MessageInspector(message);
         MessageType messageType = messageInspector.getMessageType();
         assertNotNull(messageType);
-        //	assertNotNull(messageInspector.getMessageUUID());
+	//	assertNotNull(messageInspector.getMessageUUID());
 //		assertEquals("uuid:C3F5A03D-1A0C-4F62-ADC7-F3C007CD50CF",messageInspector.getMessageUUID());
 
         /*
@@ -514,7 +532,7 @@ public class EvidenceEmitterTest {
         System.out.println(handlers.get(0).getClass().getName());
 
         handlers.get(0).discharge();
-        //	handlers.get(1).discharge();
+	//	handlers.get(1).discharge();
 
         // Give me the ATNA, it's an ATNA test
         assertNotNull(handlers.get(0).getMessage());
@@ -532,7 +550,6 @@ public class EvidenceEmitterTest {
             ObligationDischargeException, SOAPException, MalformedMIMEMessageException, SyntaxException {
         testGenerateREMNRD();
     }
-
     /**
      * This method issue a REM NRD evidence
      *
@@ -576,8 +593,7 @@ public class EvidenceEmitterTest {
         polrep.deploy(PolicyMarshaller.unmarshal(policy));
 
         // Configure Log4j
-        //TODO: Check Logs Jerome
-        //BasicConfigurator.configure();
+        BasicConfigurator.configure();
 
         // Read the message as it arrives at the facade
 //		Document incomingMsg = readMessage("test/testData/audit.xml");
@@ -591,7 +607,7 @@ public class EvidenceEmitterTest {
         MessageInspector messageInspector = new MessageInspector(message);
         MessageType messageType = messageInspector.getMessageType();
         assertNotNull(messageType);
-        //	assertNotNull(messageInspector.getMessageUUID());
+	//	assertNotNull(messageInspector.getMessageUUID());
 //		assertEquals("uuid:C3F5A03D-1A0C-4F62-ADC7-F3C007CD50CF",messageInspector.getMessageUUID());
 
         /*
@@ -646,7 +662,9 @@ public class EvidenceEmitterTest {
 
         Context context = new Context();
         context.setIncomingMsg(incomingMsg);
-        context.setIssuerCertificate(cert);
+        context.setIssuerCertificate(cert); 
+        
+        // Justice domain has them optional
         context.setSenderCertificate(cert);
         context.setRecipientCertificate(cert);
         context.setSigningKey(key);
@@ -663,6 +681,11 @@ public class EvidenceEmitterTest {
 //		context.setUsername("demo2");
 //		context.setCurrentHost("127.0.0.1");
 //		context.setRemoteHost("192.168.10.1");
+        LinkedList<String> namesPostalAddress = new LinkedList<>();
+        namesPostalAddress.add("Test");
+        namesPostalAddress.add("Test2");
+        
+        context.setRecipientNamePostalAddress(namesPostalAddress);
 
         ObligationHandlerFactory handlerFactory = ObligationHandlerFactory
                 .getInstance();
@@ -675,7 +698,7 @@ public class EvidenceEmitterTest {
         System.out.println(handlers.get(0).getClass().getName());
 
         handlers.get(0).discharge();
-        //	handlers.get(1).discharge();
+	//	handlers.get(1).discharge();
 
         // Give me the ATNA, it's an ATNA test
         assertNotNull(handlers.get(0).getMessage());
@@ -686,7 +709,7 @@ public class EvidenceEmitterTest {
         return handlers.get(0).getMessage();
     }
 
-
+    
     private static Document readMessage(String file)
             throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
