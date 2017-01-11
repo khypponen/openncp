@@ -21,7 +21,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPMessage;
 
-import org.apache.log4j.BasicConfigurator;
 import org.herasaf.xacml.core.SyntaxException;
 import org.herasaf.xacml.core.api.PDP;
 import org.herasaf.xacml.core.api.UnorderedPolicyRepository;
@@ -145,7 +144,7 @@ public class EvidenceEmitterTest {
          * request and returns the pointer of the obligation handler.
          */
         // Configure Log4j
-        BasicConfigurator.configure();
+        //BasicConfigurator.configure();
 
         // Read the message as it arrives at the facade
 //		Document incomingMsg = readMessage("test/testData/incomingMsg.xml");
@@ -277,7 +276,7 @@ public class EvidenceEmitterTest {
          * request and returns the pointer of the obligation handler.
          */
         // Configure Log4j
-        BasicConfigurator.configure();
+        //BasicConfigurator.configure();
 
         // Read the message as it arrives at the facade
         Document incomingMsg = readMessage("src/test/testData/incomingMsg.xml");
@@ -434,7 +433,7 @@ public class EvidenceEmitterTest {
         polrep.deploy(PolicyMarshaller.unmarshal(policy));
 
         // Configure Log4j
-        BasicConfigurator.configure();
+        //BasicConfigurator.configure();
 
         // Read the message as it arrives at the facade
 //		Document incomingMsg = readMessage("test/testData/audit.xml");
@@ -593,7 +592,8 @@ public class EvidenceEmitterTest {
         polrep.deploy(PolicyMarshaller.unmarshal(policy));
 
         // Configure Log4j
-        BasicConfigurator.configure();
+        //        BasicConfigurator.configure();
+        //BasicConfigurator.configure();
 
         // Read the message as it arrives at the facade
 //		Document incomingMsg = readMessage("test/testData/audit.xml");
