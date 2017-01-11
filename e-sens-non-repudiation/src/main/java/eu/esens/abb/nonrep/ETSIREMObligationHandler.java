@@ -241,6 +241,7 @@ public class ETSIREMObligationHandler implements ObligationHandler {
 		cd1.setX509Certificate(context.getSenderCertificate().getEncoded());
 		type.setSenderDetails(edt1);
 
+		
 		// This is the B field, the recipient
 		EntityDetailsType edt2 = new EntityDetailsType();
 		CertificateDetails cd2 = new CertificateDetails();
