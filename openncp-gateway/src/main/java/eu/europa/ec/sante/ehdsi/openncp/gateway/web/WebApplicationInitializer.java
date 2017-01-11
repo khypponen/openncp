@@ -1,6 +1,5 @@
 package eu.europa.ec.sante.ehdsi.openncp.gateway.web;
 
-import eu.europa.ec.sante.ehdsi.openncp.gateway.web.*;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.cfg.WebMvcConfig;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.cfg.WebSecurityConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

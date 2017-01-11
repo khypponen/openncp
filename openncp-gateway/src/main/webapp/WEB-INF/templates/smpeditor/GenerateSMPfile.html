@@ -15,18 +15,7 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li><a href="#" th:href="@{/}" th:text="#{label.Home}">Home</a></li>
-          <li class="dropdown">
-            <a href="#" th:text="#{label.SmpEditor}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SMP Editor<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Generate SMP File</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Update SMP File</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Sign SMP File</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Upload File</a></li>
-            </ul>
-          </li>
+          <li><a href="#" th:href="@{/smpeditor/SMPEditor}" th:text="#{label.SmpEditor}">SMP Editor</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
@@ -47,12 +36,11 @@
   </nav>
 
   <h2 style="margin-left: 20px">Generate SMP file</h2>
-
   <h3 style="margin-left: 200px; margin-top: 50px;">Choose one type to create</h3>
   
  <form action="#" th:action="@{/smpeditor/GenerateSMPfile}" th:object="${smpfile}"  method="post">
     <div id="choosetype" class="form-group">
-      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> 
       <select class="form-control" th:field="*{{type}}">
         <option th:each="type : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPType).values()}" th:value="${{type}}" th:selected="${type == T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPType)}" th:text="${type}">---</option>
       </select> 

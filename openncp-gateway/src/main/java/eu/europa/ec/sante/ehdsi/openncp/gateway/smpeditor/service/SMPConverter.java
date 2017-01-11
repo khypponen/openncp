@@ -1,192 +1,448 @@
 package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service;
 
-import org.oasis_open.docs.bdxr.ns.smp._2016._05.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
+import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPFileUpdate;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.Iterator;
+import java.util.Locale;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.namespace.NamespaceContext;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.*;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.logging.Level;
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
 
-import static sun.jdbc.odbc.JdbcOdbcObject.hexStringToByteArray;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import org.oasis_open.docs.bdxr.ns.smp._2016._05.DocumentIdentifier;
+import org.oasis_open.docs.bdxr.ns.smp._2016._05.EndpointType;
+import org.oasis_open.docs.bdxr.ns.smp._2016._05.ExtensionType;
+import org.oasis_open.docs.bdxr.ns.smp._2016._05.ParticipantIdentifierType;
+import org.oasis_open.docs.bdxr.ns.smp._2016._05.ObjectFactory;
+import org.oasis_open.docs.bdxr.ns.smp._2016._05.ProcessIdentifier;
+import org.oasis_open.docs.bdxr.ns.smp._2016._05.ProcessListType;
+import org.oasis_open.docs.bdxr.ns.smp._2016._05.ProcessType;
+import org.oasis_open.docs.bdxr.ns.smp._2016._05.RedirectType;
+import org.oasis_open.docs.bdxr.ns.smp._2016._05.ServiceEndpointList;
+import org.oasis_open.docs.bdxr.ns.smp._2016._05.ServiceInformationType;
+import org.oasis_open.docs.bdxr.ns.smp._2016._05.ServiceMetadata;
+
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+
+import org.xml.sax.SAXException;
+
+
+/**
+ Service responsible for converting the data introduced by the user to a xml file
+ */
 @Service
 public class SMPConverter {
+  
+  @Autowired
+  private Environment env;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SMPConverter.class);
+  org.slf4j.Logger logger = LoggerFactory.getLogger(SMPConverter.class);
+  
+  private String certificateSubjectName;
+  private File generatedFile;
+  private boolean nullExtension = false;
+  
+  
+  public String getCertificateSubjectName() {
+    return certificateSubjectName;
+  }
+  public void setCertificateSubjectName(String certificateSubjectName) {
+    this.certificateSubjectName = certificateSubjectName;
+  }
+  
+  public File getFile() {
+    return generatedFile;
+  }
+  public void setFile(File generatedFile) {
+    this.generatedFile = generatedFile;
+  }
 
-    /**
-     *
-     */
-    public void converter() {
+  public boolean isNullExtension() {
+    return nullExtension;
+  }
 
-        System.out.println("==== in converter ====");
+  public void setNullExtension(boolean nullExtension) {
+    this.nullExtension = nullExtension;
+  }
 
-        DocumentIdentifier documentIdentifier = new DocumentIdentifier();
-        EndpointType endpointType = new EndpointType();
-        ExtensionType extensionType = new ExtensionType();
-        ParticipantIdentifierType participantIdentifierType = new ParticipantIdentifierType();
-        ObjectFactory objectFactory; //??????????????
-        ProcessIdentifier processIdentifier = new ProcessIdentifier();
-        ProcessListType processListType = new ProcessListType();
-        ProcessType processType = new ProcessType();
-        RedirectType redirectType = new RedirectType();
-        ServiceEndpointList serviceEndpointList = new ServiceEndpointList();
-        ServiceGroup serviceGroup;
-        ServiceInformationType serviceInformationType = new ServiceInformationType();
-        ServiceMetadata serviceMetadata = new ServiceMetadata();
-        ServiceMetadataReferenceCollectionType serviceMetadataReferenceCollectionType;
-        ServiceMetadataReferenceType serviceMetadataReferenceType = new ServiceMetadataReferenceType();
-        SignedServiceMetadata signedServiceMetadata;
+  /**
+   Converts the data received from the SMPGenerateFileController to a xml file 
+   * @param type
+   * @param CC
+   * @param endpointUri
+   * @param servDescription
+   * @param servExpDate
+   * @param certificateFile
+   * @param tecContact
+   * @param tecInformation
+   * @param servActDate
+   * @param extension
+   * @param fileName
+   * @param certificateUID
+   * @param redirectHref
+   */
+  public void converteToXml(String type, String CC, String endpointUri, String servDescription,
+          String tecContact, String tecInformation, Date servActDate, Date servExpDate, 
+          MultipartFile extension, MultipartFile certificateFile, String fileName,
+          String certificateUID, String redirectHref){
 
-        //XML file generated at path
-        File file = new File("C:\\file.xml");
+    logger.debug("\n==== in converter ====");
+    
+    ObjectFactory objectFactory = new ObjectFactory();
+    ServiceMetadata serviceMetadata = objectFactory.createServiceMetadata();
+    //XML file generated at path
+    generatedFile = new File("/" + fileName);
+        
+    //Type of SMP File -> Redirect | Service Information
+    if (type == "Redirect") {
+      /*
+        Redirect SMP Type
+      */
+      logger.debug("\n******* Redirect ************");
+      RedirectType redirectType = objectFactory.createRedirectType();
 
-        documentIdentifier.setScheme("ehealth-resid-qns");
-        documentIdentifier.setValue("urn::epsos##services:extended:epsos::11");//Set by SMP Type
+      redirectType.setCertificateUID(certificateUID);
+      redirectType.setHref(redirectHref);
 
-        endpointType.setTransportProfile("urn:ihe:iti:2013:xcpd"); //??
-        endpointType.setEndpointURI("https://qaepsos.min-saude.pt:8443/epsos-ws-server/services/XCPD_Service");//Set by user
-        endpointType.setRequireBusinessLevelSignature(Boolean.FALSE);
-        endpointType.setMinimumAuthenticationLevel("urn:epSOS:loa:1");
+      serviceMetadata.setRedirect(redirectType);
+    } else {
+      /*
+        ServiceInformation SMP Type
+      */
+      logger.debug("\n******* ServiceInformation ************");
+      DocumentIdentifier documentIdentifier = objectFactory.createDocumentIdentifier();
+      EndpointType endpointType = objectFactory.createEndpointType();
+      ExtensionType extensionType = objectFactory.createExtensionType();
+      ParticipantIdentifierType participantIdentifierType = objectFactory.createParticipantIdentifierType();
+      ProcessIdentifier processIdentifier = objectFactory.createProcessIdentifier();
+      ProcessListType processListType = objectFactory.createProcessListType();
+      ProcessType processType = objectFactory.createProcessType();
+      ServiceEndpointList serviceEndpointList = objectFactory.createServiceEndpointList();
+      ServiceInformationType serviceInformationType = objectFactory.createServiceInformationType();
 
-        Calendar calendarAD = new GregorianCalendar(2016, 06, 06, 10, 57, 21);
-        endpointType.setServiceActivationDate(calendarAD);//Set by user
-        Calendar calendarED = new GregorianCalendar(2026, 06, 06, 10, 57, 21);
+     
+      /*
+       Document and Participant identifiers definition
+       */
+      participantIdentifierType.setScheme(env.getProperty(type + ".ParticipantIdentifier.Scheme")); ///in smpeditor.properties
+      participantIdentifierType.setValue("urn:ehealth:" + CC + ":ncpb-idp"); //set by user (CC - country)
+
+      documentIdentifier.setScheme(env.getProperty(type + ".DocumentIdentifier.Scheme"));//in smpeditor.properties
+      documentIdentifier.setValue(env.getProperty(type + ".DocumentIdentifier"));//in smpeditor.properties
+
+      /*
+       Process identifiers definition
+       */
+      processIdentifier.setScheme(env.getProperty(type + ".ProcessIdentifier.Scheme"));//in smpeditor.properties
+      if (type == "International_Search_Mask") {
+        processIdentifier.setValue("urn:ehealth:ncp:" + CC + ":ism");
+      } else {
+        processIdentifier.setValue(env.getProperty(type + ".ProcessIdentifier")); //in smpeditor.properties
+      }
+
+      /*
+       Endpoint Transport Profile definition
+       */
+      endpointType.setTransportProfile(env.getProperty(type + ".transportProfile")); //in smpeditor.properties
+
+      /*
+       BusinessLevelSignature and MinimumAuthenticationLevel definition
+       */
+      if (type != "VPN_Gateway_A" && type != "VPN_Gateway_B" && type != "Identity_Provider" && type != "International_Search_Mask") {
+        Boolean requireBusinessLevelSignature = Boolean.parseBoolean(env.getProperty(type + ".RequireBusinessLevelSignature"));
+        endpointType.setRequireBusinessLevelSignature(requireBusinessLevelSignature); //in smpeditor.properties
+        endpointType.setMinimumAuthenticationLevel(env.getProperty(type + ".MinimumAuthenticationLevel")); //in smpeditor.properties
+      }
+
+      /*
+       * URI definition
+       */
+      if (type == "VPN_Gateway_A") {
+        endpointType.setEndpointURI("ipsec:" + endpointUri);//Set by user
+      } else if (type == "VPN_Gateway_B" || type == "International_Search_Mask") {
+        endpointType.setEndpointURI("");
+      } else {
+        endpointType.setEndpointURI(endpointUri);//Set by user
+      }
+
+      /*
+       * Dates parse to Calendar
+       */   
+      Calendar calad = Calendar.getInstance();
+      calad.setTime(servActDate);
+      int yearad = calad.get(Calendar.YEAR);
+      int monthad = calad.get(Calendar.MONTH);
+      int dayad = calad.get(Calendar.DAY_OF_MONTH);
+      int hourat = calad.get(Calendar.HOUR_OF_DAY);
+      int minat = calad.get(Calendar.MINUTE);
+
+      Calendar calendarAD = new GregorianCalendar(yearad, monthad, dayad, hourat, minat);
+      endpointType.setServiceActivationDate(calendarAD);//Set by user
+
+      if (servExpDate == null) {
+        endpointType.setServiceExpirationDate(null);
+      } else {
+        Calendar caled = Calendar.getInstance();
+        caled.setTime(servExpDate);
+        int yeared = caled.get(Calendar.YEAR);
+        int monthed = caled.get(Calendar.MONTH);
+        int dayed = caled.get(Calendar.DAY_OF_MONTH);
+        int houret = caled.get(Calendar.HOUR_OF_DAY);
+        int minet = caled.get(Calendar.MINUTE);
+
+        Calendar calendarED = new GregorianCalendar(yeared, monthed, dayed, houret, minet);
         endpointType.setServiceExpirationDate(calendarED);//Set by user
+      }
 
-        byte[] cert = hexStringToByteArray("e04fd020ea3a6910a2d808002b30309d");
-        endpointType.setCertificate(cert); //Set by User
+      /**
+       * certificate parse
+       */
+      if (certificateFile != null) {
+        X509Certificate cert = null;
+        certificateSubjectName = null;
+        try {
+          cert = (X509Certificate) CertificateFactory.getInstance("X.509").generateCertificate(certificateFile.getInputStream());
+          endpointType.setCertificate(cert.getEncoded()); //Set by User      
+          if (cert != null) {
+            certificateSubjectName = cert.getIssuerX500Principal().getName() + " Serial Number #"
+                    + cert.getSerialNumber();
+          }
 
-        endpointType.setServiceDescription("This is the epSOS Identity Service - Find Identity By Traits of the PT NCP"); //Set by User
-        endpointType.setTechnicalContactUrl("john.doe@mail.com"); //Set by User
-        endpointType.setTechnicalInformationUrl("john.doe@mail.com"); //Set by User
+        } catch (CertificateException ex) {
+          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      } else {
+        byte[] by = "".getBytes();
+        endpointType.setCertificate(by);
+      }
 
-        participantIdentifierType.setScheme("ehealth-actorid-qns");
-        participantIdentifierType.setValue("urn:ehealth:pt:ncpb-idp");
+      /*
+       Endpoint Service Description, Technical ContactUrl and Technical InformationUrl definition
+       */
+      endpointType.setServiceDescription(servDescription); //Set by User
+      endpointType.setTechnicalContactUrl(tecContact); //Set by User
+      endpointType.setTechnicalInformationUrl(tecInformation); //Set by User
 
-        processIdentifier.setScheme("ehealth-procid-qns");
-        processIdentifier.setValue("urn:epsosIdentityService::FindIdentityByTraits"); //Set by SMPType?
+      /*Not used*/
+      extensionType.setExtensionAgencyID(null);
+      extensionType.setExtensionAgencyName(null);
+      extensionType.setExtensionAgencyURI(null);
+      extensionType.setExtensionID(null);
+      extensionType.setExtensionName(null);
+      extensionType.setExtensionReason(null);
+      extensionType.setExtensionReasonCode(null);
+      extensionType.setExtensionURI(null);
+      extensionType.setExtensionVersionID(null);
 
-        extensionType.setExtensionAgencyID(null);
-        extensionType.setExtensionAgencyName(null);
-        extensionType.setExtensionAgencyURI(null);
-        extensionType.setExtensionID("urn:epsosIdentityService::FindIdentityByTraits");
-        extensionType.setExtensionName(null);
-        extensionType.setExtensionReason("Teste");
-        extensionType.setExtensionReasonCode(null);
-        extensionType.setExtensionURI(null);
-        extensionType.setExtensionVersionID(null);
-
+      /*
+       Endpoint Extension file parse
+       */
+      if (extension != null) {
+        nullExtension = false;
         Document docOriginal = null;
         try {
-            String xmlAny = "<ex:Test xmlns:ex=\"http://example.org\">Test</ex:Test>";
-            System.out.println("==== xmlAny - " + xmlAny);
+          String content = new Scanner(extension.getInputStream()).useDelimiter("\\Z").next();
+          //logger.debug("\n*****Content from extension file - " + content);
 
-            // String docString = loadDocumentAsString("/resources/GET_SignedServiceMetadata_response.xml");
-            docOriginal = parseDocument(xmlAny);
-            System.out.println("==== docOriginal first child - " + docOriginal.getFirstChild());
+          docOriginal = parseDocument(content);
 
+        } catch (FileNotFoundException ex) {
+          nullExtension = true;
+          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            //LoggerFactory.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
-            LOGGER.error(null, ex);
+          nullExtension = true;
+          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SAXException ex) {
-            //LoggerFactory.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
-            LOGGER.error(null, ex);
+          nullExtension = true;
+          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParserConfigurationException ex) {
-            //LoggerFactory.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
-            LOGGER.error(null, ex);
+          nullExtension = true;
+          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        extensionType.setAny((Element) docOriginal.getFirstChild()); //Set by user (upload file)
+        if (nullExtension) {
+          //Does not add extension
+        } else {
+          docOriginal.getDocumentElement().normalize();
+          extensionType.setAny(docOriginal.getDocumentElement()); //Set by user
+          endpointType.getExtensions().add(extensionType);
+        }
+      } else {
+        //Does not add extension
+      }
 
-        serviceMetadataReferenceType.setHref(null);
+      processType.setProcessIdentifier(processIdentifier);
+      processType.setServiceEndpointList(serviceEndpointList);
 
-        processType.setProcessIdentifier(processIdentifier);
-        processType.setServiceEndpointList(serviceEndpointList);
+      serviceEndpointList.getEndpoints().add(endpointType);
+      processListType.getProcesses().add(processType);
 
-        serviceEndpointList.getEndpoints().add(endpointType);
-        processListType.getProcesses().add(processType);
+      serviceInformationType.setDocumentIdentifier(documentIdentifier);
+      serviceInformationType.setParticipantIdentifier(participantIdentifierType);
+      serviceInformationType.setProcessList(processListType);
 
-        serviceInformationType.setDocumentIdentifier(documentIdentifier);
-        serviceInformationType.setParticipantIdentifier(participantIdentifierType);
-        serviceInformationType.setProcessList(processListType);
-        serviceInformationType.getExtensions().add(extensionType);
+      serviceMetadata.setServiceInformation(serviceInformationType);
+    }
+    
+    
+    /*
+      Generates the final SMP XML file
+    */
+    XMLStreamWriter xsw = null;
+    FileOutputStream generatedFileOS = null;
+    
+    try {
+      generatedFileOS = new FileOutputStream(generatedFile);
+      
+      xsw = XMLOutputFactory.newFactory().createXMLStreamWriter(generatedFileOS, "UTF-8");
+      xsw.setNamespaceContext(new NamespaceContext() {
+        @Override
+        public Iterator getPrefixes(String namespaceURI) {
+          return null;
+        }
 
-        redirectType.setCertificateUID(null);
-        redirectType.setHref(null);
+        @Override
+        public String getPrefix(String namespaceURI) {
+          return "";
+        }
 
-        //Um ou outro --> depende da escolha do Utilizador
-        serviceMetadata.setServiceInformation(serviceInformationType);
-        //serviceMetadata.setRedirect(redirectType);
-
+        @Override
+        public String getNamespaceURI(String prefix) {
+          return null;
+        }
+      });
+      
+     
+      JAXBContext jaxbContext = JAXBContext.newInstance(ServiceMetadata.class);      
+      Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+      jaxbMarshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
+      
+      jaxbMarshaller.marshal(serviceMetadata, xsw);
+     // jaxbMarshaller.marshal(serviceMetadata, generatedFile);
+     // jaxbMarshaller.marshal(serviceMetadata, System.out);
+      
+      generatedFileOS.flush();
+      generatedFileOS.close();
+      
+      
+    } catch (JAXBException ex) {
+      Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (FileNotFoundException ex) {
+      Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (IOException ex) {
+      Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (XMLStreamException ex) {
+      Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+    } finally {
+      if (xsw != null) {
         try {
-            //Ver se são precisas todas as classes (So deve ser a ServiceMetadata)
-            JAXBContext jaxbContext = JAXBContext.newInstance(ServiceMetadata.class, ServiceEndpointList.class, EndpointType.class,
-                    ServiceMetadataReferenceType.class, ExtensionType.class);
-            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-
-            // output pretty printed
-            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-            jaxbMarshaller.marshal(serviceMetadata, file);
-            jaxbMarshaller.marshal(serviceMetadata, System.out);
-        } catch (JAXBException ex) {
-            //LoggerFactory.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
-            LOGGER.error(null, ex);
+          xsw.close();
+        } catch (XMLStreamException ex) {
+          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
         }
+      }
     }
 
-    /**
-     *
-     * @param docResourcePath
-     * @return
-     * @throws IOException
-     */
-    private String loadDocumentAsString(String docResourcePath) throws IOException {
-        InputStream inputStream = this.getClass().getResourceAsStream(docResourcePath);
+  }
+  
+  /**
+   * Parse the xml of the file to be updated
+   */
+  public EndpointType convertFromXml(MultipartFile fileUpdate) {
+    logger.debug("\n======= in convertFromXml ======= ");
+    logger.debug("\n************* fileUpdate - " + fileUpdate);
+    
+    ObjectFactory objectFactory = new ObjectFactory();
+    ServiceMetadata serviceMetadata = objectFactory.createServiceMetadata();
+    EndpointType endpoint = objectFactory.createEndpointType();
+            
+    if (fileUpdate != null) {
 
-        ByteArrayOutputStream result = new ByteArrayOutputStream();
-        byte[] buffer = new byte[1024];
-        int length;
-        while ((length = inputStream.read(buffer)) != -1) {
-            result.write(buffer, 0, length);
+      try {
+        logger.debug("\n******* TRY");
+        JAXBContext jaxbContext = JAXBContext.newInstance(ServiceMetadata.class);
+        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+        serviceMetadata = (ServiceMetadata) jaxbUnmarshaller.unmarshal(fileUpdate.getInputStream());
+        logger.debug("\n******* CONVERTER SMPFILE - " + serviceMetadata);
+      } catch (JAXBException ex) {
+        Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+      } catch (IOException ex) {
+        Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      
+      endpoint = serviceMetadata.getServiceInformation().getProcessList().getProcesses().get(0).getServiceEndpointList().getEndpoints().get(0);
+      
+      X509Certificate cert = null;
+      String subjectName = null;
+      try {
+        InputStream in = new ByteArrayInputStream(endpoint.getCertificate());
+        cert = (X509Certificate) CertificateFactory.getInstance("X.509").generateCertificate(in);
+        if (cert != null) {
+          subjectName = cert.getIssuerX500Principal().getName() + " Serial Number #"
+                  + cert.getSerialNumber();
         }
-        return result.toString("UTF-8");
-    }
 
-    /**
-     *
-     * @param docContent
-     * @return
-     * @throws IOException
-     * @throws SAXException
-     * @throws ParserConfigurationException
-     */
-    private Document parseDocument(String docContent) throws IOException, SAXException, ParserConfigurationException {
-        InputStream inputStream = new ByteArrayInputStream(docContent.getBytes());
-        return getDocumentBuilder().parse(inputStream);
-    }
+      } catch (CertificateException ex) {
+        Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      
+      logger.debug("\n******* getEndpointURI - " + endpoint.getEndpointURI());
+      logger.debug("\n******* getServiceDescription - " + endpoint.getServiceDescription());
+      logger.debug("\n******* getCertificate - " + subjectName);
+      logger.debug("\n******* getServiceActivationDate - " + endpoint.getServiceActivationDate().getTime());
 
-    /**
-     *
-     * @return
-     * @throws ParserConfigurationException
-     */
-    private DocumentBuilder getDocumentBuilder() throws ParserConfigurationException {
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        dbf.setNamespaceAware(true);
-        return dbf.newDocumentBuilder();
+    } else {
+      //Does nothing
     }
+    
+    return endpoint;
+  }
+
+  
+  
+  /*TODO: TO DOC Auxiliary*/
+  private Document parseDocument(String docContent) throws IOException, SAXException, ParserConfigurationException {
+    InputStream inputStream = new ByteArrayInputStream(docContent.getBytes());
+    getDocumentBuilder().setErrorHandler(new SimpleErrorHandler());
+    return getDocumentBuilder().parse(inputStream);
+  }
+
+  private DocumentBuilder getDocumentBuilder() throws ParserConfigurationException {
+    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    dbf.setNamespaceAware(true);
+    return dbf.newDocumentBuilder();
+  }
+
 }
