@@ -241,14 +241,32 @@ public class ETSIREMObligationHandler implements ObligationHandler {
 
 		// The flag f1 is the AcceptanceRejection (the evidence type)
 		// This is the A field the originator
-		EntityDetailsType edt1 = new EntityDetailsType();
+		EntityDetailsType sedt1 = new EntityDetailsType();
 
 		if (context.getSenderCertificate() != null) {
 			CertificateDetails cd1 = new CertificateDetails();
-			edt1.setCertificateDetails(cd1);
+			sedt1.setCertificateDetails(cd1);
 			cd1.setX509Certificate(context.getSenderCertificate().getEncoded());
 		}
-		type.setSenderDetails(edt1); // To check if null sender details is
+		if (context.getSenderNamePostalAddress() != null) {
+			LinkedList<String> slist = context.getSenderNamePostalAddress();
+			int size = slist.size();
+			
+			NamesPostalAddresses snpas = new NamesPostalAddresses();
+
+			for (int i=0; i<size; i++) {
+				EntityName sen = new EntityName();
+				sen.getNames().add(slist.get(i));
+				NamePostalAddress snpa = new NamePostalAddress();
+				snpa.setEntityName(sen);
+				snpas.getNamePostalAddresses().add(snpa);
+
+			}
+			sedt1.setNamesPostalAddresses(snpas);
+		}
+		
+		
+		type.setSenderDetails(sedt1); // To check if null sender details is
 										// allowed
 
 		// This is the B field, the recipient

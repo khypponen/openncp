@@ -686,7 +686,10 @@ public class EvidenceEmitterTest {
         namesPostalAddress.add("Test2");
         
         context.setRecipientNamePostalAddress(namesPostalAddress);
-
+        LinkedList<String> sendernamesPostalAddress = new LinkedList<>();
+        sendernamesPostalAddress.add("SenderTest");
+        sendernamesPostalAddress.add("SenderTest2");
+        context.setSenderNamePostalAddress(sendernamesPostalAddress);
         ObligationHandlerFactory handlerFactory = ObligationHandlerFactory
                 .getInstance();
         List<ObligationHandler> handlers = handlerFactory.createHandler(

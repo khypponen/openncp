@@ -34,6 +34,7 @@ public class Context {
 	private PrivateKey key;
 	private Document icomingMsgAsDocument;
 	private LinkedList<String> recipientNamePostalAddress;
+	private LinkedList<String> senderNamePostalAddress;
 	public final String getCurrentHost() {
 		return currentHost;
 	}
@@ -172,6 +173,15 @@ public class Context {
 	}
 	public LinkedList<String> getRecipientNamePostalAddress() {
 		return this.recipientNamePostalAddress;
+	}
+
+	public void setSenderNamePostalAddress(LinkedList<String> sendernamesPostalAddress) {
+		this.senderNamePostalAddress = sendernamesPostalAddress;
+		
+	}
+	
+	public LinkedList<String> getSenderNamePostalAddress() {
+		return this.senderNamePostalAddress;
 	}
 
 }
