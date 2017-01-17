@@ -20,6 +20,10 @@ public enum SMPType {
     Dispensation_Service_Initialize, Dispensation_Service_Discard, Redirect, International_Search_Mask};
 
   private final String description;
+  
+  public static SMPType[] getALL() {
+    return ALL;
+  }
 
   private SMPType(final String description) {
     this.description = description;

@@ -191,7 +191,7 @@
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>org.eclipse.persistence.moxy</artifactId>
-            <version>2.5.0</version>
+            <version>2.5.3-RC1</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api-->
         <!-- Specific JEE dependency needed by MOXy to parse dates-->

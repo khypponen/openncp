@@ -35,28 +35,28 @@
         </div>
     </nav>
 
-    <h1 style="text-align: center;">Choose one option</h1>
+    <h1 th:text="#{label.SmpEditor.menu.title}" style="text-align: center;">Choose one option</h1>
 
     <div id="homebuttons">
-      <a class="btn btn-default btn-lg homebuttons" type="button" th:href="@{/smpeditor/GenerateSMPfile}">
+      <a class="btn btn-default btn-lg homebuttons" type="button" th:href="@{/smpeditor/GenerateSMPfile}" th:text="#{label.SmpEditor.menu.op1}">
         Generate SMP File  
       </a>
     </div>
 
     <div id="homebuttons">
-      <a class="btn btn-default btn-lg homebuttons" type="button" th:href="@{/smpeditor/UpdateFile}">
+      <a class="btn btn-default btn-lg homebuttons" type="button" th:href="@{/smpeditor/UpdateFile}" th:text="#{label.SmpEditor.menu.op2}">
         Update SMP File  
       </a>
     </div>     
 
     <div id="homebuttons">
-      <a class="btn btn-default btn-lg homebuttons" type="button">
+      <a class="btn btn-default btn-lg homebuttons" type="button" th:text="#{label.SmpEditor.menu.op3}">
         Sign SMP File  
       </a>
     </div>
 
     <div id="homebuttons">
-      <button class="btn btn-default btn-lg homebuttons" type="button">
+      <button class="btn btn-default btn-lg homebuttons" type="button" th:text="#{label.SmpEditor.menu.op4}">
         Upload File to SMP Server  
       </button>
     </div>

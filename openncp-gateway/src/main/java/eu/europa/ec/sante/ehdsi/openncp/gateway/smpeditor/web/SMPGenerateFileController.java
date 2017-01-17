@@ -88,6 +88,10 @@ public class SMPGenerateFileController {
     //logger.debug("\n**** smpfile - " + smpfile.toString());
     //logger.debug("\n**** smpfile type - " + smpfile.getType().name());
 
+    
+    /*
+    * Read smpeditor.properties file
+    */
     type = env.getProperty("type."+ smpfile.getType().name()); //smpeditor.properties
     //logger.debug("\n******** " + smpfile.getType().name() + " - " + type);
     model.addAttribute(type, "Type "+type);
@@ -163,8 +167,9 @@ public class SMPGenerateFileController {
     smpfields.setCertificateUID(certificateUID);
     
     model.addAttribute("smpfields", smpfields);
+    model.addAttribute(smpfile.getType().name(), "SMPType " + smpfile.getType().name());
     
-    //logger.debug("\n**** model - " + model.toString());
+    logger.debug("\n**** MODEL - " + model.toString());
     return "smpeditor/NewSMPFile";
   }
   
@@ -196,7 +201,7 @@ public class SMPGenerateFileController {
           logger.debug("\n****Type Service Information");
           
           if(!smpfields.getCertificate().isEnable()){
-            smpfile.setCertificate(null);
+            smpfile.setCertificateFile(null);
           }
           if(!smpfields.getExtension().isEnable()){
             smpfile.setExtension(null);
@@ -210,7 +215,7 @@ public class SMPGenerateFileController {
           if (smpfields.getCertificate().isEnable()) {
             if (smpconverter.getCertificateSubjectName() == null) {
               logger.debug("\n****NOT VALID Certificate File");
-              redirectAttributes.addFlashAttribute("valid", "NOT VALID CERTIFICATE FILE!");
+              redirectAttributes.addFlashAttribute("certificateinvalid", "Certificate invalid!");
               return "redirect:/smpeditor/NewSMPFile";
             }
             smpfile.setCertificate(smpconverter.getCertificateSubjectName());
@@ -219,7 +224,7 @@ public class SMPGenerateFileController {
           if (smpfields.getExtension().isEnable()) {
             if (smpconverter.isNullExtension()) {
               logger.debug("\n****NOT VALID Extension File");
-              redirectAttributes.addFlashAttribute("valid", "NOT VALID EXTENSION FILE!");
+              redirectAttributes.addFlashAttribute("extensioninvalid", "Extension invalid!");
               return "redirect:/smpeditor/NewSMPFile";
             }
           }
@@ -240,7 +245,7 @@ public class SMPGenerateFileController {
     }else{
       logger.debug("\n****NOT VALID XML File");
       smpfile.getGeneratedFile().deleteOnExit();
-      redirectAttributes.addFlashAttribute("valid", "XML NOT VALID - "  + xmlValidator.getReasonInvalid());
+      redirectAttributes.addFlashAttribute("xsdinvalid", "Extension not compliant with xsd");
       return "redirect:/smpeditor/NewSMPFile";
     }
      

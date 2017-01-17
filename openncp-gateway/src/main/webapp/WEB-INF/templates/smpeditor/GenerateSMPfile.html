@@ -35,22 +35,24 @@
       </div>
   </nav>
 
-  <h2 style="margin-left: 20px">Generate SMP file</h2>
-  <h3 style="margin-left: 200px; margin-top: 50px;">Choose one type to create</h3>
+  <h2 style="margin-left: 20px" th:text="#{label.SmpEditor.menu.op1}">Generate SMP file</h2>
+  <h3 style="margin-left: 200px; margin-top: 50px;" th:text="#{label.SmpEditor.op1.subTitle}">Choose one type to create</h3>
   
- <form action="#" th:action="@{/smpeditor/GenerateSMPfile}" th:object="${smpfile}"  method="post">
+ <form class="smptype-form" action="#" th:action="@{/smpeditor/GenerateSMPfile}" th:object="${smpfile}"  method="post">
     <div id="choosetype" class="form-group">
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> 
-      <select class="form-control" th:field="*{{type}}">
-        <option th:each="type : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPType).values()}" th:value="${{type}}" th:selected="${type == T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPType)}" th:text="${type}">---</option>
+      <select id="smptype" class="form-control" th:field="*{{type}}" required>
+        <option th:text="'-- ' + #{label.SmpEditor.choose} + ' --'" value="">Choose an option</option>   
+        <option th:each="type : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPType).values()}" th:value="${{type}}" th:text="${type}">---</option>
       </select> 
     </div>
     <div id="btnformgfc">
-      <a href="#" th:href="@{/smpeditor/SMPEditor}" class="btn btn-default" style="width:76px; background-color: #dddddd;">Cancel</a>
-      <button type="submit" class="btn" style="width:76px;">Next</button>
+      <a href="#" th:href="@{/smpeditor/SMPEditor}" class="btn btn-default" th:text="#{label.button.cancel}" style="width:76px; background-color: #dddddd;">Cancel</a>
+      <button type="submit" class="btn" th:text="#{label.button.next}" style="width:76px;">Next</button>
     </div>
 
   </form>
+    
 
   <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>
 

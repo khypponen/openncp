@@ -9,11 +9,17 @@ import org.springframework.web.multipart.MultipartFile;
  Structure of a SMPFile
  */
 public class SMPFile {
+ 
+  private String fileName;
+  private File generatedFile;
+  private MultipartFile updateFile;
 
   private SMPType type;
   private String country;
+  private String DocumentIdentifier;
+  
   private String EndpointURI;
-  @DateTimeFormat(pattern = "yyyy-mm-dd HH:mm")
+  @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
   private Date ServiceActivationDate;
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
   private Date ServiceExpirationDate; 
@@ -21,45 +27,75 @@ public class SMPFile {
   private String ServiceDescription;
   private String TechnicalContactUrl;
   private String TechnicalInformationUrl;
+  private String ExtensionContent;
   private MultipartFile Extension;
   private MultipartFile certificateFile;
-  private String fileName;
   
   private String href;
   private String CertificateUID;
     
-  private File generatedFile;
+  
   private String extensionData;
 
   public SMPFile() {
     super();
   }
-  
-  public SMPFile(SMPType type, String country,String EndpointURI, Date ServiceActivationDate, 
-          Date ServiceExpirationDate,String Certificate, String ServiceDescription, 
-          String TechnicalContactUrl, String TechnicalInformationUrl,
-          MultipartFile Extension, MultipartFile certificateFile, String fileName) {
-    this.type=type;
-    this.country=country;
-    this.EndpointURI=EndpointURI;
-    this.ServiceActivationDate=ServiceActivationDate;
-    this.ServiceExpirationDate=ServiceExpirationDate;
-    this.ServiceDescription=ServiceDescription;
-    this.TechnicalContactUrl=TechnicalContactUrl;
-    this.TechnicalInformationUrl=TechnicalInformationUrl;
-    this.Extension=Extension;
-    this.certificateFile=certificateFile;
-    this.fileName = fileName;
+   
+  public MultipartFile getUpdateFile() {
+    return updateFile;
   }
-  
-  public SMPFile(SMPType type, String country, String href, String CertificateUID, String fileName) {
-    this.type=type;
-    this.country=country;
-    this.href=href;
-    this.CertificateUID=CertificateUID;
-    this.fileName = fileName;
+
+  public void setUpdateFile(MultipartFile updateFile) {
+    this.updateFile = updateFile;
   }
-  
+
+  public String getDocumentIdentifier() {
+    return DocumentIdentifier;
+  }
+
+  public void setDocumentIdentifier(String DocumentIdentifier) {
+    this.DocumentIdentifier = DocumentIdentifier;
+  }
+
+  public String getEndpointURI() {
+    return EndpointURI;
+  }
+
+  public void setEndpointURI(String EndpointURI) {
+    this.EndpointURI = EndpointURI;
+  }
+
+  public String getTechnicalContactUrl() {
+    return TechnicalContactUrl;
+  }
+
+  public void setTechnicalContactUrl(String TechnicalContactUrl) {
+    this.TechnicalContactUrl = TechnicalContactUrl;
+  }
+
+  public String getTechnicalInformationUrl() {
+    return TechnicalInformationUrl;
+  }
+
+  public void setTechnicalInformationUrl(String TechnicalInformationUrl) {
+    this.TechnicalInformationUrl = TechnicalInformationUrl;
+  }
+
+  public String getExtensionContent() {
+    return ExtensionContent;
+  }
+
+  public void setExtensionContent(String ExtensionContent) {
+    this.ExtensionContent = ExtensionContent;
+  }
+
+  public String getHref() {
+    return href;
+  }
+
+  public void setHref(String href) {
+    this.href = href;
+  }
 
   public SMPType getType() {
     return this.type;

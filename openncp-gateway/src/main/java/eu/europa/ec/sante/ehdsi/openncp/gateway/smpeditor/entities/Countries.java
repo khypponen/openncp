@@ -21,6 +21,7 @@ public enum Countries {
   se("Sweden"),
   ch("Switzerland"),
   eu("European Union");
+
   
   public static final Countries[] ALL = {at, be, hr, cy, cz, ee, fi, fr, gr, hu, ie, it, lu, mt, pl, pt, se, ch, eu};
   
@@ -32,6 +33,10 @@ public enum Countries {
 
   public String getDescription() {
     return this.description;
+  }
+  
+  public static Countries[] getALL() {
+    return ALL;
   }
 
   @Override
