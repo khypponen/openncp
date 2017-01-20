@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+    <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" th:text="#{application.title}">OpenNCP Gateway</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#" th:href="@{/}" th:text="#{label.Home}">Home</a></li>
+            <li><a href="#" th:href="@{/smpeditor/SMPEditor}" th:text="#{label.SmpEditor}">SMP Editor</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <span th:text="${#authentication.name}">John Smith</span>
+              </a>
+            </li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+          </ul>
+        </div>
+
+        <div class="container">
+          <ol class="breadcrumb">
+            <li class="active">Home/SMP Editor/Sign File</li>
+          </ol>
+        </div>
+    </nav> <!--HEADER -->
+
+    <div style="margin-bottom: 50px;">
+      <h2 th:text="#{label.SmpEditor.menu.op3}" style="margin-left: 20px">Sign SMP file</h2>
+      <h3 th:text="${smpfilesign.type}" style="margin-left: 20px; margin-top: 10px"></h3>
+      
+      <div th:if="${isSignedExtension}">
+        <div class="alert alert-warning" style="text-align: center;">
+          <strong th:text="#{warning.isSignedExtension}"></strong>
+        </div>
+      </div>
+
+      <!-- ServiceInformation form-->
+      <form th:if="${ServiceInformation != null}" action="#"  th:action="@{/smpeditor/CheckSignSMPFile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpfilesign}"  method="post" enctype="multipart/form-data">  
+        <input type="hidden" th:field="*{{type}}"  value="${smpfilesign.type}" >
+        
+        <div id="newfileinputs" class="form-group row">
+          <label th:text="#{label.SmpEditor.form.country}" class="col-xs-2 col-form-label" for="countryinput">Country</label>
+          <div class="col-xs-9">
+            <select class="form-control" th:field="*{{country}}" th:value="${smpfilesign.country}" disabled readonly>
+              <option th:each="country : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries).values()}" th:value="${{country}}" th:selected="${country == T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries)}" th:text="${country}">---</option>
+            </select> 
+          </div>
+        </div>
+        
+        <div class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.sigform.participantIdentifier}" for="participantIdentifier" class="col-xs-2 col-form-label">Participant Identifier</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="text" th:field="*{{participantIdentifier}}" th:value="${smpfilesign.participantIdentifier}" readonly>
+          </div>
+        </div> 
+        <div class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.sigform.documentIdentifier}" for="documentIdentifier" class="col-xs-2 col-form-label">Document Identifier</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="text" th:field="*{{documentIdentifier}}" th:value="${smpfilesign.documentIdentifier}" readonly>
+          </div>
+        </div> 
+        <div class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.sigform.processIdentifier}" for="processIdentifier" class="col-xs-2 col-form-label">Process Identifier</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="text" th:field="*{{processIdentifier}}" th:value="${smpfilesign.processIdentifier}" readonly>
+          </div>
+        </div> 
+
+        <h3 th:text="#{label.SmpEditor.form.endpoint}" style="margin-left: 150px; margin-top: 50px;">Endpoint</h3>
+
+        <div th:if="${smpfields.uri.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.endpointUri}" for="endpointuri" class="col-xs-2 col-form-label">Endpoint URI</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="url" id="uriinput" th:field="*{{endpointURI}}" th:value="${smpfilesign.endpointURI}" readonly>
+          </div>
+        </div>   
+        <div th:if="${smpfields.serviceActivationDate.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.serviceActivationDate}" class="col-xs-2 col-form-label">Service Activation Date</label>
+          <div class="col-xs-9">
+            <input class="form-control" size="16" type="text" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]" id="dateactinput" th:field="*{{serviceActivationDate}}" th:value="${smpfilesign.serviceActivationDate}" readonly>
+          </div>
+        </div>
+        <div th:if="${smpfields.serviceExpirationDate.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.serviceExpirationDate}" for="dateexp" class="col-xs-2 col-form-label" >Service Expiration Date</label>
+          <div class="col-xs-9">
+            <input class="form-control" size="16" type="text" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]" id="dateexpinput" th:field="*{{serviceExpirationDate}}" th:value="${smpfilesign.serviceExpirationDate}" readonly>
+          </div>
+        </div>
+        <div th:if="${smpfields.certificate.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.certificate}" for="certificate" class="col-xs-2 col-form-label">Certificate</label>
+          <div class="col-xs-9">
+            <textarea  type="text" class="form-control-file" rows="4" cols="110" th:text="${smpfilesign.certificateContent}" style="background-color: #F0F0F0;" readonly></textarea>
+          </div>
+        </div>
+        <div th:if="${smpfields.serviceDescription.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.serviceDescription}" for="description" class="col-xs-2 col-form-label">Service Description</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="text" id="descriptioninput" th:field="*{{serviceDescription}}" th:value="${smpfilesign.serviceDescription}" readonly>
+          </div>
+        </div>
+        <div th:if="${smpfields.technicalContactUrl.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.technicalContact}" for="tcontact" class="col-xs-2 col-form-label">Technical Contact URL</label>
+          <div class="col-xs-9">
+            <input class="form-control" id="tcontactinput" type="text" pattern="([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}|https?:\/\/.+)" th:field="*{{technicalContactUrl}}" th:value="${smpfilesign.TechnicalContactUrl}" readonly>
+          </div>
+        </div>
+        <div th:if="${smpfields.technicalInformationUrl.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.technicalInformation}" for="tinformation" class="col-xs-2 col-form-label">Technical Information URL</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="url" id="tinformationinput" th:field="*{{technicalInformationUrl}}" th:value="${smpfilesign.technicalInformationUrl}" readonly>
+          </div>
+        </div>
+        <div th:if="${smpfields.extension.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.extension}" for="extensionfile" class="col-xs-2 col-form-label">Extension</label>
+          <div class="col-xs-9">
+            <textarea  type="text" class="form-control-file" rows="10" cols="110" th:text="${smpfilesign.extensionContent}" style="background-color: #F0F0F0;" readonly></textarea>
+          </div>
+        </div>
+        
+        <div>
+          <div id="btnformnsf">
+            <a href="#" th:href="@{/smpeditor/SignSMPFile}" class="btn btn-default" th:text="#{label.button.cancel}" style="width:76px; background-color: #dddddd;">Cancel</a>
+            <button type="submit" class="btn" th:text="#{label.button.ok}" style="width:76px;">Ok</button>
+          </div>  
+        </div> 
+
+        <!-- Modal -->
+        <div id="signModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body" style="text-align: center;">
+                <p><strong th:text="#{warning.isSigned.2}">As stated before you now have two options:</strong></p>
+                <div>
+                  <button type="submit" class="btn" th:text="#{warning.isSigned.op1}" style="width: 226px;margin-top: 10px;">Generate unsigned file</button>
+                </div>
+                <div>
+                  <a href="#" class="btn btn-default" th:text="#{warning.isSigned.op2}" style="background-color: #dddddd;width: 226px;margin-top: 10px;">Sign file</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                
+      </form>
+
+      
+      
+      
+      <!-- Redirect form-->
+      <form th:if="${Redirect != null}" action="#"  th:action="@{/smpeditor/CheckSignSMPFile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpfilesign}"  method="post" enctype="multipart/form-data">
+        
+        <div id="newfileinputs" class="form-group row">
+          <label th:text="#{label.SmpEditor.form.country}" class="col-xs-2 col-form-label" for="countryinput">Country</label>
+          <div class="col-xs-9">
+            <select class="form-control" th:field="*{{country}}" th:value="${smpfilesign.country}" disabled readonly>
+              <option th:unless="${hasCountry}" th:text="'---'" value="">---</option>
+              <option th:if="${hasCountry}" th:each="country : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries).values()}" th:value="${{country}}" th:selected="${country == T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries)}" th:text="${country}">---</option>
+            </select> 
+          </div>
+        </div>
+        
+        <input type="hidden" th:field="*{{type}}"  value="${smpfilesign.type}"/>
+        
+        <div th:if="${smpfields.redirectHref.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.redirectHref}" for="redirectHref" class="col-xs-2 col-form-label">Redirect HREF</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="url" id="hrefinput" th:field="*{{href}}" th:value="${smpfilesign.href}" readonly>
+          </div>
+        </div>
+        <div th:if="${smpfields.certificateUID.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.certificateUID}" for="certificateUID" class="col-xs-2 col-form-label">Certificate UID</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="text" id="descriptioninput" th:field="*{{CertificateUID}}" readonly>
+          </div>
+        </div> 
+        
+        <div>
+          <div id="btnformnsf">
+            <a href="#" th:href="@{/smpeditor/SignSMPFile}" class="btn btn-default" th:text="#{label.button.cancel}" style="width:76px; background-color: #dddddd;">Cancel</a>
+            <button type="submit" class="btn" th:text="#{label.button.ok}" style="width:76px;">Ok</button>
+          </div>  
+        </div> 
+                       
+      </form>     
+      
+    </div>
+       
+  </body>
+</html>

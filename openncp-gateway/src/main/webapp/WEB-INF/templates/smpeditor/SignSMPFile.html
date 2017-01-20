@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+    <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" th:text="#{application.title}">OpenNCP Gateway</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#" th:href="@{/}" th:text="#{label.Home}">Home</a></li>
+            <li><a href="#" th:href="@{/smpeditor/SMPEditor}" th:text="#{label.SmpEditor}">SMP Editor</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <span th:text="${#authentication.name}">John Smith</span>
+              </a>
+            </li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+          </ul>
+        </div>
+
+        <div class="container">
+          <ol class="breadcrumb">
+            <li class="active">Home/SMP Editor/Sign File</li>
+          </ol>
+        </div>
+    </nav> <!-- HEADER -->
+
+    <div style="margin-bottom: 50px;">
+      <h2 th:text="#{label.SmpEditor.menu.op3}" style="margin-left: 20px">Sign SMP file</h2>
+      
+      <div th:if="${notsmp != null}">
+        <div class="alert alert-danger" style="text-align: center;">
+          <strong th:text="#{error.notsmp}"></strong>
+        </div>
+      </div>
+      
+      <div th:if="${keystoreinvalid != null}">
+        <div class="alert alert-danger" style="text-align: center;">
+          <strong th:text="#{error.keystore.invalid}"></strong>
+        </div>
+      </div>
+      <div th:if="${keypair != null}">
+        <div class="alert alert-danger" style="text-align: center;">
+          <strong th:text="#{error.keypair.invalid}"></strong>
+        </div>
+      </div>
+      
+      <div th:if="${signed != null}">
+        <div class="alert alert-warning" style="text-align: center;">
+          <strong th:text="#{warning.isSigned.sigmenu}"></strong>
+        </div>
+      </div>  
+      
+      <!-- Sign form-->
+      <form action="#"  th:action="@{/smpeditor/SignSMPFile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpfilesign}"  method="post" enctype="multipart/form-data">  
+        <div class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.sigform.files}" for="signfiles" class="col-xs-2 col-form-label">SMP Files</label>
+          <div class="col-xs-9">
+            <input th:if="${hasfile}" type="text" class="form-control-file"  th:value="${smpfilesign.signFileName}" readonly>
+            <input th:unless="${hasfile}" class="form-control-file" type="file" accept=".xml" name="signFiles" th:field="*{{signFile}}" required>
+          </div>
+        </div>
+        <div class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.sigform.keystore}" for="keystore" class="col-xs-2 col-form-label">Keystore</label>
+          <div class="col-xs-9">
+            <input class="form-control-file" type="file" accept=".jks" name="keystoreFile" th:field="*{{keystoreFile}}" required>
+          </div>
+        </div>
+        <div class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.sigform.keystorePassword}" for="keystorePassword" class="col-xs-2 col-form-label">Keystore Password</label>
+          <div class="col-xs-9">
+            <input class="form-control-file" type="password" name="keystorePassword" th:field="*{{keystorePassword}}" required>
+          </div>
+        </div>
+        <div class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.sigform.keyAlias}" for="keyAlias" class="col-xs-2 col-form-label">Private Key Alias</label>
+          <div class="col-xs-9">
+            <input class="form-control-file" type="text" name="keyAlias" th:field="*{{keyAlias}}" required>
+          </div>
+        </div>
+        <div class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.sigform.keyPassword}" for="keyPassword" class="col-xs-2 col-form-label">Private Key Alias</label>
+          <div class="col-xs-9">
+            <input class="form-control-file" type="password" name="keyPassword" th:field="*{{keyPassword}}" required>
+          </div>
+        </div>
+        
+        <div>
+          <div id="btnformnsf">
+            <a href="#" th:href="@{/smpeditor/SMPEditor}" class="btn btn-default" th:text="#{label.button.cancel}"  style="width:76px; background-color: #dddddd;">Cancel</a>
+            <button type="submit" class="btn" th:text="#{label.button.sign}" style="width:76px;">Sign</button>
+          </div> 
+        </div> 
+                        
+      </form>     
+      
+    </div>
+           
+  </body>
+</html>

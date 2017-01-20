@@ -85,9 +85,6 @@ public class SMPGenerateFileController {
   public String generateFile(@ModelAttribute("smpfile") SMPFile smpfile, Model model) {
     logger.debug("\n==== in generateFile ====");
     model.addAttribute("smpfile", smpfile);
-    //logger.debug("\n**** smpfile - " + smpfile.toString());
-    //logger.debug("\n**** smpfile type - " + smpfile.getType().name());
-
     
     /*
     * Read smpeditor.properties file
@@ -207,7 +204,7 @@ public class SMPGenerateFileController {
             smpfile.setExtension(null);
           }
           
-          smpconverter.converteToXml(smpfile.getType().name(), smpfile.getCountry(), smpfile.getEndpointUri(), smpfile.getServiceDescription(),
+          smpconverter.convertToXml(smpfile.getType().name(), smpfile.getCountry(), smpfile.getEndpointUri(), smpfile.getServiceDescription(),
                   smpfile.getTechnicalContact(), smpfile.getTechnicalInformation(), smpfile.getServiceActivationDate(),
                   smpfile.getServiceExpirationDate(), smpfile.getExtension(), smpfile.getCertificateFile(), smpfile.getFileName(), 
                   null, null);
@@ -232,7 +229,7 @@ public class SMPGenerateFileController {
           break;
         case "Redirect":
           logger.debug("\n****Type Redirect");
-          smpconverter.converteToXml(smpfile.getType().name(), null, null, null, null, null, null, null, null, null, 
+          smpconverter.convertToXml(smpfile.getType().name(), null, null, null, null, null, null, null, null, null, 
                   smpfile.getFileName(), smpfile.getCertificateUID(), smpfile.getRedirectHref());
           break;
       }
@@ -262,8 +259,8 @@ public class SMPGenerateFileController {
   public String saveFile(@ModelAttribute("smpfile") SMPFile smpfile, Model model) {
     logger.debug("\n==== in saveFile ====");
     model.addAttribute("smpfile", smpfile);
-    //logger.debug("\n****extension content: " + smpfile.getExtensionData());
-    return "smpeditor/SaveSMPFile"; 
+    return "/smpeditor/SaveSMPFile";
+   
   }
   
    /**
@@ -278,9 +275,6 @@ public class SMPGenerateFileController {
           HttpServletResponse response, Model model) {
     logger.debug("\n==== in downloadFile ====");
     model.addAttribute("smpfile", smpfile);
-    //logger.debug("\n****smpconverter content: " + smpconverter.getCertificateSubjectName());
-   // logger.debug("\n****smpfile content: " + smpfile.getCountry());
-   // logger.debug("\n****smpfile content: " + smpfile.getFileName());
 
     response.setContentType("application/xml");
     response.setHeader("Content-Disposition", "attachment; filename=" + smpfile.getFileName());
@@ -294,6 +288,20 @@ public class SMPGenerateFileController {
       Logger.getLogger(SMPGenerateFileController.class.getName()).log(Level.SEVERE, null, ex);
     }
   } 
+  
+  /**
+   * Sign Generated SMPFile 
+   * @param smpfile
+   * @param redirectAttributes
+   * @return 
+   */
+  @RequestMapping(value = "/smpeditor/SaveSMPFile/Sign")
+  public String signFile(@ModelAttribute("smpfile") SMPFile smpfile, final RedirectAttributes redirectAttributes) {
+    logger.debug("\n==== in Generate signFile ====");
+     redirectAttributes.addFlashAttribute("smpfile", smpfile);
+    return "redirect:/smpeditor/SignSMPFile/generated";
+  }
+  
   
   /**
    * Clean SMPFile - clean the generated xml file in server

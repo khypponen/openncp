@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
  Structure of a SMPFile
  */
 public class SMPFile {
- 
+
   private String fileName;
   private File generatedFile;
   private MultipartFile updateFile;
@@ -18,6 +18,7 @@ public class SMPFile {
   private String country;
   private String DocumentIdentifier;
   
+  //ServiceInformation
   private String EndpointURI;
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
   private Date ServiceActivationDate;
@@ -31,11 +32,10 @@ public class SMPFile {
   private MultipartFile Extension;
   private MultipartFile certificateFile;
   
+  //Redirect
   private String href;
   private String CertificateUID;
     
-  
-  private String extensionData;
 
   public SMPFile() {
     super();
@@ -189,13 +189,6 @@ public class SMPFile {
     this.generatedFile = generatedFile;
   }
   
-  public void setExtensionData(String extensionData){
-   this.extensionData=extensionData;
-  }
-  public String getExtensionData(){
-    return extensionData;
-  }
-  
   
   public String getRedirectHref() {
     return href;
@@ -211,5 +204,5 @@ public class SMPFile {
 
   public void setCertificateUID(String CertificateUID) {
     this.CertificateUID = CertificateUID;
-  }    
+  }   
 }

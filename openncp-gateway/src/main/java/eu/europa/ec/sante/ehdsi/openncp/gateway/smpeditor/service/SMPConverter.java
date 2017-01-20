@@ -27,6 +27,7 @@ import java.security.cert.X509Certificate;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.w3c.dom.Element;
 
 /**
  * Service responsible for converting the data introduced by the user to a xml
@@ -35,8 +36,6 @@ import java.util.logging.Logger;
 @Service
 public class SMPConverter {
 
- 
-  
   @Autowired
   private Environment env;
 
@@ -65,7 +64,7 @@ public class SMPConverter {
    * @param certificateUID
    * @param redirectHref
    */
-  public void converteToXml(String type, String CC, String endpointUri, String servDescription,
+  public void convertToXml(String type, String CC, String endpointUri, String servDescription,
           String tecContact, String tecInformation, Date servActDate, Date servExpDate,
           MultipartFile extension, MultipartFile certificateFile, String fileName,
           String certificateUID, String redirectHref) {
@@ -273,7 +272,7 @@ public class SMPConverter {
           String processIDScheme, String transportProfile, Boolean requiredBusinessLevelSig,
           String minimumAutenticationLevel, String endpointUri, String servDescription, String tecContact, 
           String tecInformation, Date servActDate, Date servExpDate, byte[] certificate, MultipartFile certificateFile,
-          List<ExtensionType> extension, MultipartFile extensionFile,
+          Element extension, MultipartFile extensionFile,
           String fileName, String certificateUID, String redirectHref) {
 
     logger.debug("\n==== in updateToXml ====");
@@ -424,7 +423,7 @@ public class SMPConverter {
       if (extensionFile == null) {
         logger.debug("\n********* CONVERTER NULL EXTENSION FILE ");
         if (extension != null) {
-          extensionType.setAny(extension.get(0).getAny()); //Set by user
+          extensionType.setAny(extension); //Set by user
           endpointType.getExtensions().add(extensionType);
         } else {
           //Does not add extension
@@ -478,7 +477,8 @@ public class SMPConverter {
 
       serviceMetadata.setServiceInformation(serviceInformationType);
     }
-
+    
+    //Generate XML file
     getXMLFile(serviceMetadata);
 
   }
@@ -505,12 +505,12 @@ public class SMPConverter {
       logger.debug("\n******* RESULT 1 - " + result);
       
       if(result instanceof SignedServiceMetadata){
-        logger.debug("\n******* CONVERTER SIGNED SMPFILE");
+        logger.debug("\n******* CONVERTER SignedServiceMetadata SMPFILE");
         isSignedServiceMetadata = true;
         signedServiceMetadata = (SignedServiceMetadata) result;
         serviceMetadata = signedServiceMetadata.getServiceMetadata();
       } else if (result instanceof ServiceMetadata){
-        logger.debug("\n******* CONVERTER SMPFILE");
+        logger.debug("\n******* CONVERTER ServiceMetadata SMPFILE");
         serviceMetadata = (ServiceMetadata) result;
       }
 
@@ -663,7 +663,7 @@ public class SMPConverter {
 
 
   /*TODO: TO DOC Auxiliary*/
-  private Document parseDocument(String docContent) throws IOException, SAXException, ParserConfigurationException {
+  public Document parseDocument(String docContent) throws IOException, SAXException, ParserConfigurationException {
     InputStream inputStream = new ByteArrayInputStream(docContent.getBytes());
     getDocumentBuilder().setErrorHandler(new SimpleErrorHandler());
     return getDocumentBuilder().parse(inputStream);

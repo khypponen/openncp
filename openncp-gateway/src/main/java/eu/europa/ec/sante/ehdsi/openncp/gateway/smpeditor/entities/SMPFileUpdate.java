@@ -2,19 +2,20 @@ package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities;
 
 import java.io.File;
 import java.util.Date;
-import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
-import org.oasis_open.docs.bdxr.ns.smp._2016._05.ExtensionType;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.w3c.dom.Element;
 
 public class SMPFileUpdate {
-  
+
   private String fileName;
   private File generatedFile;
   private MultipartFile updateFile;
   
   private SMPType type;
   private String country;
+  
+  //ServiceInformation
   private String documentIdentifier;
   private String documentIdentifierScheme;
   private String participantIdentifier;
@@ -37,11 +38,20 @@ public class SMPFileUpdate {
   private String technicalContactUrl;
   private String technicalInformationUrl;
   private String extensionContent;
-  private List<ExtensionType> extension;
-   private MultipartFile extensionFile;
+  private Element extension;
+  private MultipartFile extensionFile;
   
+  //Redirect
   private String href;
   private String certificateUID;
+  
+  //Sign
+  private MultipartFile signFile;
+  private String signFileName;
+  private MultipartFile keystoreFile;
+  private String keystorePassword;
+  private String keyAlias;
+  private String keyPassword;
 
   public SMPType getType() {
     return type;
@@ -235,11 +245,11 @@ public class SMPFileUpdate {
     this.extensionContent = extensionContent;
   }
 
-  public List<ExtensionType> getExtension() {
+  public Element getExtension() {
     return extension;
   }
 
-  public void setExtension(List<ExtensionType> extension) {
+  public void setExtension(Element extension) {
     this.extension = extension;
   }
   
@@ -266,8 +276,53 @@ public class SMPFileUpdate {
   public void setCertificateUID(String certificateUID) {
     this.certificateUID = certificateUID;
   }
-
-  
  
+  public MultipartFile getSignFile() {
+    return signFile;
+  }
 
+  public void setSignFile(MultipartFile signFile) {
+    this.signFile = signFile;
+  }
+
+  public MultipartFile getKeystoreFile() {
+    return keystoreFile;
+  }
+
+  public void setKeystoreFile(MultipartFile keystoreFile) {
+    this.keystoreFile = keystoreFile;
+  }
+
+  public String getKeystorePassword() {
+    return keystorePassword;
+  }
+
+  public void setKeystorePassword(String keystorePassword) {
+    this.keystorePassword = keystorePassword;
+  }
+
+  public String getKeyAlias() {
+    return keyAlias;
+  }
+
+  public void setKeyAlias(String keyAlias) {
+    this.keyAlias = keyAlias;
+  }
+
+  public String getKeyPassword() {
+    return keyPassword;
+  }
+
+  public void setKeyPassword(String keyPassword) {
+    this.keyPassword = keyPassword;
+  }
+  
+  public String getSignFileName() {
+    return signFileName;
+  }
+
+  public void setSignFileName(String signFileName) {
+    this.signFileName = signFileName;
+  }
+ 
 }

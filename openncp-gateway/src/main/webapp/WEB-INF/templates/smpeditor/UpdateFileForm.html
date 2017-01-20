@@ -64,7 +64,7 @@
       <div th:if="${signedtrue != null}">
         <div class="alert alert-warning" style="text-align: center;">
           <strong th:text="#{warning.isSigned}"></strong>
-          <ul style="width: 20%;margin: auto;">
+          <ul style="width: 30%;margin: auto;">
             <li style="text-align:left"><strong th:text="#{warning.isSigned.op1}"></strong></li>
             <li style="text-align:left"><strong th:text="#{warning.isSigned.op2}"></strong></li>
           </ul>
@@ -109,7 +109,7 @@
         <div th:if="${smpfields.certificate.enable}" class="form-group row" id="newfileinputs">
           <label th:text="#{label.SmpEditor.form.certificate}" for="certificate" class="col-xs-2 col-form-label">Certificate</label>
           <div class="col-xs-9">
-            <textarea  type="text" class="form-control-file" rows="2" cols="110" th:text="${smpfileupdate.certificateContent}" style="background-color: #F0F0F0;" readonly></textarea>
+            <textarea  type="text" class="form-control-file" rows="4" cols="110" th:text="${smpfileupdate.certificateContent}" style="background-color: #F0F0F0;" readonly></textarea>
           </div>
           <label for="certificate" class="col-xs-2 col-form-label"></label>
           <div class="col-xs-9">
@@ -154,7 +154,7 @@
         <div th:if="${signedfalse != null}">
           <div id="btnformnsf">
             <a href="#" th:href="@{/smpeditor/UpdateFile}" class="btn btn-default" th:text="#{label.button.cancel}" style="width:76px; background-color: #dddddd;">Cancel</a>
-            <button type="submit" class="btn" th:text="#{label.button.ok}" style="width:76px;">Ok</button>
+            <button type="submit" name="action" value="generate" class="btn" th:text="#{label.button.ok}" style="width:76px;">Ok</button>
           </div>  
         </div> 
 
@@ -165,10 +165,10 @@
               <div class="modal-body" style="text-align: center;">
                 <p><strong th:text="#{warning.isSigned.2}">As stated before you now have two options:</strong></p>
                 <div>
-                  <button type="submit" class="btn" th:text="#{warning.isSigned.op1}" style="width: 226px;margin-top: 10px;">Generate unsigned file</button>
+                  <button type="submit" name="action" value="generate" class="btn" th:text="#{warning.isSigned.op1}" style="width: 300px;margin-top: 10px;">Generate unsigned file</button>
                 </div>
                 <div>
-                  <a href="#" class="btn btn-default" th:text="#{warning.isSigned.op2}" style="background-color: #dddddd;width: 226px;margin-top: 10px;">Sign file</a>
+                  <button type="submit" name="action" value="sign" class="btn" th:text="#{warning.isSigned.op2}" style="width: 300px;margin-top: 10px;">Sign file</button>
                 </div>
               </div>
             </div>
@@ -213,7 +213,7 @@
         <div th:if="${signedfalse != null}">
           <div id="btnformnsf">
             <a href="#" th:href="@{/smpeditor/UpdateFile}" class="btn btn-default" th:text="#{label.button.cancel}" style="width:76px; background-color: #dddddd;">Cancel</a>
-            <button type="submit" class="btn" th:text="#{label.button.ok}" style="width:76px;">Ok</button>
+            <button type="submit" name="action" value="generate" class="btn" th:text="#{label.button.ok}" style="width:76px;">Ok</button>
           </div>  
         </div> 
         
@@ -224,10 +224,10 @@
               <div class="modal-body" style="text-align: center;">
                 <p><strong th:text="#{warning.isSigned.2}">As stated before you now have two options:</strong></p>
                 <div>
-                  <button type="submit" class="btn" th:text="#{warning.isSigned.op1}" style="width: 226px;margin-top: 10px;">Generate unsigned file</button>
+                  <button type="submit" name="action" value="generate" class="btn" th:text="#{warning.isSigned.op1}" style="width: 300px;margin-top: 10px;">Generate unsigned file</button>
                 </div>
                 <div>
-                  <a href="#" class="btn btn-default" th:text="#{warning.isSigned.op2}" style="background-color: #dddddd;width: 226px;margin-top: 10px;">Sign file</a>
+                  <button type="submit" name="action" value="sign" class="btn" th:text="#{warning.isSigned.op2}" style="width: 300px;margin-top: 10px;">Sign file</button>
                 </div>
               </div>
             </div>

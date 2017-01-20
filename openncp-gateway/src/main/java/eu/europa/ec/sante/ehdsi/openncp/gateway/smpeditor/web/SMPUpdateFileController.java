@@ -25,15 +25,14 @@ import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.parsers.ParserConfigurationException;
 import org.oasis_open.docs.bdxr.ns.smp._2016._05.EndpointType;
 import org.oasis_open.docs.bdxr.ns.smp._2016._05.RedirectType;
 import org.oasis_open.docs.bdxr.ns.smp._2016._05.ServiceMetadata;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,8 +40,11 @@ import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 @Controller
 @SessionAttributes("smpfileupdate")
@@ -73,13 +75,7 @@ public class SMPUpdateFileController {
   @RequestMapping(value = "/smpeditor/UpdateFile", method = RequestMethod.GET)
   public String updateFile(Model model) {
     logger.debug("\n==== in updateFile ====");
-    model.addAttribute("smpfileupdate", new SMPFileUpdate());
-    
-    Locale locale = LocaleContextHolder.getLocale();
-    String country = locale.getCountry();
-    
-    logger.debug("\n******** LOCALE - " + country);
-    
+    model.addAttribute("smpfileupdate", new SMPFileUpdate());    
     return "smpeditor/UpdateFile";
   }
 
@@ -96,6 +92,7 @@ public class SMPUpdateFileController {
     logger.debug("\n==== in post ====");
     model.addAttribute("smpfileupdate", smpfileupdate);
     logger.debug("\n**********  smpfileupdate - " + smpfileupdate.toString());
+    isSigned = false;
     
     File convFile = new File("/" + smpfileupdate.getUpdateFile().getOriginalFilename());
     try {
@@ -120,8 +117,8 @@ public class SMPUpdateFileController {
         
     ServiceMetadata serviceMetadata;
     serviceMetadata = smpconverter.convertFromXml(smpfileupdate.getUpdateFile());
-    logger.debug("\n****SERVICE METADATA -- " + serviceMetadata);
-
+    logger.debug("\n****SERVICE METADATA - " + serviceMetadata);
+        
     /*
      Condition to know the type of file (Redirect|ServiceInformation) in order to build the form
      */
@@ -130,6 +127,11 @@ public class SMPUpdateFileController {
       type = "Redirect";
       smpfileupdate.setType(smptype.Redirect);
       
+      if (!serviceMetadata.getRedirect().getExtensions().isEmpty()) {
+        logger.debug("\n******* SIGNED EXTENSION - " + serviceMetadata.getRedirect().getExtensions().get(0).getAny().getNodeName());
+        isSigned = true;
+      }
+
       Countries count = null;
    
       String fileName = smpfileupdate.getUpdateFile().getOriginalFilename();
@@ -153,7 +155,16 @@ public class SMPUpdateFileController {
 
     } else if (serviceMetadata.getServiceInformation() != null) {
       logger.debug("\n******** SERVICE INFORMATION");
+      type = "ServiceInformation";
       hasCountry = true;
+      
+      
+      if (!serviceMetadata.getServiceInformation().getExtensions().isEmpty()) {
+        logger.debug("\n******* SIGNED EXTENSION - " + serviceMetadata.getServiceInformation().getExtensions().get(0).getAny().getNodeName());
+        isSigned = true;
+      }
+      
+      
       smpfileupdate.setDocumentIdentifier(serviceMetadata.getServiceInformation().getDocumentIdentifier().getValue());
       smpfileupdate.setDocumentIdentifierScheme(serviceMetadata.getServiceInformation().getDocumentIdentifier().getScheme());
       String documentIdentifier = smpfileupdate.getDocumentIdentifier();
@@ -168,8 +179,7 @@ public class SMPUpdateFileController {
         }
       }
       logger.debug("\n******** SMP Type - " + smpfileupdate.getType().name());
-      //type -> ServiceInformation
-      type = env.getProperty("type." + smpfileupdate.getType().name()); //smpeditor.properties
+      
 
       String participanteID = serviceMetadata.getServiceInformation().getParticipantIdentifier().getValue();
       String[] cc = participanteID.split(":");
@@ -259,24 +269,24 @@ public class SMPUpdateFileController {
     model.addAttribute("smpfields", smpfields);
     
     
-
     if ("ServiceInformation".equals(type)) {
       EndpointType endpoint = serviceMetadata.getServiceInformation().getProcessList().getProcesses().get(0).getServiceEndpointList().getEndpoints().get(0);
 
       X509Certificate cert = null;
       String subjectName = null;
-      try {
-        InputStream in = new ByteArrayInputStream(endpoint.getCertificate());
-        cert = (X509Certificate) CertificateFactory.getInstance("X.509").generateCertificate(in);
-        if (cert != null) {
-          subjectName = "Issuer: " +  cert.getIssuerX500Principal().getName() + "\nSerial Number #"
-                  + cert.getSerialNumber();
-          smpfileupdate.setCertificateContent(subjectName);
-        }
-      } catch (CertificateException ex) {
-        Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
-      }
       if (smpfields.getCertificate().isEnable()) {
+        try {
+          InputStream in = new ByteArrayInputStream(endpoint.getCertificate());
+          cert = (X509Certificate) CertificateFactory.getInstance("X.509").generateCertificate(in);
+          if (cert != null) {
+            subjectName = "Issuer: " + cert.getIssuerX500Principal().getName() + "\nSerial Number #"
+                    + cert.getSerialNumber();
+            smpfileupdate.setCertificateContent(subjectName);
+          }
+        } catch (CertificateException ex) {
+          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         try {
           smpfileupdate.setCertificate(cert.getEncoded());
         } catch (CertificateEncodingException ex) {
@@ -316,8 +326,17 @@ public class SMPUpdateFileController {
           String[] endA = capturedString.split("<Extension>");
           logger.debug("\n*****Content from Extension 1 : \n" + endA[1]);
           smpfileupdate.setExtensionContent(endA[1]);
-          smpfileupdate.setExtension(endpoint.getExtensions());
+          
+          Document docOriginal = smpconverter.parseDocument(endA[1]);
+          docOriginal.getDocumentElement().normalize();
+          
+          smpfileupdate.setExtension(docOriginal.getDocumentElement());
+         
         } catch (IOException ex) {
+          Logger.getLogger(SMPUpdateFileController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+          Logger.getLogger(SMPUpdateFileController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParserConfigurationException ex) {
           Logger.getLogger(SMPUpdateFileController.class.getName()).log(Level.SEVERE, null, ex);
         }
       }
@@ -328,8 +347,10 @@ public class SMPUpdateFileController {
       smpfileupdate.setHref(redirect.getHref());
     }
     
-    isSigned = smpconverter.getIsSignedServiceMetadata();
-
+    if(!isSigned){
+      isSigned = smpconverter.getIsSignedServiceMetadata();
+    }
+    
     logger.debug("\n********* MODEL - " + model.toString());
     return "redirect:UpdateFileForm";
   }
@@ -364,10 +385,12 @@ public class SMPUpdateFileController {
    * @param smpfileupdate
    * @param model
    * @param redirectAttributes
+   * @param action
    * @return
    */
   @RequestMapping(value = "smpeditor/UpdateFileForm", method = RequestMethod.POST)
-  public String updatenewfile(@ModelAttribute("smpfileupdate") SMPFileUpdate smpfileupdate, Model model, final RedirectAttributes redirectAttributes) {
+  public String updatenewfile(@ModelAttribute("smpfileupdate") SMPFileUpdate smpfileupdate, Model model, 
+          final RedirectAttributes redirectAttributes, @RequestParam(value="action", required=true) String action) {
     logger.debug("\n==== in updatenewfile ==== ");
 
     model.addAttribute("smpfileupdate", smpfileupdate);
@@ -443,7 +466,12 @@ public class SMPUpdateFileController {
       return "redirect:/smpeditor/UpdateFileForm";
     }
 
-    return "redirect:SaveUpdatedSMPFile";
+    if (action.equals("sign")) {
+      logger.debug("\n****ACTION SIGN");
+      return "redirect:SaveUpdatedSMPFile/Sign"; 
+    }
+
+    return "redirect:SaveUpdatedSMPFile";  
   }
 
   /**
@@ -457,8 +485,20 @@ public class SMPUpdateFileController {
   public String saveFile(@ModelAttribute("smpfileupdate") SMPFileUpdate smpfileupdate, Model model) {
     logger.debug("\n==== in saveFile ====");
     model.addAttribute("smpfileupdate", smpfileupdate);
-    //logger.debug("\n****extension content: " + smpfile.getExtensionData());
     return "smpeditor/SaveUpdatedSMPFile";
+  }
+  
+  /**
+   * Sign Updated SMPFile 
+   * @param smpfileupdate
+   * @param redirectAttributes
+   * @return 
+   */
+  @RequestMapping(value = "/smpeditor/SaveUpdatedSMPFile/Sign")
+  public String signFile(@ModelAttribute("smpfileupdate") SMPFileUpdate smpfileupdate, final RedirectAttributes redirectAttributes) {
+    logger.debug("\n==== in Update signFile ====");
+     redirectAttributes.addFlashAttribute("smpfileupdate", smpfileupdate);
+    return "redirect:/smpeditor/SignSMPFile/updated";
   }
 
   /**
