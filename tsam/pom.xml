@@ -10,13 +10,13 @@
     <name>OpenNCP CC Terminology Services Access Manager</name>
     <description>Terminology Services Acces Manager</description>
 
-    <repositories>
+    <!--repositories>
         <repository>
             <id>java.net</id>
             <name>The Java.net Maven repository</name>
             <url>http://download.java.net/maven/2</url>
         </repository>
-    </repositories>
+    </repositories-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -82,12 +82,13 @@
             <!--<version>2.0.8</version>-->
             <version>${spring-version}</version>
         </dependency>
+
         <dependency>
             <groupId>javassist</groupId>
             <artifactId>javassist</artifactId>
             <version>3.12.1.GA</version>
+            <scope>runtime</scope>
         </dependency>
-
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>

@@ -26,6 +26,10 @@
         <appender-ref ref="FILE"/>
     </logger>
 
+    <logger name="epsos.ccd.gnomon.configmanager" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
+
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>

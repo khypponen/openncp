@@ -54,6 +54,12 @@
 			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-audit-manager</artifactId>
 			<version>${project.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.sante.ehdsi</groupId>
@@ -64,7 +70,13 @@
 			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-evidence-emitter</artifactId>
 			<version>${project.version}</version>
-		</dependency>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>

@@ -10,16 +10,29 @@
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <file>${catalina.base}/logs/openncp-ws-server.log</file>
         <append>true</append>
-        <!-- encoders are assigned the type
-             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
             <!--pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern-->
         </encoder>
     </appender>
 
+    <logger name="eu.epsos.protocolterminators.ws.server" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
 
-    <root level="DEBUG">
+    <logger name="_2007.xds_b.iti.ihe" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="_2009.xcpd.iti.ihe" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="org.apache.axis2" level="INFO" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </root>

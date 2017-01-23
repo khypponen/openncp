@@ -10,8 +10,6 @@
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <file>${catalina.base}/logs/openncp-trc-sts.log</file>
         <append>true</append>
-        <!-- encoders are assigned the type
-             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
             <!--pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern-->
@@ -22,31 +20,7 @@
         <appender-ref ref="FILE"/>
     </logger>
 
-    <logger name="org.apache.axis2" level="error" additivity="false">
-        <appender-ref ref="FILE"/>
-    </logger>
-
-    <logger name="org.apache.axiom" level="error" additivity="false">
-        <appender-ref ref="FILE"/>
-    </logger>
-
-    <logger name="org.apache.xml" level="error" additivity="false">
-        <appender-ref ref="FILE"/>
-    </logger>
-
     <logger name="org.opensaml" level="debug" additivity="false">
-        <appender-ref ref="FILE"/>
-    </logger>
-
-    <logger name="org.springframework" level="error" additivity="false">
-        <appender-ref ref="FILE"/>
-    </logger>
-
-    <logger name="org.hibernate" level="error" additivity="false">
-        <appender-ref ref="FILE"/>
-    </logger>
-
-    <logger name="net.sf.ehcache" level="error" additivity="false">
         <appender-ref ref="FILE"/>
     </logger>
 
@@ -58,32 +32,11 @@
         <appender-ref ref="FILE"/>
     </logger>
 
-    <logger name="de.hunsicker.jalopy.io" level="fatal" additivity="false">
-        <appender-ref ref="FILE"/>
-    </logger>
-
-    <logger name="httpclient.wire.header" level="fatal" additivity="false">
-        <appender-ref ref="FILE"/>
-    </logger>
-
-    <logger name="org.apache.commons.httpclient" level="fatal" additivity="false">
-        <appender-ref ref="FILE"/>
-    </logger>
-
-    <logger name="org.apache.commons.configuration" level="error" additivity="false">
-        <appender-ref ref="FILE"/>
-    </logger>
-
     <logger name="com.mchange" level="warn" additivity="false">
         <appender-ref ref="FILE"/>
     </logger>
 
-    <logger name="org.springframework" level="debug" additivity="false">
-        <appender-ref ref="STDOUT"/>
-        <appender-ref ref="FILE"/>
-    </logger>
-
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </root>

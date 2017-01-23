@@ -10,19 +10,17 @@
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <file>${catalina.base}/logs/openncp-openatna.log</file>
         <append>true</append>
-        <!-- encoders are assigned the type
-             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
             <!--pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern-->
         </encoder>
     </appender>
 
-    <logger name="org.openhealthtools.openatna" level="debug" additivity="false">
+    <logger name="org.openhealthtools.openatna" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>
     </logger>
 
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </root>

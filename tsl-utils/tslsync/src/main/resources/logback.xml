@@ -8,7 +8,7 @@
     </appender>
 
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>${catalina.base}/logs/openncp-openatna.log</file>
+        <file>./openncp-tsl-sync.log</file>
         <append>true</append>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
@@ -16,7 +16,7 @@
         </encoder>
     </appender>
 
-    <logger name="org.openhealthtools.openatna" level="DEBUG" additivity="false">
+    <logger name="epsos.ccd.gnomon.configmanager" level="debug" additivity="false">
         <appender-ref ref="FILE"/>
     </logger>
 
