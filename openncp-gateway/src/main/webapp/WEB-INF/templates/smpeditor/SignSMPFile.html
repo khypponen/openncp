@@ -73,7 +73,7 @@
           <label th:text="#{label.SmpEditor.sigform.files}" for="signfiles" class="col-xs-2 col-form-label">SMP Files</label>
           <div class="col-xs-9">
             <input th:if="${hasfile}" type="text" class="form-control-file"  th:value="${smpfilesign.signFileName}" readonly>
-            <input th:unless="${hasfile}" class="form-control-file" type="file" accept=".xml" name="signFiles" th:field="*{{signFile}}" required>
+            <input th:unless="${hasfile}" class="form-control-file" type="file" multiple accept=".xml" name="signFiles" th:field="*{{signFiles}}" required>
           </div>
         </div>
         <div class="form-group row" id="newfileinputs">

@@ -2,6 +2,7 @@ package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities;
 
 import java.io.File;
 import java.util.Date;
+import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.w3c.dom.Element;
@@ -13,6 +14,7 @@ public class SMPFileUpdate {
   private MultipartFile updateFile;
   
   private SMPType type;
+  private String typeS;
   private String country;
   
   //ServiceInformation
@@ -47,11 +49,20 @@ public class SMPFileUpdate {
   
   //Sign
   private MultipartFile signFile;
+  private List<MultipartFile> signFiles;
+  private List<SMPFileUpdate> allFiles;
   private String signFileName;
   private MultipartFile keystoreFile;
   private String keystorePassword;
   private String keyAlias;
   private String keyPassword;
+  private String serviceActivationDateS;
+  private String serviceExpirationDateS;
+  private int id;
+  private SMPFields smpfields;
+  private boolean signedExtension;
+  private boolean hasCountry;
+  
 
   public SMPType getType() {
     return type;
@@ -323,6 +334,78 @@ public class SMPFileUpdate {
 
   public void setSignFileName(String signFileName) {
     this.signFileName = signFileName;
+  }
+  
+  public SMPFields getSmpfields() {
+    return smpfields;
+  }
+
+  public void setSmpfields(SMPFields smpfields) {
+    this.smpfields = smpfields;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public String getServiceActivationDateS() {
+    return serviceActivationDateS;
+  }
+
+  public void setServiceActivationDateS(String serviceActivationDateS) {
+    this.serviceActivationDateS = serviceActivationDateS;
+  }
+
+  public String getServiceExpirationDateS() {
+    return serviceExpirationDateS;
+  }
+
+  public void setServiceExpirationDateS(String serviceExpirationDateS) {
+    this.serviceExpirationDateS = serviceExpirationDateS;
+  }
+
+  public String getTypeS() {
+    return typeS;
+  }
+
+  public void setTypeS(String typeS) {
+    this.typeS = typeS;
+  }
+
+  public List<SMPFileUpdate> getAllFiles() {
+    return allFiles;
+  }
+
+  public void setAllFiles(List<SMPFileUpdate> allFiles) {
+    this.allFiles = allFiles;
+  }
+
+  public List<MultipartFile> getSignFiles() {
+    return signFiles;
+  }
+
+  public void setSignFiles(List<MultipartFile> signFiles) {
+    this.signFiles = signFiles;
+  }
+
+  public boolean isHasCountry() {
+    return hasCountry;
+  }
+
+  public void setHasCountry(boolean hasCountry) {
+    this.hasCountry = hasCountry;
+  }
+
+  public boolean isSignedExtension() {
+    return signedExtension;
+  }
+
+  public void setSignedExtension(boolean signedExtension) {
+    this.signedExtension = signedExtension;
   }
  
 }

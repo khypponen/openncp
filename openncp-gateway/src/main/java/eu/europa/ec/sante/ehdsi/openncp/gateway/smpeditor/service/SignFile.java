@@ -145,7 +145,7 @@ public class SignFile {
 
   private Element findExtension(String type, Document doc) throws ParserConfigurationException, SAXException, IOException {
     Element extension = null;
-    if (type.equals("ServiceInformation")) {
+    if (!type.equals("Redirect")) {
       Element serviceInformation = findFirstElementByName(doc, "ServiceInformation");
       for (Node child = serviceInformation.getFirstChild(); child != null; child = child.getNextSibling()) {
         if ("Extension".equals(child.getLocalName()) && OASIS_NS.equals(child.getNamespaceURI())) {
@@ -171,7 +171,7 @@ public class SignFile {
   
   private Element newExtension(String type, Document doc) throws ParserConfigurationException, SAXException, IOException {
     Element extension = null;
-    if (type.equals("ServiceInformation")) {
+    if (!type.equals("Redirect")) {
       Element serviceInformation = findFirstElementByName(doc, "ServiceInformation");
       //Find extension, if exists delete all childs
       for (Node child = serviceInformation.getFirstChild(); child != null; child = child.getNextSibling()) {

@@ -39,14 +39,15 @@
        
  
     <div style="text-align: center; margin-top: 50px;">
-      <p th:text="#{label.SmpEditor.download}" style="font-size: large;">Download File</p>
-      <a href="#" th:href="@{/smpeditor/SaveSignedSMPFile/download}" class="btn btn-default" th:text="${smpfilesign.fileName}" style="background-color: #dddddd;">Download File</a> 
+      <p th:text="#{label.SmpEditor.download}" style="font-size: large;">Download Files</p>
+      <div th:each="smpfile: ${smpfiles}"  style="margin-top: 10px;">
+        <a href="#" th:href="@{'/smpeditor/SaveSignedSMPFile/download/' + ${smpfile.fileName}}" class="btn btn-default" th:text="${smpfile.fileName}" style="background-color: #dddddd;">Download File</a> 
+      </div>
     </div>
     
     
     <div id="btnformnsf" style="margin-top: 150px;">
       <a href="#" th:href="@{/smpeditor/CheckSignSMPFile/clean}" class="btn btn-default" th:text="#{label.button.back}" style="width:76px; background-color: #dddddd;">Back</a>
-      <a href="#" class="btn btn-default" th:text="#{label.button.sign}" style="width:76px; background-color:#dddddd;">Sign</a>
       <a href="#" th:href="@{/smpeditor/SMPEditor/clean3}" class="btn btn-default" th:text="#{label.button.done}" style="width:76px; background-color: #dddddd;">Done</a>
     </div>    
     
