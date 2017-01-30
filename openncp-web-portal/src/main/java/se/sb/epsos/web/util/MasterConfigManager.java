@@ -106,7 +106,7 @@ public class MasterConfigManager {
 			cfgFilePath = getClass().getClassLoader().getResource(DEFAULT_CONFIG_FILE).getPath();
 		}
 		if (!System.getProperties().containsKey("override-config.xml")) {
-			System.setProperty("override-config.xml", "ovverride-config.xml");
+			System.setProperty("override-config.xml", "override-config.xml");
 		}
 		ConfigurationFactory factory = new ConfigurationFactory(cfgFilePath);
 		try {
