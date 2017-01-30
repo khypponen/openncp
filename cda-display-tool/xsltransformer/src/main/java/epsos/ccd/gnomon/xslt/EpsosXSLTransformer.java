@@ -225,7 +225,7 @@ public class EpsosXSLTransformer {
             else
                 throw new Exception("Folder " + path.toString() + " doesn't exists");
         } catch (Exception e) {
-            logger.error(e.getMessage());
+            logger.error("FATAL ERROR: "  +e.getMessage());
             System.exit(-1);
         }
     }

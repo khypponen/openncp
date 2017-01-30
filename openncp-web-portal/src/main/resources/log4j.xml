@@ -27,7 +27,7 @@
 
 	<appender name="logFile" class="org.apache.log4j.RollingFileAppender">
 		<param name="File" value="${catalina.base}/logs/epsosweb.log" />
-		<param name="Threshold" value="DEBUG"/>
+		<param name="Threshold" value="INFO"/>
 		<param name="Encoding" value="UTF-8"/>
 		<param name="MaxFileSize" value="1MB"/>
 		<param name="MaxBackupIndex" value="1"/>
@@ -45,23 +45,23 @@
 	</appender>
 	
 	<logger name="fi.kela.se">
-		<level value="debug"/> 
+		<level value="INFO"/>
   	</logger>
 
 	<logger name="se.sb.epsos.web">
-		<level value="debug"/> 
+		<level value="INFO"/>
 	</logger>
 	
 	<logger name="eu">
-		<level value="debug"/> 
+		<level value="INFO"/>
 	</logger>
 
 	<logger name="tr">
-		<level value="debug"/> 
+		<level value="INFO"/>
 	</logger>
 	
 	<logger name="epsos">
-		<level value="debug"/> 
+		<level value="INFO"/>
 	</logger>
   	
 	<root>

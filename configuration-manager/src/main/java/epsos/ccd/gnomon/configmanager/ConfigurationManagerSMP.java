@@ -93,7 +93,7 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 		if (instance == null) {
 			synchronized (ConfigurationManagerSMP.class) {
 				if (instance == null) {
-					l.debug("Instatiating a new ConfigurationManagerSMP");
+					l.info("Instatiating a new ConfigurationManagerSMP");
 					instance = new ConfigurationManagerSMP();
 				}
 			}
@@ -107,21 +107,21 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 	private ConfigurationManagerSMP() {
 
 		long start = System.currentTimeMillis();
-		l.debug("Loading the Hibernate session object");
+		l.info("Loading the Hibernate session object");
 		session = HibernateUtil.getSessionFactory().openSession();
 		long end = System.currentTimeMillis();
 		long total = end - start;
-		l.debug("Loaded took: " + total);
+		l.info("Loaded took: " + total);
 
 		populate();
-		l.debug("Constructor ends");
+		l.info("Constructor ends");
 	}
 
 	/**
 	 * Adds the values from the DB to the memory
 	 */
 	private void populate() {
-		l.debug("Loading all the values");
+		l.info("Loading all the values");
 		long start = System.currentTimeMillis();
 		
 		@SuppressWarnings("unchecked")
@@ -129,9 +129,9 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 		
 		long end = System.currentTimeMillis();
 		long total = end - start;
-		l.debug("Getting all the properties took: " + total);
+		l.info("Getting all the properties took: " + total);
 		int size = properties.size();
-		l.debug("Adding " + size + " properties into the hashmap");
+		l.info("Adding " + size + " properties into the hashmap");
 
 		start = System.currentTimeMillis();
 		// Not using streams because of the mandatory requirement to use java7
@@ -147,7 +147,7 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 		}
 		end = System.currentTimeMillis();
 		total = end - start;
-		l.debug("Loading in memory the full database took: " + total);
+		l.info("Loading in memory the full database took: " + total);
 	}
 
 	/**
@@ -161,15 +161,15 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 	 *             after TSLSynchronizer
 	 */
 	public String getProperty(String key) throws PropertyNotFoundException {
-		l.debug("Searching for " + key);
-		l.debug("Trying hashmap first");
+		l.info("Searching for " + key);
+		l.info("Trying hashmap first");
 		PropertySearchableContainer psc = configuration.get(key);
 		
 		// Ok, here two things: one is that the entry does not exist, the second is that it is not 
 		// Searchable. So, if it does not exist, we try SMP anyway. If it exists, then we use it. 
-		// To update we remove first and we re-add it. 
+		// To update we remove first and we re-add it.
 		if (psc == null) {
-			l.debug("Nothing found in the hashmap, let's try to SMP");
+			l.info("Nothing found in the hashmap, let's try to SMP");
 				String value = query(key);
 				if (value != null) {
 					PropertySearchableContainer psc1 = new PropertySearchableContainer();
@@ -180,14 +180,13 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 				}
 		}
 		if (psc == null) {
-			l.debug("Value is still null, let's run TSLSynchronizer");
+			l.info("Value is still null, let's run TSLSynchronizer");
 			// TSLSynchronizer.sync();
 		}
 		if (psc != null) {
-			l.debug("Returning the value: " + psc.getValue());
+			l.info("Returning the value: " + psc.getValue());
 			return psc.getValue();
 		}
-		
 
 		// TODO
 		return null;

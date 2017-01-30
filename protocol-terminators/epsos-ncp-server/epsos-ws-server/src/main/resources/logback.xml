@@ -16,20 +16,34 @@
         </encoder>
     </appender>
 
+    <appender name="DB" class="ch.qos.logback.classic.db.DBAppender">
+        <connectionSource class="ch.qos.logback.core.db.JNDIConnectionSource">
+            <jndiLocation>java:comp/env/jdbc/LOGS</jndiLocation>
+        </connectionSource>
+    </appender>
+
     <logger name="eu.epsos.protocolterminators.ws.server" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>
+        <appender-ref ref="DB"/>
     </logger>
 
     <logger name="_2007.xds_b.iti.ihe" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>
+        <appender-ref ref="DB"/>
     </logger>
 
     <logger name="_2009.xcpd.iti.ihe" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>
+        <appender-ref ref="DB"/>
     </logger>
 
     <logger name="org.apache.axis2" level="INFO" additivity="false">
         <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="epsos.ccd.gnomon.configmanager" level="INFO" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="DB"/>
     </logger>
 
     <root level="INFO">
