@@ -88,11 +88,6 @@
             <artifactId>openncp-security-manager</artifactId>
             <version>${project.version}</version>
         </dependency>
-       <!-- <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.2</version>
-        </dependency>-->
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
@@ -144,7 +139,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.10</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -155,29 +150,4 @@
             <version>1.6</version>
         </dependency>
     </dependencies>
-
-    <repositories>
-<!--        <repository>
-            <id>irisa-sumo</id>
-            <name>Sumo Irisa Public Maven Repository Group</name>
-            <url>http://gazelle.ihe.net/nexus/content/groups/public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
-            <id>openSamlRep</id>
-            <name>Official OpenSaml Repository</name>
-        </repository>-->
-        <!-- Repository used for xerces dependency -->
-        <!--<repository>
-            <url>https://build.shibboleth.net/nexus/content/repositories/thirdparty/</url>
-            <id>openSamlThirdPartyRep</id>
-            <name>Official OpenSaml Repository</name>
-        </repository>-->
-    </repositories>
 </project>
