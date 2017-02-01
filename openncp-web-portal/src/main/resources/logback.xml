@@ -18,6 +18,22 @@
         </encoder>
     </appender>
 
+    <logger name="eu" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="epsos" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="tr" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="fi.kela.se" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
+
     <logger name="se.sb.epsos.web" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>
     </logger>
