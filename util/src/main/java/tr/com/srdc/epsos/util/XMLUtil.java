@@ -107,7 +107,7 @@ public class XMLUtil {
      */
     public static org.w3c.dom.Document parseContent(String content) throws ParserConfigurationException, SAXException, IOException {
 
-        LOGGER.info("parseContent(): " + content);
+        LOGGER.debug("parseContent(): " + content);
         org.w3c.dom.Document doc = null;
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         //dbf.setIgnoringComments(false);
