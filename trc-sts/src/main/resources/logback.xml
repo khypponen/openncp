@@ -16,19 +16,19 @@
         </encoder>
     </appender>
 
-    <logger name="epsos.ccd.netsmart.securitymanager.sts" level="debug" additivity="false">
+    <logger name="epsos.ccd.netsmart.securitymanager.sts" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>
     </logger>
 
-    <logger name="org.opensaml" level="debug" additivity="false">
+    <logger name="org.opensaml" level="INFO" additivity="false">
         <appender-ref ref="FILE"/>
     </logger>
 
-    <logger name="epsos.ccd.posam.tm" level="debug" additivity="false">
+    <logger name="epsos.ccd.posam.tm" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>
     </logger>
 
-    <logger name="epsos.ccd.posam.tsam" level="debug" additivity="false">
+    <logger name="epsos.ccd.posam.tsam" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>
     </logger>
 
