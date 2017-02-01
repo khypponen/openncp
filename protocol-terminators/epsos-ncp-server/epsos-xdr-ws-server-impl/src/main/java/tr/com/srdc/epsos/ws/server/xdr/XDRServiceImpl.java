@@ -1,33 +1,29 @@
 /**
  * Copyright (C) 2011, 2012 SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik
  * Tic. Ltd. Sti. <epsos@srdc.com.tr>
- *
+ * <p>
  * This file is part of SRDC epSOS NCP.
- *
+ * <p>
  * SRDC epSOS NCP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
  * Software Foundation, either version 3 of the License, or (at your option) any
  * later version.
- *
+ * <p>
  * SRDC epSOS NCP is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- *
+ * <p>
  * You should have received a copy of the GNU General Public License along with
  * SRDC epSOS NCP. If not, see <http://www.gnu.org/licenses/>.
- *
+ * <p>
  * XDR service implementation for ePrescription by Kela (The Social Insurance
  * Institution of Finland) GNU General Public License v3
  */
 package tr.com.srdc.epsos.ws.server.xdr;
 
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
-import epsos.ccd.gnomon.auditmanager.EventActionCode;
-import epsos.ccd.gnomon.auditmanager.EventLog;
-import epsos.ccd.gnomon.auditmanager.EventOutcomeIndicator;
-import epsos.ccd.gnomon.auditmanager.EventType;
-import epsos.ccd.gnomon.auditmanager.TransactionName;
+import epsos.ccd.gnomon.auditmanager.*;
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
 import eu.epsos.exceptions.DocumentTransformationException;
@@ -45,11 +41,6 @@ import fi.kela.se.epsos.data.model.DocumentFactory;
 import fi.kela.se.epsos.data.model.EPSOSDocument;
 import ihe.iti.xds_b._2007.ProvideAndRegisterDocumentSetRequestType;
 import ihe.iti.xds_b._2007.ProvideAndRegisterDocumentSetRequestType.Document;
-import java.util.GregorianCalendar;
-import java.util.Locale;
-import java.util.ServiceLoader;
-import java.util.logging.Level;
-import javax.xml.datatype.DatatypeConfigurationException;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.ExternalIdentifierType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryError;
@@ -57,9 +48,10 @@ import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryErrorList;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType;
 import org.apache.axiom.soap.SOAPHeader;
 import org.apache.axis2.util.XMLUtils;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.joda.time.DateTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 import tr.com.srdc.epsos.securityman.SAML2Validator;
 import tr.com.srdc.epsos.securityman.exceptions.AssertionValidationException;
@@ -72,9 +64,14 @@ import tr.com.srdc.epsos.util.DateUtil;
 import tr.com.srdc.epsos.util.XMLUtil;
 import tr.com.srdc.epsos.util.http.HTTPUtil;
 
+import javax.xml.datatype.DatatypeConfigurationException;
+import java.util.GregorianCalendar;
+import java.util.Locale;
+import java.util.ServiceLoader;
+
 public class XDRServiceImpl implements XDRServiceInterface {
 
-    public static Logger logger = Logger.getLogger(XDRServiceImpl.class);
+    public static Logger logger = LoggerFactory.getLogger(XDRServiceImpl.class);
     private oasis.names.tc.ebxml_regrep.xsd.rs._3.ObjectFactory ofRs;
     private ServiceLoader<DocumentSubmitInterface> serviceLoader;
     private DocumentSubmitInterface documentSubmitService;
@@ -86,7 +83,7 @@ public class XDRServiceImpl implements XDRServiceInterface {
             documentSubmitService = serviceLoader.iterator().next();
             logger.info("Successfully loaded documentSubmitService");
         } catch (Exception e) {
-            logger.fatal("Failed to load implementation of documentSubmitService: " + e.getMessage(), e);
+            logger.error("Failed to load implementation of documentSubmitService: " + e.getMessage(), e);
             throw e;
         }
 
@@ -127,8 +124,8 @@ public class XDRServiceImpl implements XDRServiceInterface {
      * @throws DatatypeConfigurationException
      */
     public void prepareEventLogForDispensationInitialize(EventLog eventLog,
-            ProvideAndRegisterDocumentSetRequestType request,
-            RegistryResponseType response, Element sh) throws DatatypeConfigurationException {
+                                                         ProvideAndRegisterDocumentSetRequestType request,
+                                                         RegistryResponseType response, Element sh) throws DatatypeConfigurationException {
         ConfigurationManagerService cms = ConfigurationManagerService.getInstance();
         eventLog.setEventType(EventType.epsosDispensationServiceInitialize);
         eventLog.setEI_TransactionName(TransactionName.epsosDispensationServiceInitialize);
@@ -192,8 +189,8 @@ public class XDRServiceImpl implements XDRServiceInterface {
      * @throws DatatypeConfigurationException
      */
     public void prepareEventLogForConsentPut(EventLog eventLog,
-            ProvideAndRegisterDocumentSetRequestType request,
-            RegistryResponseType response, Element sh) throws DatatypeConfigurationException {
+                                             ProvideAndRegisterDocumentSetRequestType request,
+                                             RegistryResponseType response, Element sh) throws DatatypeConfigurationException {
         ConfigurationManagerService cms = ConfigurationManagerService.getInstance();
         eventLog.setEventType(EventType.epsosConsentServicePut);
         eventLog.setEI_TransactionName(TransactionName.epsosConsentServicePut);
@@ -310,7 +307,6 @@ public class XDRServiceImpl implements XDRServiceInterface {
      logger.debug("Event log prepared");
      }
      */
-
     private String getDocumentEntryPatientId(
             ProvideAndRegisterDocumentSetRequestType request) {
         String patientId = "";
@@ -351,11 +347,11 @@ public class XDRServiceImpl implements XDRServiceInterface {
         RegistryResponseType response = new RegistryResponseType();
         String sigCountryCode = null;
 
-        Element shElement = null;
+        Element shElement;
         try {
             shElement = XMLUtils.toDOM(sh);
         } catch (Exception e) {
-            logger.fatal(e.getMessage());
+            logger.error(e.getMessage());
             throw e;
         }
         documentSubmitService.setSOAPHeader(shElement);
@@ -410,7 +406,7 @@ public class XDRServiceImpl implements XDRServiceInterface {
             try {
                 shElement = XMLUtils.toDOM(sh);
             } catch (Exception e) {
-                logger.fatal(e.getMessage());
+                logger.error(e.getMessage());
                 throw e;
             }
 
@@ -590,7 +586,7 @@ public class XDRServiceImpl implements XDRServiceInterface {
             } catch (DocumentTransformationException ex) {
                 logger.error(ex.getLocalizedMessage(), ex);
             } catch (Exception ex) {
-                java.util.logging.Logger.getLogger(XDRServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(null, ex);
             }
             try {
                 org.w3c.dom.Document domDocument = TMServices.byteToDocument(docBytes);
@@ -643,7 +639,7 @@ public class XDRServiceImpl implements XDRServiceInterface {
         try {
             prepareEventLogForConsentPut(eventLog, request, response, shElement);
         } catch (Exception ex) {
-            logger.error(ex);
+            logger.error(null, ex);
             // Is this fatal?
         }
         return response;

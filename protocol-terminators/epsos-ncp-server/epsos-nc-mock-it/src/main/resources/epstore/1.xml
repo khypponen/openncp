@@ -1,129 +1,183 @@
-<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:ns2="urn:epsos-org:ep:medication" classCode="DOCCLIN" moodCode="EVN">
-   <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
-   <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.1"/>
-   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
-   <id extension="6" root="1.2.246.556.12001.4.93.1.1"/>
-   <code code="57833-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="eRecept">
-      <translation displayName="ePrescription"/>
-   </code>
-   <title>ePrescription (epSOS/Croatia)</title>
-   <effectiveTime value="20130927103523"/>
-   <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" codeSystemVersion="913-20091020" displayName="normalno">
-      
-      <translation displayName="normal">
-         <translation displayName="normalno"/>
-      </translation>
-   </confidentialityCode>
-   <languageCode code="hr-HR"/>
-   <setId nullFlavor="NI"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:epsos="urn:epsos-org:ep:medication" classCode="DOCCLIN" moodCode="EVN">
+   <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3" />
+   <!-- Document type identifier for CDA R2 -->
+   <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.1" />
+   <!-- Template ID for epSOS ePrescription document -->
+   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1" />
+   <!-- Template ID for HL7v3 CDA Medical Documents. WP3A_epSOS_EED_PSePeD_CM_CDAIG_1_1 section 5 -->
+   <id extension="20130711" root="2.16.620.1.101.10.3.29.54290" />
+   <!-- Document identifier. root = organization OID (root.extension); extension = unique ID of document-->
+   <code code="57833-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Prescription for medication (doc)" />
+   <!-- LOINC code for eP -->
+   <title>ePrescription (epSOS/European Commission)</title>
+   <!-- Used for display purposes -->
+   <effectiveTime value="20150316121752+0000" />
+   <!-- Date/time of document creation as an electronic document -->
+   <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" codeSystemVersion="913-20091020" displayName="normal" />
+   <languageCode code="pt-PT" />
+   <!-- Document Language Code -->
+   <setId nullFlavor="NI" />
+   <!-- ID that remains unchanged among all the existing transformations. NI = No Information. -->
    <recordTarget contextControlCode="OP" typeCode="RCT">
+      <!-- The patient referenced in the document -->
       <patientRole classCode="PAT">
-         <id extension="990000555" root="2.16.840.1.113883.2.7.2.2"/>
+         <id extension="1" root="2.16.620.1.101.10.1.1" />
+         <!-- Patient Identifier. root = national OID for patients -->
          <addr>
-            <country>HR</country>
-                  </addr>
-         <telecom nullFlavor="NI"/>
+            <!-- Patient address -->
+            <country>BE</country>
+            <postalCode>B-1040 Brussels</postalCode>
+            <streetAddressLine>Breydel Street, 4</streetAddressLine>
+         </addr>
+         <telecom nullFlavor="NI" />
+         <!-- Patient’s telephone number / Patient e-mail address -->
          <patient classCode="PSN" determinerCode="INSTANCE">
             <name>
-               <given>JELKA</given>
-               <family>BRBLJAVICA</family>
-                        </name>
-            <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="913-20091020" displayName="ženski spol">
-               
-               <translation displayName="Female">
-                  <translation displayName="Žensko"/>
-               </translation>
-            </administrativeGenderCode>
-            <birthTime value="19561001"/>
+               <!-- Patient Name -->
+               <family>Bouchez</family>
+               <!-- Patient's Family Name/Surname -->
+               <given>Pierre</given>
+               <!-- Patient's Given Name -->
+            </name>
+            <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="913-20091020" displayName="Male" />
+            <!-- Patient's Gender -->
+            <birthTime value="19800613" />
+            <!-- Patient's Date of Birth -->
          </patient>
+         <providerOrganization>
+            <!-- Healthcare organization that assigned the id sub-element of patientRole, and in which the patient is a patient. -->
+            <id root="2.16.620.1.101.10.1" />
+            <!-- for PT, root = OID RNU -->
+            <name>European Commission (DG PMO)</name>
+         </providerOrganization>
       </patientRole>
    </recordTarget>
-   <author>
-      <functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO" codeSystemVersion="2008" displayName="Doktori/doktorice medicine">
-         
-         <translation displayName="Medical doctors">
-            <translation displayName="Doktori/ce medicine"/>
-         </translation>
-      </functionCode>
-      <time value="20130927103523"/>
+   <author typeCode="AUT" contextControlCode="OP">
+      <!-- Person/machine that created document content -->
+      <functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO" codeSystemVersion="2008" displayName="Médico" />
+      <!-- Healthcare Professional role -->
+      <time value="20150407121752+0000" />
+      <!-- The author/time element represents the start time of the author’s participation in the creation of the clinical document. -->
       <assignedAuthor classCode="ASSIGNED">
-         <id extension="1296353" root="2.16.840.1.113883.2.7.1.1"/>
-         <telecom nullFlavor="NI"/>
+         <id extension="90647" root="2.16.620.1.101.10.2.5" />
+         <!-- HP ID number. extension = doctor ID (for PT = num. Ordem dos Medicos); root = national OID for doctors (for PT = OID Ordem dos Medicos)-->
+         <addr>
+            <!-- Doctor's address -->
+            <country>BE</country>
+            <postalCode>B-1000 Brussels</postalCode>
+            <streetAddressLine>Boulevard Charlemagne, 37</streetAddressLine>
+         </addr>
+         <telecom use="WP" value="tel:+322345678" />
          <assignedPerson classCode="PSN" determinerCode="INSTANCE">
             <name>
-               <given>KATICA</given>
-               <family>SUPRAHA</family>
-                        </name>
+               <!-- Doctor name -->
+               <family>Vinyl</family>
+               <given>Jacques</given>
+            </name>
          </assignedPerson>
          <representedOrganization classCode="ORG" determinerCode="INSTANCE">
-            <id extension="079402127" root="2.16.840.1.113883.2.7.1.4"/>
-            <name>AMBULANTA KOROMAČNO               D OM ZDRAVLJA LABIN</name>
-            <telecom nullFlavor="NI"/>
+            <id extension="54290" root="2.16.620.1.101.10.3.29" />
+            <!-- Healthcare Facility's Id. root = national OID of facility type (in this case, ACES) -->
+            <name>Hopital Erasme</name>
+            <!-- Healthcare Facility's Name -->
+            <telecom use="WP" value="tel:+32234343434" />
+            <!-- Healthcare Facility's Telecom -->
             <addr>
-               <country>HR</country>
-               <state nullFlavor="NI"/>
-                        </addr>
+               <!-- Healthcare Facility's address -->
+               <country>BE</country>
+               <postalCode>B-1070 Bruxelles</postalCode>
+               <streetAddressLine>Route de Lennik 808</streetAddressLine>
+            </addr>
          </representedOrganization>
       </assignedAuthor>
    </author>
-   <custodian>
+   <custodian typeCode="CST">
+      <!-- organization that maintains the document -->
       <assignedCustodian classCode="ASSIGNED">
          <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
-            <id extension="079402127" root="2.16.840.1.113883.2.7.1.4"/>
-            <name>AMBULANTA KOROMAČNO               D OM ZDRAVLJA LABIN</name>
-            <telecom nullFlavor="NI"/>
+            <id extension="54290" root="2.16.620.1.101.10.3.29" />
+            <!-- Organization Facility's Id. root = national OID of facility type (in this case, ACES) -->
+            <name>Agrupamento de Centros de Saúde Douro I - Marão e Douro Norte</name>
+            <!-- Organization Facility's Name -->
+            <telecom use="WP" value="tel:+351259302270" />
+            <!-- Organization Facility's Telecom -->
             <addr>
-               <country>HR</country>
-                        </addr>
+               <!-- Organization Facility's address -->
+               <country>PT</country>
+               <postalCode>5000-524 VILA REAL</postalCode>
+               <streetAddressLine>Rua Miguel Torga, 12 F</streetAddressLine>
+            </addr>
          </representedCustodianOrganization>
       </assignedCustodian>
    </custodian>
    <legalAuthenticator contextControlCode="OP" typeCode="LA">
-      <time value="20130927103523"/>
-      <signatureCode code="S"/>
+      <!-- The person taking responsibility for the medical content of the document.  It may be a person or a regional authority, or an NCP. -->
+      <time value="20150407121752+0000" />
+      <!-- Time of signing the document -->
+      <signatureCode code="S" />
+      <!-- Signature code -->
       <assignedEntity classCode="ASSIGNED">
-         <id extension="1296353" root="2.16.840.1.113883.2.7.1.1"/>
-         <telecom nullFlavor="NI"/>
-         <assignedPerson>
+         <!-- The regional authority that is responsible for the legal authentication of the CDA document -->
+         <id extension="54290" root="2.16.620.1.101.10.3.29" />
+         <!-- Unique identification of legal authenticator. root = OID of legal authenticator -->
+         <addr>
+            <!-- Legal authenticator address -->
+            <country>PT</country>
+            <postalCode>5000-524 VILA REAL</postalCode>
+            <streetAddressLine>Rua Miguel Torga, 12 F</streetAddressLine>
+         </addr>
+         <telecom use="WP" value="tel:+351259302270" />
+         <assignedPerson classCode="PSN" determinerCode="INSTANCE">
             <name>
-               <family>SUPRAHA</family>
-               <given>KATICA</given>
-                        </name>
+               <family>Santos</family>
+               <given>Maria Helena</given>
+            </name>
          </assignedPerson>
          <representedOrganization classCode="ORG" determinerCode="INSTANCE">
-            <id extension="079402127" root="2.16.840.1.113883.2.7.1.4"/>
-            <name>AMBULANTA KOROMAČNO               D OM ZDRAVLJA LABIN</name>
-            <addr use="PST">
-               <country>HR</country>
-                        </addr>
+            <id extension="54290" root="2.16.620.1.101.10.3.29" />
+            <!-- Organization Facility's Id. root = national OID of facility type (in this case, ACES) -->
+            <name>Agrupamento de Centros de Saúde Douro I - Marão e Douro Norte</name>
+            <!-- Organization Facility's Name -->
+            <telecom use="WP" value="tel:+351259302270" />
+            <!-- Organization Facility's Telecom -->
+            <addr>
+               <!-- Organization Facility's address -->
+               <country>PT</country>
+               <postalCode>5000-524 VILA REAL</postalCode>
+               <streetAddressLine>Rua Miguel Torga, 12 F</streetAddressLine>
+            </addr>
          </representedOrganization>
       </assignedEntity>
    </legalAuthenticator>
    <relatedDocument typeCode="XFRM">
-      <parentDocument>
-         <id extension="ERICSSON_TEST/20130711135249113-3FE4A255" root="2.16.840.1.113883.2.7.10.10.5"/>
+      <!-- Allows the document to be declared as a revision (append/replace/transform) of a previous document -->
+      <parentDocument classCode="DOCCLIN" moodCode="EVN">
+         <id extension="20130711" root="2.16.620.1.101.10.3.29.54290" />
+         <!-- Document identifier. root = organization OID (root.extension); extension = unique ID of document-->
       </parentDocument>
    </relatedDocument>
    <component>
       <structuredBody>
          <component>
             <section>
-               <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.1"/>
-               <id extension="ERICSSON_TEST/20130711135249113-3FE4A255" root="2.16.840.1.113883.2.7.10.10.5"/>
-               <code code="57828-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Recepti">
-                  <translation displayName="Prescriptions"/>
-               </code>
-               <title>Prostin E2</title>
+               <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.1" />
+               <!-- Template ID for Prescription Section -->
+               <id extension="20130711135249113-3FE4A256" root="2.16.620.1.101.10.3.29.54290" />
+               <!-- The section ID is the Prescription ID -->
+               <code code="57828-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Prescriptions" />
+               <!-- LOINC code for Prescriptions (Prescription Section) -->
+               <title>Prescriptions</title>
                <text ID="eP_as_text">
-                    <paragraph>
-                     <content ID="FINSTRUCT">null
-null</content>
+                  <paragraph>
+                     <content ID="FINSTRUCT">Instruções para o farmacêutico</content>
                   </paragraph>
                   <paragraph>
                      <content ID="ORIGNAME">Prostin E2</content>
+                     <!-- Generic name and strength of the medication in the narrative, or just the generic name alone if strength is not relevant -->
                   </paragraph>
                </text>
-               <author>
+               <!--<author>
                   <functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO" codeSystemVersion="2008" displayName="Doktori/doktorice medicine">
                      
                      <translation displayName="Medical doctors">
@@ -138,7 +192,7 @@ null</content>
                         <name>
                            <given>KATICA</given>
                            <family>SUPRAHA</family>
-                                                </name>
+								                </name>
                      </assignedPerson>
                      <representedOrganization classCode="ORG" determinerCode="INSTANCE">
                         <id extension="079402127" root="2.16.840.1.113883.2.7.1.4"/>
@@ -147,97 +201,142 @@ null</content>
                         <addr>
                            <country>HR</country>
                            <state nullFlavor="NA"/>
-                                                </addr>
+								                </addr>
                      </representedOrganization>
                   </assignedAuthor>
-               </author>
-               <entry>
+               </author>-->
+               <entry typeCode="COMP">
                   <substanceAdministration classCode="SBADM" moodCode="INT">
-                     <templateId root="2.16.840.1.113883.10.20.1.24"/>
-                     <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.2"/>
-                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.11"/>
-                     <id extension="ERICSSON_TEST/20130711135249113-3FE4A255" root="2.16.840.1.113883.2.7.10.10.5"/>
-                     <statusCode nullFlavor="UNK"/>
+                     <templateId root="2.16.840.1.113883.10.20.1.24" />
+                     <!-- CCD templateId -->
+                     <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.2" />
+                     <!-- epSOS templateId -->
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1" />
+                     <!-- A "normal" <substanceAdministration> act that may not contain any subordinate <substanceAdministration> act -->
+                     <!-- The following must be true for the prescription item ID: 
+						- The prescription item ID must be globally unique 
+						- In countries where there can be only one item per prescription, the prescription item ID must be the same as the prescription ID 
+						- The prescription item ID can be used by the prescribing system or provider to identify the prescription to which it belongs. This provides the link from the dispensed medicine to the prescription.  -->
+                     <id extension="20130711135249113-3FE4A256/ITEM-1" root="2.16.620.1.101.10.3.29.54290" />
+                     <statusCode code="active" />
+                     <!-- The status of all <substanceAdministration> elements must be either "active" or "completed". Status of "active" indicates a currently valid prescription, status of completed indicates a previously taken medication. -->
                      <effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
-                        <low value="20130927103523"/>
-                        <high value="20131012103523"/>
+                        <!-- The first <effectiveTime> element encodes the start and stop time of the medication regimen -->
+                        <low value="20150927103523" />
+                        <high value="20151012103523" />
                      </effectiveTime>
-                     <effectiveTime nullFlavor="UNK"/>
-                     <doseQuantity nullFlavor="NA"/>
-                     <consumable>
+                     <effectiveTime nullFlavor="UNK" />
+                     <!-- The second <effectiveTime> element records the frequency of administration. -->
+                     <routeCode code="20053000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Uso oral" />
+                     <!-- Route of administration using the EDQM route of administration vocabulary. -->
+                     <doseQuantity nullFlavor="NA" />
+                     <!-- The dose is specified in the <doseQuantity> element. NA = Not Applicable -->
+                     <consumable typeCode="CSM">
+                        <!-- Shall contain a <manufacturedProduct> element, conforming to the Medicine Entry Content module template -->
                         <manufacturedProduct classCode="MANU">
-                           <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
-                           <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                           <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1" />
+                           <!-- Template ID for Medicine Entry Content Module -->
+                           <templateId root="2.16.840.1.113883.10.20.1.53" />
+                           <!-- Template ID for Product -->
                            <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
                               <code code="G02AD02664" codeSystem="2.16.840.1.113883.6.88" displayName="Prostin E2">
+                                 <!-- The <code> element of the <manufacturedMaterial> describes the medication. For the scope of epSOS this is used to convey the “Country A Cross-border/regional/national medicinal product code. Value should come from:
+							  2.16.840.1.113883.6.88 = RxNorm code system for medications
+							  2.16.840.1.113883.6.59 = CDC Vaccine Codes
+							  2.16.840.1.113883.1.11.20.8 = MedicationTypeCode
+							  -->
                                  <originalText>
-                                            <reference value="#ORIGNAME"/>
+                                    <reference value="#ORIGNAME" />
+                                    <!-- Points to the generic name and strength of the medication in the narrative, or just the generic name alone if strength is not relevant. Reference to narrative text of prescription, e.g.
+									Pyrimon, Chloramphenicol/ Dexamethasone 1% w/v/ 0.1% w/v 5 ml Eye Drops – three drops -->
                                  </originalText>
                               </code>
-                              <name>Prostin E2</name>
-                              <ns2:formCode code="10715000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="štapić za uho">
-                                 
-                                 <ns2:translation displayName="Ear stick">
-                                    <ns2:translation displayName="10715000"/>
-                                 </ns2:translation>
-                              </ns2:formCode>
-                              <ns2:asContent classCode="CONT">
-                                 <ns2:containerPackagedMedicine classCode="CONT" determinerCode="INSTANCE">
-                                    <ns2:name>Prostin E2</ns2:name>
-                                    <ns2:formCode code="30002000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="aplikator">
-                                       
-                                       <ns2:translation displayName="Applicator">
-                                          <ns2:translation displayName="30002000"/>
-                                       </ns2:translation>
-                                    </ns2:formCode>
-                                    <ns2:capacityQuantity unit="1" value="1"/>
-                                 </ns2:containerPackagedMedicine>
-                              </ns2:asContent>
-                              <ns2:ingredient classCode="ACTI">
-                                 <ns2:quantity>
-                                    <ns2:numerator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" unit="mg" value="2" xsi:type="ns2:PQ"/>
-                                    <ns2:denominator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" unit="1" value="1" xsi:type="ns2:PQ"/>
-                                 </ns2:quantity>
-                                 <ns2:ingredient classCode="MMAT" determinerCode="KIND">
-                                    <ns2:code code="G02AD02" codeSystem="2.16.840.1.113883.6.73" codeSystemName="Anatomical Therapeutic Chemical" codeSystemVersion="January 2010" displayName="dinoproston">
-                                       
-                                       <ns2:translation displayName="dinoprostone">
-                                          <ns2:translation displayName="dinoproston"/>
-                                       </ns2:translation>
-                                    </ns2:code>
-                                    <ns2:name>dinoproston</ns2:name>
-                                 </ns2:ingredient>
-                              </ns2:ingredient>
+                              <name>Brufen</name>
+                              <!-- Should contain the brand name of the medication -->
+                              <epsos:formCode code="10219000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="Comprimido">
+                                 <!-- This code represents the form of the medication (e.g. tablet, capsule, liquid). -->
+                                 <!--<epsos:translation displayName="Ear stick">
+                                    <epsos:translation displayName="10715000"/>
+                                 </epsos:translation> -->
+                              </epsos:formCode>
+                              <epsos:asContent classCode="CONT">
+                                 <!-- This structure describes the packaging of the medication -->
+                                 <epsos:containerPackagedMedicine classCode="CONT" determinerCode="INSTANCE">
+                                    <epsos:name>Brufenzito</epsos:name>
+                                    <!-- Package brand name -->
+                                    <epsos:formCode code="30066000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="Caixa de comprimidos">
+                                       <!--<epsos:translation displayName="Applicator">
+                                          <epsos:translation displayName="30002000"/>
+                                       </epsos:translation> -->
+                                    </epsos:formCode>
+                                    <epsos:capacityQuantity unit="1" value="30" />
+                                    <!--  Capacity of the packaging -->
+                                 </epsos:containerPackagedMedicine>
+                              </epsos:asContent>
+                              <epsos:asSpecializedKind classCode="GRIC">
+                                 <!-- The classCode of "GRIC" identifies this structure as the representation of a generic equivalent of the medication described in the current Medicine entry. -->
+                                 <epsos:generalizedMedicineClass classCode="MMAT">
+                                    <epsos:code code="N02BE01" codeSystem="2.16.840.1.113883.6.73" codeSystemName="Anatomical Therapeutic Chemical" displayName="Paracetamol" />
+                                    <!-- The <epsos:code> element contains the coded representation of the generic medicine. http://www.whocc.no/atc_ddd_index/ -->
+                                    <epsos:name>PARACETAMOL</epsos:name>
+                                    <!--  The <epsos:name> element may be used for the plain text representation. -->
+                                 </epsos:generalizedMedicineClass>
+                              </epsos:asSpecializedKind>
+                              <epsos:ingredient classCode="ACTI">
+                                 <!-- One or more active ingredients may be represented with this structure. -->
+                                 <epsos:quantity>
+                                    <!-- The medication strength is represented as the ratio of the active ingredient(s) to a unit of medication. The <epsos:quantity> element contains the numerator and denominator of the strength ratio. -->
+                                    <epsos:numerator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" unit="mg" value="2" xsi:type="epsos:PQ" />
+                                    <epsos:denominator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" unit="1" value="1" xsi:type="epsos:PQ" />
+                                 </epsos:quantity>
+                                 <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                                    <!-- A code describing the active ingredient(s) of the product from a controlled vocabulary, such as ATC. WP3A_epSOS_EED_PSePeD_CM_CDAIG_1_1 page 90 -->
+                                    <epsos:code code="G02AD02" codeSystem="2.16.840.1.113883.6.73" codeSystemName="Anatomical Therapeutic Chemical" codeSystemVersion="January 2010" displayName="dinoproston">
+                                       <!--<epsos:translation displayName="dinoprostone">
+                                          <epsos:translation displayName="dinoproston"/>
+                                       </epsos:translation> -->
+                                    </epsos:code>
+                                    <epsos:name>dinoproston</epsos:name>
+                                 </epsos:ingredient>
+                              </epsos:ingredient>
                            </manufacturedMaterial>
-                           <ns2:subjectOf5 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                         </manufacturedProduct>
                      </consumable>
                      <entryRelationship typeCode="COMP">
+                        <!-- A prescription item entry SHALL contain one or more amounts of units of the consumable to dispense, which SHALL be prensentes be supply. The value for “entryRelationship/@typeCode” in a relationship between a prescription item entry and amount of units of the consumable to dispense SHALL be “COMP” 2.16.840.1.113883.5.1002 ActRelationshipType STATIC. (IHE PRE, 6.3.4.1.3.21) -->
                         <supply classCode="SPLY" moodCode="RQO">
-                           <independentInd value="false"/>
-                           <quantity unit="1" value="3"/>
+                           <!-- RQO = Request or Order -->
+                           <!-- The value for “supply/@classCode” in an amount of units of the consumable to dispense SHALL be “SPLY” 2.16.840.1.113883.5.6 ActClass STATIC. (IHE PRE, 6.3.4.1.3.21)
+							The value for “supply/@moodCode” in an amount of units of the consumable to dispense SHALL be “RQO” 2.16.840.1.113883.5.1001 ActMood STATIC. (IHE PRE, 6.3.4.1.3.21) -->
+                           <independentInd value="false" />
+                           <!-- An amount of units of the consumable to dispense SHALL contain exactly one supply/independentInd. The value for “supply/independentInd” in an amount of units of the consumable to dispense SHALL be “false”. (IHE PRE, 6.3.4.1.3.21) -->
+                           <quantity unit="1" value="3" />
+                           <!-- An amount of units of the consumable to dispense SHALL contain exactly one supply/quantity. (IHE PRE, 6.3.4.1.3.21); Number of packages according to WP3A_epSOS_EED_PSePeD_CM_CDAIG_1_1 page 51 -->
                         </supply>
                      </entryRelationship>
                      <entryRelationship inversionInd="true" typeCode="SUBJ">
+                        <!-- An entry relationship may be present to provide the substitution instructions. -->
                         <observation classCode="OBS" moodCode="EVN">
-                           <code code="SUBST" codeSystem="2.16.840.1.113883.5.6" codeSystemName="ActClass" displayName="Substitution"/>
-                           <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" code="G" codeSystem="2.16.840.1.113883.5.1070" codeSystemName="SubstanceAdminSubstitution" codeSystemVersion="913-20091020" displayName="generički" xsi:type="CE">
-                              
-                              <translation displayName="Generic">
+                           <code code="SUBST" codeSystem="2.16.840.1.113883.5.6" codeSystemName="ActClass" displayName="Substitutição" />
+                           <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" code="G" codeSystem="2.16.840.1.113883.5.1070" codeSystemName="SubstanceAdminSubstitution" codeSystemVersion="913-20091020" displayName="Genérico" xsi:type="CE">
+                              <!--<translation displayName="Generic">
                                  <translation displayName="Generik"/>
-                              </translation>
+                              </translation>-->
                            </value>
                         </observation>
                      </entryRelationship>
                      <entryRelationship inversionInd="true" typeCode="SUBJ">
+                        <!-- Medication Fulfillment Instructions: Any medication may be the subject of further instructions to the pharmacist -->
                         <act classCode="ACT" moodCode="INT">
-                           <templateId root="2.16.840.1.113883.10.20.1.43"/>
-                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.3.1"/>
-                           <code code="FINSTRUCT" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode" displayName="Upute za onoga tko izdaje lijek"/>
+                           <templateId root="2.16.840.1.113883.10.20.1.43" />
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.3.1" />
+                           <code code="FINSTRUCT" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode" />
                            <text>
-                              <reference value="#FINSTRUCT"/>
+                              <!-- Contain a <reference> element to the link text of the comment in the narrative portion of the document. The comment itself is not the act being coded, so it appears in the <text> of the <observation>, not as part of the <code>. -->
+                              <reference value="#FINSTRUCT" />
+                              <!-- Points to an element in the narrative content that contains the complete text describing the medication. -->
                            </text>
-                           <statusCode code="completed"/>
+                           <statusCode code="completed" />
                         </act>
                      </entryRelationship>
                   </substanceAdministration>

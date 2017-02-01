@@ -49,7 +49,7 @@ import org.apache.axis2.util.XMLUtils;
 import org.apache.axis2.xmlbeans.XmlBeansXMLReader;
 import org.apache.xmlbeans.XmlObject;
 import org.apache.xmlbeans.XmlOptions;
-import org.hibernate.exception.ExceptionUtils;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.joda.time.DateTime;
 import org.opensaml.saml2.core.Assertion;
 import org.slf4j.Logger;

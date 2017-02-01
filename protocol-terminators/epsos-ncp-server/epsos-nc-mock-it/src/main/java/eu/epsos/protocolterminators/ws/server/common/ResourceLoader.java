@@ -1,12 +1,9 @@
 package eu.epsos.protocolterminators.ws.server.common;
 
-import eu.epsos.protocolterminators.ws.server.xca.impl.DocumentSearchMockImpl;
-import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.*;
 
 /**
  * Helper class for loading file resources from the classpath.
@@ -14,16 +11,17 @@ import org.apache.log4j.Logger;
  * @author gareth
  */
 public class ResourceLoader {
-    public static Logger logger = Logger.getLogger(ResourceLoader.class);
+
+    public static Logger logger = LoggerFactory.getLogger(ResourceLoader.class);
 
     /**
-     * Locates and loads file for the specified filename. Returns contents as a
-     * String.
+     * Locates and loads file for the specified filename. Returns contents as a String.
      *
      * @param resourceName Filename (without path)
      * @return
      */
     public String getResource(String resourceName) {
+
         String resourceStr = "";
 
         ClassLoader cl = getClass().getClassLoader();
@@ -41,7 +39,12 @@ public class ResourceLoader {
         return resourceStr;
     }
 
+    /**
+     * @param in
+     * @return
+     */
     private String streamToString(InputStream in) {
+
         StringBuilder out = new StringBuilder();
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -55,22 +58,23 @@ public class ResourceLoader {
         }
         return out.toString();
     }
-    
+
     public byte[] getResourceAsByteArray(String resourceName) {
+
         ClassLoader cl = getClass().getClassLoader();
         InputStream is = cl.getResourceAsStream(resourceName);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         byte[] buff = new byte[100000];
         int i = 0;
         try {
-			while ((i = is.read(buff, 0, buff.length)) > 0) {
-			    baos.write(buff, 0, i);
-			}
-	        is.close();
-		} catch (IOException e) {
-			logger.error(e.getMessage());
-			e.printStackTrace();
-		}
+            while ((i = is.read(buff, 0, buff.length)) > 0) {
+                baos.write(buff, 0, i);
+            }
+            is.close();
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+            e.printStackTrace();
+        }
         return baos.toByteArray();
     }
 }

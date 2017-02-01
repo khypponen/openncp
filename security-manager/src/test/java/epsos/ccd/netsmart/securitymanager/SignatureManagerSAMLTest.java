@@ -16,25 +16,9 @@
  */
 package epsos.ccd.netsmart.securitymanager;
 
-import static org.junit.Assert.fail;
-
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
+import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
 import org.custommonkey.xmlunit.XMLUnit;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.*;
 import org.opensaml.DefaultBootstrap;
 import org.opensaml.saml2.core.Assertion;
 import org.opensaml.xml.Configuration;
@@ -44,16 +28,26 @@ import org.opensaml.xml.io.UnmarshallerFactory;
 import org.opensaml.xml.io.UnmarshallingException;
 import org.opensaml.xml.parse.BasicParserPool;
 import org.opensaml.xml.parse.XMLParserException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+import static org.junit.Assert.fail;
 
 /**
- *
  * @author jerouris
  */
 public class SignatureManagerSAMLTest {
+
+    private static final Logger logger = LoggerFactory.getLogger(SignatureManagerSAMLTest.class);
 
     public SignatureManagerSAMLTest() {
     }
@@ -116,7 +110,7 @@ public class SignatureManagerSAMLTest {
             try {
                 XMLUtils.sendXMLtoStream(signedDoc, new FileOutputStream("SignedSamlAssertion.xml"));
             } catch (FileNotFoundException ex) {
-                Logger.getLogger(SignatureManagerSAMLTest.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(null, ex);
             }
 
             //Verify the Signed SAML Assertion
@@ -141,21 +135,20 @@ public class SignatureManagerSAMLTest {
             }
 
         } catch (XMLParserException ex) {
-            Logger.getLogger(SignatureManagerSAMLTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             fail("XmL Parser:" + ex.getMessage());
         } catch (ParserConfigurationException ex) {
-            Logger.getLogger(SignatureManagerSAMLTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             fail("Parse Conf:" + ex.getMessage());
         } catch (MarshallingException ex) {
-            Logger.getLogger(SignatureManagerSAMLTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             fail("Marshalling:" + ex.getMessage());
         } catch (SMgrException ex) {
-            Logger.getLogger(SignatureManagerSAMLTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             fail("SMGR :" + ex.getMessage());
         } catch (UnmarshallingException ex) {
-            Logger.getLogger(SignatureManagerSAMLTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             fail("Unmarshalling:" + ex.getMessage());
         }
     }
-
 }

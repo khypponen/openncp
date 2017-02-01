@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3"
+                  xmlns:epsos="urn:epsos-org:ep:medication"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="urn:hl7-org:v3 CDA_extended.xsd">
+   <realmCode/>                  
+   <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+   
+   <!-- epSOS MRO --><templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.5"/>
+   
+   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+   <id extension="2.25.1"
+       root="2.25"/>
+       
+   <!-- epSOS MRO --><code codeSystem="2.16.840.1.113883.6.1" 
+      codeSystemName="LOINC" code="56445-0" codeSystemVersion="2.34" 
+      displayName="Medication Summary"/>    
+       
+   <title>Medication Summary</title>
+   <effectiveTime value="20121220220044.836+0000"/>
+   <confidentialityCode code="N"
+                        codeSystem="2.16.840.1.113883.5.25"
+                        codeSystemName="Confidentiality"
+                        codeSystemVersion="913-20091020"
+                        displayName="normal"/>
+   <languageCode code="en-GB"/>
+   <recordTarget>
+      <patientRole>
+         <id extension="182581814" root="2.16.620.1.101.10.1.1"/>
+         <addr>
+            <country>PT</country>
+            <postalCode>3100-000 ABIUL</postalCode>
+            <streetAddressLine>Undefined ,  - </streetAddressLine>
+         </addr>
+         <telecom nullFlavor="NI"/>
+         <patient>
+            <name>
+               <family>Alves Almeida</family>
+               <given>Isaura Martins</given>
+            </name>
+            <administrativeGenderCode code="F"
+                                      codeSystem="2.16.840.1.113883.5.1"
+                                      codeSystemName="AdministrativeGender"
+                                      codeSystemVersion="913-20091020"
+                                      displayName="Female">
+               <translation displayName="Feminino"/>
+            </administrativeGenderCode>
+            <birthTime value="19650530"/>
+         </patient>
+         <providerOrganization>
+            <id root="2.16.620.1.101.10.1"/>
+            <name>Registo Nacional de Utentes</name>
+         </providerOrganization>
+      </patientRole>
+   </recordTarget>
+   <author>
+      <time value="20130313113522+0000"/>
+      <assignedAuthor>
+         <id extension="90647" root="2.16.620.1.101.10.2.5"/>
+         <telecom use="WP" value="tel:+351266739310"/>
+         <assignedPerson>
+            <name>
+               <family>Santos</family>
+               <given>Maria Helena</given>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id extension="4070300" root="2.16.620.1.101.10.3.29"/>
+            <name>Agrupamento de Centros de Saúde Alentejo Central</name>
+            <addr>
+               <country>PT</country>
+               <postalCode>7000-747 ÉVORA</postalCode>
+               <streetAddressLine>Rua Ferragial do Poço Novo</streetAddressLine>
+            </addr>
+         </representedOrganization>
+      </assignedAuthor>
+   </author>
+   <custodian>
+      <assignedCustodian>
+         <representedCustodianOrganization>
+            <id extension="4070300" root="2.16.620.1.101.10.3.29"/>
+            <name>Agrupamento de Centros de Saúde Alentejo Central</name>
+            <telecom use="WP" value="tel:+351266739310"/>
+            <addr>
+               <country>PT</country>
+               <postalCode>7000-747 ÉVORA</postalCode>
+               <streetAddressLine>Rua Ferragial do Poço Novo</streetAddressLine>
+            </addr>
+         </representedCustodianOrganization>
+      </assignedCustodian>
+   </custodian>
+   <legalAuthenticator>
+      <time value="20130313113522+0000"/>
+      <signatureCode code="S"/>
+      <assignedEntity>
+         <id extension="4070300" root="2.16.620.1.101.10.3.29"/>
+         <telecom use="WP" value="tel:+351266739310"/>
+         <assignedPerson>
+            <name>
+               <family>Santos</family>
+               <given>Maria Helena</given>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id extension="4070300" root="2.16.620.1.101.10.3.29"/>
+            <name>Agrupamento de Centros de Saúde Alentejo Central</name>
+            <telecom use="WP" value="tel:+351266739310"/>
+            <addr>
+               <country>PT</country>
+               <postalCode>7000-747 ÉVORA</postalCode>
+               <streetAddressLine>Rua Ferragial do Poço Novo</streetAddressLine>
+            </addr>
+         </representedOrganization>
+      </assignedEntity>
+   </legalAuthenticator>
+   <participant typeCode="IND">
+      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+      <functionCode code="PCP"
+                    codeSystem="2.16.840.1.113883.5.88"
+                    codeSystemName="HL7 ParticipationFunction"
+                    displayName="Médico de Família"/>
+      <associatedEntity classCode="PRS">
+         <addr>
+            <country>PT</country>
+            <postalCode>7000-747 ÉVORA</postalCode>
+            <streetAddressLine>Rua Ferragial do Poço Novo</streetAddressLine>
+         </addr>
+         <telecom use="WP" value="tel:+351266739310"/>
+         <telecom nullFlavor="NI"/>
+         <associatedPerson>
+            <name>
+               <family>Santos</family>
+               <given>Maria Helena</given>
+            </name>
+         </associatedPerson>
+      </associatedEntity>
+   </participant>
+   <documentationOf>
+      <serviceEvent classCode="PCPR">
+         <effectiveTime>
+            <low value="20121203000000.000+0000"/>
+            <high value="20121203000000.000+0000"/>
+         </effectiveTime>
+      </serviceEvent>
+   </documentationOf>
+   <relatedDocument typeCode="XFRM">
+      <parentDocument>
+         <id extension="2.25.208861972525593786945152155986656371691"
+             root="2.25.3569993591790061285901367284794224715"/>
+      </parentDocument>
+   </relatedDocument>
+   <component>
+      <structuredBody>
+         <component>
+            <section moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.1.2"/>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+               <code code="48765-2"
+                     codeSystem="2.16.840.1.113883.6.1"
+                     codeSystemName="LOINC"
+                     codeSystemVersion="2.34"
+                     displayName="Allergies, adverse reactions, alerts"/>
+               <title>Alergias, reacções adversas, alertas</title>
+               <text>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>#</th>
+                           <th>Categoria</th>
+                           <th>Código Alergénio CPARA</th>
+                           <th>Descrição Alergénio</th>
+                           <th>Data Diagnóstico</th>
+                           <th>Reacção</th>
+                           <th>Estado</th>
+                           <th>Severidade</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td ID="allergy0">0</td>
+                           <td ID="allergy0_category">ALERGIA MEDICAMENTOSA</td>
+                           <td ID="allergy0_allergenCode">J01RA01</td>
+                           <td ID="allergy0_allergenDescription">PENICILLINS, COMBINATIONS WITH OTHER ANTIBACTERIALS</td>
+                           <td ID="allergy0_diagnosisDate">20120404</td>
+                           <td ID="allergy0_reactions">ANGIOEDEMA</td>
+                           <td ID="allergy0_status">ATIVO</td>
+                           <td ID="allergy0_severity">GRAVE / MODERADA</td>
+                        </tr>
+                        <tr>
+                           <td ID="allergy1">1</td>
+                           <td ID="allergy1_category">ALERGIA MEDICAMENTOSA</td>
+                           <td ID="allergy1_allergenCode">J01XX01</td>
+                           <td ID="allergy1_allergenDescription">FOSFOMYCIN</td>
+                           <td ID="allergy1_diagnosisDate">20120709</td>
+                           <td ID="allergy1_reactions">ANAFILAXIA</td>
+                           <td ID="allergy1_status">ATIVO</td>
+                           <td ID="allergy1_severity">GRAVE / MODERADA</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </text>
+               <entry>
+                  <act classCode="ACT" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                     <id extension="8" root="2.16.620.1.101.10.3.1135301"/>
+                     <code code="NA" nullFlavor="NA"/>
+                     <text>
+                        <reference value="#allergy0"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime>
+                        <low value="20120404"/>
+                        <high value="20120404"/>
+                     </effectiveTime>
+                     <entryRelationship inversionInd="false" typeCode="SUBJ">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                           <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                           <id root="2.25.142574252963875982018428158950488287035"/>
+                           <code code="416098002"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT"
+                                 codeSystemVersion="July 2009"
+                                 displayName="Drug allergy">
+                              <translation code="0001"
+                                           codeSystem="CPARA-CATEGORIA"
+                                           codeSystemName="CPARA"
+                                           displayName="ALERGIA MEDICAMENTOSA"/>
+                           </code>
+                           <text>
+                      
+                    ALERGIA MEDICAMENTOSA
+                    
+                      <reference value="#allergy0_category"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                              <high nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value nullFlavor="NI" xsi:type="CD">
+                              <originalText>CPARA<reference value="#allergy0_category"/>
+                              </originalText>
+                           </value>
+                           <participant typeCode="CSM">
+                              <participantRole classCode="MANU">
+                                 <playingEntity classCode="MMAT">
+                                    <code code="J01RA01"
+                                          codeSystem="2.16.840.1.113883.6.73"
+                                          codeSystemName="Anatomical Therapeutic Chemical"
+                                          codeSystemVersion="January 2010"
+                                          displayName="penicillins, combinations with other antibacterials">
+                                       <originalText>
+                                          <reference value="#allergy0_allergenCode"/>
+                                       </originalText>
+                                    </code>
+                                 </playingEntity>
+                              </participantRole>
+                           </participant>
+                           <entryRelationship inversionInd="true" typeCode="MFST">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                 <code nullFlavor="NA"/>
+                                 <text>
+                                    <reference value="#allergy0_reactions"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <value code="41291007"
+                                        codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT"
+                                        codeSystemVersion="July 2009"
+                                        displayName="Giant urticaria"
+                                        xsi:type="CD">
+                                    <translation code="0003"
+                                                 codeSystem="CPARA-REACAO"
+                                                 codeSystemName="REACAO"
+                                                 displayName="ANGIOEDEMA"/>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                           <entryRelationship inversionInd="true" typeCode="SAS">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <templateId root="2.16.840.1.113883.10.20.1.55"/>
+                                 <code code="SEV"
+                                       codeSystem="2.16.840.1.113883.5.4"
+                                       codeSystemName="HL7ActCode"
+                                       displayName="Severity"/>
+                                 <text>
+                                    <reference value="#allergy0_severity"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <value code="01"
+                                        codeSystem="CPARA-GRAVIDADE"
+                                        codeSystemName="SEVERITY"
+                                        displayName="GRAVE / MODERADA"
+                                        xsi:type="CE"/>
+                              </observation>
+                           </entryRelationship>
+                        </observation>
+                     </entryRelationship>
+                  </act>
+               </entry>
+               <entry>
+                  <act classCode="ACT" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                     <id extension="117" root="2.16.620.1.101.10.3.1135301"/>
+                     <code code="NA" nullFlavor="NA"/>
+                     <text>
+                        <reference value="#allergy1"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime>
+                        <low value="20120709"/>
+                        <high value="20120709"/>
+                     </effectiveTime>
+                     <entryRelationship inversionInd="false" typeCode="SUBJ">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                           <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                           <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                           <id root="2.25.143082303369733521711591241920970439749"/>
+                           <code code="416098002"
+                                 codeSystem="2.16.840.1.113883.6.96"
+                                 codeSystemName="SNOMED CT"
+                                 codeSystemVersion="July 2009"
+                                 displayName="Drug allergy">
+                              <translation code="0001"
+                                           codeSystem="CPARA-CATEGORIA"
+                                           codeSystemName="CPARA"
+                                           displayName="ALERGIA MEDICAMENTOSA"/>
+                           </code>
+                           <text>
+                      
+                    ALERGIA MEDICAMENTOSA
+                    
+                      <reference value="#allergy1_category"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low nullFlavor="UNK"/>
+                              <high nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <value nullFlavor="NI" xsi:type="CD">
+                              <originalText>CPARA<reference value="#allergy1_category"/>
+                              </originalText>
+                           </value>
+                           <participant typeCode="CSM">
+                              <participantRole classCode="MANU">
+                                 <playingEntity classCode="MMAT">
+                                    <code code="J01XX01"
+                                          codeSystem="2.16.840.1.113883.6.73"
+                                          codeSystemName="Anatomical Therapeutic Chemical"
+                                          codeSystemVersion="January 2010"
+                                          displayName="fosfomycin">
+                                       <originalText>
+                                          <reference value="#allergy1_allergenCode"/>
+                                       </originalText>
+                                    </code>
+                                 </playingEntity>
+                              </participantRole>
+                           </participant>
+                           <entryRelationship inversionInd="true" typeCode="MFST">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                 <code nullFlavor="NA"/>
+                                 <text>
+                                    <reference value="#allergy1_reactions"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <value code="39579001"
+                                        codeSystem="2.16.840.1.113883.6.96"
+                                        codeSystemName="SNOMED CT"
+                                        codeSystemVersion="July 2009"
+                                        displayName="Anaphylaxis"
+                                        xsi:type="CD">
+                                    <translation code="0002"
+                                                 codeSystem="CPARA-REACAO"
+                                                 codeSystemName="REACAO"
+                                                 displayName="ANAFILAXIA"/>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                           <entryRelationship inversionInd="true" typeCode="SAS">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <templateId root="2.16.840.1.113883.10.20.1.55"/>
+                                 <code code="SEV"
+                                       codeSystem="2.16.840.1.113883.5.4"
+                                       codeSystemName="HL7ActCode"
+                                       displayName="Severity"/>
+                                 <text>
+                                    <reference value="#allergy1_severity"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <value code="01"
+                                        codeSystem="CPARA-GRAVIDADE"
+                                        codeSystemName="SEVERITY"
+                                        displayName="GRAVE / MODERADA"
+                                        xsi:type="CE"/>
+                              </observation>
+                           </entryRelationship>
+                        </observation>
+                     </entryRelationship>
+                  </act>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.1.8"/>
+               <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+               <code code="10160-0"
+                     codeSystem="2.16.840.1.113883.6.1"
+                     codeSystemName="LOINC"
+                     codeSystemVersion="2.34"
+                     displayName="History of medication use"/>
+               <title>Medicamentos Usados</title>
+               <text>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>#</th>
+                           <th>Descrição</th>
+                           <th>Dosagem</th>
+                           <th>Data Início</th>
+                           <th>Data Fim</th>
+                           <th>Posologia</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td ID="medication0">0</td>
+                           <td ID="medication0_description">Paracetamol, [Ben-U-Ron], 1000 mg, Comprimido, Blister - 18 unidade(s)</td>
+                           <td ID="medication0_dosage"/>
+                           <td ID="medication0_initialDate">20121203</td>
+                           <td ID="medication0_finalDate">20121203</td>
+                           <td ID="medication0_applicationRate"/>
+                        </tr>
+                        <tr>
+                           <td ID="medication1">1</td>
+                           <td ID="medication1_description">Ciclosporina, [Ciclosporina Jaba 50 mg Cápsulas moles], 50 mg, Cápsula mole, Blister - 30 unidade(s)</td>
+                           <td ID="medication1_dosage"/>
+                           <td ID="medication1_initialDate">20121203</td>
+                           <td ID="medication1_finalDate">20121203</td>
+                           <td ID="medication1_applicationRate"/>
+                        </tr>
+                     </tbody>
+                  </table>
+               </text>
+               <entry>
+                  <substanceAdministration classCode="SBADM" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                     <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+                     <id extension="532" root="2.16.620.1.101.10.3.3113400"/>
+                     <text>
+                        <reference value="#medication0"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime xsi:type="IVL_TS">
+                        <low value="20121203"/>
+                        <high nullFlavor="UNK"/>
+                     </effectiveTime>
+                     <effectiveTime institutionSpecified="true"
+                                    nullFlavor="NA"
+                                    operator="A"
+                                    xsi:type="PIVL_TS"/>
+                     <doseQuantity nullFlavor="UNK"/>
+                     <consumable>
+                        <manufacturedProduct>
+                           <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                           <manufacturedMaterial>
+                              <code nullFlavor="NI"/>
+                              <name nullFlavor="NI"/>
+                              <epsos:formCode nullFlavor="NI"/>
+                              <epsos:ingredient classCode="ACTI">
+                                 <epsos:quantity>
+                                    <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                                    <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                                 </epsos:quantity>
+                                 <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                                    <epsos:code code="N02BE01"
+                                                codeSystem="2.16.840.1.113883.6.73"
+                                                codeSystemName="Anatomical Therapeutic Chemical"
+                                                codeSystemVersion="January 2010"
+                                                displayName="paracetamol">
+                                       <epsos:translation displayName="PARACETAMOL"/>
+                                    </epsos:code>
+                                 </epsos:ingredient>
+                              </epsos:ingredient>
+                           </manufacturedMaterial>
+                        </manufacturedProduct>
+                     </consumable>
+                  </substanceAdministration>
+               </entry>
+               <entry>
+                  <substanceAdministration classCode="SBADM" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                     <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+                     <id extension="533" root="2.16.620.1.101.10.3.3113400"/>
+                     <text>
+                        <reference value="#medication1"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime xsi:type="IVL_TS">
+                        <low value="20121203"/>
+                        <high nullFlavor="UNK"/>
+                     </effectiveTime>
+                     <effectiveTime institutionSpecified="true"
+                                    nullFlavor="NA"
+                                    operator="A"
+                                    xsi:type="PIVL_TS"/>
+                     <doseQuantity nullFlavor="UNK"/>
+                     <consumable>
+                        <manufacturedProduct>
+                           <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                           <manufacturedMaterial>
+                              <code nullFlavor="NI"/>
+                              <name nullFlavor="NI"/>
+                              <epsos:formCode nullFlavor="NI"/>
+                              <epsos:ingredient classCode="ACTI">
+                                 <epsos:quantity>
+                                    <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                                    <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                                 </epsos:quantity>
+                                 <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                                    <epsos:code code="L04AD01"
+                                                codeSystem="2.16.840.1.113883.6.73"
+                                                codeSystemName="Anatomical Therapeutic Chemical"
+                                                codeSystemVersion="January 2010"
+                                                displayName="ciclosporin">
+                                       <epsos:translation displayName="CICLOSPORIN"/>
+                                    </epsos:code>
+                                 </epsos:ingredient>
+                              </epsos:ingredient>
+                           </manufacturedMaterial>
+                        </manufacturedProduct>
+                     </consumable>
+                  </substanceAdministration>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.1.6"/>
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23"/>
+               <code code="11369-6"
+                     codeSystem="2.16.840.1.113883.6.1"
+                     codeSystemName="LOINC"
+                     codeSystemVersion="2.34"
+                     displayName="History of immunization">
+                  <translation displayName="History of immunizations"/>
+               </code>
+               <title>Historial de Vacinação</title>
+               <text>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>#</th>
+                           <th>Data Administração</th>
+                           <th>Código</th>
+                           <th>Nome</th>
+                           <th>Dosagem</th>
+                           <th>Lote</th>
+                           <th>Nome Comercial</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td ID="immunization0">0</td>
+                           <td ID="immunization0_initialDate">20121221</td>
+                           <td ID="immunization0_code">Td</td>
+                           <td ID="immunization0_name">Vacina contra o tétano e a difteria</td>
+                           <td ID="immunization0_dosage"/>
+                           <td ID="immunization0_lot">j7032-1</td>
+                           <td ID="immunization0_comercialCode">D.T.VAX</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </text>
+               <entry>
+                  <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+                     <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+                     <id extension="2026111" root="2.16.620.1.101.10.3.1135301"/>
+                     <code code="IMMUNIZ"
+                           codeSystem="2.16.840.1.113883.5.4"
+                           codeSystemName="ActCode"/>
+                     <text>
+                        <reference value="#immunization0"/>
+                     </text>
+                     <statusCode code="completed"/>
+                     <effectiveTime value="20121221"/>
+                     <doseQuantity>
+                        <low value="999"/>
+                        <high value="999"/>
+                     </doseQuantity>
+                     <consumable typeCode="CSM">
+                        <manufacturedProduct classCode="MANU">
+                           <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                           <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                              <code code="350327004"
+                                    codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT"
+                                    codeSystemVersion="July 2009"
+                                    displayName="Diphtheria + tetanus vaccine">
+                                 <originalText>
+                                    <reference value="#immunization0_name"/>
+                                 </originalText>
+                                 <translation code="Td"
+                                              codeSystem="SINUS-VACINAS"
+                                              displayName="Vacina contra o tétano e a difteria"/>
+                              </code>
+                              <lotNumberText>j7032-1</lotNumberText>
+                           </manufacturedMaterial>
+                        </manufacturedProduct>
+                     </consumable>
+                  </substanceAdministration>
+               </entry>
+            </section>
+         </component>
+         
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.11"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+                    <code code="11450-4"
+                     codeSystem="2.16.840.1.113883.6.1"
+                     codeSystemName="LOINC"
+                     codeSystemVersion="2.34"
+                     displayName="Problem list">
+                    </code>
+                    <title>Lista de problemas activos</title>
+                    <text>
+                        <content ID="actnoproblem">Não existem problemas activos.</content>
+                    </text>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <id root="964fe760-9da1-11e1-a8b0-0800200c9a66"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low nullFlavor="UNK"/>
+                            </effectiveTime>
+                            <entryRelationship inversionInd="false" typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <id root="964fe761-9da1-11e1-a8b0-0800200c9a66"/>
+                                    <code nullFlavor="NA"/>
+                                    <text>
+                                        <reference value="#actnoproblem"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value code="160245001"
+                                  codeSystem="2.16.840.1.113883.6.96"
+                                  codeSystemName="SNOMED CT"
+                                  displayName="No current problems or disability"
+                                  xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#actnoproblem"/>
+                                        </originalText>
+                                    </value>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+             </component>
+
+      </structuredBody>
+   </component>
+</ClinicalDocument>
+

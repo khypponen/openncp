@@ -29,7 +29,9 @@ import javax.xml.crypto.XMLCryptoContext;
 import javax.xml.crypto.XMLStructure;
 import javax.xml.crypto.dsig.keyinfo.KeyInfo;
 import javax.xml.crypto.dsig.keyinfo.X509Data;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * @author Kostas Karkaletsis
  * @author Organization: Gnomon
@@ -39,7 +41,7 @@ import org.apache.log4j.Logger;
 public class KeyInfoKeySelector extends KeySelector implements
 		KeySelectorResult {
 
-	private static final Logger LOG = Logger.getLogger(KeyInfoKeySelector.class);
+	private static final Logger LOG = LoggerFactory.getLogger(KeyInfoKeySelector.class);
 
 	private X509Certificate certificate;
 

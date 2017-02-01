@@ -34,6 +34,10 @@ mvn clean package install -DskipTests -Dmaven.wagon.http.ssl.insecure=true -Dmav
 
 The ssl.insecure flags are for allowing IHE Gazelle endpoints needed for parsing ws endpoints
 
+Please note that in order to use the IHE Nexus repository, you have to import the repository certificate into your
+Maven configuration or into your JAVA_HOME/jre/lib/security/cacerts keystore (this certificate is updated frequently)
+keytool -import -alias gazelle.nexus.ihe.net -file conformity.ihe.net.crt -keystore JAVA_HOME/jre/lib/security/cacerts
+
 Tips for creating new versions
 ------------------------------
 From the root directory just run the following command mvn versions:set -DnewVersion=<new version>

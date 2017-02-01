@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>eu.europa.ec.sante.ehdsi</groupId>
 		<artifactId>openncp-tslutils</artifactId>
-		<version>2.4.2</version>
+		<version>2.4.3</version>
 	</parent>
 	<groupId>eu.europa.ec.sante.ehdsi.openncp-tslutils</groupId>
 	<artifactId>openncp-tsl-sync</artifactId>
@@ -54,6 +54,12 @@
 			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-audit-manager</artifactId>
 			<version>${project.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.sante.ehdsi</groupId>
@@ -64,7 +70,13 @@
 			<groupId>eu.europa.ec.sante.ehdsi</groupId>
 			<artifactId>openncp-evidence-emitter</artifactId>
 			<version>${project.version}</version>
-		</dependency>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
@@ -79,7 +91,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.10</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 			<type>jar</type>
 		</dependency>
@@ -90,10 +102,9 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 					<compilerArguments>
 						<endorseddirs>${endorsed.dir}</endorseddirs>
 					</compilerArguments>

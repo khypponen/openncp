@@ -3,35 +3,18 @@ package com.gnomon.epsos.service;
 import com.gnomon.LiferayUtils;
 import com.gnomon.epsos.MyServletContextListener;
 import com.gnomon.epsos.model.Country;
-import com.gnomon.epsos.model.EpsosDocument;
-import com.gnomon.epsos.model.Identifier;
-import com.gnomon.epsos.model.Patient;
-import com.gnomon.epsos.model.PatientDocument;
-import com.gnomon.epsos.model.ViewResult;
-import com.gnomon.epsos.model.cda.CDAHeader;
-import com.gnomon.epsos.model.cda.CDANameSpaceContext;
-import com.gnomon.epsos.model.cda.CDAUtils;
-import com.gnomon.epsos.model.cda.EDDetail;
-import com.gnomon.epsos.model.cda.PersonDetail;
+import com.gnomon.epsos.model.*;
+import com.gnomon.epsos.model.cda.*;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.Validator;
-import com.liferay.portal.model.Address;
-import com.liferay.portal.model.Company;
-import com.liferay.portal.model.Contact;
-import com.liferay.portal.model.Phone;
-import com.liferay.portal.model.User;
+import com.liferay.portal.model.*;
 import com.liferay.portal.service.AddressLocalServiceUtil;
 import com.liferay.portal.service.CompanyLocalServiceUtil;
 import com.liferay.portal.service.PhoneLocalServiceUtil;
 import com.liferay.util.portlet.PortletProps;
 import edu.mayo.trilliumbridge.core.TrilliumBridgeTransformer;
 import edu.mayo.trilliumbridge.core.xslt.XsltTrilliumBridgeTransformer;
-import epsos.ccd.gnomon.auditmanager.AuditService;
-import epsos.ccd.gnomon.auditmanager.EventActionCode;
-import epsos.ccd.gnomon.auditmanager.EventLog;
-import epsos.ccd.gnomon.auditmanager.EventOutcomeIndicator;
-import epsos.ccd.gnomon.auditmanager.EventType;
-import epsos.ccd.gnomon.auditmanager.TransactionName;
+import epsos.ccd.gnomon.auditmanager.*;
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import epsos.ccd.gnomon.xslt.EpsosXSLTransformer;
 import epsos.ccd.netsmart.securitymanager.key.KeyStoreManager;
@@ -40,20 +23,60 @@ import epsos.ccd.netsmart.securitymanager.sts.client.TRCAssertionRequest;
 import epsos.ccd.posam.tm.response.TMResponseStructure;
 import epsos.ccd.posam.tm.service.ITransformationService;
 import epsos.openncp.protocolterminator.ClientConnectorConsumer;
-import epsos.openncp.protocolterminator.clientconnector.DocumentId;
-import epsos.openncp.protocolterminator.clientconnector.EpsosDocument1;
-import epsos.openncp.protocolterminator.clientconnector.GenericDocumentCode;
-import epsos.openncp.protocolterminator.clientconnector.PatientDemographics;
-import epsos.openncp.protocolterminator.clientconnector.PatientId;
+import epsos.openncp.protocolterminator.clientconnector.*;
 import eu.epsos.util.IheConstants;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.StringReader;
-import java.io.UnsupportedEncodingException;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRExporterParameter;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.export.JRPdfExporter;
+import org.allcolor.yahp.converter.CYaHPConverter;
+import org.allcolor.yahp.converter.IHtmlToPdfTransformer;
+import org.allcolor.yahp.converter.IHtmlToPdfTransformer.CHeaderFooter;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.lang.LocaleUtils;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.apache.tools.ant.util.DateUtils;
+import org.htmlcleaner.CleanerProperties;
+import org.htmlcleaner.HtmlCleaner;
+import org.htmlcleaner.PrettyXmlSerializer;
+import org.htmlcleaner.TagNode;
+import org.opensaml.Configuration;
+import org.opensaml.DefaultBootstrap;
+import org.opensaml.common.SAMLObjectBuilder;
+import org.opensaml.common.SAMLVersion;
+import org.opensaml.common.SignableSAMLObject;
+import org.opensaml.saml2.core.*;
+import org.opensaml.saml2.core.impl.AssertionMarshaller;
+import org.opensaml.saml2.core.impl.IssuerBuilder;
+import org.opensaml.xml.ConfigurationException;
+import org.opensaml.xml.XMLObjectBuilder;
+import org.opensaml.xml.XMLObjectBuilderFactory;
+import org.opensaml.xml.io.MarshallingException;
+import org.opensaml.xml.schema.XSString;
+import org.opensaml.xml.schema.XSURI;
+import org.opensaml.xml.security.SecurityConfiguration;
+import org.opensaml.xml.security.SecurityHelper;
+import org.opensaml.xml.security.credential.Credential;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.*;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import tr.com.srdc.epsos.util.Constants;
+
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.namespace.QName;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.*;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -66,85 +89,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Enumeration;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-import java.util.Vector;
-import javax.faces.context.ExternalContext;
-import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-import javax.xml.namespace.QName;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpression;
-import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JRExporterParameter;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.export.JRPdfExporter;
-import org.allcolor.yahp.converter.CYaHPConverter;
-import org.allcolor.yahp.converter.IHtmlToPdfTransformer;
-import org.allcolor.yahp.converter.IHtmlToPdfTransformer.CHeaderFooter;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.lang.LocaleUtils;
-import org.apache.commons.lang.exception.ExceptionUtils;
-import org.apache.log4j.Logger;
-import org.apache.tools.ant.util.DateUtils;
-import org.htmlcleaner.CleanerProperties;
-import org.htmlcleaner.HtmlCleaner;
-import org.htmlcleaner.PrettyXmlSerializer;
-import org.htmlcleaner.TagNode;
-import org.opensaml.Configuration;
-import org.opensaml.DefaultBootstrap;
-import org.opensaml.common.SAMLObjectBuilder;
-import org.opensaml.common.SAMLVersion;
-import org.opensaml.common.SignableSAMLObject;
-import org.opensaml.saml2.core.Assertion;
-import org.opensaml.saml2.core.Attribute;
-import org.opensaml.saml2.core.AttributeStatement;
-import org.opensaml.saml2.core.AttributeValue;
-import org.opensaml.saml2.core.AuthnContext;
-import org.opensaml.saml2.core.AuthnContextClassRef;
-import org.opensaml.saml2.core.AuthnStatement;
-import org.opensaml.saml2.core.Conditions;
-import org.opensaml.saml2.core.Issuer;
-import org.opensaml.saml2.core.NameID;
-import org.opensaml.saml2.core.Subject;
-import org.opensaml.saml2.core.SubjectConfirmation;
-import org.opensaml.saml2.core.impl.AssertionMarshaller;
-import org.opensaml.saml2.core.impl.IssuerBuilder;
-import org.opensaml.xml.ConfigurationException;
-import org.opensaml.xml.XMLObjectBuilder;
-import org.opensaml.xml.XMLObjectBuilderFactory;
-import org.opensaml.xml.io.MarshallingException;
-import org.opensaml.xml.schema.XSString;
-import org.opensaml.xml.schema.XSURI;
-import org.opensaml.xml.security.SecurityConfiguration;
-import org.opensaml.xml.security.SecurityHelper;
-import org.opensaml.xml.security.credential.Credential;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import tr.com.srdc.epsos.util.Constants;
+import java.util.*;
 
 public class EpsosHelperService {
 
@@ -181,7 +126,7 @@ public class EpsosHelperService {
     public static final String PORTAL_LEGAL_AUTHENTICATOR_PERSON_OID = "PORTAL_LEGAL_AUTHENTICATOR_PERSON_OID";
     public static final String PORTAL_LEGAL_AUTHENTICATOR_ORG_OID = "PORTAL_LEGAL_AUTHENTICATOR_ORG_OID";
 
-    private static final Logger log = Logger.getLogger(EpsosHelperService.class.getName());
+    private static final Logger log = LoggerFactory.getLogger(EpsosHelperService.class.getName());
     private static final Base64 decode = new Base64();
     public final static SimpleDateFormat dateMetaDataFormat = new SimpleDateFormat(
             "yyyyMMdd");
@@ -258,8 +203,8 @@ public class EpsosHelperService {
     }
 
     public static String createConsent(Patient patient, String consentCode,
-            String consentDisplayName, String consentStartDate,
-            String consentEndDate) {
+                                       String consentDisplayName, String consentStartDate,
+                                       String consentEndDate) {
         String rolename = "";
         String pharmacistsOid = EpsosHelperService
                 .getConfigProperty(EpsosHelperService.PORTAL_PHARMACIST_OID);
@@ -392,7 +337,7 @@ public class EpsosHelperService {
     }
 
     public static ByteArrayOutputStream ConvertHTMLtoPDF(String htmlin,
-            String uri, String fontpath) {
+                                                         String uri, String fontpath) {
 
         String cleanCDA = "";
         HtmlCleaner cleaner = new HtmlCleaner();
@@ -411,8 +356,8 @@ public class EpsosHelperService {
             Map<String, String> properties = new HashMap<String, String>();
             headerFooterList
                     .add(new IHtmlToPdfTransformer.CHeaderFooter(
-                                    "<table width=\"100%\"><tbody><tr><td align=\"left\">Generated by OpenNCP Portal.</td><td align=\"right\">Page <pagenumber>/<pagecount></td></tr></tbody></table>",
-                                    IHtmlToPdfTransformer.CHeaderFooter.HEADER));
+                            "<table width=\"100%\"><tbody><tr><td align=\"left\">Generated by OpenNCP Portal.</td><td align=\"right\">Page <pagenumber>/<pagecount></td></tr></tbody></table>",
+                            IHtmlToPdfTransformer.CHeaderFooter.HEADER));
             headerFooterList.add(new IHtmlToPdfTransformer.CHeaderFooter(
                     "© 2014 Generated by OpenNCP Portal",
                     IHtmlToPdfTransformer.CHeaderFooter.FOOTER));
@@ -868,8 +813,8 @@ public class EpsosHelperService {
                                             && !lowString.equals(highString)) {
                                         doseString = Validator
                                                 .isNotNull(doseString) ? doseString
-                                                        + " - " + highString
-                                                        : highString;
+                                                + " - " + highString
+                                                : highString;
                                     }
                                 }
                             }
@@ -1252,7 +1197,7 @@ public class EpsosHelperService {
     }
 
     public static Object getUserAssertion(String screenname, String fullname,
-            String emailaddress, String role) {
+                                          String emailaddress, String role) {
 
         log.info("Screenname is: " + screenname + " and role is " + role);
         Assertion assertion = null;
@@ -1392,40 +1337,39 @@ public class EpsosHelperService {
     }
 
     /**
-     * @param EI_EventActionCode Possible values according to D4.5.6 are E,R,U,D
-     * @param EI_EventDateTime The datetime the event occured
-     * @param EI_EventOutcomeIndicator
-     * <br>
-     * 0 for full success <br>
-     * 1 in case of partial delivery <br>
-     * 4 for temporal failures <br>
-     * 8 for permanent failure <br>
-     * @param PC_UserID Point of Care: Oid of the department
-     * @param PC_RoleID Role of the department
-     * @param HR_UserID Identifier of the HCP initiated the event
-     * @param HR_RoleID Role of the HCP initiated the event
-     * @param HR_AlternativeUserID Human readable name of the HCP as given in
-     * the Subject-ID
-     * @param SC_UserID The string encoded CN of the TLS certificate of the NCP
-     * triggered the epsos operation
-     * @param SP_UserID The string encoded CN of the TLS certificate of the NCP
-     * processed the epsos operation
-     * @param AS_AuditSourceId the iso3166-2 code of the country responsible for
-     * the audit source
-     * @param ET_ObjectID The string encoded UUID of the returned document
-     * @param ReqM_ParticipantObjectID String-encoded UUID of the request
-     * message
+     * @param EI_EventActionCode           Possible values according to D4.5.6 are E,R,U,D
+     * @param EI_EventDateTime             The datetime the event occured
+     * @param EI_EventOutcomeIndicator     <br>
+     *                                     0 for full success <br>
+     *                                     1 in case of partial delivery <br>
+     *                                     4 for temporal failures <br>
+     *                                     8 for permanent failure <br>
+     * @param PC_UserID                    Point of Care: Oid of the department
+     * @param PC_RoleID                    Role of the department
+     * @param HR_UserID                    Identifier of the HCP initiated the event
+     * @param HR_RoleID                    Role of the HCP initiated the event
+     * @param HR_AlternativeUserID         Human readable name of the HCP as given in
+     *                                     the Subject-ID
+     * @param SC_UserID                    The string encoded CN of the TLS certificate of the NCP
+     *                                     triggered the epsos operation
+     * @param SP_UserID                    The string encoded CN of the TLS certificate of the NCP
+     *                                     processed the epsos operation
+     * @param AS_AuditSourceId             the iso3166-2 code of the country responsible for
+     *                                     the audit source
+     * @param ET_ObjectID                  The string encoded UUID of the returned document
+     * @param ReqM_ParticipantObjectID     String-encoded UUID of the request
+     *                                     message
      * @param ReqM_PatricipantObjectDetail The value MUST contain the base64
-     * encoded security header.
-     * @param ResM_ParticipantObjectID String-encoded UUID of the response
-     * message
+     *                                     encoded security header.
+     * @param ResM_ParticipantObjectID     String-encoded UUID of the response
+     *                                     message
      * @param ResM_PatricipantObjectDetail The value MUST contain the base64
-     * encoded security header.
-     * @param sourceip The IP Address of the source Gateway
-     * @param targetip The IP Address of the target Gateway
+     *                                     encoded security header.
+     * @param sourceip                     The IP Address of the source Gateway
+     * @param targetip                     The IP Address of the target Gateway
      */
     public static void sendAuditEpsos91(String fullname, String email,
-            String orgName, String orgType, String rolename, String message) {
+                                        String orgName, String orgType, String rolename, String message) {
 
         String KEY_ALIAS = Constants.NCP_SIG_PRIVATEKEY_ALIAS;
         String KEYSTORE_LOCATION = Constants.NCP_SIG_KEYSTORE_PATH;
@@ -1448,7 +1392,7 @@ public class EpsosHelperService {
             log.info("Certificate loaded ..." + cert.getPublicKey().toString());
             // List the aliases
             Enumeration enum1 = keystore.aliases();
-            for (; enum1.hasMoreElements();) {
+            for (; enum1.hasMoreElements(); ) {
                 String alias = (String) enum1.nextElement();
                 log.info("ALIAS IS " + alias);
                 if (cert instanceof X509Certificate) {
@@ -1575,9 +1519,9 @@ public class EpsosHelperService {
     }
 
     private static Assertion createAssertion(String username, String role,
-            String organization, String organizationId, String facilityType,
-            String purposeOfUse, String xspaLocality,
-            java.util.Vector permissions) {
+                                             String organization, String organizationId, String facilityType,
+                                             String purposeOfUse, String xspaLocality,
+                                             java.util.Vector permissions) {
 
         return createStorkAssertion(username, role, organization,
                 organizationId, facilityType, purposeOfUse, xspaLocality,
@@ -1585,9 +1529,9 @@ public class EpsosHelperService {
     }
 
     private static Assertion createStorkAssertion(String username, String role,
-            String organization, String organizationId, String facilityType,
-            String purposeOfUse, String xspaLocality,
-            java.util.Vector permissions, String onBehalfId) {
+                                                  String organization, String organizationId, String facilityType,
+                                                  String purposeOfUse, String xspaLocality,
+                                                  java.util.Vector permissions, String onBehalfId) {
         // assertion
         log.info("username:" + username);
         log.info("role:" + role);
@@ -1670,8 +1614,8 @@ public class EpsosHelperService {
             Attribute attrPID_1 = createAttribute(builderFactory, "XSPA role",
                     "urn:oasis:names:tc:xacml:2.0:subject:role", role, "", "");
             attrStmt.getAttributes().add(attrPID_1);
-			// HITSP Clinical Speciality
-			/*
+            // HITSP Clinical Speciality
+            /*
              * Attribute attrPID_2 =
              * createAttribute(builderFactory,"HITSP Clinical Speciality",
              * "urn:epsos:names:wp3.4:subject:clinical-speciality",role,"","");
@@ -1774,7 +1718,7 @@ public class EpsosHelperService {
     }
 
     public static List<Country> getCountriesFromCS(String lang,
-            String portalPath) {
+                                                   String portalPath) {
         log.info("get Countries from CS with lang " + lang);
         List<Country> listOfCountries = new ArrayList<Country>();
         String filename = "InternationalSearch.xml";
@@ -1823,7 +1767,7 @@ public class EpsosHelperService {
     }
 
     public static void getCountryListNameFromCS(String lang,
-            List<Country> countriesList) {
+                                                List<Country> countriesList) {
 
         try {
             for (int i = 0; i < countriesList.size(); i++) {
@@ -1910,7 +1854,7 @@ public class EpsosHelperService {
     }
 
     public static List<Identifier> getCountryIdentifiers(String country,
-            String language, String path, User user) {
+                                                         String language, String path, User user) {
         List<Identifier> identifiers = new ArrayList<Identifier>();
 
         Vector vec = EpsosHelperService.getCountryIdsFromCS(country, path);
@@ -1939,7 +1883,7 @@ public class EpsosHelperService {
     }
 
     public static List<Demographics> getCountryDemographics(String country,
-            String language, String path, User user) {
+                                                            String language, String path, User user) {
         List<Demographics> demographics = new ArrayList<Demographics>();
         Vector vec = EpsosHelperService.getCountryDemographicsFromCS(country,
                 path);
@@ -1980,7 +1924,7 @@ public class EpsosHelperService {
     }
 
     public static Vector getCountryDemographicsFromCS(String country,
-            String portalPath) {
+                                                      String portalPath) {
         Vector v = new Vector();
         String filename = "InternationalSearch_" + country + ".xml";
 
@@ -2073,7 +2017,7 @@ public class EpsosHelperService {
     }
 
     public static Assertion createPatientConfirmationPlain(String purpose,
-            Assertion idAs, PatientId patient) throws Exception {
+                                                           Assertion idAs, PatientId patient) throws Exception {
         Assertion trc = null;
         log.debug("Try to create TRCA for patient : " + patient.getExtension());
         String pat = "";
@@ -2082,7 +2026,7 @@ public class EpsosHelperService {
         log.info("Assertion ID :" + idAs.getID());
         log.info("SECMAN URL: "
                 + ConfigurationManagerService.getInstance().getProperty(
-                        "secman.sts.url"));
+                "secman.sts.url"));
         TRCAssertionRequest req1 = new TRCAssertionRequest.Builder(idAs, pat)
                 .PurposeOfUse(purpose).build();
         trc = req1.request();
@@ -2201,7 +2145,7 @@ public class EpsosHelperService {
     }
 
     public static void changeNode(Document dom, XPath xpath, String path,
-            String nodeName, String value) {
+                                  String nodeName, String value) {
         try {
             XPathExpression salRO = xpath.compile(path + "/" + nodeName);
             NodeList salRONodes = (NodeList) salRO.evaluate(dom,
@@ -2232,7 +2176,7 @@ public class EpsosHelperService {
      * @param attributeValue
      */
     public static void addAttribute(Document dom, Node node,
-            String attributeName, String attributeValue) {
+                                    String attributeName, String attributeValue) {
         Attr rootAttr = dom.createAttribute(attributeName);
         rootAttr.setValue(attributeValue);
         node.getAttributes().setNamedItem(rootAttr);
@@ -2356,7 +2300,7 @@ public class EpsosHelperService {
     }
 
     public static byte[] getConsentReport(String lang2, String fullname,
-            Patient patient) {
+                                          Patient patient) {
         byte[] bytes = null;
         try {
             String language = "";
@@ -2480,7 +2424,7 @@ public class EpsosHelperService {
     }
 
     public static byte[] generatePdfReport(Connection conn,
-            String jasperFilePath, Map parameters) throws JRException,
+                                           String jasperFilePath, Map parameters) throws JRException,
             SQLException {
         ByteArrayOutputStream baos = null;
         try {
@@ -2589,7 +2533,7 @@ public class EpsosHelperService {
     }
 
     public static String styleDoc(String input, String lang,
-            boolean commonstyle, String actionUrl, boolean shownarrative) {
+                                  boolean commonstyle, String actionUrl, boolean shownarrative) {
         String convertedcda = "";
         EpsosXSLTransformer xlsClass = new EpsosXSLTransformer();
 
@@ -2605,7 +2549,7 @@ public class EpsosHelperService {
     }
 
     public static String styleDoc(String input, String lang,
-            boolean commonstyle, String actionUrl) {
+                                  boolean commonstyle, String actionUrl) {
         return styleDoc(input, lang, commonstyle, actionUrl, false);
     }
 
@@ -2685,7 +2629,7 @@ public class EpsosHelperService {
     }
 
     public static List<Patient> searchPatients(Assertion assertion,
-            PatientDemographics pd, String country) {
+                                               PatientDemographics pd, String country) {
         List<Patient> patients = null;
         log.info("Selected country is: " + country);
         String runningMode = MyServletContextListener.getRunningMode();
@@ -2737,7 +2681,7 @@ public class EpsosHelperService {
     }
 
     public static List<PatientDocument> getPSDocs(Assertion assertion,
-            Assertion trca, String root, String extension, String country) {
+                                                  Assertion trca, String root, String extension, String country) {
         log.info("getPSDocs");
         List<PatientDocument> patientDocuments = null;
         PatientId patientId = null;
@@ -2795,7 +2739,7 @@ public class EpsosHelperService {
     }
 
     public static List<PatientDocument> getEPDocs(Assertion assertion,
-            Assertion trca, String root, String extension, String country) {
+                                                  Assertion trca, String root, String extension, String country) {
         List<PatientDocument> patientDocuments = null;
         PatientId patientId = null;
         try {
@@ -2857,8 +2801,8 @@ public class EpsosHelperService {
     }
 
     public static String getDocument(Assertion assertion, Assertion trca,
-            String country, String repositoryid, String homecommunityid,
-            String documentid, String doctype, String lang)
+                                     String country, String repositoryid, String homecommunityid,
+                                     String documentid, String doctype, String lang)
             throws UnsupportedEncodingException {
         EpsosDocument selectedEpsosDocument = new EpsosDocument();
         String serviceUrl = EpsosHelperService
@@ -2935,7 +2879,7 @@ public class EpsosHelperService {
     }
 
     public static PatientDocument populateDocument(EpsosDocument1 aux,
-            String doctype) throws UnsupportedEncodingException {
+                                                   String doctype) throws UnsupportedEncodingException {
         PatientDocument document = new PatientDocument();
         document.setAuthor(aux.getAuthor());
         Calendar cal = aux.getCreationDate();
@@ -2945,7 +2889,7 @@ public class EpsosHelperService {
         } catch (Exception e) {
             document.setCreationDate(aux.getCreationDate() + "");
             log.error("Problem converting date" + aux.getCreationDate());
-            log.error(org.hibernate.exception.ExceptionUtils.getStackTrace(e));
+            log.error(org.apache.commons.lang.exception.ExceptionUtils.getStackTrace(e));
         }
         document.setDescription(aux.getDescription());
         document.setHealthcareFacility("");

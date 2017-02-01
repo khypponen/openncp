@@ -2,6 +2,7 @@ package eu.esens.abb.nonrep;
 
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
+import java.util.LinkedList;
 
 import javax.mail.internet.MimeMessage;
 import javax.xml.soap.SOAPMessage;
@@ -22,13 +23,18 @@ public class Context {
 	private String user;
 	private String currentHost;
 	private String remoteHost;
-	private X509Certificate certificate;
+	private X509Certificate issuercertificate;
+	private X509Certificate sendercertificate;
+	private X509Certificate recipientcertificate;
+	
 	private DateTime submissionTime;
-	private String epSOSEvent;
+	private String event;
 	private String messageUUID;
 	private String authenticationMethod;
 	private PrivateKey key;
 	private Document icomingMsgAsDocument;
+	private LinkedList<String> recipientNamePostalAddress;
+	private LinkedList<String> senderNamePostalAddress;
 	public final String getCurrentHost() {
 		return currentHost;
 	}
@@ -79,7 +85,7 @@ public class Context {
 		this.requestDOM = request;
 	}
 	
-	public Element getRequest() {
+	public Element getRequest1() {
 		return this.requestDOM;
 	}
 
@@ -100,13 +106,28 @@ public class Context {
 	}
 
 	public void setIssuerCertificate(X509Certificate cert) {
-		this.certificate = cert;
+		this.issuercertificate = cert;
 	}
 	
 	public X509Certificate getIssuerCertificate() {
-		return this.certificate;
+		return this.issuercertificate;
 	}
 
+	public void setSenderCertificate(X509Certificate cert) {
+		this.sendercertificate = cert;
+	}
+	
+	public X509Certificate getSenderCertificate() {
+		return this.sendercertificate;
+	}
+	public void setRecipientCertificate(X509Certificate cert) {
+		this.recipientcertificate = cert;
+	}
+	
+	public X509Certificate getRecipientCertificate() {
+		return this.recipientcertificate;
+	}
+	
 	public void setSubmissionTime(DateTime dateTime) {
 		this.submissionTime = dateTime;
 	}
@@ -116,12 +137,12 @@ public class Context {
 		return this.submissionTime;
 	}
 
-	public void setEpsosEvent(String string) {
-		this.epSOSEvent = string;
+	public void setEvent(String string) {
+		this.event = string;
 	}
 	
-	public String getEpsosEvent() {
-		return this.epSOSEvent;
+	public String getEvent() {
+		return this.event;
 	}
 
 	public void setMessageUUID(String messageUUID) {
@@ -145,6 +166,22 @@ public class Context {
 	}
 	public PrivateKey getSigningKey() {
 		return this.key;
+	}
+
+	public void setRecipientNamePostalAddress(LinkedList<String> namesPostalAddress) {
+		this.recipientNamePostalAddress = namesPostalAddress;
+	}
+	public LinkedList<String> getRecipientNamePostalAddress() {
+		return this.recipientNamePostalAddress;
+	}
+
+	public void setSenderNamePostalAddress(LinkedList<String> sendernamesPostalAddress) {
+		this.senderNamePostalAddress = sendernamesPostalAddress;
+		
+	}
+	
+	public LinkedList<String> getSenderNamePostalAddress() {
+		return this.senderNamePostalAddress;
 	}
 
 }

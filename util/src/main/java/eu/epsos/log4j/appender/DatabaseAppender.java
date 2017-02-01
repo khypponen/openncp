@@ -1,11 +1,8 @@
 package eu.epsos.log4j.appender;
 
 import eu.epsos.log4j.util.ThrowableUtil;
-import org.apache.log4j.Appender;
-import org.apache.log4j.AppenderSkeleton;
-import org.apache.log4j.PatternLayout;
-import org.apache.log4j.spi.ErrorCode;
-import org.apache.log4j.spi.LoggingEvent;
+import org.slf4j.event.LoggingEvent;
+
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -19,7 +16,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
 
-public class DatabaseAppender extends AppenderSkeleton implements Appender {
+public class DatabaseAppender {/*extends AppenderSkeleton implements Appender {
     private Connection connection;
 
     @SuppressWarnings({"FieldCanBeLocal"})
@@ -30,7 +27,7 @@ public class DatabaseAppender extends AppenderSkeleton implements Appender {
     private InetAddress inetAddress;
 
     private final BlockingQueue<LoggingEvent> loggingEventQueue
-            = new LinkedBlockingDeque<LoggingEvent>();
+            = new LinkedBlockingDeque<>();
 
     public DatabaseAppender() {
         startInsertThread();
@@ -210,5 +207,5 @@ public class DatabaseAppender extends AppenderSkeleton implements Appender {
         });
         thread.setDaemon(true);
         thread.start();
-    }
+    }*/
 }

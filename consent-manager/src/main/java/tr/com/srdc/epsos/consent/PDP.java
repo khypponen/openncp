@@ -30,8 +30,9 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 
+import org.slf4j.LoggerFactory;
 import tr.com.srdc.epsos.consent.db.PatientDBConnector;
 import urn.oasis.names.tc.xacml3.AllOfType;
 import urn.oasis.names.tc.xacml3.AnyOfType;
@@ -49,7 +50,7 @@ import urn.oasis.names.tc.xacml3.TargetType;
 
 public class PDP {
 	
-	private static Logger logger = Logger.getLogger(PDP.class);
+	private static Logger logger = LoggerFactory.getLogger(PDP.class);
 
 	public static ResponseType getDecision(RequestType request){
 		ResponseType response = new ResponseType();

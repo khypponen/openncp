@@ -18,42 +18,15 @@ import epsos.ccd.netsmart.securitymanager.key.impl.DefaultKeyStoreManager;
 import epsos.ccd.netsmart.securitymanager.sts.client.TRCAssertionRequest;
 import eu.epsos.assertionvalidator.AssertionHelper;
 import eu.epsos.assertionvalidator.PolicyManagerInterface;
-import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.UUID;
-import java.util.Vector;
-import java.util.logging.Level;
-import javax.xml.namespace.QName;
 import org.joda.time.DateTime;
 import org.opensaml.DefaultBootstrap;
 import org.opensaml.common.SAMLObjectBuilder;
 import org.opensaml.common.SAMLVersion;
 import org.opensaml.common.impl.SecureRandomIdentifierGenerator;
-import org.opensaml.saml2.core.Advice;
-import org.opensaml.saml2.core.Assertion;
-import org.opensaml.saml2.core.AssertionIDRef;
-import org.opensaml.saml2.core.Attribute;
-import org.opensaml.saml2.core.AttributeStatement;
-import org.opensaml.saml2.core.AttributeValue;
-import org.opensaml.saml2.core.AuthnContext;
-import org.opensaml.saml2.core.AuthnContextClassRef;
-import org.opensaml.saml2.core.AuthnStatement;
-import org.opensaml.saml2.core.Conditions;
-import org.opensaml.saml2.core.Issuer;
-import org.opensaml.saml2.core.NameID;
-import org.opensaml.saml2.core.Subject;
-import org.opensaml.saml2.core.SubjectConfirmation;
+import org.opensaml.saml2.core.*;
 import org.opensaml.saml2.core.impl.AssertionMarshaller;
 import org.opensaml.saml2.core.impl.IssuerBuilder;
-import org.opensaml.xml.Configuration;
-import org.opensaml.xml.ConfigurationException;
-import org.opensaml.xml.XMLObject;
-import org.opensaml.xml.XMLObjectBuilder;
-import org.opensaml.xml.XMLObjectBuilderFactory;
+import org.opensaml.xml.*;
 import org.opensaml.xml.schema.XSString;
 import org.opensaml.xml.schema.XSURI;
 import org.slf4j.Logger;
@@ -64,6 +37,11 @@ import tr.com.srdc.epsos.data.model.PatientId;
 import tr.com.srdc.epsos.securityman.exceptions.InsufficientRightsException;
 import tr.com.srdc.epsos.securityman.exceptions.MissingFieldException;
 import tr.com.srdc.epsos.util.Constants;
+
+import javax.xml.namespace.QName;
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.util.*;
 
 /**
  * This class contains several conversion methods to convert epSOS Specific SAML
@@ -96,7 +74,7 @@ public class AssertionsConverter {
     }
 
     public static Assertion createTRCA(String purpose,
-            Assertion idAs, String root, String extension) throws Exception {
+                                       Assertion idAs, String root, String extension) throws Exception {
         Assertion trc = null;
         LOG.debug("Try to create TRCA for patient : " + extension);
         String pat = "";
@@ -237,8 +215,8 @@ public class AssertionsConverter {
     }
 
     public static Assertion issueTrcToken(final Assertion hcpIdentityAssertion, String patientID,
-            String purposeOfUse,
-            List<Attribute> attrValuePair) throws SMgrException, IOException {
+                                          String purposeOfUse,
+                                          List<Attribute> attrValuePair) throws SMgrException, IOException {
 
         KeyStoreManager ksm;
         HashMap<String, String> auditDataMap;
@@ -258,17 +236,21 @@ public class AssertionsConverter {
             try {
                 sman.verifySAMLAssestion(hcpIdentityAssertion);
             } catch (SMgrException ex) {
-                java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, null, ex);
+                LOG.error("SMgrException: " + ex);
+                //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, null, ex);
+                LOG.error("SMgrException: " + ex);
                 throw new SMgrException("SAML Assertion Validation Failed: " + ex.getMessage());
             }
             if (hcpIdentityAssertion.getConditions().getNotBefore().isAfterNow()) {
                 String msg = "Identity Assertion with ID " + hcpIdentityAssertion.getID() + " can't ne used before " + hcpIdentityAssertion.getConditions().getNotBefore();
-                java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, msg);
+                LOG.error("SMgrException: " + msg);
+                //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, msg);
                 throw new SMgrException(msg);
             }
             if (hcpIdentityAssertion.getConditions().getNotOnOrAfter().isBeforeNow()) {
                 String msg = "Identity Assertion with ID " + hcpIdentityAssertion.getID() + " can't be used after " + hcpIdentityAssertion.getConditions().getNotOnOrAfter();
-                java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, msg);
+                //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, msg);
+                LOG.error("SMgrException: " + msg);
                 throw new SMgrException(msg);
             }
 
@@ -380,39 +362,47 @@ public class AssertionsConverter {
 
             String poc = ((XSString) findStringInAttributeStatement(hcpIdentityAssertion.getAttributeStatements(), "urn:oasis:names:tc:xspa:1.0:subject:organization").getAttributeValues().get(0)).getValue();
 
-            java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Point of Care: {0}", poc);
+            //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Point of Care: {0}", poc);
+            LOG.info("Point of Care: {0}", poc);
             auditDataMap.put("pointOfCare", poc);
 
             String pocId = ((XSURI) findURIInAttributeStatement(hcpIdentityAssertion.getAttributeStatements(), "urn:oasis:names:tc:xspa:1.0:subject:organization-id").getAttributeValues().get(0)).getValue();
 
-            java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Point of Care id: {0}", pocId);
+            //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Point of Care id: {0}", pocId);
+            LOG.info("Point of Care: {0}", poc);
             auditDataMap.put("pointOfCareID", pocId);
 
             String hrRole = ((XSString) findStringInAttributeStatement(hcpIdentityAssertion.getAttributeStatements(), "urn:oasis:names:tc:xacml:2.0:subject:role").getAttributeValues().get(0)).getValue();
 
-            java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "HR Role {0}", hrRole);
+            //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "HR Role {0}", hrRole);
+            LOG.info("HR Role {0}", hrRole);
             auditDataMap.put("humanRequestorRole", hrRole);
 
             String facilityType = ((XSString) findStringInAttributeStatement(hcpIdentityAssertion.getAttributeStatements(),
                     "urn:epsos:names:wp3.4:subject:healthcare-facility-type").getAttributeValues().get(0)).getValue();
 
-            java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Facility Type {0}", facilityType);
+            //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Facility Type {0}", facilityType);
+            LOG.info("Facility Type {0}", facilityType);
             auditDataMap.put("facilityType", facilityType);
 
             sman.signSAMLAssertion(trc);
             return trc;
         } catch (NoSuchAlgorithmException ex) {
-            java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, null, ex);
+            //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.error(null, ex);
             throw new SMgrException(ex.getMessage());
         }
     }
 
     protected static Attribute findURIInAttributeStatement(List<AttributeStatement> statements, String attrName) {
-        java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Size:{0}", statements.size());
+
+        //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Size:{0}", statements.size());
+        LOG.info("Size:{0}", statements.size());
         for (AttributeStatement stmt : statements) {
             for (Attribute attribute : stmt.getAttributes()) {
                 if (attribute.getName().equals(attrName)) {
-                    java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Attribute Name:{0}", attribute.getName());
+                    //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Attribute Name:{0}", attribute.getName());
+                    LOG.info("Attribute Name:{0}", attribute.getName());
                     Attribute attr = create(Attribute.class, Attribute.DEFAULT_ELEMENT_NAME);
 
                     attr.setFriendlyName(attribute.getFriendlyName());
@@ -435,12 +425,15 @@ public class AssertionsConverter {
     protected static NameID findProperNameID(Subject subject) throws SMgrException {
 
         String format = subject.getNameID().getFormat();
-        java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is email?: {0}", format.equals(NameID.EMAIL));
-        java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is x509 subject?: {0}", format.equals(NameID.X509_SUBJECT));
-        java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is Unspecified?: {0}", format.equals(NameID.UNSPECIFIED));
+        //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is email?: {0}", format.equals(NameID.EMAIL));
+        LOG.info("is email?: {0}", format.equals(NameID.EMAIL));
+        //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is x509 subject?: {0}", format.equals(NameID.X509_SUBJECT));
+        LOG.info("is x509 subject?: {0}", format.equals(NameID.X509_SUBJECT));
+        //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "is Unspecified?: {0}", format.equals(NameID.UNSPECIFIED));
+        LOG.info("is Unspecified?: {0}", format.equals(NameID.UNSPECIFIED));
 
         //if (format.equals(NameID.EMAIL) || format.equals(NameID.X509_SUBJECT) || format.equals(NameID.UNSPECIFIED)) {
-        //        Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Compatible NameID found");
+        //        LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Compatible NameID found");
         NameID n = create(NameID.class, NameID.DEFAULT_ELEMENT_NAME);
         n.setFormat(format);
         n.setValue(subject.getNameID().getValue());
@@ -450,9 +443,9 @@ public class AssertionsConverter {
     }
 
     private static Assertion createEpsosAssertion(String username, String role,
-            String organization, String organizationId, String facilityType,
-            String purposeOfUse, String xspaLocality,
-            java.util.Vector permissions) {
+                                                  String organization, String organizationId, String facilityType,
+                                                  String purposeOfUse, String xspaLocality,
+                                                  java.util.Vector permissions) {
         // assertion
         Assertion assertion = null;
         try {
@@ -538,7 +531,7 @@ public class AssertionsConverter {
                     "urn:oasis:names:tc:xacml:2.0:subject:role", role, "", "");
             attrStmt.getAttributes().add(attrPID_1);
             // HITSP Clinical Speciality
-			/*
+            /*
              * Attribute attrPID_2 =
              * createAttribute(builderFactory,"HITSP Clinical Speciality",
              * "urn:epsos:names:wp3.4:subject:clinical-speciality",role,"","");
@@ -812,11 +805,14 @@ public class AssertionsConverter {
     }
 
     protected static Attribute findStringInAttributeStatement(List<AttributeStatement> statements, String attrName) {
-        java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Size:{0}", statements.size());
+
+        //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Size:{0}", statements.size());
+        LOG.info("Size:{0}", statements.size());
         for (AttributeStatement stmt : statements) {
             for (Attribute attribute : stmt.getAttributes()) {
                 if (attribute.getName().equals(attrName)) {
-                    java.util.logging.Logger.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Attribute Name:{0}", attribute.getName());
+                    //java.util.logging.LoggerFactory.getLogger(SamlTRCIssuer.class.getName()).log(Level.INFO, "Attribute Name:{0}", attribute.getName());
+                    LOG.info("Attribute Name:{0}", attribute.getName());
                     Attribute attr = create(Attribute.class, Attribute.DEFAULT_ELEMENT_NAME);
 
                     attr.setFriendlyName(attribute.getFriendlyName());
@@ -830,11 +826,8 @@ public class AssertionsConverter {
 
                     return attr;
                 }
-
             }
-
         }
-
         return null;
     }
 
@@ -846,7 +839,5 @@ public class AssertionsConverter {
         n.setValue(((XSString) xspaSubjectAttribute.getAttributeValues().get(0)).getValue());
 
         return n;
-
     }
-
 }

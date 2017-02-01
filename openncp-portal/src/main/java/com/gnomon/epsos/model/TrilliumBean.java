@@ -10,16 +10,13 @@ import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.User;
 import com.liferay.portal.util.PortalUtil;
 import epsos.ccd.gnomon.xslt.EpsosXSLTransformer;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-import java.util.logging.Level;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.primefaces.context.RequestContext;
+import org.primefaces.model.UploadedFile;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -30,25 +27,24 @@ import javax.portlet.PortletRequest;
 import javax.portlet.PortletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
-import org.primefaces.context.RequestContext;
-import org.primefaces.model.UploadedFile;
-import org.w3c.dom.Document;
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 
 @ManagedBean
 @ViewScoped
 public class TrilliumBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private static final Logger log = Logger.getLogger("TrilliumBean");
+    private static final Logger log = LoggerFactory.getLogger("TrilliumBean");
     public static Properties properties;
     private UploadedFile cdafile;
     private byte[] cdafilecontents;
     private String sourcecda;
     private String transformed;
     private String convertedcda;
-    private Map<String, String> ltrlanguages = new HashMap<String, String>();
+    private Map<String, String> ltrlanguages = new HashMap<>();
     private String ltrlang;
 
     public TrilliumBean() {
@@ -230,7 +226,7 @@ public class TrilliumBean implements Serializable {
                 //baos = EpsosHelperService.ConvertHTMLtoPDFWS(convertedcda);
             } catch (Exception ex) {
                 log.error(ExceptionUtils.getStackTrace(ex));
-                java.util.logging.Logger.getLogger(TrilliumBean.class.getName()).log(Level.SEVERE, null, ex);
+                log.error(null, ex);
             }
             output = baos.toByteArray();
             contentType = "application/pdf";
@@ -287,7 +283,7 @@ public class TrilliumBean implements Serializable {
         facesContext.responseComplete();
     }
 
-//    public void uploadFile() throws UnsupportedEncodingException {
+    //    public void uploadFile() throws UnsupportedEncodingException {
 //
 //        FacesContext facesContext = FacesContext.getCurrentInstance();
 //        String title = cdafile.getFileName();

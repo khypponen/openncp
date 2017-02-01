@@ -54,17 +54,18 @@ import org.apache.axis2.AxisFault;
 import org.apache.axis2.Constants;
 import org.apache.axis2.context.ConfigurationContext;
 import org.apache.axis2.util.XMLUtils;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.joda.time.DateTime;
 import org.opensaml.saml2.core.Assertion;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 import tr.com.srdc.epsos.util.DateUtil;
 import tr.com.srdc.epsos.util.XMLUtil;
 
 public class DocumentRecipient_ServiceStub extends org.apache.axis2.client.Stub {
 
-    private static Logger LOG = Logger.getLogger(DocumentRecipient_ServiceStub.class);
+    private static Logger LOG = LoggerFactory.getLogger(DocumentRecipient_ServiceStub.class);
     private static int counter = 0;
     // http://servicelocation/DocumentRecipient_Service
     private static final javax.xml.bind.JAXBContext wsContext;

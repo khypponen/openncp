@@ -1,0 +1,358 @@
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:epsos="urn:epsos-org:ep:medication" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA_extended.xsd">
+   <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3" />
+   <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3" />
+   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1" />
+   <id extension="1001" root="2.16.620.1.101.10.3.29.54259" />
+   <code code="60591-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Patient Summary" />
+   <title>Patient Summary</title>
+   <effectiveTime value="20150316135535+0000" />
+   <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" codeSystemVersion="913-20091020" displayName="normal" />
+   <languageCode code="en-GB" />
+   <recordTarget>
+      <patientRole>
+         <id extension="1" root="2.16.620.1.101.10.1.1" />
+         <addr>
+            <country>BE</country>
+            <postalCode>B-1040</postalCode>
+            <streetAddressLine>4 Rue Breydel</streetAddressLine>
+         </addr>
+         <telecom nullFlavor="NI" />
+         <patient>
+            <name>
+               <family>Doe</family>
+               <given>Jane</given>
+            </name>
+            <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="913-20091020" displayName="Female">
+               <translation displayName="Female" />
+            </administrativeGenderCode>
+            <birthTime value="19790506" />
+         </patient>
+         <providerOrganization>
+            <id root="2.16.620.1.101.10.1" />
+            <name>European Commission - DG PMO</name>
+         </providerOrganization>
+      </patientRole>
+   </recordTarget>
+   <author>
+      <time value="20150316135535+0000" />
+      <assignedAuthor>
+         <id extension="90647" root="2.16.620.1.101.10.2.5" />
+         <telecom use="WP" value="tel:+3223456543" />
+         <assignedPerson>
+            <name>
+               <family>Mikolic</family>
+               <given>Marie</given>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id extension="54259" root="2.16.620.1.101.10.3.29" />
+            <name>Erasme Hostpital</name>
+            <addr>
+               <country>BE</country>
+               <postalCode>B-1000 Bruxelles</postalCode>
+               <streetAddressLine>5 Rue des Fleurs</streetAddressLine>
+            </addr>
+         </representedOrganization>
+      </assignedAuthor>
+   </author>
+   <custodian>
+      <assignedCustodian>
+         <representedCustodianOrganization>
+            <id extension="54259" root="2.16.620.1.101.10.3.29" />
+            <name>Erasme Hostpital</name>
+            <telecom use="WP" value="tel:+3223456543" />
+            <addr>
+               <country>BE</country>
+               <postalCode>B-1000 Bruxelles</postalCode>
+               <streetAddressLine>5 Rue des Fleurs</streetAddressLine>
+            </addr>
+         </representedCustodianOrganization>
+      </assignedCustodian>
+   </custodian>
+   <legalAuthenticator>
+      <time value="20150316135535+0000" />
+      <signatureCode code="S" />
+      <assignedEntity>
+         <id extension="54259" root="2.16.620.1.101.10.3.29" />
+         <telecom use="WP" value="tel:+3229579760" />
+         <assignedPerson>
+            <name>
+               <family>Mikolic</family>
+               <given>Marie</given>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id extension="54259" root="2.16.620.1.101.10.3.29" />
+            <name>Erasme Hostpital</name>
+            <telecom use="WP" value="tel:+3223456543" />
+            <addr>
+               <country>BE</country>
+               <postalCode>B-1000 Bruxelles</postalCode>
+               <streetAddressLine>5 Rue des Fleurs</streetAddressLine>
+            </addr>
+         </representedOrganization>
+      </assignedEntity>
+   </legalAuthenticator>
+   <participant typeCode="IND">
+      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4" />
+      <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" codeSystemName="HL7 ParticipationFunction" displayName="Médico de Família" />
+      <associatedEntity classCode="PRS">
+         <addr>
+            <country>BE</country>
+               <postalCode>B-1000 Bruxelles</postalCode>
+               <streetAddressLine>5 Rue des Fleurs</streetAddressLine>
+         </addr>
+         <telecom use="WP" value="tel:+351219579760" />
+         <telecom nullFlavor="NI" />
+         <associatedPerson>
+            <name>
+               <family>Mikolic</family>
+               <given>Marie</given>
+            </name>
+         </associatedPerson>
+      </associatedEntity>
+   </participant>
+   <documentationOf>
+      <serviceEvent classCode="PCPR">
+         <effectiveTime>
+            <low value="20150316135535+0000" />
+            <high value="20150316135535+0000" />
+         </effectiveTime>
+         <performer typeCode="PRF">
+            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.3" />
+            <time>
+               <low value="20150316135535+0000" />
+               <high value="20150316135535+0000" />
+            </time>
+            <assignedEntity classCode="ASSIGNED">
+               <id extension="0" root="2.16.620.1.101.10.2" />
+               <telecom use="WP" value="tel:+351219579760" />
+               <assignedPerson>
+                  <name>
+               		<family>Mikolic</family>
+               		<given>Marie</given>
+            	  </name>
+               </assignedPerson>
+               <representedOrganization>
+                  <id extension="54259" root="2.16.620.1.101.10.3.12" />
+                  <name>Agrupamento de Centros de Saúde Estuário do Tejo</name>
+                  <telecom use="WP" value="tel:+351219579760" />
+                  <addr>
+                     <country>BE</country>
+               		<postalCode>B-1000 Bruxelles</postalCode>
+               		<streetAddressLine>5 Rue des Fleurs</streetAddressLine>
+                  </addr>
+               </representedOrganization>
+            </assignedEntity>
+         </performer>
+      </serviceEvent>
+   </documentationOf>
+   <relatedDocument typeCode="XFRM">
+      <parentDocument>
+         <id extension="1001" root="2.16.620.1.101.10.3.29.54259" />
+      </parentDocument>
+   </relatedDocument>
+   <component>
+      <structuredBody>
+         <component>
+            <section moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.1.2" />
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13" />
+               <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Allergies, adverse reactions, alerts" />
+               <title>Allergies, adverse reactions, alerts</title>
+               <text>
+                  <content ID="noallergy">No known allergies.</content>
+               </text>
+               <entry>
+                  <act classCode="ACT" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.27" />
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" />
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3" />
+                     <id root="5f971af4-c818-41e5-87c7-602617079dd8" />
+                     <code code="NA" nullFlavor="NA" />
+                     <text>
+                        <reference value="#noallergy" />
+                     </text>
+                     <statusCode code="active" />
+                     <effectiveTime>
+                        <low nullFlavor="NA" />
+                     </effectiveTime>
+                     <entryRelationship inversionInd="false" typeCode="SUBJ">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="true">
+                           <templateId root="2.16.840.1.113883.10.20.1.18" />
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6" />
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" />
+                           <templateId root="2.16.840.1.113883.10.20.1.28" />
+                           <id root="af58c270-6f80-477a-ab05-47bcffbc62f7" />
+                           <code code="419199007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Allergy to substance" />
+                           <text>
+                              <reference value="#noallergy" />
+                           </text>
+                           <statusCode code="completed" />
+                           <effectiveTime>
+                              <low nullFlavor="UNK" />
+                           </effectiveTime>
+                           <value code="160244002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="No known allergies" xsi:type="CD" />
+                           <participant nullFlavor="NA" typeCode="CSM">
+                              <participantRole classCode="MANU">
+                                 <playingEntity classCode="MMAT" nullFlavor="NA">
+                                    <code code="NA" codeSystem="NA" nullFlavor="NA" />
+                                 </playingEntity>
+                              </participantRole>
+                           </participant>
+                        </observation>
+                     </entryRelationship>
+                  </act>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.1.8" />
+               <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3" />
+               <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="History of medication use" />
+               <title>History of medical device use</title>
+               <text>
+                  <content ID="nomedicationdescription">No known drug allergies</content>
+               </text>
+               <entry>
+                  <substanceAdministration classCode="SBADM" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.24" />
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7" />
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1" />
+                     <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4" />
+                     <id root="ee9f61cb-5b8c-4f73-8ddc-e802cf5a44e8" />
+                     <code code="182904002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="Drug treatment unknown">
+                        <originalText>
+                           <reference value="#nomedicationdescription" />
+                        </originalText>
+                        <translation displayName="Tratamento desconhecido" />
+                     </code>
+                     <statusCode code="completed" />
+                     <effectiveTime xsi:type="IVL_TS">
+                        <low nullFlavor="UNK" />
+                        <high nullFlavor="UNK" />
+                     </effectiveTime>
+                     <effectiveTime nullFlavor="UNK" operator="A" xsi:type="PIVL_TS" />
+                     <doseQuantity nullFlavor="NI" />
+                     <consumable>
+                        <manufacturedProduct>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2" />
+                           <templateId root="2.16.840.1.113883.10.20.1.53" />
+                           <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1" />
+                              <code nullFlavor="NA" />
+                              <name nullFlavor="NA" />
+                              <epsos:ingredient classCode="ACTI" nullFlavor="NA">
+                                 <epsos:quantity>
+                                    <epsos:numerator nullFlavor="NA" xsi:type="epsos:PQ" />
+                                    <epsos:denominator nullFlavor="NA" xsi:type="epsos:PQ" />
+                                 </epsos:quantity>
+                                 <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                                    <epsos:code nullFlavor="NA" />
+                                 </epsos:ingredient>
+                              </epsos:ingredient>
+                           </manufacturedMaterial>
+                        </manufacturedProduct>
+                     </consumable>
+                  </substanceAdministration>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.1.11" />
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6" />
+               <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Problem list">
+                  <translation displayName="Lista de problemas activos" />
+               </code>
+               <title>Problem list</title>
+               <text>
+                  <content ID="actnoproblem">No current problems or disability</content>
+               </text>
+               <entry>
+                  <act classCode="ACT" moodCode="EVN">
+                     <templateId root="2.16.840.1.113883.10.20.1.27" />
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" />
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" />
+                     <id root="0e96e8d4-56b1-4c85-8953-251b828ea429" />
+                     <code code="NA" nullFlavor="NA" />
+                     <statusCode code="active" />
+                     <effectiveTime>
+                        <low nullFlavor="UNK" />
+                     </effectiveTime>
+                     <entryRelationship inversionInd="false" typeCode="SUBJ">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="true">
+                           <templateId root="2.16.840.1.113883.10.20.1.28" />
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" />
+                           <id root="2.25.204676361010975441454110131417885024444" />
+                           <code nullFlavor="NA" />
+                           <text>
+                              <reference value="#actnoproblem" />
+                           </text>
+                           <statusCode code="completed" />
+                           <effectiveTime>
+                              <low nullFlavor="UNK" />
+                              <high nullFlavor="UNK" />
+                           </effectiveTime>
+                           <value code="160245001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="July 2009" displayName="No current problems or disability" xsi:type="CD">
+                              <originalText>
+                                 <reference value="#actnoproblem" />
+                              </originalText>
+                              <translation displayName="Não existem problemas activos" />
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                  </act>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.1.12" />
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11" />
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12" />
+               <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="History of Procedures" />
+               <title>History of Procedures</title>
+               <text>
+                  <content ID="surgeries">No medical history.</content>
+               </text>
+               <entry>
+                  <procedure classCode="PROC" moodCode="EVN" nullFlavor="NA">
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" />
+                     <templateId root="2.16.840.1.113883.10.20.1.29" />
+                     <id root="5f971af4-c818-41e5-87c7-602617079dd8" />
+                     <code code="NA" nullFlavor="NA" />
+                     <statusCode code="completed" />
+                  </procedure>
+               </entry>
+            </section>
+         </component>
+         <component>
+            <section moodCode="EVN">
+               <templateId root="2.16.840.1.113883.10.20.1.7" />
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5" />
+               <templateId assigningAuthorityName="epSOS" root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4" />
+               <code code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="History of medical device use" />
+               <title>History of medical device use</title>
+               <text>
+                  <content ID="nomedicalequipment">Medical history unknown</content>
+               </text>
+               <entry>
+                  <supply classCode="SPLY" moodCode="EVN" nullFlavor="NA">
+                     <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5" />
+                     <effectiveTime nullFlavor="NA" />
+                     <participant typeCode="DEV">
+                        <participantRole classCode="MANU">
+                           <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                              <code nullFlavor="NA" />
+                           </playingDevice>
+                        </participantRole>
+                     </participant>
+                  </supply>
+               </entry>
+            </section>
+         </component>
+      </structuredBody>
+   </component>
+</ClinicalDocument>

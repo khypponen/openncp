@@ -27,6 +27,7 @@ import eu.epsos.validation.reporting.ReportBuilder;
 import net.ihe.gazelle.document.ModelBasedValidationWS;
 import net.ihe.gazelle.document.ModelBasedValidationWSService;
 import net.ihe.gazelle.document.SOAPException_Exception;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
@@ -36,7 +37,7 @@ import org.slf4j.LoggerFactory;
  */
 public class CdaValidationService extends ValidationService {
 
-    private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(XcaValidationService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(XcaValidationService.class);
     private static CdaValidationService instance;
 
     @Override
@@ -72,14 +73,14 @@ public class CdaValidationService extends ValidationService {
         }
 
     }
-    
+
     @Override
     public boolean validateSchematron(String object, String schematron, NcpSide ncpSide) {
         if (CdaSchematron.checkSchematron(schematron) == null) {
             LOG.error("The specified schematron is not supported by the WebService.");
             return false;
         }
-        
+
         return super.validateSchematron(object, schematron, ncpSide);
     }
 

@@ -12,22 +12,23 @@ import com.liferay.portal.security.permission.PermissionChecker;
 import com.liferay.portal.service.RoleLocalServiceUtil;
 import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portal.util.PortalUtil;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.logging.Level;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.portlet.PortletPreferences;
 import javax.portlet.PortletRequest;
 import javax.portlet.PortletSession;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class LiferayUtils {
 
-    private static final Logger log = Logger.getLogger("LiferayUtils");
+    private static final Logger log = LoggerFactory.getLogger("LiferayUtils");
     public static final String LPPharmacistRole = "Pharmacist";
     public static final String LPDoctorRole = "Doctor";
     public static final String LPNurseRole = "Nurse";
@@ -201,7 +202,7 @@ public class LiferayUtils {
             // TODO Auto-generated catch block
             log.error(ExceptionUtils.getStackTrace(e1));
         } catch (SystemException ex) {
-            java.util.logging.Logger.getLogger(LiferayUtils.class.getName()).log(Level.SEVERE, null, ex);
+            log.error(null, ex);
         }
         return user;
     }

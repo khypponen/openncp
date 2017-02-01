@@ -20,14 +20,13 @@ import eu.epsos.util.IheConstants;
 import eu.europa.ec.joinup.ecc.openstork.utils.StorkUtils;
 import eu.stork.peps.auth.commons.STORKAuthnResponse;
 import eu.stork.peps.auth.engine.STORKSAMLEngine;
-import java.io.Serializable;
-import java.net.URLEncoder;
-import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.opensaml.saml2.core.Assertion;
+import org.primefaces.model.StreamedContent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import tr.com.srdc.epsos.util.Constants;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -35,15 +34,16 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.portlet.PortletRequest;
 import javax.servlet.http.HttpServletRequest;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
-import org.opensaml.saml2.core.Assertion;
-import org.primefaces.model.StreamedContent;
-import tr.com.srdc.epsos.util.Constants;
+import java.io.Serializable;
+import java.net.URLEncoder;
+import java.text.DateFormat;
+import java.util.*;
 
 @ManagedBean
 @SessionScoped
 public class PacRepBean implements Serializable {
+
+    private static final Logger log = LoggerFactory.getLogger("PacRepBean");
 
     private static final long serialVersionUID = 1L;
     private String selectedCountry;
@@ -88,7 +88,7 @@ public class PacRepBean implements Serializable {
     private List<tr.com.srdc.epsos.data.model.PatientId> patientIdentifiers;
     private STORKAuthnResponse authnResponse;
     private boolean enableCCD;
-    private static final Logger log = Logger.getLogger("PacRepBean");
+
 
     public PacRepBean() {
         log.info("PAC REP BEAN CREATED");
@@ -507,10 +507,9 @@ public class PacRepBean implements Serializable {
             patientId.setRoot(selectedPatient.getRoot());
             this.purposeOfUse = purposeOfUse;
             log.info("TRCA: Creating trca for hcpAssertion : " + hcpAssertion.getID() + " for patient " + patientId.getRoot() + ". Purpose of use is : " + purposeOfUse);
-            trcAssertion = EpsosHelperService.createPatientConfirmationPlain(
-                    purposeOfUse, hcpAssertion, patientId);
+            trcAssertion = EpsosHelperService.createPatientConfirmationPlain(purposeOfUse, hcpAssertion, patientId);
             log.info("TRCA: Created " + trcAssertion.getID() + " for : " + hcpAssertion.getID() + " for patient " + patientId.getRoot() + "_" + patientId.getExtension() + ". Purpose of use is : " + purposeOfUse);
-            log.info(trcAssertion);
+            log.info("TRCA:" + trcAssertion);
             trcassertionexists = true;
             trcassertionnotexists = false;
             // get patient documents

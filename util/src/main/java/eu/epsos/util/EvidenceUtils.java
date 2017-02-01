@@ -1,43 +1,6 @@
 package eu.epsos.util;
 
-import eu.esens.abb.nonrep.Context;
-import eu.esens.abb.nonrep.ESensObligation;
-import eu.esens.abb.nonrep.EnforcePolicy;
-import eu.esens.abb.nonrep.EnforcePolicyException;
-import eu.esens.abb.nonrep.MalformedIHESOAPException;
-import eu.esens.abb.nonrep.MalformedMIMEMessageException;
-import eu.esens.abb.nonrep.MessageInspector;
-import eu.esens.abb.nonrep.MessageType;
-import eu.esens.abb.nonrep.ObligationDischargeException;
-import eu.esens.abb.nonrep.ObligationHandler;
-import eu.esens.abb.nonrep.ObligationHandlerFactory;
-import eu.esens.abb.nonrep.TOElementException;
-import eu.esens.abb.nonrep.UnknownMessageType;
-import eu.esens.abb.nonrep.Utilities;
-import eu.esens.abb.nonrep.XACMLAttributes;
-import eu.esens.abb.nonrep.XACMLRequestCreator;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
-import java.security.UnrecoverableKeyException;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.UUID;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.soap.SOAPException;
-import javax.xml.transform.TransformerException;
-import org.apache.log4j.Logger;
+import eu.esens.abb.nonrep.*;
 import org.herasaf.xacml.core.SyntaxException;
 import org.herasaf.xacml.core.api.PDP;
 import org.herasaf.xacml.core.api.UnorderedPolicyRepository;
@@ -45,6 +8,8 @@ import org.herasaf.xacml.core.policy.PolicyMarshaller;
 import org.herasaf.xacml.core.simplePDP.SimplePDPFactory;
 import org.herasaf.xacml.core.utils.JAXBMarshallerConfiguration;
 import org.joda.time.DateTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
@@ -53,13 +18,30 @@ import tr.com.srdc.epsos.util.DateUtil;
 import tr.com.srdc.epsos.util.FileUtil;
 import tr.com.srdc.epsos.util.XMLUtil;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.soap.SOAPException;
+import javax.xml.transform.TransformerException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.security.*;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.UUID;
+
 /**
- *
  * @author karkaletsis
  */
 public class EvidenceUtils {
 
-    private static Logger logger = Logger.getLogger(EvidenceUtils.class);
+    private static Logger logger = LoggerFactory.getLogger(EvidenceUtils.class);
     public static final String DATATYPE_STRING = "http://www.w3.org/2001/XMLSchema#string";
     public static final String DATATYPE_DATETIME = "http://www.w3.org/2001/XMLSchema#dateTime";
     public static final String IHE_ITI_XCA_RETRIEVE = "urn:ihe:iti:2007:CrossGatewayRetrieve";
@@ -175,10 +157,12 @@ public class EvidenceUtils {
         ks.load(keyStream, keyPassword.toCharArray());
         X509Certificate cert = (X509Certificate) ks.getCertificate(certAlias);
         context.setIssuerCertificate(cert);
+        context.setSenderCertificate(cert); // TODO: this is a bug
+        context.setRecipientCertificate(cert);
         PrivateKey key = (PrivateKey) ks.getKey(certAlias, keyPassword.toCharArray());
         context.setSigningKey(key);
         context.setSubmissionTime(submissionTime);
-        context.setEpsosEvent(eventType);
+        context.setEvent(eventType);
         context.setMessageUUID(msguuid);
         context.setAuthenticationMethod("3");
         context.setRequest(request);
@@ -341,10 +325,13 @@ public class EvidenceUtils {
         ks.load(keyStream, keyPassword.toCharArray());
         X509Certificate cert = (X509Certificate) ks.getCertificate(certAlias);
         context.setIssuerCertificate(cert);
+        context.setSenderCertificate(cert);
+        context.setRecipientCertificate(cert);
+
         PrivateKey key = (PrivateKey) ks.getKey(certAlias, keyPassword.toCharArray());
         context.setSigningKey(key);
         context.setSubmissionTime(submissionTime);
-        context.setEpsosEvent(eventType);
+        context.setEvent(eventType);
         context.setMessageUUID(msguuid);
         context.setAuthenticationMethod("3");
         context.setRequest(request);

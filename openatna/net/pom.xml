@@ -1,23 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <artifactId>openncp-openatna</artifactId>
         <groupId>eu.europa.ec.sante.ehdsi.openncp-openatna</groupId>
-        <version>2.4.2</version>
+        <version>2.4.3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>eu.europa.ec.sante.ehdsi.openncp-openatna</groupId>
 
     <artifactId>openatna-net</artifactId>
     <packaging>jar</packaging>
     <name>OpenATNA Net</name>
     <url>https://openatna.projects.openhealthtools.org</url>
 
+    <!-- <dependencies> -->
+    <!-- <dependency> -->
+    <!-- <groupId>javax.mail</groupId> -->
+    <!-- <artifactId>mail</artifactId> -->
+    <!-- <version>1.4.7</version> -->
+    <!-- </dependency> -->
+    <!-- <dependency> -->
+    <!-- <groupId>org.bouncycastle</groupId> -->
+    <!-- <artifactId>bcmail-jdk15on</artifactId> -->
+    <!-- <version>1.55</version> -->
+    <!-- </dependency> -->
+    <!-- <dependency> -->
+    <!-- <groupId>org.bouncycastle</groupId> -->
+    <!-- <artifactId>bcprov-jdk15on</artifactId> -->
+    <!-- <version>1.55</version> -->
+    <!-- </dependency> -->
+    <!-- </dependencies> -->
     <dependencies>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
-            <version>1.4.1</version>
+            <version>1.4.7</version>
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
@@ -26,8 +53,8 @@
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk15</artifactId>
-            <version>1.43</version>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.53</version>
         </dependency>
     </dependencies>
 </project>

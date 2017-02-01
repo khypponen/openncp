@@ -19,12 +19,12 @@
  */
 package eu.epsos.configmanager.database;
 
-import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
-import java.io.File;
-import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.AnnotationConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
 
 /**
  * Hibernate Utility class with a convenient method to get Session Factory

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class CrossScriptingFilter implements Filter {
 
-    private static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("CrossScriptingFilter");
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger("CrossScriptingFilter");
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

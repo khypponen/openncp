@@ -6,7 +6,7 @@
     <parent>
         <groupId>eu.europa.ec.sante.ehdsi.openncp-openatna</groupId>
         <artifactId>openncp-openatna</artifactId>
-        <version>2.4.2</version>
+        <version>2.4.3</version>
     </parent>
     <packaging>pom</packaging>
     <artifactId>syslog</artifactId>

@@ -22,23 +22,25 @@ package eu.epsos.util;
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import epsos.ccd.netsmart.securitymanager.key.KeyStoreManager;
 import epsos.ccd.netsmart.securitymanager.key.impl.DefaultKeyStoreManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import tr.com.srdc.epsos.util.Constants;
+import tr.com.srdc.epsos.util.OidUtil;
+import tr.com.srdc.epsos.util.http.HTTPUtil;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
-import org.apache.log4j.Logger;
-import tr.com.srdc.epsos.util.Constants;
-import tr.com.srdc.epsos.util.OidUtil;
-import tr.com.srdc.epsos.util.http.HTTPUtil;
 
 /**
- *
  * @author karkaletsis
  */
 public class CertificateUtils {
 
-    public static Logger logger = Logger.getLogger(CertificateUtils.class);
+    public static Logger logger = LoggerFactory
+            .getLogger(CertificateUtils.class);
 
     public static String getServerCertificate(String country) {
         String oid = OidUtil.getHomeCommunityId(country);

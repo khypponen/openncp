@@ -14,153 +14,135 @@
  *  limitations under the License.
  *  under the License.
  */
-
 package epsos.ccd.netsmart.securitymanager;
 
 import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
 import epsos.ccd.netsmart.securitymanager.key.impl.NSTestKeyStoreManager;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.*;
-import static org.junit.Assert.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import static org.junit.Assert.fail;
+
 /**
- *
  * @author jerouris
  */
 public class SignatureManagerWithDefaultKeyStoreTest {
 
-	public SignatureManagerWithDefaultKeyStoreTest() {
-	}
+    private static final Logger logger = LoggerFactory.getLogger(SignatureManagerWithDefaultKeyStoreTest.class);
 
-	@BeforeClass
-	public static void setUpClass() throws Exception {
+    public SignatureManagerWithDefaultKeyStoreTest() {
+    }
 
-	}
+    @BeforeClass
+    public static void setUpClass() throws Exception {
 
-	@AfterClass
-	public static void tearDownClass() throws Exception {
-	}
+    }
 
-	@Before
-	public void setUp() {
+    @AfterClass
+    public static void tearDownClass() throws Exception {
+    }
 
-		XMLUnit.setNormalizeWhitespace(true);
-		XMLUnit.setIgnoreWhitespace(true);
-	}
+    @Before
+    public void setUp() {
 
-	@After
-	public void tearDown() {
-	}
+        XMLUnit.setNormalizeWhitespace(true);
+        XMLUnit.setIgnoreWhitespace(true);
+    }
 
-	/**
-	 * Test of signXMLWithEnvelopedSig method, of class SignatureManager.
-	 */
-	@Ignore
-	@Test
-	public void testSignXMLWithEnvelopedSig() {
-		try {
+    @After
+    public void tearDown() {
+    }
 
-			System.out.println("signXMLWithEnvelopedSig");
+    /**
+     * Test of signXMLWithEnvelopedSig method, of class SignatureManager.
+     */
+    @Ignore
+    @Test
+    public void testSignXMLWithEnvelopedSig() {
+        try {
 
-			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-			dbf.setNamespaceAware(true);
+            System.out.println("signXMLWithEnvelopedSig");
 
-			File f = new File("mySignedFile.xml");
-			// f.deleteOnExit();
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            dbf.setNamespaceAware(true);
 
-			Document doc;
-			doc = dbf
-					.newDocumentBuilder()
-					.parse(ClassLoader
-							.getSystemResourceAsStream("ePsample_stripped.xml"));
+            File f = new File("mySignedFile.xml");
+            // f.deleteOnExit();
 
-			SignatureManager smgr = new SignatureManager();
-			smgr.signXMLWithEnvelopedSig(doc);
+            Document doc;
+            doc = dbf
+                    .newDocumentBuilder()
+                    .parse(ClassLoader
+                            .getSystemResourceAsStream("ePsample_stripped.xml"));
 
-			XMLUtils.sendXMLtoStream(doc, new FileOutputStream(f));
+            SignatureManager smgr = new SignatureManager();
+            smgr.signXMLWithEnvelopedSig(doc);
 
-			smgr.verifyEnvelopedSignature(doc);
+            XMLUtils.sendXMLtoStream(doc, new FileOutputStream(f));
 
-			// Document signedDoc;
-			// signedDoc = dbf.newDocumentBuilder().parse(f);
+            smgr.verifyEnvelopedSignature(doc);
 
-			// smgr.verifyEnvelopedSignature(signedDoc);
+            // Document signedDoc;
+            // signedDoc = dbf.newDocumentBuilder().parse(f);
 
-		}
+            // smgr.verifyEnvelopedSignature(signedDoc);
 
-		catch (SMgrException ex) {
-			Logger.getLogger(
-					SignatureManagerWithDefaultKeyStoreTest.class.getName())
-					.log(Level.SEVERE, null, ex);
-			fail(ex.getMessage());
-		} catch (ParserConfigurationException ex) {
-			Logger.getLogger(
-					SignatureManagerWithDefaultKeyStoreTest.class.getName())
-					.log(Level.SEVERE, null, ex);
-			fail(ex.getMessage());
-		} catch (SAXException ex) {
-			Logger.getLogger(
-					SignatureManagerWithDefaultKeyStoreTest.class.getName())
-					.log(Level.SEVERE, null, ex);
-			fail(ex.getMessage());
-		} catch (IOException ex) {
-			Logger.getLogger(
-					SignatureManagerWithDefaultKeyStoreTest.class.getName())
-					.log(Level.SEVERE, null, ex);
-			fail(ex.getMessage());
-		}
-	}
+        } catch (SMgrException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
+        } catch (ParserConfigurationException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
+        } catch (SAXException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
+        } catch (IOException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
+        }
+    }
 
-	/**
-	 * Test of verifyEnvelopedSignature method, of class SignatureManager.
-	 */
-	@Ignore
-	@Test
-	public void testSuccessfulVerifyEnvelopedSignature() {
-		try {
-			System.out.println("verifyEnvelopedSignature");
-			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-			dbf.setNamespaceAware(true);
-			Document signedDoc;
-			signedDoc = dbf
-					.newDocumentBuilder()
-					.parse(ClassLoader
-							.getSystemResourceAsStream("signed_ePsample_UNK.xml"));
-			SignatureManager instance = new SignatureManager(
-					new NSTestKeyStoreManager());
-			instance.verifyEnvelopedSignature(signedDoc);
-		}
+    /**
+     * Test of verifyEnvelopedSignature method, of class SignatureManager.
+     */
+    @Ignore
+    @Test
+    public void testSuccessfulVerifyEnvelopedSignature() {
 
-		catch (SMgrException ex) {
-			Logger.getLogger(
-					SignatureManagerWithDefaultKeyStoreTest.class.getName())
-					.log(Level.SEVERE, null, ex);
-			fail(ex.getMessage());
-		} catch (ParserConfigurationException ex) {
-			Logger.getLogger(
-					SignatureManagerWithDefaultKeyStoreTest.class.getName())
-					.log(Level.SEVERE, null, ex);
-			fail(ex.getMessage());
-		} catch (SAXException ex) {
-			Logger.getLogger(
-					SignatureManagerWithDefaultKeyStoreTest.class.getName())
-					.log(Level.SEVERE, null, ex);
-			fail(ex.getMessage());
-		} catch (IOException ex) {
-			Logger.getLogger(
-					SignatureManagerWithDefaultKeyStoreTest.class.getName())
-					.log(Level.SEVERE, null, ex);
-			fail(ex.getMessage());
-		}
-	}
-
+        try {
+            logger.info("verifyEnvelopedSignature");
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            dbf.setNamespaceAware(true);
+            Document signedDoc;
+            signedDoc = dbf
+                    .newDocumentBuilder()
+                    .parse(ClassLoader
+                            .getSystemResourceAsStream("signed_ePsample_UNK.xml"));
+            SignatureManager instance = new SignatureManager(
+                    new NSTestKeyStoreManager());
+            instance.verifyEnvelopedSignature(signedDoc);
+        } catch (SMgrException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
+        } catch (ParserConfigurationException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
+        } catch (SAXException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
+        } catch (IOException ex) {
+            logger.error(null, ex);
+            fail(ex.getMessage());
+        }
+    }
 }

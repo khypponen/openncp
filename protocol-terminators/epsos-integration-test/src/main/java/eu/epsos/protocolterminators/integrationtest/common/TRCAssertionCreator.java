@@ -242,7 +242,7 @@ public class TRCAssertionCreator {
 //        try {
 //            LOG.info(XMLUtil.prettyPrint(assertion.getDOM()));
 //        } catch (TransformerException ex) {
-//            java.util.logging.Logger.getLogger(TRCAssertionCreator.class.getName()).log(Level.SEVERE, null, ex);
+//            java.util.logging.LoggerFactory.getLogger(TRCAssertionCreator.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 
         return assertion;

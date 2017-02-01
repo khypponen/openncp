@@ -1,24 +1,26 @@
 package com.gnomon.epsos.model.configmanager;
 
 import com.gnomon.LiferayUtils;
-import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.primefaces.event.RowEditEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
-import org.apache.commons.lang.exception.ExceptionUtils;
-import org.apache.log4j.Logger;
-import org.primefaces.event.RowEditEvent;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 @ManagedBean
 @SessionScoped
 public class ConfigurationManagerBean {
 
-    private static Logger log = Logger.getLogger("ConfigurationManagerBean");
+    private static Logger log = LoggerFactory.getLogger("ConfigurationManagerBean");
     private List<Property> properties;
     private String property;
     private String value;
@@ -95,7 +97,7 @@ public class ConfigurationManagerBean {
         return "view2";
     }
 
-//		public void saveItem(ActionEvent actionEvent) throws Exception {
+    //		public void saveItem(ActionEvent actionEvent) throws Exception {
 //			CustomResponse cr = new CustomResponse();
 //			cr = PropertyItemDAO.addItem(property, value);
 //			if (cr.getCode().equals("200"))

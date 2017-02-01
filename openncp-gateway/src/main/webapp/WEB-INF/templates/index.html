@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <title th:text="#{label.HelloWorld}">Hello World</title>
-</head>
-<body>
-<h1 th:text="#{label.HelloWorld}">Hello World</h1>
-</body>
+    <title></title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" th:text="#{application.title}">OpenNCP Gateway2</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#" th:text="#{label.Home}">Home2</a></li>
+          <li><a href="#" th:href="@{/smpeditor/SMPEditor}" th:text="#{label.SmpEditor}">SMP Editor2</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              <span th:text="${#authentication.name}">John Smith</span>
+            </a>
+          </li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+        </ul>
+      </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Home</li>
+        </ol>
+      </div>
+    </nav>
+
+    <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>
+  </body>
 </html>

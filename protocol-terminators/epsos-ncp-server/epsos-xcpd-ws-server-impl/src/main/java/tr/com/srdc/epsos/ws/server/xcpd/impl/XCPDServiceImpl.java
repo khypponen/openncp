@@ -43,8 +43,8 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.datatype.DatatypeConfigurationException;
 import org.apache.axiom.soap.SOAPHeader;
 import org.apache.axis2.util.XMLUtils;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.hl7.v3.AD;
 import org.hl7.v3.ActClassControlAct;
 import org.hl7.v3.ActRelationshipMitigates;
@@ -85,6 +85,7 @@ import org.hl7.v3.TS;
 import org.hl7.v3.XActMoodDefEvn;
 import org.hl7.v3.XActMoodIntentEvent;
 import org.joda.time.DateTime;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 import tr.com.srdc.epsos.data.model.PatientDemographics;
 import tr.com.srdc.epsos.data.model.PatientId;
@@ -100,7 +101,7 @@ import tr.com.srdc.epsos.util.http.HTTPUtil;
 
 public class XCPDServiceImpl implements XCPDServiceInterface {
 
-    public static Logger logger = Logger.getLogger(XCPDServiceImpl.class);
+    public static Logger logger = LoggerFactory.getLogger(XCPDServiceImpl.class);
     public static final String ERROR_DEMOGRAPHIC_QUERY_NOT_ALLOWED = "DemographicsQueryNotAllowed";
     public static final String ERROR_ANSWER_NOT_AVAILABLE = "AnswerNotAvailable";
     public static final String ERROR_INSUFFICIENT_RIGHTS = "InsufficientRights";
@@ -593,7 +594,7 @@ public class XCPDServiceImpl implements XCPDServiceInterface {
         try {
             shElement = XMLUtils.toDOM(sh);
         } catch (Exception e) {
-            logger.fatal("SOAP header jaxb to dom failed.", e);
+            logger.error("SOAP header jaxb to dom failed.", e);
             throw e;
         }
         patientSearchService.setSOAPHeader(shElement);

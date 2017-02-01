@@ -15,8 +15,9 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -25,7 +26,8 @@ import org.xml.sax.SAXException;
 
 public class CDAUtils {
 
-    private static final Logger _log = Logger.getLogger("CDAUtils");
+    private static final Logger _log = LoggerFactory.getLogger("CDAUtils");
+
     public final static String XML_LOINC_SYSTEM = "LOINC",
             XML_LOINC_CODESYSTEM = "2.16.840.1.113883.6.1",
             XML_PRESCRIPTION_TEMPLATEID = "1.3.6.1.4.1.12559.11.10.1.3.1.1.1",

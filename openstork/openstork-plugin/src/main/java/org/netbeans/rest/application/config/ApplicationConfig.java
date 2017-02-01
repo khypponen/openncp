@@ -5,15 +5,19 @@
  */
 package org.netbeans.rest.application.config;
 
-import java.util.Set;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.ws.rs.core.Application;
+import java.util.Set;
 
 /**
- *
  * @author kostaskarkaletsis
  */
 @javax.ws.rs.ApplicationPath("webresources")
 public class ApplicationConfig extends Application {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationConfig.class);
 
     @Override
     public Set<Class<?>> getClasses() {
@@ -23,7 +27,8 @@ public class ApplicationConfig extends Application {
             Class jacksonProvider = Class.forName("org.codehaus.jackson.jaxrs.JacksonJsonProvider");
             resources.add(jacksonProvider);
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(getClass().getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            //java.util.logging.LoggerFactory.getLogger(getClass().getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            LOGGER.error(null, ex);
         }
         addRestResourceClasses(resources);
         return resources;
@@ -38,5 +43,4 @@ public class ApplicationConfig extends Application {
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(com.gnomon.stork.rest.StorkRestService.class);
     }
-
 }

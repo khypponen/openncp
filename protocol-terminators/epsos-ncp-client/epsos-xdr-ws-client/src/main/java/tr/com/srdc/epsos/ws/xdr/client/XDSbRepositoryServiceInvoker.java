@@ -59,7 +59,7 @@ import eu.epsos.pt.ws.client.xdr.transformation.TMServices;
 import eu.epsos.validation.datamodel.cda.CdaModel;
 import eu.epsos.validation.datamodel.common.NcpSide;
 import eu.epsos.validation.services.CdaValidationService;
-import java.util.logging.Level;
+
 import org.apache.axis2.util.XMLUtils;
 
 /**
@@ -144,9 +144,9 @@ public class XDSbRepositoryServiceInvoker {
         } catch (UnsupportedEncodingException ex) {
             throw new RuntimeException(ex);
         } catch (DocumentTransformationException ex) {
-            java.util.logging.Logger.getLogger(XDSbRepositoryServiceInvoker.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.error(null, ex);
         } catch (Exception ex) {
-            java.util.logging.Logger.getLogger(XDSbRepositoryServiceInvoker.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.error(null, ex);
         }
         try {
             byte[] transformedCda = TMServices.transformDocument(cdaBytes);
@@ -161,7 +161,7 @@ public class XDSbRepositoryServiceInvoker {
             LOG.error(ex.getLocalizedMessage(), ex);
             xdrDocument.setValue(cdaBytes);
         } catch (Exception ex) {
-            java.util.logging.Logger.getLogger(XDSbRepositoryServiceInvoker.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.error(null, ex);
         }
         prds.getDocument().add(xdrDocument);
 

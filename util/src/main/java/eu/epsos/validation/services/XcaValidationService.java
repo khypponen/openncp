@@ -25,6 +25,7 @@ import eu.epsos.validation.datamodel.xd.XdModel;
 import eu.epsos.validation.reporting.ReportBuilder;
 import net.ihe.gazelle.xd.ModelBasedValidationWS;
 import net.ihe.gazelle.xd.ModelBasedValidationWSService;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
@@ -34,7 +35,7 @@ import org.slf4j.LoggerFactory;
  */
 public class XcaValidationService extends ValidationService {
 
-    private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(XcaValidationService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(XcaValidationService.class);
     private static XcaValidationService instance;
 
     @Override
