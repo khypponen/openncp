@@ -111,11 +111,22 @@ public class SMPUploadFileController {
         return "redirect:/smpeditor/uploadsmpfile";
       }
       convFile.delete();
-
+      
       String username = smpupload.getServerUsername();
       String password = smpupload.getServerPassword();
 
       ServiceMetadata serviceMetadata = smpconverter.convertFromXml(smpupload.getUploadFiles().get(i));
+      
+      boolean isSigned = smpconverter.getIsSignedServiceMetadata();
+      if (isSigned) {
+        logger.debug("\n****SIGNED SMP File");
+        convFile.delete();
+        String message = env.getProperty("warning.isSigned.sigmenu"); //messages.properties
+        redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.warning));
+        return "redirect:/smpeditor/uploadsmpfile";
+      } else {
+        logger.debug("\n****NOT SIGNED File");
+      }
 
       String participantID = "";
       String documentTypeID = "";
