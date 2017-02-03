@@ -17,8 +17,6 @@ import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -57,17 +55,14 @@ public class Signer {
     } catch (IOException ex) {
       invalidKeystore = true;
       logger.error("\nIOException 2 - " + ex.getMessage(), ex);
-      Logger.getLogger(Signer.class.getName()).log(Level.SEVERE, null, ex);
       return;
     } catch (NoSuchAlgorithmException ex) {
       invalidKeystore = true;
       logger.error("\nNoSuchAlgorithmException 2 " + ex.getMessage(), ex);
-      Logger.getLogger(Signer.class.getName()).log(Level.SEVERE, null, ex);
       return;
     } catch (CertificateException ex) {
       invalidKeystore = true;
       logger.error("\nCertificateException 2 - " + ex.getMessage(), ex);
-      Logger.getLogger(Signer.class.getName()).log(Level.SEVERE, null, ex);
       return;
     }
     KeyStore.PasswordProtection passProtection = new KeyStore.PasswordProtection(keyPairPass.toCharArray());
@@ -77,17 +72,14 @@ public class Signer {
     } catch (KeyStoreException ex) {
       invalidKeyPair = true;
       logger.error("\nKeyStoreException 3 - " + ex.getMessage(), ex);
-      Logger.getLogger(Signer.class.getName()).log(Level.SEVERE, null, ex);
       return;
     } catch (NoSuchAlgorithmException ex) {
       invalidKeyPair = true;
       logger.error("\nNoSuchAlgorithmException 3 - " + ex.getMessage(), ex);
-      Logger.getLogger(Signer.class.getName()).log(Level.SEVERE, null, ex);
       return;
     } catch (UnrecoverableEntryException ex) {
       invalidKeyPair = true;
       logger.error("\nUnrecoverableEntryException 3 - " + ex.getMessage(), ex);
-      Logger.getLogger(Signer.class.getName()).log(Level.SEVERE, null, ex);
       return;
     }
     

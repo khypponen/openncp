@@ -5,6 +5,7 @@
     <title></title>
     <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
     <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/tooltip.css}" rel="stylesheet">
     <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,40 +15,23 @@
   </head>
   <body>
     <nav class="navbar navbar-default navbar-inverse navbar-static-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#" th:text="#{application.title}">OpenNCP Gateway</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#" th:href="@{/}" th:text="#{label.Home}">Home</a></li>
-            <li><a href="#" th:href="@{/smpeditor/SMPEditor}" th:text="#{label.SmpEditor}">SMP Editor</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="#">
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <span th:text="${#authentication.name}">John Smith</span>
-              </a>
-            </li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
-          </ul>
-        </div>
+      <div class="container-fluid" th:include="fragments/header::head">
+      </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Home/SMP Editor/Sign File</li>
+        </ol>
+      </div>
+    </nav><!-- HEADER -->
 
-        <div class="container">
-          <ol class="breadcrumb">
-            <li class="active">Home/SMP Editor/Sign File</li>
-          </ol>
-        </div>
-    </nav> <!--HEADER -->
-
-    <div style="margin-bottom: 50px;">
-      <h2 th:text="#{label.SmpEditor.menu.op3}" style="margin-left: 20px">Sign SMP file</h2>
-
+    <div class="marginbotton">
+      <h2 th:text="#{label.SmpEditor.menu.op3}" class="marginleft">Sign SMP file</h2>
+      
       <div class="row">
         <div class="col-md-12">
           <div class="panel with-nav-tabs panel-default">
             <div class="panel-heading">
+              <p><strong th:text="#{warning.sign}" class="marginleft">You are about to sign the following files:</strong></p>
               <ul class="nav nav-tabs">
                 <li th:each="smpfile: ${smpfiles}" th:classappend="${smpfile.id == 0}? 'active'">
                   <a th:href="'#' + ${smpfile.id}" data-toggle="tab" th:attr="aria-expanded=${smpfile.id == 0}">
@@ -59,21 +43,22 @@
             <div class="panel-body">
               <div class="tab-content">
                 <div th:each="smpfile: ${smpfiles}" th:id="${smpfile.id}" class="tab-pane fade" th:classappend="${smpfile.id == 0}? 'in active'" >
-
-                  <div th:if="${smpfile.signedExtension}">
-                    <div class="alert alert-warning" style="text-align: center;">
-                      <strong th:text="#{warning.isSignedExtension}"></strong>
+                  
+                  <div th:if="${smpfile.alert != null}">
+                    <div class="alert center" th:classappend="'alert-' + ${smpfile.alert.type}">
+                      <strong th:text="${smpfile.alert.message}"></strong>
                     </div>
                   </div>
 
                   <!-- ServiceInformation form-->
-                  <form th:if="${smpfile.typeS != 'Redirect'}" action="#"  th:action="@{/smpeditor/CheckSignSMPFile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpfilesign}"  method="post" enctype="multipart/form-data">  
+                  <form th:if="${smpfile.typeS != 'Redirect'}" action="#"  th:action="@{/smpeditor/checksignsmpfile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpfilesign}"  method="post" enctype="multipart/form-data">  
 
                     <div id="newfileinputs" class="form-group row">
                       <label th:text="#{label.SmpEditor.form.country}" class="col-xs-2 col-form-label" for="countryinput">Country</label>
                       <div class="col-xs-9">
                         <input class="form-control"  th:value="${smpfile.country}" readonly>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.country}" data-tooltip-position="left"><strong>?</strong></span>
                     </div>
 
                     <div class="form-group row" id="newfileinputs">
@@ -81,109 +66,132 @@
                       <div class="col-xs-9">
                         <input class="form-control" type="text" th:value="${smpfile.participantIdentifier}" readonly>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.participantIdentifier}" data-tooltip-position="left"><strong>?</strong></span>
                     </div> 
                     <div class="form-group row" id="newfileinputs">
                       <label th:text="#{label.SmpEditor.sigform.documentIdentifier}" for="documentIdentifier" class="col-xs-2 col-form-label">Document Identifier</label>
                       <div class="col-xs-9">
                         <input class="form-control" type="text" th:value="${smpfile.documentIdentifier}" readonly>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.documentIdentifier}" data-tooltip-position="left"><strong>?</strong></span>
                     </div> 
                     <div class="form-group row" id="newfileinputs">
                       <label th:text="#{label.SmpEditor.sigform.processIdentifier}" for="processIdentifier" class="col-xs-2 col-form-label">Process Identifier</label>
                       <div class="col-xs-9">
                         <input class="form-control" type="text" th:value="${smpfile.processIdentifier}" readonly>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.processIdentifier}" data-tooltip-position="left"><strong>?</strong></span>
                     </div> 
 
-                    <h3 th:text="#{label.SmpEditor.form.endpoint}" style="margin-left: 150px; margin-top: 50px;">Endpoint</h3>
+                    <h3 th:text="#{label.SmpEditor.form.endpoint}" class="subtitle">Endpoint</h3>
 
                     <div th:if="${smpfile.smpfields.uri.enable}" class="form-group row" id="newfileinputs">
                       <label th:text="#{label.SmpEditor.form.endpointUri}" for="endpointuri" class="col-xs-2 col-form-label">Endpoint URI</label>
                       <div class="col-xs-9">
                         <input class="form-control" type="url" id="uriinput" th:value="${smpfile.endpointURI}" readonly>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.uri}" data-tooltip-position="left"><strong>?</strong></span>
                     </div>   
                     <div th:if="${smpfile.smpfields.serviceActivationDate.enable}" class="form-group row" id="newfileinputs">
                       <label th:text="#{label.SmpEditor.form.serviceActivationDate}" class="col-xs-2 col-form-label">Service Activation Date</label>
                       <div class="col-xs-9">
                         <input class="form-control" size="16" type="text" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]"  th:value="${smpfile.serviceActivationDateS}" readonly>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.activationDate}" data-tooltip-position="left"><strong>?</strong></span>
                     </div>
                     <div th:if="${smpfile.smpfields.serviceExpirationDate.enable}" class="form-group row" id="newfileinputs">
                       <label th:text="#{label.SmpEditor.form.serviceExpirationDate}" for="dateexp" class="col-xs-2 col-form-label" >Service Expiration Date</label>
                       <div class="col-xs-9">
                         <input class="form-control" size="16" type="text" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]" th:value="${smpfile.serviceExpirationDateS}" readonly>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.expirationDate}" data-tooltip-position="left"><strong>?</strong></span>
                     </div>
                     <div th:if="${smpfile.smpfields.certificate.enable}" class="form-group row" id="newfileinputs">
                       <label th:text="#{label.SmpEditor.form.certificate}" for="certificate" class="col-xs-2 col-form-label">Certificate</label>
                       <div class="col-xs-9">
-                        <textarea  type="text" class="form-control-file" rows="4" cols="110" th:text="${smpfile.certificateContent}" style="background-color: #F0F0F0;" readonly></textarea>
+                        <textarea  type="text" class="form-control-file col-xs-12 textarea" rows="4" th:text="${smpfile.certificateContent}" readonly></textarea>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.certificate}" data-tooltip-position="left"><strong>?</strong></span>
                     </div>
                     <div th:if="${smpfile.smpfields.serviceDescription.enable}" class="form-group row" id="newfileinputs">
                       <label th:text="#{label.SmpEditor.form.serviceDescription}" for="description" class="col-xs-2 col-form-label">Service Description</label>
                       <div class="col-xs-9">
                         <input class="form-control" type="text" id="descriptioninput" th:value="${smpfile.serviceDescription}" readonly>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.serviceDescription}" data-tooltip-position="left"><strong>?</strong></span>
                     </div>
                     <div th:if="${smpfile.smpfields.technicalContactUrl.enable}" class="form-group row" id="newfileinputs">
                       <label th:text="#{label.SmpEditor.form.technicalContact}" for="tcontact" class="col-xs-2 col-form-label">Technical Contact URL</label>
                       <div class="col-xs-9">
                         <input class="form-control" id="tcontactinput" type="text" pattern="([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}|https?:\/\/.+)" th:value="${smpfile.TechnicalContactUrl}" readonly>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.technicalContactURL}" data-tooltip-position="left"><strong>?</strong></span>
                     </div>
                     <div th:if="${smpfile.smpfields.technicalInformationUrl.enable}" class="form-group row" id="newfileinputs">
                       <label th:text="#{label.SmpEditor.form.technicalInformation}" for="tinformation" class="col-xs-2 col-form-label">Technical Information URL</label>
                       <div class="col-xs-9">
                         <input class="form-control" type="url" id="tinformationinput" th:value="${smpfile.technicalInformationUrl}" readonly>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.technicalInformationURL}" data-tooltip-position="left"><strong>?</strong></span>
                     </div>
                     <div th:if="${smpfile.smpfields.extension.enable}" class="form-group row" id="newfileinputs">
                       <label th:text="#{label.SmpEditor.form.extension}" for="extensionfile" class="col-xs-2 col-form-label">Extension</label>
                       <div class="col-xs-9">
-                        <textarea  type="text" class="form-control-file" rows="10" cols="110" th:text="${smpfile.extensionContent}" style="background-color: #F0F0F0;" readonly></textarea>
+                        <textarea  type="text" class="form-control-file col-xs-12 textarea" rows="10" th:text="${smpfile.extensionContent}" readonly></textarea>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.extension}" data-tooltip-position="left"><strong>?</strong></span>
                     </div>
 
                     <div class="panel-footer">
-                      <div id="btnformnsf">
-                        <a href="#" th:href="@{/smpeditor/SignSMPFile}" class="btn btn-default" th:text="#{label.button.cancel}" style="width:76px; background-color: #dddddd;">Cancel</a>
-                        <button type="submit" class="btn" th:text="#{label.button.ok}" style="width:76px;">Ok</button>
+                      <div id="btnformnsf" class="row">
+                        <div class="col-xs-8">
+                          <p><strong th:text="#{warning.sign.confirm}">Sign the file(s)?</strong></p>
+                        </div>
+                        <div class="col-xs-4">
+                          <a href="#" th:href="@{/smpeditor/signsmpfile}" class="btn btn-default" id="abutton" th:text="#{label.button.cancel}">Cancel</a>
+                          <button type="submit" class="btn okbutton" th:text="#{label.button.ok}">Ok</button>
+                        </div>
                       </div>  
                     </div> 
                   </form>
 
 
                   <!-- Redirect form-->
-                  <form th:if="${smpfile.typeS == 'Redirect'}" action="#"  th:action="@{/smpeditor/CheckSignSMPFile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpfilesign}"  method="post" enctype="multipart/form-data">
+                  <form th:if="${smpfile.typeS == 'Redirect'}" action="#"  th:action="@{/smpeditor/checksignsmpfile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpfilesign}"  method="post" enctype="multipart/form-data">
 
                     <div id="newfileinputs" class="form-group row">
                       <label th:text="#{label.SmpEditor.form.country}" class="col-xs-2 col-form-label" for="countryinput">Country</label>
                       <div class="col-xs-9">
-                        <input th:unless="${smpfile.hasCountry}" class="form-control"  th:value="--" value="" readonly>
-                        <input th:if="${smpfile.hasCountry}" class="form-control"  th:value="${smpfile.country}" readonly>
+                        <input class="form-control"  th:value="${smpfile.country}" readonly>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.country}" data-tooltip-position="left"><strong>?</strong></span>
                     </div>
                     <div th:if="${smpfile.smpfields.redirectHref.enable}" class="form-group row" id="newfileinputs">
                       <label th:text="#{label.SmpEditor.form.redirectHref}" for="redirectHref" class="col-xs-2 col-form-label">Redirect HREF</label>
                       <div class="col-xs-9">
                         <input class="form-control" type="url" id="hrefinput" th:value="${smpfile.href}" readonly>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.redirect.url}" data-tooltip-position="left"><strong>?</strong></span>
                     </div>
                     <div th:if="${smpfile.smpfields.certificateUID.enable}" class="form-group row" id="newfileinputs">
                       <label th:text="#{label.SmpEditor.form.certificateUID}" for="certificateUID" class="col-xs-2 col-form-label">Certificate UID</label>
                       <div class="col-xs-9">
                         <input class="form-control" type="text" id="descriptioninput" th:value="${smpfile.certificateUID}" readonly>
                       </div>
+                      <span th:attr="data-tooltip=#{tooltip.redirect.certificateUID}" data-tooltip-position="left"><strong>?</strong></span>
                     </div> 
 
                     <div class="panel-footer">
-                      <div id="btnformnsf">
-                        <a href="#" th:href="@{/smpeditor/SignSMPFile}" class="btn btn-default" th:text="#{label.button.cancel}" style="width:76px; background-color: #dddddd;">Cancel</a>
-                        <button type="submit" class="btn" th:text="#{label.button.ok}" style="width:76px;">Ok</button>
-                      </div>  
-                    </div>  
+                      <div id="btnformnsf" class="row">
+                        <div class="col-xs-8">
+                          <p><strong th:text="#{warning.sign.confirm}">Sign the file(s)?</strong></p>
+                        </div>
+                        <div class="col-xs-4">
+                          <a href="#" th:href="@{/smpeditor/signsmpfile}" class="btn btn-default" id="abutton" th:text="#{label.button.cancel}">Cancel</a>
+                          <button type="submit" class="btn okbutton" th:text="#{label.button.ok}">Ok</button>
+                        </div>
+                      </div> 
+                    </div>                      
                   </form>    
 
                 </div>
@@ -193,7 +201,5 @@
         </div>
       </div>
     </div>
-
-
   </body>
 </html>

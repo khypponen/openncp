@@ -25,13 +25,10 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.w3c.dom.Element;
 
 /**
- * Service responsible for converting the data introduced by the user to a xml
- * file
+ * Service responsible for converting the data introduced by the user to a xml file
  */
 @Service
 public class SMPConverter {
@@ -80,7 +77,7 @@ public class SMPConverter {
     if ("Redirect".equals(type)) {
       /*
        Redirect SMP Type
-       */
+      */
       logger.debug("\n******* Redirect ************");
       RedirectType redirectType = objectFactory.createRedirectType();
 
@@ -159,9 +156,9 @@ public class SMPConverter {
           }
 
         } catch (CertificateException ex) {
-          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+          logger.error("\n CertificateException - " + ex.getMessage());
         } catch (IOException ex) {
-          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+          logger.error("\n IOException - " + ex.getMessage());
         }
       } else {
         byte[] by = "".getBytes();
@@ -200,16 +197,16 @@ public class SMPConverter {
 
         } catch (FileNotFoundException ex) {
           nullExtension = true;
-          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+          logger.error("\n FileNotFoundException - " + ex.getMessage());
         } catch (IOException ex) {
           nullExtension = true;
-          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+          logger.error("\n IOException - " + ex.getMessage());
         } catch (SAXException ex) {
           nullExtension = true;
-          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+          logger.error("\n SAXException - " + ex.getMessage());
         } catch (ParserConfigurationException ex) {
           nullExtension = true;
-          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+          logger.error("\n ParserConfigurationException - " + ex.getMessage());
         }
 
         if (nullExtension) {
@@ -391,14 +388,12 @@ public class SMPConverter {
           }
 
         } catch (CertificateException ex) {
-          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+          logger.error("\n CertificateException - " + ex.getMessage());
         } catch (IOException ex) {
-          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+          logger.error("\n IOException - " + ex.getMessage());
         }
       }
       
-      
-
       /*
        Endpoint Service Description, Technical ContactUrl and Technical InformationUrl definition
        */
@@ -436,22 +431,21 @@ public class SMPConverter {
         Document docOriginal = null;
         try {
           String content = new Scanner(extensionFile.getInputStream()).useDelimiter("\\Z").next();
-          //logger.debug("\n*****Content from extension file - " + content);
 
           docOriginal = parseDocument(content);
 
         } catch (FileNotFoundException ex) {
           nullExtension = true;
-          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+          logger.error("\n FileNotFoundException - " + ex.getMessage());
         } catch (IOException ex) {
           nullExtension = true;
-          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+          logger.error("\n IOException - " + ex.getMessage());
         } catch (SAXException ex) {
           nullExtension = true;
-          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+          logger.error("\n SAXException - " + ex.getMessage());
         } catch (ParserConfigurationException ex) {
           nullExtension = true;
-          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+          logger.error("\n ParserConfigurationException - " + ex.getMessage());
         }
 
         if (nullExtension) {
@@ -462,8 +456,6 @@ public class SMPConverter {
           endpointType.getExtensions().add(extensionType);
         }
       }
-
-
 
       processType.setProcessIdentifier(processIdentifier);
       processType.setServiceEndpointList(serviceEndpointList);
@@ -480,7 +472,6 @@ public class SMPConverter {
     
     //Generate XML file
     getXMLFile(serviceMetadata);
-
   }
 
   /**
@@ -502,7 +493,6 @@ public class SMPConverter {
       JAXBContext jaxbContext = JAXBContext.newInstance(SignedServiceMetadata.class, ServiceMetadata.class);
       Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();      
       Object result = jaxbUnmarshaller.unmarshal(fileUpdate.getInputStream());
-      logger.debug("\n******* RESULT 1 - " + result);
       
       if(result instanceof SignedServiceMetadata){
         logger.debug("\n******* CONVERTER SignedServiceMetadata SMPFILE");
@@ -513,17 +503,13 @@ public class SMPConverter {
         logger.debug("\n******* CONVERTER ServiceMetadata SMPFILE");
         serviceMetadata = (ServiceMetadata) result;
       }
-
     } catch (JAXBException ex) {
-      logger.debug("\n******* CATCH JAXBException ");
       logger.error("JAXBException - " + ex.getErrorCode(), ex);
     } catch (IOException ex) {
-      logger.debug("\n******* CATCH IOException ");
       logger.error("IOException - " + ex.getLocalizedMessage(), ex);
     }
     
     return serviceMetadata;
-    
   }  
 
   /**
@@ -609,19 +595,19 @@ public class SMPConverter {
       generatedFileOS.close();
 
     } catch (JAXBException ex) {
-      Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+      logger.error("\n JAXBException - " + ex.getMessage());
     } catch (FileNotFoundException ex) {
-      Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+      logger.error("\n FileNotFoundException - " + ex.getMessage());
     } catch (IOException ex) {
-      Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+      logger.error("\n IOException - " + ex.getMessage());
     } catch (XMLStreamException ex) {
-      Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+      logger.error("\n XMLStreamException - " + ex.getMessage());
     } finally {
       if (xsw != null) {
         try {
           xsw.close();
         } catch (XMLStreamException ex) {
-          Logger.getLogger(SMPConverter.class.getName()).log(Level.SEVERE, null, ex);
+          logger.error("\n XMLStreamException - " + ex.getMessage());
         }
       }
     }
@@ -662,7 +648,7 @@ public class SMPConverter {
 
 
 
-  /*TODO: TO DOC Auxiliary*/
+  /*Auxiliary*/
   public Document parseDocument(String docContent) throws IOException, SAXException, ParserConfigurationException {
     InputStream inputStream = new ByteArrayInputStream(docContent.getBytes());
     getDocumentBuilder().setErrorHandler(new SimpleErrorHandler());

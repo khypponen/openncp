@@ -1,0 +1,18 @@
+<div th:fragment="head">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#" th:text="#{application.title}">OpenNCP Gateway2</a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li><a href="#" th:text="#{label.Home}">Home</a></li>
+    <li><a href="#" th:href="@{/smpeditor/smpeditor}" th:text="#{label.SmpEditor}">SMP Editor</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li>
+      <a href="#">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        <span th:text="${#authentication.name}">John Smith</span>
+      </a>
+    </li>
+    <li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+  </ul>
+</div>

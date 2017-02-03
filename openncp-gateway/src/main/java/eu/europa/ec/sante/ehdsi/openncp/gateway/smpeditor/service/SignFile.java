@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.text.SimpleDateFormat;
 import javax.xml.crypto.dsig.CanonicalizationMethod;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -44,7 +43,6 @@ public class SignFile {
   private static final String XMLDSIG_NS = "http://www.w3.org/2000/09/xmldsig#";
 
   private File generatedSignFile;
-  private String fileName;
   private boolean invalidKeystoreSMP;
   private boolean invalidKeyPairSMP;
 
@@ -58,7 +56,7 @@ public class SignFile {
    * @param signFile
    * @throws Exception
    */
-  public void signFiles(String type, MultipartFile keystore, String keystorePassword, String keyAlias, String keyPassword,
+  public void signFiles(String type, String fileName, MultipartFile keystore, String keystorePassword, String keyAlias, String keyPassword,
           MultipartFile signFile) throws Exception {
     logger.debug("\n===== SIGNFILE ======");
     invalidKeystoreSMP=false;
@@ -95,12 +93,8 @@ public class SignFile {
     Document docUnwrapped = buildDocWithGivenRoot(smNode);
     Element siSigPointer = findSig(type, docUnwrapped);
     SignatureValidator.validateSignature(siSigPointer);
-
-    String timeStamp = new SimpleDateFormat("yyyyMMdd'T'HHmmss").format(new java.util.Date());
-    String[] name = signFile.getOriginalFilename().split("(Signed_)?[0-9]*T[0-9]*");
-    fileName = name[0] + "Signed_" + timeStamp + ".xml";
+   
     generatedSignFile = new File("/" + fileName);
-    logger.debug("\n********* FILENAME - " + fileName);
 
     Source source = new DOMSource(docServiceMetadata);
     Result result = new StreamResult(generatedSignFile);
@@ -178,14 +172,12 @@ public class SignFile {
         if ("Extension".equals(child.getLocalName()) && OASIS_NS.equals(child.getNamespaceURI())) {
           extension = (Element) child;
           while (extension.hasChildNodes()) {
-            logger.debug("\n********* EXTENSION - firstchild " + extension.getFirstChild().getLocalName());
             extension.removeChild(extension.getFirstChild());
           }
         }
       }
       //Add new extension
       if (extension == null) {
-        logger.debug("\n********* NULL EXTENSION");
         extension = doc.createElement("Extension");
         serviceInformation.appendChild(extension);
       }
@@ -196,7 +188,6 @@ public class SignFile {
         if ("Extension".equals(child.getLocalName()) && OASIS_NS.equals(child.getNamespaceURI())) {
           extension = (Element) child;
           while (extension.hasChildNodes()) {
-            logger.debug("\n********* EXTENSION - firstchild " + extension.getFirstChild().getLocalName());
             extension.removeChild(extension.getFirstChild());
           }
         }
@@ -223,7 +214,7 @@ public class SignFile {
     // Marshalling and parsing the document - signature validation fails without this stinky "magic".
     // _Probably_ SUN's implementation doesn't import correctly signatures between two different documents.
     String strUnwrapped = marshall(docUnwrapped);
-    System.out.println(strUnwrapped);
+    logger.debug(strUnwrapped);
     return parseDocument(strUnwrapped);
   }
 
@@ -236,15 +227,7 @@ public class SignFile {
   public void setGeneratedSignFile(File generatedSignFile) {
     this.generatedSignFile = generatedSignFile;
   }
-
-  public String getFileName() {
-    return fileName;
-  }
-
-  public void setFileName(String fileName) {
-    this.fileName = fileName;
-  }
-  
+ 
   public boolean isInvalidKeystoreSMP() {
     return invalidKeystoreSMP;
   }

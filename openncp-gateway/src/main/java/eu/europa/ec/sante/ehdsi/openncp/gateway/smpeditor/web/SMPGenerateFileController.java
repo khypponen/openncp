@@ -1,7 +1,8 @@
 package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.web;
 
-import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPFieldProperties;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPFields;
+import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Alert;
+import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,15 +13,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.SMPConverter;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPFile;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.XMLValidator;
+import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.ReadSMPProperties;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletRequest;
@@ -44,6 +47,8 @@ public class SMPGenerateFileController {
   private final XMLValidator xmlValidator = new XMLValidator();
   @Autowired
   private Environment env;
+  @Autowired
+  private ReadSMPProperties readProperties = new ReadSMPProperties();
 
   private final SMPFields smpfields = new SMPFields();
   private String type;
@@ -53,35 +58,34 @@ public class SMPGenerateFileController {
    * @param model
    * @return 
    */
-  @RequestMapping(value = "/smpeditor/GenerateSMPfile", method = RequestMethod.GET)
+  @RequestMapping(value = "/smpeditor/generatesmpfile", method = RequestMethod.GET)
   public String generateForm(Model model) {
     logger.debug("\n==== in generateForm ====");
     model.addAttribute("smpfile", new SMPFile());
-    return "smpeditor/GenerateSMPfile";
+    return "smpeditor/generatesmpfile";
   }
 
   /**
-   * Manage Post from GenerateSMPFile page to NewSMPFile page
+   * Manage Post from GenerateSMPFile page to newsmpfile page
    * @param smpfile
    * @param model
    * @return 
    */
-  @RequestMapping(value = "/smpeditor/GenerateSMPfile", method = RequestMethod.POST)
+  @RequestMapping(value = "/smpeditor/generatesmpfile", method = RequestMethod.POST)
   public String post(@ModelAttribute("smpfile") SMPFile smpfile, Model model) {
     logger.debug("\n==== in post ====" + smpfile.toString());
     model.addAttribute("smpfile", smpfile);
-    return "redirect:NewSMPFile";
+    return "redirect:newsmpfile";
   }
 
   /**
-   * Generate NewSMPFile page 
-   * Read from smpeditor.properties -- enable/mandatory definitions of the user-filled fields
+   * Generate newsmpfile page 
    * 
    * @param smpfile
    * @param model
    * @return 
    */
-  @RequestMapping(value = "smpeditor/NewSMPFile", method = RequestMethod.GET)
+  @RequestMapping(value = "smpeditor/newsmpfile", method = RequestMethod.GET)
   public String generateFile(@ModelAttribute("smpfile") SMPFile smpfile, Model model) {
     logger.debug("\n==== in generateFile ====");
     model.addAttribute("smpfile", smpfile);
@@ -89,90 +93,32 @@ public class SMPGenerateFileController {
     /*
     * Read smpeditor.properties file
     */
-    type = env.getProperty("type."+ smpfile.getType().name()); //smpeditor.properties
-    //logger.debug("\n******** " + smpfile.getType().name() + " - " + type);
+    readProperties.readProperties(smpfile);
+    
+    type = readProperties.getType();
     model.addAttribute(type, "Type "+type);
 
-    Boolean uriEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".uri.enable"));
-    Boolean uriMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".uri.mandatory"));
-    SMPFieldProperties uri = new SMPFieldProperties();
-    uri.setEnable(uriEnable);
-    uri.setMandatory(uriMandatory);
-    smpfields.setUri(uri);
-    
-    Boolean serviceActDateEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceActivationDate.enable"));
-    Boolean serviceActDateMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceActivationDate.mandatory"));
-    SMPFieldProperties serviceActDate = new SMPFieldProperties();
-    serviceActDate.setEnable(serviceActDateEnable);
-    serviceActDate.setMandatory(serviceActDateMandatory);
-    smpfields.setServiceActivationDate(serviceActDate);
-    
-    Boolean serviceExpDateEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceExpirationDate.enable"));
-    Boolean serviceExpDateMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceExpirationDate.mandatory"));
-    SMPFieldProperties serviceExpDate = new SMPFieldProperties();
-    serviceExpDate.setEnable(serviceExpDateEnable);
-    serviceExpDate.setMandatory(serviceExpDateMandatory);
-    smpfields.setServiceExpirationDate(serviceExpDate);
-    
-    Boolean certificateEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".certificate.enable"));
-    Boolean certificateMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".certificate.mandatory"));
-    SMPFieldProperties certificate = new SMPFieldProperties();
-    certificate.setEnable(certificateEnable);
-    certificate.setMandatory(certificateMandatory);
-    smpfields.setCertificate(certificate);
-    
-    Boolean serviceDescEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceDescription.enable"));
-    Boolean serviceDescMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceDescription.mandatory"));
-    SMPFieldProperties serviceDesc = new SMPFieldProperties();
-    serviceDesc.setEnable(serviceDescEnable);
-    serviceDesc.setMandatory(serviceDescMandatory);
-    smpfields.setServiceDescription(serviceDesc);
-    
-    Boolean techContactEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".technicalContactUrl.enable"));
-    Boolean techContactMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".technicalContactUrl.mandatory"));
-    SMPFieldProperties techContact = new SMPFieldProperties();
-    techContact.setEnable(techContactEnable);
-    techContact.setMandatory(techContactMandatory);
-    smpfields.setTechnicalContactUrl(techContact);
-    
-    Boolean techInformationEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".technicalInformationUrl.enable"));
-    Boolean techInformationMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".technicalInformationUrl.mandatory"));
-    SMPFieldProperties techInformation = new SMPFieldProperties();
-    techInformation.setEnable(techInformationEnable);
-    techInformation.setMandatory(techInformationMandatory);
-    smpfields.setTechnicalInformationUrl(techInformation);
-    
-    Boolean extensionEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".extension.enable"));
-    Boolean extensionMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".extension.mandatory"));
-    SMPFieldProperties extension = new SMPFieldProperties();
-    extension.setEnable(extensionEnable);
-    extension.setMandatory(extensionMandatory);
-    smpfields.setExtension(extension);
-    
-    Boolean redirectHrefEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".redirectHref.enable"));
-    Boolean redirectHrefMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".redirectHref.mandatory"));
-    SMPFieldProperties redirectHref = new SMPFieldProperties();
-    redirectHref.setEnable(redirectHrefEnable);
-    redirectHref.setMandatory(redirectHrefMandatory);
-    smpfields.setRedirectHref(redirectHref);
-
-    Boolean certificateUIDEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".certificateUID.enable"));
-    Boolean certificateUIDMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".certificateUID.mandatory"));
-    SMPFieldProperties certificateUID = new SMPFieldProperties();
-    certificateUID.setEnable(certificateUIDEnable);
-    certificateUID.setMandatory(certificateUIDMandatory);
-    smpfields.setCertificateUID(certificateUID);
+    smpfields.setUri(readProperties.getUri());
+    smpfields.setServiceActivationDate(readProperties.getServiceActDate());
+    smpfields.setServiceExpirationDate(readProperties.getServiceExpDate());
+    smpfields.setCertificate(readProperties.getCertificate());
+    smpfields.setServiceDescription(readProperties.getServiceDesc());
+    smpfields.setTechnicalContactUrl(readProperties.getTechContact());
+    smpfields.setTechnicalInformationUrl(readProperties.getTechInformation());
+    smpfields.setExtension(readProperties.getExtension());
+    smpfields.setRedirectHref(readProperties.getRedirectHref());
+    smpfields.setCertificateUID(readProperties.getCertificateUID());
     
     model.addAttribute("smpfields", smpfields);
     model.addAttribute(smpfile.getType().name(), "SMPType " + smpfile.getType().name());
     
     logger.debug("\n**** MODEL - " + model.toString());
-    return "smpeditor/NewSMPFile";
+    return "smpeditor/newsmpfile";
   }
   
 
   /**
-   * Manage Post from NewSMPFile page to SaveSMPFile page
+   * Manage Post from newsmpfile page to savesmpfile page
    * Calls SMPConverter to construct the xml file
    * 
    * @param smpfile
@@ -180,22 +126,23 @@ public class SMPGenerateFileController {
    * @param redirectAttributes
    * @return 
    */
-  @RequestMapping(value = "smpeditor/NewSMPFile", method = RequestMethod.POST)
+  @RequestMapping(value = "smpeditor/newsmpfile", method = RequestMethod.POST)
   public String postnewfile(@ModelAttribute("smpfile") SMPFile smpfile, Model model, final RedirectAttributes redirectAttributes) {
     logger.debug("\n==== in postnewfile ==== ");
-   // logger.debug("\n==== smpfile type - " + smpfile.getType().name());
-   // logger.debug("\n==== Type -> " + type);
     
     model.addAttribute("smpfile", smpfile);
     
-    String timeStamp = new SimpleDateFormat("yyyyMMdd'T'HHmmss").format(new java.util.Date());
-    String fileName = smpfile.getType().name() + "_" + smpfile.getCountry().toUpperCase() + "_" + timeStamp + ".xml";
-    smpfile.setFileName(fileName);
-
-    if (null != smpfile.getType().name()) {
+    String timeStamp = "";
+    String fileName = "";
+    
+    if (smpfile.getType().name() != null) {
       switch (type) {
         case "ServiceInformation":       
           logger.debug("\n****Type Service Information");
+          
+          timeStamp = new SimpleDateFormat("yyyyMMdd'T'HHmmss").format(new java.util.Date());
+          fileName = smpfile.getType().name() + "_" + smpfile.getCountry().toUpperCase() + "_" + timeStamp + ".xml";
+          smpfile.setFileName(fileName);
           
           if(!smpfields.getCertificate().isEnable()){
             smpfile.setCertificateFile(null);
@@ -204,33 +151,92 @@ public class SMPGenerateFileController {
             smpfile.setExtension(null);
           }
           
-          smpconverter.convertToXml(smpfile.getType().name(), smpfile.getCountry(), smpfile.getEndpointUri(), smpfile.getServiceDescription(),
-                  smpfile.getTechnicalContact(), smpfile.getTechnicalInformation(), smpfile.getServiceActivationDate(),
+          smpconverter.convertToXml(smpfile.getType().name(), smpfile.getCountry(), smpfile.getEndpointURI(), smpfile.getServiceDescription(),
+                  smpfile.getTechnicalContactUrl(), smpfile.getTechnicalInformationUrl(), smpfile.getServiceActivationDate(),
                   smpfile.getServiceExpirationDate(), smpfile.getExtension(), smpfile.getCertificateFile(), smpfile.getFileName(), 
                   null, null);
           
           if (smpfields.getCertificate().isEnable()) {
             if (smpconverter.getCertificateSubjectName() == null) {
-              logger.debug("\n****NOT VALID Certificate File");
-              redirectAttributes.addFlashAttribute("certificateinvalid", "Certificate invalid!");
-              return "redirect:/smpeditor/NewSMPFile";
+              logger.error("\n****NOT VALID Certificate File");
+              String message = env.getProperty("error.certificate.invalid"); //messages.properties
+              redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
+              return "redirect:/smpeditor/newsmpfile";
             }
             smpfile.setCertificate(smpconverter.getCertificateSubjectName());
           }
           
           if (smpfields.getExtension().isEnable()) {
             if (smpconverter.isNullExtension()) {
-              logger.debug("\n****NOT VALID Extension File");
-              redirectAttributes.addFlashAttribute("extensioninvalid", "Extension invalid!");
-              return "redirect:/smpeditor/NewSMPFile";
+              logger.error("\n****NOT VALID Extension File");
+              String message = env.getProperty("error.extension.invalid"); //messages.properties
+              redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
+              return "redirect:/smpeditor/newsmpfile";
             }
           }
           
           break;
         case "Redirect":
+          
+          /*
+            get documentIdentification and participantIdentification from redirect href
+          */
+          String href = smpfile.getHref();
+          String documentID="";
+          String participantID="";
+          Pattern pattern = Pattern.compile("ehealth-actorid-qns.*");
+          Matcher matcher = pattern.matcher(href);
+          if (matcher.find()) {
+            String result = matcher.group(0);
+            try {
+              result = java.net.URLDecoder.decode(result, "UTF-8");
+            } catch (UnsupportedEncodingException ex) {
+              logger.error("\n UnsupportedEncodingException - " + ex.getMessage());
+              String message = env.getProperty("error.redirect.href"); //messages.properties
+              redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
+              return "redirect:/smpeditor/newsmpfile";
+            }
+            String[] ids = result.split("/services/");
+            participantID = ids[0];
+            String[] cc = participantID.split(":");
+            
+            Countries count = null;
+            Countries[] countries = count.getALL();
+            for (int i = 0; i < countries.length; i++) {
+              if (cc[3].equals(countries[i].name())) {
+                smpfile.setCountry(cc[3]);
+              }
+            }
+            if (smpfile.getCountry() == null) {
+              String message = env.getProperty("error.redirect.href.participantID"); //messages.properties
+              redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
+              return "redirect:/smpeditor/newsmpfile";
+            }
+            
+            String docID = ids[1];
+            String[] nIDs = docID.split("::");
+            documentID = nIDs[3];
+          }
+          else{
+            String message = env.getProperty("error.redirect.href"); //messages.properties
+            redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
+            return "redirect:/smpeditor/newsmpfile";
+          }
+          
+          String smpType = env.getProperty(documentID); //smpeditor.properties
+          if(smpType == null){
+              String message = env.getProperty("error.redirect.href.documentID"); //messages.properties
+              redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
+              return "redirect:/smpeditor/newsmpfile";
+            }
+   
+          timeStamp = new SimpleDateFormat("yyyyMMdd'T'HHmmss").format(new java.util.Date());
+          fileName = smpfile.getType().name() + "_" + smpType + "_" + smpfile.getCountry().toUpperCase() + "_" + timeStamp + ".xml";
+          smpfile.setFileName(fileName);
+          
           logger.debug("\n****Type Redirect");
           smpconverter.convertToXml(smpfile.getType().name(), null, null, null, null, null, null, null, null, null, 
-                  smpfile.getFileName(), smpfile.getCertificateUID(), smpfile.getRedirectHref());
+                  smpfile.getFileName(), smpfile.getCertificateUID(), smpfile.getHref());
           break;
       }
     }
@@ -240,26 +246,27 @@ public class SMPGenerateFileController {
     if (valid){
       logger.debug("\n****VALID XML File");
     }else{
-      logger.debug("\n****NOT VALID XML File");
+      logger.error("\n****NOT VALID XML File");
       smpfile.getGeneratedFile().deleteOnExit();
-      redirectAttributes.addFlashAttribute("xsdinvalid", "Extension not compliant with xsd");
-      return "redirect:/smpeditor/NewSMPFile";
+      String message = env.getProperty("error.extension.xsd"); //messages.properties
+      redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
+      return "redirect:/smpeditor/newsmpfile";
     }
      
-    return "redirect:SaveSMPFile";
+    return "redirect:savesmpfile";
   }
   
    /**
-   * Generate SaveSMPFile page
+   * Generate savesmpfile page
    * @param smpfile
    * @param model
    * @return 
    */
-  @RequestMapping(value = "smpeditor/SaveSMPFile", method = RequestMethod.GET)
+  @RequestMapping(value = "smpeditor/savesmpfile", method = RequestMethod.GET)
   public String saveFile(@ModelAttribute("smpfile") SMPFile smpfile, Model model) {
     logger.debug("\n==== in saveFile ====");
     model.addAttribute("smpfile", smpfile);
-    return "/smpeditor/SaveSMPFile";
+    return "/smpeditor/savesmpfile";
    
   }
   
@@ -270,7 +277,7 @@ public class SMPGenerateFileController {
    * @param response
    * @param model
    */
-  @RequestMapping(value = "smpeditor/SaveSMPFile/download", method = RequestMethod.GET)
+  @RequestMapping(value = "smpeditor/savesmpfile/download", method = RequestMethod.GET)
   public void downloadFile(@ModelAttribute("smpfile") SMPFile smpfile, HttpServletRequest request, 
           HttpServletResponse response, Model model) {
     logger.debug("\n==== in downloadFile ====");
@@ -283,9 +290,9 @@ public class SMPGenerateFileController {
       InputStream inputStream = new BufferedInputStream(new FileInputStream(smpfile.getGeneratedFile()));
       FileCopyUtils.copy(inputStream, response.getOutputStream());
     } catch (FileNotFoundException ex) {
-      Logger.getLogger(SMPGenerateFileController.class.getName()).log(Level.SEVERE, null, ex);
+      logger.error("\n FileNotFoundException - " + ex.getMessage());
     } catch (IOException ex) {
-      Logger.getLogger(SMPGenerateFileController.class.getName()).log(Level.SEVERE, null, ex);
+      logger.error("\n IOException - " + ex.getMessage());
     }
   } 
   
@@ -295,11 +302,11 @@ public class SMPGenerateFileController {
    * @param redirectAttributes
    * @return 
    */
-  @RequestMapping(value = "/smpeditor/SaveSMPFile/Sign")
+  @RequestMapping(value = "/smpeditor/savesmpfile/sign")
   public String signFile(@ModelAttribute("smpfile") SMPFile smpfile, final RedirectAttributes redirectAttributes) {
     logger.debug("\n==== in Generate signFile ====");
-     redirectAttributes.addFlashAttribute("smpfile", smpfile);
-    return "redirect:/smpeditor/SignSMPFile/generated";
+    redirectAttributes.addFlashAttribute("smpfile", smpfile);
+    return "redirect:/smpeditor/signsmpfile/generated";
   }
   
   
@@ -309,13 +316,14 @@ public class SMPGenerateFileController {
    * @param model
    * @return 
    */
-  @RequestMapping(value = "smpeditor/SMPEditor/clean", method = RequestMethod.GET)
+  @RequestMapping(value = "smpeditor/smpeditor/clean", method = RequestMethod.GET)
   public String cleanSmpFile(@ModelAttribute("smpfile") SMPFile smpfile, Model model) {
     logger.debug("\n==== in deletedFile ====");
     model.addAttribute("smpfile", smpfile);
-    //logger.debug("\n****smpfile content: " + smpfile.getFileName());  
-    logger.debug("\n****DELETED ? " + smpfile.getGeneratedFile().delete());
-    return "redirect:/smpeditor/SMPEditor";
+    if(smpfile.getGeneratedFile() != null){
+      logger.debug("\n****DELETED ? " + smpfile.getGeneratedFile().delete());
+    }
+    return "redirect:/smpeditor/smpeditor";
   } 
   
   /**
@@ -324,13 +332,14 @@ public class SMPGenerateFileController {
    * @param model
    * @return 
    */
-  @RequestMapping(value = "smpeditor/NewSMPFile/clean", method = RequestMethod.GET)
+  @RequestMapping(value = "smpeditor/newsmpfile/clean", method = RequestMethod.GET)
   public String cleanFile(@ModelAttribute("smpfile") SMPFile smpfile, Model model) {
     logger.debug("\n==== in deleteFile ====");
     model.addAttribute("smpfile", smpfile);
-   // logger.debug("\n****smpfile content: " + smpfile.getFileName());  
-    logger.debug("\n****DELETED ? " + smpfile.getGeneratedFile().delete());
-    return "redirect:/smpeditor/NewSMPFile";
-  } 
+    if (smpfile.getGeneratedFile() != null) {
+      logger.debug("\n****DELETED ? " + smpfile.getGeneratedFile().delete());
+    }
+    return "redirect:/smpeditor/newsmpfile";
+  }
   
 }

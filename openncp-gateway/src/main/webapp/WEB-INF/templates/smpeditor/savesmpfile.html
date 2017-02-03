@@ -7,47 +7,30 @@
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#" th:text="#{application.title}">OpenNCP Gateway2</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li><a href="#" th:text="#{label.Home}">Home</a></li>
-          <li><a href="#" th:href="@{/smpeditor/SMPEditor}" th:text="#{label.SmpEditor}">SMP Editor</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="#">
-              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-              <span th:text="${#authentication.name}">John Smith</span>
-            </a>
-          </li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
-        </ul>
+      <div class="container-fluid" th:include="fragments/header::head">
       </div>
       <div class="container">
         <ol class="breadcrumb">
           <li class="active">Home/SMP Editor/Generate SMP File/Save SMP file</li>
         </ol>
       </div>
-    </nav>
-    <!-- End Header -->
+    </nav><!-- HEADER -->
     
-    <h2 style="margin-left: 20px" th:text="#{label.SmpEditor.saveFile}">Save SMP file</h2>
+    <h2 class="marginleft" th:text="#{label.SmpEditor.saveFile}">Save SMP file</h2>
     
-    <h3 th:text="${smpfile.type}" style="margin-left: 200px; margin-top: 50px;"></h3>
+    <h3 th:text="${smpfile.type}" class="center margintop"></h3>
        
  
-    <div style="text-align: center; margin-top: 50px;">
-      <p style="font-size: large;" th:text="#{label.SmpEditor.download}">Download Files</p>
-      <a href="#" th:href="@{/smpeditor/SaveSMPFile/download}" class="btn btn-default" th:text="${smpfile.fileName}" style="background-color: #dddddd;">Download File</a> 
+    <div class="center margintop">
+      <p class="largefont" th:text="#{label.SmpEditor.download}">Download Files</p>
+      <a href="#" th:href="@{/smpeditor/savesmpfile/download}" class="btn btn-default downloadbutton" th:text="${smpfile.fileName}">Download File</a> 
     </div>
     
     
     <div id="btnformnsf" style="margin-top: 150px;">
-      <a href="#" th:href="@{/smpeditor/NewSMPFile/clean}" class="btn btn-default" th:text="#{label.button.back}" style="width:76px; background-color: #dddddd;">Back</a>
-      <a href="#" th:href="@{/smpeditor/SaveSMPFile/Sign}" class="btn btn-default" th:text="#{label.button.sign}" style="width:76px; background-color:#dddddd;">Sign</a>
-      <a href="#" th:href="@{/smpeditor/SMPEditor/clean}" class="btn btn-default" th:text="#{label.button.done}" style="width:76px; background-color: #dddddd;">Done</a>
+      <a href="#" id="abutton" th:href="@{/smpeditor/newsmpfile/clean}" class="btn btn-default" th:text="#{label.button.back}">Back</a>
+      <a href="#" id="abutton" th:href="@{/smpeditor/savesmpfile/sign}" class="btn btn-default" th:text="#{label.button.sign}">Sign</a>
+      <a href="#" id="abutton" th:href="@{/smpeditor/smpeditor/clean}" class="btn btn-default" th:text="#{label.button.done}">Done</a>
     </div>    
     
     <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>

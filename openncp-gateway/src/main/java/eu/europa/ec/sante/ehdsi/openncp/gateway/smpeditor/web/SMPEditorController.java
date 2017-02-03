@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class SMPEditorController {
 
-  @RequestMapping("/smpeditor/SMPEditor")
+  @RequestMapping("/smpeditor/smpeditor")
   public String SMPEditor() {
-    return "smpeditor/SMPEditor";
+    return "smpeditor/smpeditor";
   }
 
 }

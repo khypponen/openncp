@@ -7,14 +7,17 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.w3c.dom.Element;
 
-public class SMPFileUpdate {
+/**
+ Data necessary to update or sign a SMPFile
+ */
+public class SMPFileOps {
 
   private String fileName;
   private File generatedFile;
   private MultipartFile updateFile;
   
   private SMPType type;
-  private String typeS;
+  private String typeS;//HTML
   private String country;
   
   //ServiceInformation
@@ -50,7 +53,7 @@ public class SMPFileUpdate {
   //Sign
   private MultipartFile signFile;
   private List<MultipartFile> signFiles;
-  private List<SMPFileUpdate> allFiles;
+  private List<SMPFileOps> allFiles;
   private String signFileName;
   private MultipartFile keystoreFile;
   private String keystorePassword;
@@ -60,25 +63,8 @@ public class SMPFileUpdate {
   private String serviceExpirationDateS;
   private int id;
   private SMPFields smpfields;
-  private boolean signedExtension;
-  private boolean hasCountry;
-  
-
-  public SMPType getType() {
-    return type;
-  }
-
-  public void setType(SMPType type) {
-    this.type = type;
-  }
-
-  public String getCountry() {
-    return country;
-  }
-
-  public void setCountry(String country) {
-    this.country = country;
-  }
+ // private boolean signedExtension;
+  private Alert alert;
 
   public String getFileName() {
     return fileName;
@@ -103,7 +89,31 @@ public class SMPFileUpdate {
   public void setUpdateFile(MultipartFile updateFile) {
     this.updateFile = updateFile;
   }
-  
+
+  public SMPType getType() {
+    return type;
+  }
+
+  public void setType(SMPType type) {
+    this.type = type;
+  }
+
+  public String getTypeS() {
+    return typeS;
+  }
+
+  public void setTypeS(String typeS) {
+    this.typeS = typeS;
+  }
+
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
+  }
+
   public String getDocumentIdentifier() {
     return documentIdentifier;
   }
@@ -215,7 +225,7 @@ public class SMPFileUpdate {
   public void setCertificate(byte[] certificate) {
     this.certificate = certificate;
   }
-  
+
   public MultipartFile getCertificateFile() {
     return certificateFile;
   }
@@ -263,7 +273,7 @@ public class SMPFileUpdate {
   public void setExtension(Element extension) {
     this.extension = extension;
   }
-  
+
   public MultipartFile getExtensionFile() {
     return extensionFile;
   }
@@ -287,13 +297,37 @@ public class SMPFileUpdate {
   public void setCertificateUID(String certificateUID) {
     this.certificateUID = certificateUID;
   }
- 
+
   public MultipartFile getSignFile() {
     return signFile;
   }
 
   public void setSignFile(MultipartFile signFile) {
     this.signFile = signFile;
+  }
+
+  public List<MultipartFile> getSignFiles() {
+    return signFiles;
+  }
+
+  public void setSignFiles(List<MultipartFile> signFiles) {
+    this.signFiles = signFiles;
+  }
+
+  public List<SMPFileOps> getAllFiles() {
+    return allFiles;
+  }
+
+  public void setAllFiles(List<SMPFileOps> allFiles) {
+    this.allFiles = allFiles;
+  }
+
+  public String getSignFileName() {
+    return signFileName;
+  }
+
+  public void setSignFileName(String signFileName) {
+    this.signFileName = signFileName;
   }
 
   public MultipartFile getKeystoreFile() {
@@ -327,30 +361,6 @@ public class SMPFileUpdate {
   public void setKeyPassword(String keyPassword) {
     this.keyPassword = keyPassword;
   }
-  
-  public String getSignFileName() {
-    return signFileName;
-  }
-
-  public void setSignFileName(String signFileName) {
-    this.signFileName = signFileName;
-  }
-  
-  public SMPFields getSmpfields() {
-    return smpfields;
-  }
-
-  public void setSmpfields(SMPFields smpfields) {
-    this.smpfields = smpfields;
-  }
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
 
   public String getServiceActivationDateS() {
     return serviceActivationDateS;
@@ -368,44 +378,28 @@ public class SMPFileUpdate {
     this.serviceExpirationDateS = serviceExpirationDateS;
   }
 
-  public String getTypeS() {
-    return typeS;
+  public int getId() {
+    return id;
   }
 
-  public void setTypeS(String typeS) {
-    this.typeS = typeS;
+  public void setId(int id) {
+    this.id = id;
   }
 
-  public List<SMPFileUpdate> getAllFiles() {
-    return allFiles;
+  public SMPFields getSmpfields() {
+    return smpfields;
   }
 
-  public void setAllFiles(List<SMPFileUpdate> allFiles) {
-    this.allFiles = allFiles;
+  public void setSmpfields(SMPFields smpfields) {
+    this.smpfields = smpfields;
+  }
+  
+  public Alert getAlert() {
+    return alert;
   }
 
-  public List<MultipartFile> getSignFiles() {
-    return signFiles;
-  }
-
-  public void setSignFiles(List<MultipartFile> signFiles) {
-    this.signFiles = signFiles;
-  }
-
-  public boolean isHasCountry() {
-    return hasCountry;
-  }
-
-  public void setHasCountry(boolean hasCountry) {
-    this.hasCountry = hasCountry;
-  }
-
-  public boolean isSignedExtension() {
-    return signedExtension;
-  }
-
-  public void setSignedExtension(boolean signedExtension) {
-    this.signedExtension = signedExtension;
+  public void setAlert(Alert alert) {
+    this.alert = alert;
   }
  
 }

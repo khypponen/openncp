@@ -12,8 +12,10 @@ import java.security.Key;
 import java.security.PublicKey;
 import java.security.cert.X509Certificate;
 import java.util.Iterator;
+import org.slf4j.LoggerFactory;
 
 public class SignatureValidator {
+  static org.slf4j.Logger logger = LoggerFactory.getLogger(SignatureValidator.class);
 
   public static void validateSignature(Element sigPointer) throws Exception {
     XMLSignatureFactory fac = XMLSignatureFactory.getInstance("DOM");
@@ -32,7 +34,7 @@ public class SignatureValidator {
       InputStream is = ((Reference) i.next()).getDigestInputStream();
             // Display the data.
       // byte[] a = IOUtils.readFully(is, 0, true);
-      //System.out.println(new String(a));
+      //logger.debug(new String(a));
     }
 
     // Check core validation status.
@@ -40,21 +42,21 @@ public class SignatureValidator {
       printErrorDetails(valContext, signature);
       throw new RuntimeException("+++ Signature not valild +++");
     } else {
-      System.out.println("+++ Signature passed core validation +++");
+      logger.debug("+++ Signature passed core validation +++");
     }
 
   }
 
   private static void printErrorDetails(DOMValidateContext valContext, XMLSignature signature) throws XMLSignatureException {
-    System.err.println("Signature failed core validation");
+    logger.debug("Signature failed core validation");
     boolean sv = signature.getSignatureValue().validate(valContext);
-    System.out.println("signature validation status: " + sv);
+    logger.debug("signature validation status: " + sv);
     if (sv == false) {
       // Check the validation status of each Reference.
       Iterator i1 = signature.getSignedInfo().getReferences().iterator();
       for (int j = 0; i1.hasNext(); j++) {
         boolean refValid = ((Reference) i1.next()).validate(valContext);
-        System.out.println("ref[" + j + "] validity status: " + refValid);
+        logger.debug("ref[" + j + "] validity status: " + refValid);
       }
     }
   }

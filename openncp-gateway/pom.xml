@@ -33,6 +33,7 @@
                     <include>bdx-smp-201605.xsd</include>
                     <include>commonServiceBinding.xjb</include>
                     <include>xmldsig-core-schema.xsd</include>
+                    <include>logback.xml</include>
                 </includes>
             </resource>
         </resources>
@@ -74,7 +75,6 @@
                 <executions>
                     <execution>
                         <id>copy-resources</id>
-                        <!-- here the phase you need -->
                         <phase>validate</phase>
                         <goals>
                             <goal>copy-resources</goal>
@@ -205,6 +205,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>4.3.4.RELEASE</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.2</version>
             <type>jar</type>
         </dependency>
     </dependencies>

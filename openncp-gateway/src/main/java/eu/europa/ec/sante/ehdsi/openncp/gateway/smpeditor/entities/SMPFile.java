@@ -12,81 +12,65 @@ public class SMPFile {
 
   private String fileName;
   private File generatedFile;
-  private MultipartFile updateFile;
+ // private MultipartFile updateFile;
 
   private SMPType type;
   private String country;
-  private String DocumentIdentifier;
+  //private String documentIdentifier;
   
   //ServiceInformation
-  private String EndpointURI;
+  private String endpointURI;
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-  private Date ServiceActivationDate;
+  private Date serviceActivationDate;
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-  private Date ServiceExpirationDate; 
-  private String Certificate;
-  private String ServiceDescription;
-  private String TechnicalContactUrl;
-  private String TechnicalInformationUrl;
-  private String ExtensionContent;
-  private MultipartFile Extension;
+  private Date serviceExpirationDate; 
+  private String certificate;
+  private String serviceDescription;
+  private String technicalContactUrl;
+  private String technicalInformationUrl;
+  private String extensionContent;
+  private MultipartFile extension;
   private MultipartFile certificateFile;
   
   //Redirect
   private String href;
-  private String CertificateUID;
+  private String certificateUID;
     
 
   public SMPFile() {
     super();
   }
    
-  public MultipartFile getUpdateFile() {
-    return updateFile;
-  }
-
-  public void setUpdateFile(MultipartFile updateFile) {
-    this.updateFile = updateFile;
-  }
-
-  public String getDocumentIdentifier() {
-    return DocumentIdentifier;
-  }
-
-  public void setDocumentIdentifier(String DocumentIdentifier) {
-    this.DocumentIdentifier = DocumentIdentifier;
-  }
-
   public String getEndpointURI() {
-    return EndpointURI;
+    return endpointURI;
   }
 
   public void setEndpointURI(String EndpointURI) {
-    this.EndpointURI = EndpointURI;
+    this.endpointURI = EndpointURI;
   }
 
   public String getTechnicalContactUrl() {
-    return TechnicalContactUrl;
+    return technicalContactUrl;
   }
 
   public void setTechnicalContactUrl(String TechnicalContactUrl) {
-    this.TechnicalContactUrl = TechnicalContactUrl;
+    this.technicalContactUrl = TechnicalContactUrl;
   }
 
   public String getTechnicalInformationUrl() {
-    return TechnicalInformationUrl;
+    return technicalInformationUrl;
   }
 
   public void setTechnicalInformationUrl(String TechnicalInformationUrl) {
-    this.TechnicalInformationUrl = TechnicalInformationUrl;
+    this.technicalInformationUrl = TechnicalInformationUrl;
   }
 
   public String getExtensionContent() {
-    return ExtensionContent;
+    return extensionContent;
   }
 
   public void setExtensionContent(String ExtensionContent) {
-    this.ExtensionContent = ExtensionContent;
+    this.extensionContent = ExtensionContent;
   }
 
   public String getHref() {
@@ -111,60 +95,39 @@ public class SMPFile {
     this.country = country;
   }
   
-  public String getEndpointUri() {
-    return EndpointURI;
-  }
-   public void setEndpointUri(String EndpointURI) {
-    this.EndpointURI = EndpointURI;
-  }
-    
   public Date getServiceActivationDate() {
-    return ServiceActivationDate;
+    return serviceActivationDate;
   }
   public void setServiceActivationDate(Date ServiceActivationDate) {
-    this.ServiceActivationDate = ServiceActivationDate;
+    this.serviceActivationDate = ServiceActivationDate;
   }
   
   public Date getServiceExpirationDate() {
-    return ServiceExpirationDate;
+    return serviceExpirationDate;
   }
   public void setServiceExpirationDate(Date ServiceExpirationDate) {
-    this.ServiceExpirationDate = ServiceExpirationDate;
+    this.serviceExpirationDate = ServiceExpirationDate;
   }
     
   public String getCertificate() {
-    return Certificate;
+    return certificate;
   }
   public void setCertificate(String Certificate) {
-    this.Certificate = Certificate;
+    this.certificate = Certificate;
   }
   
   public String getServiceDescription() {
-    return ServiceDescription;
+    return serviceDescription;
   }
   public void setServiceDescription(String ServiceDescription) {
-    this.ServiceDescription = ServiceDescription;
-  }
-  
-  public String getTechnicalContact() {
-    return TechnicalContactUrl;
-  }
-  public void setTechnicalContact(String TechnicalContactUrl) {
-    this.TechnicalContactUrl = TechnicalContactUrl;
-  }
- 
-  public String getTechnicalInformation() {
-    return TechnicalInformationUrl;
-  }
-  public void setTechnicalInformation(String TechnicalInformationUrl) {
-    this.TechnicalInformationUrl = TechnicalInformationUrl;
+    this.serviceDescription = ServiceDescription;
   }
    
   public MultipartFile getExtension() {
-    return Extension;
+    return extension;
   }
   public void setExtension(MultipartFile Extension) {
-    this.Extension = Extension;
+    this.extension = Extension;
   }
   
   public MultipartFile getCertificateFile() {
@@ -189,20 +152,11 @@ public class SMPFile {
     this.generatedFile = generatedFile;
   }
   
-  
-  public String getRedirectHref() {
-    return href;
-  }
-
-  public void setRedirectHref(String href) {
-    this.href = href;
-  }
-
   public String getCertificateUID() {
-    return CertificateUID;
+    return certificateUID;
   }
 
-  public void setCertificateUID(String CertificateUID) {
-    this.CertificateUID = CertificateUID;
+  public void setCertificateUID(String certificateUID) {
+    this.certificateUID = certificateUID;
   }   
 }

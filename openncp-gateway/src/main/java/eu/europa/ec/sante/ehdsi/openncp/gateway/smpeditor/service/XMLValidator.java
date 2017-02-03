@@ -2,8 +2,6 @@ package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.xml.XMLConstants;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
@@ -45,13 +43,14 @@ public class XMLValidator {
       Validator validator = schema.newValidator();
       validator.validate(xmlFile);
       logger.debug("\n" + xmlFile.getSystemId() + " is valid");
-    } catch (SAXException e) {
+    } catch (SAXException ex) {
       valid = false;
-      reasonInvalid = e.getMessage();
-      logger.debug("\n" +xmlFile.getSystemId() + " is NOT valid reason:" + e);
+      reasonInvalid = ex.getMessage();
+      logger.debug("\n" +xmlFile.getSystemId() + " is NOT valid reason:" + ex);
+      logger.error("\n SAXException - " + ex.getMessage());
     } catch (IOException ex) {
       valid = false;
-      Logger.getLogger(XMLValidator.class.getName()).log(Level.SEVERE, null, ex);
+      logger.error("\n IOException - " + ex.getMessage());
     }
     
     return valid;
