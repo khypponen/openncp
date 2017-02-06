@@ -4,7 +4,7 @@ import com.gnomon.LiferayUtils;
 import com.gnomon.epsos.service.Demographics;
 import com.gnomon.epsos.service.EpsosHelperService;
 import com.gnomon.epsos.service.SearchMask;
-import com.liferay.portal.model.User;
+import com.liferay.portal.kernel.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

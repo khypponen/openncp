@@ -16,8 +16,8 @@
         <sp.version>1.4.2</sp.version>
         <stork-commons.version>1.4.2</stork-commons.version>
         <stork-saml.version>1.4.2</stork-saml.version>
-        <liferay.version>6.2.5</liferay.version>
-        <liferay.maven.plugin.version>6.2.5</liferay.maven.plugin.version>
+        <!--<liferay.version>6.2.5</liferay.version>-->
+        <!--<liferay.maven.plugin.version>6.2.5</liferay.maven.plugin.version>-->
     </properties>
 
     <build>
@@ -65,27 +65,27 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <version>3.0.0</version>
                 </plugin>
-                <plugin>
-                    <groupId>com.liferay.maven.plugins</groupId>
-                    <artifactId>liferay-maven-plugin</artifactId>
-                    <version>${liferay.maven.plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <phase>generate-sources</phase>
-                            <goals>
-                                <goal>build-css</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <autoDeployDir>${liferay.auto.deploy.dir}</autoDeployDir>
-                        <appServerDeployDir>${liferay.app.server.deploy.dir}</appServerDeployDir>
-                        <appServerLibGlobalDir>${liferay.app.server.lib.global.dir}</appServerLibGlobalDir>
-                        <appServerPortalDir>${liferay.app.server.portal.dir}</appServerPortalDir>
-                        <liferayVersion>${liferay.version}</liferayVersion>
-                        <pluginType>portlet</pluginType>
-                    </configuration>
-                </plugin>
+                <!--<plugin>-->
+                    <!--<groupId>com.liferay.maven.plugins</groupId>-->
+                    <!--<artifactId>liferay-maven-plugin</artifactId>-->
+                    <!--<version>${liferay.maven.plugin.version}</version>-->
+                    <!--<executions>-->
+                        <!--<execution>-->
+                            <!--<phase>generate-sources</phase>-->
+                            <!--<goals>-->
+                                <!--<goal>build-css</goal>-->
+                            <!--</goals>-->
+                        <!--</execution>-->
+                    <!--</executions>-->
+                    <!--<configuration>-->
+                        <!--<autoDeployDir>${liferay.auto.deploy.dir}</autoDeployDir>-->
+                        <!--<appServerDeployDir>${liferay.app.server.deploy.dir}</appServerDeployDir>-->
+                        <!--<appServerLibGlobalDir>${liferay.app.server.lib.global.dir}</appServerLibGlobalDir>-->
+                        <!--<appServerPortalDir>${liferay.app.server.portal.dir}</appServerPortalDir>-->
+                        <!--<liferayVersion>${liferay.version}</liferayVersion>-->
+                        <!--<pluginType>portlet</pluginType>-->
+                    <!--</configuration>-->
+                <!--</plugin>-->
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>3.0.2</version>
@@ -242,18 +242,41 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- Liferay dependencies Test JDK 8 + Liferay CE 7 -->
         <dependency>
             <groupId>com.liferay.portal</groupId>
-            <artifactId>portal-service</artifactId>
-            <version>${liferay.version}</version>
-            <scope>provided</scope>
+            <artifactId>com.liferay.portal.kernel</artifactId>
+            <version>2.9.0</version>
         </dependency>
         <dependency>
             <groupId>com.liferay.portal</groupId>
-            <artifactId>util-java</artifactId>
-            <version>${liferay.version}</version>
-            <scope>provided</scope>
+            <artifactId>com.liferay.util.java</artifactId>
+            <version>2.2.2</version>
         </dependency>
+        <!--<dependency>-->
+        <!--<groupId>com.liferay.portal</groupId>-->
+        <!--<artifactId>portal-service</artifactId>-->
+        <!--<version>${liferay.version}</version>-->
+        <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>com.liferay.portal</groupId>-->
+        <!--<artifactId>util-java</artifactId>-->
+        <!--<version>${liferay.version}</version>-->
+        <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.liferay.portal</groupId>-->
+            <!--<artifactId>portal-service</artifactId>-->
+            <!--<version>${liferay.version}</version>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.liferay.portal</groupId>-->
+            <!--<artifactId>util-java</artifactId>-->
+            <!--<version>${liferay.version}</version>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>javax.portlet</groupId>
             <artifactId>portlet-api</artifactId>
@@ -272,15 +295,25 @@
             <artifactId>primefaces</artifactId>
             <version>4.0</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.liferay.faces</groupId>-->
+            <!--<artifactId>liferay-faces-bridge-impl</artifactId>-->
+            <!--<version>3.2.4-ga5</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.liferay.faces</groupId>-->
+            <!--<artifactId>liferay-faces-portal</artifactId>-->
+            <!--<version>3.2.4-ga5</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.liferay.faces</groupId>
             <artifactId>liferay-faces-bridge-impl</artifactId>
-            <version>3.2.4-ga5</version>
+            <version>4.2.5-ga6</version>
         </dependency>
         <dependency>
             <groupId>com.liferay.faces</groupId>
             <artifactId>liferay-faces-portal</artifactId>
-            <version>3.2.4-ga5</version>
+            <version>4.2.5-ga6</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish</groupId>

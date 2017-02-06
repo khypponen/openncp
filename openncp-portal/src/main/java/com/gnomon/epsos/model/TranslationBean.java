@@ -3,7 +3,7 @@ package com.gnomon.epsos.model;
 import com.gnomon.LiferayUtils;
 import com.gnomon.epsos.FacesService;
 import com.gnomon.epsos.service.EpsosHelperService;
-import com.liferay.portal.model.User;
+import com.liferay.portal.kernel.model.User;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,10 +1,14 @@
 package com.gnomon.epsos.filter;
 
+import com.liferay.portal.kernel.model.Group;
+import com.liferay.portal.kernel.model.GroupConstants;
+import com.liferay.portal.kernel.service.GroupLocalServiceUtil;
+import com.liferay.portal.kernel.theme.ThemeDisplay;
 import com.liferay.portal.kernel.util.WebKeys;
-import com.liferay.portal.model.Group;
-import com.liferay.portal.model.GroupConstants;
-import com.liferay.portal.service.GroupLocalServiceUtil;
-import com.liferay.portal.theme.ThemeDisplay;
+//import com.liferay.portal.model.Group;
+//import com.liferay.portal.model.GroupConstants;
+//import com.liferay.portal.service.GroupLocalServiceUtil;
+//import com.liferay.portal.theme.ThemeDisplay;
 import java.util.Hashtable;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;

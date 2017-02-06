@@ -2,7 +2,7 @@ package com.gnomon.epsos.servlet;
 
 import com.gnomon.epsos.model.Patient;
 import com.gnomon.epsos.service.EpsosHelperService;
-import com.liferay.portal.model.User;
+import com.liferay.portal.kernel.model.User;
 import org.opensaml.saml2.core.Assertion;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
