@@ -28,6 +28,11 @@ import java.util.*;
 import org.w3c.dom.Element;
 
 /**
+ *
+ * @author Inês Garganta
+ */
+
+/**
  * Service responsible for converting the data introduced by the user to a xml file
  */
 @Service

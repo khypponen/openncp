@@ -8,6 +8,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.w3c.dom.Element;
 
 /**
+ *
+ * @author Inês Garganta
+ */
+
+/**
  Data necessary to update or sign a SMPFile
  */
 public class SMPFileOps {

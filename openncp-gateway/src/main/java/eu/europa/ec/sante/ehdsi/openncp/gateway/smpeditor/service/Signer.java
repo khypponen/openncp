@@ -22,7 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Created by gutowpa on 28/11/2016.
- * Adapted by Ines
+ * Adapted by Inês Garganta
  */
 public class Signer {
 

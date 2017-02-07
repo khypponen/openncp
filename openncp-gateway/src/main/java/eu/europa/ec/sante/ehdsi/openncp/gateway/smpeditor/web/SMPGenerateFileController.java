@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.SMPConverter;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPFile;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.XMLValidator;
@@ -17,23 +16,24 @@ import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.ReadSMPPropert
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpServletRequest;
-        
+import javax.servlet.http.HttpServletRequest;     
 import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+/**
+ *
+ * @author Inês Garganta
+ */
 
 @Controller
 @SessionAttributes("smpfile")
@@ -140,6 +140,7 @@ public class SMPGenerateFileController {
         case "ServiceInformation":       
           logger.debug("\n****Type Service Information");
           
+          /*Builds final file name*/
           timeStamp = new SimpleDateFormat("yyyyMMdd'T'HHmmss").format(new java.util.Date());
           fileName = smpfile.getType().name() + "_" + smpfile.getCountry().toUpperCase() + "_" + timeStamp + ".xml";
           smpfile.setFileName(fileName);
@@ -184,7 +185,7 @@ public class SMPGenerateFileController {
           String href = smpfile.getHref();
           String documentID="";
           String participantID="";
-          Pattern pattern = Pattern.compile("ehealth-actorid-qns.*");
+          Pattern pattern = Pattern.compile("ehealth-participantid-qns.*");
           Matcher matcher = pattern.matcher(href);
           if (matcher.find()) {
             String result = matcher.group(0);
@@ -230,6 +231,7 @@ public class SMPGenerateFileController {
               return "redirect:/smpeditor/newsmpfile";
             }
    
+          /*Builds final file name*/
           timeStamp = new SimpleDateFormat("yyyyMMdd'T'HHmmss").format(new java.util.Date());
           fileName = smpfile.getType().name() + "_" + smpType + "_" + smpfile.getCountry().toUpperCase() + "_" + timeStamp + ".xml";
           smpfile.setFileName(fileName);

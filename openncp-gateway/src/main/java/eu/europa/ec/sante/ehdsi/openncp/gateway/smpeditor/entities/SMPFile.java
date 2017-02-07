@@ -6,6 +6,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
+ *
+ * @author Inês Garganta
+ */
+
+/**
  Structure of a SMPFile
  */
 public class SMPFile {

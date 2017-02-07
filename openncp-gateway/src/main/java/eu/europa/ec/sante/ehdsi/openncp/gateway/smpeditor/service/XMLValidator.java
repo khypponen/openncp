@@ -13,6 +13,11 @@ import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 
 /**
+ *
+ * @author Inês Garganta
+ */
+
+/**
  Service responsible for validate the generated xml file againts the xsd file.
  */
 @Service

@@ -3,6 +3,11 @@ package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities;
 import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 
+/**
+ *
+ * @author Inês Garganta
+ */
+
 public class SMPUpload {
 
   private MultipartFile uploadFile;

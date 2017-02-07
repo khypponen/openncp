@@ -18,7 +18,6 @@ import java.util.regex.Pattern;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthenticationException;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -43,6 +42,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import eu.epsos.util.net.ProxyUtil;
+
+/**
+ *
+ * @author InÃªs Garganta
+ */
 
 @Controller
 @SessionAttributes("smpupload")
@@ -135,14 +140,15 @@ public class SMPUploadFileController {
         logger.debug("\n******** REDIRECT");
 
         if (serviceMetadata.getRedirect().getExtensions().isEmpty()) {
-          logger.error("\n******* NOT SIGNED EXTENSION ");
+          logger.error("\n******* NOT SIGNED EXTENSION (National Authority signature)");
           String message = env.getProperty("error.notsigned"); //messages.properties
           redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
           return "redirect:/smpeditor/uploadsmpfile";
         }
 
+        /* Check if url of redirect is correct */
         String href = serviceMetadata.getRedirect().getHref();
-        Pattern pattern = Pattern.compile("ehealth-actorid-qns.*");
+        Pattern pattern = Pattern.compile("ehealth-participantid-qns.*");
         Matcher matcher = pattern.matcher(href);
         if (matcher.find()) {
           String result = matcher.group(0);
@@ -213,11 +219,14 @@ public class SMPUploadFileController {
       }
 
       StringEntity entityPut = new StringEntity(content, ContentType.create("application/xml", "UTF-8"));
+      
+      ProxyUtil.initProxyConfiguration();
 
       CloseableHttpClient httpclient = HttpClients.custom()
               .useSystemProperties()
-              .setProxy(new HttpHost("192.168.1.90", 8080))
+              //.setProxy(new HttpHost("192.168.1.90", 8080))
               .build();
+      
       //PUT
       HttpPut httpput = new HttpPut(uri);
       UsernamePasswordCredentials creds = new UsernamePasswordCredentials(username, password);
@@ -225,6 +234,9 @@ public class SMPUploadFileController {
         httpput.addHeader(new BasicScheme().authenticate(creds, httpput, null));
       } catch (AuthenticationException ex) {
         logger.error("\n AuthenticationException - " + ex.getMessage());
+        String message = env.getProperty("error.nouser"); //messages.properties
+        redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
+        return "redirect:/smpeditor/uploadsmpfile";
       }
       httpput.setEntity(entityPut);
       CloseableHttpResponse response = null;
@@ -237,6 +249,7 @@ public class SMPUploadFileController {
         return "redirect:/smpeditor/uploadsmpfile";
       }
 
+      /*Get response*/
       itemUpload.setStatusCode(response.getStatusLine().getStatusCode());
       org.apache.http.HttpEntity entity = response.getEntity();
 
@@ -250,6 +263,7 @@ public class SMPUploadFileController {
         return "redirect:/smpeditor/uploadsmpfile";
       }
 
+      /* Get BusinessCode and ErrorDescription from response */
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
       DocumentBuilder builder;
       try {
@@ -297,6 +311,7 @@ public class SMPUploadFileController {
     logger.debug("\n==== in uploadInfo ====");
     model.addAttribute("smpupload", smpupload);
 
+    /* Builds html colors and alerts */
     for (int i = 0; i < smpupload.getAllItems().size(); i++) {
       if (smpupload.getAllItems().get(i).getStatusCode() == 200) {
         String message = env.getProperty("http.updated");//messages.properties

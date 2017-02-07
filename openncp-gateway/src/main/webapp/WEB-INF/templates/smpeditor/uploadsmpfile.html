@@ -32,7 +32,7 @@
         </div>
       </div>
       
-      <!-- Sign form-->
+      <!-- Upload form-->
       <form action="#"  th:action="@{/smpeditor/uploadsmpfile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpupload}"  method="post" enctype="multipart/form-data">  
         <div class="form-group row" id="newfileinputs">
           <label th:text="#{label.SmpEditor.sigform.files}" for="signfiles" class="col-xs-2 col-form-label">SMP Files</label>
@@ -74,6 +74,7 @@
       
     </div>
     
+    <!-- List of chosen files -->
     <script>
       var selDiv = "";
       document.addEventListener("DOMContentLoaded", init, false);

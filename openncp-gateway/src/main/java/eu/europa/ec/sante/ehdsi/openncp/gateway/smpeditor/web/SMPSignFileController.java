@@ -50,6 +50,11 @@ import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+/**
+ *
+ * @author Inês Garganta
+ */
+
 @Controller
 @SessionAttributes("smpfilesign")
 public class SMPSignFileController {
@@ -247,7 +252,7 @@ public class SMPSignFileController {
         String href = serviceMetadata.getRedirect().getHref();
         String participantID;
         String documentID;
-        Pattern pattern = Pattern.compile("ehealth-actorid-qns.*");
+        Pattern pattern = Pattern.compile("ehealth-participantid-qns.*");
         Matcher matcher = pattern.matcher(href);
         if (matcher.find()) {
           String result = matcher.group(0);
@@ -284,6 +289,7 @@ public class SMPSignFileController {
             return "redirect:/smpeditor/signsmpfile";
           }
           
+          /*Builds final file name*/
           String timeStamp = new SimpleDateFormat("yyyyMMdd'T'HHmmss").format(new java.util.Date());
           String fileName = smpfile.getType().name() + "_" + smpType + "_" + smpfile.getCountry().toUpperCase() + "_Signed_" + timeStamp + ".xml";
           smpfile.setFileName(fileName);
@@ -296,7 +302,7 @@ public class SMPSignFileController {
           return "redirect:/smpeditor/signsmpfile";
         }
 
-      } else if (serviceMetadata.getServiceInformation() != null) {
+      } else if (serviceMetadata.getServiceInformation() != null) { /*Service Information Type*/
         logger.debug("\n******** SERVICE INFORMATION");
         type = "ServiceInformation";
 
@@ -342,6 +348,7 @@ public class SMPSignFileController {
           return "redirect:/smpeditor/signsmpfile";
         }
         
+        /*Builds final file name*/
         String timeStamp = new SimpleDateFormat("yyyyMMdd'T'HHmmss").format(new java.util.Date());
         String fileName = smpfile.getType().name() + "_" + smpfile.getCountry().toUpperCase() + "_Signed_" + timeStamp + ".xml";
         smpfile.setFileName(fileName);

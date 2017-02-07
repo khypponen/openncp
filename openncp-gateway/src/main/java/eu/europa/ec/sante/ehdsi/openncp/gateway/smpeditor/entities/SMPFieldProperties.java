@@ -1,5 +1,10 @@
 package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities;
 
+/**
+ *
+ * @author Inês Garganta
+ */
+
 public class SMPFieldProperties {
 
   private boolean enable;

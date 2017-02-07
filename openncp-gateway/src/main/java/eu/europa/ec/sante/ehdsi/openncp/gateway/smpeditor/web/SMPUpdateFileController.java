@@ -48,6 +48,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+/**
+ *
+ * @author Inês Garganta
+ */
+
 @Controller
 @SessionAttributes("smpfileupdate")
 public class SMPUpdateFileController {
@@ -142,7 +147,7 @@ public class SMPUpdateFileController {
       */
       String href = serviceMetadata.getRedirect().getHref();
       String participantID;
-      Pattern pattern = Pattern.compile("ehealth-actorid-qns.*");
+      Pattern pattern = Pattern.compile("ehealth-participantid-qns.*");
       Matcher matcher = pattern.matcher(href);
       if (matcher.find()) {
         String result = matcher.group(0);
@@ -220,6 +225,7 @@ public class SMPUpdateFileController {
         return "redirect:/smpeditor/updatesmpfile";
       }
       
+      /*Builds final file name*/
       String timeStamp = new SimpleDateFormat("yyyyMMdd'T'HHmmss").format(new java.util.Date());
       String fileName = smpfileupdate.getType().name() + "_" + smpfileupdate.getCountry().toUpperCase() + "_" + timeStamp + ".xml";
       smpfileupdate.setFileName(fileName);
@@ -429,7 +435,7 @@ public class SMPUpdateFileController {
           /*get documentIdentifier from redierct href*/
           String href = smpfileupdate.getHref();
           String documentID;
-          Pattern pattern = Pattern.compile("ehealth-actorid-qns.*");
+          Pattern pattern = Pattern.compile("ehealth-participantid-qns.*");
           Matcher matcher = pattern.matcher(href);
           if (matcher.find()) {
             String result = matcher.group(0);
@@ -451,9 +457,11 @@ public class SMPUpdateFileController {
               return "redirect:/smpeditor/updatesmpfileform";
             }
             
+            /*Builds final file name*/
             String timeStamp = new SimpleDateFormat("yyyyMMdd'T'HHmmss").format(new java.util.Date());
             String fileName = smpfileupdate.getType().name() + "_" + smpType + "_" + smpfileupdate.getCountry().toUpperCase() + "_" + timeStamp + ".xml";
             smpfileupdate.setFileName(fileName);
+            
           } else {
             logger.error("\n****NOT VALID HREF IN REDIRECT");
             String message = env.getProperty("error.redirect.href"); //messages.properties
@@ -480,6 +488,7 @@ public class SMPUpdateFileController {
       return "redirect:/smpeditor/updatesmpfileform";
     }
 
+    /*chosen options sign file in html modal*/
     if (action.equals("sign")) {
       logger.debug("\n****ACTION SIGN");
       return "redirect:saveupdatedsmpfile/sign"; 
