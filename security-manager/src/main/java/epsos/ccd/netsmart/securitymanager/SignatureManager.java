@@ -32,8 +32,6 @@ import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.security.auth.x500.X500Principal;
 import javax.xml.crypto.MarshalException;
@@ -69,6 +67,8 @@ import org.opensaml.xml.signature.SignatureConstants;
 import org.opensaml.xml.signature.SignatureValidator;
 import org.opensaml.xml.signature.Signer;
 import org.opensaml.xml.validation.ValidationException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
@@ -80,6 +80,8 @@ import org.w3c.dom.NodeList;
  * @author Jerry Dimitriou <jerouris at netsmart.gr>
  */
 public class SignatureManager {
+
+    private static final Logger logger = LoggerFactory.getLogger(SignatureManager.class);
 
     private KeyStoreManager keyManager;
     private String signatureAlgorithm;
@@ -145,7 +147,7 @@ public class SignatureManager {
                 profileValidator.validate(sig);
             } catch (ValidationException e) {
                 // Indicates signature did not conform to SAML Signature profile
-                Logger.getLogger(SignatureManager.class.getName()).severe(e.getMessage());
+                logger.error(e.getMessage());
                 throw new SMgrException("SAML Signature Profile Validation: " + e.getMessage());
             }
 
@@ -168,17 +170,16 @@ public class SignatureManager {
                 sigValidator.validate(sig);
             } catch (ValidationException e) {
                 // Indicates signature was not cryptographically valid, or possibly a processing error
-                Logger.getLogger(SignatureManager.class.getName()).severe(e.getMessage());
+                logger.error(e.getMessage());
                 throw new SMgrException("Signature Validation: " + e.getMessage());
             }
             CertificateValidator cv = new CertificateValidator(keyManager.getTrustStore());
             cv.validateCertificate(cert);
         } catch (CertificateException ex) {
-            Logger.getLogger(SignatureManager.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
         }
 
         return sigCountryCode;
-
     }
 
     /**
@@ -219,10 +220,10 @@ public class SignatureManager {
             }
 
         } catch (XMLSignatureException ex) {
-            Logger.getLogger(SignatureManager.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             throw new SMgrException("Signature Invalid: " + ex.getMessage(), ex);
         } catch (MarshalException ex) {
-            Logger.getLogger(SignatureManager.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             throw new SMgrException("Signature Invalid: " + ex.getMessage(), ex);
         }
 
@@ -310,7 +311,7 @@ public class SignatureManager {
     public void signXMLWithEnvelopedSig(Document doc, String keyAlias, char[] keyPassword)
             throws SMgrException {
 
-        Logger logger = Logger.getLogger(SignatureManager.class.getName());
+        Logger logger = LoggerFactory.getLogger(SignatureManager.class.getName());
 
         KeyPair kp = null;
         X509Certificate cert = null;
@@ -356,25 +357,25 @@ public class SignatureManager {
             signature.sign(dsc);
 
         } catch (ClassNotFoundException ex) {
-            logger.log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             throw new SMgrException(ex.getMessage(), ex);
         } catch (InstantiationException ex) {
-            logger.log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             throw new SMgrException(ex.getMessage(), ex);
         } catch (IllegalAccessException ex) {
-            logger.log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             throw new SMgrException(ex.getMessage(), ex);
         } catch (NoSuchAlgorithmException ex) {
-            logger.log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             throw new SMgrException(ex.getMessage(), ex);
         } catch (InvalidAlgorithmParameterException ex) {
-            logger.log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             throw new SMgrException(ex.getMessage(), ex);
         } catch (MarshalException ex) {
-            logger.log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             throw new SMgrException(ex.getMessage(), ex);
         } catch (XMLSignatureException ex) {
-            logger.log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             throw new SMgrException(ex.getMessage(), ex);
         }
     }
@@ -392,5 +393,4 @@ public class SignatureManager {
     public void signSAMLAssertion(Assertion trc) throws SMgrException {
         signSAMLAssertion(trc, null, null);
     }
-
 }

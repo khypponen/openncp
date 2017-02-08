@@ -1,11 +1,15 @@
 package eu.epsos.policymanager;
 
 import eu.epsos.assertionvalidator.*;
+
 import static eu.epsos.assertionvalidator.AssertionHelper.getAttributeFromAssertion;
+
 import java.util.List;
-import org.apache.log4j.Logger;
+
 import org.opensaml.saml2.core.Assertion;
 import org.opensaml.xml.XMLObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import tr.com.srdc.epsos.securityman.exceptions.InsufficientRightsException;
 import tr.com.srdc.epsos.securityman.exceptions.InvalidFieldException;
 import tr.com.srdc.epsos.securityman.exceptions.MissingFieldException;
@@ -16,7 +20,7 @@ import tr.com.srdc.epsos.util.Constants;
  */
 public class DefaultPolicyManagerImpl implements PolicyManagerInterface {
 
-    private static final Logger logger = Logger.getLogger(DefaultPolicyManagerImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(DefaultPolicyManagerImpl.class);
 
     @Override
     public void HealthcareFacilityValidator(Assertion assertion, String documentClass) throws MissingFieldException, InvalidFieldException {
@@ -228,14 +232,14 @@ public class DefaultPolicyManagerImpl implements PolicyManagerInterface {
         logger.error("InsufficientRightsException");
         throw new InsufficientRightsException();
     }
-    
+
     /**
      * XCA validator for MRO service, currently using the same validator for eP.
-     * 
+     *
      * @param assertion
-     * @throws InsufficientRightsException 
+     * @throws InsufficientRightsException
      */
-    private void XCAPermissionValidatorMro(Assertion assertion) throws InsufficientRightsException{
+    private void XCAPermissionValidatorMro(Assertion assertion) throws InsufficientRightsException {
         XCAPermissionValidatorEP(assertion);
     }
 

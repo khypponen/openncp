@@ -9,15 +9,16 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import tr.com.srdc.epsos.util.Constants;
 
 @WebListener
 public class MyServletContextListener implements ServletContextListener {
 
-    private static final Logger log = Logger.getLogger("MyServletContextListener");
+    private static final Logger log = LoggerFactory.getLogger("MyServletContextListener");
     private ServletContext context = null;
     private static String runningMode;
     private static String encryptionKey;
@@ -100,5 +101,4 @@ public class MyServletContextListener implements ServletContextListener {
     public static void setEncryptionKey(String encryptionKey) {
         MyServletContextListener.encryptionKey = encryptionKey;
     }
-
 }

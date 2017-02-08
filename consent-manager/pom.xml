@@ -22,17 +22,17 @@
 			<version>${project.version}</version>
 			<scope>compile</scope>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>${log4jVersion}</version>
 			<type>jar</type>
 			<scope>compile</scope>
-		</dependency>
+		</dependency>-->
 	</dependencies>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<axiomReleaseVersion>1.2.13</axiomReleaseVersion>
-		<log4jVersion>1.2.17</log4jVersion>
+		<!--<log4jVersion>1.2.17</log4jVersion>-->
 	</properties>
 </project>

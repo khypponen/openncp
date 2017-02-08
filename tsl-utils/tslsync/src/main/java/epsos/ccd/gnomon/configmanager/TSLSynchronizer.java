@@ -5,41 +5,36 @@
  * licenses this file to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * <p>
  * http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
  * License for the specific language governing permissions and limitations under
  * the License.
- *
  */
 package epsos.ccd.gnomon.configmanager;
 
-import epsos.ccd.gnomon.auditmanager.AuditService;
-import epsos.ccd.gnomon.auditmanager.EventActionCode;
-import epsos.ccd.gnomon.auditmanager.EventLog;
-import epsos.ccd.gnomon.auditmanager.EventOutcomeIndicator;
-import epsos.ccd.gnomon.auditmanager.EventType;
-import epsos.ccd.gnomon.auditmanager.TransactionName;
+import epsos.ccd.gnomon.auditmanager.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.security.cert.CertificateException;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.GregorianCalendar;
 import java.util.Hashtable;
-import java.util.logging.Level;
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-import javax.xml.parsers.ParserConfigurationException;
-import org.apache.log4j.Logger;
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
+
 
 /**
- *
  * Synchronizes the countries tsl content to the configuration parameters Read
  * the list of countries from the configuration manager parameter name =
  * ncp.countries For each country reads again the configuration manager to find
@@ -52,14 +47,13 @@ import org.xml.sax.SAXException;
  * @author Organization: Gnomon
  * @author mail:k.karkaletsis@gnomon.com.gr
  * @version 1.0, 2010, 30 Jun
- *
  */
 public class TSLSynchronizer {
 
     public TSLSynchronizer() {
     }
 
-    static Logger logger = Logger.getLogger(TSLSynchronizer.class);
+    static Logger logger = LoggerFactory.getLogger(TSLSynchronizer.class);
 
     public static String sync() {
         StringBuilder sb1 = new StringBuilder();
@@ -100,13 +94,13 @@ public class TSLSynchronizer {
                 System.out.println("TSL SYNC FINISHED");
                 System.exit(0);
             }
-        } else {   
+        } else {
             String sb = sync().toString();
             System.out.println("TSL SYNC FINISHED");
             System.exit(0);
         }
     }
-    
+
     /* Sync info for a specified country */
     public static String syncCountry(String country) {
         System.out.println("Synchronizing a specific country...");
@@ -124,10 +118,10 @@ public class TSLSynchronizer {
             ncpemail = "ncpgr@epsos.gr";
             cms.updateProperty("ncp.email", ncpemail);
         }
-      
+
         System.out.println("Exporting configuration for : " + country);
         sb = exportCountryConfig(sb1, country);
-        
+
         return sb;
     }
 
@@ -142,7 +136,7 @@ public class TSLSynchronizer {
     }
 
     private static void sendAudit(String sc_fullname, String sc_email, String sp_fullname, String sp_email,
-            String localip, String remoteip, String partid) {
+                                  String localip, String remoteip, String partid) {
         try {
             AuditService asd = new AuditService();
             GregorianCalendar c = new GregorianCalendar();
@@ -190,10 +184,10 @@ public class TSLSynchronizer {
             try {
                 Thread.sleep(10000);
             } catch (InterruptedException ex) {
-                java.util.logging.Logger.getLogger(TSLSynchronizer.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(null, ex);
             }
         } catch (Exception e) {
-            logger.fatal("Error sending audit for tslsync");
+            logger.error("Error sending audit for tslsync");
         }
     }
 

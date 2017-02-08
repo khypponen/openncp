@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -37,8 +37,8 @@
         <url>https://www.projects.openhealthtools.org/svn/openatna/</url>
     </scm>
     <issueManagement>
-        <system />
-        <url />
+        <system/>
+        <url/>
     </issueManagement>
     <developers>
         <developer>
@@ -83,41 +83,6 @@
         </plugins>
     </build>
 
-    <repositories>
-        <repository>
-            <id>bouncycastle</id>
-            <url>http://repo2.maven.org/maven2/org/bouncycastle</url>
-        </repository>
-        <!-- <repository> -->
-        <!-- <id>appfuse</id> -->
-        <!-- <url>http://static.appfuse.org/repository</url> -->
-        <!-- </repository> -->
-        <!-- <repository> -->
-        <!-- <id>sun</id> -->
-        <!-- <url>http://download.java.net/maven/2</url> -->
-        <!-- </repository> -->
-        <!-- <repository> -->
-        <!-- <id>trianacode-maven-repos</id> -->
-        <!-- <url>http://trianacode.org/maven</url> -->
-        <!-- </repository> -->
-        <!-- <repository> -->
-        <!-- <id>ibilio</id> -->
-        <!-- <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url> -->
-        <!-- </repository> -->
-        <!-- <repository> -->
-        <!-- <id>sonatype-staging</id> -->
-        <!-- <url>https://oss.sonatype.org/content/groups/staging</url> -->
-        <!-- </repository> -->
-    </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>${commons.logging.version}</version>
-        </dependency>
-    </dependencies>
-
     <modules>
         <module>syslog</module>
         <module>audit</module>
@@ -131,8 +96,7 @@
     </modules>
     <!-- Properties defined by OpenATNA -->
     <properties>
-        <commons.logging.version>1.1.1</commons.logging.version>
-        <log4Jlog.version>1.2.14</log4Jlog.version>
+        <spring.version>2.5.6.SEC03</spring.version>
     </properties>
 
     <!--===================LICENCE HEADER CHECK USE -P headers with mvn command
@@ -188,7 +152,8 @@
                                 <configuration>
                                     <properties>
                                         <company>University of Cardiff
-                                            and others</company>
+                                            and others
+                                        </company>
                                         <contributor1>University of
                                             Cardiff - initial API and
                                             implementation
@@ -222,7 +187,8 @@
                                 <configuration>
                                     <properties>
                                         <company>Misys Open Source
-                                            Solutions (MOSS) and others</company>
+                                            Solutions (MOSS) and others
+                                        </company>
                                         <contributor1>Misys Open Source
                                             Solutions - initial API and
                                             implementation

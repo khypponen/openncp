@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:epsos="urn:epsos-org:ep:medication"  xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd" classCode="DOCCLIN" moodCode="EVN">
+    <realmCode/>
+    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+    
+    <!-- epSOS MRO --><templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.5"/>
+    
+    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+    <id root="1.2.250.1.197.1.100.1" extension="f11abb08-6e4c-4085-97a4-fe00d82c320d"/>
+    
+    <!-- epSOS MRO --><code codeSystem="2.16.840.1.113883.6.1" 
+    codeSystemName="LOINC" code="56445-0" codeSystemVersion="2.34" 
+    displayName="Medication Summary"/>  
+    
+    <title>Medication Summary</title>
+    <effectiveTime value="1347275600049"/>
+
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" codeSystemVersion="913-20091020" displayName="normal" />
+    <languageCode code="sl-SI"/>
+    <!--###################### Patient Demographics ######################-->
+    <recordTarget>
+        <patientRole classCode="PAT">
+            <id root="2.16.17.710.830.1000.990.1.3.1" extension="2209981500234"/>
+            <addr use="HP">
+                <streetAddressLine>Trubarjeva ulica</streetAddressLine>
+                <streetAddressLine>2</streetAddressLine>
+                <postalCode>1000</postalCode>
+                <city>Ljubljana</city>
+                <country>SI</country>
+            </addr>
+            <telecom value="tel:+38612441448" use="MC"/>
+            <telecom value="mailto:epsos@ivz-rs.si" use="WP"/>
+            <patient>
+                <name>
+                    <family>Frelih</family>
+                    <given>Rafael</given>
+                </name>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7 AdministrativeGender" displayName="Male"/>
+                <birthTime value="19700402"/>
+                <languageCommunication>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.1"/>
+                    <languageCode code="sl-SI"/>
+                </languageCommunication>
+            </patient>
+        </patientRole>
+    </recordTarget>
+    <!--Document author-->
+    <author>
+        <time value="2012121200099"/>
+        <assignedAuthor classCode="ASSIGNED">
+            <id root="2.16.17.710.830.1000.990.1.3.2" extension="540008204600048"/>
+            <telecom value="tel:+386557925143" use="WP"/>
+            <assignedPerson>
+                <name>
+                    <family>Kralj</family>
+                    <given>Marko</given>
+                    <prefix>dr.</prefix>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id root="2.16.17.710.830.1000.990.1.3.2.1" extension="340008204600048"/>
+                <name>ZD Ljubljana</name>
+                <addr>
+                    <streetAddressLine>Neka ulica v ljubljani 1</streetAddressLine>                 
+                    <postalCode>1000</postalCode>
+                    <city>Ljubljana</city>
+                    <country>SI</country>
+                </addr>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+    <!--Custodian-->
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="2.16.17.710.830.1000.990.1.3.3.1" extension="888888"/>
+                <name>Skrbnik8</name>
+                <telecom value="tel:+38631659133" use="MC"/>        
+                <addr>
+                    <streetAddressLine>Taborska 55</streetAddressLine>
+                    <city>Maribor</city>
+                    <postalCode>2000</postalCode>
+                    <country>SI</country>
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <!--Legal Authenticator-->
+    <legalAuthenticator>
+        <time value="2012121200110"/>
+        <signatureCode code="S"/>
+        <assignedEntity>
+            <id root="2.16.17.710.830.1000.990.1.3.4" extension="540008204600048"/>
+            <telecom value="tel:+386557925143" use="WP"/>
+            <assignedPerson>
+                <name>
+                    <family>Kralj</family>
+                    <given>Marko</given>
+                    <prefix>dr.</prefix>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id root="2.16.17.710.830.1000.990.1.3.4.1" extension="340008204600048"/>
+                <name>ZD Ljubljana</name>
+                <addr>
+                    <streetAddressLine>Neka ulica v ljubljani 1</streetAddressLine>
+                    <postalCode>1000</postalCode>
+                    <city>Ljubljana</city>
+                    <country>SI</country>
+                </addr>
+            </representedOrganization>
+        </assignedEntity>
+    </legalAuthenticator>
+    <!--Participant-->
+    <participant typeCode="IND">
+        <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+        <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88"/>
+        <associatedEntity classCode="PRS">
+            <scopingOrganization>
+
+
+                <id extension="ivz.si" root="2.16.17.710.830.1000.990.1.3.5"/>
+                <name>National institute of public health, Republic of Slovenia</name>
+                <telecom use="WP" value="tel:+38612441597"/>
+                <telecom use="WP" value="mailto:epsos@ivz-rs.si"/>
+                <addr>
+                    <streetAddressLine>Trubarjeva 2</streetAddressLine>
+                    <city>Lubljana</city>
+                    <postalCode nullFlavor="UNK"/>
+                    <state nullFlavor="UNK"/>
+                    <country>SI</country>
+                </addr>
+            </scopingOrganization>
+        </associatedEntity>
+    </participant>
+    <!--Document relations (between NI previous document)-->
+    <documentationOf>
+        <serviceEvent classCode="PCPR">
+            <effectiveTime>
+                <low value="20121010"/>
+                <high value="20121010"/>
+            </effectiveTime>
+        </serviceEvent>
+    </documentationOf>
+    <relatedDocument typeCode="XFRM">
+        <parentDocument>
+            <id extension="970056381209211113271" root="2.16.17.710.830.1000.990.1.3.6"/>
+        </parentDocument>
+    </relatedDocument>
+    <component>
+        <structuredBody>
+            <!--###################### Allergies and other adverse reaction ######################-->
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.2"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+                    <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts">
+                        
+                    </code>
+                    <title>Preobčutljivosti</title>
+                    <text>
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <th>Naziv vrste preobčutljivosti</th>
+                                    <th>Koda vrste preobčutljivosti</th>
+                                    <th>Naziv alergena</th>
+                                    <th>Koda alergena</th>
+                                    <th>Datum pojava preobčutljivostne reakcije</th>
+                                </tr>
+                                <tr ID="allergy-1">
+                                    <td ID="allergy1_allergytype">Preobčutljivost za zdravilo </td>
+                                    <td ID="allergy1_allergycode">59037007</td>
+                                    <td ID="allergy1_allergen">Tetraciklin</td>
+                                    <td ID="allergy1_allergencode">D06AA04</td>
+                                    <td ID="allergy1_datefrom">27/10/2011</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                            <id extension="allergy.1" root="2.16.17.710.830.1000.990.1.2.2"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20090927"/>
+                            </effectiveTime>
+                            <entryRelationship inversionInd="false" typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <id extension="allergy.1.obs.1" root="2.16.17.710.830.1000.990.1.2.2"/>
+                                    <code code="59037007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Drug intolerance">
+                                        
+                                    </code>
+                                    <text>
+                                        <reference value="#allergy-1"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20090727"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#allergy-1"/>
+                                        </originalText>
+                                    </value>                               
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <code code="D06AA04" codeSystem="2.16.840.1.113883.6.73" codeSystemName="Anatomical Therapeutic Chemical" displayName="tetraciklin">
+                                                    <originalText>
+                                                        <reference value="#allergy1_allergen"/>
+                                                    </originalText>
+                                                </code>
+                                                <name>tetraciklin</name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+            <!--###################### Current Medications ######################-->
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.8"/>
+                    <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+                    <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medication use">
+                        
+                    </code>
+                    <title>Povzetek podatkov o zdravilih</title>
+                    <text>
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Naziv aktivne učinkovine</th>
+                                    <th>Koda aktivne učinkovine</th>
+                                    <th>Jakost zdravila</th>
+                                    <th>Doza - število enot v odmerku zdravila</th>
+                                    <th>Frekvenca</th>
+                                    <th>Trajanje</th>
+                                    <th>Datum začetka jemanja zdravila</th>
+                                    <th>Farmacevtska oblika</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ID="meddesc1">
+                                    <td ID="meddesc1_activeingredient">salbutamol</td>
+                                    <td ID="meddesc1_activeingredient_code">R03CC02</td>
+                                    <td ID="meddesc1_activeingredient_strength">100 mcg/l</td>
+                                    <td ID="meddesc1_dose">2</td>
+                                    <td ID="meddesc1_frequency">vsakih 24 ur pred zajtrkom</td>
+                                    <td ID="meddesc1_duration"></td>
+                                    <td ID="meddesc1_datefrom">1990</td>
+                                    <td ID="meddesc1_dose_form">inhalacijska suspenzija pod tlakom</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </text>
+                    <entry>
+                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                            <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                            <id root="2.16.17.710.830.1000.990.1.2.13" extension="medication.1"/>
+
+
+                            <text>
+                                <reference value="#meddesc1"/>
+                            </text>
+                            <statusCode code="completed"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="19900101"/>
+                                <high nullFlavor="UNK"/>
+                            </effectiveTime>
+                            <effectiveTime institutionSpecified="true"
+                                    nullFlavor="NA"
+                                    operator="A"
+                                    xsi:type="PIVL_TS"/>
+                            <doseQuantity>
+                                <low unit="ug" value="200"/>
+                                <high unit="ug" value="200"/>
+                            </doseQuantity>
+                            <consumable>
+                                <manufacturedProduct classCode="MANU">
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                    <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                                        <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+                                        <epsos:id root="931750DF-80C9-8E79-FCCF-A2C7BF283C93" xmlns:epsos="urn:epsos-org:ep:medication"/>
+                                        <code>
+                                            <originalText>
+                                                <reference value="#meddesc1"/>
+                                            </originalText>
+                                        </code>
+                                        <name nullFlavor="NI"/>
+                                        <epsos:formCode code="11107000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="inhalacijska suspenzija pod tlakom" xmlns:epsos="urn:epsos-org:ep:medication">
+                                            <epsos:originalText>
+                                                <epsos:reference value="#meddesc1_dose_form"/>
+                                            </epsos:originalText>
+                                        </epsos:formCode>
+                                        <epsos:ingredient classCode="ACTI" xmlns:epsos="urn:epsos-org:ep:medication">
+                                            <epsos:quantity>
+                                                <epsos:numerator unit="mcg/l" value="100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="epsos:PQ"/>
+                                                <epsos:denominator unit="1" value="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="epsos:PQ"/>
+                                            </epsos:quantity>
+                                            <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                                                <epsos:code code="R03CC02" codeSystem="2.16.840.1.113883.6.73" codeSystemName="Anatomical Therapeutic Chemical" displayName="salbutamol">
+                                                    <epsos:originalText>
+                                                        <epsos:reference value="#meddesc1_activeingredient"/>
+                                                    </epsos:originalText>
+                                                </epsos:code>
+                                                <epsos:name>Salbutamol</epsos:name>
+                                            </epsos:ingredient>
+                                        </epsos:ingredient>
+                                    </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                        </substanceAdministration>
+                    </entry>
+               </section>
+            </component>
+         </structuredBody>
+    </component>
+</ClinicalDocument>
+

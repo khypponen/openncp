@@ -25,6 +25,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tr.com.srdc.epsos.util.Constants;
 import tr.com.srdc.epsos.util.DateUtil;
@@ -35,7 +37,7 @@ import tr.com.srdc.epsos.util.DateUtil;
  */
 public class ReportBuilder {
 
-    private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(ReportBuilder.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ReportBuilder.class);
     private static final String REPORT_FILES_FOLDER = "validation";
 
     /**

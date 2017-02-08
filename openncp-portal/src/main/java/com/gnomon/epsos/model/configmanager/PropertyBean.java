@@ -9,7 +9,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import org.apache.commons.lang.exception.ExceptionUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @ManagedBean
 @SessionScoped
@@ -18,7 +19,7 @@ public class PropertyBean {
     private String property;
     private String value;
 
-    private static Logger log = Logger.getLogger("PropertyBean");
+    private static Logger log = LoggerFactory.getLogger("PropertyBean");
     private List<Property> properties;
 
     public PropertyBean() {

@@ -21,22 +21,24 @@ package eu.epsos.protocolterminators.integrationtest.ihe.cda;
 
 import eu.epsos.protocolterminators.integrationtest.common.AbstractIT;
 import eu.epsos.protocolterminators.integrationtest.ihe.cda.dto.DetailedResult;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import tr.com.srdc.epsos.util.xpath.XPathEvaluator;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.HashMap;
+
 /**
- *
  * @author Marcelo Fonseca <marcelo.fonseca@iuz.pt>
  */
 public class CdaExtraction {
+
+    private static final Logger logger = LoggerFactory.getLogger(CdaExtraction.class);
 
     public static String extract(MessageType msgType, String filePath) {
         Document msgDoc;
@@ -46,7 +48,7 @@ public class CdaExtraction {
     }
 
     public static String extract(MessageType msgType, Document message) {
-        HashMap<String, String> ns = new HashMap<String, String>();
+        HashMap<String, String> ns = new HashMap<>();
         Document msgDoc;
         XPathEvaluator evaluator;
         String xpathExpr = null;
@@ -81,20 +83,20 @@ public class CdaExtraction {
         try {
             jc = JAXBContext.newInstance(DetailedResult.class);
         } catch (JAXBException ex) {
-            Logger.getLogger(CdaExtraction.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
         }
 
         Unmarshaller unmarshaller = null;
         try {
             unmarshaller = jc.createUnmarshaller();
         } catch (JAXBException ex) {
-            Logger.getLogger(CdaExtraction.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
         }
         DetailedResult result = null;
         try {
             result = (DetailedResult) unmarshaller.unmarshal(is);
         } catch (JAXBException ex) {
-            Logger.getLogger(CdaExtraction.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
         }
 
         return result;

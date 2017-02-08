@@ -17,21 +17,23 @@
 
 package epsos.ccd.netsmart.securitymanager.sts;
 
-import java.io.OutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import org.w3c.dom.Document;
+import java.io.OutputStream;
 
 /**
- *
  * @author Jerry Dimitriou <jerouris at netsmart.gr>
  */
 public class XMLUtils {
+
+    private static final Logger logger = LoggerFactory.getLogger(XMLUtils.class);
 
     public static void sendXMLtoStream(Document doc, OutputStream out) {
         try {
@@ -39,10 +41,8 @@ public class XMLUtils {
             Transformer trans = tf.newTransformer();
             //trans.setOutputProperty(OutputKeys.INDENT, "yes");
             trans.transform(new DOMSource(doc), new StreamResult(out));
-        }
-        catch (TransformerException ex) {
-            Logger.getLogger(XMLUtils.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (TransformerException ex) {
+            logger.error(null, ex);
         }
     }
-
 }

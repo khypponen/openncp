@@ -123,10 +123,10 @@
             <artifactId>openncp-assertion-validator</artifactId>
             <type>jar</type>
         </dependency>
-        <dependency>
+       <!-- <dependency>
             <artifactId>log4j</artifactId>
             <groupId>log4j</groupId>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
 </project>

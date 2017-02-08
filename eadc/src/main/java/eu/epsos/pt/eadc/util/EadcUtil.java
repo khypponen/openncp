@@ -19,14 +19,18 @@
  */
 package eu.epsos.pt.eadc.util;
 
-import java.io.StringWriter;
-
 import com.spirit.epsos.cc.adc.EadcEntry;
 import com.spirit.epsos.cc.adc.EadcReceiverImpl;
 import eu.epsos.pt.eadc.datamodel.ObjectFactory;
 import eu.epsos.pt.eadc.datamodel.Transaction;
 import eu.epsos.pt.eadc.datamodel.TransactionInfo;
 import eu.epsos.pt.eadc.helper.TransactionHelper;
+import org.apache.axis2.context.MessageContext;
+import org.apache.axis2.util.XMLUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
@@ -34,13 +38,7 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-
-import org.apache.axis2.context.MessageContext;
-import org.apache.axis2.util.XMLUtils;
-import org.apache.log4j.Logger;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import java.io.StringWriter;
 
 /**
  * The purpose of this class is to help the eADC invocation process, by
@@ -50,7 +48,7 @@ import org.w3c.dom.Node;
  */
 public class EadcUtil {
 
-    private static final Logger LOGGER = Logger.getLogger(EadcUtil.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(EadcUtil.class);
     private static String defaultDsPath = null;
 
     /**
@@ -79,10 +77,9 @@ public class EadcUtil {
      *
      * @param reqMsgContext the Servlet request message context
      * @param rspMsgContext the Servlet response message context
-     * @param cdaDocument the optional CDA document, leave as null if not
-     * necessary
-     * @param transInfo the Transaction Info object
-     *
+     * @param cdaDocument   the optional CDA document, leave as null if not
+     *                      necessary
+     * @param transInfo     the Transaction Info object
      * @throws ParserConfigurationException
      * @throws Exception
      */
@@ -141,7 +138,7 @@ public class EadcUtil {
      */
     public static String getDefaultDsPath() {
         if (defaultDsPath == null) {
-        	defaultDsPath = getEpsosPropsPath();
+            defaultDsPath = getEpsosPropsPath();
         }
         return defaultDsPath;
     }
@@ -155,11 +152,11 @@ public class EadcUtil {
         String path = System.getenv("EPSOS_PROPS_PATH");
 
         if (path == null) {
-        	path = System.getProperty("EPSOS_PROPS_PATH");
-        	if(path == null) {
+            path = System.getProperty("EPSOS_PROPS_PATH");
+            if (path == null) {
                 LOGGER.error("EPSOS_PROPS_PATH not found!");
                 return null;
-        	}
+            }
         }
         return path;
     }
@@ -175,7 +172,7 @@ public class EadcUtil {
         if (xmlDocument == null) {
             // debug
             //
-        	LOGGER.warn("XML Document is NULL. Can't convert XML Document to String.");
+            LOGGER.warn("XML Document is NULL. Can't convert XML Document to String.");
             return "";
         }
         StringWriter objStrWriter = new StringWriter();
@@ -183,15 +180,15 @@ public class EadcUtil {
         TransformerFactory objTransFactory = TransformerFactory.newInstance();
         Transformer objTransformer = objTransFactory.newTransformer();
         objTransformer.setOutputProperty(OutputKeys.ENCODING,
-                                         "utf-8");
+                "utf-8");
         objTransformer.setOutputProperty(OutputKeys.INDENT,
-                                         "yes");
+                "yes");
         objTransformer.setOutputProperty(OutputKeys.METHOD,
-                                         "xml");
+                "xml");
         objTransformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount",
-                                         "4");
+                "4");
         objTransformer.transform(new DOMSource(xmlDocument.getDocumentElement()),
-                                 objStreamResult);
+                objStreamResult);
         return objStreamResult.getWriter()
                 .toString();
     }

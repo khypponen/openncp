@@ -21,8 +21,8 @@ import javax.portlet.RenderRequest;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.joda.time.DateTime;
 import org.opensaml.DefaultBootstrap;
 import org.opensaml.saml2.core.Assertion;
@@ -31,6 +31,7 @@ import org.opensaml.xml.io.Unmarshaller;
 import org.opensaml.xml.io.UnmarshallerFactory;
 import org.opensaml.xml.parse.BasicParserPool;
 import org.primefaces.model.StreamedContent;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -61,6 +62,7 @@ import eu.epsos.util.IheConstants;
 @SessionScoped
 public class MyBean implements Serializable {
 
+	private static final Logger log = LoggerFactory.getLogger("MyBean");
 	private static final long serialVersionUID = 1L;
 	private List<Country> countries;
 	private String selectedCountry;
@@ -107,7 +109,6 @@ public class MyBean implements Serializable {
 	private String errorUserAssertion;
 	private String cdaStylesheet;
 	private String signedTRC;
-	private static final Logger log = Logger.getLogger("MyBean");
 
 	public MyBean() {
 		log.info("Initializing MyBean ...");
@@ -822,7 +823,7 @@ public class MyBean implements Serializable {
 					+ patient.getRoot() + " with hcpAssetion : "
 					+ hcpAssertion.getID() + " - " + e.getMessage());
 			log.error(ExceptionUtils.getStackTrace(e));
-			log.error(resp);
+			log.error(null, resp);
 			FacesContext.getCurrentInstance().addMessage(
 					null,
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "ERROR",

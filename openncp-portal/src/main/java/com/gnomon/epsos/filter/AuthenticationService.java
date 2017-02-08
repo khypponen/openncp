@@ -6,7 +6,7 @@ import java.text.ParseException;
 
 public class AuthenticationService {
 
-    private static final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger("AuthenticationService");
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger("AuthenticationService");
 
     public boolean authenticate(String authCredentials) throws UnsupportedEncodingException, ParseException {
         logger.info("try to authencticate with: " + authCredentials);

@@ -12,6 +12,7 @@ import tr.com.srdc.epsos.securityman.exceptions.MissingFieldException;
  * By: fredrik.dahlman@cag.se
  */
 public interface PolicyManagerInterface {
+
     static final String URN_OASIS_NAMES_TC_XACML_2_0_SUBJECT_ROLE = "urn:oasis:names:tc:xacml:2.0:subject:role";
     static final String URN_EPSOS_NAMES_WP3_4_SUBJECT_HEALTHCARE_FACILITY_TYPE = "urn:epsos:names:wp3.4:subject:healthcare-facility-type";
     static final String URN_EPSOS_NAMES_WP3_4_SUBJECT_ON_BEHALF_OF = "urn:epsos:names:wp3.4:subject:on-behalf-of";

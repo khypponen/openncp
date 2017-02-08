@@ -37,9 +37,6 @@ import java.security.cert.X509Certificate;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.xml.crypto.AlgorithmMethod;
 import javax.xml.crypto.KeySelector;
@@ -52,6 +49,8 @@ import javax.xml.crypto.dsig.keyinfo.X509Data;
 
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The Certificate Validator is a component that is responsible for validating
@@ -63,6 +62,8 @@ import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
  * @author Jerry Dimitriou <jerouris at netsmart.gr>
  */
 public final class CertificateValidator extends KeySelector {
+
+    private static final Logger logger = LoggerFactory.getLogger(CertificateValidator.class);
 
     private Certificate cert = null;
     private final KeyStore trustStore;
@@ -159,7 +160,7 @@ public final class CertificateValidator extends KeySelector {
     public void validateCertificate(X509Certificate cert) throws SMgrException {
         try {
             if (CHECK_FOR_KEYUSAGE) {
-                Logger.getLogger(CertificateValidator.class.getName()).log(Level.INFO, "Key usage available in conf manager");
+                logger.info("Key usage available in conf manager");
                 boolean[] keyUsage = cert.getKeyUsage();
 
                 if (keyUsage == null || keyUsage[0] == false) {
@@ -170,10 +171,10 @@ public final class CertificateValidator extends KeySelector {
             try {
                 cert.checkValidity(new Date());
             } catch (CertificateExpiredException ex) {
-                Logger.getLogger(CertificateValidator.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error( null, ex);
                 throw new SMgrException("Certificate Expired", ex);
             } catch (CertificateNotYetValidException ex) {
-                Logger.getLogger(CertificateValidator.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error( null, ex);
                 throw new SMgrException("Certificate Not Valid Yet", ex);
             }
 
@@ -181,13 +182,13 @@ public final class CertificateValidator extends KeySelector {
             if (cert.getExtensionValue(AIA_OID) != null) {
                 setRevocationEnabled(true);
                 setOCSPEnabled(true);
-                Logger.getLogger(CertificateValidator.class.getName()).log(Level.INFO, "Found AIA Extension. Using OCSP");
+                logger.info("Found AIA Extension. Using OCSP");
             }
 
             if (cert.getExtensionValue(CRLDP_OID) != null) {
                 setRevocationEnabled(true);
                 setCRLDPEnabled(true);
-                Logger.getLogger(CertificateValidator.class.getName()).log(Level.INFO, "Found CRLDP Extension. Using CRLDP");
+                logger.info("Found CRLDP Extension. Using CRLDP");
             }
 
             CertStoreParameters intermediates
@@ -216,14 +217,14 @@ public final class CertificateValidator extends KeySelector {
 
         } catch (NoSuchAlgorithmException ex) {
 
-            Logger.getLogger(CertificateValidator.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error( null, ex);
             throw new SMgrException("Certificate's Public key algorithm is unknown", ex);
 
         } catch (KeyStoreException ex) {
-            Logger.getLogger(CertificateValidator.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error( null, ex);
             throw new SMgrException("Error when tried to use the TrustStore", ex);
         } catch (InvalidAlgorithmParameterException ex) {
-            Logger.getLogger(CertificateValidator.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error( null, ex);
             throw new SMgrException("Invalid Algorith parameters for building Certificate Path", ex);
         }
 
@@ -250,7 +251,7 @@ public final class CertificateValidator extends KeySelector {
                 try {
                     validateCertificate(keyInfo);
                 } catch (SMgrException ex) {
-                    Logger.getLogger(CertificateValidator.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.error( null, ex);
                     throw new KeySelectorException("Validation Failed: " + ex.getMessage());
                 }
                 final PublicKey key = ((X509Certificate) o).getPublicKey();

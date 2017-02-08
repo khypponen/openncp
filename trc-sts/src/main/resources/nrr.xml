@@ -35,5 +35,5 @@
         <DigestMethod Algorithm="SHA1"/>
         <DigestValue>$digestValue</DigestValue>
     </ns2:SenderMessageDetails>
-   
+
 </ns2:AcceptanceRejectionByRecipient>

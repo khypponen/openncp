@@ -19,26 +19,25 @@ package epsos.ccd.netsmart.securitymanager.sts.client;
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import epsos.ccd.netsmart.securitymanager.key.KeyStoreManager;
 import epsos.ccd.netsmart.securitymanager.key.impl.DefaultKeyStoreManager;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.*;
 import java.util.UUID;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import javax.net.ssl.*;
 import javax.xml.namespace.QName;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.soap.*;
-import javax.xml.transform.stream.StreamSource;
 import org.opensaml.Configuration;
 import org.opensaml.saml2.core.Assertion;
 import org.opensaml.xml.io.MarshallingException;
 import org.opensaml.xml.io.Unmarshaller;
 import org.opensaml.xml.io.UnmarshallerFactory;
 import org.opensaml.xml.io.UnmarshallingException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -52,6 +51,8 @@ import org.w3c.dom.Node;
  * @author Jerry Dimitriou <jerouris at netsmart.gr>
  */
 public class TRCAssertionRequest {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(TRCAssertionRequest.class);
 
     private static final QName MESSAGING_TO = new QName("http://www.w3.org/2005/08/addressing", "To");
     private static final String SAML20_TOKEN_URN = "urn:oasis:names:tc:SAML:2.0:assertion"; // What can be only requested from the STS
@@ -105,10 +106,8 @@ public class TRCAssertionRequest {
             createRSTBody(rstMsg.getSOAPBody());
 
             //rstMsg.writeTo(System.out);
-
-
         } catch (SOAPException ex) {
-            Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error( null, ex);
             throw new Exception("Unable to create RST Message");
         }
     }
@@ -123,7 +122,7 @@ public class TRCAssertionRequest {
             Configuration.getMarshallerFactory().getMarshaller(as).marshall(as, doc);
             return doc.getDocumentElement();
         } catch (MarshallingException ex) {
-            Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error(null, ex);
         }
         return null;
 
@@ -137,7 +136,7 @@ public class TRCAssertionRequest {
             Assertion as = (Assertion) unmarshaller.unmarshall(e);
             return as;
         } catch (UnmarshallingException ex) {
-            Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error( null, ex);
         }
         return null;
 
@@ -156,7 +155,7 @@ public class TRCAssertionRequest {
             securityHeaderElem.appendChild(header.getOwnerDocument().importNode(idAssertElem, true));
 
         } catch (SOAPException ex) {
-            Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error( null, ex);
         }
     }
 
@@ -190,7 +189,7 @@ public class TRCAssertionRequest {
 
 
         } catch (SOAPException ex) {
-            Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error( null, ex);
         }
 
 
@@ -249,10 +248,10 @@ public class TRCAssertionRequest {
             return trcAssertion;
 
         } catch (SOAPException ex) {
-            Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error( null, ex);
             throw new Exception("SOAP Exception: " + ex.getMessage());
         } catch (UnsupportedOperationException ex) {
-            Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error( null, ex);
             throw new Exception("Unsupported Operation: " + ex.getMessage());
         } 
     }
@@ -278,7 +277,7 @@ public class TRCAssertionRequest {
             return trcAssertion;
 
         } catch (Exception ex) {
-            Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error( null, ex);
             throw new Exception("Error while trying to extract the SAML TRC Assertion from RSTRC Body: " + ex.getMessage());
         }
     }
@@ -300,13 +299,13 @@ public class TRCAssertionRequest {
             ctx.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
 
         } catch (KeyManagementException ex) {
-            Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error( null, ex);
         } catch (UnrecoverableKeyException ex) {
-            Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error( null, ex);
         } catch (KeyStoreException ex) {
-            Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error( null, ex);
         } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error( null, ex);
         } finally {
             if (ctx != null) {
                 return ctx.getSocketFactory();
@@ -346,7 +345,7 @@ public class TRCAssertionRequest {
 
                 this.STSLocation = new URL(DEFAULT_STS_URL);
             } catch (MalformedURLException ex) {
-                Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+                LOGGER.error( null, ex);
             }
         }
 
@@ -374,7 +373,7 @@ public class TRCAssertionRequest {
             try {
                 this.STSLocation = new URL(url);
             } catch (MalformedURLException ex) {
-                Logger.getLogger(TRCAssertionRequest.class.getName()).log(Level.SEVERE, null, ex);
+                LOGGER.error( null, ex);
             }
 
             return this;

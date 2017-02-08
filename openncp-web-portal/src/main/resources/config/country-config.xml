@@ -34,6 +34,13 @@
                     MSPS/803000 
                 </HelpTextForTest>
 			</ES>
+            <EU homeCommuity="2.16.17.710.850.1000.990.1">
+                <text>ID Card number</text>
+                <HelpTextForTest>Mock dataset:
+                    1
+                    2
+                </HelpTextForTest>
+            </EU>
 			<FR homeCommuity="2.16.17.710.790.1000.990.1">
 				<text>Ange personens INSEE code</text>
                 <HelpTextForTest>Tillgänlgia testpatienter: 

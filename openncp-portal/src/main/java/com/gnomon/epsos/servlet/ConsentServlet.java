@@ -3,15 +3,17 @@ package com.gnomon.epsos.servlet;
 import com.gnomon.epsos.model.Patient;
 import com.gnomon.epsos.service.EpsosHelperService;
 import com.liferay.portal.model.User;
-import java.io.IOException;
-import java.io.OutputStream;
+import org.opensaml.saml2.core.Assertion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import org.apache.log4j.Logger;
-import org.opensaml.saml2.core.Assertion;
+import java.io.IOException;
+import java.io.OutputStream;
 
 public class ConsentServlet extends HttpServlet {
 
@@ -19,13 +21,11 @@ public class ConsentServlet extends HttpServlet {
      *
      */
     private static final long serialVersionUID = 1L;
-    private static Logger log = Logger.getLogger("consentServlet");
+    private static Logger log = LoggerFactory.getLogger("consentServlet");
 
-    public void doGet(HttpServletRequest req,
-            HttpServletResponse res)
-            throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-        byte[] pdf = null;
+        byte[] pdf;
         log.info("consentdocument");
         try {
             HttpSession session = req.getSession();
@@ -64,6 +64,5 @@ public class ConsentServlet extends HttpServlet {
             OutStream.close();
             log.error(ex.getMessage());
         }
-
     }
 }

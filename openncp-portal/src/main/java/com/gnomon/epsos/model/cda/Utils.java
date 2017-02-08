@@ -38,15 +38,16 @@ import javax.xml.transform.stream.StreamResult;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Base64InputStream;
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 public class Utils {
 
-    private static Logger _log = Logger.getLogger("UTILS");
+    private static Logger _log = LoggerFactory.getLogger("UTILS");
     private static final String HmacMD5 = "HmacMD5";
 
     public static String checkString(Object s) {

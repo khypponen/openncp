@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
- *
+ * <p>
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
  * Software Foundation; either version 2.1 of the License, or (at your option)
  * any later version.
- *
+ * <p>
  * This library is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
@@ -14,159 +14,151 @@
 
 package com.gnomon.epsos.util;
 
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+import com.mchange.v2.c3p0.DataSources;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import java.util.Properties;
-
-import org.apache.log4j.Logger;
-
-import com.mchange.v2.c3p0.ComboPooledDataSource;
-import com.mchange.v2.c3p0.DataSources;
-import org.apache.commons.lang.exception.ExceptionUtils;
 
 public class ConnectionPool {
 
-	private static Logger _log = Logger.getLogger("ConnectionPool");
-	public static void cleanUp(Connection con) {
-		_instance._cleanUp(con);
-	}
+    private static Logger _log = LoggerFactory.getLogger("ConnectionPool");
 
-	public static void cleanUp(Connection con, Statement s) {
-		_instance._cleanUp(con, s);
-	}
+    public static void cleanUp(Connection con) {
+        _instance._cleanUp(con);
+    }
 
-	public static void cleanUp(Connection con, Statement s, ResultSet rs) {
-		_instance._cleanUp(con, s, rs);
-	}
+    public static void cleanUp(Connection con, Statement s) {
+        _instance._cleanUp(con, s);
+    }
 
-	public static void destroy() throws SQLException {
-		_instance._destroy();
-	}
+    public static void cleanUp(Connection con, Statement s, ResultSet rs) {
+        _instance._cleanUp(con, s, rs);
+    }
 
-	public static Connection getConnection() throws SQLException {
-		return _instance._getConnection();
-	}
+    public static void destroy() throws SQLException {
+        _instance._destroy();
+    }
 
-	public static Properties getProperties() {
-		return _instance._props;
-	}
+    public static Connection getConnection() throws SQLException {
+        return _instance._getConnection();
+    }
 
-	private ConnectionPool() {
-		try {
+    public static Properties getProperties() {
+        return _instance._props;
+    }
 
-			// Properties
+    private ConnectionPool() {
+        try {
 
-			ClassLoader classLoader = getClass().getClassLoader();
+            // Properties
 
-			_props = new Properties();
+            ClassLoader classLoader = getClass().getClassLoader();
 
-			_props.load(
-				classLoader.getResourceAsStream("connection-pool.properties"));
+            _props = new Properties();
 
-			_props.list(System.out);
+            _props.load(
+                    classLoader.getResourceAsStream("connection-pool.properties"));
 
-			// Pooled data source
+            _props.list(System.out);
 
-			String driverClass = _props.getProperty("driver.class");
-			String jdbcUrl = _props.getProperty("jdbc.url");
-			String user = _props.getProperty("user");
-			String password = _props.getProperty("password");
+            // Pooled data source
 
-			int minPoolSize = 5;
+            String driverClass = _props.getProperty("driver.class");
+            String jdbcUrl = _props.getProperty("jdbc.url");
+            String user = _props.getProperty("user");
+            String password = _props.getProperty("password");
 
-			try {
-				minPoolSize = Integer.parseInt(
-					_props.getProperty("min.pool.size"));
-			}
-			catch (Exception e) {
-			}
+            int minPoolSize = 5;
 
-			int maxPoolSize = 5;
+            try {
+                minPoolSize = Integer.parseInt(
+                        _props.getProperty("min.pool.size"));
+            } catch (Exception e) {
+            }
 
-			try {
-				maxPoolSize = Integer.parseInt(
-					_props.getProperty("max.pool.size"));
-			}
-			catch (Exception e) {
-			}
+            int maxPoolSize = 5;
 
-			int acquireIncrement = 5;
+            try {
+                maxPoolSize = Integer.parseInt(
+                        _props.getProperty("max.pool.size"));
+            } catch (Exception e) {
+            }
 
-			try {
-				acquireIncrement = Integer.parseInt(
-					_props.getProperty("acquire.increment"));
-			}
-			catch (Exception e) {
-			}
+            int acquireIncrement = 5;
 
-			_cpds = new ComboPooledDataSource();
+            try {
+                acquireIncrement = Integer.parseInt(
+                        _props.getProperty("acquire.increment"));
+            } catch (Exception e) {
+            }
 
-			_cpds.setDriverClass(driverClass);
-			_cpds.setJdbcUrl(jdbcUrl);
-			_cpds.setUser(user);
-			_cpds.setPassword(password);
+            _cpds = new ComboPooledDataSource();
 
-			_cpds.setMinPoolSize(minPoolSize);
-			_cpds.setMaxPoolSize(maxPoolSize);
-			_cpds.setAcquireIncrement(acquireIncrement);
-		}
-		catch (Exception e) {
-			_log.error(ExceptionUtils.getStackTrace(e));
-			_log.error(e);
-		}
-	}
+            _cpds.setDriverClass(driverClass);
+            _cpds.setJdbcUrl(jdbcUrl);
+            _cpds.setUser(user);
+            _cpds.setPassword(password);
 
-	private void _cleanUp(Connection con) {
-		_cleanUp(con, null, null);
-	}
+            _cpds.setMinPoolSize(minPoolSize);
+            _cpds.setMaxPoolSize(maxPoolSize);
+            _cpds.setAcquireIncrement(acquireIncrement);
+        } catch (Exception e) {
+            _log.error(ExceptionUtils.getStackTrace(e));
+            _log.error("Exception: " + e);
+        }
+    }
 
-	private void _cleanUp(Connection con, Statement s) {
-		_cleanUp(con, s, null);
-	}
+    private void _cleanUp(Connection con) {
+        _cleanUp(con, null, null);
+    }
 
-	private void _cleanUp(Connection con, Statement s, ResultSet rs) {
-		try {
-			if (rs != null) {
-				rs.close();
-			}
-		}
-		catch (SQLException sqle) {
-			_log.error(sqle);
-		}
+    private void _cleanUp(Connection con, Statement s) {
+        _cleanUp(con, s, null);
+    }
 
-		try {
-			if (s != null) {
-				s.close();
-			}
-		}
-		catch (SQLException sqle) {
-			_log.error(sqle);
-		}
+    private void _cleanUp(Connection con, Statement s, ResultSet rs) {
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+        } catch (SQLException sqle) {
+            _log.error("SQLException: " + sqle);
+        }
 
-		try {
-			if (con != null) {
-				con.close();
-			}
-		}
-		catch (SQLException sqle) {
-			_log.error(sqle);
-		}
-	}
+        try {
+            if (s != null) {
+                s.close();
+            }
+        } catch (SQLException sqle) {
+            _log.error("SQLException: " + sqle);
+        }
 
-	private void _destroy() throws SQLException {
-		DataSources.destroy(_cpds);
-	}
+        try {
+            if (con != null) {
+                con.close();
+            }
+        } catch (SQLException sqle) {
+            _log.error("SQLException: " + sqle);
+        }
+    }
 
-	private Connection _getConnection() throws SQLException {
-		return _cpds.getConnection();
-	}
+    private void _destroy() throws SQLException {
+        DataSources.destroy(_cpds);
+    }
 
-	private static ConnectionPool _instance = new ConnectionPool();
+    private Connection _getConnection() throws SQLException {
+        return _cpds.getConnection();
+    }
 
-	private ComboPooledDataSource _cpds;
-	private Properties _props;
+    private static ConnectionPool _instance = new ConnectionPool();
 
+    private ComboPooledDataSource _cpds;
+    private Properties _props;
 }

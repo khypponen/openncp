@@ -1,9 +1,10 @@
 package com.spirit.epsos.cc.adc;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import com.spirit.epsos.cc.adc.extractor.AutomaticDataCollector;
 
 import eu.epsos.pt.eadc.util.EadcFactory;
+import org.slf4j.LoggerFactory;
 
 /**
  * the EadcReceiverImpl is instantiated from the EADCFactory as a singleton
@@ -12,7 +13,7 @@ import eu.epsos.pt.eadc.util.EadcFactory;
  */
 public class EadcReceiverImpl implements EadcReceiver {
 
-    private static final Logger LOGGER = Logger.getLogger(EadcReceiverImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(EadcReceiverImpl.class);
     AutomaticDataCollector automaticDataCollectorInstance = EadcFactory.INSTANCE.createAutomaticDataCollector();
 
     /**

@@ -50,15 +50,15 @@ import org.apache.axiom.soap.SOAPFactory;
 import org.apache.axiom.soap.SOAPHeaderBlock;
 import org.apache.axiom.soap.impl.llom.soap12.SOAP12HeaderBlockImpl;
 import org.apache.axis2.util.XMLUtils;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.slf4j.Logger;
 import org.joda.time.DateTime;
 import org.opensaml.saml2.core.Assertion;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import tr.com.srdc.epsos.util.Constants;
 import tr.com.srdc.epsos.util.XMLUtil;
-
 
 /*
  *  RespondingGateway_ServiceStub java implementation
@@ -66,7 +66,7 @@ import tr.com.srdc.epsos.util.XMLUtil;
 public class RespondingGateway_ServiceStub extends org.apache.axis2.client.Stub {
 
     protected org.apache.axis2.description.AxisOperation[] _operations;
-    private static Logger LOG = Logger.getLogger(RespondingGateway_ServiceStub.class);
+    private static Logger LOG = LoggerFactory.getLogger(RespondingGateway_ServiceStub.class);
     private static int counter = 0;
     //hashmaps to keep the fault mapping
     private java.util.HashMap faultExceptionNameMap = new java.util.HashMap();

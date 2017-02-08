@@ -19,33 +19,17 @@
  */
 package eu.europa.ec.joinup.ecc.openstork.utils;
 
-import com.liferay.portal.datamodel.HcpRole;
-import com.liferay.portal.stork.util.assertions.HCPIAssertionCreator;
+
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import eu.epsos.assertionvalidator.XSPARole;
 import eu.epsos.util.validation.StringPool;
+import eu.europa.ec.joinup.ecc.openstork.utils.assertions.HCPIAssertionCreator;
+import eu.europa.ec.joinup.ecc.openstork.utils.datamodel.HcpRole;
 import eu.europa.ec.joinup.ecc.openstork.utils.datamodel.StorkAttributes;
 import eu.europa.ec.joinup.ecc.trilliumsecurityutils.saml.HCPIAssertionBuilder;
 import eu.stork.peps.auth.commons.IPersonalAttributeList;
 import eu.stork.peps.auth.commons.PersonalAttribute;
 import eu.stork.peps.auth.commons.STORKAuthnResponse;
-import java.io.IOException;
-import java.io.StringReader;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
 import org.opensaml.saml2.core.Assertion;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,6 +40,20 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import tr.com.srdc.epsos.data.model.PatientId;
 import tr.com.srdc.epsos.util.XMLUtil;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+import java.io.IOException;
+import java.io.StringReader;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
 
 /**
  * This class gathers a set of utilities specifically addressed to the
@@ -72,6 +70,7 @@ public class StorkUtils {
      CONVERSION METHODS
 
      */
+
     /**
      * Converts a given STORK Authentication Response into an epSOS Assertion.
      * In the current implementation only Role (extracted from STORK response)
@@ -85,7 +84,6 @@ public class StorkUtils {
     }
 
     /**
-     *
      * This method will build an epSOS Assertion, with the inclusion of the
      * On-behalf statement, required for the STORK UC2. It will assign some
      * dummy values to certain variables, which are not critical for this UC.
@@ -227,12 +225,13 @@ public class StorkUtils {
      REPRESENTED PERSON INFORMATION EXTRACTION
 
      */
+
     /**
      * Extracts the REPRESENTED person eIdentifier from the Mandate Information,
      * obtained from STORK response.
      *
      * @param storkResponse - The STORK response, containing the on-behalf
-     * relation.
+     *                      relation.
      * @param countryCode
      * @return a List<PatientId>, containing the eIentifier list for the
      * represented person.
@@ -284,11 +283,11 @@ public class StorkUtils {
     /**
      * Extracts the REPRESENTED person DEMOGRAPHIC Information from the Mandate
      * Information, obtained from STORK response.
-     *
+     * <p>
      * The following keys are inserted: - givenName - surname - dateOfBirth
      *
      * @param storkResponse - The STORK response, containing the on-behalf
-     * relation.
+     *                      relation.
      * @return a Map, containing the demographic data.
      */
     public static Map<String, String> getRepresentedDemographics(final STORKAuthnResponse storkResponse) {
@@ -320,7 +319,7 @@ public class StorkUtils {
      * Obtains the represented person information from Mandate section of STORK
      * response in order to build a map with that information (to be used by the
      * portal)
-     *
+     * <p>
      * The following keys of information are extracted: - eIdentifier -
      * givenName - surname - dateOfBirth
      *
@@ -374,6 +373,7 @@ public class StorkUtils {
      HELPER METHODS
 
      */
+
     /**
      * Utility method to obtain role based on the HCP flag and the citizen's
      * title.
@@ -506,7 +506,7 @@ public class StorkUtils {
     /**
      * Obtains a node value from a given XML String and an XPATH Expression
      *
-     * @param xmlContent - The XML content to be parsed.
+     * @param xmlContent      - The XML content to be parsed.
      * @param xpathExpression - The XPATH expression that leads to the node.
      * @return The node value.
      */
@@ -554,16 +554,15 @@ public class StorkUtils {
     }
 
     /**
-     *
      * Obtains all the required attributes to search for a patient for a given
      * country.
-     *
+     * <p>
      * The result is a Map containing ONLY the required attributes, combined in
      * a (key,value), where the Key is the "STORK ID" and Value is "Search Mask
      * id".
-     *
+     * <p>
      * E.g. "(eIdentifier,personal.patient.search.patient.id)"
-     *
+     * <p>
      * This information is obtained from Search Mask files, located at
      * EPSOS_PROPS_PATH/portal/forms/.
      *

@@ -1,29 +1,30 @@
 /**
  * Copyright (C) 2011, 2012 SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti. <epsos@srdc.com.tr>
- *
+ * <p>
  * This file is part of SRDC epSOS NCP.
- *
+ * <p>
  * SRDC epSOS NCP is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * SRDC epSOS NCP is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU General Public License
  * along with SRDC epSOS NCP. If not, see <http://www.gnu.org/licenses/>.
  */
 package tr.com.srdc.epsos.util;
 
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Constants {
 
-    public static final Logger logger = Logger.getLogger(Constants.class);
+    public static final Logger logger = LoggerFactory.getLogger(Constants.class);
 
     public static final String UUID_PREFIX = "urn:uuid:";
     public static final String OID_PREFIX = "urn:oid:";
@@ -63,7 +64,7 @@ public class Constants {
     public static String COUNTRY_PRINCIPAL_SUBDIVISION; // ISO 3166-2
     public static String LANGUAGE_CODE;
 
-    public static String HR_ID_PREFIX="SPProvidedID";
+    public static String HR_ID_PREFIX = "SPProvidedID";
 
 
     /**
@@ -156,8 +157,9 @@ public class Constants {
 
         return path;
     }
-    public static void main (String[] args){
-    	Constants c = new Constants();
-    	
+
+    public static void main(String[] args) {
+        Constants c = new Constants();
+
     }
 }

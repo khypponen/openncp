@@ -5,13 +5,15 @@ import com.gnomon.epsos.service.Demographics;
 import com.gnomon.epsos.service.EpsosHelperService;
 import com.gnomon.epsos.service.SearchMask;
 import com.liferay.portal.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import org.apache.log4j.Logger;
 
 @ManagedBean
 @SessionScoped
@@ -24,7 +26,7 @@ public class NcpBean implements Serializable {
     private boolean showDemographics;
     private List<Identifier> identifiers;
     private List<Demographics> demographics;
-    private static final Logger log = Logger.getLogger("NcpBean");
+    private static final Logger log = LoggerFactory.getLogger("NcpBean");
 
     public NcpBean() {
         new MyBean();
@@ -59,7 +61,7 @@ public class NcpBean implements Serializable {
                 id.setKey(((SearchMask) vec.get(i)).getLabel() + "*");
             }
             identifiers.add(id);
-            log.info(id);
+            log.info("Identifier: " +id);
         }
 
         demographics = new ArrayList<Demographics>();
@@ -110,5 +112,4 @@ public class NcpBean implements Serializable {
     public void setDemographics(List<Demographics> demographics) {
         this.demographics = demographics;
     }
-
 }

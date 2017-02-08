@@ -20,14 +20,13 @@ import eu.epsos.util.IheConstants;
 import eu.europa.ec.joinup.ecc.openstork.utils.StorkUtils;
 import eu.stork.peps.auth.commons.STORKAuthnResponse;
 import eu.stork.peps.auth.engine.STORKSAMLEngine;
-import java.io.Serializable;
-import java.net.URLEncoder;
-import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.opensaml.saml2.core.Assertion;
+import org.primefaces.model.StreamedContent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import tr.com.srdc.epsos.util.Constants;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -35,15 +34,16 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.portlet.PortletRequest;
 import javax.servlet.http.HttpServletRequest;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
-import org.opensaml.saml2.core.Assertion;
-import org.primefaces.model.StreamedContent;
-import tr.com.srdc.epsos.util.Constants;
+import java.io.Serializable;
+import java.net.URLEncoder;
+import java.text.DateFormat;
+import java.util.*;
 
 @ManagedBean
 @SessionScoped
 public class PacBean implements Serializable {
+
+    private static final Logger log = LoggerFactory.getLogger("PacBean");
 
     private static final long serialVersionUID = 1L;
     private String selectedCountry;
@@ -73,7 +73,6 @@ public class PacBean implements Serializable {
     private boolean hasPac;
     private String errorUserAssertion;
     private Map<String, String> onbehalfdemographicsattrs;
-    private static final Logger log = Logger.getLogger("PacBean");
 
     public PacBean() {
         STORKSAMLEngine engine = null;
@@ -133,7 +132,7 @@ public class PacBean implements Serializable {
         log.info("HCP Assertion is going to be created");
         errorUserAssertion = "";
         Object obj = EpsosHelperService.getUserAssertion();
-        log.info(obj);
+        log.info("User Assertion: " + obj);
         if (obj instanceof Assertion) {
             hcpAssertion = (Assertion) obj;
         } else if (obj instanceof String) {

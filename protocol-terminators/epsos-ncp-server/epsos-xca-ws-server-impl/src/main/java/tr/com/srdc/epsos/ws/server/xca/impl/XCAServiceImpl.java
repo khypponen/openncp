@@ -1,37 +1,33 @@
 /**
  * Patient summary and ePrescription XCA server implementation
- *
+ * <p>
  * Patient summary implementation by SRDC Copyright (C) 2011, 2012 SRDC Yazilim
  * Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti. <epsos@srdc.com.tr>
- *
+ * <p>
  * This file is part of SRDC epSOS NCP.
- *
+ * <p>
  * SRDC epSOS NCP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
  * Software Foundation, either version 3 of the License, or (at your option) any
  * later version.
- *
+ * <p>
  * SRDC epSOS NCP is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- *
+ * <p>
  * You should have received a copy of the GNU General Public License along with
  * SRDC epSOS NCP. If not, see <http://www.gnu.org/licenses/>.
- *
+ * <p>
  * ePrescription implementation by Kela (The Social Insurance Institution of
  * Finland) and SALAR/Diabol of Sweden GNU General Public License v3
- *
+ * <p>
  * Corrections/updates by other epSOS project participants
  */
 package tr.com.srdc.epsos.ws.server.xca.impl;
 
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
-import epsos.ccd.gnomon.auditmanager.EventActionCode;
-import epsos.ccd.gnomon.auditmanager.EventLog;
-import epsos.ccd.gnomon.auditmanager.EventOutcomeIndicator;
-import epsos.ccd.gnomon.auditmanager.EventType;
-import epsos.ccd.gnomon.auditmanager.TransactionName;
+import epsos.ccd.gnomon.auditmanager.*;
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
 import epsos.ccd.posam.tm.response.TMResponseStructure;
@@ -45,48 +41,21 @@ import eu.epsos.util.xca.XCAConstants;
 import eu.epsos.validation.datamodel.cda.CdaModel;
 import eu.epsos.validation.datamodel.common.NcpSide;
 import eu.epsos.validation.services.CdaValidationService;
-import fi.kela.se.epsos.data.model.DocumentAssociation;
-import fi.kela.se.epsos.data.model.DocumentFactory;
-import fi.kela.se.epsos.data.model.EPDocumentMetaData;
-import fi.kela.se.epsos.data.model.EPSOSDocument;
-import fi.kela.se.epsos.data.model.EPSOSDocumentMetaData;
-import fi.kela.se.epsos.data.model.MroDocumentMetaData;
-import fi.kela.se.epsos.data.model.PSDocumentMetaData;
+import fi.kela.se.epsos.data.model.*;
 import fi.kela.se.epsos.data.model.SearchCriteria.Criteria;
 import ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.ServiceLoader;
-import java.util.UUID;
-import javax.activation.DataHandler;
-import javax.mail.util.ByteArrayDataSource;
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.namespace.QName;
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryRequest;
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryResponse;
-import oasis.names.tc.ebxml_regrep.xsd.rim._3.AssociationType1;
-import oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationType;
-import oasis.names.tc.ebxml_regrep.xsd.rim._3.ExternalIdentifierType;
-import oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType;
-import oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotType1;
+import oasis.names.tc.ebxml_regrep.xsd.rim._3.*;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryError;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryErrorList;
-import org.apache.axiom.om.OMAbstractFactory;
-import org.apache.axiom.om.OMElement;
-import org.apache.axiom.om.OMFactory;
-import org.apache.axiom.om.OMNamespace;
-import org.apache.axiom.om.OMText;
+import org.apache.axiom.om.*;
 import org.apache.axiom.soap.SOAPHeader;
 import org.apache.axis2.util.XMLUtils;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.joda.time.DateTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -100,9 +69,18 @@ import tr.com.srdc.epsos.util.DateUtil;
 import tr.com.srdc.epsos.util.XMLUtil;
 import tr.com.srdc.epsos.util.http.HTTPUtil;
 
+import javax.activation.DataHandler;
+import javax.mail.util.ByteArrayDataSource;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.namespace.QName;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.util.*;
+
 public class XCAServiceImpl implements XCAServiceInterface {
 
-    public static Logger logger = Logger.getLogger(XCAServiceImpl.class);
+    public static Logger logger = LoggerFactory.getLogger(XCAServiceImpl.class);
     private oasis.names.tc.ebxml_regrep.xsd.query._3.ObjectFactory ofQuery;
     private oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectFactory ofRim;
     private oasis.names.tc.ebxml_regrep.xsd.rs._3.ObjectFactory ofRs;
@@ -916,10 +894,10 @@ public class XCAServiceImpl implements XCAServiceInterface {
     }
 
     private Document transformDocument(Document doc,
-            OMElement registryErrorList,
-            OMElement registryResponseElement,
-            boolean isTranscode,
-            EventLog eventLog) throws Exception {
+                                       OMElement registryErrorList,
+                                       OMElement registryResponseElement,
+                                       boolean isTranscode,
+                                       EventLog eventLog) throws Exception {
 
         logger.debug("Transforming document, isTranscode: " + isTranscode);
 
@@ -987,7 +965,7 @@ public class XCAServiceImpl implements XCAServiceInterface {
 
         boolean documentReturned = false;
 
-        Element soapHeaderElement = null;
+        Element soapHeaderElement;
         String classCodeValue = null;
 
         // Start processing within a labeled block, break on certain errors
@@ -996,7 +974,7 @@ public class XCAServiceImpl implements XCAServiceInterface {
             try {
                 soapHeaderElement = XMLUtils.toDOM(soapHeader);
             } catch (Exception e) {
-                logger.fatal(e);
+                logger.error(null, e);
                 throw e;
             }
 
@@ -1247,7 +1225,7 @@ public class XCAServiceImpl implements XCAServiceInterface {
      */
     @Override
     public AdhocQueryResponse queryDocument(AdhocQueryRequest adhocQueryRequest,
-            SOAPHeader sh, EventLog eventLog) throws Exception {
+                                            SOAPHeader sh, EventLog eventLog) throws Exception {
         AdhocQueryResponse result = ofQuery.createAdhocQueryResponse();
         try {
             AdhocQueryResponseBuilder(adhocQueryRequest, result, sh, eventLog);
@@ -1292,7 +1270,5 @@ public class XCAServiceImpl implements XCAServiceInterface {
         } else {
             return null;
         }
-
     }
-
 }

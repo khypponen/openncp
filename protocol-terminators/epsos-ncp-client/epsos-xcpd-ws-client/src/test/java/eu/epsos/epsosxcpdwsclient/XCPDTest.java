@@ -1,20 +1,19 @@
 package eu.epsos.epsosxcpdwsclient;
 
 import eu.epsos.assertionvalidator.XSPARole;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import org.junit.Ignore;
-import org.opensaml.saml2.core.Assertion;
-
-import tr.com.srdc.epsos.data.model.PatientDemographics;
-import tr.com.srdc.epsos.data.model.PatientId;
 import eu.epsos.exceptions.NoPatientIdDiscoveredException;
 import eu.epsos.protocolterminators.integrationtest.common.HCPIAssertionCreator;
 import eu.epsos.protocolterminators.integrationtest.common.TestConstants;
 import eu.epsos.pt.ws.client.xcpd.XcpdInitGateway;
+import org.junit.Ignore;
+import org.opensaml.saml2.core.Assertion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import tr.com.srdc.epsos.data.model.PatientDemographics;
+import tr.com.srdc.epsos.data.model.PatientId;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Test class for invoking the XCPD Web Services (epsos-xcpd-ws-server) using the epsos-xcpd-ws-client. For a successful
@@ -25,6 +24,8 @@ import eu.epsos.pt.ws.client.xcpd.XcpdInitGateway;
 
 @Ignore
 public class XCPDTest {
+
+    private static final Logger logger = LoggerFactory.getLogger(XCPDTest.class);
 
     //parameters needed to run this test
     private static final String PATIENT_COUNTRY = TestConstants.PATIENT_COUNTRY;
@@ -57,15 +58,14 @@ public class XCPDTest {
         try {
             List<PatientDemographics> result;
             result = XcpdInitGateway.patientDiscovery(patientDemographics,
-                                                      idAssertion,
-                                                      PATIENT_COUNTRY);
+                    idAssertion,
+                    PATIENT_COUNTRY);
 
             System.out.println("result: " + result);
 
         } catch (NoPatientIdDiscoveredException ex) {
-            Logger.getLogger(XCPDTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
         }
-
     }
 
     public static void main(String[] args) {

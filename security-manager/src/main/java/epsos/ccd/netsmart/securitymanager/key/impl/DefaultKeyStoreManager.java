@@ -17,29 +17,24 @@
 package epsos.ccd.netsmart.securitymanager.key.impl;
 
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
-import epsos.ccd.netsmart.securitymanager.SignatureManager;
 import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
 import epsos.ccd.netsmart.securitymanager.key.KeyStoreManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.security.Key;
-import java.security.KeyPair;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.security.UnrecoverableKeyException;
+import java.security.*;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
-import org.apache.log4j.Logger;
 
 /**
- *
  * @author jerouris
  */
 public final class DefaultKeyStoreManager implements KeyStoreManager {
+
+    private static final Logger logger = LoggerFactory.getLogger(DefaultKeyStoreManager.class);
 
     private final String KEYSTORE_LOCATION;
     private final String TRUSTSTORE_LOCATION;
@@ -84,13 +79,13 @@ public final class DefaultKeyStoreManager implements KeyStoreManager {
                 return new KeyPair(publicKey, (PrivateKey) key);
             }
         } catch (UnrecoverableKeyException e) {
-            Logger.getLogger(SignatureManager.class.getName()).error(null, e);
+            logger.error(null, e);
             throw new SMgrException("Key with alias:" + alias + " is unrecoverable", e);
         } catch (NoSuchAlgorithmException e) {
-            Logger.getLogger(SignatureManager.class.getName()).error(null, e);
+            logger.error(null, e);
             throw new SMgrException("Key with alias:" + alias + " uses an incompatible algorithm", e);
         } catch (KeyStoreException e) {
-            Logger.getLogger(SignatureManager.class.getName()).error(null, e);
+            logger.error(null, e);
             throw new SMgrException("Key with alias:" + alias + " not found", e);
         }
         return null;
@@ -107,13 +102,13 @@ public final class DefaultKeyStoreManager implements KeyStoreManager {
             return keyStore;
 
         } catch (IOException ex) {
-            Logger.getLogger(SignatureManager.class.getName()).error(null, ex);
+            logger.error(null, ex);
         } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(SignatureManager.class.getName()).error(null, ex);
+            logger.error(null, ex);
         } catch (CertificateException ex) {
-            Logger.getLogger(SignatureManager.class.getName()).error(null, ex);
+            logger.error(null, ex);
         } catch (KeyStoreException ex) {
-            Logger.getLogger(SignatureManager.class.getName()).error(null, ex);
+            logger.error(null, ex);
         }
         return null;
     }
@@ -124,10 +119,9 @@ public final class DefaultKeyStoreManager implements KeyStoreManager {
             java.security.cert.Certificate cert = keyStore.getCertificate(alias);
             return cert;
         } catch (KeyStoreException ex) {
-            Logger.getLogger(DefaultKeyStoreManager.class.getName()).error(null, ex);
+            logger.error(null, ex);
             throw new SMgrException("Certificate with alias: " + alias + " not found in keystore", ex);
         }
-
     }
 
     @Override
@@ -138,13 +132,13 @@ public final class DefaultKeyStoreManager implements KeyStoreManager {
             trustStore.load(keystoreStream, TRUSTSTORE_PASSWORD.toCharArray());
             return trustStore;
         } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(DefaultKeyStoreManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(null, ex);
         } catch (NoSuchAlgorithmException ex) {
-            java.util.logging.Logger.getLogger(DefaultKeyStoreManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(null, ex);
         } catch (CertificateException ex) {
-            java.util.logging.Logger.getLogger(DefaultKeyStoreManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(null, ex);
         } catch (KeyStoreException ex) {
-            java.util.logging.Logger.getLogger(DefaultKeyStoreManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(null, ex);
         }
         return null;
     }

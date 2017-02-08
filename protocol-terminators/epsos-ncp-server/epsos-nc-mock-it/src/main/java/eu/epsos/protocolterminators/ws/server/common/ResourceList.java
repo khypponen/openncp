@@ -14,7 +14,8 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * list resources available from the classpath
@@ -23,7 +24,8 @@ import org.apache.log4j.Logger;
  * 
  */
 public class ResourceList {
-	static Logger logger = Logger.getLogger(ResourceList.class);
+
+	private static Logger logger = LoggerFactory.getLogger(ResourceList.class);
 	/**
 	 * for all elements of java.class.path get a Collection of resources Pattern
 	 * pattern = Pattern.compile(".*"); gets all resources
@@ -33,7 +35,8 @@ public class ResourceList {
 	 * @return the resources in the order they are found
 	 */
 	public static Collection<String> getResources(Pattern pattern) {
-		ArrayList<String> retval = new ArrayList<String>();
+
+	    ArrayList<String> retval = new ArrayList<>();
 		URLClassLoader classLoader = (URLClassLoader)Thread.currentThread().getContextClassLoader();
 		URL[] classPathElements = classLoader.getURLs();
 		for (URL element : classPathElements) {
@@ -50,7 +53,8 @@ public class ResourceList {
 
 	private static Collection<String> getResources(URI element,
 			Pattern pattern) {
-		ArrayList<String> retval = new ArrayList<String>();
+
+		ArrayList<String> retval = new ArrayList<>();
 		File file = new File(element);
 		if (file.isDirectory()) {
 			retval.addAll(getResourcesFromDirectory(file, pattern));
@@ -62,7 +66,8 @@ public class ResourceList {
 
 	private static Collection<String> getResourcesFromJarFile(File file,
 			Pattern pattern) {
-		ArrayList<String> retval = new ArrayList<String>();
+
+		ArrayList<String> retval = new ArrayList<>();
 		ZipFile zf;
 		try {
 			zf = new ZipFile(file);
@@ -90,7 +95,8 @@ public class ResourceList {
 
 	private static Collection<String> getResourcesFromDirectory(File directory,
 			Pattern pattern) {
-		ArrayList<String> retval = new ArrayList<String>();
+
+	    ArrayList<String> retval = new ArrayList<>();
 		File[] fileList = directory.listFiles();
 		for (File file : fileList) {
 			if (file.isDirectory()) {
@@ -118,7 +124,8 @@ public class ResourceList {
 	 *            there are no args
 	 */
 	public static void main(String[] args) {
-		Pattern pattern;
+
+	    Pattern pattern;
 		if (args.length < 1) {
 			pattern = Pattern.compile(".*");
 		} else {
@@ -128,6 +135,5 @@ public class ResourceList {
 		for (String name : list) {
 			System.out.println(name);
 		}
-
 	}
 }

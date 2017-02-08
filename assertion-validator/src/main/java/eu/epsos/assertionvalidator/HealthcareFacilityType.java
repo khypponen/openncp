@@ -14,6 +14,7 @@ package eu.epsos.assertionvalidator;
  * Name:  urn:epsos:names:wp3.4:subject:healthcare-facility-type
  */
 public enum HealthcareFacilityType {
+
     HOSPITAL("Hospital"),
     RESIDENT_PHYSICIAN("Resident Physician"),
     PHARMACY("Pharmacy"),
@@ -21,7 +22,7 @@ public enum HealthcareFacilityType {
 
     private final String facilityType;
 
-    private HealthcareFacilityType(final String facilityType) {
+    HealthcareFacilityType(final String facilityType) {
         this.facilityType = facilityType;
     }
 
@@ -29,5 +30,4 @@ public enum HealthcareFacilityType {
     public String toString() {
         return facilityType;
     }
-
 }

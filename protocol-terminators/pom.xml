@@ -175,7 +175,7 @@
 				<artifactId>herasaf-xacml-core</artifactId>
 				<version>1.0.1.RELEASE</version>
 			</dependency>
-			<dependency>
+			<!--<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
 				<version>1.2.17</version>
@@ -189,11 +189,11 @@
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
 				<version>1.6.6</version>
-			</dependency>
+			</dependency>-->
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
-				<version>4.10</version>
+				<version>${junit.version}</version>
 			</dependency>
 			<!-- axis2 -->
 			<dependency>
@@ -312,8 +312,8 @@
 	<properties>
 		<!-- project -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.source.version>1.7</project.source.version>
-		<project.target.version>1.7</project.target.version>
+		<project.source.version>${java.version}</project.source.version>
+		<project.target.version>${java.version}</project.target.version>
 		<project.axis2ReleaseVersion>1.6.2</project.axis2ReleaseVersion>
 		<project.axiomReleaseVersion>1.2.13</project.axiomReleaseVersion>
 
@@ -327,8 +327,8 @@
 			<project.securityManagerVersion>2.1.1</project.securityManagerVersion> <project.defaultPolicyManagerVersion>1.2.1</project.defaultPolicyManagerVersion>
 			<project.eadcVersion>1.0.3</project.eadcVersion> -->
 		<!-- log -->
-		<project.log4jVersion>1.2.17</project.log4jVersion>
-		<project.slf4j-log4j12Version>1.6.6</project.slf4j-log4j12Version>
+		<!--<project.log4jVersion>1.2.17</project.log4jVersion>
+		<project.slf4j-log4j12Version>1.6.6</project.slf4j-log4j12Version>-->
 		<!-- tests -->
 		<project.jUnitVersion>4.10</project.jUnitVersion>
 	</properties>
@@ -401,7 +401,7 @@
 	</build>
 
 	<!-- ================== Repositories ================== -->
-	<repositories>
+	<!--<repositories>
 		<repository>
 			<name>Official OpenSaml Repository</name>
 			<id>openSamlRep</id>
@@ -417,7 +417,7 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-	</repositories>
+	</repositories>-->
 	<!-- ================== Developers ================== -->
 	<developers>
 		<developer>

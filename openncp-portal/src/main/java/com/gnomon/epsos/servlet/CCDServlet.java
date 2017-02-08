@@ -14,22 +14,20 @@ import epsos.openncp.protocolterminator.clientconnector.EpsosDocument1;
 import epsos.openncp.protocolterminator.clientconnector.GenericDocumentCode;
 import eu.epsos.util.EvidenceUtils;
 import eu.epsos.util.IheConstants;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.joda.time.DateTime;
+import org.opensaml.saml2.core.Assertion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import tr.com.srdc.epsos.util.Constants;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import org.apache.commons.lang.exception.ExceptionUtils;
-import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
-import org.opensaml.saml2.core.Assertion;
-import org.w3c.dom.Document;
-import tr.com.srdc.epsos.util.Constants;
+import java.io.*;
 
 public class CCDServlet extends HttpServlet {
 
@@ -37,10 +35,10 @@ public class CCDServlet extends HttpServlet {
      *
      */
     private static final long serialVersionUID = 1L;
-    private static Logger log = Logger.getLogger(CCDServlet.class.getName());
+    private static Logger log = LoggerFactory.getLogger(CCDServlet.class.getName());
 
     public void doGet(HttpServletRequest req,
-            HttpServletResponse res)
+                      HttpServletResponse res)
             throws ServletException, IOException {
 
         String exportType = ParamUtil.getString(req, "exportType");
@@ -217,6 +215,5 @@ public class CCDServlet extends HttpServlet {
             OutStream.close();
             log.error(ExceptionUtils.getStackTrace(ex));
         }
-
     }
 }

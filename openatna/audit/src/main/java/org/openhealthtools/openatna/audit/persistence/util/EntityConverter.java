@@ -23,7 +23,7 @@ package org.openhealthtools.openatna.audit.persistence.util;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import org.openhealthtools.openatna.anom.AtnaCode;
 import org.openhealthtools.openatna.anom.AtnaMessage;
 import org.openhealthtools.openatna.anom.AtnaMessageObject;
@@ -58,6 +58,7 @@ import org.openhealthtools.openatna.audit.persistence.model.codes.EventTypeCodeE
 import org.openhealthtools.openatna.audit.persistence.model.codes.ObjectIdTypeCodeEntity;
 import org.openhealthtools.openatna.audit.persistence.model.codes.ParticipantCodeEntity;
 import org.openhealthtools.openatna.audit.persistence.model.codes.SourceCodeEntity;
+import org.slf4j.LoggerFactory;
 
 /**
  * Converts between ANOM objects and persistable objects.
@@ -70,7 +71,7 @@ import org.openhealthtools.openatna.audit.persistence.model.codes.SourceCodeEnti
 
 public class EntityConverter {
 
-	public static Logger logger = Logger.getLogger(EntityConverter.class);
+	public static Logger logger = LoggerFactory.getLogger(EntityConverter.class);
 	
     private EntityConverter() {
     }

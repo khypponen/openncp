@@ -15,27 +15,29 @@ import epsos.openncp.protocolterminator.clientconnector.GenericDocumentCode;
 import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentResponse;
 import eu.epsos.util.EvidenceUtils;
 import eu.epsos.util.IheConstants;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.joda.time.DateTime;
+import org.opensaml.saml2.core.Assertion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import tr.com.srdc.epsos.util.Constants;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import org.apache.commons.lang.exception.ExceptionUtils;
-import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
-import org.opensaml.saml2.core.Assertion;
-import tr.com.srdc.epsos.util.Constants;
 
 public class DispenseServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private static Logger log = Logger.getLogger("dispenseServlet");
+    private static Logger log = LoggerFactory.getLogger("dispenseServlet");
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -199,7 +201,7 @@ public class DispenseServlet extends HttpServlet {
                     OutStream.flush();
                     OutStream.close();
                 } else {
-                    log.error("UPLOAD DISP DOC RESPONSE ERROR", null);
+                    log.error("UPLOAD DISP DOC RESPONSE ERROR");
                     res.setContentType("text/html");
                     String message = resp.toString();
                     res.setHeader("Cache-Control", "no-cache");

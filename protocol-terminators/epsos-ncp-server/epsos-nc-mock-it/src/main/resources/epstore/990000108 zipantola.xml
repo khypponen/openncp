@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:ns2="urn:epsos-org:ep:medication" classCode="DOCCLIN" moodCode="EVN">
+   <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+   <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.1"/>
+   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+   <id extension="ERICSSON_TEST/20130731095616366-3FE8E83D" root="2.16.840.1.113883.2.7.10.10.5"/>
+   <code code="57833-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="eRecept">
+      <translation displayName="ePrescription"/>
+   </code>
+   <title>ePrescription (epSOS/Croatia)</title>
+   <effectiveTime value="20170112105326"/>
+   <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" codeSystemVersion="913-20091020" displayName="normalno">
+      
+      <translation displayName="normal">
+         <translation displayName="normalno"/>
+      </translation>
+   </confidentialityCode>
+   <languageCode code="hr-HR"/>
+   <setId nullFlavor="NI"/>
+   <recordTarget contextControlCode="OP" typeCode="RCT">
+      <patientRole classCode="PAT">
+         <id extension="990000108" root="2.16.840.1.113883.2.7.2.2"/>
+         <addr>
+            <country>HR</country>
+			      </addr>
+         <telecom nullFlavor="NI"/>
+         <patient classCode="PSN" determinerCode="INSTANCE">
+            <name>
+               <given>DOKTOR</given>
+               <family>TESTNI SEDMI</family>
+				        </name>
+            <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="913-20091020" displayName="muški spol">
+               
+               <translation displayName="Male">
+                  <translation displayName="Muško"/>
+               </translation>
+            </administrativeGenderCode>
+            <birthTime value="19410911"/>
+         </patient>
+      </patientRole>
+   </recordTarget>
+   <author>
+      <functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO" codeSystemVersion="2008" displayName="Doktori/doktorice medicine">
+         
+         <translation displayName="Medical doctors">
+            <translation displayName="Doktori/ce medicine"/>
+         </translation>
+      </functionCode>
+      <time value="20170112105326"/>
+      <assignedAuthor classCode="ASSIGNED">
+         <id extension="1296299" root="2.16.840.1.113883.2.7.1.1"/>
+         <telecom nullFlavor="NI"/>
+         <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+            <name>
+               <given>IVANA</given>
+               <family>RAJLIĆ</family>
+				        </name>
+         </assignedPerson>
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id extension="021902194" root="2.16.840.1.113883.2.7.1.4"/>
+            <name>DOM ZDRAVLJA METKOVIĆ</name>
+            <telecom nullFlavor="NI"/>
+            <addr>
+               <country>HR</country>
+               <state nullFlavor="NI"/>
+				        </addr>
+         </representedOrganization>
+      </assignedAuthor>
+   </author>
+   <custodian>
+      <assignedCustodian classCode="ASSIGNED">
+         <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id extension="021902194" root="2.16.840.1.113883.2.7.1.4"/>
+            <name>DOM ZDRAVLJA METKOVIĆ</name>
+            <telecom nullFlavor="NI"/>
+            <addr>
+               <country>HR</country>
+				        </addr>
+         </representedCustodianOrganization>
+      </assignedCustodian>
+   </custodian>
+   <legalAuthenticator contextControlCode="OP" typeCode="LA">
+      <time value="20170112105326"/>
+      <signatureCode code="S"/>
+      <assignedEntity classCode="ASSIGNED">
+         <id extension="1296299" root="2.16.840.1.113883.2.7.1.1"/>
+         <telecom nullFlavor="NI"/>
+         <assignedPerson>
+            <name>
+               <family>RAJLIĆ</family>
+               <given>IVANA</given>
+				        </name>
+         </assignedPerson>
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id extension="021902194" root="2.16.840.1.113883.2.7.1.4"/>
+            <name>DOM ZDRAVLJA METKOVIĆ</name>
+            <addr use="PST">
+               <country>HR</country>
+				        </addr>
+         </representedOrganization>
+      </assignedEntity>
+   </legalAuthenticator>
+   <relatedDocument typeCode="XFRM">
+      <parentDocument>
+         <id extension="ERICSSON_TEST/20130731095616366-3FE8E83D" root="2.16.840.1.113883.2.7.10.10.5"/>
+      </parentDocument>
+   </relatedDocument>
+   <component>
+      <structuredBody>
+         <component>
+            <section>
+               <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.1"/>
+               <id extension="ERICSSON_TEST/20130731095616366-3FE8E83D" root="2.16.840.1.113883.2.7.10.10.5"/>
+               <code code="57828-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.34" displayName="Recepti">
+                  <translation displayName="Prescriptions"/>
+               </code>
+               <title>Zipantola</title>
+               <text ID="eP_as_text">
+                    <paragraph>
+                     <content ID="FINSTRUCT">1x1
+prije obroka</content>
+                  </paragraph>
+                  <paragraph>
+                     <content ID="ORIGNAME">Zipantola</content>
+                  </paragraph>
+               </text>
+               <author>
+                  <functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO" codeSystemVersion="2008" displayName="Doktori/doktorice medicine">
+                     
+                     <translation displayName="Medical doctors">
+                        <translation displayName="Doktori/ce medicine"/>
+                     </translation>
+                  </functionCode>
+                  <time value="20170112105326"/>
+                  <assignedAuthor classCode="ASSIGNED">
+                     <id extension="1296299" root="2.16.840.1.113883.2.7.1.1"/>
+                     <telecom nullFlavor="NI"/>
+                     <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                        <name>
+                           <given>IVANA</given>
+                           <family>RAJLIĆ</family>
+								                </name>
+                     </assignedPerson>
+                     <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+                        <id extension="021902194" root="2.16.840.1.113883.2.7.1.4"/>
+                        <name>DOM ZDRAVLJA METKOVIĆ</name>
+                        <telecom nullFlavor="NI"/>
+                        <addr>
+                           <country>HR</country>
+                           <state nullFlavor="NA"/>
+								                </addr>
+                     </representedOrganization>
+                  </assignedAuthor>
+               </author>
+               <entry>
+                  <substanceAdministration classCode="SBADM" moodCode="INT">
+                     <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                     <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.2"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.11"/>
+                     <id extension="ERICSSON_TEST/20130731095616366-3FE8E83D" root="2.16.840.1.113883.2.7.10.10.5"/>
+                     <statusCode nullFlavor="UNK"/>
+                     <effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                        <low nullFlavor="UNK"/>
+                        <high nullFlavor="UNK"/>
+                     </effectiveTime>
+                     <effectiveTime nullFlavor="UNK"/>
+                     <doseQuantity nullFlavor="NA"/>
+                     <consumable>
+                        <manufacturedProduct classCode="MANU">
+                           <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+                           <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                           <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                              <code code="A02BC02101" codeSystem="2.16.840.1.113883.6.88" displayName="Zipantola">
+                                 <originalText>
+                                            <reference value="#ORIGNAME"/>
+                                 </originalText>
+                              </code>
+                              <name>Zipantola</name>
+                              <ns2:formCode code="10225000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="želučanootporna tableta">
+                                 
+                                 <ns2:translation displayName="Gastro-resistant tablet">
+                                    <ns2:translation displayName="10225000"/>
+                                 </ns2:translation>
+                              </ns2:formCode>
+                              <ns2:asContent classCode="CONT">
+                                 <ns2:containerPackagedMedicine classCode="CONT" determinerCode="INSTANCE">
+                                    <ns2:name>Zipantola</ns2:name>
+                                    <ns2:formCode code="30007000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" codeSystemVersion="2010" displayName="blister">
+                                       
+                                       <ns2:translation displayName="Blister">
+                                          <ns2:translation displayName="30007000"/>
+                                       </ns2:translation>
+                                    </ns2:formCode>
+                                    <ns2:capacityQuantity unit="1" value="28"/>
+                                 </ns2:containerPackagedMedicine>
+                              </ns2:asContent>
+                              <ns2:ingredient classCode="ACTI">
+                                 <ns2:quantity>
+                                    <ns2:numerator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" unit="mg" value="20" xsi:type="ns2:PQ"/>
+                                    <ns2:denominator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" unit="1" value="1" xsi:type="ns2:PQ"/>
+                                 </ns2:quantity>
+                                 <ns2:ingredient classCode="MMAT" determinerCode="KIND">
+                                    <ns2:code code="A02BC02" codeSystem="2.16.840.1.113883.6.73" codeSystemName="Anatomical Therapeutic Chemical" codeSystemVersion="January 2010" displayName="pantoprazol">
+                                       
+                                       <ns2:translation displayName="pantoprazole">
+                                          <ns2:translation displayName="pantoprazol"/>
+                                       </ns2:translation>
+                                    </ns2:code>
+                                    <ns2:name>pantoprazol</ns2:name>
+                                 </ns2:ingredient>
+                              </ns2:ingredient>
+                           </manufacturedMaterial>
+                           <ns2:subjectOf5 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </manufacturedProduct>
+                     </consumable>
+                     <entryRelationship typeCode="COMP">
+                        <supply classCode="SPLY" moodCode="RQO">
+                           <independentInd value="false"/>
+                           <quantity unit="1" value="1"/>
+                        </supply>
+                     </entryRelationship>
+                     <entryRelationship inversionInd="true" typeCode="SUBJ">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <code code="SUBST" codeSystem="2.16.840.1.113883.5.6" codeSystemName="ActClass" displayName="Substitution"/>
+                           <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" code="G" codeSystem="2.16.840.1.113883.5.1070" codeSystemName="SubstanceAdminSubstitution" codeSystemVersion="913-20091020" displayName="generički" xsi:type="CE">
+                              
+                              <translation displayName="Generic">
+                                 <translation displayName="Generik"/>
+                              </translation>
+                           </value>
+                        </observation>
+                     </entryRelationship>
+                     <entryRelationship inversionInd="true" typeCode="SUBJ">
+                        <act classCode="ACT" moodCode="INT">
+                           <templateId root="2.16.840.1.113883.10.20.1.43"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.3.1"/>
+                           <code code="FINSTRUCT" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode" displayName="Upute za onoga tko izdaje lijek"/>
+                           <text>
+                              <reference value="#FINSTRUCT"/>
+                           </text>
+                           <statusCode code="completed"/>
+                        </act>
+                     </entryRelationship>
+                  </substanceAdministration>
+               </entry>
+            </section>
+         </component>
+      </structuredBody>
+   </component>
+</ClinicalDocument>

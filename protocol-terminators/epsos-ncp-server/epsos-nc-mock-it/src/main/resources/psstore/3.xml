@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+    <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+    <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3"/>
+    <id extension="0000000000001122" root="1.2.250.1.197.1.100.6"/>
+    <code code="60591-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Patient Summary"/>
+    <title>Synthèse médicale epSOS</title>
+    <effectiveTime value="201109131306+0200"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+    <languageCode code="fr-FR"/>
+    <setId extension="6b9b75fe-3ef4-4a07-933e-8d7d2483fa20" root="1.2.250.1.197"/>
+    <versionNumber value="11"/>
+    <recordTarget>
+      <patientRole>
+        <id extension="3" root="1.2.250.1.213.1.4.2"/>
+        <addr>
+          <streetAddressLine>10 Rue Jean Marin</streetAddressLine>
+          <postalCode>35700</postalCode>
+          <city>RENNES</city>
+          <state nullFlavor="UNK"/>
+          <country>FR</country>
+        </addr>
+        <telecom value="tel:0299200075" use="HP"/>
+        <telecom value="mailto:mdumont@noname.fr"/>
+        <patient>
+          <name>
+            <given>Jerome</given>
+            <family>Dumont3</family>
+          </name>
+          <administrativeGenderCode code="male" codeSystem="2.16.840.1.113883.5.1" displayName="Masculin"/>
+          <birthTime value="19521005"/>
+          <guardian nullFlavor="NA">
+            <guardianPerson nullFlavor="NA"/>
+          </guardian>
+          <languageCommunication>
+            <languageCode code="es-ES"/>
+          </languageCommunication>
+        </patient>
+        <providerOrganization>
+          <id/>
+          <name nullFlavor="UNK"/>
+        </providerOrganization>
+      </patientRole>
+    </recordTarget>
+    <author>
+      <time value="201109131306+0200"/>
+      <assignedAuthor>
+        <id extension="00B1034996" root="1.2.250.1.71.4.2.1"/>
+        <addr>
+          <streetAddressLine>CABINET M. MEDECIN  2  RUE DE CHATEAUDUN </streetAddressLine>
+          <postalCode>75009</postalCode>
+          <city>PARIS</city>
+          <state nullFlavor="UNK"/>
+          <country>FR</country>
+        </addr>
+        <telecom value="tel:+0144533643" use="WP"/>
+        <telecom value="mailto:alain.perie@asipsante.fr"/>
+        <assignedPerson>
+          <name>
+            <prefix>22</prefix>
+            <given>Paul</given>
+            <family>MEDECIN3499</family>
+          </name>
+        </assignedPerson>
+        <representedOrganization>
+          <id extension="19921204400010" root="1.2.250.1.71.4.2.2"/>
+          <name>Université de Paris Ouest Nanterre La Défense</name>
+          <telecom value="tel:+33140977533" use="WP"/>
+          <addr>
+            <streetAddressLine>200 avenue de la République</streetAddressLine>
+            <postalCode>92000</postalCode>
+            <city>NANTERRE</city>
+            <state nullFlavor="UNK"/>
+            <country>FR</country>
+          </addr>
+        </representedOrganization>
+      </assignedAuthor>
+    </author>
+    <custodian>
+      <assignedCustodian>
+        <representedCustodianOrganization>
+          <id extension="19921204400010" root="1.2.250.1.71.4.2.2"/>
+          <name>Université de Paris Ouest Nanterre La Défense</name>
+          <telecom value="tel:+33140977533" use="WP"/>
+          <addr>
+            <streetAddressLine>200 avenue de la République</streetAddressLine>
+            <postalCode>92000</postalCode>
+            <city>NANTERRE</city>
+            <state nullFlavor="UNK"/>
+            <country>FR</country>
+          </addr>
+        </representedCustodianOrganization>
+      </assignedCustodian>
+    </custodian>
+    <legalAuthenticator>
+      <time value="201109131306+0200"/>
+      <signatureCode code="S"/>
+      <assignedEntity>
+        <id extension="00B1034996" root="1.2.250.1.71.4.2.1"/>
+        <assignedPerson>
+          <name>
+            <prefix>22</prefix>
+            <given>Paul</given>
+            <family>MEDECIN3499</family>
+          </name>
+        </assignedPerson>
+        <representedOrganization>
+          <id extension="19921204400010" root="1.2.250.1.71.4.2.2"/>
+          <name>Université de Paris Ouest Nanterre La Défense</name>
+          <telecom value="tel:+33140977533" use="WP"/>
+          <addr>
+            <streetAddressLine>200 avenue de la République</streetAddressLine>
+            <postalCode>92000</postalCode>
+            <city>NANTERRE</city>
+            <state nullFlavor="UNK"/>
+            <country>FR</country>
+          </addr>
+        </representedOrganization>
+      </assignedEntity>
+    </legalAuthenticator>
+    <participant typeCode="IND" nullFlavor="UNK">
+      <associatedEntity classCode="CAREGIVER" nullFlavor="UNK"/>
+    </participant>
+    <participant typeCode="IND" xmlns="urn:hl7-org:v3">
+      <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88"/>
+      <associatedEntity classCode="PRS">
+        <id/>
+        <scopingOrganization>
+          <name>SESCAM</name>
+          <telecom value="tel:+34999887766" use="WP"/>
+          <telecom value="mailto:contact@sescam.com"/>
+          <addr>
+            <postalCode nullFlavor="UNK"/>
+            <city nullFlavor="UNK"/>
+            <state nullFlavor="UNK"/>
+            <country nullFlavor="UNK"/>
+          </addr>
+        </scopingOrganization>
+      </associatedEntity>
+    </participant>
+    <documentationOf>
+      <serviceEvent>
+        <effectiveTime>
+          <low nullFlavor="UNK"/>
+          <high value="201109131306+0200"/>
+        </effectiveTime>
+      </serviceEvent>
+    </documentationOf>
+    <component>
+      <structuredBody>
+        <component>
+          <section>
+            <templateId root="2.16.840.1.113883.10.20.1.2"/>
+            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+            <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ALLERGIES, ADVERSE REACTIONS, ALERTS"/>
+            <title>Allergies et autres réactions adverses</title>
+            <text>
+              <table border="1">
+                <tbody>
+                  <tr>
+                    <th>Description</th>
+                    <th>Date de survenue</th>
+                    <th>Type</th>
+                    <th>Manifestation</th>
+                    <th>Sévérité</th>
+                    <th>Commentaire</th>
+                  </tr>
+                  <tr ID="allergy-1">
+                    <td>IBUPROFENE</td>
+                    <td>15/10/2009</td>
+                    <td>Intolérance médicamenteuse</td>
+                    <td> </td>
+                    <td>Léger à modéré</td>
+                    <td/>
+                  </tr>
+                </tbody>
+              </table>
+            </text>
+            <entry typeCode="DRIV">
+              <act classCode="ACT" moodCode="EVN">
+                <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                <id/>
+                <code nullFlavor="NA"/>
+                <statusCode code="active"/>
+                <effectiveTime>
+                  <low value="20091015"/>
+                </effectiveTime>
+                <entryRelationship typeCode="SUBJ" inversionInd="false">
+                  <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                    <id extension="1299766265522" root="1.2.250.1.197"/>
+                    <code code="59037007" codeSystem="2.16.840.1.113883.6.96" displayName="Intolérance médicamenteuse"/>
+                    <text>
+                      <reference value="#allergy-1"/>
+                    </text>
+                    <statusCode code="completed"/>
+                    <effectiveTime>
+                      <low value="20091015"/>
+                    </effectiveTime>
+                    <value xsi:type="CD">
+                      <originalText mediaType="text/xml">
+                        <reference value="#allergy-1"/>
+                      </originalText>
+                    </value>
+                    <participant typeCode="CSM">
+                      <participantRole classCode="MANU">
+                        <playingEntity classCode="MMAT">
+                          <code code="C01EB16" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" displayName="IBUPROFENE">
+                            <originalText mediaType="text/xml">
+                              <reference value="#allergy-1"/>
+                            </originalText>
+                          </code>
+                        </playingEntity>
+                      </participantRole>
+                    </participant>
+                    <entryRelationship typeCode="SUBJ" inversionInd="true">
+                      <observation classCode="OBS" moodCode="EVN">
+                        <templateId root="2.16.840.1.113883.10.20.1.32"/>
+                        <templateId root="2.16.840.1.113883.10.20.1.35"/>
+                        <code code="SEV" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Severity"/>
+                        <text>
+                          <reference value="#allergy-1"/>
+                        </text>
+                        <statusCode code="completed"/>
+                        <value xsi:type="CD" code="371923003" codeSystem="2.16.840.1.113883.6.96" displayName="Léger à modéré"/>
+                      </observation>
+                    </entryRelationship>
+                  </observation>
+                </entryRelationship>
+              </act>
+            </entry>
+          </section>
+        </component>
+        <component>
+          <section>
+            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+            <templateId root="2.16.840.1.113883.10.20.1.12"/>
+            <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF PROCEDURES"/>
+            <title>Historique des interventions chirurgicales</title>
+            <text>
+              <table border="1">
+                <tbody>
+                  <tr>
+                    <th>Procédure</th>
+                    <th>Date</th>
+                    <th>Commentaire</th>
+                  </tr>
+                  <tr ID="antchir-1" styleCode="New">
+                    <td>NA</td>
+                    <td> </td>
+                    <td/>
+                  </tr>
+                </tbody>
+              </table>
+            </text>
+            <entry typeCode="DRIV">
+              <procedure classCode="PROC" moodCode="INT" nullFlavor="NA">
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+                <templateId root="2.16.840.1.113883.10.20.1.25"/>
+              </procedure>
+            </entry>
+          </section>
+        </component>
+        <component>
+          <section>
+            <templateId root="2.16.840.1.113883.10.20.1.8"/>
+            <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+            <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medication use"/>
+            <title>Historique de la prise médicamenteuse</title>
+            <text>
+              <table border="1">
+                <tbody>
+                  <tr>
+                    <th>Médicament</th>
+                    <th>Posologie</th>
+                    <th>Date de début</th>
+                    <th>Date de fin</th>
+                  </tr>
+                  <tr ID="med-1">
+                    <td>SALBUTAMOL 100MCG/DOSE TEVA 200</td>
+                    <td>2 unités par prise / 1 fois par jour / avant le petit-déjeuner</td>
+                    <td>01/01/1990</td>
+                    <td> </td>
+                  </tr>
+                  <tr ID="med-2">
+                    <td>TERALITHE LP 400MG CPR SECABLE 60</td>
+                    <td>1 unités par prise / 3 fois par jour / avant le repas</td>
+                    <td>01/01/2002</td>
+                    <td> </td>
+                  </tr>
+                  <tr ID="med-3">
+                    <td>ENALAPRIL 5MG TEVA CPR SECABLE 28</td>
+                    <td>2 unités par prise / 2 fois par jour</td>
+                    <td>01/01/2004</td>
+                    <td> </td>
+                  </tr>
+                  <tr ID="med-4">
+                    <td>CILOXAN 0,3% COL 5ML</td>
+                    <td>1 unités par prise / 3 fois par jour</td>
+                    <td>16/03/2011</td>
+                    <td>08/12/2010</td>
+                  </tr>
+                </tbody>
+              </table>
+            </text>
+            <entry typeCode="DRIV">
+              <substanceAdministration classCode="SBADM" moodCode="EVN">
+                <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+                <id extension="1299167449654" root="1.2.250.1.197"/>
+                <text/>
+                <statusCode code="active"/>
+                <effectiveTime xsi:type="IVL_TS">
+                  <low value="19900101"/>
+                  <high nullFlavor="UNK"/>
+                </effectiveTime>
+                <effectiveTime xsi:type="SXPR_TS" operator="A">
+                  <comp xsi:type="PIVL_TS" operator="A" institutionSpecified="true">
+                    <period value="24.0" unit="h"/>
+                  </comp>
+                  <comp xsi:type="EIVL_TS" operator="A">
+                    <event code="ACM" codeSystem="2.16.840.1.113883.5.139" displayName="avant le petit-déjeuner"/>
+                  </comp>
+                </effectiveTime>
+                <doseQuantity>
+                  <low value="2.0" unit="1"/>
+                  <high value="2.0" unit="1"/>
+                </doseQuantity>
+                <consumable>
+                  <manufacturedProduct>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                    <manufacturedMaterial xmlns:epsos="urn:epsos-org:ep:medication">
+                      <code code="3584266" codeSystem="2.16.840.1.113883.2.8.1.11" codeSystemName="CIP" displayName="SALBUTAMOL 100MCG/DOSE TEVA 200">
+                        <originalText mediaType="text/xml">
+                          <reference value="#med-1"/>
+                        </originalText>
+                      </code>
+                      <epsos:ingredient classCode="ACTI">
+                        <epsos:quantity>
+                          <epsos:numerator xsi:type="epsos:PQ" nullFlavor="UNK"/>
+                          <epsos:denominator xsi:type="epsos:PQ" nullFlavor="UNK"/>
+                        </epsos:quantity>
+                        <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                          <epsos:code code="R03AC02" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" displayName="SALBUTAMOL"/>
+                        </epsos:ingredient>
+                      </epsos:ingredient>
+                    </manufacturedMaterial>
+                  </manufacturedProduct>
+                </consumable>
+              </substanceAdministration>
+            </entry>
+            <entry typeCode="DRIV">
+              <substanceAdministration classCode="SBADM" moodCode="EVN">
+                <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+                <id extension="1299167737602" root="1.2.250.1.197"/>
+                <text/>
+                <statusCode code="active"/>
+                <effectiveTime xsi:type="IVL_TS">
+                  <low value="20020101"/>
+                  <high nullFlavor="UNK"/>
+                </effectiveTime>
+                <effectiveTime xsi:type="SXPR_TS" operator="A">
+                  <comp xsi:type="PIVL_TS" operator="A" institutionSpecified="true">
+                    <period value="8.0" unit="h"/>
+                  </comp>
+                  <comp xsi:type="EIVL_TS" operator="A">
+                    <event code="AC" codeSystem="2.16.840.1.113883.5.139" displayName="avant le repas"/>
+                  </comp>
+                </effectiveTime>
+                <doseQuantity>
+                  <low value="1.0" unit="1"/>
+                  <high value="1.0" unit="1"/>
+                </doseQuantity>
+                <consumable>
+                  <manufacturedProduct>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                    <manufacturedMaterial xmlns:epsos="urn:epsos-org:ep:medication">
+                      <code code="3372736" codeSystem="2.16.840.1.113883.2.8.1.11" codeSystemName="CIP" displayName="TERALITHE LP 400MG CPR SECABLE 60">
+                        <originalText mediaType="text/xml">
+                          <reference value="#med-2"/>
+                        </originalText>
+                      </code>
+                      <epsos:ingredient classCode="ACTI">
+                        <epsos:quantity>
+                          <epsos:numerator xsi:type="epsos:PQ" value="400.0" unit="mg"/>
+                          <epsos:denominator xsi:type="epsos:PQ" nullFlavor="UNK"/>
+                        </epsos:quantity>
+                        <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                          <epsos:code code="N05AN01" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" displayName="LITHIUM"/>
+                        </epsos:ingredient>
+                      </epsos:ingredient>
+                    </manufacturedMaterial>
+                  </manufacturedProduct>
+                </consumable>
+              </substanceAdministration>
+            </entry>
+            <entry typeCode="DRIV">
+              <substanceAdministration classCode="SBADM" moodCode="EVN">
+                <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+                <id extension="1300224731168" root="1.2.250.1.197"/>
+                <text/>
+                <statusCode code="active"/>
+                <effectiveTime xsi:type="IVL_TS">
+                  <low value="20040101"/>
+                  <high nullFlavor="UNK"/>
+                </effectiveTime>
+                <effectiveTime xsi:type="PIVL_TS" operator="A" institutionSpecified="true">
+                  <period value="12.0" unit="h"/>
+                </effectiveTime>
+                <doseQuantity>
+                  <low value="2.0" unit="1"/>
+                  <high value="2.0" unit="1"/>
+                </doseQuantity>
+                <consumable>
+                  <manufacturedProduct>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                    <manufacturedMaterial xmlns:epsos="urn:epsos-org:ep:medication">
+                      <code code="3614406" codeSystem="2.16.840.1.113883.2.8.1.11" codeSystemName="CIP" displayName="ENALAPRIL 5MG TEVA CPR SECABLE 28">
+                        <originalText mediaType="text/xml">
+                          <reference value="#med-3"/>
+                        </originalText>
+                      </code>
+                      <epsos:ingredient classCode="ACTI">
+                        <epsos:quantity>
+                          <epsos:numerator xsi:type="epsos:PQ" value="5.0" unit="mg"/>
+                          <epsos:denominator xsi:type="epsos:PQ" nullFlavor="UNK"/>
+                        </epsos:quantity>
+                        <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                          <epsos:code code="C09AA02" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" displayName="ENALAPRIL"/>
+                        </epsos:ingredient>
+                      </epsos:ingredient>
+                    </manufacturedMaterial>
+                  </manufacturedProduct>
+                </consumable>
+              </substanceAdministration>
+            </entry>
+            <entry typeCode="DRIV">
+              <substanceAdministration classCode="SBADM" moodCode="EVN">
+                <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+                <id extension="1300264931801" root="1.2.250.1.197"/>
+                <text/>
+                <statusCode code="completed"/>
+                <effectiveTime xsi:type="IVL_TS">
+                  <low value="20110316"/>
+                  <high value="20101208"/>
+                </effectiveTime>
+                <effectiveTime xsi:type="PIVL_TS" operator="A" institutionSpecified="true">
+                  <period value="8.0" unit="h"/>
+                </effectiveTime>
+                <doseQuantity>
+                  <low value="1.0" unit="1"/>
+                  <high value="1.0" unit="1"/>
+                </doseQuantity>
+                <consumable>
+                  <manufacturedProduct>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                    <manufacturedMaterial xmlns:epsos="urn:epsos-org:ep:medication">
+                      <code code="3373753" codeSystem="2.16.840.1.113883.2.8.1.11" codeSystemName="CIP" displayName="CILOXAN 0,3% COL 5ML">
+                        <originalText mediaType="text/xml">
+                          <reference value="#med-4"/>
+                        </originalText>
+                      </code>
+                      <epsos:ingredient classCode="ACTI">
+                        <epsos:quantity>
+                          <epsos:numerator xsi:type="epsos:PQ" value="0.3" unit="g"/>
+                          <epsos:denominator xsi:type="epsos:PQ" nullFlavor="UNK"/>
+                        </epsos:quantity>
+                        <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                          <epsos:code code="S01AX13" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" displayName="CIPROFLOXACINE"/>
+                        </epsos:ingredient>
+                      </epsos:ingredient>
+                    </manufacturedMaterial>
+                  </manufacturedProduct>
+                </consumable>
+              </substanceAdministration>
+            </entry>
+          </section>
+        </component>
+        <component>
+          <section>
+            <templateId root="2.16.840.1.113883.10.20.1.11"/>
+            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+            <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROBLEM LIST"/>
+            <title>Liste des problèmes actifs</title>
+            <text>
+              <table border="1">
+                <tbody>
+                  <tr>
+                    <th>Pathologie</th>
+                    <th>Date de survenue</th>
+                    <th>Commentaire</th>
+                  </tr>
+                  <tr ID="prob-1">
+                    <td>Asthme</td>
+                    <td>01/01/1982</td>
+                    <td/>
+                  </tr>
+                  <tr ID="prob-2">
+                    <td>Trouble affectif bipolaire</td>
+                    <td>01/01/2000</td>
+                    <td/>
+                  </tr>
+                  <tr ID="prob-3">
+                    <td>Hypertension essentielle (primitive)</td>
+                    <td>01/01/2002</td>
+                    <td/>
+                  </tr>
+                  <tr ID="prob-4">
+                    <td>Otite externe</td>
+                    <td>25/11/2010</td>
+                    <td/>
+                  </tr>
+                </tbody>
+              </table>
+            </text>
+            <entry typeCode="DRIV">
+              <act classCode="ACT" moodCode="EVN">
+                <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                <id/>
+                <code nullFlavor="NA"/>
+                <statusCode code="completed"/>
+                <effectiveTime>
+                  <low value="19820101"/>
+                </effectiveTime>
+                <entryRelationship typeCode="SUBJ" inversionInd="false">
+                  <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                    <id extension="1299167373335" root="1.2.250.1.197"/>
+                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Problem"/>
+                    <text>
+                      <reference value="#prob-1"/>
+                    </text>
+                    <statusCode code="completed"/>
+                    <effectiveTime>
+                      <low value="19820101"/>
+                    </effectiveTime>
+                    <value xsi:type="CD" code="J45" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="CIM10" displayName="Asthme"/>
+                  </observation>
+                </entryRelationship>
+              </act>
+            </entry>
+            <entry typeCode="DRIV">
+              <act classCode="ACT" moodCode="EVN">
+                <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                <id/>
+                <code nullFlavor="NA"/>
+                <statusCode code="completed"/>
+                <effectiveTime>
+                  <low value="20000101"/>
+                </effectiveTime>
+                <entryRelationship typeCode="SUBJ" inversionInd="false">
+                  <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                    <id extension="1299167385958" root="1.2.250.1.197"/>
+                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Problem"/>
+                    <text>
+                      <reference value="#prob-2"/>
+                    </text>
+                    <statusCode code="completed"/>
+                    <effectiveTime>
+                      <low value="20000101"/>
+                    </effectiveTime>
+                    <value xsi:type="CD" code="F31" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="CIM10" displayName="Trouble affectif bipolaire"/>
+                  </observation>
+                </entryRelationship>
+              </act>
+            </entry>
+            <entry typeCode="DRIV">
+              <act classCode="ACT" moodCode="EVN">
+                <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                <id/>
+                <code nullFlavor="NA"/>
+                <statusCode code="completed"/>
+                <effectiveTime>
+                  <low value="20020101"/>
+                </effectiveTime>
+                <entryRelationship typeCode="SUBJ" inversionInd="false">
+                  <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                    <id extension="1299167399398" root="1.2.250.1.197"/>
+                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Problem"/>
+                    <text>
+                      <reference value="#prob-3"/>
+                    </text>
+                    <statusCode code="completed"/>
+                    <effectiveTime>
+                      <low value="20020101"/>
+                    </effectiveTime>
+                    <value xsi:type="CD" code="I10" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="CIM10" displayName="Hypertension essentielle (primitive)"/>
+                  </observation>
+                </entryRelationship>
+              </act>
+            </entry>
+            <entry typeCode="DRIV">
+              <act classCode="ACT" moodCode="EVN">
+                <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                <id/>
+                <code nullFlavor="NA"/>
+                <statusCode code="completed"/>
+                <effectiveTime>
+                  <low value="20101125"/>
+                </effectiveTime>
+                <entryRelationship typeCode="SUBJ" inversionInd="false">
+                  <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                    <id extension="1299167410365" root="1.2.250.1.197"/>
+                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Problem"/>
+                    <text>
+                      <reference value="#prob-4"/>
+                    </text>
+                    <statusCode code="completed"/>
+                    <effectiveTime>
+                      <low value="20101125"/>
+                    </effectiveTime>
+                    <value xsi:type="CD" code="H60" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="CIM10" displayName="Otite externe"/>
+                  </observation>
+                </entryRelationship>
+              </act>
+            </entry>
+          </section>
+        </component>
+        <component>
+          <section>
+            <templateId root="2.16.840.1.113883.10.20.1.7"/>
+            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+            <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4"/>
+            <code code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF MEDICAL DEVICE USE"/>
+            <title>Dispositifs médicaux</title>
+            <text>
+              <table border="1">
+                <tbody>
+                  <tr>
+                    <th>Dispositif médical</th>
+                    <th>Date</th>
+                    <th>Commentaire</th>
+                  </tr>
+                  <tr ID="dev-1">
+                    <td>Implant auditif</td>
+                    <td>01/01/1998</td>
+                    <td/>
+                  </tr>
+                </tbody>
+              </table>
+            </text>
+            <entry typeCode="DRIV">
+              <supply classCode="SPLY" moodCode="EVN">
+                <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5"/>
+                <id extension="1299167430494" root="1.2.250.1.197"/>
+                <text>
+                  <reference value="#dev-1"/>
+                </text>
+                <effectiveTime value="19980101"/>
+                <participant typeCode="DEV">
+                  <participantRole classCode="MANU">
+                    <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                      <code code="303500007" codeSystem="2.16.840.1.113883.6.96" displayName="Implant auditif">
+                        <originalText mediaType="text/xml">
+                          <reference value="#dev-1"/>
+                        </originalText>
+                      </code>
+                    </playingDevice>
+                  </participantRole>
+                </participant>
+              </supply>
+            </entry>
+          </section>
+        </component>
+      </structuredBody>
+    </component>
+  </ClinicalDocument>

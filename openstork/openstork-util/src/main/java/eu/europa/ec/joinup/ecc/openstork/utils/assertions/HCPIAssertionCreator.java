@@ -1,4 +1,4 @@
-package com.liferay.portal.stork.util.assertions;
+package eu.europa.ec.joinup.ecc.openstork.utils.assertions;
 
 import eu.epsos.assertionvalidator.XSPARole;
 import eu.epsos.exceptions.InvalidInput;

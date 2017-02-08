@@ -45,9 +45,10 @@ import org.apache.axiom.om.OMElement;
 import org.apache.axiom.soap.SOAPHeader;
 import org.apache.axis2.transport.http.HTTPConstants;
 import org.apache.axis2.util.XMLUtils;
-import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.joda.time.DateTime;
+import org.slf4j.LoggerFactory;
 import tr.com.srdc.epsos.util.Constants;
 import tr.com.srdc.epsos.util.DateUtil;
 import tr.com.srdc.epsos.util.XMLUtil;
@@ -58,7 +59,7 @@ import tr.com.srdc.epsos.util.http.HTTPUtil;
  */
 public class XDR_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.AbstractInOutMessageReceiver {
 
-    public static Logger logger = Logger.getLogger(XDR_ServiceMessageReceiverInOut.class);
+    public static Logger logger = LoggerFactory.getLogger(XDR_ServiceMessageReceiverInOut.class);
 
     private String getIPofSender(org.apache.axis2.context.MessageContext msgContext) {
         String remoteAddress_IPConsumer = (String) msgContext.getProperty("REMOTE_ADDR");

@@ -2,6 +2,7 @@ package eu.esens.abb.nonrep;
 
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
+import java.util.LinkedList;
 
 import javax.mail.internet.MimeMessage;
 import javax.xml.soap.SOAPMessage;
@@ -32,6 +33,8 @@ public class Context {
 	private String authenticationMethod;
 	private PrivateKey key;
 	private Document icomingMsgAsDocument;
+	private LinkedList<String> recipientNamePostalAddress;
+	private LinkedList<String> senderNamePostalAddress;
 	public final String getCurrentHost() {
 		return currentHost;
 	}
@@ -82,7 +85,7 @@ public class Context {
 		this.requestDOM = request;
 	}
 	
-	public Element getRequest() {
+	public Element getRequest1() {
 		return this.requestDOM;
 	}
 
@@ -163,6 +166,22 @@ public class Context {
 	}
 	public PrivateKey getSigningKey() {
 		return this.key;
+	}
+
+	public void setRecipientNamePostalAddress(LinkedList<String> namesPostalAddress) {
+		this.recipientNamePostalAddress = namesPostalAddress;
+	}
+	public LinkedList<String> getRecipientNamePostalAddress() {
+		return this.recipientNamePostalAddress;
+	}
+
+	public void setSenderNamePostalAddress(LinkedList<String> sendernamesPostalAddress) {
+		this.senderNamePostalAddress = sendernamesPostalAddress;
+		
+	}
+	
+	public LinkedList<String> getSenderNamePostalAddress() {
+		return this.senderNamePostalAddress;
 	}
 
 }

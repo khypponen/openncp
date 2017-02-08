@@ -1,31 +1,29 @@
 package com.spirit.epsos.cc.adc.test;
 
+import com.spirit.epsos.cc.adc.db.EadcDbConnect;
+import eu.epsos.pt.eadc.util.EadcFactory;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.naming.NamingException;
+import javax.xml.parsers.ParserConfigurationException;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import javax.naming.NamingException;
-import javax.xml.parsers.ParserConfigurationException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.BasicConfigurator;
-import com.spirit.epsos.cc.adc.db.EadcDbConnect;
-
-import eu.epsos.pt.eadc.util.EadcFactory;
-
-import org.junit.Test;
 
 /**
  * This test will test the database connection
  */
 public class DbConnectTest extends BaseEadcTest {
 
-    private static Logger log = Logger.getLogger(DbConnectTest.class);
-    
+    private static Logger log = LoggerFactory.getLogger(DbConnectTest.class);
+
     @Test
     public void eadcReceiverTest() throws ClassNotFoundException, SQLException, ParserConfigurationException, NamingException {
         //DOMConfigurator.configureAndWatch("log4j.xml", 60 * 1000);
-        BasicConfigurator.configure();
+        //BasicConfigurator.configure();
         for (int i = 0; i < 3; i++) {
             new DbConnectTest().tryDbConnect(false);
         }

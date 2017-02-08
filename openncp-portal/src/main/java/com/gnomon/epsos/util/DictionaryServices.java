@@ -37,7 +37,7 @@ public class DictionaryServices {
     private static Map<String, List<DictionaryTerm>> familyRolesDictionaryTerms;
     private static Map<String, List<DictionaryTerm>> proceduresDictionaryTerms;
 
-    private static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("DictionaryServices");
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger("DictionaryServices");
 
     static {
 

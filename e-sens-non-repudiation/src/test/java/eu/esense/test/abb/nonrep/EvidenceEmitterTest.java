@@ -1,5 +1,39 @@
 package eu.esense.test.abb.nonrep;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.security.KeyStore;
+import java.security.PrivateKey;
+import java.security.cert.X509Certificate;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.soap.SOAPException;
+import javax.xml.soap.SOAPMessage;
+
+import org.herasaf.xacml.core.SyntaxException;
+import org.herasaf.xacml.core.api.PDP;
+import org.herasaf.xacml.core.api.UnorderedPolicyRepository;
+import org.herasaf.xacml.core.policy.PolicyMarshaller;
+import org.herasaf.xacml.core.simplePDP.SimplePDPFactory;
+import org.herasaf.xacml.core.utils.JAXBMarshallerConfiguration;
+import org.joda.time.DateTime;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
+
 import eu.esens.abb.nonrep.Context;
 import eu.esens.abb.nonrep.ESensObligation;
 import eu.esens.abb.nonrep.EnforcePolicy;
@@ -16,37 +50,6 @@ import eu.esens.abb.nonrep.TOElementException;
 import eu.esens.abb.nonrep.Utilities;
 import eu.esens.abb.nonrep.XACMLAttributes;
 import eu.esens.abb.nonrep.XACMLRequestCreator;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.security.KeyStore;
-import java.security.PrivateKey;
-import java.security.cert.X509Certificate;
-import java.util.LinkedList;
-import java.util.List;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.soap.SOAPException;
-import javax.xml.soap.SOAPMessage;
-import org.apache.log4j.BasicConfigurator;
-import org.herasaf.xacml.core.SyntaxException;
-import org.herasaf.xacml.core.api.PDP;
-import org.herasaf.xacml.core.api.UnorderedPolicyRepository;
-import org.herasaf.xacml.core.policy.PolicyMarshaller;
-import org.herasaf.xacml.core.simplePDP.SimplePDPFactory;
-import org.herasaf.xacml.core.utils.JAXBMarshallerConfiguration;
-import org.joda.time.DateTime;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
 
 public class EvidenceEmitterTest {
 
@@ -81,6 +84,7 @@ public class EvidenceEmitterTest {
         org.apache.xml.security.Init.init();
     }
 
+    
     /**
      * This test reads a sample message from the eHealth domain (XCA) and will
      * issue an ATNA-specific audit trail.
@@ -140,7 +144,7 @@ public class EvidenceEmitterTest {
          * request and returns the pointer of the obligation handler.
          */
         // Configure Log4j
-        BasicConfigurator.configure();
+        //BasicConfigurator.configure();
 
         // Read the message as it arrives at the facade
 //		Document incomingMsg = readMessage("test/testData/incomingMsg.xml");
@@ -272,7 +276,7 @@ public class EvidenceEmitterTest {
          * request and returns the pointer of the obligation handler.
          */
         // Configure Log4j
-        BasicConfigurator.configure();
+        //BasicConfigurator.configure();
 
         // Read the message as it arrives at the facade
         Document incomingMsg = readMessage("src/test/testData/incomingMsg.xml");
@@ -429,7 +433,7 @@ public class EvidenceEmitterTest {
         polrep.deploy(PolicyMarshaller.unmarshal(policy));
 
         // Configure Log4j
-        BasicConfigurator.configure();
+        //BasicConfigurator.configure();
 
         // Read the message as it arrives at the facade
 //		Document incomingMsg = readMessage("test/testData/audit.xml");
@@ -588,7 +592,8 @@ public class EvidenceEmitterTest {
         polrep.deploy(PolicyMarshaller.unmarshal(policy));
 
         // Configure Log4j
-        BasicConfigurator.configure();
+        //        BasicConfigurator.configure();
+        //BasicConfigurator.configure();
 
         // Read the message as it arrives at the facade
 //		Document incomingMsg = readMessage("test/testData/audit.xml");
@@ -658,6 +663,8 @@ public class EvidenceEmitterTest {
         Context context = new Context();
         context.setIncomingMsg(incomingMsg);
         context.setIssuerCertificate(cert); 
+        
+        // Justice domain has them optional
         context.setSenderCertificate(cert);
         context.setRecipientCertificate(cert);
         context.setSigningKey(key);
@@ -674,7 +681,15 @@ public class EvidenceEmitterTest {
 //		context.setUsername("demo2");
 //		context.setCurrentHost("127.0.0.1");
 //		context.setRemoteHost("192.168.10.1");
-
+        LinkedList<String> namesPostalAddress = new LinkedList<>();
+        namesPostalAddress.add("Test");
+        namesPostalAddress.add("Test2");
+        
+        context.setRecipientNamePostalAddress(namesPostalAddress);
+        LinkedList<String> sendernamesPostalAddress = new LinkedList<>();
+        sendernamesPostalAddress.add("SenderTest");
+        sendernamesPostalAddress.add("SenderTest2");
+        context.setSenderNamePostalAddress(sendernamesPostalAddress);
         ObligationHandlerFactory handlerFactory = ObligationHandlerFactory
                 .getInstance();
         List<ObligationHandler> handlers = handlerFactory.createHandler(

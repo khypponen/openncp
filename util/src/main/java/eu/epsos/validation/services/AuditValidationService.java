@@ -24,10 +24,11 @@ import eu.epsos.validation.datamodel.audit.AuditSchematron;
 import eu.epsos.validation.datamodel.common.NcpSide;
 import eu.epsos.validation.datamodel.dts.WsUnmarshaller;
 import eu.epsos.validation.reporting.ReportBuilder;
-import org.slf4j.LoggerFactory;
-import net.ihe.gazelle.am.AuditMessageValidationWSService;
 import net.ihe.gazelle.am.AuditMessageValidationWS;
+import net.ihe.gazelle.am.AuditMessageValidationWSService;
 import net.ihe.gazelle.am.SOAPException_Exception;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class represents the wrapper for the Audit messages validation.
@@ -36,7 +37,7 @@ import net.ihe.gazelle.am.SOAPException_Exception;
  */
 public class AuditValidationService extends ValidationService {
 
-    private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(XcaValidationService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(XcaValidationService.class);
     private static AuditValidationService instance;
 
     @Override
@@ -74,14 +75,14 @@ public class AuditValidationService extends ValidationService {
 
         return result;
     }
-    
+
     @Override
     public boolean validateSchematron(String object, String schematron, NcpSide ncpSide) {
         if (AuditSchematron.checkSchematron(schematron) == null) {
             LOG.error("The specified schematron is not supported by the WebService.");
             return false;
         }
-        
+
         return super.validateSchematron(object, schematron, ncpSide);
     }
 

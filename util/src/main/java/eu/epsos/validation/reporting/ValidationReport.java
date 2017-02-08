@@ -21,17 +21,18 @@ package eu.epsos.validation.reporting;
 
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import eu.epsos.validation.datamodel.common.NcpSide;
-import java.io.File;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tr.com.srdc.epsos.util.Constants;
 
+import java.io.File;
+
 /**
- *
  * @author Marcelo Fonseca <marcelo.fonseca@iuz.pt>
  */
 public class ValidationReport {
 
-    private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(ValidationReport.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ValidationReport.class);
     private static final String REPORT_FILES_FOLDER = "validation";
     private static final String FILE_NAME_DELIMITER = "_";
     private static final String CLEANUP_VALIDATION_DIR_AFTER_TEST = "automated.validation.cleanup.dir";

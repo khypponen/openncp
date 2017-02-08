@@ -17,8 +17,9 @@ import javax.faces.context.FacesContext;
 import javax.portlet.PortletRequest;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang.exception.ExceptionUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import org.opensaml.saml2.core.Assertion;
+import org.slf4j.LoggerFactory;
 import tr.com.srdc.epsos.util.Constants;
 
 @ManagedBean
@@ -27,7 +28,7 @@ public class cdaModelBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private String cda;
-    private static final Logger log = Logger.getLogger("cdaModelBean");
+    private static final Logger log = LoggerFactory.getLogger("cdaModelBean");
 
     public cdaModelBean() {
         log.info("CDA MODEL BEAN requesting");

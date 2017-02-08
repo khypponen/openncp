@@ -23,8 +23,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -46,6 +45,8 @@ import org.opensaml.xml.io.UnmarshallerFactory;
 import org.opensaml.xml.io.UnmarshallingException;
 import org.opensaml.xml.parse.BasicParserPool;
 import org.opensaml.xml.parse.XMLParserException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -56,6 +57,8 @@ import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
  * @author Jerry Dimitriou <jerouris at netsmart.gr>
  */
 public class SamlTRCIssuerTest {
+
+    private static final Logger logger = LoggerFactory.getLogger(SamlTRCIssuerTest.class);
 
     public SamlTRCIssuerTest() {
     }
@@ -102,7 +105,7 @@ public class SamlTRCIssuerTest {
             Unmarshaller unmarshaller = unmarshallerFactory.getUnmarshaller(samlasRoot);
             // Unmarshall using the document root element, an EntitiesDescriptor in this case
             Assertion hcpIdentityAssertion = (Assertion) unmarshaller.unmarshall(samlasRoot);
-            Logger.getLogger("test").log(Level.INFO, "Name Id Value:{0}", hcpIdentityAssertion.getSubject().getNameID().getValue());
+            logger.info("Name Id Value:{0}", hcpIdentityAssertion.getSubject().getNameID().getValue());
             String patientID = "theID";
             //List<String> purposeOfUse = Collections.singletonList("TREATMENT");
             List<Attribute> attrValuePair = null;
@@ -119,15 +122,15 @@ public class SamlTRCIssuerTest {
             XMLUtils.sendXMLtoStream(signedDoc, new FileOutputStream("trc.xml"));
 
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(SamlTRCIssuerTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
         } catch (MarshallingException ex) {
-            Logger.getLogger(SamlTRCIssuerTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
         } catch (UnmarshallingException ex) {
             fail(ex.getMessage());
         } catch (XMLParserException ex) {
             fail(ex.getMessage());
         } catch (ParserConfigurationException ex) {
-            Logger.getLogger(SamlTRCIssuerTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
             fail(ex.getMessage());
         } catch (SMgrException e) {
             fail(e.getMessage());
@@ -215,9 +218,9 @@ public class SamlTRCIssuerTest {
             // Unmarshall using the document root element, an EntitiesDescriptor in this case
             hcpIdentityAssertion = (Assertion) unmarshaller.unmarshall(samlasRoot);
         } catch (UnmarshallingException ex) {
-            Logger.getLogger(SamlTRCIssuerTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
         } catch (XMLParserException ex) {
-            Logger.getLogger(SamlTRCIssuerTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
         }
 
         return hcpIdentityAssertion;
@@ -232,11 +235,11 @@ public class SamlTRCIssuerTest {
             Configuration.getMarshallerFactory().getMarshaller(so).marshall(so, signedDoc);
             XMLUtils.sendXMLtoStream(signedDoc, new FileOutputStream(f));
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(SamlTRCIssuerTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
         } catch (MarshallingException ex) {
-            Logger.getLogger(SamlTRCIssuerTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
         } catch (ParserConfigurationException ex) {
-            Logger.getLogger(SamlTRCIssuerTest.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
         }
     }
 }

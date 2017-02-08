@@ -6,24 +6,11 @@ import eu.epsos.protocolterminators.ws.server.common.ResourceList;
 import eu.epsos.protocolterminators.ws.server.common.ResourceLoader;
 import eu.epsos.protocolterminators.ws.server.exception.NIException;
 import eu.epsos.protocolterminators.ws.server.xca.DocumentSearchInterface;
-import static eu.epsos.protocolterminators.ws.server.xca.impl.DocumentSearchMockImpl.logger;
-import fi.kela.se.epsos.data.model.DocumentAssociation;
-import fi.kela.se.epsos.data.model.DocumentFactory;
-import fi.kela.se.epsos.data.model.EPDocumentMetaData;
-import fi.kela.se.epsos.data.model.EPSOSDocument;
-import fi.kela.se.epsos.data.model.EPSOSDocumentMetaData;
-import fi.kela.se.epsos.data.model.MroDocumentMetaData;
-import fi.kela.se.epsos.data.model.PSDocumentMetaData;
-import fi.kela.se.epsos.data.model.SearchCriteria;
+import fi.kela.se.epsos.data.model.*;
 import fi.kela.se.epsos.data.model.SearchCriteria.Criteria;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
-import java.util.regex.Pattern;
 import org.apache.commons.codec.binary.Base64;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -32,12 +19,19 @@ import tr.com.srdc.epsos.securityman.exceptions.InsufficientRightsException;
 import tr.com.srdc.epsos.util.Constants;
 import tr.com.srdc.epsos.util.XMLUtil;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.List;
+import java.util.regex.Pattern;
+
 /**
  * @author konstantin.hypponen@kela.fi Note this is a very dirty implementation
  */
 public class DocumentSearchMockImpl extends NationalConnectorGateway implements DocumentSearchInterface {
 
-    public static Logger logger = Logger.getLogger(DocumentSearchMockImpl.class);
+    public static Logger logger = LoggerFactory.getLogger(DocumentSearchMockImpl.class);
+
     private static final String PATTERN_EP = "epstore.+\\.xml";
     private static final String PATTERN_PS = "psstore.+\\.xml";
     private static final String PATTERN_MRO = "mrostore.+\\.xml";
@@ -75,7 +69,7 @@ public class DocumentSearchMockImpl extends NationalConnectorGateway implements 
                 logger.debug("Placed XML doc id=" + epdXml.getId() + ", HomeCommId=" + Constants.HOME_COMM_ID + ", Patient Id: " + pd.getId() + " into eP repository");
                 documents.add(DocumentFactory.createEPSOSDocument(epdXml.getPatientId(), epdXml.getClassCode(), xmlDoc));
 
-                EPDocumentMetaData epdPdf = DocumentFactory.createEPDocumentPDF(getOIDFromDocument(pdfDoc), pd.getId(), new Date(), Constants.HOME_COMM_ID, getTitleFromDocument(pdfDoc), "author");
+                EPDocumentMetaData epdPdf = DocumentFactory.createEPDocumentPDF(getOIDFromDocument(pdfDoc), pd.getId(), new Date(), Constants.HOME_COMM_ID, getTitleFromDocument(xmlDoc), "author");
                 logger.debug("Placed PDF doc id=" + epdPdf.getId() + " into eP repository");
                 documents.add(DocumentFactory.createEPSOSDocument(epdPdf.getPatientId(), epdPdf.getClassCode(), pdfDoc));
 
@@ -162,12 +156,12 @@ public class DocumentSearchMockImpl extends NationalConnectorGateway implements 
 
     @Override
     public DocumentAssociation<PSDocumentMetaData> getPSDocumentList(SearchCriteria searchCriteria) throws NIException, InsufficientRightsException {
-        logger.log(Level.INFO, "getPSDocumentList(SearchCriteria searchCriteria): " + searchCriteria.toString());
+        logger.info("getPSDocumentList(SearchCriteria searchCriteria): " + searchCriteria.toString());
         for (DocumentAssociation<PSDocumentMetaData> da : psDocumentMetaDatas) {
-            logger.log(Level.INFO, "loop: " + da.toString());
+            logger.info("loop: " + da.toString());
             if (da.getXMLDocumentMetaData() != null
                     && da.getXMLDocumentMetaData().getPatientId().equals(searchCriteria.getCriteriaValue(Criteria.PatientId))) {
-                logger.log(Level.INFO, "getPSDocumentList(SearchCriteria searchCriteria): " + da.toString());
+                logger.info("getPSDocumentList(SearchCriteria searchCriteria): " + da.toString());
                 return da;
             }
         }
@@ -177,14 +171,14 @@ public class DocumentSearchMockImpl extends NationalConnectorGateway implements 
 
     @Override
     public List<DocumentAssociation<EPDocumentMetaData>> getEPDocumentList(SearchCriteria searchCriteria) throws NIException, InsufficientRightsException {
-        logger.log(Level.INFO, "getEPDocumentList(SearchCriteria searchCriteria)");
+        logger.info("getEPDocumentList(SearchCriteria searchCriteria)");
         List<DocumentAssociation<EPDocumentMetaData>> metaDatas = new ArrayList<DocumentAssociation<EPDocumentMetaData>>();
 
         for (DocumentAssociation<EPDocumentMetaData> da : epDocumentMetaDatas) {
             if (da.getXMLDocumentMetaData() != null
                     && da.getXMLDocumentMetaData().getPatientId().equals(searchCriteria.getCriteriaValue(Criteria.PatientId))) {
                 metaDatas.add(da);
-                logger.log(Level.INFO, "getEPDocumentList(SearchCriteria searchCriteria): " + da.toString());
+                logger.info("getEPDocumentList(SearchCriteria searchCriteria): " + da.toString());
             }
         }
 
@@ -193,10 +187,10 @@ public class DocumentSearchMockImpl extends NationalConnectorGateway implements 
 
     @Override
     public EPSOSDocument getDocument(SearchCriteria searchCriteria) throws NIException, InsufficientRightsException {
-        logger.log(Level.INFO, "getDocument(SearchCriteria searchCriteria)");
+        logger.info("getDocument(SearchCriteria searchCriteria)");
         for (EPSOSDocument doc : documents) {
             if (doc.matchesCriteria(searchCriteria)) {
-                logger.log(Level.INFO, "getDocument(SearchCriteria searchCriteria): " + doc.toString());
+                logger.info("getDocument(SearchCriteria searchCriteria): " + doc.toString());
                 return doc;
             }
         }
@@ -206,12 +200,12 @@ public class DocumentSearchMockImpl extends NationalConnectorGateway implements 
 
     @Override
     public DocumentAssociation<MroDocumentMetaData> getMroDocumentList(SearchCriteria searchCriteria) throws NIException, InsufficientRightsException {
-        logger.log(Level.INFO, "getMroDocumentList(SearchCriteria searchCriteria): " + searchCriteria.toString());
+        logger.info("getMroDocumentList(SearchCriteria searchCriteria): " + searchCriteria.toString());
         for (DocumentAssociation<MroDocumentMetaData> da : mroDocumentMetaDatas) {
-            logger.log(Level.INFO, "loop: " + da.toString());
+            logger.info("loop: " + da.toString());
             if (da.getXMLDocumentMetaData() != null
                     && da.getXMLDocumentMetaData().getPatientId().equals(searchCriteria.getCriteriaValue(Criteria.PatientId))) {
-                logger.log(Level.INFO, "getMroDocumentList(SearchCriteria searchCriteria): " + da.toString());
+                logger.info("getMroDocumentList(SearchCriteria searchCriteria): " + da.toString());
                 return da;
             }
         }
