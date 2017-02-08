@@ -1,23 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 14.7.2010 13:46:40 by Hibernate Tools 3.3.0.GA -->
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="epsos.ccd.posam.tsam.model.CodeSystem" table="CODE_SYSTEM">
-    	<cache usage="read-only"/>
+        <cache usage="read-only"/>
         <id name="id" type="long">
-            <column name="ID" />
-            <generator class="assigned" />
+            <column name="ID"/>
+            <generator class="assigned"/>
         </id>
         <property name="oid" type="java.lang.String">
-            <column name="OID" />
+            <column name="OID"/>
         </property>
         <property name="name" type="java.lang.String">
-            <column name="NAME" />
+            <column name="NAME"/>
         </property>
         <property name="description" type="java.lang.String">
-            <column name="DESCRIPTION" />
+            <column name="DESCRIPTION"/>
         </property>
-
     </class>
 </hibernate-mapping>

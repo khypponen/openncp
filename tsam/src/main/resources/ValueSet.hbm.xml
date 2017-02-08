@@ -1,30 +1,29 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 14.7.2010 13:46:40 by Hibernate Tools 3.3.0.GA -->
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="epsos.ccd.posam.tsam.model.ValueSet" table="VALUE_SET">
         <id name="id" type="long">
-            <column name="ID" />
-            <generator class="assigned" />
+            <column name="ID"/>
+            <generator class="assigned"/>
         </id>
         <property name="oid" type="java.lang.String">
-            <column name="OID" />
+            <column name="OID"/>
         </property>
         <property name="epsosName" type="java.lang.String">
-            <column name="EPSOS_NAME" />
+            <column name="EPSOS_NAME"/>
         </property>
         <property name="description" type="java.lang.String">
-            <column name="DESCRIPTION" />
+            <column name="DESCRIPTION"/>
         </property>
         <bag name="versions" inverse="true" table="VALUE_SET_VERSION" lazy="true">
             <key>
-                <column name="ID" />
+                <column name="ID"/>
             </key>
-            <one-to-many class="epsos.ccd.posam.tsam.model.ValueSetVersion" />
+            <one-to-many class="epsos.ccd.posam.tsam.model.ValueSetVersion"/>
         </bag>
         <many-to-one name="codeSystem" class="epsos.ccd.posam.tsam.model.CodeSystem">
-			<column name="PARENT_CODE_SYSTEM_ID" />
+            <column name="PARENT_CODE_SYSTEM_ID"/>
         </many-to-one>
     </class>
 </hibernate-mapping>
