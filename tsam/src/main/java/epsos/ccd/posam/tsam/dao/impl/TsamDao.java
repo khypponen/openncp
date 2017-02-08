@@ -1,47 +1,34 @@
 package epsos.ccd.posam.tsam.dao.impl;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
-import org.hibernate.Criteria;
-import org.hibernate.criterion.MatchMode;
-import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Restrictions;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
-
 import epsos.ccd.posam.tsam.dao.ITsamDao;
 import epsos.ccd.posam.tsam.exception.TSAMError;
 import epsos.ccd.posam.tsam.exception.TSAMException;
-import epsos.ccd.posam.tsam.model.CodeSystem;
-import epsos.ccd.posam.tsam.model.CodeSystemConcept;
-import epsos.ccd.posam.tsam.model.CodeSystemVersion;
-import epsos.ccd.posam.tsam.model.Designation;
-import epsos.ccd.posam.tsam.model.TranscodingAssociation;
-import epsos.ccd.posam.tsam.model.ValueSetVersion;
+import epsos.ccd.posam.tsam.model.*;
 import epsos.ccd.posam.tsam.response.RetrievedConcept;
 import epsos.ccd.posam.tsam.util.TsamConfiguration;
-import java.util.Iterator;
-import org.hibernate.criterion.Projection;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import java.util.*;
 
 /**
- * @see ITsamDao
- *
  * @author Roman Repiscak
  * @author Organization: Posam
  * @author mail:roman.repiscak@posam.sk
  * @version 1.0, 2010, 11 August
- *
+ * @see ITsamDao
  */
 public class TsamDao extends HibernateDaoSupport implements ITsamDao {
 
-    private static final String CURRENT_STATUS = "current";
-    private static final String VALID_STATUS = "valid";
     public static final String AT_ID = "id";
     public static final String AT_OID = "oid";
     public static final String AT_STATUS = "status";
+    private static final String CURRENT_STATUS = "current";
+    private static final String VALID_STATUS = "valid";
     private TsamConfiguration config;
 
     public boolean valueSetMatches(CodeSystemConcept concept, String valueSetOid, String valueSetVersion) {
@@ -91,7 +78,7 @@ public class TsamDao extends HibernateDaoSupport implements ITsamDao {
             throw new TSAMException(TSAMError.ERROR_DESIGNATION_NOTFOUND);
         }
 
-        List<Designation> filter = new ArrayList<Designation>();
+        List<Designation> filter = new ArrayList<>();
 
         for (Designation designation : designations) {
             if (CURRENT_STATUS.equalsIgnoreCase(designation.getStatus())) {
@@ -295,7 +282,7 @@ public class TsamDao extends HibernateDaoSupport implements ITsamDao {
     }
 
     public List<String> getLtrLanguages() {
-        final List<String> result = new ArrayList<String>();
+        final List<String> result = new ArrayList<>();
         Criteria crt;
         Iterator<String> iterator;
 
@@ -310,11 +297,11 @@ public class TsamDao extends HibernateDaoSupport implements ITsamDao {
         return result;
     }
 
-    public void setConfig(TsamConfiguration config) {
-        this.config = config;
-    }
-
     public TsamConfiguration getConfig() {
         return config;
+    }
+
+    public void setConfig(TsamConfiguration config) {
+        this.config = config;
     }
 }

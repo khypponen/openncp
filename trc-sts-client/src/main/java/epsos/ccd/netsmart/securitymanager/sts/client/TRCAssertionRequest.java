@@ -19,17 +19,6 @@ package epsos.ccd.netsmart.securitymanager.sts.client;
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import epsos.ccd.netsmart.securitymanager.key.KeyStoreManager;
 import epsos.ccd.netsmart.securitymanager.key.impl.DefaultKeyStoreManager;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.security.*;
-import java.util.UUID;
-
-import javax.net.ssl.*;
-import javax.xml.namespace.QName;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.soap.*;
 import org.opensaml.Configuration;
 import org.opensaml.saml2.core.Assertion;
 import org.opensaml.xml.io.MarshallingException;
@@ -41,6 +30,20 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+
+import javax.net.ssl.*;
+import javax.xml.namespace.QName;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.soap.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.UnrecoverableKeyException;
+import java.util.UUID;
 
 /**
  * The TRC STS client. It can be used as a reference implementation for
@@ -76,7 +79,7 @@ public class TRCAssertionRequest {
         }
         CHECK_FOR_HOSTNAME = ConfigurationManagerService.getInstance().getProperty("secman.sts.checkHostname");
     }
-    
+
     private final Assertion idAssert;
     private final String purposeOfUse;
     private final String patientId;
@@ -107,7 +110,7 @@ public class TRCAssertionRequest {
 
             //rstMsg.writeTo(System.out);
         } catch (SOAPException ex) {
-            LOGGER.error( null, ex);
+            LOGGER.error(null, ex);
             throw new Exception("Unable to create RST Message");
         }
     }
@@ -116,7 +119,7 @@ public class TRCAssertionRequest {
         return "uuid:" + UUID.randomUUID().toString();
     }
 
-    private Element convertAsserionToElement(Assertion as) {
+    private Element convertAssertionToElement(Assertion as) {
         try {
             Document doc = builder.newDocument();
             Configuration.getMarshallerFactory().getMarshaller(as).marshall(as, doc);
@@ -136,7 +139,7 @@ public class TRCAssertionRequest {
             Assertion as = (Assertion) unmarshaller.unmarshall(e);
             return as;
         } catch (UnmarshallingException ex) {
-            LOGGER.error( null, ex);
+            LOGGER.error(null, ex);
         }
         return null;
 
@@ -151,11 +154,11 @@ public class TRCAssertionRequest {
             SOAPHeaderElement securityHeaderElem = header.addHeaderElement(new QName(WS_SEC_NS, "Security", "wsse"));
             securityHeaderElem.setMustUnderstand(true);
 
-            Element idAssertElem = convertAsserionToElement(idAssert);
+            Element idAssertElem = convertAssertionToElement(idAssert);
             securityHeaderElem.appendChild(header.getOwnerDocument().importNode(idAssertElem, true));
 
         } catch (SOAPException ex) {
-            LOGGER.error( null, ex);
+            LOGGER.error(null, ex);
         }
     }
 
@@ -185,14 +188,9 @@ public class TRCAssertionRequest {
             SOAPElement patientIdElem = trcParamsElem.addChildElement(patientIdName);
             patientIdElem.addTextNode(patientId);
 
-
-
-
         } catch (SOAPException ex) {
-            LOGGER.error( null, ex);
+            LOGGER.error(null, ex);
         }
-
-
     }
 
     /**
@@ -216,18 +214,15 @@ public class TRCAssertionRequest {
             if (httpConnection instanceof HttpsURLConnection) {  // Going SSL
                 ((HttpsURLConnection) httpConnection).setSSLSocketFactory(getEpsosSSLSocketFactory());
                 if (CHECK_FOR_HOSTNAME.equals("false"))
-                ((HttpsURLConnection) httpConnection).setHostnameVerifier(
-                        new javax.net.ssl.HostnameVerifier() {
+                    ((HttpsURLConnection) httpConnection).setHostnameVerifier(
+                            new javax.net.ssl.HostnameVerifier() {
 
-                            public boolean verify(String hostname,
-                                    javax.net.ssl.SSLSession sslSession) {
-                                return true;
-                            }
-                        });
+                                public boolean verify(String hostname,
+                                                      javax.net.ssl.SSLSession sslSession) {
+                                    return true;
+                                }
+                            });
             }
-
-
-
 
             //Write and send the SOAP message
             rstMsg.writeTo(httpConnection.getOutputStream());
@@ -248,12 +243,12 @@ public class TRCAssertionRequest {
             return trcAssertion;
 
         } catch (SOAPException ex) {
-            LOGGER.error( null, ex);
+            LOGGER.error(null, ex);
             throw new Exception("SOAP Exception: " + ex.getMessage());
         } catch (UnsupportedOperationException ex) {
-            LOGGER.error( null, ex);
+            LOGGER.error(null, ex);
             throw new Exception("Unsupported Operation: " + ex.getMessage());
-        } 
+        }
     }
 
     private Assertion extractTRCAssertionFromRSTC(SOAPMessage response) throws Exception {
@@ -277,7 +272,7 @@ public class TRCAssertionRequest {
             return trcAssertion;
 
         } catch (Exception ex) {
-            LOGGER.error( null, ex);
+            LOGGER.error(null, ex);
             throw new Exception("Error while trying to extract the SAML TRC Assertion from RSTRC Body: " + ex.getMessage());
         }
     }
@@ -299,21 +294,19 @@ public class TRCAssertionRequest {
             ctx.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
 
         } catch (KeyManagementException ex) {
-            LOGGER.error( null, ex);
+            LOGGER.error(null, ex);
         } catch (UnrecoverableKeyException ex) {
-            LOGGER.error( null, ex);
+            LOGGER.error(null, ex);
         } catch (KeyStoreException ex) {
-            LOGGER.error( null, ex);
+            LOGGER.error(null, ex);
         } catch (NoSuchAlgorithmException ex) {
-            LOGGER.error( null, ex);
+            LOGGER.error(null, ex);
         } finally {
             if (ctx != null) {
                 return ctx.getSocketFactory();
             }
             return null;
         }
-
-
     }
 
     /**
@@ -335,7 +328,7 @@ public class TRCAssertionRequest {
          * The Builder class constructor. Its parameters are the required fields
          * of the TRCAssertionRequest Object.
          *
-         * @param idAssert The OpenSAML Identity Assertion
+         * @param idAssert  The OpenSAML Identity Assertion
          * @param patientId the relevant patient id.
          */
         public Builder(Assertion idAssert, String patientId) {
@@ -345,7 +338,7 @@ public class TRCAssertionRequest {
 
                 this.STSLocation = new URL(DEFAULT_STS_URL);
             } catch (MalformedURLException ex) {
-                LOGGER.error( null, ex);
+                LOGGER.error(null, ex);
             }
         }
 
@@ -373,7 +366,7 @@ public class TRCAssertionRequest {
             try {
                 this.STSLocation = new URL(url);
             } catch (MalformedURLException ex) {
-                LOGGER.error( null, ex);
+                LOGGER.error(null, ex);
             }
 
             return this;

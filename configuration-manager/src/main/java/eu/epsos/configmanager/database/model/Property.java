@@ -1,5 +1,4 @@
 package eu.epsos.configmanager.database.model;
-// Generated Nov 26, 2012 3:23:30 PM by Hibernate Tools 3.2.1.GA
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,13 +14,13 @@ public class Property implements java.io.Serializable {
 
     @Id
     private String name;
-    
+
     @Column(name = "value")
     private String value;
 
     @Column(name = "isSmp")
     private Boolean isSMP;
-    
+
     public Property() {
     }
 
@@ -49,8 +48,8 @@ public class Property implements java.io.Serializable {
     public void setValue(String value) {
         this.value = value;
     }
-    
+
     public Boolean isSMP() {
-    	return this.isSMP;
+        return this.isSMP;
     }
 }

@@ -16,6 +16,7 @@
  */
 package epsos.ccd.netsmart.securitymanager.sts.client;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
@@ -31,7 +32,7 @@ import java.io.OutputStream;
  */
 public class XMLUtils {
 
-    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(TRCAssertionRequest.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TRCAssertionRequest.class);
 
     public static void sendXMLtoStream(Document doc, OutputStream out) {
         try {
