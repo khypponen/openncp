@@ -1,12 +1,13 @@
 package eu.europa.ec.sante.ehdsi.tsam.sync;
 
-import eu.europa.ec.sante.ehdsi.termservice.rest.model.Agreement;
+import eu.europa.ec.sante.ehdsi.termservice.common.web.rest.model.ValueSetVersionModel;
+import eu.europa.ec.sante.ehdsi.termservice.common.web.rest.model.sync.ValueSetCatalogSyncModel;
+import eu.europa.ec.sante.ehdsi.tsam.sync.client.TermServerClient;
 import eu.europa.ec.sante.ehdsi.tsam.sync.converter.CodeSystemConceptConverter;
 import eu.europa.ec.sante.ehdsi.tsam.sync.converter.ValueSetVersionConverter;
 import eu.europa.ec.sante.ehdsi.tsam.sync.db.CodeSystemConceptEntity;
 import eu.europa.ec.sante.ehdsi.tsam.sync.db.HibernateDao;
 import eu.europa.ec.sante.ehdsi.tsam.sync.db.ValueSetVersionEntity;
-import eu.europa.ec.sante.ehdsi.tsam.sync.rest.RestClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,78 +22,71 @@ import java.util.stream.Collectors;
 @Component
 public class TsamSyncManager {
 
+    private static final String USERNAME = "system";
+
+    private static final String PASSWORD = "123456";
+
     private final Logger logger = LoggerFactory.getLogger(TsamSyncManager.class);
 
-    private final RestClient restClient;
+    private final TermServerClient termServerClient;
 
     private final HibernateDao hibernateDao;
 
     @Autowired
-    public TsamSyncManager(RestClient restClient, HibernateDao hibernateDao) {
-        this.restClient = restClient;
+    public TsamSyncManager(TermServerClient termServerClient, HibernateDao hibernateDao) {
+        this.termServerClient = termServerClient;
         this.hibernateDao = hibernateDao;
     }
 
     @Transactional
-    void execute() {
-        logger.info("Checking for updates...");
-
+    public void execute() {
         StopWatch stopWatch = new StopWatch();
+
         stopWatch.start();
+        termServerClient.authenticate(USERNAME, PASSWORD);
+        stopWatch.stop();
+        logger.info("User '{}' authenticated successfully", USERNAME);
 
-        Optional<Agreement> result = restClient.retrieveAgreement(null);
-
+        stopWatch.start();
+        logger.info("Checking for updates...");
+        Optional<ValueSetCatalogSyncModel> updatedValueSetCatalog = termServerClient.retrieveValueSetCatalog(null);
         stopWatch.stop();
 
-        if (!result.isPresent()) {
-            logger.info("Nothing to synchronize");
+        if (!updatedValueSetCatalog.isPresent()) {
+            logger.info("Nothing new to synchronize");
         } else {
-            Agreement agreement = result.get();
-            logger.info("A new value set catalog (name: {}, release date: {}, agreement date: {}) has been found in {} s",
-                    agreement.getValueSetCatalog().getName(), agreement.getValueSetCatalog().getReleaseDate(), agreement.getStatusDate(),
-                    stopWatch.getLastTaskInfo().getTimeSeconds());
-
-
-            stopWatch.start();
-
-            String valueSetCatalogId = agreement.getValueSetCatalog().getId();
+            ValueSetCatalogSyncModel valueSetCatalog = updatedValueSetCatalog.get();
+            int nbValueSetVersions = valueSetCatalog.getValueSetVersions().size();
+            logger.info("Value set catalog '{}' retrieved from the server ({} value set versions to synchronize)", valueSetCatalog.getId(), nbValueSetVersions);
 
             ValueSetVersionConverter valueSetVersionConverter = new ValueSetVersionConverter();
-            List<ValueSetVersionEntity> valueSetVersions =
-                    restClient.listValueSetVersions(valueSetCatalogId)
-                            .stream()
-                            .map(valueSetVersionConverter::convert)
-                            .collect(Collectors.toList());
-            hibernateDao.saveAll(valueSetVersions);
-
-            stopWatch.stop();
-            logger.info("{} value set version(s) retrieved and saved in {} s", valueSetVersions.size(), stopWatch.getLastTaskInfo().getTimeSeconds());
-
-            int index = 0;
             CodeSystemConceptConverter codeSystemConceptConverter = new CodeSystemConceptConverter();
 
-            for (ValueSetVersionEntity valueSetVersion : valueSetVersions) {
+            int index = 0;
+            for (ValueSetVersionModel valueSetVersion : valueSetCatalog.getValueSetVersions()) {
                 stopWatch.start();
 
-                String valueSetVersionId = valueSetVersion.getUid();
-                logger.debug("Value set version: {}/{}", valueSetVersion.getId(), valueSetVersion.getName());
+                logger.info("[{}/{}] Start processing value set version '{}'...", ++index, nbValueSetVersions, valueSetVersion.getName());
+
+                ValueSetVersionEntity valueSetVersionEntity = valueSetVersionConverter.convert(valueSetVersion);
+                hibernateDao.save(valueSetVersionEntity);
 
                 boolean hasNext = true;
                 int page = 0;
                 int total = 0;
 
                 while (hasNext) {
-                    List<CodeSystemConceptEntity> codeSystemConcepts =
-                            restClient.listCodeSystemConcepts(valueSetCatalogId, valueSetVersion.getUid(), page)
+                    List<CodeSystemConceptEntity> conceptEntities =
+                            termServerClient.retrieveConcepts(valueSetVersion.getValueSet().getId(), valueSetVersion.getId(), page, 250)
                                     .stream()
                                     .map(codeSystemConceptConverter::convert)
                                     .collect(Collectors.toList());
-                    codeSystemConcepts.forEach(codeSystemConceptEntity -> codeSystemConceptEntity.addValueSetVersion(valueSetVersion));
+                    conceptEntities.forEach(codeSystemConceptEntity -> codeSystemConceptEntity.addValueSetVersion(valueSetVersionEntity));
 
-                    hibernateDao.saveAll(codeSystemConcepts);
+                    hibernateDao.saveAll(conceptEntities);
 
-                    total += codeSystemConcepts.size();
-                    if (codeSystemConcepts.size() < 500) {
+                    total += conceptEntities.size();
+                    if (conceptEntities.size() < 500) {
                         hasNext = false;
                     } else {
                         page++;
@@ -100,10 +94,10 @@ public class TsamSyncManager {
                 }
 
                 stopWatch.stop();
-                logger.info("[{}/{}] Value set version '{}' processed in {} s ({} concepts saved)", ++index, valueSetVersions.size(), valueSetVersionId, stopWatch.getLastTaskInfo().getTimeSeconds(), total);
+                logger.info("[{}/{}] Value set version '{}' processed: {} concepts saved", index, nbValueSetVersions, valueSetVersion.getName(), total);
             }
-        }
 
-        logger.info("{} s", stopWatch.getTotalTimeSeconds());
+            logger.info("Synchronization done in {} s", stopWatch.getTotalTimeSeconds());
+        }
     }
 }

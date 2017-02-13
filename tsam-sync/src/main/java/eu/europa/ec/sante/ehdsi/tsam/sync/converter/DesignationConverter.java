@@ -1,16 +1,16 @@
 package eu.europa.ec.sante.ehdsi.tsam.sync.converter;
 
-import eu.europa.ec.sante.ehdsi.termservice.rest.model.concept.Designation;
+import eu.europa.ec.sante.ehdsi.termservice.common.web.rest.model.DesignationModel;
 import eu.europa.ec.sante.ehdsi.tsam.sync.db.DesignationEntity;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.convert.converter.Converter;
 
 import java.time.LocalDateTime;
 
-public class DesignationConverter implements Converter<Designation, DesignationEntity> {
+public class DesignationConverter implements Converter<DesignationModel, DesignationEntity> {
 
     @Override
-    public DesignationEntity convert(Designation source) {
+    public DesignationEntity convert(DesignationModel source) {
         if (source == null) {
             return null;
         }

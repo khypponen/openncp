@@ -1,6 +1,6 @@
 package eu.europa.ec.sante.ehdsi.tsam.sync.converter;
 
-import eu.europa.ec.sante.ehdsi.termservice.rest.model.codesystem.CodeSystem;
+import eu.europa.ec.sante.ehdsi.termservice.common.web.rest.model.CodeSystemModel;
 import eu.europa.ec.sante.ehdsi.tsam.sync.db.CodeSystemEntity;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.convert.converter.Converter;
@@ -8,12 +8,12 @@ import org.springframework.core.convert.converter.Converter;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CodeSystemConverter implements Converter<CodeSystem, CodeSystemEntity> {
+public class CodeSystemConverter implements Converter<CodeSystemModel, CodeSystemEntity> {
 
     private Map<String, CodeSystemEntity> cache = new HashMap<>();
 
     @Override
-    public CodeSystemEntity convert(CodeSystem source) {
+    public CodeSystemEntity convert(CodeSystemModel source) {
         if (source == null) {
             return null;
         }

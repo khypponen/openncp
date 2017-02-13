@@ -1,12 +1,13 @@
 package eu.europa.ec.sante.ehdsi.tsam.sync.cfg;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-import eu.europa.ec.sante.ehdsi.tsam.sync.rest.SimpleRestClient;
+import eu.europa.ec.sante.ehdsi.tsam.sync.client.SimpleTermServerClient;
+import eu.europa.ec.sante.ehdsi.tsam.sync.client.TermServerClient;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Environment;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -19,43 +20,20 @@ import java.util.Properties;
 @EnableTransactionManagement
 public class ApplicationConfig {
 
-    @Value("${datasource.url}")
-    private String dataSourceUrl;
-
-    @Value("${datasource.username}")
-    private String dataSourceUsername;
-
-    @Value("${datasource.password}")
-    private String dataSourcePassword;
-
-    @Value("${datasource.driver-class-name}")
-    private String dataSourceDriverClass;
-
-    @Value("${hibernate.dialect}")
-    private String hibernateDialect;
-
-    @Value("${hibernate.hbm2ddl.auto}")
-    private String hibernateHbm2ddlAuto;
-
-    @Value("${hibernate.show_sql}")
-    private String hibernateShowSql;
-
-    @Value("${hibernate.format_sql}")
-    private String hibernateFormatSql;
+    @Autowired
+    private Environment env;
 
     @Bean(destroyMethod = "close")
     public ComboPooledDataSource dataSource() {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        dataSource.setJdbcUrl(dataSourceUrl);
-        dataSource.setUser(dataSourceUsername);
-        dataSource.setPassword(dataSourcePassword);
-
+        dataSource.setJdbcUrl(env.getProperty("datasource.url"));
+        dataSource.setUser(env.getProperty("datasource.username"));
+        dataSource.setPassword(env.getProperty("datasource.password"));
         try {
-            dataSource.setDriverClass(dataSourceDriverClass);
+            dataSource.setDriverClass(env.getProperty("datasource.driver-class-name"));
         } catch (PropertyVetoException e) {
             throw new IllegalArgumentException("Invalid driver class", e);
         }
-
         return dataSource;
     }
 
@@ -70,20 +48,20 @@ public class ApplicationConfig {
 
     private Properties hibernateProperties() {
         Properties properties = new Properties();
-        properties.put(Environment.DIALECT, hibernateDialect);
-        properties.put(Environment.SHOW_SQL, hibernateShowSql);
-        properties.put(Environment.FORMAT_SQL, hibernateFormatSql);
-        properties.put(Environment.HBM2DDL_AUTO, hibernateHbm2ddlAuto);
+        properties.put(org.hibernate.cfg.Environment.DIALECT, env.getProperty("hibernate.dialect"));
+        properties.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, env.getProperty("hibernate.hbm2ddl.auto"));
+        properties.put(org.hibernate.cfg.Environment.SHOW_SQL, env.getProperty("hibernate.format_sql"));
+        properties.put(org.hibernate.cfg.Environment.FORMAT_SQL, env.getProperty("hibernate.show_sql"));
         return properties;
-    }
-
-    @Bean
-    public SimpleRestClient restClient() {
-        return new SimpleRestClient();
     }
 
     @Bean
     public PlatformTransactionManager transactionManager(SessionFactory sessionFactory) {
         return new HibernateTransactionManager(sessionFactory);
+    }
+
+    @Bean
+    public TermServerClient termServerSyncClient() {
+        return new SimpleTermServerClient();
     }
 }
