@@ -127,7 +127,6 @@ public class SMPUpdateFileController {
     /*Read data from xml*/
     ServiceMetadata serviceMetadata;
     serviceMetadata = smpconverter.convertFromXml(smpfileupdate.getUpdateFile());
-    logger.debug("\n****SERVICE METADATA - " + serviceMetadata);
         
     /*
      Condition to know the type of file (Redirect|ServiceInformation) in order to build the form
@@ -145,6 +144,7 @@ public class SMPUpdateFileController {
       /*
         get participantIdentifier from redirect href
       */
+      /*May change if Participant Identifier specification change*/
       String href = serviceMetadata.getRedirect().getHref();
       String participantID;
       Pattern pattern = Pattern.compile("ehealth-participantid-qns.*");
@@ -196,10 +196,23 @@ public class SMPUpdateFileController {
       String documentIdentifier = smpfileupdate.getDocumentIdentifier();
       logger.debug("\n******** DOC ID 1 - " + documentIdentifier);
 
+      /*
+      Used to check SMP File type in order to render html updatesmpfileform page
+      */
+      String[] nIDs = documentIdentifier.split(":"); /*May change if Document Identifier specification change*/
+      String documentID = nIDs[4];
+      if(documentID.equals("epsos-91")){
+        smpfileupdate.setIssuanceType("epsos");
+      } else if(documentID.equals("ITI-40")){
+        smpfileupdate.setIssuanceType("iti");
+      }
+      
+      String smpType = env.getProperty(documentID); //smpeditor.properties
+      logger.debug("\n******** DOC ID 2 - " + documentID);
+      logger.debug("\n******** SMP Type - " + smpType);
       SMPType[] smptypes = smptype.getALL();
       for (int i = 0; i < smptypes.length; i++) {
-        String docID = env.getProperty(smptypes[i].name() + ".DocumentIdentifier");
-        if (docID == null ? documentIdentifier == null : docID.equals(documentIdentifier)) {
+        if (smptypes[i].name().equals(smpType)) {
           smpfileupdate.setType(smptypes[i]);
           break;
         }
@@ -397,6 +410,12 @@ public class SMPUpdateFileController {
               smpfileupdate.setExtensionFile(null);
             }
           }
+          
+          if(smpfileupdate.getType().name().equals("Identity_Provider")){
+            //env.getProperty(type + ".ProcessIdentifier." + issuanceType)
+            smpfileupdate.setDocumentIdentifier(env.getProperty(smpfileupdate.getType().name() + ".DocumentIdentifier." + smpfileupdate.getIssuanceType()));
+            smpfileupdate.setProcessIdentifier(env.getProperty(smpfileupdate.getType().name() + ".ProcessIdentifier." + smpfileupdate.getIssuanceType()));
+          }
 
           smpconverter.updateToXml(smpfileupdate.getType().name(), smpfileupdate.getCountry(), smpfileupdate.getDocumentIdentifier(),
                   smpfileupdate.getDocumentIdentifierScheme(), smpfileupdate.getParticipantIdentifier(), smpfileupdate.getParticipantIdentifierScheme(),
@@ -433,9 +452,10 @@ public class SMPUpdateFileController {
           logger.debug("\n****Type Redirect");
 
           /*get documentIdentifier from redierct href*/
+          /*May change if Document Identifier specification change*/
           String href = smpfileupdate.getHref();
           String documentID;
-          Pattern pattern = Pattern.compile("ehealth-participantid-qns.*");
+          Pattern pattern = Pattern.compile("ehealth-participantid-qns.*"); 
           Matcher matcher = pattern.matcher(href);
           if (matcher.find()) {
             String result = matcher.group(0);
@@ -447,8 +467,8 @@ public class SMPUpdateFileController {
             String[] ids = result.split("/services/");
 
             String docID = ids[1];
-            String[] nIDs = docID.split("::");
-            documentID = nIDs[3];
+            String[] nIDs = docID.split(":"); 
+            documentID = nIDs[6];
 
             String smpType = env.getProperty(documentID); //smpeditor.properties
             if (smpType == null) {

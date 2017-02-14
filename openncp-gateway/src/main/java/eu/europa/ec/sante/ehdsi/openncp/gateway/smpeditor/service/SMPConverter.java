@@ -53,6 +53,7 @@ public class SMPConverter {
    * Converts the data received from the SMPGenerateFileController to a xml file
    *
    * @param type
+   * @param issuanceType
    * @param CC
    * @param endpointUri
    * @param servDescription
@@ -66,7 +67,7 @@ public class SMPConverter {
    * @param certificateUID
    * @param redirectHref
    */
-  public void convertToXml(String type, String CC, String endpointUri, String servDescription,
+  public void convertToXml(String type, String issuanceType, String CC, String endpointUri, String servDescription,
           String tecContact, String tecInformation, Date servActDate, Date servExpDate,
           MultipartFile extension, MultipartFile certificateFile, String fileName,
           String certificateUID, String redirectHref) {
@@ -106,16 +107,16 @@ public class SMPConverter {
       ServiceInformationType serviceInformationType = objectFactory.createServiceInformationType();
       
       
-      createStaticFields(type, CC, documentIdentifier, endpointType, participantIdentifierType, processIdentifier);
+      createStaticFields(type, issuanceType, CC, documentIdentifier, endpointType, participantIdentifierType, processIdentifier);
 
       /*
        * URI definition
        */
-      if ("VPN_Gateway_B".equals(type) || "International_Search_Mask".equals(type)) {
-        endpointType.setEndpointURI("");
-      } else {
-        endpointType.setEndpointURI(endpointUri);//Set by user
+      if (endpointUri == null) {
+        endpointUri = "";
       }
+      endpointType.setEndpointURI(endpointUri);//Set by user
+
 
       /*
        * Dates parse to Calendar
@@ -331,11 +332,11 @@ public class SMPConverter {
       /*
        * URI definition
        */
-      if ("VPN_Gateway_B".equals(type) || "International_Search_Mask".equals(type)) {
-        endpointType.setEndpointURI("");
-      } else {
-        endpointType.setEndpointURI(endpointUri);//Set by user
+      if (endpointUri == null) {
+        endpointUri = "";
       }
+      endpointType.setEndpointURI(endpointUri);//Set by user
+
 
       /*
        * Dates parse to Calendar
@@ -520,7 +521,7 @@ public class SMPConverter {
   /**
    * Defines the static fields of the SMP File
    */
-  private void createStaticFields(String type, String CC, DocumentIdentifier documentIdentifier, EndpointType endpointType,
+  private void createStaticFields(String type, String issuanceType, String CC, DocumentIdentifier documentIdentifier, EndpointType endpointType,
           ParticipantIdentifierType participantIdentifierType, ProcessIdentifier processIdentifier) {
 
     /*
@@ -530,7 +531,14 @@ public class SMPConverter {
     participantIdentifierType.setValue("urn:ehealth:" + CC + ":ncpb-idp"); //set by user (CC - country)
 
     documentIdentifier.setScheme(env.getProperty(type + ".DocumentIdentifier.Scheme"));//in smpeditor.properties
-    documentIdentifier.setValue(env.getProperty(type + ".DocumentIdentifier"));//in smpeditor.properties
+    
+    if(type.equals("Identity_Provider")){
+        documentIdentifier.setValue(env.getProperty(type + ".DocumentIdentifier." + issuanceType));//in smpeditor.properties
+    } else{
+        documentIdentifier.setValue(env.getProperty(type + ".DocumentIdentifier"));//in smpeditor.properties
+    }
+    
+
 
     /*
      Process identifiers definition
@@ -538,6 +546,8 @@ public class SMPConverter {
     processIdentifier.setScheme(env.getProperty(type + ".ProcessIdentifier.Scheme"));//in smpeditor.properties
     if ("International_Search_Mask".equals(type)) {
       processIdentifier.setValue("urn:ehealth:ncp:" + CC + ":ism");
+    } else if ("Identity_Provider".equals(type)) {
+      processIdentifier.setValue(env.getProperty(type + ".ProcessIdentifier." + issuanceType));
     } else {
       processIdentifier.setValue(env.getProperty(type + ".ProcessIdentifier")); //in smpeditor.properties
     }

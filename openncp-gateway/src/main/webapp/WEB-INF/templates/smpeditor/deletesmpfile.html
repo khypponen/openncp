@@ -18,13 +18,13 @@
       </div>
       <div class="container">
         <ol class="breadcrumb">
-          <li class="active">Home/SMP Editor/Upload SMP File</li>
+          <li class="active">Home/SMP Editor/Delete SMP File</li>
         </ol>
       </div>
     </nav> <!-- HEADER -->
 
     <div class="marginbotton">
-      <h2 class="marginleft" th:text="#{label.SmpEditor.menu.op4}">Upload SMP file</h2>
+      <h2 class="marginleft" th:text="#{label.SmpEditor.menu.op5}">Delete SMP file</h2>
       
       <div th:if="${alert != null}">
         <div class="alert center" th:classappend="'alert-' + ${alert.type}">
@@ -32,24 +32,25 @@
         </div>
       </div>
       
-      <!-- Upload form-->
-      <form action="#"  th:action="@{/smpeditor/uploadsmpfile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpupload}"  method="post" enctype="multipart/form-data">  
-        <div class="form-group row" id="newfileinputs">
-          <label th:text="#{label.SmpEditor.sigform.files}" for="signfiles" class="col-xs-2 col-form-label">SMP Files</label>
-          <div class="col-xs-9 row">
-            <input class="form-control-file col-xs-4" id="files" type="file" multiple accept=".xml" name="uploadFiles" th:field="*{{uploadFiles}}" required>
-            <div class="col-xs-8">
-              <ul id="selectedFiles">
-              </ul>
-            </div>
-          </div>
-        </div>
+      <!-- Delete form-->
+      <form action="#"  th:action="@{/smpeditor/deletesmpfile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpdelete}"  method="post" enctype="multipart/form-data">  
         <div class="form-group row" id="newfileinputs">
           <label th:text="#{label.SmpEditor.uploadform.server}" for="smpServer" class="col-xs-2 col-form-label">SMP Server</label>
           <div class="col-xs-9">
             <input class="form-control" type="url" pattern="https://.+" name="smpServer" th:field="*{{smpServer}}" required>
           </div>
         </div>
+        
+        <div id="newfileinputs" class="form-group row">
+          <label class="col-xs-2" for="country" th:text="#{label.SmpEditor.form.country}">Country</label>
+          <div class="col-xs-9">
+            <select class="form-control choosecountry" th:field="*{{country}}" required>
+              <option th:text="'-- ' + #{label.SmpEditor.choose} + ' --'" value="">Choose an option</option>   
+              <option th:each="country : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries).values()}" th:value="${{country}}" th:text="${country}">---</option>
+            </select> 
+          </div>
+        </div>
+                
         <div class="form-group row" id="newfileinputs">
           <label th:text="#{label.SmpEditor.uploadform.username}" for="serverUsername" class="col-xs-2 col-form-label">Username</label>
           <div class="col-xs-9">
@@ -66,32 +67,13 @@
         <div>
           <div id="btnformnsf">
             <a href="#" id="abutton" th:href="@{/smpeditor/smpeditor}" class="btn btn-default" th:text="#{label.button.cancel}">Cancel</a>
-            <button type="submit" class="btn" th:text="#{label.button.upload}" style="width:76px;">Upload</button>
+            <button type="submit" class="btn" th:text="#{label.button.ok}" style="width:76px;">Ok</button>
           </div> 
         </div> 
                         
       </form>     
       
     </div>
-    
-    <!-- List of chosen files -->
-    <script>
-      var selDiv = "";
-      document.addEventListener("DOMContentLoaded", init, false);
-      function init() {
-          document.querySelector('#files').addEventListener('change', handleFileSelect, false);
-          selDiv = document.querySelector("#selectedFiles");
-      } 
-      function handleFileSelect(e) {    
-          if(!e.target.files) return;
-          selDiv.innerHTML = "";
-          var files = e.target.files;
-          for(var i=0; i<files.length; i++) {
-              var f = files[i];
-              selDiv.innerHTML += "<li>" + f.name + "</li>";
-          } 
-      }
-    </script>
-           
+               
   </body>
 </html>

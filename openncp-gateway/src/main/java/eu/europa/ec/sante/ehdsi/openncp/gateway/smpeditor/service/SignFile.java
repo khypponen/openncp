@@ -1,5 +1,6 @@
 package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service;
 
+import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.exception.GenericException;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -94,15 +95,12 @@ public class SignFile {
     Document docUnwrapped = buildDocWithGivenRoot(smNode);
     Element siSigPointer = findSig(type, docUnwrapped);
     SignatureValidator.validateSignature(siSigPointer);
-   
+    
     generatedSignFile = new File("/" + fileName);
-
     Source source = new DOMSource(docServiceMetadata);
     Result result = new StreamResult(generatedSignFile);
-
     Transformer xformer = TransformerFactory.newInstance().newTransformer();
     xformer.transform(source, result);
-
   }
 
   private DocumentBuilder getDocumentBuilder() throws ParserConfigurationException {
@@ -131,7 +129,7 @@ public class SignFile {
 
   private Element findSignatureByParentNode(Element sigParent) {
     for (Node child = sigParent.getFirstChild(); child != null; child = child.getNextSibling()) {
-      if ("Signature".equals(child.getLocalName()) && "http://www.w3.org/2000/09/xmldsig#".equals(child.getNamespaceURI())) {
+      if ("Signature".equals(child.getLocalName()) && XMLDSIG_NS.equals(child.getNamespaceURI())) {
         return (Element) child;
       }
     }
@@ -141,6 +139,7 @@ public class SignFile {
   private Element findExtension(String type, Document doc) throws ParserConfigurationException, SAXException, IOException {
     Element extension = null;
     if (!type.equals("Redirect")) {
+      logger.debug("\n ********* ServiceInformation");
       Element serviceInformation = findFirstElementByName(doc, "ServiceInformation");
       for (Node child = serviceInformation.getFirstChild(); child != null; child = child.getNextSibling()) {
         if ("Extension".equals(child.getLocalName()) && OASIS_NS.equals(child.getNamespaceURI())) {
@@ -148,9 +147,10 @@ public class SignFile {
         }
       }
       if (extension == null) {
-        throw new RuntimeException("Could not find Extension in ServiceInformation tag.");
+        throw new GenericException("Not Found", "Could not find Extension in ServiceInformation tag.");
       }
     } else if (type.equals("Redirect")) {
+      logger.debug("\n ********* Redirect");
       Element redirect = findFirstElementByName(doc, "Redirect");
       for (Node child = redirect.getFirstChild(); child != null; child = child.getNextSibling()) {
         if ("Extension".equals(child.getLocalName()) && OASIS_NS.equals(child.getNamespaceURI())) {
@@ -158,7 +158,7 @@ public class SignFile {
         }
       }
       if (extension == null) {
-        throw new RuntimeException("Could not find Extension in ServiceInformation tag.");
+        throw new GenericException("Not Found", "Could not find Extension in ServiceInformation tag.");
       }
     }
     return extension;
@@ -179,8 +179,8 @@ public class SignFile {
       }
       //Add new extension
       if (extension == null) {
-        extension = doc.createElement("Extension");
-        serviceInformation.appendChild(extension);
+        extension = doc.createElementNS(doc.getFirstChild().getNamespaceURI(), "Extension");
+        serviceInformation.appendChild(extension);   
       }
     } else if (type.equals("Redirect")) {
       Element redirect = findFirstElementByName(doc, "Redirect");
@@ -195,7 +195,7 @@ public class SignFile {
       }
       //Add new extension
       if (extension == null) {
-        extension = doc.createElement("Extension");
+        extension = doc.createElementNS(doc.getFirstChild().getNamespaceURI(), "Extension");
         redirect.appendChild(extension);
       }
     }
@@ -215,7 +215,7 @@ public class SignFile {
     // Marshalling and parsing the document - signature validation fails without this stinky "magic".
     // _Probably_ SUN's implementation doesn't import correctly signatures between two different documents.
     String strUnwrapped = marshall(docUnwrapped);
-    logger.debug(strUnwrapped);
+    logger.debug("\n ********* buildDocWithGivenRoot: \n" + strUnwrapped);
     return parseDocument(strUnwrapped);
   }
 

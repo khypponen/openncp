@@ -17,6 +17,14 @@ import org.w3c.dom.Element;
  */
 public class SMPFileOps {
 
+  public String getIssuanceType() {
+    return issuanceType;
+  }
+
+  public void setIssuanceType(String issuanceType) {
+    this.issuanceType = issuanceType;
+  }
+
   private String fileName;
   private File generatedFile;
   private MultipartFile updateFile;
@@ -26,6 +34,7 @@ public class SMPFileOps {
   private String country;
   
   //ServiceInformation
+  private String issuanceType;
   private String documentIdentifier;
   private String documentIdentifierScheme;
   private String participantIdentifier;
@@ -68,7 +77,6 @@ public class SMPFileOps {
   private String serviceExpirationDateS;
   private int id;
   private SMPFields smpfields;
- // private boolean signedExtension;
   private Alert alert;
 
   public String getFileName() {

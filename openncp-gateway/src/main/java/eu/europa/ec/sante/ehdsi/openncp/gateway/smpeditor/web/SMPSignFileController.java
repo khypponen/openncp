@@ -66,8 +66,6 @@ public class SMPSignFileController {
   @Autowired
   private final XMLValidator xmlValidator = new XMLValidator();
   @Autowired
-  private final SignFile signFile = new SignFile();
-  @Autowired
   private Environment env;
   @Autowired
   private ReadSMPProperties readProperties = new ReadSMPProperties();
@@ -263,7 +261,7 @@ public class SMPSignFileController {
           }
           String[] ids = result.split("/services/");
           participantID = ids[0];
-          String[] cc = participantID.split(":");
+          String[] cc = participantID.split(":");/*May change if Participant Identifier specification change*/
 
           Countries count = null;
           Countries[] countries = count.getALL();
@@ -279,8 +277,8 @@ public class SMPSignFileController {
           }
           
           String docID = ids[1];
-          String[] nIDs = docID.split("::");
-          documentID = nIDs[3];
+          String[] nIDs = docID.split(":");/*May change if Document Identifier specification change*/
+          documentID = nIDs[6];
           
           String smpType = env.getProperty(documentID); //smpeditor.properties
           if (smpType == null) {
@@ -316,12 +314,16 @@ public class SMPSignFileController {
         smpfile.setDocumentIdentifier(serviceMetadata.getServiceInformation().getDocumentIdentifier().getValue());
         smpfile.setDocumentIdentifierScheme(serviceMetadata.getServiceInformation().getDocumentIdentifier().getScheme());
         String documentIdentifier = smpfile.getDocumentIdentifier();
+        logger.debug("\n************ DOC ID - " + documentIdentifier);
 
-        /*get document type name from document identifier*/
+        String[] nIDs = documentIdentifier.split(":"); /*May change if Document Identifier specification change*/
+        String documentID = nIDs[4];
+        String smpType = env.getProperty(documentID); //smpeditor.properties
+        logger.debug("\n******** DOC ID 2 - " + documentID);
+        logger.debug("\n******** SMP Type - " + smpType);
         SMPType[] smptypes = smptype.getALL();
         for (int i = 0; i < smptypes.length; i++) {
-          String docID = env.getProperty(smptypes[i].name() + ".DocumentIdentifier");
-          if (docID == null ? documentIdentifier == null : docID.equals(documentIdentifier)) {
+          if (smptypes[i].name().equals(smpType)) {
             smpfile.setType(smptypes[i]);
             break;
           }
@@ -485,7 +487,7 @@ public class SMPSignFileController {
     logger.debug("\n==== in signSMPFile ====");
     
     for (int i = 0; i < smpfilesign.getAllFiles().size(); i++) {
-
+      SignFile signFile = new SignFile();
       try {
         signFile.signFiles(smpfilesign.getAllFiles().get(i).getType().name(),
                 smpfilesign.getAllFiles().get(i).getFileName(),

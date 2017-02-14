@@ -39,7 +39,15 @@
             <option th:each="country : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries).values()}" th:value="${{country}}" th:text="${country}">---</option>
           </select> 
         </div>
-
+        <div th:if="${Identity_Provider != null}" class="form-group" id="choosecountry">
+          <label th:text="#{label.SmpEditor.form.issuanceType}" for="issuanceType" class="col-form-label">Issuance type</label>
+          <select class="form-control choosecountry" th:field="*{{issuanceType}}" th:value="${smpfile.issuanceType}" required>
+            <option th:text="'-- ' + #{label.SmpEditor.choose} + ' --'" value="">Choose an option</option>
+            <option th:text="#{label.SmpEditor.form.optionIdP.epsos}" th:value="epsos">EPSOS</option>   
+            <option th:text="#{label.SmpEditor.form.optionIdP.iti}" th:value="iti">ITI</option>
+          </select> 
+        </div> 
+        
         <h3 th:text="#{label.SmpEditor.form.endpoint}" class="subsubtitle">Endpointt</h3>
 
         <div th:if="${smpfields.uri.enable}" class="form-group row" id="newfileinputs">

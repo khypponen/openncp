@@ -25,6 +25,7 @@ public class SMPFile {
   
   //ServiceInformation
   private String endpointURI;
+  private String issuanceType;
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
   private Date serviceActivationDate;
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
@@ -164,4 +165,12 @@ public class SMPFile {
   public void setCertificateUID(String certificateUID) {
     this.certificateUID = certificateUID;
   }   
+  
+  public String getIssuanceType() {
+    return issuanceType;
+  }
+
+  public void setIssuanceType(String issuanceType) {
+    this.issuanceType = issuanceType;
+  }
 }

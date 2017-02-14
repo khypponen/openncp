@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+    <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>  
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+      <div class="container-fluid" th:include="fragments/header::head">
+      </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Home/SMP Editor/Delete File</li>
+        </ol>
+      </div>
+    </nav><!-- HEADER -->
+
+    <h2 class="marginleft" th:text="#{label.SmpEditor.menu.op5}">Delete SMP file</h2>
+    <h3 class="subtitle" th:text="#{label.SmpEditor.op5.subTitle2}">Files deleted</h3>  
+
+    <div class="panel panel-default" th:each="item: ${items}" id="newfileinputs">
+      <div class="panel-heading" th:style="'background-color:' + ${item.status.backgroundColor} + ';'">
+        <p><strong th:text="${item.smptype}"></strong></p>
+        <p th:text="${item.reference}"></p>
+        <div class="right">
+          <font th:text="${item.status.message}" th:attr="color=${item.status.color}"></font>
+        </div>
+      </div>
+      <div th:if="${item.alert != null}" class="panel-body">
+        <div class="alert center" th:classappend="'alert-' + ${item.alert.type}">
+          <strong th:text="${item.alert.message}"></strong>
+          <p th:text="${item.errorDescription}"></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="btnformnsf">
+      <a href="#" id="abutton" th:href="@{/smpeditor/deletesmpinfo}" class="btn btn-default" th:text="#{label.button.back}">Back</a>
+      <a href="#" id="abutton" th:href="@{/smpeditor/smpeditor}" class="btn btn-default" th:text="#{label.button.done}">Done</a>
+    </div>
+
+  </body>
+</html>

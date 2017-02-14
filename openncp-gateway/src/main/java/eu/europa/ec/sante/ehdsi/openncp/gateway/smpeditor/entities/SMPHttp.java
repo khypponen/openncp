@@ -7,26 +7,67 @@ import org.springframework.web.multipart.MultipartFile;
  *
  * @author Inês Garganta
  */
+public class SMPHttp {
 
-public class SMPUpload {
+  public String getSmptype() {
+    return smptype;
+  }
 
+  public void setSmptype(String smptype) {
+    this.smptype = smptype;
+  }
+
+  public String getReference() {
+    return reference;
+  }
+
+  public void setReference(String reference) {
+    this.reference = reference;
+  }
+
+  public List<String> getReferenceSelected() {
+    return referenceSelected;
+  }
+
+  public void setReferenceSelected(List<String> referenceSelected) {
+    this.referenceSelected = referenceSelected;
+  }
+
+  public List<ReferenceCollection> getReferenceCollection() {
+    return referenceCollection;
+  }
+
+  public void setReferenceCollection(List<ReferenceCollection> referenceCollection) {
+    this.referenceCollection = referenceCollection;
+  }
+
+  //Upload
   private MultipartFile uploadFile;
   private List<MultipartFile> uploadFiles;
-  private List<SMPUpload> allItems;
+  private List<SMPHttp> allItems;
   private String uploadFileName;
+  private int id;
+  private String signedServiceMetadataUrl;
+  private String serviceGroupUrl;
+
+  //Delete
+  private List<ReferenceCollection> referenceCollection;
+  private List<String> referenceSelected;
+  private String reference;
+  private String documentType;
+  private List<String> smpDocTypes;
+  private String smptype;
+  private Countries country;
+
   private String smpServer;
   private String serverUsername;
   private String serverPassword;
   private int statusCode;
   private String businessCode;
   private String errorDescription;
-  private int id;
-  private String signedServiceMetadataUrl;
-  private String serviceGroupUrl; 
   private Alert alert;
   private Alert status;
 
-  
   public String getServiceGroupUrl() {
     return serviceGroupUrl;
   }
@@ -42,8 +83,7 @@ public class SMPUpload {
   public void setSignedServiceMetadataUrl(String signedServiceMetadataUrl) {
     this.signedServiceMetadataUrl = signedServiceMetadataUrl;
   }
-  
-  
+
   public MultipartFile getUploadFile() {
     return uploadFile;
   }
@@ -91,7 +131,7 @@ public class SMPUpload {
   public void setServerPassword(String serverPassword) {
     this.serverPassword = serverPassword;
   }
-  
+
   public int getStatusCode() {
     return statusCode;
   }
@@ -99,15 +139,15 @@ public class SMPUpload {
   public void setStatusCode(int statusCode) {
     this.statusCode = statusCode;
   }
-  
-  public List<SMPUpload> getAllItems() {
+
+  public List<SMPHttp> getAllItems() {
     return allItems;
   }
 
-  public void setAllItems(List<SMPUpload> allItems) {
+  public void setAllItems(List<SMPHttp> allItems) {
     this.allItems = allItems;
   }
-  
+
   public String getBusinessCode() {
     return businessCode;
   }
@@ -115,7 +155,7 @@ public class SMPUpload {
   public void setBusinessCode(String businessCode) {
     this.businessCode = businessCode;
   }
-  
+
   public int getId() {
     return id;
   }
@@ -123,7 +163,7 @@ public class SMPUpload {
   public void setId(int id) {
     this.id = id;
   }
-  
+
   public Alert getAlert() {
     return alert;
   }
@@ -139,7 +179,7 @@ public class SMPUpload {
   public void setErrorDescription(String errorDescription) {
     this.errorDescription = errorDescription;
   }
-  
+
   public Alert getStatus() {
     return status;
   }
@@ -147,5 +187,65 @@ public class SMPUpload {
   public void setStatus(Alert status) {
     this.status = status;
   }
-  
+
+  public String getDocumentType() {
+    return documentType;
+  }
+
+  public void setDocumentType(String documentType) {
+    this.documentType = documentType;
+  }
+
+  public List<String> getSmpDocTypes() {
+    return smpDocTypes;
+  }
+
+  public void setSmpDocTypes(List<String> smpDocTypes) {
+    this.smpDocTypes = smpDocTypes;
+  }
+
+  public Countries getCountry() {
+    return country;
+  }
+
+  public void setCountry(Countries country) {
+    this.country = country;
+  }
+
+  public static class ReferenceCollection {
+    private String reference;
+    private String smptype;
+    private int id;
+
+    public ReferenceCollection(String reference, String smptype, int id) {
+      this.reference = reference;
+      this.smptype = smptype;
+      this.id=id;
+    }
+
+    public String getReference() {
+      return reference;
+    }
+
+    public void setReference(String reference) {
+      this.reference = reference;
+    }
+
+    public String getSmptype() {
+      return smptype;
+    }
+
+    public void setSmptype(String smptype) {
+      this.smptype = smptype;
+    }
+    
+    public int getId() {
+      return id;
+    }
+
+    public void setId(int id) {
+      this.id = id;
+    }
+  }
+
 }

@@ -1,6 +1,6 @@
 package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.web;
 
-import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPUpload;
+import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPHttp;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Alert;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.SMPConverter;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.XMLValidator;
@@ -42,7 +42,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import eu.epsos.util.net.ProxyUtil;
+//import eu.epsos.util.net.ProxyUtil;
+import org.apache.http.HttpHost;
 
 /**
  *
@@ -71,7 +72,7 @@ public class SMPUploadFileController {
   @RequestMapping(value = "/smpeditor/uploadsmpfile", method = RequestMethod.GET)
   public String uploadFile(Model model) {
     logger.debug("\n==== in uploadFile ====");
-    model.addAttribute("smpupload", new SMPUpload());
+    model.addAttribute("smpupload", new SMPHttp());
 
     return "smpeditor/uploadsmpfile";
   }
@@ -85,14 +86,14 @@ public class SMPUploadFileController {
    * @return
    */
   @RequestMapping(value = "smpeditor/uploadsmpfile", method = RequestMethod.POST)
-  public String postUpload(@ModelAttribute("smpupload") SMPUpload smpupload, Model model, final RedirectAttributes redirectAttributes) {
+  public String postUpload(@ModelAttribute("smpupload") SMPHttp smpupload, Model model, final RedirectAttributes redirectAttributes) {
     logger.debug("\n==== in postUpload ====");
     model.addAttribute("smpupload", smpupload);
     
     /*Iterate through all chosen files*/
-    List<SMPUpload> allItems = new ArrayList<SMPUpload>();
+    List<SMPHttp> allItems = new ArrayList<SMPHttp>();
     for (int i = 0; i < smpupload.getUploadFiles().size(); i++) {
-      SMPUpload itemUpload = new SMPUpload();
+      SMPHttp itemUpload = new SMPHttp();
 
       itemUpload.setUploadFileName(smpupload.getUploadFiles().get(i).getOriginalFilename());
 
@@ -196,8 +197,9 @@ public class SMPUploadFileController {
       String serviceMetdataUrl = "/" + participantID + "/services/" + documentTypeID;
       itemUpload.setSignedServiceMetadataUrl(urlServer + serviceMetdataUrl);
 
-      if (urlServer.startsWith("http")) {
-        urlServer = urlServer.substring(7);
+      /*Removes https:// from entered by the user so it won't repeat in uri set scheme*/
+      if (urlServer.startsWith("https")) {
+        urlServer = urlServer.substring(8);
       }
 
       URI uri = null;
@@ -220,11 +222,11 @@ public class SMPUploadFileController {
 
       StringEntity entityPut = new StringEntity(content, ContentType.create("application/xml", "UTF-8"));
       
-      ProxyUtil.initProxyConfiguration();
+      //ProxyUtil.initProxyConfiguration();
 
       CloseableHttpClient httpclient = HttpClients.custom()
               .useSystemProperties()
-              //.setProxy(new HttpHost("192.168.1.90", 8080))
+              .setProxy(new HttpHost("192.168.1.90", 8080))/*If you want to test with proxy without NCP Environment set*/
               .build();
       
       //PUT
@@ -307,7 +309,7 @@ public class SMPUploadFileController {
    * @return
    */
   @RequestMapping(value = "smpeditor/uploadsmpinfo", method = RequestMethod.GET)
-  public String uploadInfo(@ModelAttribute("smpupload") SMPUpload smpupload, Model model) {
+  public String uploadInfo(@ModelAttribute("smpupload") SMPHttp smpupload, Model model) {
     logger.debug("\n==== in uploadInfo ====");
     model.addAttribute("smpupload", smpupload);
 

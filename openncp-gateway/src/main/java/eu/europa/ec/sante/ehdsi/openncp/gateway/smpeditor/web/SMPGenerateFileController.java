@@ -152,7 +152,15 @@ public class SMPGenerateFileController {
             smpfile.setExtension(null);
           }
           
-          smpconverter.convertToXml(smpfile.getType().name(), smpfile.getCountry(), smpfile.getEndpointURI(), smpfile.getServiceDescription(),
+          logger.debug("\n****getIssuanceType - " + smpfile.getIssuanceType());
+          
+          if(smpfile.getIssuanceType() ==  null){
+              smpfile.setIssuanceType("");
+          }
+          logger.debug("\n****getIssuanceType 2 - " + smpfile.getIssuanceType());
+          
+          
+          smpconverter.convertToXml(smpfile.getType().name(), smpfile.getIssuanceType(), smpfile.getCountry(), smpfile.getEndpointURI(), smpfile.getServiceDescription(),
                   smpfile.getTechnicalContactUrl(), smpfile.getTechnicalInformationUrl(), smpfile.getServiceActivationDate(),
                   smpfile.getServiceExpirationDate(), smpfile.getExtension(), smpfile.getCertificateFile(), smpfile.getFileName(), 
                   null, null);
@@ -182,6 +190,7 @@ public class SMPGenerateFileController {
           /*
             get documentIdentification and participantIdentification from redirect href
           */
+          /*May change if Document or Participant Identifier specification change*/
           String href = smpfile.getHref();
           String documentID="";
           String participantID="";
@@ -199,7 +208,7 @@ public class SMPGenerateFileController {
             }
             String[] ids = result.split("/services/");
             participantID = ids[0];
-            String[] cc = participantID.split(":");
+            String[] cc = participantID.split(":"); /*May change if Participant Identifier specification change*/
             
             Countries count = null;
             Countries[] countries = count.getALL();
@@ -215,8 +224,8 @@ public class SMPGenerateFileController {
             }
             
             String docID = ids[1];
-            String[] nIDs = docID.split("::");
-            documentID = nIDs[3];
+            String[] nIDs = docID.split(":"); /*May change if Document Identifier specification change*/
+            documentID = nIDs[6];
           }
           else{
             String message = env.getProperty("error.redirect.href"); //messages.properties
@@ -237,7 +246,7 @@ public class SMPGenerateFileController {
           smpfile.setFileName(fileName);
           
           logger.debug("\n****Type Redirect");
-          smpconverter.convertToXml(smpfile.getType().name(), null, null, null, null, null, null, null, null, null, 
+          smpconverter.convertToXml(smpfile.getType().name(), null, null, null, null, null, null, null, null, null, null, 
                   smpfile.getFileName(), smpfile.getCertificateUID(), smpfile.getHref());
           break;
       }
