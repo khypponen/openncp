@@ -253,6 +253,26 @@
             <artifactId>com.liferay.util.java</artifactId>
             <version>2.2.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.liferay.faces</groupId>
+            <artifactId>com.liferay.faces.alloy</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.liferay.faces</groupId>
+            <artifactId>com.liferay.faces.bridge.ext</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.liferay.faces</groupId>
+            <artifactId>com.liferay.faces.portal</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.sun.faces</groupId>-->
+            <!--<artifactId>jsf-impl</artifactId>-->
+            <!--<version>2.2.13</version>-->
+        <!--</dependency>-->
         <!--<dependency>-->
         <!--<groupId>com.liferay.portal</groupId>-->
         <!--<artifactId>portal-service</artifactId>-->
@@ -280,8 +300,8 @@
         <dependency>
             <groupId>javax.portlet</groupId>
             <artifactId>portlet-api</artifactId>
-            <version>2.0</version>
-            <scope>provided</scope>
+            <version>3.0.0</version>
+            <!--scope>provided</scope-->
         </dependency>
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
