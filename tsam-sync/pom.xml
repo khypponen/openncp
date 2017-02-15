@@ -23,6 +23,7 @@
         <hikaricp.version>2.6.0</hikaricp.version>
         <httpclient.version>4.5.2</httpclient.version>
         <jackson.version>2.8.4</jackson.version>
+        <mysql-connector.version>5.1.39</mysql-connector.version>
         <ojdbc.version>12.1.0.1</ojdbc.version>
         <spring.version>4.3.6.RELEASE</spring.version>
         <spring-boot.version>1.5.1.RELEASE</spring-boot.version>
@@ -84,6 +85,11 @@
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc7</artifactId>
             <version>${ojdbc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector.version}</version>
         </dependency>
     </dependencies>
 
