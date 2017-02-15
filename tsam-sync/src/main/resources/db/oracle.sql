@@ -2,7 +2,7 @@ CREATE TABLE code_system (
   id          NUMBER(19) NOT NULL,
   oid         VARCHAR2(255 CHAR),
   name        VARCHAR2(255 CHAR),
-  description VARCHAR2(255 CHAR),
+  description VARCHAR2(4000 CHAR),
   CONSTRAINT code_system_pk PRIMARY KEY (id)
 );
 
@@ -15,7 +15,7 @@ CREATE TABLE code_system_version (
   release_date        TIMESTAMP,
   status              VARCHAR2(255 CHAR),
   status_date         TIMESTAMP,
-  description         VARCHAR2(255 CHAR),
+  description         VARCHAR2(4000 CHAR),
   copyright           VARCHAR2(255 CHAR),
   source              VARCHAR2(255 CHAR),
   code_system_id      NUMBER(19) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE code_system_version (
 CREATE TABLE code_system_concept (
   id                     NUMBER(19) NOT NULL,
   code                   VARCHAR2(255 CHAR),
-  definition             VARCHAR2(1000 CHAR),
+  definition             VARCHAR2(4000 CHAR),
   status                 VARCHAR2(255 CHAR),
   status_date            TIMESTAMP,
   code_system_version_id NUMBER(19) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE code_system_concept (
 
 CREATE TABLE designation (
   id                     NUMBER(19) NOT NULL,
-  designation            VARCHAR2(255 CHAR),
+  designation            VARCHAR2(4000 CHAR),
   language_code          VARCHAR2(255 CHAR),
   type                   VARCHAR2(255 CHAR),
   is_preferred           NUMBER(1),
@@ -65,7 +65,7 @@ CREATE TABLE value_set (
   id                    NUMBER(19) NOT NULL,
   oid                   VARCHAR2(255 CHAR),
   epsos_name            VARCHAR2(255 CHAR),
-  description           VARCHAR2(255 CHAR),
+  description           VARCHAR2(4000 CHAR),
   parent_code_system_id NUMBER(19),
   CONSTRAINT value_set_pk PRIMARY KEY (id),
   CONSTRAINT vst_code_system_fk FOREIGN KEY (parent_code_system_id) REFERENCES code_system (id)
@@ -78,7 +78,7 @@ CREATE TABLE value_set_version (
   release_date        TIMESTAMP,
   status              VARCHAR2(255 CHAR),
   status_date         TIMESTAMP,
-  description         VARCHAR2(255 CHAR),
+  description         VARCHAR2(4000 CHAR),
   previous_version_id NUMBER(19),
   value_set_id        NUMBER(19),
   CONSTRAINT value_set_version_pk PRIMARY KEY (id),

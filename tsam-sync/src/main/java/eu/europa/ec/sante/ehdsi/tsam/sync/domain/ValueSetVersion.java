@@ -1,25 +1,21 @@
-package eu.europa.ec.sante.ehdsi.tsam.sync.db;
+package eu.europa.ec.sante.ehdsi.tsam.sync.domain;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "code_system_version")
+@Table(name = "value_set_version")
 @SuppressWarnings("unused")
-public class CodeSystemVersionEntity {
+public class ValueSetVersion {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Transient
-    private String uid;
-
-    @Column(name = "full_name")
-    private String fullName;
-
-    @Column(name = "local_name")
-    private String localName;
+    @Column(name = "version_name")
+    private String name;
 
     @Column(name = "effective_date")
     private LocalDateTime effectiveDate;
@@ -34,13 +30,15 @@ public class CodeSystemVersionEntity {
 
     private String description;
 
-    private String copyright;
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "value_set_id")
+    private ValueSet valueSet;
 
-    private String source;
-
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "code_system_id")
-    private CodeSystemEntity codeSystem;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "x_concept_value_set",
+            joinColumns = @JoinColumn(name = "value_set_version_id"),
+            inverseJoinColumns = @JoinColumn(name = "code_system_concept_id"))
+    private List<CodeSystemEntity> concepts = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -50,28 +48,20 @@ public class CodeSystemVersionEntity {
         this.id = id;
     }
 
-    public String getUid() {
-        return uid;
+    public String getName() {
+        return name;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getFullName() {
-        return fullName;
+    public ValueSet getValueSet() {
+        return valueSet;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getLocalName() {
-        return localName;
-    }
-
-    public void setLocalName(String localName) {
-        this.localName = localName;
+    public void setValueSet(ValueSet valueSet) {
+        this.valueSet = valueSet;
     }
 
     public LocalDateTime getEffectiveDate() {
@@ -114,27 +104,11 @@ public class CodeSystemVersionEntity {
         this.description = description;
     }
 
-    public String getCopyright() {
-        return copyright;
+    public List<CodeSystemEntity> getConcepts() {
+        return concepts;
     }
 
-    public void setCopyright(String copyright) {
-        this.copyright = copyright;
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
-    }
-
-    public CodeSystemEntity getCodeSystem() {
-        return codeSystem;
-    }
-
-    public void setCodeSystem(CodeSystemEntity codeSystem) {
-        this.codeSystem = codeSystem;
+    public void setConcepts(List<CodeSystemEntity> concepts) {
+        this.concepts = concepts;
     }
 }

@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface TermServerClient {
 
-    void authenticate(String username, String password) throws AuthenticationException;
+    void authenticate() throws AuthenticationException;
 
     Optional<ValueSetCatalogSyncModel> retrieveValueSetCatalog(LocalDateTime currentAgreementDate);
 

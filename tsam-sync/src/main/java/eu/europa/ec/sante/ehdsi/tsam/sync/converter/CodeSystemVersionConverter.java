@@ -1,22 +1,21 @@
 package eu.europa.ec.sante.ehdsi.tsam.sync.converter;
 
 import eu.europa.ec.sante.ehdsi.termservice.common.web.rest.model.CodeSystemVersionModel;
-import eu.europa.ec.sante.ehdsi.tsam.sync.db.CodeSystemVersionEntity;
-import org.apache.commons.lang3.StringUtils;
+import eu.europa.ec.sante.ehdsi.tsam.sync.domain.CodeSystemVersion;
 import org.springframework.core.convert.converter.Converter;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CodeSystemVersionConverter implements Converter<CodeSystemVersionModel, CodeSystemVersionEntity> {
+public class CodeSystemVersionConverter implements Converter<CodeSystemVersionModel, CodeSystemVersion> {
 
-    private Map<String, CodeSystemVersionEntity> cache = new HashMap<>();
+    private Map<String, CodeSystemVersion> cache = new HashMap<>();
 
     private CodeSystemConverter codeSystemConverter = new CodeSystemConverter();
 
     @Override
-    public CodeSystemVersionEntity convert(CodeSystemVersionModel source) {
+    public CodeSystemVersion convert(CodeSystemVersionModel source) {
         if (source == null) {
             return null;
         }
@@ -25,17 +24,16 @@ public class CodeSystemVersionConverter implements Converter<CodeSystemVersionMo
             return cache.get(source.getId());
         }
 
-        CodeSystemVersionEntity target = new CodeSystemVersionEntity();
-        target.setUid(source.getId());
-        target.setFullName(StringUtils.substring(source.getFullName(), 0, 255));
-        target.setLocalName(StringUtils.substring(source.getLocalName(), 0, 255));
+        CodeSystemVersion target = new CodeSystemVersion();
+        target.setFullName(source.getFullName());
+        target.setLocalName(source.getLocalName());
         target.setEffectiveDate(source.getEffectiveDate() == null ? null : LocalDateTime.parse(source.getEffectiveDate()));
         target.setReleaseDate(source.getReleaseDate() == null ? null : LocalDateTime.parse(source.getReleaseDate()));
-        target.setStatus(StringUtils.substring(source.getStatus(), 0, 255));
+        target.setStatus(source.getStatus());
         target.setStatusDate(source.getStatusDate() == null ? null : LocalDateTime.parse(source.getStatusDate()));
-        target.setDescription(StringUtils.substring(source.getDescription(), 0, 255));
-        target.setCopyright(StringUtils.substring(source.getCopyright(), 0, 255));
-        target.setSource(StringUtils.substring(source.getSource(), 0, 255));
+        target.setDescription(source.getDescription());
+        target.setCopyright(source.getCopyright());
+        target.setSource(source.getSource());
         target.setCodeSystem(codeSystemConverter.convert(source.getCodeSystem()));
 
         cache.put(source.getId(), target);

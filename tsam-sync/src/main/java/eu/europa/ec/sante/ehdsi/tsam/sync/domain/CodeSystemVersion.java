@@ -1,26 +1,24 @@
-package eu.europa.ec.sante.ehdsi.tsam.sync.db;
+package eu.europa.ec.sante.ehdsi.tsam.sync.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "value_set_version")
+@Table(name = "code_system_version")
 @SuppressWarnings("unused")
-public class ValueSetVersionEntity {
+public class CodeSystemVersion {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Transient
-    private String uid;
+    @Column(name = "full_name")
+    private String fullName;
 
-    @Column(name = "version_name")
-    @Size(max = 255)
-    private String name;
+    @Column(name = "local_name")
+    private String localName;
 
     @Column(name = "effective_date")
     private LocalDateTime effectiveDate;
@@ -28,24 +26,23 @@ public class ValueSetVersionEntity {
     @Column(name = "release_date")
     private LocalDateTime releaseDate;
 
-    @Size(max = 255)
     private String status;
 
     @Column(name = "status_date")
     private LocalDateTime statusDate;
 
-    @Size(max = 255)
     private String description;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "value_set_id")
-    private ValueSetEntity valueSet;
+    private String copyright;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "x_concept_value_set",
-            joinColumns = @JoinColumn(name = "value_set_version_id"),
-            inverseJoinColumns = @JoinColumn(name = "code_system_concept_id"))
-    private List<CodeSystemConceptEntity> concepts = new ArrayList<>();
+    private String source;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "code_system_id")
+    private CodeSystem codeSystem;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codeSystemVersion", orphanRemoval = true)
+    private List<CodeSystemEntity> concepts = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -55,28 +52,20 @@ public class ValueSetVersionEntity {
         this.id = id;
     }
 
-    public String getUid() {
-        return uid;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public String getName() {
-        return name;
+    public String getLocalName() {
+        return localName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ValueSetEntity getValueSet() {
-        return valueSet;
-    }
-
-    public void setValueSet(ValueSetEntity valueSet) {
-        this.valueSet = valueSet;
+    public void setLocalName(String localName) {
+        this.localName = localName;
     }
 
     public LocalDateTime getEffectiveDate() {
@@ -119,11 +108,35 @@ public class ValueSetVersionEntity {
         this.description = description;
     }
 
-    public List<CodeSystemConceptEntity> getConcepts() {
+    public String getCopyright() {
+        return copyright;
+    }
+
+    public void setCopyright(String copyright) {
+        this.copyright = copyright;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public CodeSystem getCodeSystem() {
+        return codeSystem;
+    }
+
+    public void setCodeSystem(CodeSystem codeSystem) {
+        this.codeSystem = codeSystem;
+    }
+
+    public List<CodeSystemEntity> getConcepts() {
         return concepts;
     }
 
-    public void setConcepts(List<CodeSystemConceptEntity> concepts) {
+    public void setConcepts(List<CodeSystemEntity> concepts) {
         this.concepts = concepts;
     }
 }

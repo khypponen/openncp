@@ -1,27 +1,27 @@
-package eu.europa.ec.sante.ehdsi.tsam.sync.db;
+package eu.europa.ec.sante.ehdsi.tsam.sync.domain;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "code_system")
+@Table(name = "value_set")
 @SuppressWarnings("unused")
-public class CodeSystemEntity {
+public class ValueSet {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String oid;
 
+    @Column(name = "epsos_name")
     private String name;
 
     private String description;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "valueSet", orphanRemoval = true)
+    private List<ValueSetVersion> versions = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -53,5 +53,13 @@ public class CodeSystemEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<ValueSetVersion> getVersions() {
+        return versions;
+    }
+
+    public void setVersions(List<ValueSetVersion> versions) {
+        this.versions = versions;
     }
 }

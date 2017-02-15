@@ -1,4 +1,4 @@
-package eu.europa.ec.sante.ehdsi.tsam.sync.client;
+package eu.europa.ec.sante.ehdsi.tsam.sync.client.impl;
 
 import org.apache.http.client.HttpClient;
 import org.apache.http.protocol.HttpContext;

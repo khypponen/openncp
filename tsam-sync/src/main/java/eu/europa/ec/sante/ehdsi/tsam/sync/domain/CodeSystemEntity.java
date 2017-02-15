@@ -1,4 +1,4 @@
-package eu.europa.ec.sante.ehdsi.tsam.sync.db;
+package eu.europa.ec.sante.ehdsi.tsam.sync.domain;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -8,10 +8,10 @@ import java.util.List;
 @Entity
 @Table(name = "code_system_concept")
 @SuppressWarnings("unused")
-public class CodeSystemConceptEntity {
+public class CodeSystemEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String code;
@@ -23,15 +23,15 @@ public class CodeSystemConceptEntity {
     @Column(name = "status_date")
     private LocalDateTime statusDate;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
     @JoinColumn(name = "code_system_version_id", nullable = false)
-    private CodeSystemVersionEntity codeSystemVersion;
+    private CodeSystemVersion codeSystemVersion;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "concepts")
-    private List<ValueSetVersionEntity> valueSetVersions = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "concepts")
+    private List<ValueSetVersion> valueSetVersions = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "codeSystemConcept")
-    private List<DesignationEntity> designations = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "concept")
+    private List<Designation> designations = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -73,29 +73,29 @@ public class CodeSystemConceptEntity {
         this.statusDate = statusDate;
     }
 
-    public CodeSystemVersionEntity getCodeSystemVersion() {
+    public CodeSystemVersion getCodeSystemVersion() {
         return codeSystemVersion;
     }
 
-    public void setCodeSystemVersion(CodeSystemVersionEntity codeSystemVersion) {
+    public void setCodeSystemVersion(CodeSystemVersion codeSystemVersion) {
         this.codeSystemVersion = codeSystemVersion;
     }
 
-    public List<ValueSetVersionEntity> getValueSetVersions() {
+    public List<ValueSetVersion> getValueSetVersions() {
         return valueSetVersions;
     }
 
-    public void addValueSetVersion(ValueSetVersionEntity valueSetVersion) {
+    public void addValueSetVersion(ValueSetVersion valueSetVersion) {
         valueSetVersions.add(valueSetVersion);
         valueSetVersion.getConcepts().add(this);
     }
 
-    public List<DesignationEntity> getDesignations() {
+    public List<Designation> getDesignations() {
         return designations;
     }
 
-    public void addDesignation(DesignationEntity designation) {
+    public void addDesignation(Designation designation) {
         designations.add(designation);
-        designation.setCodeSystemConcept(this);
+        designation.setConcept(this);
     }
 }

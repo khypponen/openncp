@@ -1,4 +1,4 @@
-package eu.europa.ec.sante.ehdsi.tsam.sync.db;
+package eu.europa.ec.sante.ehdsi.tsam.sync.domain;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -6,10 +6,10 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "designation")
 @SuppressWarnings("unused")
-public class DesignationEntity {
+public class Designation {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String designation;
@@ -29,7 +29,7 @@ public class DesignationEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "code_system_concept_id")
-    private CodeSystemConceptEntity codeSystemConcept;
+    private CodeSystemEntity concept;
 
     public Long getId() {
         return id;
@@ -87,11 +87,11 @@ public class DesignationEntity {
         this.statusDate = statusDate;
     }
 
-    public CodeSystemConceptEntity getCodeSystemConcept() {
-        return codeSystemConcept;
+    public CodeSystemEntity getConcept() {
+        return concept;
     }
 
-    public void setCodeSystemConcept(CodeSystemConceptEntity codeSystemConcept) {
-        this.codeSystemConcept = codeSystemConcept;
+    public void setConcept(CodeSystemEntity codeSystemConcept) {
+        this.concept = codeSystemConcept;
     }
 }

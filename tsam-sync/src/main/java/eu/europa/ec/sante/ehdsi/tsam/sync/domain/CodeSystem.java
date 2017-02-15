@@ -1,26 +1,26 @@
-package eu.europa.ec.sante.ehdsi.tsam.sync.db;
+package eu.europa.ec.sante.ehdsi.tsam.sync.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "value_set")
+@Table(name = "code_system")
 @SuppressWarnings("unused")
-public class ValueSetEntity {
+public class CodeSystem {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Size(max = 255)
     private String oid;
 
-    @Column(name = "epsos_name")
-    @Size(max = 255)
     private String name;
 
-    @Size(max = 255)
     private String description;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codeSystem", orphanRemoval = true)
+    private List<CodeSystemVersion> versions = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -52,5 +52,13 @@ public class ValueSetEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<CodeSystemVersion> getVersions() {
+        return versions;
+    }
+
+    public void setVersions(List<CodeSystemVersion> versions) {
+        this.versions = versions;
     }
 }
