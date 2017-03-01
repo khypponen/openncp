@@ -54,23 +54,26 @@
             <option th:each="country : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries).values()}" th:value="${{country}}" th:selected="${country == T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries)}" th:text="${country}">---</option>
           </select> 
         </div>
-        <div th:if="${Identity_Provider != null}" class="form-group" id="choosecountry">
-          <label th:text="#{label.SmpEditor.form.issuanceType}" for="issuanceType" class="col-form-label">Event type</label>
-          <select class="form-control choosecountry" th:field="*{{issuanceType}}" th:value="${smpfileupdate.issuanceType}" required>
+        <div th:if="${smpfields.issuanceType.enable}" class="form-group" id="choosecountry">
+          <label th:text="#{label.SmpEditor.form.issuanceType}" for="issuanceType" class="col-form-label">Issuance type</label>
+          <select class="form-control choosecountry" th:field="*{{issuanceType}}" th:value="${smpfileupdate.issuanceType}" th:required="${smpfields.issuanceType.mandatory}? required">
             <option th:text="'-- ' + #{label.SmpEditor.choose} + ' --'" value="">Choose an option</option>
             <option th:text="#{label.SmpEditor.form.optionIdP.epsos}" th:selected="${smpfileupdate.issuanceType == 'epsos'}" th:value="epsos">EPSOS</option>   
             <option th:text="#{label.SmpEditor.form.optionIdP.iti}" th:selected="${smpfileupdate.issuanceType == 'iti'}" th:value="iti">ITI</option>
           </select> 
+        </div>
+        <div th:if="${!smpfields.issuanceType.enable}" class="form-group" id="choosecountry">
+          <input type="hidden" th:field="*{{issuanceType}}"  value=""/>
         </div> 
 
         <h3 th:text="#{label.SmpEditor.form.endpoint}" class="subsubtitle">Endpoint</h3>
 
         <div th:if="${smpfields.uri.enable}" class="form-group row" id="newfileinputs">
           <label th:text="#{label.SmpEditor.form.endpointUri}" for="endpointuri" class="col-xs-2 col-form-label">Endpoint URI</label>
-          <div th:if="${VPN_Gateway_A != null}" class="col-xs-9">
+          <div th:if="${VPN_Gateway_Server != null}" class="col-xs-9">
            <input class="form-control" type="url" id="uriinput" th:field="*{{endpointURI}}" th:value="${smpfileupdate.endpointURI}" pattern="ipsec:\/\/.+" title="ipsec://..." th:required="${smpfields.uri.mandatory}? required">
           </div>
-          <div th:unless="${VPN_Gateway_A != null}" class="col-xs-9">
+          <div th:unless="${VPN_Gateway_Server != null}" class="col-xs-9">
             <input class="form-control" type="url" id="uriinput" th:field="*{{endpointURI}}" th:value="${smpfileupdate.endpointURI}" th:required="${smpfields.uri.mandatory}? required">
           </div>
           <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.uri}" data-tooltip-position="left"><strong>?</strong></span>
@@ -88,17 +91,6 @@
             <input class="form-control" size="16" type="text" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]" id="dateexpinput" th:field="*{{serviceExpirationDate}}" th:value="${smpfileupdate.serviceExpirationDate}" readonly th:required="${smpfields.serviceExpirationDate.mandatory}? required">
           </div>
           <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.expirationDate}" data-tooltip-position="left"><strong>?</strong></span>
-        </div>
-        <div th:if="${smpfields.certificate.enable}" class="form-group row" id="newfileinputs">
-          <label th:text="#{label.SmpEditor.form.certificate}" for="certificate" class="col-xs-2 col-form-label">Certificate</label>
-          <div class="col-xs-9">
-            <textarea  type="text" class="form-control-file col-xs-12 textarea" rows="4" th:text="${smpfileupdate.certificateContent}" readonly></textarea>
-          </div>
-          <label for="certificate" class="col-xs-2 col-form-label"></label>
-          <div class="col-xs-9">
-            <input class="form-control-file" type="file" accept=".pem" name="certificateFile" th:field="*{{certificateFile}}" >
-          </div>
-          <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.certificate}" data-tooltip-position="left"><strong>?</strong></span>
         </div>
         <div th:if="${smpfields.serviceDescription.enable}" class="form-group row" id="newfileinputs">
           <label th:text="#{label.SmpEditor.form.serviceDescription}" for="description" class="col-xs-2 col-form-label">Service Description</label>

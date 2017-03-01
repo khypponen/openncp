@@ -25,6 +25,7 @@
 
     <div class="marginbotton">
       <h2 class="marginleft" th:text="#{label.SmpEditor.menu.op5}">Delete SMP file</h2>
+      <h3 th:text="#{label.SmpEditor.op5.subTitle3}" class="subtitle">Choose your country</h3>
       
       <div th:if="${alert != null}">
         <div class="alert center" th:classappend="'alert-' + ${alert.type}">
@@ -34,36 +35,18 @@
       
       <!-- Delete form-->
       <form action="#"  th:action="@{/smpeditor/deletesmpfile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpdelete}"  method="post" enctype="multipart/form-data">  
-        <div class="form-group row" id="newfileinputs">
-          <label th:text="#{label.SmpEditor.uploadform.server}" for="smpServer" class="col-xs-2 col-form-label">SMP Server</label>
-          <div class="col-xs-9">
-            <input class="form-control" type="url" pattern="https://.+" name="smpServer" th:field="*{{smpServer}}" required>
-          </div>
-        </div>
-        
-        <div id="newfileinputs" class="form-group row">
-          <label class="col-xs-2" for="country" th:text="#{label.SmpEditor.form.country}">Country</label>
-          <div class="col-xs-9">
-            <select class="form-control choosecountry" th:field="*{{country}}" required>
-              <option th:text="'-- ' + #{label.SmpEditor.choose} + ' --'" value="">Choose an option</option>   
-              <option th:each="country : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries).values()}" th:value="${{country}}" th:text="${country}">---</option>
-            </select> 
-          </div>
-        </div>
-                
-        <div class="form-group row" id="newfileinputs">
-          <label th:text="#{label.SmpEditor.uploadform.username}" for="serverUsername" class="col-xs-2 col-form-label">Username</label>
-          <div class="col-xs-9">
-            <input class="form-control" type="text" name="serverUsername" th:field="*{{serverUsername}}">
-          </div>
-        </div>
-        <div class="form-group row" id="newfileinputs">
-          <label th:text="#{label.SmpEditor.uploadform.password}" for="serverPassword" class="col-xs-2 col-form-label">Password</label>
-          <div class="col-xs-9">
-            <input class="form-control" type="password" name="serverPassword" th:field="*{{serverPassword}}">
-          </div>
-        </div>
-        
+       <div class="form-group row" id="newfileinputs">
+         <div id="newfileinputs" class="form-group row">
+           <label class="col-xs-2" for="country" th:text="#{label.SmpEditor.form.country}">Country</label>
+           <div class="col-xs-9">
+             <select class="form-control choosecountry" th:field="*{{country}}" required>
+               <option th:text="'-- ' + #{label.SmpEditor.choose} + ' --'" value="">Choose an option</option>   
+               <option th:each="country : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries).values()}" th:value="${{country}}" th:text="${country}">---</option>
+             </select> 
+           </div>
+         </div>
+       </div>
+                        
         <div>
           <div id="btnformnsf">
             <a href="#" id="abutton" th:href="@{/smpeditor/smpeditor}" class="btn btn-default" th:text="#{label.button.cancel}">Cancel</a>

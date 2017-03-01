@@ -24,6 +24,7 @@ import org.xml.sax.SAXException;
 public class XMLValidator {
   
   org.slf4j.Logger logger = LoggerFactory.getLogger(XMLValidator.class);
+  
   private String reasonInvalid;
   
   public String getReasonInvalid() {
@@ -40,7 +41,7 @@ public class XMLValidator {
     boolean valid = true;  
     
     ClassLoader classLoader = getClass().getClassLoader();
-    File schemaFile = new File(classLoader.getResource("/src/main/resources/smpeditor/bdx-smp-201605.xsd").getFile());
+    File schemaFile = new File(classLoader.getResource("/src/main/resources/smpeditor/bdx-smp-201605.xsd").getFile()); //SPECIFICATION
     SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
     Source xmlFile = new StreamSource(new File(XMLFileSource));
     try {
@@ -52,10 +53,10 @@ public class XMLValidator {
       valid = false;
       reasonInvalid = ex.getMessage();
       logger.debug("\n" +xmlFile.getSystemId() + " is NOT valid reason:" + ex);
-      logger.error("\n SAXException - " + ex.getMessage());
+      logger.error("\n SAXException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
     } catch (IOException ex) {
       valid = false;
-      logger.error("\n IOException - " + ex.getMessage());
+      logger.error("\n IOException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
     }
     
     return valid;

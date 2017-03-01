@@ -1,5 +1,7 @@
 package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service;
 
+import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
+import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPFieldProperties;
 import org.oasis_open.docs.bdxr.ns.smp._2016._05.*;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +23,16 @@ import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 import java.io.*;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
 import java.util.*;
 import org.w3c.dom.Element;
+
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateEncodingException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 
 /**
  *
@@ -42,6 +49,7 @@ public class SMPConverter {
   private Environment env;
 
   org.slf4j.Logger logger = LoggerFactory.getLogger(SMPConverter.class);
+  SimpleErrorHandler error;
 
   private String certificateSubjectName;
   private File generatedFile;
@@ -53,6 +61,7 @@ public class SMPConverter {
    * Converts the data received from the SMPGenerateFileController to a xml file
    *
    * @param type
+   * @param clientServer
    * @param issuanceType
    * @param CC
    * @param endpointUri
@@ -64,12 +73,15 @@ public class SMPConverter {
    * @param servActDate
    * @param extension
    * @param fileName
+   * @param businessLevelSignature
    * @param certificateUID
    * @param redirectHref
+   * @param minimumAuthLevel
    */
-  public void convertToXml(String type, String issuanceType, String CC, String endpointUri, String servDescription,
+  public void convertToXml(String type, /*int clientServer,*/ String issuanceType, String CC, String endpointUri, String servDescription,
           String tecContact, String tecInformation, Date servActDate, Date servExpDate,
-          MultipartFile extension, MultipartFile certificateFile, String fileName,
+          MultipartFile extension, FileInputStream certificateFile, String fileName,
+          SMPFieldProperties businessLevelSignature, SMPFieldProperties minimumAuthLevel,
           String certificateUID, String redirectHref) {
 
     logger.debug("\n==== in converteToXML ====");
@@ -107,7 +119,8 @@ public class SMPConverter {
       ServiceInformationType serviceInformationType = objectFactory.createServiceInformationType();
       
       
-      createStaticFields(type, issuanceType, CC, documentIdentifier, endpointType, participantIdentifierType, processIdentifier);
+      createStaticFields(type, /*clientServer,*/ issuanceType, CC, documentIdentifier, endpointType, participantIdentifierType, 
+              processIdentifier, businessLevelSignature, minimumAuthLevel);
 
       /*
        * URI definition
@@ -151,21 +164,57 @@ public class SMPConverter {
        * certificate parse
        */
       if (certificateFile != null) {
-        X509Certificate cert = null;
-        certificateSubjectName = null;
         try {
-          cert = (X509Certificate) CertificateFactory.getInstance("X.509").generateCertificate(certificateFile.getInputStream());
-          endpointType.setCertificate(cert.getEncoded()); //Set by User
-          if (cert != null) {
-            certificateSubjectName = cert.getIssuerX500Principal().getName() + " Serial Number #"
-                    + cert.getSerialNumber();
+          String certPass = env.getProperty(type + ".certificate.password");
+          String certAlias = env.getProperty(type + ".certificate.alias");
+          String certificatePass = ConfigurationManagerService.getInstance().getProperty(certPass);
+          String certificateAlias = ConfigurationManagerService.getInstance().getProperty(certAlias);
+          
+          KeyStore ks = null;
+          try {
+            ks = KeyStore.getInstance(KeyStore.getDefaultType());
+          } catch (KeyStoreException ex) {
+            logger.error("\n KeyStoreException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
           }
-
-        } catch (CertificateException ex) {
-          logger.error("\n CertificateException - " + ex.getMessage());
-        } catch (IOException ex) {
-          logger.error("\n IOException - " + ex.getMessage());
+          
+          try {
+            ks.load(certificateFile, null);
+          } catch (IOException ex) {
+            logger.error("\n IOException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
+          } catch (NoSuchAlgorithmException ex) {
+            logger.error("\n NoSuchAlgorithmException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
+          } catch (CertificateException ex) {
+            logger.error("\n CertificateException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
+          }
+          if (ks.isKeyEntry(certificateAlias)) {
+            char c[] = new char[certificatePass.length()];
+            certificatePass.getChars(0, c.length, c, 0);
+            Certificate certs[] = ks.getCertificateChain(certificateAlias);
+            if (certs[0] instanceof X509Certificate) {
+              X509Certificate x509 = (X509Certificate) certs[0];
+            }
+            if (certs[certs.length - 1] instanceof X509Certificate) {
+              X509Certificate x509 = (X509Certificate) certs[certs.length - 1];
+              endpointType.setCertificate(x509.getEncoded());
+              certificateSubjectName = x509.getIssuerX500Principal().getName() + " Serial Number #" + x509.getSerialNumber();
+            }
+          } else if (ks.isCertificateEntry(certificateAlias)) {
+            Certificate c = ks.getCertificate(certificateAlias);
+            if (c instanceof X509Certificate) {
+              X509Certificate x509 = (X509Certificate) c;
+              endpointType.setCertificate(x509.getEncoded());
+              certificateSubjectName = x509.getIssuerX500Principal().getName() + " Serial Number #" + x509.getSerialNumber();
+            }
+          } else {
+            logger.debug("\n ********** " + certificateAlias + " is unknown to this keystore");
+          }
+          
+        } catch (KeyStoreException ex) {
+          logger.error("\n KeyStoreException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
+        } catch (CertificateEncodingException ex) {
+          logger.error("\n CertificateEncodingException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         }
+
       } else {
         byte[] by = "".getBytes();
         endpointType.setCertificate(by);
@@ -203,16 +252,16 @@ public class SMPConverter {
 
         } catch (FileNotFoundException ex) {
           nullExtension = true;
-          logger.error("\n FileNotFoundException - " + ex.getMessage());
+          logger.error("\n FileNotFoundException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         } catch (IOException ex) {
           nullExtension = true;
-          logger.error("\n IOException - " + ex.getMessage());
+          logger.error("\n IOException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         } catch (SAXException ex) {
           nullExtension = true;
-          logger.error("\n SAXException - " + ex.getMessage());
+          logger.error("\n SAXException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         } catch (ParserConfigurationException ex) {
           nullExtension = true;
-          logger.error("\n ParserConfigurationException - " + ex.getMessage());
+          logger.error("\n ParserConfigurationException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         }
 
         if (nullExtension) {
@@ -274,7 +323,7 @@ public class SMPConverter {
           String participantID, String participantIDScheme, String processID,
           String processIDScheme, String transportProfile, Boolean requiredBusinessLevelSig,
           String minimumAutenticationLevel, String endpointUri, String servDescription, String tecContact, 
-          String tecInformation, Date servActDate, Date servExpDate, byte[] certificate, MultipartFile certificateFile,
+          String tecInformation, Date servActDate, Date servExpDate, byte[] certificate, FileInputStream certificateFile,
           Element extension, MultipartFile extensionFile,
           String fileName, String certificateUID, String redirectHref) {
 
@@ -367,37 +416,64 @@ public class SMPConverter {
         endpointType.setServiceExpirationDate(calendarED);//Set by user
       }
 
-      /**
-       * certificate
+       /**
+       * certificate parse
        */
-      if (certificateFile == null) {
-        logger.debug("\n****CONVERTER NULL CERTIFICATE FILE");
-
-        if (certificate != null) {
-          endpointType.setCertificate(certificate); //Set by User
-        } else {
-          byte[] by = "".getBytes();
-          endpointType.setCertificate(by);
-        }
-      } else {
-        logger.debug("\n****CONVERTER CERTIFICATE FILE - " + certificateFile.getOriginalFilename());
-
-        /* certificate file parse */
-        X509Certificate cert = null;
-        certificateSubjectName = null;
+      if (certificateFile != null) {
         try {
-          cert = (X509Certificate) CertificateFactory.getInstance("X.509").generateCertificate(certificateFile.getInputStream());
-          endpointType.setCertificate(cert.getEncoded()); //Set by User
-          if (cert != null) {
-            certificateSubjectName = "Issuer: " + cert.getIssuerX500Principal().getName() + "\nSerial Number #"
-                    + cert.getSerialNumber();
+          String certPass = env.getProperty(type + ".certificate.password");
+          String certAlias = env.getProperty(type + ".certificate.alias");
+          String certificatePass = ConfigurationManagerService.getInstance().getProperty(certPass);
+          String certificateAlias = ConfigurationManagerService.getInstance().getProperty(certAlias);
+
+          KeyStore ks = null;
+          try {
+            ks = KeyStore.getInstance(KeyStore.getDefaultType());
+          } catch (KeyStoreException ex) {
+            logger.error("\n KeyStoreException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
           }
 
-        } catch (CertificateException ex) {
-          logger.error("\n CertificateException - " + ex.getMessage());
-        } catch (IOException ex) {
-          logger.error("\n IOException - " + ex.getMessage());
+          try {
+            ks.load(certificateFile, null);
+          } catch (IOException ex) {
+            logger.error("\n IOException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
+          } catch (NoSuchAlgorithmException ex) {
+            logger.error("\n NoSuchAlgorithmException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
+          } catch (CertificateException ex) {
+            logger.error("\n CertificateException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
+          }
+          if (ks.isKeyEntry(certificateAlias)) {
+            char c[] = new char[certificatePass.length()];
+            certificatePass.getChars(0, c.length, c, 0);
+            Certificate certs[] = ks.getCertificateChain(certificateAlias);
+            if (certs[0] instanceof X509Certificate) {
+              X509Certificate x509 = (X509Certificate) certs[0];
+            }
+            if (certs[certs.length - 1] instanceof X509Certificate) {
+              X509Certificate x509 = (X509Certificate) certs[certs.length - 1];
+              endpointType.setCertificate(x509.getEncoded());
+              certificateSubjectName = x509.getIssuerX500Principal().getName() + " Serial Number #" + x509.getSerialNumber();
+            }
+          } else if (ks.isCertificateEntry(certificateAlias)) {
+            Certificate c = ks.getCertificate(certificateAlias);
+            if (c instanceof X509Certificate) {
+              X509Certificate x509 = (X509Certificate) c;
+              endpointType.setCertificate(x509.getEncoded());
+              certificateSubjectName = x509.getIssuerX500Principal().getName() + " Serial Number #" + x509.getSerialNumber();
+            }
+          } else {
+            logger.debug("\n ********** " + certificateAlias + " is unknown to this keystore");
+          }
+
+        } catch (KeyStoreException ex) {
+          logger.error("\n KeyStoreException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
+        } catch (CertificateEncodingException ex) {
+          logger.error("\n CertificateEncodingException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         }
+
+      } else {
+        byte[] by = "".getBytes();
+        endpointType.setCertificate(by);
       }
       
       /*
@@ -422,7 +498,6 @@ public class SMPConverter {
        Endpoint Extension file parse
        */
       if (extensionFile == null) {
-        logger.debug("\n********* CONVERTER NULL EXTENSION FILE ");
         if (extension != null) {
           extensionType.setAny(extension); //Set by user
           endpointType.getExtensions().add(extensionType);
@@ -442,16 +517,16 @@ public class SMPConverter {
 
         } catch (FileNotFoundException ex) {
           nullExtension = true;
-          logger.error("\n FileNotFoundException - " + ex.getMessage());
+          logger.error("\n FileNotFoundException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         } catch (IOException ex) {
           nullExtension = true;
-          logger.error("\n IOException - " + ex.getMessage());
+          logger.error("\n IOException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         } catch (SAXException ex) {
           nullExtension = true;
-          logger.error("\n SAXException - " + ex.getMessage());
+          logger.error("\n SAXException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         } catch (ParserConfigurationException ex) {
           nullExtension = true;
-          logger.error("\n ParserConfigurationException - " + ex.getMessage());
+          logger.error("\n ParserConfigurationException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         }
 
         if (nullExtension) {
@@ -521,35 +596,46 @@ public class SMPConverter {
   /**
    * Defines the static fields of the SMP File
    */
-  private void createStaticFields(String type, String issuanceType, String CC, DocumentIdentifier documentIdentifier, EndpointType endpointType,
-          ParticipantIdentifierType participantIdentifierType, ProcessIdentifier processIdentifier) {
+  private void createStaticFields(String type, /*int clientServer,*/ String issuanceType, String CC, DocumentIdentifier documentIdentifier, EndpointType endpointType,
+          ParticipantIdentifierType participantIdentifierType, ProcessIdentifier processIdentifier,
+          SMPFieldProperties businessLevelSignature, SMPFieldProperties minimumAuthLevel) {
 
     /*
      Document and Participant identifiers definition
      */
     participantIdentifierType.setScheme(env.getProperty(type + ".ParticipantIdentifier.Scheme")); ///in smpeditor.properties
-    participantIdentifierType.setValue("urn:ehealth:" + CC + ":ncpb-idp"); //set by user (CC - country)
-
-    documentIdentifier.setScheme(env.getProperty(type + ".DocumentIdentifier.Scheme"));//in smpeditor.properties
+    /*
+    servidor -- :ncpa-idp
+    client -- :ncpb-idp
+    */
+   /* if(clientServer == 1){
+      participantIdentifierType.setValue("urn:ehealth:" + CC + ":ncpa-idp"); //set by user (CC - country)
+    } else if (clientServer == 2){
+      participantIdentifierType.setValue("urn:ehealth:" + CC + ":ncpb-idp"); //set by user (CC - country)
+    }*/
     
-    if(type.equals("Identity_Provider")){
+    String participantID = env.getProperty(type + ".ParticipantIdentifier.value");//in smpeditor.properties
+    participantID = String.format(participantID, CC); //Add country in place of %2s 
+    participantIdentifierType.setValue(participantID);
+ 
+    documentIdentifier.setScheme(env.getProperty(type + ".DocumentIdentifier.Scheme"));//in smpeditor.properties
+
+    if(!issuanceType.equals("")){
         documentIdentifier.setValue(env.getProperty(type + ".DocumentIdentifier." + issuanceType));//in smpeditor.properties
     } else{
         documentIdentifier.setValue(env.getProperty(type + ".DocumentIdentifier"));//in smpeditor.properties
     }
     
-
-
     /*
      Process identifiers definition
      */
     processIdentifier.setScheme(env.getProperty(type + ".ProcessIdentifier.Scheme"));//in smpeditor.properties
-    if ("International_Search_Mask".equals(type)) {
-      processIdentifier.setValue("urn:ehealth:ncp:" + CC + ":ism");
-    } else if ("Identity_Provider".equals(type)) {
+    if (!issuanceType.equals("")) {
       processIdentifier.setValue(env.getProperty(type + ".ProcessIdentifier." + issuanceType));
     } else {
-      processIdentifier.setValue(env.getProperty(type + ".ProcessIdentifier")); //in smpeditor.properties
+      String processID = env.getProperty(type + ".ProcessIdentifier");//in smpeditor.properties
+      processID = String.format(processID, CC); //Add country if %2s is present in the string
+      processIdentifier.setValue(processID);
     }
 
     /*
@@ -560,11 +646,14 @@ public class SMPConverter {
     /*
      BusinessLevelSignature and MinimumAuthenticationLevel definition
      */
-    if (!"VPN_Gateway_A".equals(type) && !"VPN_Gateway_B".equals(type) && !"Identity_Provider".equals(type) && !"International_Search_Mask".equals(type)) {
+    if (businessLevelSignature.isEnable()) {
       Boolean requireBusinessLevelSignature = Boolean.parseBoolean(env.getProperty(type + ".RequireBusinessLevelSignature"));
       endpointType.setRequireBusinessLevelSignature(requireBusinessLevelSignature); //in smpeditor.properties
+    }
+    if (minimumAuthLevel.isEnable()) {
       endpointType.setMinimumAuthenticationLevel(env.getProperty(type + ".MinimumAuthenticationLevel")); //in smpeditor.properties
     }
+    
   }
   
   /**
@@ -610,19 +699,19 @@ public class SMPConverter {
       generatedFileOS.close();
 
     } catch (JAXBException ex) {
-      logger.error("\n JAXBException - " + ex.getMessage());
+      logger.error("\n JAXBException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
     } catch (FileNotFoundException ex) {
-      logger.error("\n FileNotFoundException - " + ex.getMessage());
+      logger.error("\n FileNotFoundException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
     } catch (IOException ex) {
-      logger.error("\n IOException - " + ex.getMessage());
+      logger.error("\n IOException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
     } catch (XMLStreamException ex) {
-      logger.error("\n XMLStreamException - " + ex.getMessage());
+      logger.error("\n XMLStreamException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
     } finally {
       if (xsw != null) {
         try {
           xsw.close();
         } catch (XMLStreamException ex) {
-          logger.error("\n XMLStreamException - " + ex.getMessage());
+          logger.error("\n XMLStreamException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         }
       }
     }

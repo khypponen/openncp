@@ -34,6 +34,7 @@
                     <include>commonServiceBinding.xjb</include>
                     <include>xmldsig-core-schema.xsd</include>
                     <include>logback.xml</include>
+                    <include>smpeditor.properties</include>
                 </includes>
             </resource>
         </resources>
@@ -102,6 +103,17 @@
             <artifactId>openncp-util</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+          <groupId>eu.europa.ec.dynamic-discovery</groupId>
+          <artifactId>dynamic-discovery-client</artifactId>
+          <version>1.0</version>
+        </dependency>
+        <dependency>
+			<groupId>eu.europa.ec.sante.ehdsi</groupId>
+			<artifactId>openncp-audit-manager</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+        
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>

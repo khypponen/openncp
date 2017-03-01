@@ -32,7 +32,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 @ComponentScan({"eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.*", "eu.europa.ec.sante.ehdsi.openncp.gateway.web"})
 @PropertySources({
 	@PropertySource("messages/messages.properties"),
-	@PropertySource("messages/smpeditor.properties")
+	@PropertySource("WEB-INF/classes/src/main/resources/smpeditor/smpeditor.properties")
 })
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 

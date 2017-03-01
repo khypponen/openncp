@@ -9,38 +9,6 @@ import org.springframework.web.multipart.MultipartFile;
  */
 public class SMPHttp {
 
-  public String getSmptype() {
-    return smptype;
-  }
-
-  public void setSmptype(String smptype) {
-    this.smptype = smptype;
-  }
-
-  public String getReference() {
-    return reference;
-  }
-
-  public void setReference(String reference) {
-    this.reference = reference;
-  }
-
-  public List<String> getReferenceSelected() {
-    return referenceSelected;
-  }
-
-  public void setReferenceSelected(List<String> referenceSelected) {
-    this.referenceSelected = referenceSelected;
-  }
-
-  public List<ReferenceCollection> getReferenceCollection() {
-    return referenceCollection;
-  }
-
-  public void setReferenceCollection(List<ReferenceCollection> referenceCollection) {
-    this.referenceCollection = referenceCollection;
-  }
-
   //Upload
   private MultipartFile uploadFile;
   private List<MultipartFile> uploadFiles;
@@ -55,13 +23,9 @@ public class SMPHttp {
   private List<String> referenceSelected;
   private String reference;
   private String documentType;
-  private List<String> smpDocTypes;
   private String smptype;
   private Countries country;
 
-  private String smpServer;
-  private String serverUsername;
-  private String serverPassword;
   private int statusCode;
   private String businessCode;
   private String errorDescription;
@@ -106,30 +70,6 @@ public class SMPHttp {
 
   public void setUploadFileName(String uploadFileName) {
     this.uploadFileName = uploadFileName;
-  }
-
-  public String getSmpServer() {
-    return smpServer;
-  }
-
-  public void setSmpServer(String smpServer) {
-    this.smpServer = smpServer;
-  }
-
-  public String getServerUsername() {
-    return serverUsername;
-  }
-
-  public void setServerUsername(String serverUsername) {
-    this.serverUsername = serverUsername;
-  }
-
-  public String getServerPassword() {
-    return serverPassword;
-  }
-
-  public void setServerPassword(String serverPassword) {
-    this.serverPassword = serverPassword;
   }
 
   public int getStatusCode() {
@@ -196,14 +136,6 @@ public class SMPHttp {
     this.documentType = documentType;
   }
 
-  public List<String> getSmpDocTypes() {
-    return smpDocTypes;
-  }
-
-  public void setSmpDocTypes(List<String> smpDocTypes) {
-    this.smpDocTypes = smpDocTypes;
-  }
-
   public Countries getCountry() {
     return country;
   }
@@ -211,7 +143,39 @@ public class SMPHttp {
   public void setCountry(Countries country) {
     this.country = country;
   }
+  
+    public String getSmptype() {
+    return smptype;
+  }
 
+  public void setSmptype(String smptype) {
+    this.smptype = smptype;
+  }
+
+  public String getReference() {
+    return reference;
+  }
+
+  public void setReference(String reference) {
+    this.reference = reference;
+  }
+
+  public List<String> getReferenceSelected() {
+    return referenceSelected;
+  }
+
+  public void setReferenceSelected(List<String> referenceSelected) {
+    this.referenceSelected = referenceSelected;
+  }
+
+  public List<ReferenceCollection> getReferenceCollection() {
+    return referenceCollection;
+  }
+
+  public void setReferenceCollection(List<ReferenceCollection> referenceCollection) {
+    this.referenceCollection = referenceCollection;
+  }
+  
   public static class ReferenceCollection {
     private String reference;
     private String smptype;

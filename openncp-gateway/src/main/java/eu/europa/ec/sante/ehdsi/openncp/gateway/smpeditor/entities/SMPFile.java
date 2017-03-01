@@ -1,6 +1,8 @@
 package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.security.cert.X509Certificate;
 import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,11 +19,11 @@ public class SMPFile {
 
   private String fileName;
   private File generatedFile;
- // private MultipartFile updateFile;
 
   private SMPType type;
   private String country;
-  //private String documentIdentifier;
+  private String clientServer;
+
   
   //ServiceInformation
   private String endpointURI;
@@ -36,7 +38,7 @@ public class SMPFile {
   private String technicalInformationUrl;
   private String extensionContent;
   private MultipartFile extension;
-  private MultipartFile certificateFile;
+  private FileInputStream certificateFile;
   
   //Redirect
   private String href;
@@ -136,10 +138,10 @@ public class SMPFile {
     this.extension = Extension;
   }
   
-  public MultipartFile getCertificateFile() {
+  public FileInputStream getCertificateFile() {
     return certificateFile;
   }
-  public void setCertificateFile(MultipartFile certificateFile) {
+  public void setCertificateFile(FileInputStream certificateFile) {
     this.certificateFile = certificateFile;
   }
   
@@ -172,5 +174,13 @@ public class SMPFile {
 
   public void setIssuanceType(String issuanceType) {
     this.issuanceType = issuanceType;
+  }
+  
+  public String getClientServer() {
+    return clientServer;
+  }
+
+  public void setClientServer(String clientServer) {
+    this.clientServer = clientServer;
   }
 }

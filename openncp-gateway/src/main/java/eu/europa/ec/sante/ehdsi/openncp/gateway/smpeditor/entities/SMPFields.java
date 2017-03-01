@@ -8,6 +8,7 @@ package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities;
 public class SMPFields {
 
   private SMPFieldProperties uri;
+  private SMPFieldProperties issuanceType;
   private SMPFieldProperties serviceActivationDate;
   private SMPFieldProperties serviceExpirationDate;
   private SMPFieldProperties certificate;
@@ -15,6 +16,8 @@ public class SMPFields {
   private SMPFieldProperties technicalContactUrl;
   private SMPFieldProperties technicalInformationUrl;
   private SMPFieldProperties extension;
+  private SMPFieldProperties requireBusinessLevelSignature;
+  private SMPFieldProperties minimumAuthLevel;
 
   private SMPFieldProperties redirectHref;
   private SMPFieldProperties certificateUID;
@@ -29,6 +32,14 @@ public class SMPFields {
 
   public void setUri(SMPFieldProperties uri) {
     this.uri = uri;
+  }
+  
+  public SMPFieldProperties getIssuanceType() {
+    return issuanceType;
+  }
+
+  public void setIssuanceType(SMPFieldProperties issuanceType) {
+    this.issuanceType = issuanceType;
   }
 
   public SMPFieldProperties getServiceActivationDate() {
@@ -101,5 +112,21 @@ public class SMPFields {
 
   public void setCertificateUID(SMPFieldProperties certificateUID) {
     this.certificateUID = certificateUID;
+  }
+  
+  public SMPFieldProperties getRequireBusinessLevelSignature() {
+    return requireBusinessLevelSignature;
+  }
+
+  public void setRequireBusinessLevelSignature(SMPFieldProperties requireBusinessLevelSignature) {
+    this.requireBusinessLevelSignature = requireBusinessLevelSignature;
+  }
+
+  public SMPFieldProperties getMinimumAuthLevel() {
+    return minimumAuthLevel;
+  }
+
+  public void setMinimumAuthLevel(SMPFieldProperties minimumAuthLevel) {
+    this.minimumAuthLevel = minimumAuthLevel;
   }
 }

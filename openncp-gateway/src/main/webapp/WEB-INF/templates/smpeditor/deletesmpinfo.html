@@ -48,10 +48,9 @@
             <div class="checkbox" th:each="reference: ${referenceCollection}">
               <label>
                 <strong th:text="${reference.smptype}"></strong>
-                <input type="hidden" th:id="'smpDocTypes' + ${reference.id}" name="smpDocTypes" th:value="${reference.smptype}">
               </label>
               <label>
-                <input type="checkbox" th:field="*{referenceSelected}" th:value="${reference.reference}">
+                <input type="checkbox" th:field="*{referenceSelected}" th:value="${reference.reference + '&&' + reference.smptype}"> 
                 <a th:href="${reference.reference}" th:text="${reference.reference}" target="_blank"></a>
               </label>
             </div>

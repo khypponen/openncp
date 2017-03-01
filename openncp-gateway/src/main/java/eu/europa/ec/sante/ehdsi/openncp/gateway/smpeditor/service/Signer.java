@@ -47,22 +47,22 @@ public class Signer {
       ks = KeyStore.getInstance("JKS");
       // InputStream keystoreStream = this.getClass().getResourceAsStream(keystoreResPath);
     } catch (KeyStoreException ex) {
-      logger.error("\nKeyStoreException 1 - " + ex.getMessage(), ex);
+      logger.error("\nKeyStoreException 1 - " + SimpleErrorHandler.printExceptionStackTrace(ex), ex);
     }
 
     try {
       ks.load(keystoreResPath.getInputStream(), keystorePass.toCharArray());
     } catch (IOException ex) {
       invalidKeystore = true;
-      logger.error("\nIOException 2 - " + ex.getMessage(), ex);
+      logger.error("\nIOException 2 - " + SimpleErrorHandler.printExceptionStackTrace(ex), ex);
       return;
     } catch (NoSuchAlgorithmException ex) {
       invalidKeystore = true;
-      logger.error("\nNoSuchAlgorithmException 2 " + ex.getMessage(), ex);
+      logger.error("\nNoSuchAlgorithmException 2 " + SimpleErrorHandler.printExceptionStackTrace(ex), ex);
       return;
     } catch (CertificateException ex) {
       invalidKeystore = true;
-      logger.error("\nCertificateException 2 - " + ex.getMessage(), ex);
+      logger.error("\nCertificateException 2 - " + SimpleErrorHandler.printExceptionStackTrace(ex), ex);
       return;
     }
     KeyStore.PasswordProtection passProtection = new KeyStore.PasswordProtection(keyPairPass.toCharArray());
@@ -71,15 +71,15 @@ public class Signer {
       privateKeyEntry = (KeyStore.PrivateKeyEntry) ks.getEntry(keyPairAlias, passProtection);
     } catch (KeyStoreException ex) {
       invalidKeyPair = true;
-      logger.error("\nKeyStoreException 3 - " + ex.getMessage(), ex);
+      logger.error("\nKeyStoreException 3 - " + SimpleErrorHandler.printExceptionStackTrace(ex), ex);
       return;
     } catch (NoSuchAlgorithmException ex) {
       invalidKeyPair = true;
-      logger.error("\nNoSuchAlgorithmException 3 - " + ex.getMessage(), ex);
+      logger.error("\nNoSuchAlgorithmException 3 - " + SimpleErrorHandler.printExceptionStackTrace(ex), ex);
       return;
     } catch (UnrecoverableEntryException ex) {
       invalidKeyPair = true;
-      logger.error("\nUnrecoverableEntryException 3 - " + ex.getMessage(), ex);
+      logger.error("\nUnrecoverableEntryException 3 - " + SimpleErrorHandler.printExceptionStackTrace(ex), ex);
       return;
     }
     
@@ -88,7 +88,7 @@ public class Signer {
       cert = (X509Certificate) privateKeyEntry.getCertificate();
     } catch (NullPointerException ex) {
       invalidKeyPair = true;
-      logger.error("\nKeyStoreException 3 - " + ex.getMessage(), ex);
+      logger.error("\nKeyStoreException 3 - " + SimpleErrorHandler.printExceptionStackTrace(ex), ex);
       return;
     }
     KeyInfoFactory keyInfoFactory = sigFactory.getKeyInfoFactory();

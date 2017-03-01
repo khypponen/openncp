@@ -1,5 +1,6 @@
 package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.web;
 
+import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPFields;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPFileOps;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries;
@@ -8,6 +9,7 @@ import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Alert;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.SMPConverter;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.XMLValidator;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.ReadSMPProperties;
+import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.SimpleErrorHandler;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -24,7 +26,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
@@ -106,9 +112,9 @@ public class SMPUpdateFileController {
     try {
       smpfileupdate.getUpdateFile().transferTo(convFile);
     } catch (IOException ex) {
-      logger.error("\n IOException - " + ex.getMessage());
+      logger.error("\n IOException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
     } catch (IllegalStateException ex) {
-      logger.error("\n IllegalStateException - " + ex.getMessage());
+      logger.error("\n IllegalStateException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
     }
     
     /*Validate xml file*/
@@ -147,14 +153,14 @@ public class SMPUpdateFileController {
       /*May change if Participant Identifier specification change*/
       String href = serviceMetadata.getRedirect().getHref();
       String participantID;
-      Pattern pattern = Pattern.compile("ehealth-participantid-qns.*");
+      Pattern pattern = Pattern.compile(env.getProperty("ParticipantIdentifier.Scheme") + ".*");//SPECIFICATION
       Matcher matcher = pattern.matcher(href);
       if (matcher.find()) {
         String result = matcher.group(0);
         try {
           result = java.net.URLDecoder.decode(result, "UTF-8");
         } catch (UnsupportedEncodingException ex) {
-          logger.error("\n UnsupportedEncodingException - " + ex.getMessage());
+          logger.error("\n UnsupportedEncodingException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         }
         String[] ids = result.split("/services/");
         participantID = ids[0];
@@ -163,8 +169,8 @@ public class SMPUpdateFileController {
         Countries count = null;
         Countries[] countries = count.getALL();
         for (int i = 0; i < countries.length; i++) {
-          if (cc[3].equals(countries[i].name())) {
-            smpfileupdate.setCountry(cc[3]);
+          if (cc[4].equals(countries[i].name())) {
+            smpfileupdate.setCountry(cc[4]);
 
           }
         }
@@ -199,20 +205,27 @@ public class SMPUpdateFileController {
       /*
       Used to check SMP File type in order to render html updatesmpfileform page
       */
-      String[] nIDs = documentIdentifier.split(":"); /*May change if Document Identifier specification change*/
-      String documentID = nIDs[4];
-      if(documentID.equals("epsos-91")){
-        smpfileupdate.setIssuanceType("epsos");
-      } else if(documentID.equals("ITI-40")){
-        smpfileupdate.setIssuanceType("iti");
+      String documentID="";
+      HashMap<String, String> propertiesMap = readProperties.readPropertiesFile();
+      Set set2 = propertiesMap.entrySet();
+      Iterator iterator2 = set2.iterator();
+      while (iterator2.hasNext()) {
+        Map.Entry mentry2 = (Map.Entry) iterator2.next();
+        // logger.debug("\n ****** " + mentry2.getKey().toString() + " = " + mentry2.getValue().toString());
+        if (documentIdentifier.equals(mentry2.getKey().toString())) {
+          String[] docs = mentry2.getValue().toString().split("\\.");
+          documentID = docs[0];
+          logger.debug("\n ****** documentID - " + documentID);
+          if (docs.length > 2) { /*Country_B_Identity_Provider case - can have two differents DocIds */
+            smpfileupdate.setIssuanceType(docs[2]);
+          }
+          break;
+        }
       }
-      
-      String smpType = env.getProperty(documentID); //smpeditor.properties
-      logger.debug("\n******** DOC ID 2 - " + documentID);
-      logger.debug("\n******** SMP Type - " + smpType);
+
       SMPType[] smptypes = smptype.getALL();
       for (int i = 0; i < smptypes.length; i++) {
-        if (smptypes[i].name().equals(smpType)) {
+        if (smptypes[i].name().equals(documentID)) {
           smpfileupdate.setType(smptypes[i]);
           break;
         }
@@ -224,7 +237,7 @@ public class SMPUpdateFileController {
       }
 
       String participanteID = serviceMetadata.getServiceInformation().getParticipantIdentifier().getValue();
-      String[] cc = participanteID.split(":");
+      String[] cc = participanteID.split(":");//SPECIFICATION
       Countries count = null;
       Countries[] countries = count.getALL();
       for (int i = 0; i < countries.length; i++) {
@@ -258,6 +271,7 @@ public class SMPUpdateFileController {
     readProperties.readProperties(smpfileupdate);
      
     smpfields.setUri(readProperties.getUri());
+    smpfields.setIssuanceType(readProperties.getIssuanceType());    
     smpfields.setServiceActivationDate(readProperties.getServiceActDate());
     smpfields.setServiceExpirationDate(readProperties.getServiceExpDate());
     smpfields.setCertificate(readProperties.getCertificate());
@@ -286,13 +300,13 @@ public class SMPUpdateFileController {
             smpfileupdate.setCertificateContent(subjectName);
           }
         } catch (CertificateException ex) {
-          logger.error("\n CertificateException - " + ex.getMessage());
+          logger.error("\n CertificateException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         }
 
         try {
           smpfileupdate.setCertificate(cert.getEncoded());
         } catch (CertificateEncodingException ex) {
-          logger.error("\n CertificateEncodingException - " + ex.getMessage());
+          logger.error("\n CertificateEncodingException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         }
       } else {
         smpfileupdate.setCertificate(null);
@@ -311,7 +325,7 @@ public class SMPUpdateFileController {
         datead = format.parse(formatted);
         dateed = format.parse(formatted2);
       } catch (ParseException ex) {
-        logger.error("\n ParseException - " + ex.getMessage());
+        logger.error("\n ParseException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
       }
 
       smpfileupdate.setServiceActivationDate(datead);
@@ -335,11 +349,11 @@ public class SMPUpdateFileController {
           smpfileupdate.setExtension(docOriginal.getDocumentElement());
          
         } catch (IOException ex) {
-          logger.error("\n IOException - " + ex.getMessage());
+          logger.error("\n IOException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         } catch (SAXException ex) {
-          logger.error("\n SAXException - " + ex.getMessage());
+          logger.error("\n SAXException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         } catch (ParserConfigurationException ex) {
-          logger.error("\n ParserConfigurationException - " + ex.getMessage());
+          logger.error("\n ParserConfigurationException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         }
       }
 
@@ -399,10 +413,21 @@ public class SMPUpdateFileController {
         case "ServiceInformation":
           logger.debug("\n****Type Service Information");
 
-          if (smpfields.getCertificate().isEnable()) {
-            if (smpfileupdate.getCertificateFile().getOriginalFilename().equals("")) {
-              smpfileupdate.setCertificateFile(null);
+          if (!smpfields.getCertificate().isEnable()) {
+            smpfileupdate.setCertificateFile(null);
+          } else {
+
+            String certPath = env.getProperty(smpfileupdate.getType().name() + ".certificate");
+            String certificatePath = ConfigurationManagerService.getInstance().getProperty(certPath);
+
+            FileInputStream fis = null;
+            try {
+              fis = new FileInputStream(certificatePath);
+            } catch (FileNotFoundException ex) {
+              logger.error("\n FileNotFoundException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
             }
+
+            smpfileupdate.setCertificateFile(fis);
           }
           
           if (smpfields.getExtension().isEnable()) {
@@ -411,8 +436,7 @@ public class SMPUpdateFileController {
             }
           }
           
-          if(smpfileupdate.getType().name().equals("Identity_Provider")){
-            //env.getProperty(type + ".ProcessIdentifier." + issuanceType)
+          if(!smpfileupdate.getIssuanceType().equals("")){
             smpfileupdate.setDocumentIdentifier(env.getProperty(smpfileupdate.getType().name() + ".DocumentIdentifier." + smpfileupdate.getIssuanceType()));
             smpfileupdate.setProcessIdentifier(env.getProperty(smpfileupdate.getType().name() + ".ProcessIdentifier." + smpfileupdate.getIssuanceType()));
           }
@@ -454,24 +478,38 @@ public class SMPUpdateFileController {
           /*get documentIdentifier from redierct href*/
           /*May change if Document Identifier specification change*/
           String href = smpfileupdate.getHref();
-          String documentID;
-          Pattern pattern = Pattern.compile("ehealth-participantid-qns.*"); 
+          String documentID="";
+          Pattern pattern = Pattern.compile(env.getProperty("ParticipantIdentifier.Scheme") + ".*"); //SPECIFICATION
           Matcher matcher = pattern.matcher(href);
           if (matcher.find()) {
             String result = matcher.group(0);
             try {
               result = java.net.URLDecoder.decode(result, "UTF-8");
             } catch (UnsupportedEncodingException ex) {
-              logger.error("\n UnsupportedEncodingException - " + ex.getMessage());
+              logger.error("\n UnsupportedEncodingException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
             }
-            String[] ids = result.split("/services/");
-
+            String[] ids = result.split("/services/");//SPECIFICATION
+            
             String docID = ids[1];
-            String[] nIDs = docID.split(":"); 
-            documentID = nIDs[6];
+            HashMap<String, String> propertiesMap = readProperties.readPropertiesFile();
+            String[] nIDs = docID.split(env.getProperty("DocumentIdentifier.Scheme") + "::");//SPECIFICATION May change if Document Identifier specification change
+            String docuID = nIDs[1];
+            logger.debug("\n ****** docuID - " + docuID);
+            Set set2 = propertiesMap.entrySet();
+            Iterator iterator2 = set2.iterator();
+            while (iterator2.hasNext()) {
+              Map.Entry mentry2 = (Map.Entry) iterator2.next();
+             // logger.debug("\n ****** " + mentry2.getKey().toString() + " = " + mentry2.getValue().toString());
+              if(docuID.equals(mentry2.getKey().toString())){
+                String[] docs = mentry2.getValue().toString().split("\\.");
+                documentID = docs[0];
+                logger.debug("\n ****** documentID - " + documentID);
+                break;
+              }
+            }
 
-            String smpType = env.getProperty(documentID); //smpeditor.properties
-            if (smpType == null) {
+            String smpType = documentID; //smpeditor.properties
+            if (smpType.equals("")) {
               String message = env.getProperty("error.redirect.href.documentID"); //messages.properties
               redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
               return "redirect:/smpeditor/updatesmpfileform";
@@ -503,7 +541,7 @@ public class SMPUpdateFileController {
     } else {
       logger.debug("\n****NOT VALID XML File");
       smpfileupdate.getGeneratedFile().deleteOnExit();
-      String message = env.getProperty("error.extension.xsd"); //messages.properties
+      String message = env.getProperty("error.file.xsd"); //messages.properties
       redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
       return "redirect:/smpeditor/updatesmpfileform";
     }
@@ -565,9 +603,9 @@ public class SMPUpdateFileController {
       InputStream inputStream = new BufferedInputStream(new FileInputStream(smpfileupdate.getGeneratedFile()));
       FileCopyUtils.copy(inputStream, response.getOutputStream());
     } catch (FileNotFoundException ex) {
-      logger.error("\n FileNotFoundException - " + ex.getMessage());
+      logger.error("\n FileNotFoundException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
     } catch (IOException ex) {
-      logger.error("\n IOException - " + ex.getMessage());
+      logger.error("\n IOException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
     }
   }
 

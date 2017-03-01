@@ -1,5 +1,6 @@
 package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.web;
 
+import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPFields;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Alert;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries;
@@ -13,6 +14,7 @@ import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.SMPConverter;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPFile;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.XMLValidator;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.ReadSMPProperties;
+import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.SimpleErrorHandler;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -20,6 +22,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletResponse;
@@ -62,6 +68,9 @@ public class SMPGenerateFileController {
   public String generateForm(Model model) {
     logger.debug("\n==== in generateForm ====");
     model.addAttribute("smpfile", new SMPFile());
+    
+    readProperties.readPropertiesFile();
+    
     return "smpeditor/generatesmpfile";
   }
 
@@ -99,6 +108,7 @@ public class SMPGenerateFileController {
     model.addAttribute(type, "Type "+type);
 
     smpfields.setUri(readProperties.getUri());
+    smpfields.setIssuanceType(readProperties.getIssuanceType());    
     smpfields.setServiceActivationDate(readProperties.getServiceActDate());
     smpfields.setServiceExpirationDate(readProperties.getServiceExpDate());
     smpfields.setCertificate(readProperties.getCertificate());
@@ -108,9 +118,12 @@ public class SMPGenerateFileController {
     smpfields.setExtension(readProperties.getExtension());
     smpfields.setRedirectHref(readProperties.getRedirectHref());
     smpfields.setCertificateUID(readProperties.getCertificateUID());
+    smpfields.setRequireBusinessLevelSignature(readProperties.getRequireBusinessLevelSignature());
+    smpfields.setMinimumAuthLevel(readProperties.getMinimumAuthLevel());
     
     model.addAttribute("smpfields", smpfields);
-    model.addAttribute(smpfile.getType().name(), "SMPType " + smpfile.getType().name());
+    String uri = env.getProperty(smpfile.getType().name() + ".uri.value");
+    smpfile.setEndpointURI(uri);
     
     logger.debug("\n**** MODEL - " + model.toString());
     return "smpeditor/newsmpfile";
@@ -137,32 +150,54 @@ public class SMPGenerateFileController {
     
     if (smpfile.getType().name() != null) {
       switch (type) {
-        case "ServiceInformation":       
+        case "ServiceInformation":
           logger.debug("\n****Type Service Information");
-          
+
           /*Builds final file name*/
           timeStamp = new SimpleDateFormat("yyyyMMdd'T'HHmmss").format(new java.util.Date());
           fileName = smpfile.getType().name() + "_" + smpfile.getCountry().toUpperCase() + "_" + timeStamp + ".xml";
           smpfile.setFileName(fileName);
-          
-          if(!smpfields.getCertificate().isEnable()){
+
+          if (!smpfields.getCertificate().isEnable()) {
             smpfile.setCertificateFile(null);
+          } else {
+  
+            String certPath = env.getProperty(smpfile.getType().name() + ".certificate");
+            String certificatePath = ConfigurationManagerService.getInstance().getProperty(certPath);
+
+            FileInputStream fis = null;
+            try {
+              fis = new FileInputStream(certificatePath);
+            } catch (FileNotFoundException ex) {
+              logger.error("\n FileNotFoundException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
+            }
+
+            smpfile.setCertificateFile(fis);
           }
-          if(!smpfields.getExtension().isEnable()){
+
+          if (!smpfields.getExtension().isEnable()) {
             smpfile.setExtension(null);
           }
-          
-          logger.debug("\n****getIssuanceType - " + smpfile.getIssuanceType());
           
           if(smpfile.getIssuanceType() ==  null){
               smpfile.setIssuanceType("");
           }
-          logger.debug("\n****getIssuanceType 2 - " + smpfile.getIssuanceType());
           
+         /* int clientServer;
+          logger.debug("\n ***************** clientServer 1 - " + smpfile.getClientServer());
+          if (smpfile.getClientServer() == null) {
+            clientServer = 0;
+            logger.debug("\n ***************** clientServer 2 - " + clientServer);
+          } else {
+            clientServer = Integer.parseInt(smpfile.getClientServer());
+            logger.debug("\n ***************** clientServer 2 - " + clientServer);
+          }*/
+
           
-          smpconverter.convertToXml(smpfile.getType().name(), smpfile.getIssuanceType(), smpfile.getCountry(), smpfile.getEndpointURI(), smpfile.getServiceDescription(),
+          smpconverter.convertToXml(smpfile.getType().name(), /*clientServer,*/ smpfile.getIssuanceType(), smpfile.getCountry(), smpfile.getEndpointURI(), smpfile.getServiceDescription(),
                   smpfile.getTechnicalContactUrl(), smpfile.getTechnicalInformationUrl(), smpfile.getServiceActivationDate(),
-                  smpfile.getServiceExpirationDate(), smpfile.getExtension(), smpfile.getCertificateFile(), smpfile.getFileName(), 
+                  smpfile.getServiceExpirationDate(), smpfile.getExtension(), smpfile.getCertificateFile(), smpfile.getFileName(),
+                  smpfields.getRequireBusinessLevelSignature(), smpfields.getMinimumAuthLevel(),
                   null, null);
           
           if (smpfields.getCertificate().isEnable()) {
@@ -174,7 +209,7 @@ public class SMPGenerateFileController {
             }
             smpfile.setCertificate(smpconverter.getCertificateSubjectName());
           }
-          
+
           if (smpfields.getExtension().isEnable()) {
             if (smpconverter.isNullExtension()) {
               logger.error("\n****NOT VALID Extension File");
@@ -183,7 +218,7 @@ public class SMPGenerateFileController {
               return "redirect:/smpeditor/newsmpfile";
             }
           }
-          
+
           break;
         case "Redirect":
           
@@ -194,27 +229,27 @@ public class SMPGenerateFileController {
           String href = smpfile.getHref();
           String documentID="";
           String participantID="";
-          Pattern pattern = Pattern.compile("ehealth-participantid-qns.*");
+          Pattern pattern = Pattern.compile(env.getProperty("ParticipantIdentifier.Scheme") + ".*"); //SPECIFICATION
           Matcher matcher = pattern.matcher(href);
           if (matcher.find()) {
             String result = matcher.group(0);
             try {
               result = java.net.URLDecoder.decode(result, "UTF-8");
             } catch (UnsupportedEncodingException ex) {
-              logger.error("\n UnsupportedEncodingException - " + ex.getMessage());
+              logger.error("\n UnsupportedEncodingException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
               String message = env.getProperty("error.redirect.href"); //messages.properties
               redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
               return "redirect:/smpeditor/newsmpfile";
             }
-            String[] ids = result.split("/services/");
+            String[] ids = result.split("/services/");//SPECIFICATION
             participantID = ids[0];
-            String[] cc = participantID.split(":"); /*May change if Participant Identifier specification change*/
+            String[] cc = participantID.split(":"); //SPECIFICATION May change if Participant Identifier specification change
             
             Countries count = null;
             Countries[] countries = count.getALL();
             for (int i = 0; i < countries.length; i++) {
-              if (cc[3].equals(countries[i].name())) {
-                smpfile.setCountry(cc[3]);
+              if (cc[4].equals(countries[i].name())) {
+                smpfile.setCountry(cc[4]);
               }
             }
             if (smpfile.getCountry() == null) {
@@ -224,8 +259,23 @@ public class SMPGenerateFileController {
             }
             
             String docID = ids[1];
-            String[] nIDs = docID.split(":"); /*May change if Document Identifier specification change*/
-            documentID = nIDs[6];
+            HashMap<String, String> propertiesMap = readProperties.readPropertiesFile();
+            String[] nIDs = docID.split(env.getProperty("DocumentIdentifier.Scheme") + "::"); //SPECIFICATION May change if Document Identifier specification change
+            String docuID = nIDs[1];
+            logger.debug("\n ****** docuID - " + docuID);
+            Set set2 = propertiesMap.entrySet();
+            Iterator iterator2 = set2.iterator();
+            while (iterator2.hasNext()) {
+              Map.Entry mentry2 = (Map.Entry) iterator2.next();
+             // logger.debug("\n ****** " + mentry2.getKey().toString() + " = " + mentry2.getValue().toString());
+              if(docuID.equals(mentry2.getKey().toString())){
+                String[] docs = mentry2.getValue().toString().split("\\.");
+                documentID = docs[0];
+                logger.debug("\n ****** documentID - " + documentID);
+                break;
+              }
+            }
+
           }
           else{
             String message = env.getProperty("error.redirect.href"); //messages.properties
@@ -233,8 +283,8 @@ public class SMPGenerateFileController {
             return "redirect:/smpeditor/newsmpfile";
           }
           
-          String smpType = env.getProperty(documentID); //smpeditor.properties
-          if(smpType == null){
+          String smpType = documentID; //smpeditor.properties
+          if("".equals(smpType)){
               String message = env.getProperty("error.redirect.href.documentID"); //messages.properties
               redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
               return "redirect:/smpeditor/newsmpfile";
@@ -246,8 +296,8 @@ public class SMPGenerateFileController {
           smpfile.setFileName(fileName);
           
           logger.debug("\n****Type Redirect");
-          smpconverter.convertToXml(smpfile.getType().name(), null, null, null, null, null, null, null, null, null, null, 
-                  smpfile.getFileName(), smpfile.getCertificateUID(), smpfile.getHref());
+          smpconverter.convertToXml(smpfile.getType().name(), /*0,*/ null, null, null, null, null, null, null, null, null, null,
+                  smpfile.getFileName(), null, null, smpfile.getCertificateUID(), smpfile.getHref());
           break;
       }
     }
@@ -259,7 +309,7 @@ public class SMPGenerateFileController {
     }else{
       logger.error("\n****NOT VALID XML File");
       smpfile.getGeneratedFile().deleteOnExit();
-      String message = env.getProperty("error.extension.xsd"); //messages.properties
+      String message = env.getProperty("error.file.xsd"); //messages.properties
       redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
       return "redirect:/smpeditor/newsmpfile";
     }
@@ -301,9 +351,9 @@ public class SMPGenerateFileController {
       InputStream inputStream = new BufferedInputStream(new FileInputStream(smpfile.getGeneratedFile()));
       FileCopyUtils.copy(inputStream, response.getOutputStream());
     } catch (FileNotFoundException ex) {
-      logger.error("\n FileNotFoundException - " + ex.getMessage());
+      logger.error("\n FileNotFoundException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
     } catch (IOException ex) {
-      logger.error("\n IOException - " + ex.getMessage());
+      logger.error("\n IOException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
     }
   } 
   

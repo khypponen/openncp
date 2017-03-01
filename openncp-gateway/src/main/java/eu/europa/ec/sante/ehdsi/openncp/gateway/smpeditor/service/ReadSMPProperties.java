@@ -3,8 +3,16 @@ package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPFieldProperties;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPFile;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPFileOps;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Properties;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,11 +23,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class ReadSMPProperties {
 
+  org.slf4j.Logger logger = LoggerFactory.getLogger(ReadSMPProperties.class);
   @Autowired
   private Environment env;
 
   private String type;
   private SMPFieldProperties uri;
+  private SMPFieldProperties issuanceType;
   private SMPFieldProperties serviceActDate;
   private SMPFieldProperties serviceExpDate;
   private SMPFieldProperties certificate;
@@ -29,6 +39,8 @@ public class ReadSMPProperties {
   private SMPFieldProperties extension;
   private SMPFieldProperties redirectHref;
   private SMPFieldProperties certificateUID;
+  private SMPFieldProperties requireBusinessLevelSignature;
+  private SMPFieldProperties minimumAuthLevel;
   
   /**
    * Read the properties for the html forms from the smpeditor.properties file
@@ -42,6 +54,12 @@ public class ReadSMPProperties {
     uri = new SMPFieldProperties();
     uri.setEnable(uriEnable);
     uri.setMandatory(uriMandatory);
+    
+    Boolean issuanceEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".issuanceType.enable"));
+    Boolean issuanceMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".issuanceType.mandatory"));
+    issuanceType = new SMPFieldProperties();
+    issuanceType.setEnable(issuanceEnable);
+    issuanceType.setMandatory(issuanceMandatory);
 
     Boolean serviceActDateEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceActivationDate.enable"));
     Boolean serviceActDateMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceActivationDate.mandatory"));
@@ -56,10 +74,8 @@ public class ReadSMPProperties {
     serviceExpDate.setMandatory(serviceExpDateMandatory);
 
     Boolean certificateEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".certificate.enable"));
-    Boolean certificateMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".certificate.mandatory"));
     certificate = new SMPFieldProperties();
     certificate.setEnable(certificateEnable);
-    certificate.setMandatory(certificateMandatory);
 
     Boolean serviceDescEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceDescription.enable"));
     Boolean serviceDescMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceDescription.mandatory"));
@@ -84,6 +100,14 @@ public class ReadSMPProperties {
     extension = new SMPFieldProperties();
     extension.setEnable(extensionEnable);
     extension.setMandatory(extensionMandatory);
+    
+    Boolean busSigEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".requireBussinessLevelSignature.enable"));
+    requireBusinessLevelSignature = new SMPFieldProperties();
+    requireBusinessLevelSignature.setEnable(busSigEnable);
+    
+    Boolean authLevelEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".minimumAuthLevel.enable"));
+    minimumAuthLevel = new SMPFieldProperties();
+    minimumAuthLevel.setEnable(authLevelEnable);
 
     Boolean redirectHrefEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".redirectHref.enable"));
     Boolean redirectHrefMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".redirectHref.mandatory"));
@@ -109,24 +133,32 @@ public class ReadSMPProperties {
     uri = new SMPFieldProperties();
     uri.setEnable(uriEnable);
     uri.setMandatory(uriMandatory);
+    
+    Boolean issuanceEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".issuanceType.enable"));
+    Boolean issuanceMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".issuanceType.mandatory"));
+    issuanceType = new SMPFieldProperties();
+    issuanceType.setEnable(issuanceEnable);
+    issuanceType.setMandatory(issuanceMandatory);
 
     Boolean serviceActDateEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceActivationDate.enable"));
+    logger.debug("\n ****************** serviceActDateEnable - " + serviceActDateEnable);
     Boolean serviceActDateMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceActivationDate.mandatory"));
+    logger.debug("\n ****************** serviceActDateMandatory - " + serviceActDateMandatory);
     serviceActDate = new SMPFieldProperties();
     serviceActDate.setEnable(serviceActDateEnable);
     serviceActDate.setMandatory(serviceActDateMandatory);
 
     Boolean serviceExpDateEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceExpirationDate.enable"));
+    logger.debug("\n ****************** serviceExpDateEnable - " + serviceExpDateEnable);
     Boolean serviceExpDateMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceExpirationDate.mandatory"));
+    logger.debug("\n ****************** serviceExpDateMandatory - " + serviceExpDateMandatory);
     serviceExpDate = new SMPFieldProperties();
     serviceExpDate.setEnable(serviceExpDateEnable);
     serviceExpDate.setMandatory(serviceExpDateMandatory);
 
     Boolean certificateEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".certificate.enable"));
-    Boolean certificateMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".certificate.mandatory"));
     certificate = new SMPFieldProperties();
     certificate.setEnable(certificateEnable);
-    certificate.setMandatory(certificateMandatory);
 
     Boolean serviceDescEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceDescription.enable"));
     Boolean serviceDescMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".serviceDescription.mandatory"));
@@ -151,6 +183,14 @@ public class ReadSMPProperties {
     extension = new SMPFieldProperties();
     extension.setEnable(extensionEnable);
     extension.setMandatory(extensionMandatory);
+    
+    Boolean busSigEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".requireBussinessLevelSignature.enable"));
+    requireBusinessLevelSignature = new SMPFieldProperties();
+    requireBusinessLevelSignature.setEnable(busSigEnable);
+    
+    Boolean authLevelEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".minimumAuthLevel.enable"));
+    minimumAuthLevel = new SMPFieldProperties();
+    minimumAuthLevel.setEnable(authLevelEnable);
 
     Boolean redirectHrefEnable = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".redirectHref.enable"));
     Boolean redirectHrefMandatory = Boolean.parseBoolean(env.getProperty(smpfile.getType().name() + ".redirectHref.mandatory"));
@@ -163,6 +203,50 @@ public class ReadSMPProperties {
     certificateUID = new SMPFieldProperties();
     certificateUID.setEnable(certificateUIDEnable);
     certificateUID.setMandatory(certificateUIDMandatory);
+  }
+  
+  public HashMap readPropertiesFile(){
+    logger.debug("\n *************** in readPropertiesFile **************");
+ 
+    Properties properties = new Properties();
+    String filename = "/smpeditor.properties"; 
+
+    Resource resource = new ClassPathResource(filename);
+     
+    InputStream input = null;
+    try {
+      input = resource.getInputStream();
+    } catch (IOException ex) {
+      logger.error("\n IOException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
+    }
+    
+    if(input == null){
+      logger.error("\n Unable to find - " + filename);
+    }
+    
+    try {
+      properties.load(input);
+    } catch (IOException ex) {
+      logger.error("\n IOException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
+    }
+
+    Enumeration<?> keys = properties.propertyNames();
+    HashMap<String, String> propertiesMap = new HashMap<String, String>();
+    while (keys.hasMoreElements()) {
+      String key = (String) keys.nextElement();
+      String value = properties.getProperty(key);
+      propertiesMap.put(value, key);
+     // logger.debug("\n *************** " + key + "=" + value);
+    }
+    
+   /* Set set2 = propertiesMap.entrySet();
+    Iterator iterator2 = set2.iterator();
+    while (iterator2.hasNext()) {
+      Map.Entry mentry2 = (Map.Entry) iterator2.next();
+      logger.debug("\n ****** " + mentry2.getKey() + " = " + mentry2.getValue().toString());
+    }*/
+    
+    return propertiesMap;
   }
   
   
@@ -180,6 +264,14 @@ public class ReadSMPProperties {
 
   public void setUri(SMPFieldProperties uri) {
     this.uri = uri;
+  }
+  
+  public SMPFieldProperties getIssuanceType() {
+    return issuanceType;
+  }
+
+  public void setIssuanceType(SMPFieldProperties issuanceType) {
+    this.issuanceType = issuanceType;
   }
 
   public SMPFieldProperties getServiceActDate() {
@@ -252,5 +344,21 @@ public class ReadSMPProperties {
 
   public void setCertificateUID(SMPFieldProperties certificateUID) {
     this.certificateUID = certificateUID;
+  }
+  
+  public SMPFieldProperties getRequireBusinessLevelSignature() {
+    return requireBusinessLevelSignature;
+  }
+
+  public void setRequireBusinessLevelSignature(SMPFieldProperties requireBusinessLevelSignature) {
+    this.requireBusinessLevelSignature = requireBusinessLevelSignature;
+  }
+
+  public SMPFieldProperties getMinimumAuthLevel() {
+    return minimumAuthLevel;
+  }
+
+  public void setMinimumAuthLevel(SMPFieldProperties minimumAuthLevel) {
+    this.minimumAuthLevel = minimumAuthLevel;
   }
 }

@@ -38,48 +38,38 @@
             <option th:text="'-- ' + #{label.SmpEditor.choose} + ' --'" value="">Choose an option</option>   
             <option th:each="country : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries).values()}" th:value="${{country}}" th:text="${country}">---</option>
           </select> 
-        </div>
-        <div th:if="${Identity_Provider != null}" class="form-group" id="choosecountry">
+        </div>        
+        <div th:if="${smpfields.issuanceType.enable}" class="form-group" id="choosecountry">
           <label th:text="#{label.SmpEditor.form.issuanceType}" for="issuanceType" class="col-form-label">Issuance type</label>
-          <select class="form-control choosecountry" th:field="*{{issuanceType}}" th:value="${smpfile.issuanceType}" required>
+          <select class="form-control choosecountry" th:field="*{{issuanceType}}" th:value="${smpfile.issuanceType}" th:required="${smpfields.issuanceType.mandatory}? required">
             <option th:text="'-- ' + #{label.SmpEditor.choose} + ' --'" value="">Choose an option</option>
             <option th:text="#{label.SmpEditor.form.optionIdP.epsos}" th:value="epsos">EPSOS</option>   
             <option th:text="#{label.SmpEditor.form.optionIdP.iti}" th:value="iti">ITI</option>
           </select> 
-        </div> 
+        </div>
         
-        <h3 th:text="#{label.SmpEditor.form.endpoint}" class="subsubtitle">Endpointt</h3>
+        <h3 th:text="#{label.SmpEditor.form.endpoint}" class="subsubtitle">Endpoint</h3>
 
         <div th:if="${smpfields.uri.enable}" class="form-group row" id="newfileinputs">
           <label th:text="#{label.SmpEditor.form.endpointUri}" for="endpointuri" class="col-xs-2 col-form-label">Endpoint URI</label>
-          <div th:if="${VPN_Gateway_A != null}" class="col-xs-9">
-            <input class="form-control" type="text" id="uriinput" th:value="'ipsec://'" th:name="endpointURI" th:id="endpointURI" pattern="ipsec:\/\/.+" title="ipsec://..." th:required="${smpfields.uri.mandatory}? required">
-          </div>
-          <div th:unless="${VPN_Gateway_A != null}" class="col-xs-9">
-            <input class="form-control" type="url" id="uriinput" th:field="*{{endpointURI}}" th:value="${smpfile.endpointURI}" th:required="${smpfields.uri.mandatory}? required">
+          <div  class="col-xs-9">
+            <input class="form-control" type="url" id="uriinput" th:field="*{{endpointURI}}" th:value="${smpfile.endpointURI}" th:pattern="${smpfile.endpointURI}+ '.+'" th:title="${smpfile.endpointURI} + '...'" th:required="${smpfields.uri.mandatory}? required">
           </div>
           <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.uri}" data-tooltip-position="left"><strong>?</strong></span>
         </div>   
         <div th:if="${smpfields.serviceActivationDate.enable}" class="form-group row" id="newfileinputs">
           <label th:text="#{label.SmpEditor.form.serviceActivationDate}"  class="col-xs-2 col-form-label">Service Activation Date</label>
           <div class="col-xs-9">
-            <input class="form-control" size="16" type="text" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]" id="dateactinput" th:field="*{{serviceActivationDate}}" readonly th:required="${smpfields.serviceActivationDate.mandatory}? required">
+            <input class="form-control readonly" size="16" type="text" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]" id="dateactinput" th:field="*{{serviceActivationDate}}" th:required="${smpfields.serviceActivationDate.mandatory}? required">
           </div>
           <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.activationDate}" data-tooltip-position="left"><strong>?</strong></span>
         </div>
         <div th:if="${smpfields.serviceExpirationDate.enable}" class="form-group row" id="newfileinputs">
           <label th:text="#{label.SmpEditor.form.serviceExpirationDate}" for="dateexp" class="col-xs-2 col-form-label" >Service Expiration Date</label>
           <div class="col-xs-9">
-            <input class="form-control" size="16" type="text" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]" id="dateexpinput" th:field="*{{serviceExpirationDate}}" readonly th:required="${smpfields.serviceExpirationDate.mandatory}? required">
+            <input class="form-control readonly" size="16" type="text" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]" id="dateexpinput" th:field="*{{serviceExpirationDate}}" th:required="${smpfields.serviceExpirationDate.mandatory}? required">
           </div>
           <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.expirationDate}" data-tooltip-position="left"><strong>?</strong></span>
-        </div>
-        <div th:if="${smpfields.certificate.enable}" class="form-group row" id="newfileinputs">
-          <label th:text="#{label.SmpEditor.form.certificate}" for="certificate" class="col-xs-2 col-form-label">Certificate</label>
-          <div class="col-xs-9">
-            <input type="file" accept=".pem" name="certificateFile" th:field="*{{certificateFile}}" class="form-control-file" id="certificatefileinput" th:required="${smpfields.certificate.mandatory}? required">
-          </div>
-          <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.certificate}" data-tooltip-position="left"><strong>?</strong></span>
         </div>
         <div th:if="${smpfields.serviceDescription.enable}" class="form-group row" id="newfileinputs">
           <label th:text="#{label.SmpEditor.form.serviceDescription}" for="description" class="col-xs-2 col-form-label">Service Description</label>
@@ -119,14 +109,6 @@
       
       <!-- Redirect form-->
       <form th:if="${Redirect != null}" action="#"  th:action="@{/smpeditor/newsmpfile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpfile}"  method="post" enctype="multipart/form-data">  
-        <!--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
-       <!-- <div id="choosecountry" class="form-group">
-          <label th:text="#{label.SmpEditor.form.country}" for="countryinput">Country</label>
-          <select class="form-control" th:field="*{{country}}" th:value="${smpfile.country}" required>
-            <option th:text="'-- ' + #{label.SmpEditor.choose} + ' --'" value="">Choose an option</option>   
-            <option th:each="country : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries).values()}" th:value="${{country}}" th:selected="${country == T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries)}" th:text="${country}">---</option>
-          </select> 
-        </div>-->
         <input type="hidden" th:field="*{{type}}"  value="${smpfile.type}"/>
         <div th:if="${smpfields.redirectHref.enable}" class="form-group row" id="newfileinputs">
           <label th:text="#{label.SmpEditor.form.redirectHref}" for="href" class="col-xs-2 col-form-label">Redirect HREF</label>
@@ -174,5 +156,11 @@
           $('#dateactinput').datetimepicker('setEndDate', endDate);
         });
     </script> 
+    
+    <script>
+    $(".readonly").keydown(function(e){
+        e.preventDefault();
+    });
+    </script>
   </body>
 </html>

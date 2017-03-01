@@ -1,6 +1,7 @@
 package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.util.Date;
 import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
@@ -52,7 +53,7 @@ public class SMPFileOps {
   private Date serviceExpirationDate;
   private String certificateContent;
   private byte[] certificate;
-  private MultipartFile certificateFile;
+  private FileInputStream certificateFile;
   private String serviceDescription;
   private String technicalContactUrl;
   private String technicalInformationUrl;
@@ -69,10 +70,6 @@ public class SMPFileOps {
   private List<MultipartFile> signFiles;
   private List<SMPFileOps> allFiles;
   private String signFileName;
-  private MultipartFile keystoreFile;
-  private String keystorePassword;
-  private String keyAlias;
-  private String keyPassword;
   private String serviceActivationDateS;
   private String serviceExpirationDateS;
   private int id;
@@ -239,11 +236,11 @@ public class SMPFileOps {
     this.certificate = certificate;
   }
 
-  public MultipartFile getCertificateFile() {
+  public FileInputStream getCertificateFile() {
     return certificateFile;
   }
 
-  public void setCertificateFile(MultipartFile certificateFile) {
+  public void setCertificateFile(FileInputStream certificateFile) {
     this.certificateFile = certificateFile;
   }
 
@@ -341,38 +338,6 @@ public class SMPFileOps {
 
   public void setSignFileName(String signFileName) {
     this.signFileName = signFileName;
-  }
-
-  public MultipartFile getKeystoreFile() {
-    return keystoreFile;
-  }
-
-  public void setKeystoreFile(MultipartFile keystoreFile) {
-    this.keystoreFile = keystoreFile;
-  }
-
-  public String getKeystorePassword() {
-    return keystorePassword;
-  }
-
-  public void setKeystorePassword(String keystorePassword) {
-    this.keystorePassword = keystorePassword;
-  }
-
-  public String getKeyAlias() {
-    return keyAlias;
-  }
-
-  public void setKeyAlias(String keyAlias) {
-    this.keyAlias = keyAlias;
-  }
-
-  public String getKeyPassword() {
-    return keyPassword;
-  }
-
-  public void setKeyPassword(String keyPassword) {
-    this.keyPassword = keyPassword;
   }
 
   public String getServiceActivationDateS() {
