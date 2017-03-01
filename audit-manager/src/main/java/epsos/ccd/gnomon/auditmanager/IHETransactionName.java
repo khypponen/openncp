@@ -76,7 +76,9 @@ public enum IHETransactionName {
     epsosPACRetrieve("XCA::CrossGatewayRetrieve"),
     epsosHCERPut("XDR::ProvideandRegisterDocumentSet-b"),
     epsosMroServiceList("XCA::CrossGatewayQuery"),
-    epsosMroServiceRetrieve("XCA::CrossGatewayRetrieve");
+    epsosMroServiceRetrieve("XCA::CrossGatewayRetrieve"),
+    ehealthSMPQuery("SMP::Query"),
+    ehealthSMPPush("SMP::Push");
 	
     private String code;
 
