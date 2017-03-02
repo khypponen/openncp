@@ -132,8 +132,7 @@ public class SMPDeleteFileController {
     String participantID = partScheme + "::" + partID;
     
      
-    //ProxyUtil.initProxyConfiguration();
-    ProxyCredentials proxyCredentials = ProxyUtil.getProxyCredentials();
+
    /* ParticipantIdentifier participantIdentifier = new ParticipantIdentifier(partID, partScheme);
     DynamicDiscovery smpClient = null;
 
@@ -199,9 +198,13 @@ public class SMPDeleteFileController {
     } catch (URISyntaxException ex) {
       logger.error("\n URISyntaxException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
     }
-
+    
+    ProxyCredentials proxyCredentials = null;
+    if (ProxyUtil.isProxyAnthenticationMandatory()) {
+      proxyCredentials = ProxyUtil.getProxyCredentials();
+    }
     CloseableHttpClient httpclient;
-    if (Boolean.valueOf(proxyCredentials.getProxyAuthenticated())) {
+    if (proxyCredentials != null) {
 
       if (proxyCredentials.getProxyUser() != null) {
         CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
@@ -574,9 +577,12 @@ public class SMPDeleteFileController {
               //SSLConnectionSocketFactory.getDefaultHostnameVerifier()
               new NoopHostnameVerifier());
 
-      ProxyCredentials proxyCredentials = ProxyUtil.getProxyCredentials();
+      ProxyCredentials proxyCredentials = null;
+      if (ProxyUtil.isProxyAnthenticationMandatory()) {
+        proxyCredentials = ProxyUtil.getProxyCredentials();
+      }
       CloseableHttpClient httpclient;
-      if (Boolean.valueOf(proxyCredentials.getProxyAuthenticated())) {
+      if (proxyCredentials != null) {
 
         if (proxyCredentials.getProxyUser() != null) {
           CredentialsProvider credentialsProvider = new BasicCredentialsProvider();

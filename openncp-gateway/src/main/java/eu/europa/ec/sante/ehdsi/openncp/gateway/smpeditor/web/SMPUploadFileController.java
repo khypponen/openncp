@@ -306,10 +306,12 @@ public class SMPUploadFileController {
               /*SSLConnectionSocketFactory.getDefaultHostnameVerifier()*/
               new NoopHostnameVerifier());
       
-      
-      ProxyCredentials proxyCredentials = ProxyUtil.getProxyCredentials();
+      ProxyCredentials proxyCredentials = null;
+      if (ProxyUtil.isProxyAnthenticationMandatory()) {
+        proxyCredentials = ProxyUtil.getProxyCredentials();
+      }
       CloseableHttpClient httpclient;
-      if (Boolean.valueOf(proxyCredentials.getProxyAuthenticated())) {
+      if (proxyCredentials != null) {
 
         if (proxyCredentials.getProxyUser() != null) {
           CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
