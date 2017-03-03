@@ -366,8 +366,8 @@ public class SMPUploadFileController {
       String ncp = ConfigurationManagerService.getInstance().getProperty("ncp.country");
       String ncpemail = ConfigurationManagerService.getInstance().getProperty("ncp.email");
       String country = ConfigurationManagerService.getInstance().getProperty("COUNTRY_PRINCIPAL_SUBDIVISION");
-      String localip = ConfigurationManagerService.getInstance().getProperty("SERVER_IP");//Source Gateway
-      String remoteip = ConfigurationManagerService.getInstance().getProperty("SMP_ADMIN_URL");//Target Gateway
+      String localip = ConfigurationManagerService.getInstance().getProperty("SMP_ADMIN_URL");//Source Gateway
+      String remoteip = ConfigurationManagerService.getInstance().getProperty("SERVER_IP");//Target Gateway
       String smp = ConfigurationManagerService.getInstance().getProperty("SMP_SUPPORT");
       String smpemail = ConfigurationManagerService.getInstance().getProperty("SMP_SUPPORT_EMAIL");
       //ET_ObjectID --> Base64 of url
@@ -379,7 +379,7 @@ public class SMPUploadFileController {
         redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
         
         byte[] encodedObjectDetail = Base64.encodeBase64(response.getStatusLine().getReasonPhrase().getBytes());
-         Audit.sendAuditPush(ncp, ncpemail, smp, smpemail, country ,localip, remoteip, 
+         Audit.sendAuditPush(smp, smpemail, ncp, ncpemail, country ,localip, remoteip, 
               new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), encodedObjectDetail); //TODO
          
         return "redirect:/smpeditor/uploadsmpfile";
@@ -388,7 +388,7 @@ public class SMPUploadFileController {
         redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
         
         byte[] encodedObjectDetail = Base64.encodeBase64(response.getStatusLine().getReasonPhrase().getBytes());
-         Audit.sendAuditPush(ncp, ncpemail, smp, smpemail, country ,localip, remoteip, 
+         Audit.sendAuditPush(smp, smpemail, ncp, ncpemail, country ,localip, remoteip, 
               new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), encodedObjectDetail); //TODO
         
         return "redirect:/smpeditor/uploadsmpfile";
@@ -460,13 +460,13 @@ public class SMPUploadFileController {
         String errorresult = sw.toString();
         logger.debug("\n ***************** ERROR RESULT - " + errorresult);
         //Audit error
-        Audit.sendAuditPush(ncp, ncpemail, smp, smpemail, country, localip, remoteip,
+        Audit.sendAuditPush(smp, smpemail, ncp, ncpemail, country, localip, remoteip,
                 new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), errorresult.getBytes()); //TODO
       }
 
       if (itemUpload.getStatusCode() == 200 || itemUpload.getStatusCode() == 201) {
         //Audit Success TODO
-        Audit.sendAuditPush(ncp, ncpemail, smp, smpemail, country, localip, remoteip,
+        Audit.sendAuditPush(smp, smpemail, ncp, ncpemail, country, localip, remoteip,
                 new String(encodedObjectID), null, null);
       }
       
