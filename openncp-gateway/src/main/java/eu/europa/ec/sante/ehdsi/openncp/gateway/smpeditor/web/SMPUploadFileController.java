@@ -63,10 +63,7 @@ import eu.europa.ec.dynamicdiscovery.model.ParticipantIdentifier;
 import eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.service.Audit;
 import java.io.StringWriter;
 import java.net.Socket;
-import java.net.URLEncoder;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -298,10 +295,10 @@ public class SMPUploadFileController {
       } catch (UnrecoverableKeyException ex) {
         logger.error("\n UnrecoverableKeyException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
       }
-      // Allow TLSv1 protocol only
+     
       SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(
               sslcontext,
-              new String[]{"TLSv1"}, //"TLSv1.2"
+              new String[]{"TLSv1"},  // Allow TLSv1 protocol only
               null,
               /*SSLConnectionSocketFactory.getDefaultHostnameVerifier()*/
               new NoopHostnameVerifier());
@@ -319,16 +316,13 @@ public class SMPUploadFileController {
                   new AuthScope(proxyCredentials.getProxyHost(), Integer.parseInt(proxyCredentials.getProxyPort())),
                   new UsernamePasswordCredentials(proxyCredentials.getProxyUser(), proxyCredentials.getProxyPassword()));
 
-          //  ProxyUtil.initProxyConfiguration();
           httpclient = HttpClients.custom()
-                  //.useSystemProperties()
                   .setDefaultCredentialsProvider(credentialsProvider)
                   .setSSLSocketFactory(sslsf)
                   .setProxy(new HttpHost(proxyCredentials.getProxyHost(), Integer.parseInt(proxyCredentials.getProxyPort())))
                   .build();
         } else {
           httpclient = HttpClients.custom()
-                  //.useSystemProperties()
                   .setSSLSocketFactory(sslsf)
                   .setProxy(new HttpHost(proxyCredentials.getProxyHost(), Integer.parseInt(proxyCredentials.getProxyPort())))
                   .build();
@@ -336,7 +330,6 @@ public class SMPUploadFileController {
 
       } else {
         httpclient = HttpClients.custom()
-                //.useSystemProperties()
                 .setSSLSocketFactory(sslsf)
                 .build();
       }
@@ -380,7 +373,7 @@ public class SMPUploadFileController {
         
         byte[] encodedObjectDetail = Base64.encodeBase64(response.getStatusLine().getReasonPhrase().getBytes());
          Audit.sendAuditPush(smp, smpemail, ncp, ncpemail, country ,localip, remoteip, 
-              new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), encodedObjectDetail); //TODO
+              new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), encodedObjectDetail);
          
         return "redirect:/smpeditor/uploadsmpfile";
       } else if (itemUpload.getStatusCode() == 401) {
@@ -389,7 +382,7 @@ public class SMPUploadFileController {
         
         byte[] encodedObjectDetail = Base64.encodeBase64(response.getStatusLine().getReasonPhrase().getBytes());
          Audit.sendAuditPush(smp, smpemail, ncp, ncpemail, country ,localip, remoteip, 
-              new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), encodedObjectDetail); //TODO
+              new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), encodedObjectDetail);
         
         return "redirect:/smpeditor/uploadsmpfile";
       }
@@ -435,6 +428,7 @@ public class SMPUploadFileController {
           logger.error("\n IOException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         }
     
+        /*transform xml to string in order to send in Audit*/
         StringWriter sw = new StringWriter();
         try {
           ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
@@ -461,27 +455,31 @@ public class SMPUploadFileController {
         logger.debug("\n ***************** ERROR RESULT - " + errorresult);
         //Audit error
         Audit.sendAuditPush(smp, smpemail, ncp, ncpemail, country, localip, remoteip,
-                new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), errorresult.getBytes()); //TODO
+                new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), errorresult.getBytes());
       }
 
       if (itemUpload.getStatusCode() == 200 || itemUpload.getStatusCode() == 201) {
-        //Audit Success TODO
+        //Audit Success
         Audit.sendAuditPush(smp, smpemail, ncp, ncpemail, country, localip, remoteip,
                 new String(encodedObjectID), null, null);
       }
       
-      //ProxyUtil.initProxyConfiguration();
-     /* ParticipantIdentifier participantIdentifier = new ParticipantIdentifier(partID, partScheme);
+      //GET
+      Boolean success = true;
+      String errorType = "";
+      ParticipantIdentifier participantIdentifier = new ParticipantIdentifier(partID, partScheme);
       DocumentIdentifier documentIdentifier = new DocumentIdentifier(docID, docScheme);
       DynamicDiscovery smpClient = null;
-      
-      if (Boolean.valueOf(proxyCredentials.getProxyAuthenticated())) {
+
+      if (proxyCredentials != null) {
         try {
           smpClient = DynamicDiscoveryBuilder.newInstance()
                   .locator(new DefaultBDXRLocator(ConfigurationManagerService.getInstance().getProperty("SML_DOMAIN")))
                   .fetcher(new DefaultURLFetcher(new CustomProxy(proxyCredentials.getProxyHost(), Integer.parseInt(proxyCredentials.getProxyPort()), proxyCredentials.getProxyUser(), proxyCredentials.getProxyPassword())))
                   .build();
         } catch (ConnectionException ex) {
+          success = false;
+          errorType = "ConnectionException";
           logger.error("\n ConnectionException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
         }
       } else {
@@ -489,37 +487,36 @@ public class SMPUploadFileController {
                 .locator(new DefaultBDXRLocator(ConfigurationManagerService.getInstance().getProperty("SML_DOMAIN")))
                 .build();
       }
-      
-      
-      List<DocumentIdentifier> documentIdentifiers = new ArrayList<>();
+      URI smpURI = null;
       try {
-        documentIdentifiers = smpClient.getDocumentIdentifiers(participantIdentifier);
+        smpURI = smpClient.getService().getMetadataLocator().lookup(participantIdentifier);
       } catch (TechnicalException ex) {
+        success = false;
+        errorType = "TechnicalException";
         logger.error("\n TechnicalException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
       }
-      logger.debug("\n ********* documentIdentifiers - " + documentIdentifiers.toString());
+
+      URI serviceGroup = smpClient.getService().getMetadataProvider().resolveDocumentIdentifiers(smpURI, participantIdentifier);
+      URI serviceMetadataUri = smpClient.getService().getMetadataProvider().resolveServiceMetadata(smpURI, participantIdentifier, documentIdentifier);  
       
-      eu.europa.ec.dynamicdiscovery.model.ServiceMetadata sm = null;
-      try {
-       sm = smpClient.getServiceMetadata(participantIdentifier, documentIdentifier);
-      } catch (TechnicalException ex) {
-        Logger.getLogger(SMPUploadFileController.class.getName()).log(Level.SEVERE, null, ex);
+      itemUpload.setServiceGroupUrl(serviceGroup.toString());
+      itemUpload.setSignedServiceMetadataUrl(serviceMetadataUri.toString());
+      
+      if(success){
+        localip = smpURI.toString();//Source Gateway
+        objectID = serviceMetadataUri.toString(); //ParticipantObjectID
+        encodedObjectID = Base64.encodeBase64(objectID.getBytes());
+        //Audit Success
+        Audit.sendAuditQuery(smp, smpemail, ncp, ncpemail, country, localip, remoteip,
+                new String(encodedObjectID), null, null);
+      }else {
+        localip = smpURI.toString();//Source Gateway
+        objectID = serviceMetadataUri.toString(); //ParticipantObjectID
+        encodedObjectID = Base64.encodeBase64(objectID.getBytes());
+        //Audit Error
+        Audit.sendAuditQuery(smp, smpemail, ncp, ncpemail, country, localip, remoteip,
+                new String(encodedObjectID), "500", errorType.getBytes());//TODO
       }
-    //  logger.debug("\n ********* getServiceMetadata - " + sm.toString());*/
-      
-      //GET
-      String GETServer = ConfigurationManagerService.getInstance().getProperty("SMP_URL");
-      try {
-        participantID = URLEncoder.encode(participantID, "UTF-8");
-        documentTypeID = URLEncoder.encode(documentTypeID, "UTF-8");
-      } catch (UnsupportedEncodingException ex) {
-        logger.error("\n UnsupportedEncodingException - " + SimpleErrorHandler.printExceptionStackTrace(ex));
-      }
-      serviceMetdataUrl = "/" + participantID + "/services/" + documentTypeID;
-      
-      String serviceGroup = GETServer + "/" + participantID;
-      itemUpload.setServiceGroupUrl(serviceGroup);
-      itemUpload.setSignedServiceMetadataUrl(GETServer + serviceMetdataUrl);
 
       itemUpload.setId(i);
       allItems.add(i, itemUpload);      

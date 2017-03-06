@@ -15,7 +15,6 @@ public class SMPHttp {
   private List<SMPHttp> allItems;
   private String uploadFileName;
   private int id;
-  private String signedServiceMetadataUrl;
   private String serviceGroupUrl;
 
   //Delete
@@ -26,6 +25,8 @@ public class SMPHttp {
   private String smptype;
   private Countries country;
 
+  private String signedServiceMetadataUrl;
+  private String smpURI;
   private int statusCode;
   private String businessCode;
   private String errorDescription;
@@ -174,6 +175,14 @@ public class SMPHttp {
 
   public void setReferenceCollection(List<ReferenceCollection> referenceCollection) {
     this.referenceCollection = referenceCollection;
+  }
+  
+  public String getSmpURI() {
+    return smpURI;
+  }
+
+  public void setSmpURI(String smpURI) {
+    this.smpURI = smpURI;
   }
   
   public static class ReferenceCollection {
