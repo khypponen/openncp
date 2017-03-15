@@ -370,7 +370,7 @@ public class SMPUploadFileController {
       if (itemUpload.getStatusCode() == 404 || itemUpload.getStatusCode() == 503 || itemUpload.getStatusCode() == 405) {
         String message = env.getProperty("error.server.failed"); //messages.properties
         redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
-        
+        //Audit Error
         byte[] encodedObjectDetail = Base64.encodeBase64(response.getStatusLine().getReasonPhrase().getBytes());
          Audit.sendAuditPush(smp, smpemail, ncp, ncpemail, country ,localip, remoteip, 
               new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), encodedObjectDetail);
@@ -379,7 +379,7 @@ public class SMPUploadFileController {
       } else if (itemUpload.getStatusCode() == 401) {
         String message = env.getProperty("error.nouser"); //messages.properties
         redirectAttributes.addFlashAttribute("alert", new Alert(message, Alert.alertType.danger));
-        
+        //Audit Error
         byte[] encodedObjectDetail = Base64.encodeBase64(response.getStatusLine().getReasonPhrase().getBytes());
          Audit.sendAuditPush(smp, smpemail, ncp, ncpemail, country ,localip, remoteip, 
               new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), encodedObjectDetail);

@@ -85,11 +85,11 @@ public class Audit {
       //facility = 13 --> log audit | severity = 2 --> Critical: critical conditions
       //Acording to https://tools.ietf.org/html/rfc5424 (Syslog Protocol)
       asd.write(eventLog1, "13", "2");
-      try {
+    /*  try {
         Thread.sleep(10000);
       } catch (InterruptedException ex) {
         logger.error(null, ex);
-      }
+      }*/
     } catch (Exception e) {
       logger.error("Error sending audit for eHealth SMP Query");
     }
@@ -157,11 +157,11 @@ public class Audit {
       //facility = 13 --> log audit | severity = 2 --> Critical: critical conditions
       //Acording to https://tools.ietf.org/html/rfc5424 (Syslog Protocol)
       asd.write(eventLog1, "13", "2"); 
-      try {
+     /* try {
         Thread.sleep(10000);
       } catch (InterruptedException ex) {
         logger.error(null, ex);
-      }
+      }*/
     } catch (Exception e) {
       logger.error("Error sending audit for eHealth SMP Push");
     }

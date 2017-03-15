@@ -458,7 +458,6 @@ public class SMPDeleteFileController {
       logger.debug("\n ************ RESPONSE REASON - " + response.getStatusLine().getReasonPhrase());
       
       //Audit vars
-      //TODO
       String ncp = ConfigurationManagerService.getInstance().getProperty("ncp.country");
       String ncpemail = ConfigurationManagerService.getInstance().getProperty("ncp.email");
       String country = ConfigurationManagerService.getInstance().getProperty("COUNTRY_PRINCIPAL_SUBDIVISION");
@@ -477,7 +476,7 @@ public class SMPDeleteFileController {
         //Audit error
         byte[] encodedObjectDetail = Base64.encodeBase64(response.getStatusLine().getReasonPhrase().getBytes());
         Audit.sendAuditPush(smp, smpemail, ncp, ncpemail, country, localip, remoteip,
-                new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), encodedObjectDetail); //TODO
+                new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), encodedObjectDetail);
 
         return "redirect:/smpeditor/deletesmpfile";
       } else if (itemDelete.getStatusCode() == 401) {
@@ -486,7 +485,7 @@ public class SMPDeleteFileController {
         //Audit error
         byte[] encodedObjectDetail = Base64.encodeBase64(response.getStatusLine().getReasonPhrase().getBytes());
         Audit.sendAuditPush(smp, smpemail, ncp, ncpemail, country, localip, remoteip,
-                new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), encodedObjectDetail); //TODO
+                new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), encodedObjectDetail); 
 
         return "redirect:/smpeditor/deletesmpfile";
       }
@@ -559,7 +558,7 @@ public class SMPDeleteFileController {
         logger.debug("\n ***************** ERROR RESULT - " + errorresult);
         //Audit error
         Audit.sendAuditPush(smp, smpemail, ncp, ncpemail, country, localip, remoteip,
-                new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), errorresult.getBytes()); //TODO
+                new String(encodedObjectID), Integer.toString(response.getStatusLine().getStatusCode()), errorresult.getBytes());
       }
 
       if (itemDelete.getStatusCode() == 200 || itemDelete.getStatusCode() == 201) {
