@@ -52,24 +52,6 @@ public class EadcUtil {
     private static String defaultDsPath = null;
 
     /**
-     * This enum represents the transaction directions
-     */
-    public static enum Direction {
-
-        INBOUND("INBOUND"), OUTBOUND("OUTBOUND");
-        private String value;
-
-        private Direction(final String value) {
-            this.value = value;
-        }
-
-        @Override
-        public String toString() {
-            return value;
-        }
-    }
-
-    /**
      * This utility method will invoke eADC for a given transaction. You will
      * need to provide the Axis Request and Response message context, together
      * with optional document, a Transaction Info object containing transaction
@@ -175,6 +157,9 @@ public class EadcUtil {
             LOGGER.warn("XML Document is NULL. Can't convert XML Document to String.");
             return "";
         }
+        // set the TransformFactory to use the Saxon TransformerFactoryImpl method
+        System.setProperty("javax.xml.transform.TransformerFactory",
+                "net.sf.saxon.TransformerFactoryImpl");
         StringWriter objStrWriter = new StringWriter();
         StreamResult objStreamResult = new StreamResult(objStrWriter);
         TransformerFactory objTransFactory = TransformerFactory.newInstance();
@@ -191,5 +176,23 @@ public class EadcUtil {
                 objStreamResult);
         return objStreamResult.getWriter()
                 .toString();
+    }
+
+    /**
+     * This enum represents the transaction directions
+     */
+    public static enum Direction {
+
+        INBOUND("INBOUND"), OUTBOUND("OUTBOUND");
+        private String value;
+
+        private Direction(final String value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return value;
+        }
     }
 }

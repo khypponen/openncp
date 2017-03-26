@@ -74,7 +74,7 @@ public class EasyXsltTransformer {
      * @throws TransformerException
      */
     public synchronized Document transform(Node xmlSourceNode) throws Exception {
-        log.debug("Entering snchronous part");
+        log.debug("Entering synchronous part");
         DOMResult objDomResult = new DOMResult((Node) null);
         try {
             this.transformer.transform(new DOMSource(xmlSourceNode),
@@ -96,11 +96,11 @@ public class EasyXsltTransformer {
                     + EadcUtil.convertXMLDocumentToString(this.xsltDocument) + "\n"
                     + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"
                     + "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
-            log.debug("Leaving snchronous part");
+            log.debug("Leaving synchronous part");
             throw new Exception("An error occured during an XSLT-Transformation",
                     transformerException);
         }
-        log.debug("Leaving snchronous part");
+        log.debug("Leaving synchronous part");
         return (Document) objDomResult.getNode();
     }
 }
