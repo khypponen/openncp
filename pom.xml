@@ -50,7 +50,8 @@
 		<commons-collections.version>3.2.2</commons-collections.version>
 		<commons-configuration.version>1.7</commons-configuration.version>
 		<commons-lang.version>2.6</commons-lang.version>
-		<spring-version>2.5.6.SEC03</spring-version>
+		<!--<spring-version>2.5.6.SEC03</spring-version>-->
+		<spring.version>3.2.18.RELEASE</spring.version>
 		<hibernate.version>3.6.10.Final</hibernate.version>
 		<joda-time.version>2.7</joda-time.version>
 		<junit.version>4.12</junit.version>

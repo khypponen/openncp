@@ -132,7 +132,7 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.21</version>
-			<scope>runtime</scope>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>postgresql</groupId>

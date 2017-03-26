@@ -19,6 +19,7 @@
  */
 package eu.epsos.configmanager.database;
 
+import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
@@ -80,5 +81,15 @@ public final class HibernateUtil {
      */
     public static SessionFactory getSessionFactory() {
         return SESSION_FACTORY;
+    }
+
+    public static void closeFactory() {
+        if (SESSION_FACTORY != null) {
+            try {
+                SESSION_FACTORY.close();
+            } catch (HibernateException ignored) {
+                LOGGER.error("Couldn't close SessionFactory", ignored);
+            }
+        }
     }
 }
