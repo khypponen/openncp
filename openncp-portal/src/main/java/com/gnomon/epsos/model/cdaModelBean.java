@@ -2,26 +2,25 @@ package com.gnomon.epsos.model;
 
 import com.gnomon.LiferayUtils;
 import com.gnomon.epsos.service.EpsosHelperService;
-import com.liferay.portal.kernel.util.PortalUtil;
+import com.liferay.portal.util.PortalUtil;
 import epsos.ccd.gnomon.xslt.EpsosXSLTransformer;
 import epsos.openncp.protocolterminator.ClientConnectorConsumer;
 import epsos.openncp.protocolterminator.clientconnector.DocumentId;
 import epsos.openncp.protocolterminator.clientconnector.EpsosDocument1;
 import epsos.openncp.protocolterminator.clientconnector.GenericDocumentCode;
 import eu.epsos.util.IheConstants;
-import org.apache.commons.lang.exception.ExceptionUtils;
-import org.opensaml.saml2.core.Assertion;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import tr.com.srdc.epsos.util.Constants;
-
+import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.portlet.PortletRequest;
 import javax.servlet.http.HttpServletRequest;
-import java.io.Serializable;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.opensaml.saml2.core.Assertion;
+import org.slf4j.LoggerFactory;
+import tr.com.srdc.epsos.util.Constants;
 
 @ManagedBean
 @RequestScoped

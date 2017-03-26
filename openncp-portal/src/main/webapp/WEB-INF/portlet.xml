@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
     <portlet>
         <portlet-name>portalb</portlet-name>
         <display-name>portalb</display-name>
@@ -40,7 +39,7 @@
             <role-name>user</role-name>
         </security-role-ref>
     </portlet>
-
+        
     <portlet>
         <portlet-name>localncp</portlet-name>
         <display-name>localncp</display-name>
@@ -79,7 +78,6 @@
             <role-name>user</role-name>
         </security-role-ref>
     </portlet>
-
     <portlet>
         <portlet-name>trillium</portlet-name>
         <display-name>trillium</display-name>
@@ -118,7 +116,6 @@
             <role-name>user</role-name>
         </security-role-ref>
     </portlet>
-
     <portlet>
         <portlet-name>pac</portlet-name>
         <display-name>pac</display-name>
@@ -153,7 +150,6 @@
             <role-name>user</role-name>
         </security-role-ref>
     </portlet>
-
     <portlet>
         <portlet-name>pacrep</portlet-name>
         <display-name>pacrep</display-name>

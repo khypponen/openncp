@@ -3,21 +3,15 @@ package com.gnomon;
 import com.gnomon.epsos.FacesService;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.model.Company;
-import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.portlet.LiferayPortletSession;
-import com.liferay.portal.kernel.security.permission.PermissionChecker;
-import com.liferay.portal.kernel.service.RoleLocalServiceUtil;
-import com.liferay.portal.kernel.theme.ThemeDisplay;
-import com.liferay.portal.kernel.util.PortalUtil;
 import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.WebKeys;
-//import com.liferay.portal.model.Company;
-//import com.liferay.portal.model.User;
-//import com.liferay.portal.security.permission.PermissionChecker;
-//import com.liferay.portal.service.RoleLocalServiceUtil;
-//import com.liferay.portal.theme.ThemeDisplay;
-//import com.liferay.portal.util.PortalUtil;
+import com.liferay.portal.model.Company;
+import com.liferay.portal.model.User;
+import com.liferay.portal.security.permission.PermissionChecker;
+import com.liferay.portal.service.RoleLocalServiceUtil;
+import com.liferay.portal.theme.ThemeDisplay;
+import com.liferay.portal.util.PortalUtil;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -146,10 +140,6 @@ public class LiferayUtils {
         return hasRole;
     }
 
-    /**
-     *
-     * @return
-     */
     public static DateFormat getPortalUserDateFormat() {
         User user = null;
         DateFormat df = null;
@@ -232,10 +222,6 @@ public class LiferayUtils {
         return company;
     }
 
-    /**
-     *
-     * @return
-     */
     public static String getPortalLanguage() {
         PortletRequest portletRequest = getPortletRequest();
         String lang = portletRequest.getLocale().getLanguage() + "-"
@@ -262,12 +248,9 @@ public class LiferayUtils {
         return permissionChecker.hasPermission(groupId, name, primKey, actionKey);
     }
 
-    /**
-     *
-     * @return
-     */
     public static boolean isAdministrator() {
         PortletRequest request = ((PortletRequest) (FacesContext.getCurrentInstance().getExternalContext().getRequest()));
         return request.isUserInRole("administrator");
     }
+
 }

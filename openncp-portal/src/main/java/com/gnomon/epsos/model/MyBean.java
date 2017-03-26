@@ -46,7 +46,7 @@ import com.gnomon.epsos.service.EpsosHelperService;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.Validator;
-import com.liferay.portal.kernel.model.User;
+import com.liferay.portal.model.User;
 
 import epsos.ccd.gnomon.auditmanager.EventOutcomeIndicator;
 import epsos.openncp.protocolterminator.ClientConnectorConsumer;

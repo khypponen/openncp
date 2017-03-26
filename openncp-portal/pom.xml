@@ -13,16 +13,75 @@
     <name>OpenNCP Portal</name>
 
     <properties>
+        <!-- epsos -->
         <sp.version>1.4.2</sp.version>
         <stork-commons.version>1.4.2</stork-commons.version>
         <stork-saml.version>1.4.2</stork-saml.version>
-        <!--<liferay.version>6.2.5</liferay.version>-->
-        <!--<liferay.maven.plugin.version>6.2.5</liferay.maven.plugin.version>-->
+        <liferay.version>6.2.5</liferay.version>
+        <liferay.maven.plugin.version>6.2.5</liferay.maven.plugin.version>
     </properties>
+
+    <repositories>
+        <!--<repository>
+            <id>maven2-jasperreports.sourceforge.net</id>
+            <name>Jasper Reports Maven2 Repository</name>
+            <url>http://jasperreports.sourceforge.net/maven2/</url>
+        </repository>
+        <repository>
+            <id>maven2-repository.jboss.org</id>
+            <name>JBoss Maven Repository</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
+        </repository>
+        <repository>
+            <name>Official OpenSaml Repository</name>
+            <id>openSamlRep</id>
+            <url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>prime-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+            <layout>default</layout>
+        </repository>-->
+        <!-- 		<repository> -->
+        <!-- 			<id>informatics-releases</id> -->
+        <!-- 			<url>http://informatics.mayo.edu/maven/content/repositories/releases</url> -->
+        <!-- 		</repository> -->
+        <!-- 		<repository> -->
+        <!-- 			<id>gnomon-lib-snapshot</id> -->
+        <!-- 			<url>http://artifactory.gnomon.com.gr/artifactory/libs-snapshot-local/</url> -->
+        <!-- 			<releases> -->
+        <!-- 				<enabled>false</enabled> -->
+        <!-- 			</releases> -->
+        <!-- 			<snapshots> -->
+        <!-- 				<enabled>true</enabled> -->
+        <!-- 			</snapshots> -->
+        <!-- 		</repository> -->
+        <!-- 		<repository> -->
+        <!-- 			<id>gnomon-lib-release</id> -->
+        <!-- 			<url>http://artifactory.gnomon.com.gr/artifactory/libs-release-local/</url> -->
+        <!-- 			<releases> -->
+        <!-- 				<enabled>true</enabled> -->
+        <!-- 			</releases> -->
+        <!-- 			<snapshots> -->
+        <!-- 				<enabled>false</enabled> -->
+        <!-- 			</snapshots> -->
+        <!-- 		</repository> -->
+    </repositories>
 
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
@@ -39,10 +98,10 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-pmd-plugin</artifactId>
-                    <version>3.7</version>
+                    <version>2.7.1</version>
                     <configuration>
                         <linkXRef>true</linkXRef>
-                        <targetJdk>${java.version}</targetJdk>
+                        <targetJdk>${project.source.version}</targetJdk>
                         <excludes>
                             <exclude>**/resources/**/*</exclude>
                             <exclude>**/generated-sources/**/*</exclude>
@@ -53,9 +112,11 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>3.0.4</version>
+                    <version>2.5.2</version>
                     <configuration>
-                        <onlyAnalyze>com.gnomon.-</onlyAnalyze>
+                        <onlyAnalyze>
+                            com.gnomon.-
+                        </onlyAnalyze>
                         <xmlOutput>true</xmlOutput>
                         <xmlOutputDirectory>target/site</xmlOutputDirectory>
                     </configuration>
@@ -63,32 +124,39 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>2.3</version>
+                    <!-- <configuration> -->
+                    <!-- <webResources> -->
+                    <!-- <resource> -->
+                    <!-- <directory>/src/main/webapp/WEB-INF/flags</directory> -->
+                    <!-- </resource> -->
+                    <!-- </webResources> -->
+                    <!-- </configuration> -->
                 </plugin>
-                <!--<plugin>-->
-                <!--<groupId>com.liferay.maven.plugins</groupId>-->
-                <!--<artifactId>liferay-maven-plugin</artifactId>-->
-                <!--<version>${liferay.maven.plugin.version}</version>-->
-                <!--<executions>-->
-                <!--<execution>-->
-                <!--<phase>generate-sources</phase>-->
-                <!--<goals>-->
-                <!--<goal>build-css</goal>-->
-                <!--</goals>-->
-                <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                <!--<autoDeployDir>${liferay.auto.deploy.dir}</autoDeployDir>-->
-                <!--<appServerDeployDir>${liferay.app.server.deploy.dir}</appServerDeployDir>-->
-                <!--<appServerLibGlobalDir>${liferay.app.server.lib.global.dir}</appServerLibGlobalDir>-->
-                <!--<appServerPortalDir>${liferay.app.server.portal.dir}</appServerPortalDir>-->
-                <!--<liferayVersion>${liferay.version}</liferayVersion>-->
-                <!--<pluginType>portlet</pluginType>-->
-                <!--</configuration>-->
-                <!--</plugin>-->
+                <plugin>
+                    <groupId>com.liferay.maven.plugins</groupId>
+                    <artifactId>liferay-maven-plugin</artifactId>
+                    <version>${liferay.maven.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>generate-sources</phase>
+                            <goals>
+                                <goal>build-css</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <autoDeployDir>${liferay.auto.deploy.dir}</autoDeployDir>
+                        <appServerDeployDir>${liferay.app.server.deploy.dir}</appServerDeployDir>
+                        <appServerLibGlobalDir>${liferay.app.server.lib.global.dir}</appServerLibGlobalDir>
+                        <appServerPortalDir>${liferay.app.server.portal.dir}</appServerPortalDir>
+                        <liferayVersion>${liferay.version}</liferayVersion>
+                        <pluginType>portlet</pluginType>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.0.2</version>
+                    <version>2.6</version>
                     <configuration>
                         <encoding>UTF-8</encoding>
                     </configuration>
@@ -142,6 +210,16 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+        <!--<dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.15</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.15</version>
+        </dependency>-->
         <dependency>
             <groupId>org.apache.axis2</groupId>
             <artifactId>axis2-kernel</artifactId>
@@ -242,66 +320,23 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- Liferay dependencies Test JDK 8 + Liferay CE 7 -->
         <dependency>
             <groupId>com.liferay.portal</groupId>
-            <artifactId>com.liferay.portal.kernel</artifactId>
-            <version>2.9.0</version>
+            <artifactId>portal-service</artifactId>
+            <version>${liferay.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.liferay.portal</groupId>
-            <artifactId>com.liferay.util.java</artifactId>
-            <version>2.2.2</version>
+            <artifactId>util-java</artifactId>
+            <version>${liferay.version}</version>
+            <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>com.liferay.faces</groupId>
-            <artifactId>com.liferay.faces.alloy</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.liferay.faces</groupId>
-            <artifactId>com.liferay.faces.bridge.ext</artifactId>
-            <version>5.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.liferay.faces</groupId>
-            <artifactId>com.liferay.faces.portal</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.sun.faces</groupId>-->
-            <!--<artifactId>jsf-impl</artifactId>-->
-            <!--<version>2.2.13</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>com.liferay.portal</groupId>-->
-        <!--<artifactId>portal-service</artifactId>-->
-        <!--<version>${liferay.version}</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>com.liferay.portal</groupId>-->
-        <!--<artifactId>util-java</artifactId>-->
-        <!--<version>${liferay.version}</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>com.liferay.portal</groupId>-->
-        <!--<artifactId>portal-service</artifactId>-->
-        <!--<version>${liferay.version}</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>com.liferay.portal</groupId>-->
-        <!--<artifactId>util-java</artifactId>-->
-        <!--<version>${liferay.version}</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>javax.portlet</groupId>
             <artifactId>portlet-api</artifactId>
-            <version>3.0.0</version>
-            <!--scope>provided</scope-->
+            <version>2.0</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
@@ -313,27 +348,17 @@
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>6.0</version>
+            <version>4.0</version>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>com.liferay.faces</groupId>-->
-        <!--<artifactId>liferay-faces-bridge-impl</artifactId>-->
-        <!--<version>3.2.4-ga5</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>com.liferay.faces</groupId>-->
-        <!--<artifactId>liferay-faces-portal</artifactId>-->
-        <!--<version>3.2.4-ga5</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>com.liferay.faces</groupId>
             <artifactId>liferay-faces-bridge-impl</artifactId>
-            <version>4.2.5-ga6</version>
+            <version>3.2.4-ga5</version>
         </dependency>
         <dependency>
             <groupId>com.liferay.faces</groupId>
             <artifactId>liferay-faces-portal</artifactId>
-            <version>4.2.5-ga6</version>
+            <version>3.2.4-ga5</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish</groupId>
@@ -343,8 +368,13 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <version>4.10</version>
         </dependency>
+        <!--<dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>-->
         <dependency>
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
@@ -456,12 +486,12 @@
             <version>3.0.1</version>
             <scope>provided</scope>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>javax.servlet</groupId>-->
-        <!--<artifactId>servlet-api</artifactId>-->
-        <!--<version>2.3</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.3</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.allcolor.yahp.converter</groupId>
             <artifactId>yahp</artifactId>
@@ -504,7 +534,7 @@
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>6.4.0</version>
+            <version>5.0.1</version>
             <exclusions>
                 <exclusion>
                     <artifactId>commons-collections</artifactId>
@@ -562,6 +592,7 @@
             <version>6.0</version>
             <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/jstl/jstl -->
         <dependency>
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>

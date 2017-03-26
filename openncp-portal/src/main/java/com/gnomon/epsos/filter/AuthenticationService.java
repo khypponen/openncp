@@ -9,7 +9,7 @@ public class AuthenticationService {
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger("AuthenticationService");
 
     public boolean authenticate(String authCredentials) throws UnsupportedEncodingException, ParseException {
-        logger.info("try to authenticate with: " + authCredentials);
+        logger.info("try to authencticate with: " + authCredentials);
         if (null == authCredentials) {
             return false;
         }
