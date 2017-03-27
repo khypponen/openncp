@@ -23,7 +23,6 @@
            pdfEncoding="Cp1252"
            isPdfEmbedded="false"/>
 
-
     <field name="id" class="java.lang.Long">
         <fieldDescription>id</fieldDescription>
     </field>
@@ -109,5 +108,4 @@
             </frame>
         </band>
     </detail>
-
 </jasperReport>

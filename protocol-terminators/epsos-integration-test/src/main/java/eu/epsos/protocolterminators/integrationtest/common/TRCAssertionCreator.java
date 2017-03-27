@@ -1,42 +1,8 @@
 package eu.epsos.protocolterminators.integrationtest.common;
 
-import java.io.FileInputStream;
-import java.security.KeyPair;
-import java.security.KeyStore;
-import java.security.KeyStore.PasswordProtection;
-import java.security.KeyStore.PrivateKeyEntry;
-import java.security.Provider;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import javax.xml.crypto.dsig.CanonicalizationMethod;
-import javax.xml.crypto.dsig.DigestMethod;
-import javax.xml.crypto.dsig.Reference;
-import javax.xml.crypto.dsig.SignatureMethod;
-import javax.xml.crypto.dsig.SignedInfo;
-import javax.xml.crypto.dsig.Transform;
-import javax.xml.crypto.dsig.XMLSignature;
-import javax.xml.crypto.dsig.XMLSignatureFactory;
-import javax.xml.crypto.dsig.dom.DOMSignContext;
-import javax.xml.crypto.dsig.keyinfo.KeyInfo;
-import javax.xml.crypto.dsig.keyinfo.KeyInfoFactory;
-import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
-import javax.xml.crypto.dsig.spec.TransformParameterSpec;
-import javax.xml.namespace.QName;
-
 import org.joda.time.DateTime;
 import org.opensaml.common.SAMLVersion;
-import org.opensaml.saml2.core.Advice;
-import org.opensaml.saml2.core.Assertion;
-import org.opensaml.saml2.core.AssertionIDRef;
-import org.opensaml.saml2.core.Attribute;
-import org.opensaml.saml2.core.AttributeStatement;
-import org.opensaml.saml2.core.AttributeValue;
-import org.opensaml.saml2.core.AuthnContext;
-import org.opensaml.saml2.core.AuthnContextClassRef;
-import org.opensaml.saml2.core.AuthnStatement;
-import org.opensaml.saml2.core.Issuer;
+import org.opensaml.saml2.core.*;
 import org.opensaml.xml.Configuration;
 import org.opensaml.xml.Namespace;
 import org.opensaml.xml.XMLObjectBuilder;
@@ -47,9 +13,25 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
 import tr.com.srdc.epsos.util.Constants;
 import tr.com.srdc.epsos.util.saml.SAML;
+
+import javax.xml.crypto.dsig.*;
+import javax.xml.crypto.dsig.dom.DOMSignContext;
+import javax.xml.crypto.dsig.keyinfo.KeyInfo;
+import javax.xml.crypto.dsig.keyinfo.KeyInfoFactory;
+import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
+import javax.xml.crypto.dsig.spec.TransformParameterSpec;
+import javax.xml.namespace.QName;
+import java.io.FileInputStream;
+import java.security.KeyPair;
+import java.security.KeyStore;
+import java.security.KeyStore.PasswordProtection;
+import java.security.KeyStore.PrivateKeyEntry;
+import java.security.Provider;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class TRCAssertionCreator {
 
@@ -100,7 +82,7 @@ public class TRCAssertionCreator {
         // Set Advice
         Advice advice = saml.create(Advice.class, Advice.DEFAULT_ELEMENT_NAME);
         AssertionIDRef aidr = saml.create(AssertionIDRef.class, AssertionIDRef.DEFAULT_ELEMENT_NAME);
-        if(hcpAssertionId == null){
+        if (hcpAssertionId == null) {
             aidr.setAssertionID(assertion.getID());
         } else {
             aidr.setAssertionID(hcpAssertionId);
@@ -132,8 +114,8 @@ public class TRCAssertionCreator {
             XSAny attVal = (XSAny) builder.buildObject(AttributeValue.DEFAULT_ELEMENT_NAME);
             attVal.setTextContent(patientIdIso);
 
-            attVal.addNamespace(ns1);
-            attVal.addNamespace(ns2);
+            attVal.getNamespaceManager().registerNamespace(ns1);
+            attVal.getNamespaceManager().registerNamespace(ns2);
             QName attributeName = new QName("http://www.w3.org/2001/XMLSchema-instance", "type", "xsi");
             attVal.getUnknownAttributes().put(attributeName, "xs:string");
 
@@ -153,8 +135,8 @@ public class TRCAssertionCreator {
             XSAny attVal = (XSAny) builder.buildObject(AttributeValue.DEFAULT_ELEMENT_NAME);
             attVal.setTextContent("TREATMENT");
 
-            attVal.addNamespace(ns1);
-            attVal.addNamespace(ns2);
+            attVal.getNamespaceManager().registerNamespace(ns1);
+            attVal.getNamespaceManager().registerNamespace(ns2);
             QName attributeName = new QName("http://www.w3.org/2001/XMLSchema-instance", "type", "xsi");
             attVal.getUnknownAttributes().put(attributeName, "xs:string");
 
@@ -211,7 +193,7 @@ public class TRCAssertionCreator {
         } catch (Exception e) {
             LOG.error("Signature element not created!", e.getLocalizedMessage());
         }
-        
+
         // Set Signature's place
         org.w3c.dom.Node signatureElement = assertion.getDOM().getLastChild();
 
@@ -236,9 +218,8 @@ public class TRCAssertionCreator {
             assertion.getDOM().removeChild(signatureElement);
             assertion.getDOM().insertBefore(signatureElement, foundIssuer ? elementAfterIssuer : assertion.getDOM().getFirstChild());
         }
-        
-        
-        
+
+
 //        try {
 //            LOG.info(XMLUtil.prettyPrint(assertion.getDOM()));
 //        } catch (TransformerException ex) {

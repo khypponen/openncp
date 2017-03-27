@@ -1,44 +1,43 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-	<!-- Generated 14.7.2010 13:46:40 by Hibernate Tools 3.3.0.GA -->
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="epsos.ccd.posam.tsam.model.ValueSetVersion" table="VALUE_SET_VERSION">
-		<id name="id" type="long">
-			<column name="ID" />
-			<generator class="assigned" />
-		</id>
-		<property name="versionName" type="java.lang.String">
-			<column name="VERSION_NAME" />
-		</property>
-		<property name="effectiveDate" type="java.util.Date">
-			<column name="EFFECTIVE_DATE" />
-		</property>
-		<property name="releaseDate" type="java.util.Date">
-			<column name="RELEASE_DATE" />
-		</property>
-		<property name="status" type="java.lang.String">
-			<column name="STATUS" />
-		</property>
-		<property name="statusDate" type="java.util.Date">
-			<column name="STATUS_DATE" />
-		</property>
-		<property name="description" type="java.lang.String">
-			<column name="DESCRIPTION" />
-		</property>
-		<many-to-one name="previousVersion" class="epsos.ccd.posam.tsam.model.ValueSetVersion">
-			<column name="PREVIOUS_VERSION_ID"></column>
-		</many-to-one>
-		<many-to-one name="valueSet" class="epsos.ccd.posam.tsam.model.ValueSet"
-			fetch="join">
-			<column name="VALUE_SET_ID" />
-		</many-to-one>
-		<bag name="concepts" inverse="false" table="X_CONCEPT_VALUE_SET"
-			lazy="true">
-			<key>
-				<column name="VALUE_SET_VERSION_ID" />
-			</key>
-			<many-to-many class="epsos.ccd.posam.tsam.model.CodeSystemConcept" column="CODE_SYSTEM_CONCEPT_ID"/>
-		</bag>
-	</class>
+    <class name="epsos.ccd.posam.tsam.model.ValueSetVersion" table="VALUE_SET_VERSION">
+        <id name="id" type="long">
+            <column name="ID"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="versionName" type="java.lang.String">
+            <column name="VERSION_NAME"/>
+        </property>
+        <property name="effectiveDate" type="java.util.Date">
+            <column name="EFFECTIVE_DATE"/>
+        </property>
+        <property name="releaseDate" type="java.util.Date">
+            <column name="RELEASE_DATE"/>
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS"/>
+        </property>
+        <property name="statusDate" type="java.util.Date">
+            <column name="STATUS_DATE"/>
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION"/>
+        </property>
+        <many-to-one name="previousVersion" class="epsos.ccd.posam.tsam.model.ValueSetVersion">
+            <column name="PREVIOUS_VERSION_ID"></column>
+        </many-to-one>
+        <many-to-one name="valueSet" class="epsos.ccd.posam.tsam.model.ValueSet"
+                     fetch="join">
+            <column name="VALUE_SET_ID"/>
+        </many-to-one>
+        <bag name="concepts" inverse="false" table="X_CONCEPT_VALUE_SET"
+             lazy="true">
+            <key>
+                <column name="VALUE_SET_VERSION_ID"/>
+            </key>
+            <many-to-many class="epsos.ccd.posam.tsam.model.CodeSystemConcept" column="CODE_SYSTEM_CONCEPT_ID"/>
+        </bag>
+    </class>
 </hibernate-mapping>

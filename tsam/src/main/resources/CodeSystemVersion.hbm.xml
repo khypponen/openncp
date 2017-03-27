@@ -1,51 +1,49 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 14.7.2010 13:46:40 by Hibernate Tools 3.3.0.GA -->
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="epsos.ccd.posam.tsam.model.CodeSystemVersion" table="CODE_SYSTEM_VERSION">
-    	<cache usage="read-only"/>
+        <cache usage="read-only"/>
         <id name="id" type="long">
-            <column name="ID" />
-            <generator class="assigned" />
+            <column name="ID"/>
+            <generator class="assigned"/>
         </id>
         <property name="fullName" type="java.lang.String">
-            <column name="FULL_NAME" />
+            <column name="FULL_NAME"/>
         </property>
         <property name="localName" type="java.lang.String">
-            <column name="LOCAL_NAME" />
+            <column name="LOCAL_NAME"/>
         </property>
         <property name="effectiveDate" type="java.util.Date">
-            <column name="EFFECTIVE_DATE" />
+            <column name="EFFECTIVE_DATE"/>
         </property>
         <property name="releaseDate" type="java.util.Date">
-            <column name="RELEASE_DATE" />
+            <column name="RELEASE_DATE"/>
         </property>
         <property name="status" type="java.lang.String">
-            <column name="STATUS" />
+            <column name="STATUS"/>
         </property>
         <property name="statusDate" type="java.util.Date">
-            <column name="STATUS_DATE" />
+            <column name="STATUS_DATE"/>
         </property>
         <property name="description" type="java.lang.String">
-            <column name="DESCRIPTION" />
+            <column name="DESCRIPTION"/>
         </property>
         <property name="copyright" type="java.lang.String">
-            <column name="COPYRIGHT" />
+            <column name="COPYRIGHT"/>
         </property>
         <property name="source" type="java.lang.String">
-            <column name="SOURCE" />
+            <column name="SOURCE"/>
         </property>
         <many-to-one name="previousVersion" class="epsos.ccd.posam.tsam.model.CodeSystemVersion" lazy="proxy">
-        	<column name="PREVIOUS_VERSION_ID"></column>
+            <column name="PREVIOUS_VERSION_ID"></column>
         </many-to-one>
         <many-to-one name="codeSystem" class="epsos.ccd.posam.tsam.model.CodeSystem" foreign-key="FK_CODE_SYSTEM_ID">
-        	<column name="CODE_SYSTEM_ID"/>
+            <column name="CODE_SYSTEM_ID"/>
         </many-to-one>
         <bag name="concepts" table="CODE_SYSTEM_CONCEPT">
-        	<key column="CODE_SYSTEM_VERSION_ID"/>
-        	<one-to-many class="epsos.ccd.posam.tsam.model.CodeSystemConcept"/>
+            <key column="CODE_SYSTEM_VERSION_ID"/>
+            <one-to-many class="epsos.ccd.posam.tsam.model.CodeSystemConcept"/>
         </bag>
-
     </class>
 </hibernate-mapping>

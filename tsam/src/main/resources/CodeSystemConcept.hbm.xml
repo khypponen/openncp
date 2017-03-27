@@ -1,40 +1,38 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 14.7.2010 13:46:40 by Hibernate Tools 3.3.0.GA -->
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="epsos.ccd.posam.tsam.model.CodeSystemConcept" table="CODE_SYSTEM_CONCEPT">
         <id name="id" type="long">
-            <column name="ID" />
-            <generator class="assigned" />
+            <column name="ID"/>
+            <generator class="assigned"/>
         </id>
-        <property name="code" type="java.lang.String" >
-            <column name="CODE" />
-        </property>        
-        <property name="status" type="java.lang.String" >
-            <column name="STATUS" />
+        <property name="code" type="java.lang.String">
+            <column name="CODE"/>
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS"/>
         </property>
         <property name="statusDate" type="java.util.Date">
-            <column name="STATUS_DATE" />
+            <column name="STATUS_DATE"/>
         </property>
         <property name="definition" type="java.lang.String">
-            <column name="DEFINITION" />
+            <column name="DEFINITION"/>
         </property>
         <many-to-one name="codeSystemVersion" class="epsos.ccd.posam.tsam.model.CodeSystemVersion">
-        	<column name="CODE_SYSTEM_VERSION_ID"></column>
+            <column name="CODE_SYSTEM_VERSION_ID"></column>
         </many-to-one>
         <bag name="valueSetVersions" inverse="false" table="X_CONCEPT_VALUE_SET" lazy="true">
             <key>
-                <column name="CODE_SYSTEM_CONCEPT_ID" />
+                <column name="CODE_SYSTEM_CONCEPT_ID"/>
             </key>
             <many-to-many class="epsos.ccd.posam.tsam.model.ValueSetVersion" column="VALUE_SET_VERSION_ID"/>
         </bag>
-        
         <bag name="designations" inverse="false" table="DESIGNATION" lazy="true">
-        	<key>
-        		<column name="CODE_SYSTEM_CONCEPT_ID"/>
-        	</key>
-        	<one-to-many class="epsos.ccd.posam.tsam.model.Designation"/>
+            <key>
+                <column name="CODE_SYSTEM_CONCEPT_ID"/>
+            </key>
+            <one-to-many class="epsos.ccd.posam.tsam.model.Designation"/>
         </bag>
     </class>
 </hibernate-mapping>

@@ -19,12 +19,9 @@
  */
 package tr.com.srdc.epsos.util;
 
-import org.apache.xml.serialize.OutputFormat;
-import org.apache.xml.serialize.XMLSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -36,10 +33,7 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.validation.Schema;
@@ -75,7 +69,6 @@ public class XMLUtil {
     }
 
     /**
-     *
      * @param byteContent
      * @return
      * @throws ParserConfigurationException
@@ -98,7 +91,6 @@ public class XMLUtil {
     }
 
     /**
-     *
      * @param content
      * @return
      * @throws ParserConfigurationException
@@ -121,13 +113,12 @@ public class XMLUtil {
     }
 
     /**
-     *
      * @param doc
      * @return
      * @throws TransformerConfigurationException
      * @throws TransformerException
      */
-    public static String DocumentToString(Document doc) throws TransformerConfigurationException, TransformerException {
+    public static String DocumentToString(Document doc) throws TransformerException {
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
         //transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
@@ -138,63 +129,41 @@ public class XMLUtil {
     }
 
     /**
-     *
      * @param node
      * @return
      * @throws TransformerException
      */
     public static String prettyPrint(Node node) throws TransformerException {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        String result = null;
-        OutputFormat format = new OutputFormat("XML", "UTF-8", true);
-        format.setIndent(3);
-        XMLSerializer output = new XMLSerializer(baos, format);
-        try {
-            output.asDOMSerializer();
 
-            output.serialize((Element) node);
-            result = baos.toString("UTF-8");
-            baos.close();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return result;
+        StringWriter stringWriter = new StringWriter();
+        TransformerFactory tf = TransformerFactory.newInstance();
+        Transformer transformer = tf.newTransformer();
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+        transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+
+        transformer.transform(new DOMSource(node), new StreamResult(stringWriter));
+        return stringWriter.toString();
     }
 
     /**
-     *
      * @param doc
      * @param out
      */
-    public static void prettyPrint(Document doc, OutputStream out) {
-        OutputFormat format = new OutputFormat("XML", "UTF-8", true);
-        format.setIndenting(true);
-        format.setIndent(3);
-        XMLSerializer serializer = new XMLSerializer(out, format);
-        try {
-            serializer.serialize(doc);
-            out.close();
-        } catch (IOException e) {
-            LOGGER.error("IOException: ", e);
-        }
+    public static void prettyPrint(Document doc, OutputStream out) throws TransformerException, UnsupportedEncodingException {
+
+        TransformerFactory tf = TransformerFactory.newInstance();
+        Transformer transformer = tf.newTransformer();
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+        transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+        transformer.transform(new DOMSource(doc),
+                new StreamResult(new OutputStreamWriter(out, "UTF-8")));
     }
 
-    // Has issues with character encoding DO NOT USE
-//    public static byte[] convertToByteArray(Node node) throws TransformerException{
-//    	/** FIXME: We assume that Transfor deals with encoding/charset internally */
-//        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-//        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-//        Transformer transformer = transformerFactory.newTransformer();
-//        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-//        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-//        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount","4");
-//        transformer.transform(new DOMSource(node), new StreamResult(bos));
-//        return bos.toByteArray();
-//    }
-
     /**
-     *
      * @param namespaceBindings
      * @return
      */
@@ -218,7 +187,6 @@ public class XMLUtil {
     }
 
     /**
-     *
      * @param object
      * @param context
      * @param schemaLocation
@@ -250,7 +218,6 @@ public class XMLUtil {
     }
 
     /**
-     *
      * @param context
      * @param schemaLocation
      * @param content
@@ -278,7 +245,6 @@ public class XMLUtil {
     }
 
     /**
-     *
      * @param context
      * @param schemaLocation
      * @param content
@@ -304,7 +270,6 @@ public class XMLUtil {
     }
 
     /**
-     *
      * @param in
      * @return
      */

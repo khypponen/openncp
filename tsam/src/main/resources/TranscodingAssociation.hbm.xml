@@ -1,27 +1,26 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 14.7.2010 15:59:45 by Hibernate Tools 3.3.0.GA -->
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="epsos.ccd.posam.tsam.model.TranscodingAssociation" table="TRANSCODING_ASSOCIATION">
         <id name="id" type="long">
-            <column name="ID" />
-            <generator class="assigned" />
+            <column name="ID"/>
+            <generator class="assigned"/>
         </id>
         <many-to-one name="targedConcept" class="epsos.ccd.posam.tsam.model.CodeSystemConcept" fetch="join">
-            <column name="TARGET_CONCEPT_ID" />
+            <column name="TARGET_CONCEPT_ID"/>
         </many-to-one>
         <many-to-one name="sourceConcept" class="epsos.ccd.posam.tsam.model.CodeSystemConcept" fetch="join">
-            <column name="SOURCE_CONCEPT_ID" />
+            <column name="SOURCE_CONCEPT_ID"/>
         </many-to-one>
         <property name="quality" type="java.lang.String">
-            <column name="QUALITY" />
+            <column name="QUALITY"/>
         </property>
         <property name="status" type="java.lang.String">
-            <column name="STATUS" />
+            <column name="STATUS"/>
         </property>
         <property name="statusDate" type="java.util.Date">
-            <column name="STATUS_DATE" />
+            <column name="STATUS_DATE"/>
         </property>
     </class>
 </hibernate-mapping>

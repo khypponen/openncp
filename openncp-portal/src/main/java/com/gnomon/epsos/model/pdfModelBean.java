@@ -8,26 +8,29 @@ import epsos.openncp.protocolterminator.clientconnector.DocumentId;
 import epsos.openncp.protocolterminator.clientconnector.EpsosDocument1;
 import epsos.openncp.protocolterminator.clientconnector.GenericDocumentCode;
 import eu.epsos.util.IheConstants;
-import java.io.Serializable;
+import org.apache.commons.lang.CharEncoding;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.opensaml.saml2.core.Assertion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import tr.com.srdc.epsos.util.Constants;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.portlet.PortletRequest;
 import javax.servlet.http.HttpServletRequest;
-import org.apache.commons.lang.exception.ExceptionUtils;
-import org.slf4j.Logger;
-import org.opensaml.saml2.core.Assertion;
-import org.slf4j.LoggerFactory;
-import tr.com.srdc.epsos.util.Constants;
+import java.io.Serializable;
 
 @ManagedBean
 @RequestScoped
 public class pdfModelBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private byte[] pdf;
     private static final Logger log = LoggerFactory.getLogger("pdfModelBean");
+    private byte[] pdf;
 
     public pdfModelBean() {
         pdf = getCDA();
@@ -37,12 +40,11 @@ public class pdfModelBean implements Serializable {
 
         byte[] pdf = null;
         log.info("getting pdf document");
+
         try {
             EpsosDocument selectedEpsosDocument = new EpsosDocument();
             String serviceUrl = EpsosHelperService.getConfigProperty(EpsosHelperService.PORTAL_CLIENT_CONNECTOR_URL);
-            //serviceUrl = LiferayUtils.getFromPrefs("client_connector_url");
-            ClientConnectorConsumer clientConectorConsumer = new ClientConnectorConsumer(
-                    serviceUrl);
+            ClientConnectorConsumer clientConectorConsumer = new ClientConnectorConsumer(serviceUrl);
 
             FacesContext facesContext = FacesContext.getCurrentInstance();
             ExternalContext externalContext = facesContext.getExternalContext();
@@ -59,9 +61,9 @@ public class pdfModelBean implements Serializable {
             String hcid = portletRequest.getParameter("hcid");
 
             log.info("Retrieving PDF document");
-            log.info("uuid: " + uuid);
-            log.info("repositoryId: " + repositoryId);
-            log.info("hcid: " + hcid);
+            log.info("uuid: '{}'", uuid);
+            log.info("repositoryId: '{}'", repositoryId);
+            log.info("hcid: '{}'", hcid);
 
             DocumentId documentId = DocumentId.Factory.newInstance();
             documentId.setDocumentUniqueId(uuid);
@@ -69,12 +71,12 @@ public class pdfModelBean implements Serializable {
 
             GenericDocumentCode classCode = GenericDocumentCode.Factory.newInstance();
             String docType = portletRequest.getParameter("docType");
-            if (docType.equals("ep")) {
+            if (StringUtils.equalsIgnoreCase(docType, "ep")) {
                 classCode.setNodeRepresentation(Constants.EP_CLASSCODE);
                 classCode.setSchema(IheConstants.ClASSCODE_SCHEME);
                 classCode.setValue(Constants.EP_TITLE);
             }
-            if (docType.equals("ps")) {
+            if (StringUtils.equalsIgnoreCase(docType, "ps")) {
                 classCode.setNodeRepresentation(Constants.PS_CLASSCODE);
                 classCode.setSchema(IheConstants.ClASSCODE_SCHEME);
                 classCode.setValue(Constants.PS_TITLE);
@@ -88,10 +90,10 @@ public class pdfModelBean implements Serializable {
             selectedEpsosDocument.setDescription(eps.getDescription());
             selectedEpsosDocument.setTitle(eps.getTitle());
 
-            String xmlfile = new String(eps.getBase64Binary(), "UTF-8");
+            String xmlfile = new String(eps.getBase64Binary(), CharEncoding.UTF_8);
 
             pdf = EpsosHelperService.extractPdfPartOfDocument(xmlfile.getBytes());
-            log.info("PDF SIZE: " + pdf.length);
+            log.info("PDF SIZE: '{}'", pdf.length);
 
         } catch (Exception ex) {
             log.error(ExceptionUtils.getStackTrace(ex));

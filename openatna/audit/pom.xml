@@ -14,6 +14,11 @@
     <name>OpenATNA Audit</name>
     <url>https://openatna.projects.openhealthtools.org</url>
 
+    <properties>
+        <!--<spring-version>3.2.18.RELEASE</spring-version>-->
+        <openexchange.version>1.2</openexchange.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>eu.europa.ec.sante.ehdsi.openncp-openatna</groupId>
@@ -35,12 +40,12 @@
             <artifactId>openatna-net</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>javax.persistence</groupId>
-            <artifactId>persistence-api</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>javax.persistence</groupId>-->
+            <!--<artifactId>persistence-api</artifactId>-->
+            <!--<version>1.0</version>-->
+            <!--<scope>compile</scope>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -60,6 +65,11 @@
             <artifactId>javassist</artifactId>
             <version>3.12.0.GA</version>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0.2</version>
         </dependency>
         <!--<dependency>
             <groupId>org.hibernate</groupId>
@@ -103,13 +113,10 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.14</version>
             <type>jar</type>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
-    <properties>
-        <!--<spring.version>2.5.6</spring.version>-->
-        <openexchange.version>1.2</openexchange.version>
-    </properties>
+
     <profiles>
         <profile>
             <id>postgres</id>
@@ -147,7 +154,8 @@
                 <dependency>
                     <groupId>mysql</groupId>
                     <artifactId>mysql-connector-java</artifactId>
-                    <version>5.1.9</version>
+                    <version>5.1.14</version>
+                    <scope>provided</scope>
                 </dependency>
             </dependencies>
         </profile>

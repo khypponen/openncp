@@ -19,11 +19,12 @@
  */
 package eu.epsos.configmanager.database;
 
-import java.io.File;
-import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
 
 /**
  * Hibernate Utility class with a convenient method to get Session Factory
@@ -35,11 +36,11 @@ public class HibernateUtil {
 
     private static final SessionFactory sessionFactory;
     private static final String HIBERNATE_CONFIG_FILE_NAME = "database.config.xml";
-    private static String hibernateConfigFile = null;
     /**
      * Class logger
      */
     private static final Logger LOGGER = LoggerFactory.getLogger(HibernateUtil.class);
+    private static String hibernateConfigFile = null;
 
     static {
 
@@ -51,7 +52,7 @@ public class HibernateUtil {
         }
         try {
             final File configFile = new File(hibernateConfigFile);
-            sessionFactory = new AnnotationConfiguration().configure(configFile).buildSessionFactory();
+            sessionFactory = new Configuration().configure(configFile).buildSessionFactory();
         } catch (RuntimeException ex) {
             // Log the exception. 
             LOGGER.error("Initial SessionFactory creation failed." + ex);
@@ -59,13 +60,13 @@ public class HibernateUtil {
         }
     }
 
-    public static SessionFactory getSessionFactory() {
-        return sessionFactory;
-    }
-
     /**
      * Public constructor to avoid instantiation
      */
     private HibernateUtil() {
+    }
+
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
     }
 }

@@ -5,6 +5,7 @@
  */
 package eu.europa.ec.sante.ehdsi.peppol.smp.workaround;
 
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -12,7 +13,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import sun.misc.IOUtils;
 
 import javax.xml.crypto.dsig.Reference;
 import javax.xml.crypto.dsig.XMLSignature;
@@ -27,8 +27,6 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.*;
 import java.util.Iterator;
-//import org.apache.logging.log4j.Logger;
-//import org.apache.logging.log4j.LogManager;
 
 /**
  * This class provides the set of methods to apply in order to workaround the
@@ -116,6 +114,7 @@ public class SmpXslt {
     }
 
     public static Document applyXsltToSmp(Document smpRecord) throws TransformerConfigurationException, TransformerException, SAXException, IOException, ParserConfigurationException {
+
         logger.info("Applying XSLT...");
         TransformerFactory factory = new net.sf.saxon.TransformerFactoryImpl();
         Source smpFile = new DOMSource(smpRecord);
@@ -130,6 +129,7 @@ public class SmpXslt {
     }
 
     public static void validateSignature(final Document smpRecord, Element xtPointer) throws Exception {
+
         logger.info("Starting signature validation...");
         // Find Signature element.
         XMLSignatureFactory fac = XMLSignatureFactory.getInstance("DOM");
@@ -140,13 +140,12 @@ public class SmpXslt {
         // Element xtPointer = (Element) n;
 
 
-//      NodeList nl = xtPointer.getElementsByTagNameNS(XMLSignature.XMLNS, "Signature");
+        // NodeList nl = xtPointer.getElementsByTagNameNS(XMLSignature.XMLNS, "Signature");
 
         NodeList nl = xtPointer.getChildNodes();
         if (nl.getLength() == 0) {
             throw new Exception("Unable to find child nodes on the element");
         }
-
 
         int size = nl.getLength();
         Element signatureel = null;
@@ -181,7 +180,8 @@ public class SmpXslt {
             final Reference ref = (Reference) i.next();
             InputStream is = (ref).getDigestInputStream();
             // Display the data.
-            byte[] a = IOUtils.readFully(is, 0, true);
+            //byte[] a = IOUtils.readFully(is, 0, true);
+            byte[] a = IOUtils.readFully(is, 0);
             logger.debug("Reference: " + new String(a));
         }
 

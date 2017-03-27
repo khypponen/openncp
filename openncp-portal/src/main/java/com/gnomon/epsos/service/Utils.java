@@ -10,6 +10,7 @@ import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.lang.CharEncoding;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Seconds;
@@ -19,8 +20,6 @@ import org.w3c.dom.Document;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
 
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
@@ -47,7 +46,18 @@ import java.util.TimeZone;
 
 public class Utils {
 
+    public static final String DATE_TIME_FORMAT_FULL = "ddMMyyyyHHmmss";
     private static final Logger log = LoggerFactory.getLogger("Utils");
+    private static final String password = "dow98u983u29ejoia9832983927jdodj0834804930jdfkfjlsfsjojojfd9";
+    private static final String ALGO = "AES";
+    private static final byte[] keyValue
+            = new byte[]{'T', 'h', '1', 'B', 'e', 's', 't',
+            'S', '1', '@', 'r', 'e', '$', 'K', '2', 'y'};
+    public static String DATE_TIME_FORMAT = "dd-MM-yyyy HH:mm";
+    private static String salt;
+    private static int pswdIterations = 65536;
+    private static int keySize = 256;
+    private byte[] ivBytes;
 
     public static String getDocumentAsXml(org.w3c.dom.Document doc, boolean header) {
         String resp = "";
@@ -79,20 +89,13 @@ public class Utils {
         return resp;
     }
 
-    private static final String password = "dow98u983u29ejoia9832983927jdodj0834804930jdfkfjlsfsjojojfd9";
-    private static String salt;
-    private static int pswdIterations = 65536;
-    private static int keySize = 256;
-    private byte[] ivBytes;
-    public static final String DATE_TIME_FORMAT_FULL = "ddMMyyyyHHmmss";
-
     public static boolean verifyTicket(String ticket) {
         String encryptionKey = MyServletContextListener.getEncryptionKey();
         log.info("ENCRYPTION KEY: " + encryptionKey);
         boolean verified = false;
         try {
             log.info("PRE  String to be decrypted is " + ticket);
-            ticket = URLDecoder.decode(ticket);
+            ticket = URLDecoder.decode(ticket, CharEncoding.UTF_8);
             log.info("POST String to be decrypted is " + ticket);
             String decrypted = "";
             try {
@@ -103,7 +106,7 @@ public class Utils {
             }
             log.info("### Decrypted String is " + decrypted);
             if (Validator.isNotNull(decrypted)) {
-                Ticket ticket1 = StringToTicket(URLDecoder.decode(decrypted));
+                Ticket ticket1 = StringToTicket(URLDecoder.decode(decrypted, CharEncoding.UTF_8));
                 log.info("Date from ticket: " + ticket1.getCreatedDate());
                 log.info("Email from ticket: " + ticket1.getEmailAddress());
                 DateFormat format = new SimpleDateFormat(DATE_TIME_FORMAT_FULL);
@@ -121,6 +124,192 @@ public class Utils {
             log.error("Error verifying ticket");
         }
         return verified;
+    }
+
+    private static Key generateKey() throws Exception {
+        Key key = new SecretKeySpec(keyValue, ALGO);
+        return key;
+    }
+
+    public static String encrypt(String Data) throws Exception {
+        Key key = generateKey();
+        Cipher c = Cipher.getInstance(ALGO);
+        c.init(Cipher.ENCRYPT_MODE, key);
+        byte[] encVal = c.doFinal(Data.getBytes());
+        String encryptedValue = java.util.Base64.getEncoder().encodeToString(encVal);
+        return encryptedValue;
+    }
+
+    private static Key generateKeyWithKey(byte[] encryptionKey) throws Exception {
+        Key key = new SecretKeySpec(encryptionKey, ALGO);
+        return key;
+    }
+
+    public static String decrypt(String encryptedData, String encryptionKey) throws Exception {
+        Key key = null;
+        if (Validator.isNotNull(encryptionKey)) {
+            byte[] bytes = encryptionKey.getBytes();
+            key = generateKeyWithKey(bytes);
+        } else {
+            key = generateKey();
+        }
+        String decryptedValue = "";
+        try {
+            Cipher c = Cipher.getInstance(ALGO);
+            c.init(Cipher.DECRYPT_MODE, key);
+            //byte[] decordedValue = Base64.decode(encryptedData);
+            byte[] decordedValue = Hex.decodeHex(encryptedData.toCharArray());
+            byte[] decValue = c.doFinal(decordedValue);
+            decryptedValue = new String(decValue);
+        } catch (Exception e) {
+            log.error("Error decrypting: " + encryptedData + " " + e.getMessage());
+        }
+        return decryptedValue;
+    }
+
+    public static String decrypt(String encryptedData) {
+        String decryptedValue = "";
+        try {
+            Key key = generateKey();
+            Cipher c = Cipher.getInstance(ALGO);
+            c.init(Cipher.DECRYPT_MODE, key);
+            //byte[] decordedValue = new BASE64Decoder().decodeBuffer(encryptedData);
+            byte[] decordedValue = java.util.Base64.getDecoder().decode(encryptedData);
+            byte[] decValue = c.doFinal(decordedValue);
+            decryptedValue = new String(decValue);
+        } catch (Exception e) {
+            log.error("Error decrypting: " + encryptedData + " " + e.getMessage());
+        }
+        return decryptedValue;
+    }
+
+    public static Ticket StringToTicket(String key) {
+        String[] val = key.split("@@@");
+        Ticket ticket = new Ticket();
+        ticket.setEmailAddress(val[0]);
+        ticket.setCreatedDate(val[1]);
+        return ticket;
+    }
+
+    public static Ticket createTicket(long userId) throws PortalException, SystemException {
+        Ticket ticket = new Ticket();
+        Date d = new Date();
+        String date = formatDate(d);
+        User user = UserLocalServiceUtil.getUser(userId);
+        String tick = userId + "@@@" + user.getEmailAddress() + "@@@" + date;
+
+        log.info("String to be encrypted is " + tick);
+        String encrypted = "";
+        try {
+            encrypted = encrypt(tick);
+        } catch (Exception ex) {
+            log.error(null, ex);
+        }
+        log.info("Encrypted String is " + encrypted);
+        ticket.setCreatedDate(formatDate(new Date()));
+        ticket.setEmailAddress(user.getEmailAddress());
+        ticket.setTicket(encrypted);
+        ticket.setUserId(userId);
+        return ticket;
+    }
+
+    public static long getUserFromTicket(String ticket) {
+        log.info("String to be decrypted is " + ticket);
+        String decrypted = "";
+        try {
+            decrypted = decrypt(ticket);
+        } catch (Exception ex) {
+            log.error(ExceptionUtils.getStackTrace(ex));
+            log.error(null, ex);
+        }
+        log.info("Decrypted String is " + decrypted);
+        Ticket ticket1 = StringToTicket(decrypted);
+
+        log.info("Username is " + ticket1.getUserId() + " and date is " + ticket1.getCreatedDate());
+        return ticket1.getUserId();
+    }
+
+    public static boolean verifyTicket(String ticket, String username) {
+        log.info("String to be decrypted is " + ticket);
+        String decrypted = "";
+        try {
+            decrypted = decrypt(ticket);
+        } catch (Exception ex) {
+            log.error(null, ex);
+        }
+        log.info("Decrypted String is " + decrypted);
+        Ticket ticket1 = StringToTicket(decrypted);
+
+        long userId = ticket1.getUserId();
+        log.info("USER FROM TICKET IS " + userId + " and user wants to be verified is " + username);
+        boolean ret = false;
+        try {
+            User user = UserLocalServiceUtil.getUser(userId);
+            log.info("USER FROM TICKET IS " + user.getScreenName());
+            if (user.getScreenName().equalsIgnoreCase(username)) {
+                ret = true;
+            }
+        } catch (Exception e) {
+            log.error("Error finding user for user inside ticket");
+        }
+//            String date = ticket1.getCreatedDate();
+//            log.info("Userid is " + userId + " and date is " + date);
+//            Date now = new Date();
+//            DateTimeFormatter formatter = DateTimeFormat.forPattern(HelperUtil.DATE_TIME_FORMAT);
+//            DateTime d1 = formatter.parseDateTime(date);
+//            DateTime d2 = new DateTime(now);
+//            log.info(d2 + " " + d1);
+//            int mins = Minutes.minutesBetween(d1,d2).getMinutes();
+//
+//            log.info("Minutes between ticket and now is:" + mins);
+
+        //if (userId==user && mins<120) ret=true;
+        //if (userId==user) ret=true;
+        return ret;
+    }
+
+    public static String formatDate(Date date) {
+        String formatted = "";
+        if (date != null) {
+            SimpleDateFormat dt1 = new SimpleDateFormat(DATE_TIME_FORMAT);
+            dt1.setTimeZone(TimeZone.getTimeZone("EET"));
+
+            formatted = dt1.format(date);
+        }
+        return formatted;
+    }
+
+    public static String transformDomToString(Document doc) throws TransformerConfigurationException, TransformerException {
+        TransformerFactory tf = TransformerFactory.newInstance();
+        Transformer transformer = tf.newTransformer();
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+        StringWriter writer = new StringWriter();
+        transformer.transform(new DOMSource(doc), new StreamResult(writer));
+        String output = writer.getBuffer().toString().replaceAll("\n|\r", "");
+        return output;
+    }
+
+    public static Document readXml(StreamSource is) throws SAXException, IOException,
+            ParserConfigurationException {
+
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+
+        dbf.setValidating(false);
+        dbf.setIgnoringComments(false);
+        dbf.setIgnoringElementContentWhitespace(true);
+        dbf.setNamespaceAware(true);
+
+        DocumentBuilder db = null;
+        db = dbf.newDocumentBuilder();
+        db.setEntityResolver(new NullResolver());
+
+        // db.setErrorHandler( new MyErrorHandler());
+        InputSource is2 = new InputSource();
+        is2.setSystemId(is.getSystemId());
+        is2.setByteStream(is.getInputStream());
+        is2.setCharacterStream(is.getReader());
+
+        return db.parse(is2);
     }
 
     public boolean isValidUser(String user) throws Exception {
@@ -215,204 +404,12 @@ public class Utils {
         return ret;
     }
 
-    private static final String ALGO = "AES";
-    private static final byte[] keyValue
-            = new byte[]{'T', 'h', '1', 'B', 'e', 's', 't',
-            'S', '1', '@', 'r', 'e', '$', 'K', '2', 'y'};
-
-    private static Key generateKey() throws Exception {
-        Key key = new SecretKeySpec(keyValue, ALGO);
-        return key;
-    }
-
-    public static String encrypt(String Data) throws Exception {
-        Key key = generateKey();
-        Cipher c = Cipher.getInstance(ALGO);
-        c.init(Cipher.ENCRYPT_MODE, key);
-        byte[] encVal = c.doFinal(Data.getBytes());
-        String encryptedValue = new BASE64Encoder().encode(encVal);
-        return encryptedValue;
-    }
-
-    private static Key generateKeyWithKey(byte[] encryptionKey) throws Exception {
-        Key key = new SecretKeySpec(encryptionKey, ALGO);
-        return key;
-    }
-
-    public static String decrypt(String encryptedData, String encryptionKey) throws Exception {
-        Key key = null;
-        if (Validator.isNotNull(encryptionKey)) {
-            byte[] bytes = encryptionKey.getBytes();
-            key = generateKeyWithKey(bytes);
-        } else {
-            key = generateKey();
-        }
-        String decryptedValue = "";
-        try {
-            Cipher c = Cipher.getInstance(ALGO);
-            c.init(Cipher.DECRYPT_MODE, key);
-            //byte[] decordedValue = Base64.decode(encryptedData);
-            byte[] decordedValue = Hex.decodeHex(encryptedData.toCharArray());
-            byte[] decValue = c.doFinal(decordedValue);
-            decryptedValue = new String(decValue);
-        } catch (Exception e) {
-            log.error("Error decrypting: " + encryptedData + " " + e.getMessage());
-        }
-        return decryptedValue;
-    }
-
-    public static String decrypt(String encryptedData) {
-        String decryptedValue = "";
-        try {
-            Key key = generateKey();
-            Cipher c = Cipher.getInstance(ALGO);
-            c.init(Cipher.DECRYPT_MODE, key);
-            byte[] decordedValue = new BASE64Decoder().decodeBuffer(encryptedData);
-            byte[] decValue = c.doFinal(decordedValue);
-            decryptedValue = new String(decValue);
-        } catch (Exception e) {
-            log.error("Error decrypting: " + encryptedData + " " + e.getMessage());
-        }
-        return decryptedValue;
-    }
-
     public String generateSalt() {
         SecureRandom random = new SecureRandom();
         byte bytes[] = new byte[20];
         random.nextBytes(bytes);
         String s = new String(bytes);
         return s;
-    }
-
-    public static Ticket StringToTicket(String key) {
-        String[] val = key.split("@@@");
-        Ticket ticket = new Ticket();
-        ticket.setEmailAddress(val[0]);
-        ticket.setCreatedDate(val[1]);
-        return ticket;
-    }
-
-    public static Ticket createTicket(long userId) throws PortalException, SystemException {
-        Ticket ticket = new Ticket();
-        Date d = new Date();
-        String date = formatDate(d);
-        User user = UserLocalServiceUtil.getUser(userId);
-        String tick = userId + "@@@" + user.getEmailAddress() + "@@@" + date;
-
-        log.info("String to be encrypted is " + tick);
-        String encrypted = "";
-        try {
-            encrypted = encrypt(tick);
-        } catch (Exception ex) {
-            log.error(null, ex);
-        }
-        log.info("Encrypted String is " + encrypted);
-        ticket.setCreatedDate(formatDate(new Date()));
-        ticket.setEmailAddress(user.getEmailAddress());
-        ticket.setTicket(encrypted);
-        ticket.setUserId(userId);
-        return ticket;
-    }
-
-    public static long getUserFromTicket(String ticket) {
-        log.info("String to be decrypted is " + ticket);
-        String decrypted = "";
-        try {
-            decrypted = decrypt(ticket);
-        } catch (Exception ex) {
-            log.error(ExceptionUtils.getStackTrace(ex));
-            log.error(null, ex);
-        }
-        log.info("Decrypted String is " + decrypted);
-        Ticket ticket1 = StringToTicket(decrypted);
-
-        log.info("Username is " + ticket1.getUserId() + " and date is " + ticket1.getCreatedDate());
-        return ticket1.getUserId();
-    }
-
-    public static boolean verifyTicket(String ticket, String username) {
-        log.info("String to be decrypted is " + ticket);
-        String decrypted = "";
-        try {
-            decrypted = decrypt(ticket);
-        } catch (Exception ex) {
-            log.error(null, ex);
-        }
-        log.info("Decrypted String is " + decrypted);
-        Ticket ticket1 = StringToTicket(decrypted);
-
-        long userId = ticket1.getUserId();
-        log.info("USER FROM TICKET IS " + userId + " and user wants to be verified is " + username);
-        boolean ret = false;
-        try {
-            User user = UserLocalServiceUtil.getUser(userId);
-            log.info("USER FROM TICKET IS " + user.getScreenName());
-            if (user.getScreenName().equalsIgnoreCase(username)) {
-                ret = true;
-            }
-        } catch (Exception e) {
-            log.error("Error finding user for user inside ticket");
-        }
-//            String date = ticket1.getCreatedDate();
-//            log.info("Userid is " + userId + " and date is " + date);
-//            Date now = new Date();
-//            DateTimeFormatter formatter = DateTimeFormat.forPattern(HelperUtil.DATE_TIME_FORMAT);
-//            DateTime d1 = formatter.parseDateTime(date);
-//            DateTime d2 = new DateTime(now);
-//            log.info(d2 + " " + d1);
-//            int mins = Minutes.minutesBetween(d1,d2).getMinutes();
-//
-//            log.info("Minutes between ticket and now is:" + mins);
-
-        //if (userId==user && mins<120) ret=true;
-        //if (userId==user) ret=true;
-        return ret;
-    }
-
-    public static String DATE_TIME_FORMAT = "dd-MM-yyyy HH:mm";
-
-    public static String formatDate(Date date) {
-        String formatted = "";
-        if (date != null) {
-            SimpleDateFormat dt1 = new SimpleDateFormat(DATE_TIME_FORMAT);
-            dt1.setTimeZone(TimeZone.getTimeZone("EET"));
-
-            formatted = dt1.format(date);
-        }
-        return formatted;
-    }
-
-    public static String transformDomToString(Document doc) throws TransformerConfigurationException, TransformerException {
-        TransformerFactory tf = TransformerFactory.newInstance();
-        Transformer transformer = tf.newTransformer();
-        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-        StringWriter writer = new StringWriter();
-        transformer.transform(new DOMSource(doc), new StreamResult(writer));
-        String output = writer.getBuffer().toString().replaceAll("\n|\r", "");
-        return output;
-    }
-
-    public static Document readXml(StreamSource is) throws SAXException, IOException,
-            ParserConfigurationException {
-
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-
-        dbf.setValidating(false);
-        dbf.setIgnoringComments(false);
-        dbf.setIgnoringElementContentWhitespace(true);
-        dbf.setNamespaceAware(true);
-
-        DocumentBuilder db = null;
-        db = dbf.newDocumentBuilder();
-        db.setEntityResolver(new NullResolver());
-
-        // db.setErrorHandler( new MyErrorHandler());
-        InputSource is2 = new InputSource();
-        is2.setSystemId(is.getSystemId());
-        is2.setByteStream(is.getInputStream());
-        is2.setCharacterStream(is.getReader());
-
-        return db.parse(is2);
     }
 }
 

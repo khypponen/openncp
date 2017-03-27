@@ -60,6 +60,9 @@
 							<goal>wsimport</goal>
 						</goals>
 						<configuration>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
 							<wsdlFiles>
 								<wsdlFile>${basedir}/src/main/resources/gazelle.wsdls/GazelleObjectValidatorWS.xml</wsdlFile>
 							</wsdlFiles>
@@ -80,6 +83,9 @@
 							<goal>wsimport</goal>
 						</goals>
 						<configuration>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
 							<wsdlFiles>
 								<wsdlFile>${basedir}/src/main/resources/gazelle.wsdls/GazelleHL7v3ValidationWS.xml</wsdlFile>
 							</wsdlFiles>
@@ -100,6 +106,9 @@
 							<goal>wsimport</goal>
 						</goals>
 						<configuration>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
 							<packageName>net.ihe.gazelle.xd</packageName>
 							<wsdlFiles>
 								<wsdlFile>${basedir}/src/main/resources/gazelle.wsdls/XDSMetadataValidatorWS.xml</wsdlFile>
@@ -121,6 +130,9 @@
 							<goal>wsimport</goal>
 						</goals>
 						<configuration>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
 							<packageName>net.ihe.gazelle.am</packageName>
 							<wsdlFiles>
 								<wsdlFile>${basedir}/src/main/resources/gazelle.wsdls/AuditMessageValidatorWS.xml</wsdlFile>
@@ -142,6 +154,9 @@
 							<goal>wsimport</goal>
 						</goals>
 						<configuration>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
 							<packageName>net.ihe.gazelle.document</packageName>
 							<wsdlFiles>
 								<wsdlFile>${basedir}/src/main/resources/gazelle.wsdls/CDAValidatorWS.xml</wsdlFile>
@@ -189,13 +204,6 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-		<!--<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4jVersion}</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>-->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -242,22 +250,11 @@
 			<version>2.4</version>
 			<scope>test</scope>
 		</dependency>
-		<!--<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.6</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.6.6</version>
-		</dependency>-->
 	</dependencies>
 
 	<!-- ================== Properties ================== -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<javaxServletVersion>2.3</javaxServletVersion>
-		<!--<log4jVersion>1.2.17</log4jVersion>-->
 	</properties>
 </project>

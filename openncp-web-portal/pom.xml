@@ -324,7 +324,7 @@
 			<version>${wicket.version}</version>
 			<exclusions>
 				<exclusion>
-					<artifactId>spring</artifactId>
+					<artifactId>spring-context</artifactId>
 					<groupId>org.springframework</groupId>
 				</exclusion>
 			</exclusions>

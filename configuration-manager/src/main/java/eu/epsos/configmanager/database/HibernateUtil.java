@@ -19,16 +19,16 @@
  */
 package eu.epsos.configmanager.database;
 
+import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
 
 /**
- * Hibernate Utility class with a convenient method to get Session Factory
- * object.
+ * Hibernate Utility class with a convenient method to get Session Factory object.
  *
  * @author Marcelo Fonseca<code> - marcelo.fonseca@iuz.pt</code>
  */
@@ -39,15 +39,14 @@ public final class HibernateUtil {
      */
     private static final SessionFactory SESSION_FACTORY;
     /**
-     * Holds the Hibernate Configuration File name
-     */
-    private static String hibernateConfigFile = null;
-    /**
      * Class logger
      */
     private static final Logger LOGGER = LoggerFactory.getLogger(HibernateUtil.class);
 
     static {
+
+        // Holds the Hibernate Configuration File name
+        String hibernateConfigFile;
 
         if (!HibernateConfigFile.name.contains("/")) {
             try {
@@ -61,7 +60,7 @@ public final class HibernateUtil {
         }
         try {
             final File configFile = new File(hibernateConfigFile);
-            SESSION_FACTORY = new AnnotationConfiguration().configure(configFile).buildSessionFactory();
+            SESSION_FACTORY = new Configuration().configure(configFile).buildSessionFactory();
         } catch (RuntimeException ex) {
             // Log the exception. 
             LOGGER.error("Initial SessionFactory creation failed." + ex);
@@ -69,13 +68,28 @@ public final class HibernateUtil {
         }
     }
 
+    /**
+     * Private constructor to avoid instantiation
+     */
+    private HibernateUtil() {
+    }
+
+    /**
+     * Create a {@link SessionFactory} using the properties and mappings in the OpenNCP configuration file.
+     *
+     * @return The build {@link SessionFactory}.
+     */
     public static SessionFactory getSessionFactory() {
         return SESSION_FACTORY;
     }
 
-    /**
-     * Public constructor to avoid instantiation
-     */
-    private HibernateUtil() {
+    public static void closeFactory() {
+        if (SESSION_FACTORY != null) {
+            try {
+                SESSION_FACTORY.close();
+            } catch (HibernateException ignored) {
+                LOGGER.error("Couldn't close SessionFactory", ignored);
+            }
+        }
     }
 }
