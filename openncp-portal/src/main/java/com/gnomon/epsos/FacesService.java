@@ -41,8 +41,7 @@ public class FacesService {
     public static final int URL_MODE_RENDER = 0;
     public static final int URL_MODE_ACTION = 1;
     public static final int URL_MODE_RESOURCE = 2;
-
-
+    public static final String BUNDLE_LOCATION = "content.Language";
     private static final Logger log = LoggerFactory.getLogger("FacesService");
 
     public static PortletRequest getPortletRequest() {
@@ -54,7 +53,6 @@ public class FacesService {
     }
 
     /**
-     *
      * @return
      */
     public static PortletResponse getPortletResponse() {
@@ -74,7 +72,6 @@ public class FacesService {
         return response;
     }
 
-
     public static HttpServletRequest getHttpServletRequest() {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         ExternalContext externalContext = facesContext.getExternalContext();
@@ -92,7 +89,7 @@ public class FacesService {
                     .getRequest();
             HttpServletRequest req = PortalUtil.getHttpServletRequest(portletRequest);
             HttpSession session = req.getSession();
-            session.putValue(param, value);
+            session.setAttribute(param, value);
         } catch (Exception e) {
             log.error("ERROR: While trying to store to session the parameter : " + param + " with value : " + value + ": " + e.getMessage());
             log.error(ExceptionUtils.getStackTrace(e));
@@ -116,7 +113,6 @@ public class FacesService {
         }
         return ret;
     }
-
 
     public static boolean userHasRole(long userId, long companyId, String rolename) {
         boolean hasRole = false;
@@ -150,7 +146,6 @@ public class FacesService {
         }
         return df;
     }
-
 
     public static ExternalContext getContext() {
         FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -213,7 +208,6 @@ public class FacesService {
         }
         return url.toString();
     }
-
 
     public static Layout scanLayout(long groupId, boolean isPrivatePage, String frUrlPart) {
 
@@ -311,7 +305,6 @@ public class FacesService {
         return str;
     }
 
-
     /**
      * Translates a key to the proper locale
      *
@@ -334,13 +327,11 @@ public class FacesService {
         return str;
     }
 
-
     public static Locale getLocale() {
         FacesContext ctx = FacesContext.getCurrentInstance();
         Locale locale = ctx.getViewRoot().getLocale();
         return locale;
     }
-
 
     /**
      * Adds A message to the current Context message component (p:growl or h:message )
@@ -386,7 +377,6 @@ public class FacesService {
 
     }
 
-
     public static String getParameter(String key) {
 
         PortletRequest request = FacesService.getPortletRequest();
@@ -426,7 +416,5 @@ public class FacesService {
         PortletRequest request = ((PortletRequest) (FacesContext.getCurrentInstance().getExternalContext().getRequest()));
         return request.isUserInRole("administrator");
     }
-
-    public static final String BUNDLE_LOCATION = "content.Language";
 
 }

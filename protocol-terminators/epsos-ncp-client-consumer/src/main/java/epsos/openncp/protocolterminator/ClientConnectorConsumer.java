@@ -23,36 +23,8 @@
  */
 package epsos.openncp.protocolterminator;
 
-import epsos.openncp.protocolterminator.clientconnector.DocumentId;
-import epsos.openncp.protocolterminator.clientconnector.EpsosDocument1;
-import epsos.openncp.protocolterminator.clientconnector.GenericDocumentCode;
-import epsos.openncp.protocolterminator.clientconnector.PatientDemographics;
-import epsos.openncp.protocolterminator.clientconnector.PatientId;
-import epsos.openncp.protocolterminator.clientconnector.QueryDocumentRequest;
-import epsos.openncp.protocolterminator.clientconnector.QueryDocuments;
-import epsos.openncp.protocolterminator.clientconnector.QueryDocumentsDocument;
-import epsos.openncp.protocolterminator.clientconnector.QueryDocumentsResponseDocument;
-import epsos.openncp.protocolterminator.clientconnector.QueryPatientDocument;
-import epsos.openncp.protocolterminator.clientconnector.QueryPatientRequest;
-import epsos.openncp.protocolterminator.clientconnector.QueryPatientResponseDocument;
-import epsos.openncp.protocolterminator.clientconnector.RetrieveDocument1;
-import epsos.openncp.protocolterminator.clientconnector.RetrieveDocumentDocument1;
-import epsos.openncp.protocolterminator.clientconnector.RetrieveDocumentRequest;
-import epsos.openncp.protocolterminator.clientconnector.RetrieveDocumentResponseDocument;
-import epsos.openncp.protocolterminator.clientconnector.SayHelloDocument;
-import epsos.openncp.protocolterminator.clientconnector.SayHelloResponseDocument;
-import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentDocument1;
-import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentRequest;
-import epsos.openncp.protocolterminator.clientconnector.SubmitDocument1;
-import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentResponse;
+import epsos.openncp.protocolterminator.clientconnector.*;
 import epsos.openncp.pt.client.ClientConnectorServiceServiceStub;
-import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-
-import javax.xml.namespace.QName;
 import org.apache.axiom.om.OMAbstractFactory;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.OMFactory;
@@ -60,16 +32,32 @@ import org.apache.axis2.AxisFault;
 import org.apache.axis2.util.XMLUtils;
 import org.opensaml.saml2.core.Assertion;
 
+import javax.xml.namespace.QName;
+import java.rmi.RemoteException;
+import java.util.Arrays;
+import java.util.List;
+
 /*
  *  ClientConnectorServiceServiceTest Junit test case
  */
 public class ClientConnectorConsumer {
 
-    private String epr;
     private final long TIMEOUT = 3 * 60 * 1000; // Three minutes
+    private String epr;
 
     public ClientConnectorConsumer(String epr) {
         this.epr = epr;
+    }
+
+    private static void addAssertions(ClientConnectorServiceServiceStub stub, Assertion idAssertion, Assertion trcAssertion) throws Exception {
+        OMFactory omFactory = OMAbstractFactory.getOMFactory();
+        OMElement omSecurityElement = omFactory.createOMElement(new QName("http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd", "Security", "wsse"), null);
+        if (trcAssertion != null) {
+            omSecurityElement.addChild(XMLUtils.toOM(trcAssertion.getDOM()));
+        }
+        omSecurityElement.addChild(XMLUtils.toOM(idAssertion.getDOM()));
+        stub._getServiceClient().addHeader(omSecurityElement);
+
     }
 
     /**
@@ -105,12 +93,15 @@ public class ClientConnectorConsumer {
         }
 
         EpsosDocument1[] docArray = queryDocumentsResponseDocument.getQueryDocumentsResponse().getReturnArray();
-        List<EpsosDocument1> result = Arrays.asList(docArray);
-        return result;
+        return Arrays.asList(docArray);
     }
 
     /**
-     * Auto generated test method
+     *
+     * @param idAssertion
+     * @param countryCode
+     * @param pd
+     * @return
      */
     public List<PatientDemographics> queryPatient(Assertion idAssertion, String countryCode,
                                                   PatientDemographics pd) {
@@ -152,8 +143,7 @@ public class ClientConnectorConsumer {
         }
 
         PatientDemographics[] pdArray = queryPatientResponseDocument.getQueryPatientResponse().getReturnArray();
-        List<PatientDemographics> result = Arrays.asList(pdArray);
-        return result;
+        return Arrays.asList(pdArray);
     }
 
     /**
@@ -175,10 +165,9 @@ public class ClientConnectorConsumer {
         try {
             sayHelloResponseDocument = stub.sayHello(sayHelloDocument);
         } catch (RemoteException ex) {
-           throw new RuntimeException(ex.getMessage(), ex);
+            throw new RuntimeException(ex.getMessage(), ex);
         }
-        String result = sayHelloResponseDocument.getSayHelloResponse().getReturn();
-        return result;
+        return sayHelloResponseDocument.getSayHelloResponse().getReturn();
     }
 
     /**
@@ -216,10 +205,18 @@ public class ClientConnectorConsumer {
             throw new RuntimeException(ex.getMessage(), ex);
         }
 
-        EpsosDocument1 result = retrieveDocumentResponseDocument.getRetrieveDocumentResponse().getReturn();
-        return result;
+        return retrieveDocumentResponseDocument.getRetrieveDocumentResponse().getReturn();
     }
-    
+
+    /**
+     * @param idAssertion
+     * @param trcAssertion
+     * @param countryCode
+     * @param documentId
+     * @param homeCommunityId
+     * @param classCode
+     * @return
+     */
     @Deprecated
     public EpsosDocument1 retrieveDocument(Assertion idAssertion, Assertion trcAssertion, String countryCode,
                                            DocumentId documentId, String homeCommunityId, GenericDocumentCode classCode) {
@@ -232,7 +229,7 @@ public class ClientConnectorConsumer {
     public SubmitDocumentResponse submitDocument(Assertion idAssertion, Assertion trcAssertion, String countryCode,
                                                  EpsosDocument1 document, PatientDemographics pd) {
 
-        SubmitDocumentResponse response = null;
+        SubmitDocumentResponse response;
         ClientConnectorServiceServiceStub stub;
         try {
             stub = new ClientConnectorServiceServiceStub(epr);
@@ -264,17 +261,5 @@ public class ClientConnectorConsumer {
         }
 
         return response;
-
-    }
-
-    private static void addAssertions(ClientConnectorServiceServiceStub stub, Assertion idAssertion, Assertion trcAssertion) throws Exception {
-        OMFactory omFactory = OMAbstractFactory.getOMFactory();
-        OMElement omSecurityElement = omFactory.createOMElement(new QName("http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd", "Security", "wsse"), null);
-        if (trcAssertion != null) {
-            omSecurityElement.addChild(XMLUtils.toOM(trcAssertion.getDOM()));
-        }
-        omSecurityElement.addChild(XMLUtils.toOM(idAssertion.getDOM()));
-        stub._getServiceClient().addHeader(omSecurityElement);
-
     }
 }

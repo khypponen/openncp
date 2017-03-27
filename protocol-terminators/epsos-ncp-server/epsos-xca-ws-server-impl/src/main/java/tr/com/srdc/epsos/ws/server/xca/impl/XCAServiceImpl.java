@@ -26,7 +26,6 @@
  */
 package tr.com.srdc.epsos.ws.server.xca.impl;
 
-import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import epsos.ccd.gnomon.auditmanager.*;
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
@@ -72,6 +71,7 @@ import tr.com.srdc.epsos.util.http.HTTPUtil;
 import javax.activation.DataHandler;
 import javax.mail.util.ByteArrayDataSource;
 import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
 import javax.xml.namespace.QName;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -81,14 +81,14 @@ import java.util.*;
 public class XCAServiceImpl implements XCAServiceInterface {
 
     public static Logger logger = LoggerFactory.getLogger(XCAServiceImpl.class);
+    ITransformationService transformationService;
+    OMFactory factory;
     private oasis.names.tc.ebxml_regrep.xsd.query._3.ObjectFactory ofQuery;
     private oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectFactory ofRim;
     private oasis.names.tc.ebxml_regrep.xsd.rs._3.ObjectFactory ofRs;
     private ihe.iti.xds_b._2007.ObjectFactory ofXds;
     private ServiceLoader<DocumentSearchInterface> serviceLoader;
     private DocumentSearchInterface documentSearchService;
-    ITransformationService transformationService;
-    OMFactory factory;
 
     public XCAServiceImpl() throws Exception {
 
@@ -113,8 +113,9 @@ public class XCAServiceImpl implements XCAServiceInterface {
         transformationService = (ITransformationService) applicationContext.getBean(ITransformationService.class.getName());
     }
 
-    public void prepareEventLogForQuery(EventLog eventLog, AdhocQueryRequest request, AdhocQueryResponse response, Element sh, String classCode) throws DatatypeConfigurationException {
+    public void prepareEventLogForQuery(EventLog eventLog, AdhocQueryRequest request, AdhocQueryResponse response, Element sh, String classCode) {
         ConfigurationManagerService cms = ConfigurationManagerService.getInstance();
+
 
         if (classCode.equals(Constants.EP_CLASSCODE)) {
             eventLog.setEventType(EventType.epsosOrderServiceList);
@@ -127,7 +128,11 @@ public class XCAServiceImpl implements XCAServiceInterface {
             eventLog.setEI_TransactionName(TransactionName.epsosMroServiceList);
         }
         eventLog.setEI_EventActionCode(EventActionCode.READ);
-        eventLog.setEI_EventDateTime(new XMLGregorianCalendarImpl(new GregorianCalendar()));
+        try {
+            eventLog.setEI_EventDateTime(DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar()));
+        } catch (DatatypeConfigurationException e) {
+            logger.error("DatatypeConfigurationException: {}", e.getMessage());
+        }
         eventLog.setPS_PatricipantObjectID(getDocumentEntryPatientId(request));
 
         if (response.getRegistryObjectList() != null) {
@@ -188,7 +193,7 @@ public class XCAServiceImpl implements XCAServiceInterface {
             boolean documentReturned,
             OMElement registryErrorList,
             Element sh,
-            String classCode) throws DatatypeConfigurationException {
+            String classCode) {
         ConfigurationManagerService cms = ConfigurationManagerService.getInstance();
 
         if (classCode == null || classCode.equals(Constants.EP_CLASSCODE)) {
@@ -205,7 +210,11 @@ public class XCAServiceImpl implements XCAServiceInterface {
             eventLog.setEI_TransactionName(TransactionName.epsosMroServiceRetrieve);
         }
         eventLog.setEI_EventActionCode(EventActionCode.READ);
-        eventLog.setEI_EventDateTime(new XMLGregorianCalendarImpl(new GregorianCalendar()));
+        try {
+            eventLog.setEI_EventDateTime(DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar()));
+        } catch (DatatypeConfigurationException e) {
+            logger.error("DatatypeConfigurationException: {}", e.getMessage());
+        }
 
         eventLog.setET_ObjectID(Constants.UUID_PREFIX + request.getDocumentRequest().get(0).getDocumentUniqueId());
 
