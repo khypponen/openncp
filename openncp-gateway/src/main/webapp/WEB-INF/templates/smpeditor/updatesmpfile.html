@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+    <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>    
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+      <div class="container-fluid" th:include="fragments/header::head">
+      </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Home/SMP Editor/Update File</li>
+        </ol>
+      </div>
+    </nav><!-- HEADER -->
+
+    <h2 th:text="#{label.SmpEditor.menu.op2}" class="marginleft">Update SMP file</h2>
+    <h3 th:text="#{label.SmpEditor.op2.subTitle}" class="subtitle">Choose the file to update</h3>
+
+    <div th:if="${alert != null}">
+      <div class="alert center" th:classappend="'alert-' + ${alert.type}">
+        <strong th:text="${alert.message}"></strong>
+      </div>
+    </div> 
+
+    <form action="#"  th:action="@{/smpeditor/updatesmpfile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpfileupdate}"  method="post"  enctype="multipart/form-data">  
+      <div class="form-group row" id="newfileinputs">
+        <div class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.SmpFile}" class="col-xs-2 col-form-label">SMP file</label>
+          <div class="col-xs-9">
+            <input type="file" accept=".xml" name="fileupdate" th:field="*{{updateFile}}" class="form-control-file" required>
+          </div>
+        </div>
+      </div>
+
+      <div id="btnformnsf">
+        <a href="#" id="abutton" th:href="@{/smpeditor/smpeditor}" th:text="#{label.button.cancel}" class="btn btn-default">Cancel</a>
+        <button type="submit" class="btn okbutton" th:text="#{label.button.ok}">Ok</button>
+      </div>  
+    </form>  
+
+  </body>
+</html>

@@ -128,6 +128,12 @@ public enum AuditTrailUtils {
         if (eventLog.getEventType().equals("ITI-39")) {
             am = au._CreateAuditTrailForRequestOfData(eventLog);
         }
+        if (eventLog.getEventType().equals("ehealth-193")) {
+            am = au._CreateAuditTrailForEhealthSMPQuery(eventLog);
+        }
+        if (eventLog.getEventType().equals("ehealth-194")) {
+            am = au._CreateAuditTrailForEhealthSMPPush(eventLog);
+        }
 
         am = AuditTrailUtils.getInstance().addNonRepudiationSection(am, eventLog.getReqM_ParticipantObjectID(),
                 eventLog.getReqM_PatricipantObjectDetail(), eventLog.getResM_ParticipantObjectID(),
@@ -177,6 +183,34 @@ public enum AuditTrailUtils {
         }
         am.getParticipantObjectIdentification().add(poit1);
 
+        return am;
+    }
+    
+    /**
+     * Constructs an Audit Message for the Patient Privacy Audit schema
+     * in eHealth NCP Query
+     *
+     * @param eventLog the EventLog object
+     * @return the created AuditMessage object
+     */
+    private AuditMessage _CreateAuditTrailForEhealthSMPQuery(EventLog eventLog) {
+      //TODO
+        AuditMessage am = createAuditTrailForEhealthSMPQuery(eventLog);
+        addEventTarget(am, eventLog.getET_ObjectID(), new Short("2"), null, "SMP", "eHealth Security", "SignedServiceMetadata");
+        return am;
+    }
+    
+    /**
+     * Constructs an Audit Message for the Patient Privacy Audit schema
+     * in eHealth NCP Push
+     *
+     * @param eventLog the EventLog object
+     * @return the created AuditMessage object
+     */
+    private AuditMessage _CreateAuditTrailForEhealthSMPPush(EventLog eventLog) {
+      //TODO
+        AuditMessage am = createAuditTrailForEhealthSMPPush(eventLog);
+        addEventTarget(am, eventLog.getET_ObjectID(), new Short("2"), null, "SMP", "eHealth Security", "SignedServiceMetadata");
         return am;
     }
 
@@ -434,6 +468,12 @@ public enum AuditTrailUtils {
         if (eventType.equals(epsos.ccd.gnomon.auditmanager.EventType.epsosMroRetrieve.getCode())) {
             return epsos.ccd.gnomon.auditmanager.IHEEventType.epsosMroRetrieve.getCode();
         }
+        if (eventType.equals(epsos.ccd.gnomon.auditmanager.EventType.ehealthSMPQuery.getCode())) {
+            return epsos.ccd.gnomon.auditmanager.IHEEventType.ehealthSMPQuery.getCode();
+        }
+        if (eventType.equals(epsos.ccd.gnomon.auditmanager.EventType.ehealthSMPPush.getCode())) {
+            return epsos.ccd.gnomon.auditmanager.IHEEventType.ehealthSMPPush.getCode();
+        }
         // TODO: Fix this issue, does the mappedEventType should be initialized?
         if (mappedEventType == null) {
             return null;
@@ -499,6 +539,12 @@ public enum AuditTrailUtils {
         }
         if (name.equals(epsos.ccd.gnomon.auditmanager.TransactionName.epsosMroServiceRetrieve.getCode())) {
             return epsos.ccd.gnomon.auditmanager.IHETransactionName.epsosMroServiceRetrieve.getCode();
+        }
+        if (name.equals(epsos.ccd.gnomon.auditmanager.TransactionName.ehealthSMPQuery.getCode())) {
+            return epsos.ccd.gnomon.auditmanager.IHETransactionName.ehealthSMPQuery.getCode();
+        }
+        if (name.equals(epsos.ccd.gnomon.auditmanager.TransactionName.ehealthSMPPush.getCode())) {
+            return epsos.ccd.gnomon.auditmanager.IHETransactionName.ehealthSMPPush.getCode();
         }
         // TODO: Fix this issue, does the mappedEventType should be initialized?
         if (mappedEventType == null) {
@@ -595,6 +641,20 @@ public enum AuditTrailUtils {
             eventID_epsos.setCode("N/A");
             eventID_epsos.setCodeSystemName("epSOS LOINC");
             eventID_epsos.setDisplayName("PAC");
+            eit.getEventTypeCode().add(eventID_epsos);
+        }
+        if (EventType.equals(epsos.ccd.gnomon.auditmanager.EventType.ehealthSMPQuery.getCode())) {
+            CodedValueType eventID_epsos = new CodedValueType();
+            eventID_epsos.setCode("SMP");
+            eventID_epsos.setCodeSystemName("ehealth-193");
+            eventID_epsos.setDisplayName("SMP::Query");
+            eit.getEventTypeCode().add(eventID_epsos);
+        }
+        if (EventType.equals(epsos.ccd.gnomon.auditmanager.EventType.ehealthSMPPush.getCode())) {
+            CodedValueType eventID_epsos = new CodedValueType();
+            eventID_epsos.setCode("SMP");
+            eventID_epsos.setCodeSystemName("ehealth-194");
+            eventID_epsos.setDisplayName("SMP::Push");
             eit.getEventTypeCode().add(eventID_epsos);
         }
 
@@ -742,6 +802,63 @@ public enum AuditTrailUtils {
         em.setParticipantObjectIDTypeCode(EM_object);
         am.getParticipantObjectIdentification().add(em);
         return am;
+    }
+    
+    
+    /**
+     * Constructs an Audit Message for Patient Privacy Audit Schema for eHealth SMP Query
+     *
+     * @param eventLog the EventLog object
+     * @return the created AuditMessage object
+     */
+    private AuditMessage createAuditTrailForEhealthSMPQuery(EventLog eventLog) {
+      //TODO
+      AuditMessage am = null;
+      try {
+        ObjectFactory of = new ObjectFactory();
+        am = of.createAuditMessage();
+        addEventIdentification(am, eventLog.getEventType(), eventLog.getEI_TransactionName(),
+                eventLog.getEI_EventActionCode(), eventLog.getEI_EventDateTime(),
+                eventLog.getEI_EventOutcomeIndicator());
+        addService(am, eventLog.getSC_UserID(), true, "ServiceConsumer", "epSOS", "epSOS Service Consumer",
+                eventLog.getSourceip());
+        addService(am, eventLog.getSP_UserID(), false, "ServiceProvider", "epSOS", "epSOS Service Provider",
+                eventLog.getTargetip());
+        addAuditSource(am, eventLog.getAS_AuditSourceId());
+        addError(am, eventLog.getEM_PatricipantObjectID(), eventLog.getEM_PatricipantObjectDetail(), new Short("2"),
+                    new Short("3"), "9", "errormsg");
+      } catch (Exception e) {
+        log.error(e.getLocalizedMessage(), e);
+      }
+      return am;
+    }
+    
+    /**
+     * Constructs an Audit Message for Patient Privacy Audit Schema for eHealth SMP Push
+     *
+     * @param eventLog the EventLog object
+     * @return the created AuditMessage object
+     */
+    private AuditMessage createAuditTrailForEhealthSMPPush(EventLog eventLog) {
+      //TODOO
+      AuditMessage am = null;
+      try {
+        ObjectFactory of = new ObjectFactory();
+        am = of.createAuditMessage();
+        addEventIdentification(am, eventLog.getEventType(), eventLog.getEI_TransactionName(),
+                eventLog.getEI_EventActionCode(), eventLog.getEI_EventDateTime(),
+                eventLog.getEI_EventOutcomeIndicator());
+        addService(am, eventLog.getSC_UserID(), true, "ServiceConsumer", "epSOS", "epSOS Service Consumer",
+                eventLog.getSourceip());
+        addService(am, eventLog.getSP_UserID(), false, "ServiceProvider", "epSOS", "epSOS Service Provider",
+                eventLog.getTargetip());
+        addAuditSource(am, eventLog.getAS_AuditSourceId());
+        addError(am, eventLog.getEM_PatricipantObjectID(), eventLog.getEM_PatricipantObjectDetail(), new Short("2"),
+                    new Short("3"), "9", "errormsg");
+      } catch (Exception e) {
+        log.error(e.getLocalizedMessage(), e);
+      }
+      return am;
     }
 
     /**

@@ -55,7 +55,9 @@ public enum TransactionName {
     epsosPACRetrieve("epsosPACRetrieve"),
     epsosHCERPut("epsosHCERService:Put"),
     epsosMroServiceList("epsosMroService::List"),
-    epsosMroServiceRetrieve("epsosMroService::Retrieve");
+    epsosMroServiceRetrieve("epsosMroService::Retrieve"),
+    ehealthSMPQuery("SMP::Query"),
+    ehealthSMPPush("SMP::Push");
 
     private String code;
 

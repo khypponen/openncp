@@ -62,7 +62,9 @@ public enum EventType {
     epsosPACRetrieve("epsos-95"),
     epsosHCERPut("epsos-96"),
     epsosMroList("ITI-38"),
-    epsosMroRetrieve("ITI-39");
+    epsosMroRetrieve("ITI-39"),
+    ehealthSMPQuery("ehealth-193"),
+    ehealthSMPPush("ehealth-194");
     
     private String code;
 

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+    <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>  
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+      <div class="container-fluid" th:include="fragments/header::head">
+      </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Home/SMP Editor/Delete File</li>
+        </ol>
+      </div>
+    </nav><!-- HEADER -->
+
+    <h2 class="marginleft" th:text="#{label.SmpEditor.menu.op5}">Delete SMP file</h2>
+    <h3 class="subtitle" th:text="#{label.SmpEditor.op5.subTitle}">Files on the server</h3>
+
+
+    <div th:if="${smpdelete.alert != null}">
+      <div class="alert center" th:classappend="'alert-' + ${smpdelete.alert.type}">
+        <strong th:text="${smpdelete.alert.message}"></strong>
+        <p th:text="${smpdelete.errorDescription}"></p>
+      </div>
+      
+      <div id="btnformnsf">
+        <a href="#" id="abutton" th:href="@{/smpeditor/deletesmpfile}" class="btn btn-default" th:text="#{label.button.back}">Back</a>
+        <a href="#" id="abutton" th:href="@{/smpeditor/smpeditor}" class="btn btn-default" th:text="#{label.button.done}">Done</a>
+      </div>
+    </div>
+
+    <form th:if="${smpdelete.alert == null}" action="#"  th:action="@{/smpeditor/deletesmpinfo} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpdelete}"  method="post">
+      <div class="panel panel-default" id="newfileinputs">
+        <div class="panel-body">
+          <div class="well">
+            <p><strong th:text="#{label.SmpEditor.form.country}">Country</strong></p>
+            <p th:text="${smpdelete.country}"></p>
+            <p><strong th:text="#{label.SmpEditor.deleteform.documents}">Documents</strong></p>
+            <div class="checkbox" th:each="reference: ${referenceCollection}">
+              <label>
+                <strong th:text="${reference.smptype}"></strong>
+              </label>
+              <label>
+                <input type="checkbox" th:field="*{referenceSelected}" th:value="${reference.reference + '&&' + reference.smptype}"> 
+                <a th:href="${reference.reference}" th:text="${reference.reference}" target="_blank"></a>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="btnformnsf">
+        <a href="#" id="abutton" th:href="@{/smpeditor/deletesmpfile}" class="btn btn-default" th:text="#{label.button.back}">Back</a>
+        <button type="button" class="btn okbutton" data-toggle="modal" data-target="#deleteModal" th:text="#{label.button.delete}">Delete</button>
+      </div>
+      
+      <!-- Modal -->
+      <div id="deleteModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <div class="center">
+                <p><strong th:text="#{warning.delete.confirm}">Are you sure you want to delete?</strong></p>
+                <div>
+                  <button type="button" class="btn okbutton" data-dismiss="modal" th:text="#{label.button.cancel}">Cancel</button>
+                  <button type="submit" class="btn okbutton" th:text="#{label.button.delete}">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    
+  </body>
+</html>

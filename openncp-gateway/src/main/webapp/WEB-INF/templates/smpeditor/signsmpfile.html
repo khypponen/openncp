@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+    <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+      <div class="container-fluid" th:include="fragments/header::head">
+      </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Home/SMP Editor/Sign File</li>
+        </ol>
+      </div>
+    </nav><!-- HEADER -->
+
+    <div class="marginbotton">
+      <h2 th:text="#{label.SmpEditor.menu.op3}" class="marginleft">Sign SMP file</h2>
+      <h3 th:text="#{label.SmpEditor.op3.subTitle}" class="subtitle">Choose the files to sign</h3>
+      
+      <div th:if="${alert != null}">
+        <div class="alert center" th:classappend="'alert-' + ${alert.type}">
+          <strong th:text="${alert.message}"></strong>
+        </div>
+      </div>      
+      
+      <!-- Sign form-->
+      <form action="#"  th:action="@{/smpeditor/signsmpfile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpfilesign}"  method="post" enctype="multipart/form-data">  
+        <div class="form-group row" id="newfileinputs">
+          <div class="form-group row" id="newfileinputs">
+            <label th:text="#{label.SmpEditor.sigform.files}" for="signfiles" class="col-xs-2 col-form-label">SMP Files</label>
+            <div class="col-xs-9 row">
+              <input th:if="${hasfile}" type="text" class="form-control"  th:value="${smpfilesign.signFileName}" readonly>
+              <input th:unless="${hasfile}" id="files" class="form-control-file col-xs-4" type="file" multiple accept=".xml" name="signFiles" th:field="*{{signFiles}}" required>
+              <div class="col-xs-8">
+                <ul id="selectedFiles">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>        
+        <div>
+          <div id="btnformnsf">
+            <a href="#" id="abutton" th:href="@{/smpeditor/smpeditor}" class="btn btn-default" th:text="#{label.button.cancel}">Cancel</a>
+            <button type="submit" class="btn okbutton" th:text="#{label.button.sign}">Sign</button>
+          </div> 
+        </div> 
+                        
+      </form>     
+      
+    </div>
+    
+    <!-- List of chosen files -->
+    <script>
+      var selDiv = "";
+      document.addEventListener("DOMContentLoaded", init, false);
+      function init() {
+          document.querySelector('#files').addEventListener('change', handleFileSelect, false);
+          selDiv = document.querySelector("#selectedFiles");
+      } 
+      function handleFileSelect(e) {    
+          if(!e.target.files) return;
+          selDiv.innerHTML = "";
+          var files = e.target.files;
+          for(var i=0; i<files.length; i++) {
+              var f = files[i];
+              selDiv.innerHTML += "<li>" + f.name + "</li>";
+          } 
+      }
+    </script>
+           
+  </body>
+</html>

@@ -13,17 +13,30 @@
   margin-right: 50px;
 }
 
-#choosetype {
-  margin-left: 300px;
-  margin-right: 500px;
-  margin-top: 20px;
-  font-size: 16px;
+#choosecountry {
+  margin-left: 150px;
+  margin-top: 50px;
+  margin-right: 900px;
 }
+.choosecountry{
+  min-width: 175px;
+}
+
+#choosetype {
+  margin-left: 400px;
+  margin-top: 50px;
+  margin-right: 400px;
+}
+.choosetype {
+  min-width: 225px;
+}
+
 
 #btnformgfc {
     text-align: right;
     margin-right: 150px;
     margin-top: 200px;
+    margin-bottom: 30px;
 }
 
 #newfileinputs{
@@ -35,10 +48,69 @@
     text-align: right;
     margin-right: 150px;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 #xmlinfo {
   margin-left: 200px;
   margin-right: 150px;
   margin-top: 20px;
+}
+
+.signwarning{
+  width: 30%;
+  margin: auto;
+}
+
+.marginbotton{
+  margin-bottom: 50px;
+}
+.marginleft{
+  margin-left: 20px
+}
+.margintop{
+  margin-top: 50px;
+}
+
+.center{
+  text-align: center;
+}
+.right{
+  text-align: right;
+}
+.left{
+  text-align: left;
+}
+
+.subtitle{
+  margin-left: 150px;
+  margin-top: 50px;
+}
+.subsubtitle{
+  margin-left: 150px;
+  margin-top: 50px;
+}
+
+.textarea{
+  background-color: #F0F0F0;
+}
+
+#abutton{
+  width:76px;
+  background-color: #dddddd;
+}
+.okbutton{
+  width:76px;
+}
+.modalbutton{
+  width: 300px;
+  margin-top: 10px;
+}
+.downloadbutton{
+  min-width: 435px;
+  background-color: #dddddd;
+}
+
+.largefont{
+  font-size: large;
 }

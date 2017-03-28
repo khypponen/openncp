@@ -1,65 +1,93 @@
 package eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.security.cert.X509Certificate;
 import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
+
+/**
+ *
+ * @author Inês Garganta
+ */
 
 /**
  Structure of a SMPFile
  */
 public class SMPFile {
 
+  private String fileName;
+  private File generatedFile;
+
   private SMPType type;
   private String country;
-  private String EndpointURI;
-  @DateTimeFormat(pattern = "yyyy-mm-dd HH:mm")
-  private Date ServiceActivationDate;
-  @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-  private Date ServiceExpirationDate; 
-  private String Certificate;
-  private String ServiceDescription;
-  private String TechnicalContactUrl;
-  private String TechnicalInformationUrl;
-  private MultipartFile Extension;
-  private MultipartFile certificateFile;
-  private String fileName;
+  private String clientServer;
+
   
+  //ServiceInformation
+  private String endpointURI;
+  private String issuanceType;
+  @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+  private Date serviceActivationDate;
+  @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+  private Date serviceExpirationDate; 
+  private String certificate;
+  private String serviceDescription;
+  private String technicalContactUrl;
+  private String technicalInformationUrl;
+  private String extensionContent;
+  private MultipartFile extension;
+  private FileInputStream certificateFile;
+  
+  //Redirect
   private String href;
-  private String CertificateUID;
+  private String certificateUID;
     
-  private File generatedFile;
-  private String extensionData;
 
   public SMPFile() {
     super();
   }
-  
-  public SMPFile(SMPType type, String country,String EndpointURI, Date ServiceActivationDate, 
-          Date ServiceExpirationDate,String Certificate, String ServiceDescription, 
-          String TechnicalContactUrl, String TechnicalInformationUrl,
-          MultipartFile Extension, MultipartFile certificateFile, String fileName) {
-    this.type=type;
-    this.country=country;
-    this.EndpointURI=EndpointURI;
-    this.ServiceActivationDate=ServiceActivationDate;
-    this.ServiceExpirationDate=ServiceExpirationDate;
-    this.ServiceDescription=ServiceDescription;
-    this.TechnicalContactUrl=TechnicalContactUrl;
-    this.TechnicalInformationUrl=TechnicalInformationUrl;
-    this.Extension=Extension;
-    this.certificateFile=certificateFile;
-    this.fileName = fileName;
+   
+  public String getEndpointURI() {
+    return endpointURI;
   }
-  
-  public SMPFile(SMPType type, String country, String href, String CertificateUID, String fileName) {
-    this.type=type;
-    this.country=country;
-    this.href=href;
-    this.CertificateUID=CertificateUID;
-    this.fileName = fileName;
+
+  public void setEndpointURI(String EndpointURI) {
+    this.endpointURI = EndpointURI;
   }
-  
+
+  public String getTechnicalContactUrl() {
+    return technicalContactUrl;
+  }
+
+  public void setTechnicalContactUrl(String TechnicalContactUrl) {
+    this.technicalContactUrl = TechnicalContactUrl;
+  }
+
+  public String getTechnicalInformationUrl() {
+    return technicalInformationUrl;
+  }
+
+  public void setTechnicalInformationUrl(String TechnicalInformationUrl) {
+    this.technicalInformationUrl = TechnicalInformationUrl;
+  }
+
+  public String getExtensionContent() {
+    return extensionContent;
+  }
+
+  public void setExtensionContent(String ExtensionContent) {
+    this.extensionContent = ExtensionContent;
+  }
+
+  public String getHref() {
+    return href;
+  }
+
+  public void setHref(String href) {
+    this.href = href;
+  }
 
   public SMPType getType() {
     return this.type;
@@ -75,66 +103,45 @@ public class SMPFile {
     this.country = country;
   }
   
-  public String getEndpointUri() {
-    return EndpointURI;
-  }
-   public void setEndpointUri(String EndpointURI) {
-    this.EndpointURI = EndpointURI;
-  }
-    
   public Date getServiceActivationDate() {
-    return ServiceActivationDate;
+    return serviceActivationDate;
   }
   public void setServiceActivationDate(Date ServiceActivationDate) {
-    this.ServiceActivationDate = ServiceActivationDate;
+    this.serviceActivationDate = ServiceActivationDate;
   }
   
   public Date getServiceExpirationDate() {
-    return ServiceExpirationDate;
+    return serviceExpirationDate;
   }
   public void setServiceExpirationDate(Date ServiceExpirationDate) {
-    this.ServiceExpirationDate = ServiceExpirationDate;
+    this.serviceExpirationDate = ServiceExpirationDate;
   }
     
   public String getCertificate() {
-    return Certificate;
+    return certificate;
   }
   public void setCertificate(String Certificate) {
-    this.Certificate = Certificate;
+    this.certificate = Certificate;
   }
   
   public String getServiceDescription() {
-    return ServiceDescription;
+    return serviceDescription;
   }
   public void setServiceDescription(String ServiceDescription) {
-    this.ServiceDescription = ServiceDescription;
-  }
-  
-  public String getTechnicalContact() {
-    return TechnicalContactUrl;
-  }
-  public void setTechnicalContact(String TechnicalContactUrl) {
-    this.TechnicalContactUrl = TechnicalContactUrl;
-  }
- 
-  public String getTechnicalInformation() {
-    return TechnicalInformationUrl;
-  }
-  public void setTechnicalInformation(String TechnicalInformationUrl) {
-    this.TechnicalInformationUrl = TechnicalInformationUrl;
+    this.serviceDescription = ServiceDescription;
   }
    
   public MultipartFile getExtension() {
-    return Extension;
+    return extension;
   }
   public void setExtension(MultipartFile Extension) {
-    this.Extension = Extension;
+    this.extension = Extension;
   }
   
-  public MultipartFile getCertificateFile() {
+  public FileInputStream getCertificateFile() {
     return certificateFile;
   }
-  public void setCertificateFile(MultipartFile certificateFile) {
+  public void setCertificateFile(FileInputStream certificateFile) {
     this.certificateFile = certificateFile;
   }
   
@@ -153,27 +160,27 @@ public class SMPFile {
     this.generatedFile = generatedFile;
   }
   
-  public void setExtensionData(String extensionData){
-   this.extensionData=extensionData;
-  }
-  public String getExtensionData(){
-    return extensionData;
-  }
-  
-  
-  public String getRedirectHref() {
-    return href;
-  }
-
-  public void setRedirectHref(String href) {
-    this.href = href;
-  }
-
   public String getCertificateUID() {
-    return CertificateUID;
+    return certificateUID;
   }
 
-  public void setCertificateUID(String CertificateUID) {
-    this.CertificateUID = CertificateUID;
-  }    
+  public void setCertificateUID(String certificateUID) {
+    this.certificateUID = certificateUID;
+  }   
+  
+  public String getIssuanceType() {
+    return issuanceType;
+  }
+
+  public void setIssuanceType(String issuanceType) {
+    this.issuanceType = issuanceType;
+  }
+  
+  public String getClientServer() {
+    return clientServer;
+  }
+
+  public void setClientServer(String clientServer) {
+    this.clientServer = clientServer;
+  }
 }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+    <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>  
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+      <div class="container-fluid" th:include="fragments/header::head">
+      </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Home/SMP Editor/Upload File</li>
+        </ol>
+      </div>
+    </nav><!-- HEADER -->
+
+    <h2 class="marginleft" th:text="#{label.SmpEditor.menu.op4}">Upload SMP file</h2>
+    <h3 class="subtitle" th:text="#{label.SmpEditor.op4.subTitle}">Info</h3>
+
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default" th:each="item: ${items}" id="newfileinputs">
+        <div class="panel-heading" role="tab" th:id="'h'+${item.id}" th:style="'background-color:' + ${item.status.backgroundColor} + ';'">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" th:href="'#' + ${item.id}" th:attr="aria-controls=${item.id}">
+              <strong th:text="${item.uploadFileName}">File Name</strong>
+              <div class="right">
+                <font th:text="${item.status.message}" th:attr="color=${item.status.color}"></font>
+                <span class="glyphicon glyphicon-plus marginleft" aria-hidden="true"></span>
+              </div>
+            </a>
+          </h4>
+        </div>
+        <div th:id="${item.id}" class="panel-collapse collapse" role="tabpanel" th:attr="aria-labelledby='h' + ${item.id}">
+          <div class="panel-body">
+            <div th:if="${item.alert != null}">
+              <div class="alert center" th:classappend="'alert-' + ${item.alert.type}">
+                <strong th:text="${item.alert.message}"></strong>
+                <p th:text="${item.errorDescription}"></p>
+              </div>
+            </div>
+            <div th:if="${item.alert == null}">
+              <p><strong th:text="#{label.SmpEditor.uploadinfo.info}">Check your SMP information at</strong></p>
+              <div class="well">
+                <p><strong th:text="#{label.SmpEditor.uploadinfo.serviceGroup}">ServiceGroup</strong></p>
+                <p><a th:href="${item.serviceGroupUrl}" th:text="${item.serviceGroupUrl}" target="_blank"></a></p>
+                <p><strong th:text="#{label.SmpEditor.uploadinfo.signedServiceMetadata}">SignedServiceMetadata</strong></p>
+                <p><a th:href="${item.signedServiceMetadataUrl}" th:text="${item.signedServiceMetadataUrl}" target="_blank"></a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="btnformnsf">
+      <a href="#" id="abutton" th:href="@{/smpeditor/uploadsmpfile}" class="btn btn-default" th:text="#{label.button.back}">Back</a>
+      <a href="#" id="abutton" th:href="@{/smpeditor/smpeditor}" class="btn btn-default" th:text="#{label.button.done}">Done</a>
+    </div>
+
+  </body>
+</html>
