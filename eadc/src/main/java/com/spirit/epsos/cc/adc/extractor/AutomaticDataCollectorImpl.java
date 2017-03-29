@@ -104,7 +104,7 @@ public class AutomaticDataCollectorImpl implements AutomaticDataCollector {
         String processedDocumentCodeSystem;
         String processedDocumentCodeAndCodeSystemCombination;
 
-        log.info("XML Document: {}", EadcUtil.convertXMLDocumentToString(transaction));
+        log.debug("XML Document: {}", EadcUtil.convertXMLDocumentToString(transaction));
 
         NodeList clinicalDocumentNodeList = transaction.getElementsByTagNameNS(cdaNamespace,
                 "ClinicalDocument");
