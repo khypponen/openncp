@@ -1,31 +1,32 @@
 package com.gnomon.epsos.model;
 
-public class Country {
+import java.io.Serializable;
 
-	private String name;
-	private String code;
-	
-	
-	public Country(String name, String code) {
-		this.name = name;
-		this.code = code;
-		
-	}
+public class Country implements Serializable {
 
-	public String getName() {
-		return name;
-	}
+    private static final long serialVersionUID = 487748229692071744L;
+    
+    private String name;
+    private String code;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Country(String name, String code) {
+        this.name = name;
+        this.code = code;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 }

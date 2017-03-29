@@ -1,7 +1,10 @@
 package com.gnomon.epsos.model;
 
-public class Identifier {
+import java.io.Serializable;
 
+public class Identifier implements Serializable {
+
+    private static final long serialVersionUID = 7915098873159217799L;
     private String key;
     private String domain;
     private String userValue;

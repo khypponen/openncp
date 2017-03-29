@@ -217,7 +217,7 @@ public class EpsosRestService {
             @HeaderParam("referer") String referer) throws PortalException, SystemException, Exception {
         log.info("Get Countries for language: " + language);
         String ret = "";
-        String path = servletRequest.getServletContext().getRealPath("/");
+        String path = servletRequest.getSession().getServletContext().getRealPath("/");
         log.info("Application Path is: " + path);
         List<Country> countries = EpsosHelperService.getCountriesFromCS(language, path);
         Gson gson = new Gson();
@@ -249,7 +249,7 @@ public class EpsosRestService {
             @HeaderParam("referer") String referer) throws PortalException, SystemException, Exception {
         log.info("Get attributes for language: " + country);
         String ret = "";
-        String path = request.getServletContext().getRealPath("/") + "/WEB-INF/";
+        String path = request.getSession().getServletContext().getRealPath("/") + "/WEB-INF/";
         log.info("#################: " + path);
         Vector countryIdentifiers = EpsosHelperService.getCountryIdsFromCS(country, path);
         List<Identifier> identifiers = EpsosHelperService.getCountryIdentifiers(country, language, path, null);

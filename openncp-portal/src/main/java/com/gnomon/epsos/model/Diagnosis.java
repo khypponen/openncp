@@ -3,15 +3,13 @@ package com.gnomon.epsos.model;
 import com.gnomon.LiferayUtils;
 import com.gnomon.epsos.FacesService;
 import com.liferay.portal.model.User;
-import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.UUID;
+import org.primefaces.context.RequestContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -21,12 +19,11 @@ import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import org.slf4j.Logger;
-import org.primefaces.context.RequestContext;
-import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import java.io.File;
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * A diagnosis bean representing a medical active problem of a patient.
@@ -35,7 +32,7 @@ import org.w3c.dom.NodeList;
  */
 @ManagedBean
 @RequestScoped
-public class Diagnosis {
+public class Diagnosis implements Serializable {
 
     //Messages logger
     private static final Logger log = LoggerFactory.getLogger("Diagnosis");
@@ -51,27 +48,7 @@ public class Diagnosis {
     private static final Map<String, Map<String, String>> observationsDictionary;
     //Simple date format
     private static final SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy");
-    //Unique diagnosis key
-    private String key;
-    //Dislpay name of the diagnosis problem
-    private String problem;
-    //Display name of the diagnosis status
-    private String status;
-    //Onset date of the diagnosis
-    private Date onset;
-    //Resolution date of the diagnosis
-    private Date resolution;
-    //Display name of the diagnosis observations
-    private List<String> observations;
-    //Optional description of the diagnosis
-    private String description;
-    //Resolved diagnosis indicator
-    private boolean resolved;
-    //Language selected by the user
-    private String language = "en-GB";
-    //List of current session stored diagnoses
-    @ManagedProperty(value = "#{diagnoses}")
-    private Diagnoses diagnoses;
+    private static final long serialVersionUID = -6996983017835718177L;
 
     static {
         //Building the epsos repository path
@@ -216,6 +193,28 @@ public class Diagnosis {
             log.error(new Date() + " ERROR: " + exc.getMessage());
         }
     }
+
+    //Unique diagnosis key
+    private String key;
+    //Dislpay name of the diagnosis problem
+    private String problem;
+    //Display name of the diagnosis status
+    private String status;
+    //Onset date of the diagnosis
+    private Date onset;
+    //Resolution date of the diagnosis
+    private Date resolution;
+    //Display name of the diagnosis observations
+    private List<String> observations;
+    //Optional description of the diagnosis
+    private String description;
+    //Resolved diagnosis indicator
+    private boolean resolved;
+    //Language selected by the user
+    private String language = "en-GB";
+    //List of current session stored diagnoses
+    @ManagedProperty(value = "#{diagnoses}")
+    private Diagnoses diagnoses;
 
     /**
      * A plain constructor setting a unique diagnosis key.
