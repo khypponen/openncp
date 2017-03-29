@@ -21,6 +21,7 @@
  */
 package epsos.ccd.gnomon.xslt;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,9 +48,7 @@ public class EpsosXSLTransformer {
     Path path = Paths.get(System.getenv("EPSOS_PROPS_PATH"), "EpsosRepository");
 
     /**
-     *
-     * @param input
-     *            cda xml
+     * @param input cda xml
      * @return
      */
     public String transformUsingStandardCDAXsl(String xml) {
@@ -57,7 +56,6 @@ public class EpsosXSLTransformer {
     }
 
     /**
-     *
      * @param xml
      * @param lang
      * @param actionpath
@@ -69,32 +67,40 @@ public class EpsosXSLTransformer {
      */
     private String transform(String xml, String lang, String actionpath, Path path, boolean export,
                              boolean shownarrative, String xsl) {
+
         String output = "";
         checkLanguageFiles();
-        logger.info("Trying to transform xml using action path for dispensation '" + actionpath
-                + "' and repository path :" + path);
+        logger.info("Trying to transform xml using action path for dispensation '{}' and repository path '{}'", actionpath, path);
+
         try {
             URL xslUrl = this.getClass().getResource(xsl);
-            logger.info("MAIN XSL : " + xslUrl);
-            InputStream xslStream = this.getClass().getResourceAsStream(xsl);
+            //Paths.get(getClass().getClassLoader().getResource("fileTest.txt").toURI());
+            //InputStream xslStream = this.getClass().getResourceAsStream(xsl);
+            InputStream xslStream = getClass().getClassLoader().getResourceAsStream("classpath*:" + xsl);
 
             String systemId = xslUrl.toExternalForm();
+            System.setProperty("javax.xml.transform.TransformerFactory", "net.sf.saxon.TransformerFactoryImpl");
+            logger.info("XSL: '{}'", xsl);
+            logger.info("Main XSL: '{}'", xslUrl);
+            logger.info("SystemID: '{}'", systemId);
+            logger.info("Path: '{}'", path);
+            logger.info("Lang: '{}'", lang);
+            logger.info("Show Narrative: '{}'", String.valueOf(shownarrative));
 
             StreamSource xmlSource = new StreamSource(new StringReader(xml));
             StreamSource xslSource = new StreamSource(xslStream);
 
             xslSource.setSystemId(systemId);
 
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-
+            //TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            TransformerFactory transformerFactory = net.sf.saxon.TransformerFactoryImpl.newInstance();
             Transformer transformer = transformerFactory.newTransformer(xslSource);
             transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-
             transformer.setParameter("epsosLangDir", path);
             transformer.setParameter("userLang", lang);
             transformer.setParameter("shownarrative", String.valueOf(shownarrative));
 
-            if ((actionpath != null) && !actionpath.equals("")) {
+            if (StringUtils.isNotBlank(actionpath)) {
                 transformer.setParameter("actionpath", actionpath);
                 transformer.setParameter("allowDispense", "true");
             } else {
@@ -103,11 +109,11 @@ public class EpsosXSLTransformer {
 
             File resultFile = File.createTempFile("Streams", ".html");
             Result result = new StreamResult(resultFile);
-            logger.info("Temp file goes to : " + resultFile.getAbsolutePath());
+            logger.info("Temp file goes to : '{}'", resultFile.getAbsolutePath());
             transformer.transform(xmlSource, result);
             output = readFile(resultFile.getAbsolutePath());
             if (!export) {
-                logger.debug("Delete temp file " + resultFile.getAbsolutePath());
+                logger.debug("Delete temp file '{}'", resultFile.getAbsolutePath());
                 resultFile.delete();
             }
         } catch (Exception e) {
@@ -117,17 +123,12 @@ public class EpsosXSLTransformer {
     }
 
     /**
-     * @param xml
-     *            the source cda xml file
-     * @param lang
-     *            the language you want the labels, value set to be displayed
-     * @param actionpath
-     *            the url that you want to post the dispensation form. Leave it
-     *            empty to not allow dispensation
-     * @param repositorypath
-     *            the path of the epsos repository files
-     * @param export
-     *            whether to export file to temp folder or not
+     * @param xml            the source cda xml file
+     * @param lang           the language you want the labels, value set to be displayed
+     * @param actionpath     the url that you want to post the dispensation form. Leave it
+     *                       empty to not allow dispensation
+     * @param repositorypath the path of the epsos repository files
+     * @param export         whether to export file to temp folder or not
      * @return the cda document in html format
      */
     private String transform(String xml, String lang, String actionpath, Path path, boolean export) {
@@ -135,14 +136,10 @@ public class EpsosXSLTransformer {
     }
 
     /**
-     * @param xml
-     *            the source cda xml file
-     * @param lang
-     *            the language you want the labels, value set to be displayed
-     * @param actionpath
-     *            the url that you want to post the dispensation form
-     * @param repositorypath
-     *            the path of the epsos repository files
+     * @param xml            the source cda xml file
+     * @param lang           the language you want the labels, value set to be displayed
+     * @param actionpath     the url that you want to post the dispensation form
+     * @param repositorypath the path of the epsos repository files
      * @return the cda document in html format
      */
     public String transform(String xml, String lang, String actionpath, Path repositoryPath) {
@@ -152,12 +149,9 @@ public class EpsosXSLTransformer {
     /**
      * This method uses the epsos repository files from user home directory
      *
-     * @param xml
-     *            the source cda xml file
-     * @param lang
-     *            the language you want the labels, value set to be displayed
-     * @param actionpath
-     *            the url that you want to post the dispensation form
+     * @param xml        the source cda xml file
+     * @param lang       the language you want the labels, value set to be displayed
+     * @param actionpath the url that you want to post the dispensation form
      * @return the cda document in html format
      */
     public String transform(String xml, String lang, String actionpath) {
@@ -173,12 +167,9 @@ public class EpsosXSLTransformer {
      * This method uses the epsos repository files from user home directory and
      * outputs the transformed xml to the temp file without deleting it
      *
-     * @param xml
-     *            the source cda xml file
-     * @param lang
-     *            the language you want the labels, value set to be displayed
-     * @param actionpath
-     *            the url that you want to post the dispensation form
+     * @param xml        the source cda xml file
+     * @param lang       the language you want the labels, value set to be displayed
+     * @param actionpath the url that you want to post the dispensation form
      * @return the cda document in html format
      */
     public String transformWithOutputAndUserHomePath(String xml, String lang, String actionpath) {
@@ -189,14 +180,10 @@ public class EpsosXSLTransformer {
      * This method uses the epsos repository files from user home directory and
      * outputs the transformed xml to the temp file without deleting it
      *
-     * @param xml
-     *            the source cda xml file
-     * @param lang
-     *            the language you want the labels, value set to be displayed
-     * @param actionpath
-     *            the url that you want to post the dispensation form
-     * @param repositorypath
-     *            the path of the epsos repository files
+     * @param xml            the source cda xml file
+     * @param lang           the language you want the labels, value set to be displayed
+     * @param actionpath     the url that you want to post the dispensation form
+     * @param repositorypath the path of the epsos repository files
      * @return the cda document in html format
      */
     public String transformWithOutputAndDefinedPath(String xml, String lang, String actionpath, Path repositoryPath) {
@@ -211,7 +198,7 @@ public class EpsosXSLTransformer {
         return new String(Files.readAllBytes(Paths.get(file.toURI())));
     }
 
-    public void checkLanguageFiles() {
+    private void checkLanguageFiles() {
 
         final String filesNeeded[] = {"epSOSDisplayLabels.xml", "NullFlavor.xml", "SNOMEDCT.xml",
                 "UCUMUnifiedCodeforUnitsofMeasure.xml"};
@@ -225,7 +212,7 @@ public class EpsosXSLTransformer {
             else
                 throw new Exception("Folder " + path.toString() + " doesn't exists");
         } catch (Exception e) {
-            logger.error("FATAL ERROR: "  +e.getMessage());
+            logger.error("FATAL ERROR: " + e.getMessage());
             System.exit(-1);
         }
     }
