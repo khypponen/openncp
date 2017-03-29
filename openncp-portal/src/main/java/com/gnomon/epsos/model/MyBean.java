@@ -56,6 +56,8 @@ import epsos.openncp.protocolterminator.clientconnector.PatientId;
 import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentResponse;
 import eu.epsos.util.EvidenceUtils;
 import eu.epsos.util.IheConstants;
+import java.io.StringReader;
+import org.xml.sax.InputSource;
 
 @ManagedBean
 @SessionScoped
@@ -250,7 +252,11 @@ public class MyBean implements Serializable {
 				strMsg = pd.toString();
 
 //				try {
-//					EvidenceUtils.createEvidenceREMNRO(strMsg, "NI_PD",
+//                                    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+//                                    factory.setNamespaceAware(true);
+//                                    DocumentBuilder builder = factory.newDocumentBuilder();
+//                                    Document doc = builder.parse(new InputSource(new StringReader(strMsg)));
+//                                    EvidenceUtils.createEvidenceREMNRO(doc, "NI_PD",
 //							new DateTime(), EventOutcomeIndicator.FULL_SUCCESS
 //									.getCode().toString(), "NI_PD_REQ", ass
 //									.getID());
@@ -262,7 +268,11 @@ public class MyBean implements Serializable {
 						ass, country, pd);
 
 //				try {
-//					EvidenceUtils.createEvidenceREMNRR(strMsg, "NI_PD",
+//                                    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+//                                    factory.setNamespaceAware(true);
+//                                    DocumentBuilder builder = factory.newDocumentBuilder();
+//                                    Document doc = builder.parse(new InputSource(new StringReader(queryPatient.toString())));
+//                                    EvidenceUtils.createEvidenceREMNRR(doc, "NI_PD",
 //							new DateTime(), EventOutcomeIndicator.FULL_SUCCESS
 //									.getCode().toString(), "NI_PD_RES_SUCC",
 //							ass.getID());

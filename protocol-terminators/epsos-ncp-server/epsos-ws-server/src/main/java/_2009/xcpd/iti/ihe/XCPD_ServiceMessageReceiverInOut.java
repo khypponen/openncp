@@ -28,11 +28,8 @@ package _2009.xcpd.iti.ihe;
 import com.spirit.epsos.cc.adc.EadcEntry;
 import epsos.ccd.gnomon.auditmanager.AuditService;
 import epsos.ccd.gnomon.auditmanager.EventLog;
-import epsos.ccd.gnomon.auditmanager.EventOutcomeIndicator;
-import epsos.ccd.gnomon.auditmanager.EventType;
 import eu.epsos.pt.eadc.EadcUtilWrapper;
 import eu.epsos.pt.eadc.util.EadcUtil;
-import eu.epsos.util.EvidenceUtils;
 import eu.epsos.validation.datamodel.common.NcpSide;
 import eu.epsos.validation.datamodel.hl7v3.Hl7v3Schematron;
 import eu.epsos.validation.services.XcpdValidationService;
@@ -43,15 +40,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 import org.apache.axiom.om.OMElement;
-import org.apache.axiom.soap.SOAPEnvelope;
 import org.apache.axiom.soap.SOAPHeader;
 import org.apache.axis2.transport.http.HTTPConstants;
 import org.apache.axis2.util.XMLUtils;
 import org.apache.log4j.Logger;
-import org.hibernate.exception.ExceptionUtils;
-import org.joda.time.DateTime;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 
 import tr.com.srdc.epsos.util.Constants;
 import tr.com.srdc.epsos.util.XMLUtil;
@@ -62,13 +54,13 @@ import tr.com.srdc.epsos.util.http.HTTPUtil;
  */
 public class XCPD_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.AbstractInOutMessageReceiver {
 
-	static {
-		System.out.println("Loading the WS-Security init libraries in XCPD_ServiceMessageReceiverInOut xcpd 2009");
+    public static final Logger logger = Logger.getLogger(XCPD_ServiceMessageReceiverInOut.class);
+    
+    static {
+        logger.debug("Loading the WS-Security init libraries in XCPD_ServiceMessageReceiverInOut xcpd 2009");
 
-		org.apache.xml.security.Init.init(); // Massi added 3/1/2017. 
-	}
-    public static Logger logger = Logger
-            .getLogger(XCPD_ServiceMessageReceiverInOut.class);
+        org.apache.xml.security.Init.init(); // Massi added 3/1/2017. 
+    }
 
     private String getIPofSender(
             org.apache.axis2.context.MessageContext msgContext) {
@@ -120,33 +112,20 @@ public class XCPD_ServiceMessageReceiverInOut extends org.apache.axis2.receivers
                     + XMLUtil.prettyPrint(XMLUtils.toDOM(msgContext
                                     .getEnvelope())));
 
-            SOAPEnvelope env = msgContext.getEnvelope();
             // Send NRR
-            Document envCanonicalized = null;
-            try {
-            	logger.debug("Step 1: marshall it to document, since no c14n are available in OM");
-            	Element envAsDom = XMLUtils.toDOM(env);
-            	logger.debug("Step 1: DOM element is: " + XMLUtil.prettyPrint(envAsDom));
-            	logger.debug("Step 2: canonicalize it");
-            	envCanonicalized = XMLUtil.canonicalize(envAsDom.getOwnerDocument());
-                logger.debug("Pretty printing canonicalized" + XMLUtil.prettyPrint(envCanonicalized));
-
-			} catch (Exception e1) {
-				throw new IllegalArgumentException(e1);
-			}
-            try {
-                EvidenceUtils.createEvidenceREMNRR(envCanonicalized,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                        EventType.epsosIdentificationServiceFindIdentityByTraits.getCode(),
-                        new DateTime(),
-                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                        "NCPA_XCPD_REQ");
-                
-            } catch (Exception e) {
-                log.error(ExceptionUtils.getStackTrace(e));
-            }
+//            try {
+//                EvidenceUtils.createEvidenceREMNRR(envCanonicalized,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                        EventType.epsosIdentificationServiceFindIdentityByTraits.getCode(),
+//                        new DateTime(),
+//                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                        "NCPA_XCPD_REQ");
+//                
+//            } catch (Exception e) {
+//                log.error(ExceptionUtils.getStackTrace(e));
+//            }
 
             /* Validate incoming request message */
             XcpdValidationService.getInstance().validateSchematron(
@@ -207,7 +186,6 @@ public class XCPD_ServiceMessageReceiverInOut extends org.apache.axis2.receivers
 
                     logger.debug("Outgoing XCPD Response Message:\n"
                             + XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)));
-                    logger.info("NOT Doing evidence on the response");
 //
 //                    try {
 //                        EvidenceUtils.createEvidenceREMNRO(XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)),
