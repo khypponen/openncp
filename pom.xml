@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>eu.europa.ec.sante.ehdsi</groupId>
-	<artifactId>openncp</artifactId>
-	<version>2.5.0.RC1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>eu.europa.ec.sante.ehdsi</groupId>
+    <artifactId>openncp</artifactId>
+    <version>2.5.0.RC1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-	<name>OpenNCP Reference Implementation</name>
+    <name>OpenNCP Reference Implementation</name>
 
-	<modules>
-		<module>configuration-manager</module>
-		<module>e-sens-non-repudiation</module>
-		<module>security-manager</module>
-		<module>util</module>
-		<module>data-model</module>
-		<module>audit-manager</module>
-		<module>assertion-validator</module>
-		<module>cda-display-tool</module>
-		<module>default-policy-manager</module>
-		<module>trc-sts</module>
-		<module>trc-sts-client</module>
-		<module>tsam</module>
-		<module>tsam-sync</module>
-		<module>transformation-manager</module>
-		<module>eadc</module>
-		<module>consent-manager</module>
-		<module>tsl-utils</module>
-		<module>protocol-terminators</module>
-		<module>openatna</module>
-		<module>openncp-portal</module>
-		<module>openncp-web-portal</module>
-		<module>openncp-common-components</module>
-		<module>openstork</module>
-		<module>openncp-gateway</module>
-	</modules>
+    <modules>
+        <module>configuration-manager</module>
+        <module>e-sens-non-repudiation</module>
+        <module>security-manager</module>
+        <module>util</module>
+        <module>data-model</module>
+        <module>audit-manager</module>
+        <module>assertion-validator</module>
+        <module>cda-display-tool</module>
+        <module>default-policy-manager</module>
+        <module>trc-sts</module>
+        <module>trc-sts-client</module>
+        <module>tsam</module>
+        <module>tsam-sync</module>
+        <module>transformation-manager</module>
+        <module>eadc</module>
+        <module>consent-manager</module>
+        <module>tsl-utils</module>
+        <module>protocol-terminators</module>
+        <module>openatna</module>
+        <module>openncp-portal</module>
+        <module>openncp-web-portal</module>
+        <module>openncp-common-components</module>
+        <module>openstork</module>
+        <module>openncp-gateway</module>
+    </modules>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-		<java.optimize>true</java.optimize>
-		<sonar.host.url>http://127.0.0.1:9000</sonar.host.url>
-		<sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
-		<sonar.scm.disabled>true</sonar.scm.disabled>
-		<!-- Dependency Versions -->
-		<commons-beanutils.version>1.9.2</commons-beanutils.version>
-		<commons-codec.version>1.10</commons-codec.version>
-		<commons-collections.version>3.2.2</commons-collections.version>
-		<commons-configuration.version>1.7</commons-configuration.version>
-		<commons-lang.version>2.6</commons-lang.version>
-		<!--<spring-version>2.5.6.SEC03</spring-version>-->
-		<spring.version>3.2.18.RELEASE</spring.version>
-		<hibernate.version>3.6.10.Final</hibernate.version>
-		<joda-time.version>2.7</joda-time.version>
-		<junit.version>4.12</junit.version>
-		<logback.version>1.1.8</logback.version>
-		<opensaml.version>2.6.6</opensaml.version>
-		<servlet-api.version>2.5</servlet-api.version>
-		<slf4j.version>1.7.21</slf4j.version>
-		<xerces.version>2.10.0</xerces.version>
-		<xml-apis.version>1.3.04</xml-apis.version>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <java.optimize>true</java.optimize>
+        <sonar.host.url>http://127.0.0.1:9000</sonar.host.url>
+        <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
+        <sonar.scm.disabled>true</sonar.scm.disabled>
+        <!-- Dependency Versions -->
+        <commons-beanutils.version>1.9.2</commons-beanutils.version>
+        <commons-codec.version>1.10</commons-codec.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <commons-configuration.version>1.7</commons-configuration.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <!--<spring-version>2.5.6.SEC03</spring-version>-->
+        <spring.version>3.2.18.RELEASE</spring.version>
+        <hibernate.version>3.6.10.Final</hibernate.version>
+        <joda-time.version>2.7</joda-time.version>
+        <junit.version>4.12</junit.version>
+        <logback.version>1.1.8</logback.version>
+        <opensaml.version>2.6.6</opensaml.version>
+        <servlet-api.version>3.1.0</servlet-api.version>
+        <slf4j.version>1.7.21</slf4j.version>
+        <xerces.version>2.10.0</xerces.version>
+        <xml-apis.version>1.3.04</xml-apis.version>
+    </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -118,7 +118,7 @@
             </dependency>
             <dependency>
                 <groupId>javax.servlet</groupId>
-                <artifactId>servlet-api</artifactId>
+                <artifactId>javax.servlet-api</artifactId>
                 <version>${servlet-api.version}</version>
             </dependency>
             <dependency>
@@ -153,40 +153,44 @@
         </dependencies>
     </dependencyManagement>
 
-	<!-- ================== Distribution Management ================== -->
-	<distributionManagement>
-		<repository>
-			<id>cef-digital-releases</id>
-			<url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eHealth/</url>
-		</repository>
-		<snapshotRepository>
-			<id>cef-digital-snapshots</id>
-			<url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eHealth-snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
+    <!-- ================== Distribution Management ================== -->
+    <distributionManagement>
+        <repository>
+            <id>cef-digital-releases</id>
+            <url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eHealth/</url>
+        </repository>
+        <snapshotRepository>
+            <id>cef-digital-snapshots</id>
+            <url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eHealth-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
-	<repositories>
-		<repository>
-			<id>cef-digital-releases</id>
-			<url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eHealth/</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>cef-digital-snapshots</id>
-			<url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eHealth-snapshots/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
+    <repositories>
+        <repository>
+            <id>Central</id>
+            <url>http://central.maven.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>cef-digital-releases</id>
+            <url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eHealth/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>cef-digital-snapshots</id>
+            <url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eHealth-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
         <repository>
             <id>cef-digital-digit-releases</id>
             <url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eDelivery/</url>
@@ -208,100 +212,100 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-		<repository>
-			<id>cef-digital-third-party</id>
-			<url>https://ec.europa.eu/cefdigital/artifact/content/repositories/ehealth-third-party/</url>
-		</repository>
-		<repository>
-			<id>maven2-jasperreports.sourceforge.net</id>
-			<name>Jasper Reports Maven2 Repository</name>
-			<url>http://jasperreports.sourceforge.net/maven2/</url>
-		</repository>
-		<repository>
-			<id>maven2-repository.jboss.org</id>
-			<name>JBoss Maven Repository</name>
-			<url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
-		</repository>
-		<repository>
-			<name>Official OpenSaml Repository</name>
-			<id>openSamlRep</id>
-			<url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>irisa-sumo</id>
-			<name>Sumo Irisa Public Maven Repository Group</name>
-			<url>https://gazelle.ihe.net/nexus/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>Oss Sonatype</id>
-			<url>https://oss.sonatype.org/content/repositories/releases/</url>
-		</repository>
-		<repository>
-			<id>Enonic-Repository</id>
-			<url>http://repo.enonic.com/public/</url>
-		</repository>
+        <repository>
+            <id>cef-digital-third-party</id>
+            <url>https://ec.europa.eu/cefdigital/artifact/content/repositories/ehealth-third-party/</url>
+        </repository>
+        <repository>
+            <id>maven2-jasperreports.sourceforge.net</id>
+            <name>Jasper Reports Maven2 Repository</name>
+            <url>http://jasperreports.sourceforge.net/maven2/</url>
+        </repository>
+        <repository>
+            <id>maven2-repository.jboss.org</id>
+            <name>JBoss Maven Repository</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
+        </repository>
+        <repository>
+            <name>Official OpenSaml Repository</name>
+            <id>openSamlRep</id>
+            <url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>irisa-sumo</id>
+            <name>Sumo Irisa Public Maven Repository Group</name>
+            <url>https://gazelle.ihe.net/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>Oss Sonatype</id>
+            <url>https://oss.sonatype.org/content/repositories/releases/</url>
+        </repository>
+        <repository>
+            <id>Enonic-Repository</id>
+            <url>http://repo.enonic.com/public/</url>
+        </repository>
         <repository>
             <id>ph-ed</id>
             <url>http://www2.ph.ed.ac.uk/maven2/</url>
         </repository>
-	</repositories>
+    </repositories>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.0</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-					<optimize>${java.optimize}</optimize>
-					<encoding>${project.build.sourceEncoding}</encoding>
-					<showDeprecation>true</showDeprecation>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.0.0</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.8.2</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.6</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.19.1</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.0.0</version>
-			</plugin>
-			<plugin>
-				<groupId>org.sonarsource.scanner.maven</groupId>
-				<artifactId>sonar-maven-plugin</artifactId>
-				<version>3.0.1</version>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <optimize>${java.optimize}</optimize>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.0.1</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
