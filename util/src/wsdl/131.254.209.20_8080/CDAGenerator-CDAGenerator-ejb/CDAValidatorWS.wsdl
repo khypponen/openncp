@@ -1,161 +1,165 @@
-<definitions name='ModelBasedValidationWSService' targetNamespace='http://ws.mb.validator.gazelle.ihe.net' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://ws.mb.validator.gazelle.ihe.net' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
- <types>
-  <xs:schema targetNamespace='http://ws.mb.validator.gazelle.ihe.net' version='1.0' xmlns:tns='http://ws.mb.validator.gazelle.ihe.net' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
-   <xs:element name='SOAPException' type='tns:SOAPException'/>
-   <xs:element name='about' type='tns:about'/>
-   <xs:element name='aboutResponse' type='tns:aboutResponse'/>
-   <xs:element name='getListOfValidators' type='tns:getListOfValidators'/>
-   <xs:element name='getListOfValidatorsResponse' type='tns:getListOfValidatorsResponse'/>
-   <xs:element name='validateBase64Document' type='tns:validateBase64Document'/>
-   <xs:element name='validateBase64DocumentResponse' type='tns:validateBase64DocumentResponse'/>
-   <xs:element name='validateDocument' type='tns:validateDocument'/>
-   <xs:element name='validateDocumentResponse' type='tns:validateDocumentResponse'/>
-   <xs:complexType name='about'>
-    <xs:sequence/>
-   </xs:complexType>
-   <xs:complexType name='aboutResponse'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='about' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='getListOfValidators'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='descriminator' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='getListOfValidatorsResponse'>
-    <xs:sequence>
-     <xs:element maxOccurs='unbounded' minOccurs='0' name='Validators' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='SOAPException'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='message' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='validateDocument'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='document' type='xs:string'/>
-     <xs:element minOccurs='0' name='validator' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='validateDocumentResponse'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='DetailedResult' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='validateBase64Document'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='base64Document' type='xs:string'/>
-     <xs:element minOccurs='0' name='validator' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name='validateBase64DocumentResponse'>
-    <xs:sequence>
-     <xs:element minOccurs='0' name='DetailedResult' type='xs:string'/>
-    </xs:sequence>
-   </xs:complexType>
-  </xs:schema>
- </types>
- <message name='ModelBasedValidationWS_aboutResponse'>
-  <part element='tns:aboutResponse' name='aboutResponse'></part>
- </message>
- <message name='ModelBasedValidationWS_validateDocumentResponse'>
-  <part element='tns:validateDocumentResponse' name='validateDocumentResponse'></part>
- </message>
- <message name='SOAPException'>
-  <part element='tns:SOAPException' name='SOAPException'></part>
- </message>
- <message name='ModelBasedValidationWS_about'>
-  <part element='tns:about' name='about'></part>
- </message>
- <message name='ModelBasedValidationWS_getListOfValidatorsResponse'>
-  <part element='tns:getListOfValidatorsResponse' name='getListOfValidatorsResponse'></part>
- </message>
- <message name='ModelBasedValidationWS_validateDocument'>
-  <part element='tns:validateDocument' name='validateDocument'></part>
- </message>
- <message name='ModelBasedValidationWS_validateBase64Document'>
-  <part element='tns:validateBase64Document' name='validateBase64Document'></part>
- </message>
- <message name='ModelBasedValidationWS_getListOfValidators'>
-  <part element='tns:getListOfValidators' name='getListOfValidators'></part>
- </message>
- <message name='ModelBasedValidationWS_validateBase64DocumentResponse'>
-  <part element='tns:validateBase64DocumentResponse' name='validateBase64DocumentResponse'></part>
- </message>
- <portType name='ModelBasedValidationWS'>
-  <operation name='about' parameterOrder='about'>
-   <input message='tns:ModelBasedValidationWS_about'></input>
-   <output message='tns:ModelBasedValidationWS_aboutResponse'></output>
-  </operation>
-  <operation name='getListOfValidators' parameterOrder='getListOfValidators'>
-   <input message='tns:ModelBasedValidationWS_getListOfValidators'></input>
-   <output message='tns:ModelBasedValidationWS_getListOfValidatorsResponse'></output>
-   <fault message='tns:SOAPException' name='SOAPException'></fault>
-  </operation>
-  <operation name='validateBase64Document' parameterOrder='validateBase64Document'>
-   <input message='tns:ModelBasedValidationWS_validateBase64Document'></input>
-   <output message='tns:ModelBasedValidationWS_validateBase64DocumentResponse'></output>
-   <fault message='tns:SOAPException' name='SOAPException'></fault>
-  </operation>
-  <operation name='validateDocument' parameterOrder='validateDocument'>
-   <input message='tns:ModelBasedValidationWS_validateDocument'></input>
-   <output message='tns:ModelBasedValidationWS_validateDocumentResponse'></output>
-   <fault message='tns:SOAPException' name='SOAPException'></fault>
-  </operation>
- </portType>
- <binding name='ModelBasedValidationWSBinding' type='tns:ModelBasedValidationWS'>
-  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
-  <operation name='about'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-  </operation>
-  <operation name='getListOfValidators'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-   <fault name='SOAPException'>
-    <soap:fault name='SOAPException' use='literal'/>
-   </fault>
-  </operation>
-  <operation name='validateBase64Document'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-   <fault name='SOAPException'>
-    <soap:fault name='SOAPException' use='literal'/>
-   </fault>
-  </operation>
-  <operation name='validateDocument'>
-   <soap:operation soapAction=''/>
-   <input>
-    <soap:body use='literal'/>
-   </input>
-   <output>
-    <soap:body use='literal'/>
-   </output>
-   <fault name='SOAPException'>
-    <soap:fault name='SOAPException' use='literal'/>
-   </fault>
-  </operation>
- </binding>
- <service name='ModelBasedValidationWSService'>
-  <port binding='tns:ModelBasedValidationWSBinding' name='ModelBasedValidationWSPort'>
-   <soap:address location='http://131.254.209.20:8080/CDAGenerator-CDAGenerator-ejb/CDAValidatorWS'/>
-  </port>
- </service>
+<definitions xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://ws.mb.validator.gazelle.ihe.net'
+             name='ModelBasedValidationWSService' targetNamespace='http://ws.mb.validator.gazelle.ihe.net'
+             xmlns='http://schemas.xmlsoap.org/wsdl/'>
+    <types>
+        <xs:schema xmlns:tns='http://ws.mb.validator.gazelle.ihe.net' xmlns:xs='http://www.w3.org/2001/XMLSchema'
+                   targetNamespace='http://ws.mb.validator.gazelle.ihe.net' version='1.0'>
+            <xs:element name='SOAPException' type='tns:SOAPException'/>
+            <xs:element name='about' type='tns:about'/>
+            <xs:element name='aboutResponse' type='tns:aboutResponse'/>
+            <xs:element name='getListOfValidators' type='tns:getListOfValidators'/>
+            <xs:element name='getListOfValidatorsResponse' type='tns:getListOfValidatorsResponse'/>
+            <xs:element name='validateBase64Document' type='tns:validateBase64Document'/>
+            <xs:element name='validateBase64DocumentResponse' type='tns:validateBase64DocumentResponse'/>
+            <xs:element name='validateDocument' type='tns:validateDocument'/>
+            <xs:element name='validateDocumentResponse' type='tns:validateDocumentResponse'/>
+            <xs:complexType name='about'>
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name='aboutResponse'>
+                <xs:sequence>
+                    <xs:element minOccurs='0' name='about' type='xs:string'/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name='getListOfValidators'>
+                <xs:sequence>
+                    <xs:element minOccurs='0' name='descriminator' type='xs:string'/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name='getListOfValidatorsResponse'>
+                <xs:sequence>
+                    <xs:element maxOccurs='unbounded' minOccurs='0' name='Validators' type='xs:string'/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name='SOAPException'>
+                <xs:sequence>
+                    <xs:element minOccurs='0' name='message' type='xs:string'/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name='validateDocument'>
+                <xs:sequence>
+                    <xs:element minOccurs='0' name='document' type='xs:string'/>
+                    <xs:element minOccurs='0' name='validator' type='xs:string'/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name='validateDocumentResponse'>
+                <xs:sequence>
+                    <xs:element minOccurs='0' name='DetailedResult' type='xs:string'/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name='validateBase64Document'>
+                <xs:sequence>
+                    <xs:element minOccurs='0' name='base64Document' type='xs:string'/>
+                    <xs:element minOccurs='0' name='validator' type='xs:string'/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name='validateBase64DocumentResponse'>
+                <xs:sequence>
+                    <xs:element minOccurs='0' name='DetailedResult' type='xs:string'/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </types>
+    <message name='ModelBasedValidationWS_aboutResponse'>
+        <part element='tns:aboutResponse' name='aboutResponse'></part>
+    </message>
+    <message name='ModelBasedValidationWS_validateDocumentResponse'>
+        <part element='tns:validateDocumentResponse' name='validateDocumentResponse'></part>
+    </message>
+    <message name='SOAPException'>
+        <part element='tns:SOAPException' name='SOAPException'></part>
+    </message>
+    <message name='ModelBasedValidationWS_about'>
+        <part element='tns:about' name='about'></part>
+    </message>
+    <message name='ModelBasedValidationWS_getListOfValidatorsResponse'>
+        <part element='tns:getListOfValidatorsResponse' name='getListOfValidatorsResponse'></part>
+    </message>
+    <message name='ModelBasedValidationWS_validateDocument'>
+        <part element='tns:validateDocument' name='validateDocument'></part>
+    </message>
+    <message name='ModelBasedValidationWS_validateBase64Document'>
+        <part element='tns:validateBase64Document' name='validateBase64Document'></part>
+    </message>
+    <message name='ModelBasedValidationWS_getListOfValidators'>
+        <part element='tns:getListOfValidators' name='getListOfValidators'></part>
+    </message>
+    <message name='ModelBasedValidationWS_validateBase64DocumentResponse'>
+        <part element='tns:validateBase64DocumentResponse' name='validateBase64DocumentResponse'></part>
+    </message>
+    <portType name='ModelBasedValidationWS'>
+        <operation name='about' parameterOrder='about'>
+            <input message='tns:ModelBasedValidationWS_about'></input>
+            <output message='tns:ModelBasedValidationWS_aboutResponse'></output>
+        </operation>
+        <operation name='getListOfValidators' parameterOrder='getListOfValidators'>
+            <input message='tns:ModelBasedValidationWS_getListOfValidators'></input>
+            <output message='tns:ModelBasedValidationWS_getListOfValidatorsResponse'></output>
+            <fault message='tns:SOAPException' name='SOAPException'></fault>
+        </operation>
+        <operation name='validateBase64Document' parameterOrder='validateBase64Document'>
+            <input message='tns:ModelBasedValidationWS_validateBase64Document'></input>
+            <output message='tns:ModelBasedValidationWS_validateBase64DocumentResponse'></output>
+            <fault message='tns:SOAPException' name='SOAPException'></fault>
+        </operation>
+        <operation name='validateDocument' parameterOrder='validateDocument'>
+            <input message='tns:ModelBasedValidationWS_validateDocument'></input>
+            <output message='tns:ModelBasedValidationWS_validateDocumentResponse'></output>
+            <fault message='tns:SOAPException' name='SOAPException'></fault>
+        </operation>
+    </portType>
+    <binding name='ModelBasedValidationWSBinding' type='tns:ModelBasedValidationWS'>
+        <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+        <operation name='about'>
+            <soap:operation soapAction=''/>
+            <input>
+                <soap:body use='literal'/>
+            </input>
+            <output>
+                <soap:body use='literal'/>
+            </output>
+        </operation>
+        <operation name='getListOfValidators'>
+            <soap:operation soapAction=''/>
+            <input>
+                <soap:body use='literal'/>
+            </input>
+            <output>
+                <soap:body use='literal'/>
+            </output>
+            <fault name='SOAPException'>
+                <soap:fault name='SOAPException' use='literal'/>
+            </fault>
+        </operation>
+        <operation name='validateBase64Document'>
+            <soap:operation soapAction=''/>
+            <input>
+                <soap:body use='literal'/>
+            </input>
+            <output>
+                <soap:body use='literal'/>
+            </output>
+            <fault name='SOAPException'>
+                <soap:fault name='SOAPException' use='literal'/>
+            </fault>
+        </operation>
+        <operation name='validateDocument'>
+            <soap:operation soapAction=''/>
+            <input>
+                <soap:body use='literal'/>
+            </input>
+            <output>
+                <soap:body use='literal'/>
+            </output>
+            <fault name='SOAPException'>
+                <soap:fault name='SOAPException' use='literal'/>
+            </fault>
+        </operation>
+    </binding>
+    <service name='ModelBasedValidationWSService'>
+        <port binding='tns:ModelBasedValidationWSBinding' name='ModelBasedValidationWSPort'>
+            <soap:address
+                    location='https://gazelle.ihe.net/CDAGenerator-ejb/ModelBasedValidationWSService/ModelBasedValidationWS'/>
+        </port>
+    </service>
 </definitions>
