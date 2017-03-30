@@ -241,19 +241,19 @@ public class TerminologyService implements ITerminologyService {
         }
     }
 
-    public void setDao(ITsamDao dao) {
-        this.dao = dao;
-    }
-
     public ITsamDao getDao() {
         return dao;
     }
 
-    public void setConfig(TsamConfiguration config) {
-        this.config = config;
+    public void setDao(ITsamDao dao) {
+        this.dao = dao;
     }
 
     public TsamConfiguration getConfig() {
         return config;
+    }
+
+    public void setConfig(TsamConfiguration config) {
+        this.config = config;
     }
 }

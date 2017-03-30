@@ -148,8 +148,8 @@ public class TransformationService implements ITransformationService,
                                         String targetLanguageCode, boolean isTranscode) {
         TMResponseStructure responseStructure = null;
         String status;
-        List<ITMTSAMEror> errors = new ArrayList<ITMTSAMEror>();
-        List<ITMTSAMEror> warnings = new ArrayList<ITMTSAMEror>();
+        List<ITMTSAMEror> errors = new ArrayList<>();
+        List<ITMTSAMEror> warnings = new ArrayList<>();
         byte[] inputDocbytes = null;
 
         try {
@@ -195,7 +195,6 @@ public class TransformationService implements ITransformationService,
                         status = STATUS_FAILURE;
                         warnings.add(TMError.WARNING_INPUT_XSD_VALIDATION_FAILED);
                     }
-
                 }
 
                 // validate INPUT (schematron)
@@ -427,13 +426,11 @@ public class TransformationService implements ITransformationService,
     }
 
     /**
-     * Checks if element contains originalText with reference value, if yes,
-     * remember displayName for this reference id
+     * Checks if element contains originalText with reference value, if yes, remember displayName for this reference id.
      *
      * @param hmReffIdDisplayName
      * @param displayName
-     * @param originalElement
-     * @throws XPathExpressionException
+     * @param codedElement
      */
     @SuppressWarnings("unused")
     private void checkRememberReference(

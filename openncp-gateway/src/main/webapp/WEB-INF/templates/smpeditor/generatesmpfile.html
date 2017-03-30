@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+  </head>
+
+  <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+    <div class="container-fluid" th:include="fragments/header::head">
+    </div>
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="active">Home/SMP Editor/Generate SMP File</li>
+      </ol>
+    </div>
+  </nav><!-- HEADER -->
+
+  <h2 class="marginleft" th:text="#{label.SmpEditor.menu.op1}">Generate SMP file</h2>
+  <h3 class="subtitle" th:text="#{label.SmpEditor.op1.subTitle}">Choose one type to create</h3>
+  
+ <form class="smptype-form" action="#" th:action="@{/smpeditor/generatesmpfile}" th:object="${smpfile}"  method="post">
+    <div id="choosetype" class="form-group">
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> 
+      <select class="form-control choosetype" th:field="*{{type}}" required>
+        <option th:text="'-- ' + #{label.SmpEditor.choose} + ' --'" value="">Choose an option</option>   
+        <option th:each="type : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.SMPType).values()}" th:value="${{type}}" th:text="${type}">---</option>
+      </select> 
+    </div>
+    <div id="btnformgfc">
+      <a href="#" id="abutton" th:href="@{/smpeditor/smpeditor}" class="btn btn-default" th:text="#{label.button.cancel}">Cancel</a>
+      <button type="submit" class="btn okbutton" th:text="#{label.button.next}">Next</button>
+    </div>
+
+  </form>
+    
+
+  <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>
+
+</html>

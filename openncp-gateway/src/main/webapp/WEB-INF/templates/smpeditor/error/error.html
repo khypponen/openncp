@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+  </head>
+  <body>
+    <div th:if="${code != null}">
+      <h1 th:text="${code} + ' : System Errors'">System Errors</h1>
+    </div>
+    <div th:if="${code == null}">
+      <h1>System error</h1>
+    </div>
+    <div th:if="${message != null}">
+      <h2 th:text="${message}"></h1>
+    </div>
+  </body>
+</html>

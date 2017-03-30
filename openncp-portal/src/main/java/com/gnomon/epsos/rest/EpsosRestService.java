@@ -48,17 +48,16 @@ import static com.gnomon.epsos.filter.RestAuthenticationFilter.AUTHENTICATION_HE
 @Path("/")
 public class EpsosRestService {
 
+    public static final long companyId = 10157;
     private static final int bypassRefererChecking = 1;
     private static final Logger log = LoggerFactory.getLogger("EpsosRestService");
-    public static final long companyId = 10157;
     private static final Utils utils = new Utils();
+    @Context
+    private static HttpServletRequest servletRequest;
     private PatientDiscovery pdq = null;
     private PatientDemographics pd = null;
     private Info ru = null;
     private com.gnomon.epsos.model.queries.Document document;
-
-    @Context
-    private static HttpServletRequest servletRequest;
 
     @GET
     @Path("/dictionary/conditions")
@@ -202,9 +201,8 @@ public class EpsosRestService {
     }
 
     /**
-     * Returns the list of countries available in epsos node
+     * Returns the list of countries available in epSOS node.
      *
-     * @param username
      * @param language
      * @param referer
      * @return
@@ -219,7 +217,7 @@ public class EpsosRestService {
             @HeaderParam("referer") String referer) throws PortalException, SystemException, Exception {
         log.info("Get Countries for language: " + language);
         String ret = "";
-        String path = servletRequest.getRealPath("/");
+        String path = servletRequest.getSession().getServletContext().getRealPath("/");
         log.info("Application Path is: " + path);
         List<Country> countries = EpsosHelperService.getCountriesFromCS(language, path);
         Gson gson = new Gson();
@@ -251,7 +249,7 @@ public class EpsosRestService {
             @HeaderParam("referer") String referer) throws PortalException, SystemException, Exception {
         log.info("Get attributes for language: " + country);
         String ret = "";
-        String path = request.getRealPath("/") + "/WEB-INF/";
+        String path = request.getSession().getServletContext().getRealPath("/") + "/WEB-INF/";
         log.info("#################: " + path);
         Vector countryIdentifiers = EpsosHelperService.getCountryIdsFromCS(country, path);
         List<Identifier> identifiers = EpsosHelperService.getCountryIdentifiers(country, language, path, null);

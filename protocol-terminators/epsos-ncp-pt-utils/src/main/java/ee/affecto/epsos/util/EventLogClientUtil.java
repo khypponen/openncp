@@ -18,11 +18,26 @@
  */
 package ee.affecto.epsos.util;
 
-import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import ee.affecto.epsos.ws.handler.DummyMustUnderstandHandler;
 import epsos.ccd.gnomon.auditmanager.AuditService;
 import epsos.ccd.gnomon.auditmanager.EventLog;
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
+import org.apache.axis2.description.HandlerDescription;
+import org.apache.axis2.engine.AxisConfiguration;
+import org.apache.axis2.engine.Phase;
+import org.apache.axis2.phaseresolver.PhaseException;
+import org.opensaml.saml2.core.Assertion;
+import org.opensaml.saml2.core.Attribute;
+import org.opensaml.saml2.core.AttributeStatement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import tr.com.srdc.epsos.util.http.HTTPUtil;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSession;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
 import java.net.InetAddress;
 import java.net.URL;
 import java.net.UnknownHostException;
@@ -30,23 +45,13 @@ import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.util.GregorianCalendar;
 import java.util.List;
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLSession;
-import org.apache.axis2.description.HandlerDescription;
-import org.apache.axis2.engine.AxisConfiguration;
-import org.apache.axis2.engine.Phase;
-import org.apache.axis2.phaseresolver.PhaseException;
-import org.slf4j.Logger;
-import org.opensaml.saml2.core.Assertion;
-import org.opensaml.saml2.core.Attribute;
-import org.opensaml.saml2.core.AttributeStatement;
-import org.slf4j.LoggerFactory;
-import tr.com.srdc.epsos.util.http.HTTPUtil;
 
 public class EventLogClientUtil {
 
     private static Logger LOG = LoggerFactory.getLogger(EventLogClientUtil.class);
+
+    private EventLogClientUtil() {
+    }
 
     public static void createDummyMustUnderstandHandler(org.apache.axis2.client.Stub stub) {
         HandlerDescription description = new HandlerDescription("DummyMustUnderstandHandler");
@@ -77,8 +82,8 @@ public class EventLogClientUtil {
             };
             // Install the all-trusting host verifier
             HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
-            
-            String ts = (String)System.getProperties().get("javax.net.ssl.trustStore");
+
+            String ts = (String) System.getProperties().get("javax.net.ssl.trustStore");
 
             URL url = new URL(epr);
             HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
@@ -122,14 +127,19 @@ public class EventLogClientUtil {
     }
 
     public static EventLog prepareEventLog(org.apache.axis2.context.MessageContext msgContext, org.apache.axiom.soap.SOAPEnvelope _returnEnv, String address) {
-       EventLog eventLog = new EventLog();
-        
-        eventLog.setEI_EventDateTime(new XMLGregorianCalendarImpl(new GregorianCalendar()));
+        EventLog eventLog = new EventLog();
+
+        //eventLog.setEI_EventDateTime(new XMLGregorianCalendarImpl(new GregorianCalendar()));
+        try {
+            eventLog.setEI_EventDateTime(DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar()));
+        } catch (DatatypeConfigurationException e) {
+            e.printStackTrace();
+        }
 
         // Set Active Participant Identification: Service Consumer NCP
         eventLog.setSC_UserID(HTTPUtil.getSubjectDN(false));
         eventLog.setSP_UserID(HTTPUtil.getServerCertificate(address));
-        
+
         // Set Audit Source
         ConfigurationManagerService cms = ConfigurationManagerService.getInstance();
         eventLog.setAS_AuditSourceId(cms.getProperty("COUNTRY_PRINCIPAL_SUBDIVISION"));
@@ -145,7 +155,7 @@ public class EventLogClientUtil {
         if (serverIp != null) {
             eventLog.setTargetip(serverIp);
         }
-        
+
 
         // Set Participant Object: Request Message
         String reqMessageId = appendUrnUuid(EventLogUtil.getMessageID(msgContext.getEnvelope()));
@@ -163,8 +173,8 @@ public class EventLogClientUtil {
     public static void logIdAssertion(EventLog eventLog, Assertion idAssertion) {
 
         ConfigurationManagerService cms = ConfigurationManagerService.getInstance();
-        eventLog.setHR_UserID(cms.getProperty("ncp.country")+"<" + idAssertion.getSubject().getNameID().getValue() +
-        		"@" + cms.getProperty("ncp.country")+ ">");
+        eventLog.setHR_UserID(cms.getProperty("ncp.country") + "<" + idAssertion.getSubject().getNameID().getValue() +
+                "@" + cms.getProperty("ncp.country") + ">");
         for (AttributeStatement attributeStatement : idAssertion.getAttributeStatements()) {
             for (Attribute attribute : attributeStatement.getAttributes()) {
                 if (attribute.getName().equals("urn:oasis:names:tc:xacml:1.0:subject:subject-id")) {
@@ -199,13 +209,9 @@ public class EventLogClientUtil {
         auditService.write(eventLog, "", "1");
     }
 
-    private EventLogClientUtil() {
-    }
-    
     public static String appendUrnUuid(String uuid) {
-    	if(uuid == null || uuid.isEmpty() || uuid.startsWith("urn:uuid:")) { 
-    		return uuid;
-        }            	
-        else return "urn:uuid:" + uuid;
+        if (uuid == null || uuid.isEmpty() || uuid.startsWith("urn:uuid:")) {
+            return uuid;
+        } else return "urn:uuid:" + uuid;
     }
 }

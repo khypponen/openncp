@@ -22,7 +22,6 @@
  */
 package tr.com.srdc.epsos.ws.server.xdr;
 
-import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import epsos.ccd.gnomon.auditmanager.*;
 import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
 import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
@@ -65,6 +64,7 @@ import tr.com.srdc.epsos.util.XMLUtil;
 import tr.com.srdc.epsos.util.http.HTTPUtil;
 
 import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.ServiceLoader;
@@ -120,17 +120,22 @@ public class XDRServiceImpl implements XDRServiceInterface {
      * Prepare audit log for the dispensation service, initialize() operation,
      * i.e. dispensation submit operation
      *
-     * @author konstantin.hypponen@kela.fi
      * @throws DatatypeConfigurationException
+     * @author konstantin.hypponen@kela.fi
      */
     public void prepareEventLogForDispensationInitialize(EventLog eventLog,
                                                          ProvideAndRegisterDocumentSetRequestType request,
-                                                         RegistryResponseType response, Element sh) throws DatatypeConfigurationException {
+                                                         RegistryResponseType response, Element sh) {
+
         ConfigurationManagerService cms = ConfigurationManagerService.getInstance();
         eventLog.setEventType(EventType.epsosDispensationServiceInitialize);
         eventLog.setEI_TransactionName(TransactionName.epsosDispensationServiceInitialize);
         eventLog.setEI_EventActionCode(EventActionCode.UPDATE);
-        eventLog.setEI_EventDateTime(new XMLGregorianCalendarImpl(new GregorianCalendar()));
+        try {
+            eventLog.setEI_EventDateTime(DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar()));
+        } catch (DatatypeConfigurationException e) {
+            logger.error("DatatypeConfigurationException: {}", e.getMessage());
+        }
         if (request.getSubmitObjectsRequest().getRegistryObjectList() != null) {
             for (int i = 0; i < request.getSubmitObjectsRequest()
                     .getRegistryObjectList().getIdentifiable().size(); i++) {
@@ -184,18 +189,21 @@ public class XDRServiceImpl implements XDRServiceInterface {
      * Prepare audit log for the consent service, put() operation, i.e. consent
      * submission
      *
+     * @throws DatatypeConfigurationException
      * @author konstantin.hypponen@kela.fi TODO: check the audit logs in
      * Gazelle, fix if needed
-     * @throws DatatypeConfigurationException
      */
-    public void prepareEventLogForConsentPut(EventLog eventLog,
-                                             ProvideAndRegisterDocumentSetRequestType request,
-                                             RegistryResponseType response, Element sh) throws DatatypeConfigurationException {
+    public void prepareEventLogForConsentPut(EventLog eventLog, ProvideAndRegisterDocumentSetRequestType request, RegistryResponseType response, Element sh) {
+
         ConfigurationManagerService cms = ConfigurationManagerService.getInstance();
         eventLog.setEventType(EventType.epsosConsentServicePut);
         eventLog.setEI_TransactionName(TransactionName.epsosConsentServicePut);
         eventLog.setEI_EventActionCode(EventActionCode.UPDATE);
-        eventLog.setEI_EventDateTime(new XMLGregorianCalendarImpl(new GregorianCalendar()));
+        try {
+            eventLog.setEI_EventDateTime(DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar()));
+        } catch (DatatypeConfigurationException e) {
+            logger.error("DatatypeConfigurationException: {}", e.getMessage());
+        }
 
         if (request.getSubmitObjectsRequest().getRegistryObjectList() != null) {
             for (int i = 0; i < request.getSubmitObjectsRequest()

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+    <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+      <div class="container-fluid" th:include="fragments/header::head">
+      </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Home/SMP Editor/Delete SMP File</li>
+        </ol>
+      </div>
+    </nav> <!-- HEADER -->
+
+    <div class="marginbotton">
+      <h2 class="marginleft" th:text="#{label.SmpEditor.menu.op5}">Delete SMP file</h2>
+      <h3 th:text="#{label.SmpEditor.op5.subTitle3}" class="subtitle">Choose your country</h3>
+      
+      <div th:if="${alert != null}">
+        <div class="alert center" th:classappend="'alert-' + ${alert.type}">
+          <strong th:text="${alert.message}"></strong>
+        </div>
+      </div>
+      
+      <!-- Delete form-->
+      <form action="#"  th:action="@{/smpeditor/deletesmpfile} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpdelete}"  method="post" enctype="multipart/form-data">  
+       <div class="form-group row" id="newfileinputs">
+         <div id="newfileinputs" class="form-group row">
+           <label class="col-xs-2" for="country" th:text="#{label.SmpEditor.form.country}">Country</label>
+           <div class="col-xs-9">
+             <select class="form-control choosecountry" th:field="*{{country}}" required>
+               <option th:text="'-- ' + #{label.SmpEditor.choose} + ' --'" value="">Choose an option</option>   
+               <option th:each="country : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries).values()}" th:value="${{country}}" th:text="${country}">---</option>
+             </select> 
+           </div>
+         </div>
+       </div>
+                        
+        <div>
+          <div id="btnformnsf">
+            <a href="#" id="abutton" th:href="@{/smpeditor/smpeditor}" class="btn btn-default" th:text="#{label.button.cancel}">Cancel</a>
+            <button type="submit" class="btn" th:text="#{label.button.ok}" style="width:76px;">Ok</button>
+          </div> 
+        </div> 
+                        
+      </form>     
+      
+    </div>
+               
+  </body>
+</html>

@@ -1,54 +1,41 @@
 package epsos.ccd.posam.tsam.dao.impl;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
-import org.hibernate.Criteria;
-import org.hibernate.criterion.MatchMode;
-import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Restrictions;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
-
 import epsos.ccd.posam.tsam.dao.ITsamDao;
 import epsos.ccd.posam.tsam.exception.TSAMError;
 import epsos.ccd.posam.tsam.exception.TSAMException;
-import epsos.ccd.posam.tsam.model.CodeSystem;
-import epsos.ccd.posam.tsam.model.CodeSystemConcept;
-import epsos.ccd.posam.tsam.model.CodeSystemVersion;
-import epsos.ccd.posam.tsam.model.Designation;
-import epsos.ccd.posam.tsam.model.TranscodingAssociation;
-import epsos.ccd.posam.tsam.model.ValueSetVersion;
+import epsos.ccd.posam.tsam.model.*;
 import epsos.ccd.posam.tsam.response.RetrievedConcept;
 import epsos.ccd.posam.tsam.util.TsamConfiguration;
-import java.util.Iterator;
-import org.hibernate.criterion.Projection;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import java.util.*;
 
 /**
- * @see ITsamDao
- *
  * @author Roman Repiscak
  * @author Organization: Posam
  * @author mail:roman.repiscak@posam.sk
  * @version 1.0, 2010, 11 August
- *
+ * @see ITsamDao
  */
 public class TsamDao extends HibernateDaoSupport implements ITsamDao {
 
-    private static final String CURRENT_STATUS = "current";
-    private static final String VALID_STATUS = "valid";
     public static final String AT_ID = "id";
     public static final String AT_OID = "oid";
     public static final String AT_STATUS = "status";
+    private static final String CURRENT_STATUS = "current";
+    private static final String VALID_STATUS = "valid";
     private TsamConfiguration config;
 
     public boolean valueSetMatches(CodeSystemConcept concept, String valueSetOid, String valueSetVersion) {
         if (valueSetOid == null) {
             return false;
         }
-        Criteria crt = getSession().createCriteria(ValueSetVersion.class);
+        Criteria crt = getSessionFactory().getCurrentSession().createCriteria(ValueSetVersion.class);
         crt.createCriteria(ValueSetVersion.AT_VALUE_SET).add(Restrictions.eq(TsamDao.AT_OID, valueSetOid));
         crt.createCriteria(ValueSetVersion.AT_CONCEPTS).add(Restrictions.idEq(concept.getId()));
         List<ValueSetVersion> result = crt.list();
@@ -81,7 +68,7 @@ public class TsamDao extends HibernateDaoSupport implements ITsamDao {
     }
 
     public List<Designation> getDesignation(CodeSystemConcept target, String lang) throws TSAMException {
-        Criteria crt = getSession().createCriteria(Designation.class);
+        Criteria crt = getSessionFactory().getCurrentSession().createCriteria(Designation.class);
         crt.createCriteria(Designation.AT_CONCEPT)
                 .add(Restrictions.eq(CodeSystemConcept.AT_ID, target.getId()));
         crt.add(Restrictions.eq(Designation.AT_LANGUAGE, lang));
@@ -91,7 +78,7 @@ public class TsamDao extends HibernateDaoSupport implements ITsamDao {
             throw new TSAMException(TSAMError.ERROR_DESIGNATION_NOTFOUND);
         }
 
-        List<Designation> filter = new ArrayList<Designation>();
+        List<Designation> filter = new ArrayList<>();
 
         for (Designation designation : designations) {
             if (CURRENT_STATUS.equalsIgnoreCase(designation.getStatus())) {
@@ -129,7 +116,7 @@ public class TsamDao extends HibernateDaoSupport implements ITsamDao {
 
     public CodeSystemConcept getTargetConcept(CodeSystemConcept sourceConcept) throws TSAMException {
         Criteria crt;
-        crt = getSession().createCriteria(TranscodingAssociation.class).createCriteria(
+        crt = getSessionFactory().getCurrentSession().createCriteria(TranscodingAssociation.class).createCriteria(
                 TranscodingAssociation.AT_SOURCE_CONCEPT).add(
                 Restrictions.eq(CodeSystemConcept.AT_ID, sourceConcept.getId()));
         List<TranscodingAssociation> associations = crt.list();
@@ -159,7 +146,7 @@ public class TsamDao extends HibernateDaoSupport implements ITsamDao {
             ids.add(tmp.getId());
             tmp = tmp.getPreviousVersion();
         }
-        Criteria crt = getSession().createCriteria(CodeSystemConcept.class).add(
+        Criteria crt = getSessionFactory().getCurrentSession().createCriteria(CodeSystemConcept.class).add(
                 Restrictions.eq(CodeSystemConcept.AT_CODE, code));
         crt.createCriteria(CodeSystemConcept.AT_CS_VERSION).add(
                 Restrictions.in(TsamDao.AT_ID, ids));
@@ -184,10 +171,10 @@ public class TsamDao extends HibernateDaoSupport implements ITsamDao {
         List<CodeSystemVersion> versions;
         Criteria crt;
         if (version != null) {
-            crt = getSession().createCriteria(CodeSystemVersion.class).add(
+            crt = getSessionFactory().getCurrentSession().createCriteria(CodeSystemVersion.class).add(
                     Restrictions.eq(CodeSystemVersion.AT_LNAME, version));
         } else {
-            crt = getSession().createCriteria(CodeSystemVersion.class).add(
+            crt = getSessionFactory().getCurrentSession().createCriteria(CodeSystemVersion.class).add(
                     Restrictions.ilike(TsamDao.AT_STATUS, CURRENT_STATUS));
         }
         crt.createCriteria(CodeSystemVersion.AT_CODESYSTEM).add(Restrictions.eq(TsamDao.AT_ID, system.getId()));
@@ -200,7 +187,7 @@ public class TsamDao extends HibernateDaoSupport implements ITsamDao {
     }
 
     public CodeSystem getCodeSystem(String oid) throws TSAMException {
-        Criteria crt = getSession().createCriteria(CodeSystem.class).add(
+        Criteria crt = getSessionFactory().getCurrentSession().createCriteria(CodeSystem.class).add(
                 Restrictions.eq(TsamDao.AT_OID, oid));
         List<CodeSystem> systems = crt.list();
         if (systems.size() == 0) {
@@ -212,7 +199,7 @@ public class TsamDao extends HibernateDaoSupport implements ITsamDao {
 
     public List<RetrievedConcept> getConcepts(String valueSetOid, String valueSetVersionName, String language) {
         ArrayList<RetrievedConcept> result;
-        Criteria crtVersion = getSession().createCriteria(ValueSetVersion.class);
+        Criteria crtVersion = getSessionFactory().getCurrentSession().createCriteria(ValueSetVersion.class);
         if (valueSetVersionName != null) {
             crtVersion.add(Restrictions.eq(ValueSetVersion.AT_NAME, valueSetVersionName));
         } else {
@@ -224,12 +211,12 @@ public class TsamDao extends HibernateDaoSupport implements ITsamDao {
         if (version == null) {
             return new ArrayList<RetrievedConcept>();
         }
-        Criteria crt = getSession().createCriteria(CodeSystemConcept.class);
+        Criteria crt = getSessionFactory().getCurrentSession().createCriteria(CodeSystemConcept.class);
         crt.createCriteria(CodeSystemConcept.AT_VS_VERSIONS).add(Restrictions.idEq(version.getId()));
         crt.addOrder(Order.asc("id"));
         List<CodeSystemConcept> lc = crt.list();
 
-        Criteria crtd = getSession().createCriteria(Designation.class);
+        Criteria crtd = getSessionFactory().getCurrentSession().createCriteria(Designation.class);
         crt = crtd.createCriteria("concept");
         crt.createCriteria(CodeSystemConcept.AT_VS_VERSIONS).add(Restrictions.idEq(version.getId()));
         crt.addOrder(Order.asc("id"));
@@ -295,11 +282,12 @@ public class TsamDao extends HibernateDaoSupport implements ITsamDao {
     }
 
     public List<String> getLtrLanguages() {
-        final List<String> result = new ArrayList<String>();
+        final List<String> result = new ArrayList<>();
         Criteria crt;
         Iterator<String> iterator;
 
-        crt = getSession().createCriteria(Designation.class);
+        //crt = getSession().createCriteria(Designation.class);
+        crt = getSessionFactory().getCurrentSession().createCriteria(Designation.class);
         crt.setProjection(Projections.distinct(Projections.property(Designation.AT_LANGUAGE)));
         iterator = crt.list().iterator();
 
@@ -310,11 +298,11 @@ public class TsamDao extends HibernateDaoSupport implements ITsamDao {
         return result;
     }
 
-    public void setConfig(TsamConfiguration config) {
-        this.config = config;
-    }
-
     public TsamConfiguration getConfig() {
         return config;
+    }
+
+    public void setConfig(TsamConfiguration config) {
+        this.config = config;
     }
 }

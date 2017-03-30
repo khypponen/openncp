@@ -17,7 +17,7 @@
  **/
 package epsos.ccd.netsmart.securitymanager.sts;
 
-import com.sun.org.apache.xml.internal.security.utils.Base64;
+
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import com.sun.xml.ws.api.security.trust.WSTrustException;
@@ -63,6 +63,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateEncodingException;
 import java.security.cert.X509Certificate;
+import java.util.Base64;
 import java.util.UUID;
 
 /**
@@ -272,7 +273,7 @@ public class STSServiceEID implements Provider<SOAPMessage> {
 
     private String c2s(Certificate certificate) throws CertificateEncodingException {
         byte[] cert = certificate.getEncoded();
-        return Base64.encode(cert);
+        return Base64.getEncoder().encodeToString(cert);
     }
 
     private String getIdaReference(SOAPBody body) {
@@ -692,6 +693,7 @@ public class STSServiceEID implements Provider<SOAPMessage> {
      * @throws NoSuchAlgorithmException If the message digest is not able to find SHA-1
      */
     public final String doDigest(SOAPMessage envelope) throws IOException, SOAPException, NoSuchAlgorithmException {
+
         MessageDigest md = MessageDigest.getInstance("SHA-1");
         md.reset();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -710,6 +712,6 @@ public class STSServiceEID implements Provider<SOAPMessage> {
         XMLSerializer serializer = new XMLSerializer(baos, format);
         serializer.serialize(envelope.getSOAPBody().getOwnerDocument());
         md.update(baos.toByteArray());
-        return Base64.encode(md.digest());
+        return Base64.getEncoder().encodeToString(md.digest());
     }
 }

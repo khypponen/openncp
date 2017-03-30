@@ -123,6 +123,10 @@ public class PacBean implements Serializable {
         return selectedCountry;
     }
 
+    public void setSelectedCountry(String selectedCountry) {
+        this.selectedCountry = selectedCountry;
+    }
+
     public void displayLocation() {
         FacesMessage msg = new FacesMessage("Selected", "City:" + ltrlang);
         FacesContext.getCurrentInstance().addMessage(null, msg);
@@ -244,10 +248,6 @@ public class PacBean implements Serializable {
         }
     }
 
-    public void setPatients(List<Patient> patients) {
-        this.patients = patients;
-    }
-
     public List<PatientDocument> getPatientDocuments() {
         return patientDocuments;
     }
@@ -328,6 +328,10 @@ public class PacBean implements Serializable {
         return selectedPrescriptionFile;
     }
 
+    public void setSelectedPrescriptionFile(PatientDocument selectedPrescriptionFile) {
+        this.selectedPrescriptionFile = selectedPrescriptionFile;
+    }
+
     public List<Identifier> getIdentifiers() {
         return identifiers;
     }
@@ -339,6 +343,10 @@ public class PacBean implements Serializable {
     public List<Patient> getPatients() {
 
         return patients;
+    }
+
+    public void setPatients(List<Patient> patients) {
+        this.patients = patients;
     }
 
     public List<Demographics> getDemographics() {
@@ -367,6 +375,10 @@ public class PacBean implements Serializable {
 
     public String getPurposeOfUse() {
         return purposeOfUse;
+    }
+
+    public void setPurposeOfUse(String purposeOfUse) {
+        this.purposeOfUse = purposeOfUse;
     }
 
     public boolean getShowConfirmation() {
@@ -478,12 +490,12 @@ public class PacBean implements Serializable {
         createTRCA("ep", purposeOfUse);
     }
 
-    public void setPurposeOfUseForPS(String purposeOfUse) {
-        createTRCA("ps", purposeOfUse);
-    }
-
     public String getPurposeOfUseForPS() {
         return purposeOfUseForPS;
+    }
+
+    public void setPurposeOfUseForPS(String purposeOfUse) {
+        createTRCA("ps", purposeOfUse);
     }
 
     public String getQueryPatientsException() {
@@ -556,18 +568,6 @@ public class PacBean implements Serializable {
 
     public void setConsentExists(boolean consentExists) {
         this.consentExists = consentExists;
-    }
-
-    public void setSelectedCountry(String selectedCountry) {
-        this.selectedCountry = selectedCountry;
-    }
-
-    public void setSelectedPrescriptionFile(PatientDocument selectedPrescriptionFile) {
-        this.selectedPrescriptionFile = selectedPrescriptionFile;
-    }
-
-    public void setPurposeOfUse(String purposeOfUse) {
-        this.purposeOfUse = purposeOfUse;
     }
 
     public Map<String, String> getLtrlanguages() {

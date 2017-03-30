@@ -1,11 +1,12 @@
 package com.gnomon.epsos.model;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * A list of current session stored diagnoses.
@@ -14,10 +15,11 @@ import javax.faces.event.ActionEvent;
  */
 @ManagedBean(name = "diagnoses")
 @SessionScoped
-public class Diagnoses {
+public class Diagnoses implements Serializable {
 
+    private static final long serialVersionUID = -1751528621432239344L;
     //Current stored diagnoses
-    private List<Diagnosis> list = new ArrayList<Diagnosis>();
+    private List<Diagnosis> list = new ArrayList<>();
     //Current selected diagnosis
     private Diagnosis selectedDiagnosis;
 

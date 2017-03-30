@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="https://gazelle.ihe.net/gazelle-atna-ejb/AuditMessageValidationWSService/AuditMessageValidationWS?wsdl" uri="wsdl/gazelle.ihe.net/gazelle-atna-ejb/AuditMessageValidationWSService/AuditMessageValidationWS.wsdl"/>
-    <system systemId="https://gazelle.ihe.net/XDStarClient-ejb/ModelBasedValidationWSService/ModelBasedValidationWS?wsdl" uri="wsdl/gazelle.ihe.net/XDStarClient-ejb/ModelBasedValidationWSService/ModelBasedValidationWS.wsdl"/>
-    <system systemId="http://131.254.209.20:8080/CDAGenerator-CDAGenerator-ejb/CDAValidatorWS?wsdl" uri="wsdl/131.254.209.20_8080/CDAGenerator-CDAGenerator-ejb/CDAValidatorWS.wsdl"/>
-    <system systemId="http://jumbo.irisa.fr:8080/SchematronValidator-SchematronValidator-ejb/GazelleObjectValidatorWS?wsdl" uri="wsdl/jumbo.irisa.fr_8080/SchematronValidator-SchematronValidator-ejb/GazelleObjectValidatorWS.wsdl"/>
-    <system systemId="https://gazelle.ihe.net/GazelleHL7v2Validator-ejb/ModelBasedValidationWSService/ModelBasedValidationWS?wsdl" uri="wsdl/gazelle.ihe.net/GazelleHL7v2Validator-ejb/ModelBasedValidationWSService/ModelBasedValidationWS.wsdl"/>
+    <system systemId="https://gazelle.ihe.net/gazelle-atna-ejb/AuditMessageValidationWSService/AuditMessageValidationWS?wsdl"
+            uri="wsdl/gazelle.ihe.net/gazelle-atna-ejb/AuditMessageValidationWSService/AuditMessageValidationWS.wsdl"/>
+    <system systemId="https://gazelle.ihe.net/XDStarClient-ejb/ModelBasedValidationWSService/ModelBasedValidationWS?wsdl"
+            uri="wsdl/gazelle.ihe.net/XDStarClient-ejb/ModelBasedValidationWSService/ModelBasedValidationWS.wsdl"/>
+    <system systemId="https://gazelle.ihe.net/CDAGenerator-ejb/ModelBasedValidationWSService/ModelBasedValidationWS?wsdl"
+            uri="wsdl/gazelle.ihe.net/CDAGenerator-ejb/ModelBasedValidationWSService/ModelBasedValidationWS.wsdl"/>
+    <system systemId="https://gazelle.ihe.net/SchematronValidator-ejb/GazelleObjectValidatorService/GazelleObjectValidator?wsdl"
+            uri="wsdl/gazelle.ihe.net/SchematronValidator-ejb/GazelleObjectValidatorService/GazelleObjectValidator.wsdl"/>
+    <system systemId="https://gazelle.ihe.net/GazelleHL7v2Validator-ejb/ModelBasedValidationWSService/ModelBasedValidationWS?wsdl"
+            uri="wsdl/gazelle.ihe.net/GazelleHL7v2Validator-ejb/ModelBasedValidationWSService/ModelBasedValidationWS.wsdl"/>
 </catalog>

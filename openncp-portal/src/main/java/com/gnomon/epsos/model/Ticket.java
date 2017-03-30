@@ -6,11 +6,14 @@
 
 package com.gnomon.epsos.model;
 
+import java.io.Serializable;
+
 /**
- *
  * @author karkaletsis
  */
-public class Ticket {
+public class Ticket implements Serializable {
+
+    private static final long serialVersionUID = 2751666239605230021L;
     private String createdDate;
     private String ticket;
     private String emailAddress;
@@ -47,5 +50,5 @@ public class Ticket {
     public void setUserId(long userId) {
         this.userId = userId;
     }
-    
+
 }

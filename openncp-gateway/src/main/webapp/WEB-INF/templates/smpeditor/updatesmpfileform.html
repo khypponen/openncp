@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/tooltip.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/bootstrap-datetimepicker.min.css}" rel="stylesheet">
+    <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+      <div class="container-fluid" th:include="fragments/header::head">
+      </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Home/SMP Editor/Update File</li>
+        </ol>
+      </div>
+    </nav><!-- HEADER -->
+
+    <div class="marginbotton">
+      <h2 th:text="#{label.SmpEditor.menu.op2}" class="marginleft">Update SMP file</h2>
+      <h3 class="marginleft" th:text="${smpfileupdate.type}"></h3>
+      
+      <div th:if="${alert != null}">
+        <div class="alert center" th:classappend="'alert-' + ${alert.type}">
+          <strong th:text="${alert.message}"></strong>
+        </div>
+      </div> 
+      
+      <div th:if="${signedtrue != null}">
+        <div class="alert alert-warning center">
+          <strong th:text="#{warning.isSigned}"></strong>
+          <ul class="signwarning">
+            <li class="left"><strong th:text="#{warning.isSigned.op1}"></strong></li>
+            <li class="left"><strong th:text="#{warning.isSigned.op2}"></strong></li>
+          </ul>
+        </div>
+      </div> 
+
+      <!-- ServiceInformation form-->
+      <form th:if="${ServiceInformation != null}" action="#"  th:action="@{/smpeditor/updatesmpfileform} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpfileupdate}"  method="post" enctype="multipart/form-data">  
+        <input type="hidden" th:field="*{{type}}"  value="${smpfileupdate.type}" >
+        <div id="choosecountry" class="form-group">
+          <label th:text="#{label.SmpEditor.form.country}" for="countryinput">Country</label>
+          <select class="form-control choosecountry" th:field="*{{country}}" th:value="${smpfileupdate.country}" disabled required>
+            <option th:each="country : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries).values()}" th:value="${{country}}" th:selected="${country == T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries)}" th:text="${country}">---</option>
+          </select> 
+        </div>
+        <div th:if="${smpfields.issuanceType.enable}" class="form-group" id="choosecountry">
+          <label th:text="#{label.SmpEditor.form.issuanceType}" for="issuanceType" class="col-form-label">Issuance type</label>
+          <select class="form-control choosecountry" th:field="*{{issuanceType}}" th:value="${smpfileupdate.issuanceType}" th:required="${smpfields.issuanceType.mandatory}? required">
+            <option th:text="'-- ' + #{label.SmpEditor.choose} + ' --'" value="">Choose an option</option>
+            <option th:text="#{label.SmpEditor.form.optionIdP.epsos}" th:selected="${smpfileupdate.issuanceType == 'epsos'}" th:value="epsos">EPSOS</option>   
+            <option th:text="#{label.SmpEditor.form.optionIdP.iti}" th:selected="${smpfileupdate.issuanceType == 'iti'}" th:value="iti">ITI</option>
+          </select> 
+        </div>
+        <div th:if="${!smpfields.issuanceType.enable}" class="form-group" id="choosecountry">
+          <input type="hidden" th:field="*{{issuanceType}}"  value=""/>
+        </div> 
+
+        <h3 th:text="#{label.SmpEditor.form.endpoint}" class="subsubtitle">Endpoint</h3>
+
+        <div th:if="${smpfields.uri.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.endpointUri}" for="endpointuri" class="col-xs-2 col-form-label">Endpoint URI</label>
+          <div th:if="${VPN_Gateway_Server != null}" class="col-xs-9">
+           <input class="form-control" type="url" id="uriinput" th:field="*{{endpointURI}}" th:value="${smpfileupdate.endpointURI}" pattern="ipsec:\/\/.+" title="ipsec://..." th:required="${smpfields.uri.mandatory}? required">
+          </div>
+          <div th:unless="${VPN_Gateway_Server != null}" class="col-xs-9">
+            <input class="form-control" type="url" id="uriinput" th:field="*{{endpointURI}}" th:value="${smpfileupdate.endpointURI}" th:required="${smpfields.uri.mandatory}? required">
+          </div>
+          <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.uri}" data-tooltip-position="left"><strong>?</strong></span>
+        </div>   
+        <div th:if="${smpfields.serviceActivationDate.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.serviceActivationDate}" class="col-xs-2 col-form-label">Service Activation Date</label>
+          <div class="col-xs-9">
+            <input class="form-control" size="16" type="text" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]" id="dateactinput" th:field="*{{serviceActivationDate}}" th:value="${smpfileupdate.serviceActivationDate}" readonly th:required="${smpfields.serviceActivationDate.mandatory}? required">
+          </div>
+          <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.activationDate}" data-tooltip-position="left"><strong>?</strong></span>
+        </div>
+        <div th:if="${smpfields.serviceExpirationDate.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.serviceExpirationDate}" for="dateexp" class="col-xs-2 col-form-label" >Service Expiration Date</label>
+          <div class="col-xs-9">
+            <input class="form-control" size="16" type="text" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]" id="dateexpinput" th:field="*{{serviceExpirationDate}}" th:value="${smpfileupdate.serviceExpirationDate}" readonly th:required="${smpfields.serviceExpirationDate.mandatory}? required">
+          </div>
+          <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.expirationDate}" data-tooltip-position="left"><strong>?</strong></span>
+        </div>
+        <div th:if="${smpfields.serviceDescription.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.serviceDescription}" for="description" class="col-xs-2 col-form-label">Service Description</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="text" id="descriptioninput" th:field="*{{serviceDescription}}" th:value="${smpfileupdate.serviceDescription}" th:required="${smpfields.serviceDescription.mandatory}? required">
+          </div>
+          <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.serviceDescription}" data-tooltip-position="left"><strong>?</strong></span>
+        </div>
+        <div th:if="${smpfields.technicalContactUrl.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.technicalContact}" for="tcontact" class="col-xs-2 col-form-label">Technical Contact URL</label>
+          <div class="col-xs-9">
+            <input class="form-control" id="tcontactinput" type="text" pattern="([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}|https?:\/\/.+)" th:field="*{{technicalContactUrl}}" th:value="${smpfileupdate.TechnicalContactUrl}" th:required="${smpfields.technicalContactUrl.mandatory}? required">
+          </div>
+          <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.technicalContactURL}" data-tooltip-position="left"><strong>?</strong></span>
+        </div>
+        <div th:if="${smpfields.technicalInformationUrl.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.technicalInformation}" for="tinformation" class="col-xs-2 col-form-label">Technical Information URL</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="url" id="tinformationinput" th:field="*{{technicalInformationUrl}}" th:value="${smpfileupdate.technicalInformationUrl}" th:required="${smpfields.technicalInformationUrl.mandatory}? required">
+          </div>
+          <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.technicalInformationURL}" data-tooltip-position="left"><strong>?</strong></span>
+        </div>
+        <div th:if="${smpfields.extension.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.extension}" for="extensionfile" class="col-xs-2 col-form-label">Extension</label>
+          <div class="col-xs-9">
+            <textarea  type="text" class="form-control-file col-xs-12 textarea" rows="10" th:text="${smpfileupdate.extensionContent}" readonly></textarea>
+          </div>
+          <label for="extension" class="col-xs-2 col-form-label"></label>
+          <div class="col-xs-9">
+            <input class="form-control-file" type="file" accept=".xml" name="extensionFile" th:field="*{{extensionFile}}" >
+          </div>
+          <span th:attr="data-tooltip=#{tooltip.serviceInfo.endpoint.extension}" data-tooltip-position="left"><strong>?</strong></span>
+        </div>
+        
+        <div th:if="${signedtrue != null}">
+          <div id="btnformnsf">
+            <a href="#" id="abutton" th:href="@{/smpeditor/updatesmpfile}" class="btn btn-default" th:text="#{label.button.cancel}">Cancel</a>
+            <button type="button" class="btn okbutton" data-toggle="modal" data-target="#signModal" th:text="#{label.button.ok}">Ok</button>
+          </div> 
+        </div> 
+        <div th:if="${signedfalse != null}">
+          <div id="btnformnsf">
+            <a href="#" id="abutton" th:href="@{/smpeditor/updatesmpfile}" class="btn btn-default" th:text="#{label.button.cancel}">Cancel</a>
+            <button type="submit" name="action" value="generate" class="btn okbutton" th:text="#{label.button.ok}">Ok</button>
+          </div>  
+        </div> 
+
+        <!-- Modal -->
+        <div id="signModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="center">
+                  <p><strong th:text="#{warning.isSigned.2}">As stated before you now have two options:</strong></p>
+                  <div>
+                    <button type="submit" name="action" value="generate" class="btn modalbutton" th:text="#{warning.isSigned.op1}">Generate unsigned file</button>
+                  </div>
+                  <div>
+                    <button type="submit" name="action" value="sign" class="btn modalbutton" th:text="#{warning.isSigned.op2}">Sign file</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                
+      </form>
+
+      
+      
+      
+      <!-- Redirect form-->
+      <form th:if="${Redirect != null}" action="#"  th:action="@{/smpeditor/updatesmpfileform} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}" th:object="${smpfileupdate}"  method="post" enctype="multipart/form-data">  
+        <div id="choosecountry" class="form-group">
+          <label th:text="#{label.SmpEditor.form.country}" for="countryinput">Country</label>
+          <select class="form-control" th:field="*{{country}}" th:value="${smpfileupdate.country}" disabled required>
+            <option th:each="country : ${T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries).values()}" th:value="${{country}}" th:selected="${country == T(eu.europa.ec.sante.ehdsi.openncp.gateway.smpeditor.entities.Countries)}" th:text="${country}">---</option>
+          </select> 
+        </div>
+        <input type="hidden" th:field="*{{type}}"  value="${smpfileupdate.type}"/>
+        <div th:if="${smpfields.redirectHref.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.redirectHref}" for="redirectHref" class="col-xs-2 col-form-label">Redirect HREF</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="url" id="hrefinput" th:field="*{{href}}" th:value="${smpfileupdate.href}" th:required="${smpfields.redirectHref.mandatory}? required">
+          </div>
+          <span th:attr="data-tooltip=#{tooltip.redirect.url}" data-tooltip-position="left"><strong>?</strong></span>
+        </div>
+        <div th:if="${smpfields.certificateUID.enable}" class="form-group row" id="newfileinputs">
+          <label th:text="#{label.SmpEditor.form.certificateUID}" for="certificateUID" class="col-xs-2 col-form-label">Certificate UID</label>
+          <div class="col-xs-9">
+            <input class="form-control" type="text" id="descriptioninput" th:field="*{{CertificateUID}}" th:required="${smpfields.certificateUID.mandatory}? required">
+          </div>
+          <span th:attr="data-tooltip=#{tooltip.redirect.certificateUID}" data-tooltip-position="left"><strong>?</strong></span>
+        </div> 
+        
+        <div th:if="${signedtrue != null}">
+          <div id="btnformnsf">
+            <a href="#" id="abutton" th:href="@{/smpeditor/updatesmpfile}" class="btn btn-default" th:text="#{label.button.cancel}">Cancel</a>
+            <button type="button" class="btn okbutton" data-toggle="modal" data-target="#signModal" th:text="#{label.button.ok}">Ok</button>
+          </div> 
+        </div> 
+        <div th:if="${signedfalse != null}">
+          <div id="btnformnsf">
+            <a href="#" id="abutton" th:href="@{/smpeditor/updatesmpfile}" class="btn btn-default" th:text="#{label.button.cancel}">Cancel</a>
+            <button type="submit" name="action" value="generate" class="btn okbutton" th:text="#{label.button.ok}">Ok</button>
+          </div>  
+        </div> 
+        
+        <!-- Modal -->
+        <div id="signModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body center">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="center">
+                  <p><strong th:text="#{warning.isSigned.2}">As stated before you now have two options:</strong></p>
+                  <div>
+                    <button type="submit" name="action" value="generate" class="btn modalbutton" th:text="#{warning.isSigned.op1}">Generate unsigned file</button>
+                  </div>
+                  <div>
+                    <button type="submit" name="action" value="sign" class="btn modalbutton" th:text="#{warning.isSigned.op2}">Sign file</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                
+      </form>     
+      
+    </div>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" th:src="@{/resources/js/bootstrap-datetimepicker.min.js}" ></script>
+    <script type="text/javascript">
+      $("#dateactinput")
+        .datetimepicker({
+          autoclose:true,
+          format: 'yyyy-mm-dd hh:ii',
+          todayBtn: false
+        })
+        .on('changeDate', function(ev){
+          var startDate = new Date(ev.date);
+          $('#dateexpinput').datetimepicker('setStartDate', startDate);
+        });
+      $("#dateexpinput")
+        .datetimepicker({
+          autoclose: true,
+          format: 'yyyy-mm-dd hh:ii',
+          todayBtn: false
+        })
+        .on('changeDate', function(ev){
+          var endDate = new Date(ev.date);
+          $('#dateactinput').datetimepicker('setEndDate', endDate);
+        });
+    </script> 
+       
+  </body>
+</html>

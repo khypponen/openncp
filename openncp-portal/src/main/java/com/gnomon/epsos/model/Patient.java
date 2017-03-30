@@ -2,7 +2,11 @@ package com.gnomon.epsos.model;
 
 import epsos.openncp.protocolterminator.clientconnector.PatientDemographics;
 
-public class Patient {
+import java.io.Serializable;
+
+public class Patient implements Serializable {
+    
+    private static final long serialVersionUID = 9198440413715960989L;
 
     private String name;
     private String familyName;

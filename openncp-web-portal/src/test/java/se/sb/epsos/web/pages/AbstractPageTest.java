@@ -1,31 +1,22 @@
 /***    Copyright 2011-2013 Apotekens Service AB <epsos@apotekensservice.se>
-*
-*    This file is part of epSOS-WEB.
-*
-*    epSOS-WEB is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-*
-*    epSOS-WEB is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-*
-*    You should have received a copy of the GNU General Public License along with epSOS-WEB. If not, see http://www.gnu.org/licenses/.
-**/package se.sb.epsos.web.pages;
-
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.withSettings;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import junit.framework.Assert;
+ *
+ *    This file is part of epSOS-WEB.
+ *
+ *    epSOS-WEB is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *
+ *    epSOS-WEB is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ *    You should have received a copy of the GNU General Public License along with epSOS-WEB. If not, see http://www.gnu.org/licenses/.
+ **/
+package se.sb.epsos.web.pages;
 
 import org.apache.wicket.Localizer;
 import org.apache.wicket.util.tester.FormTester;
 import org.apache.wicket.util.tester.WicketTester;
+import org.junit.Assert;
 import org.junit.Before;
 import org.mockito.MockSettings;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import se.sb.epsos.web.EpsosAuthenticatedWebSession;
 import se.sb.epsos.web.EpsosWebApplication;
 import se.sb.epsos.web.ErrorFeedbackPanel;
@@ -36,14 +27,20 @@ import se.sb.epsos.web.model.Person;
 import se.sb.epsos.web.model.TRC;
 import se.sb.epsos.web.service.NcpServiceException;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.mockito.Mockito.*;
+
 public abstract class AbstractPageTest {
 
     protected WicketTester tester;
-    Localizer localizer;
     protected Map<String, String> epsosErrorCodesAndExpectedTexts = new HashMap<String, String>();
+    protected MockSettings settings = withSettings().serializable();
+    Localizer localizer;
     @Autowired
     private EpsosWebApplication epsosWebApplication;
-    protected MockSettings settings = withSettings().serializable();
 
     @Before
     public void setUp() {
@@ -97,10 +94,9 @@ public abstract class AbstractPageTest {
     }
 
     protected void assertErrorPanel(String expectedErrorCode, String expectedMessage) {
-//    	System.out.println("Last: " + tester.getLastRenderedPage().get("errorFeedback"));
         ErrorFeedbackPanel panel = (ErrorFeedbackPanel) tester.getComponentFromLastRenderedPage("errorFeedback");
         Assert.assertEquals(expectedErrorCode, ((ArrayList<ErrorFeedback>) panel.getDefaultModelObject()).get(0).getErrorCode());
-        Assert.assertEquals(expectedMessage,((ArrayList<ErrorFeedback>) panel.getDefaultModelObject()).get(0).getErrorMessage());
+        Assert.assertEquals(expectedMessage, ((ArrayList<ErrorFeedback>) panel.getDefaultModelObject()).get(0).getErrorMessage());
     }
 
     protected NcpServiceException createKnownException(String errorCode) {

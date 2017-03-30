@@ -3,15 +3,6 @@ package eu.esens.abb.nonrep;
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import com.sun.xml.messaging.saaj.soap.ver1_2.SOAPMessageFactory1_2Impl;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.Iterator;
-import javax.xml.soap.MessageFactory;
-import javax.xml.soap.MimeHeader;
-import javax.xml.soap.MimeHeaders;
-import javax.xml.soap.SOAPException;
-import javax.xml.soap.SOAPMessage;
-import javax.xml.transform.dom.DOMSource;
 import org.opensaml.Configuration;
 import org.opensaml.xacml.policy.PolicySetType;
 import org.opensaml.xacml.policy.PolicyType;
@@ -30,6 +21,12 @@ import org.slf4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+
+import javax.xml.soap.*;
+import javax.xml.transform.dom.DOMSource;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Iterator;
 
 public class Utilities {
 

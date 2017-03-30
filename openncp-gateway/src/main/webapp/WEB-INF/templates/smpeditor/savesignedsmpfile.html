@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>New File</title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid" th:include="fragments/header::head">
+      </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Home/SMP Editor/Sign SMP File/Save SMP File</li>
+        </ol>
+      </div>
+    </nav><!-- HEADER -->
+    
+    <h2 th:text="#{label.SmpEditor.saveFile}" class="marginleft">Save SMP file</h2>
+    
+    <h3 th:text="${smpfilesign.type}" class="center margintop"></h3>
+       
+ 
+    <div class="center margintop">
+      <p th:text="#{label.SmpEditor.download}" class="largefont">Download Files</p>
+      <div th:each="smpfile: ${smpfiles}"  style="margin-top: 10px;">
+        <a href="#" th:href="@{'/smpeditor/savesignedsmpfile/download/' + ${smpfile.fileName}}" class="btn btn-default downloadbutton" th:text="${smpfile.fileName}">Download File</a> 
+      </div>
+    </div>
+    
+    
+    <div id="btnformnsf" style="margin-top: 150px;">
+      <a href="#" id="abutton" th:href="@{/smpeditor/checksignsmpfile/clean}" class="btn btn-default" th:text="#{label.button.back}">Back</a>
+      <a href="#" id="abutton" th:href="@{/smpeditor/smpeditor/clean3}" class="btn btn-default" th:text="#{label.button.done}">Done</a>
+    </div>    
+    
+  </body>
+</html>

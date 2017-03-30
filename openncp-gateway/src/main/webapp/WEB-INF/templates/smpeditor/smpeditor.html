@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link th:href="@{/resources/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/smpeditor.css}" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+      <div class="container-fluid" th:include="fragments/header::head">
+      </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Home/SMP Editor</li>
+        </ol>
+      </div>
+    </nav><!-- HEADER -->
+
+    <h1 th:text="#{label.SmpEditor.menu.title}" class="center">Choose one option</h1>
+
+    <div id="homebuttons">
+      <a class="btn btn-default btn-lg homebuttons" type="button" th:href="@{/smpeditor/generatesmpfile}" th:text="#{label.SmpEditor.menu.op1}">
+        Generate SMP File  
+      </a>
+    </div>
+
+    <div id="homebuttons">
+      <a class="btn btn-default btn-lg homebuttons" type="button" th:href="@{/smpeditor/updatesmpfile}" th:text="#{label.SmpEditor.menu.op2}">
+        Update SMP File  
+      </a>
+    </div>     
+
+    <div id="homebuttons">
+      <a class="btn btn-default btn-lg homebuttons" type="button" th:href="@{/smpeditor/signsmpfile}" th:text="#{label.SmpEditor.menu.op3}">
+        Sign SMP File  
+      </a>
+    </div>
+
+    <div id="homebuttons">
+      <a class="btn btn-default btn-lg homebuttons" type="button" th:href="@{/smpeditor/uploadsmpfile}" th:text="#{label.SmpEditor.menu.op4}">
+        Upload File to SMP Server  
+      </a>
+    </div>
+    
+    <div id="homebuttons">
+      <a class="btn btn-default btn-lg homebuttons" type="button" th:href="@{/smpeditor/deletesmpfile}" th:text="#{label.SmpEditor.menu.op5}">
+        Delete File from SMP Server  
+      </a>
+    </div>
+
+    <script th:href="@{/resources/vendor/bootstrap/js/bootstrap.min.js}"></script>
+  </body>
+</html>

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-    <display-name>epsos-client-connector</display-name>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name>OpenNCP Client Connector</display-name>
     <session-config>
         <session-timeout>5</session-timeout>
     </session-config>
@@ -22,40 +25,40 @@
         <servlet-name>ClientConnectorInit</servlet-name>
         <url-pattern>/ClientConnectorInit</url-pattern>
     </servlet-mapping>
-    
+
     <resource-ref>
-		<description>TSAM DB Pool</description>
-		<res-ref-name>jdbc/TSAM</res-ref-name>
-		<res-type>javax.sql.DataSource</res-type>
-		<res-auth>Container</res-auth>
-	</resource-ref>
-    
-    	<resource-ref>
-		<description>EADC XCPD DB Pool</description>
-		<res-ref-name>jdbc/EADC_XCPD</res-ref-name>
-		<res-type>javax.sql.DataSource</res-type>
-		<res-auth>Container</res-auth>
-	</resource-ref>
+        <description>TSAM DB Pool</description>
+        <res-ref-name>jdbc/TSAM</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
 
-	<resource-ref>
-		<description>EADC XCA DB Pool</description>
-		<res-ref-name>jdbc/EADC_XCA</res-ref-name>
-		<res-type>javax.sql.DataSource</res-type>
-		<res-auth>Container</res-auth>
-	</resource-ref>
+    <resource-ref>
+        <description>EADC XCPD DB Pool</description>
+        <res-ref-name>jdbc/EADC_XCPD</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
 
-	<resource-ref>
-		<description>EADC XDR DB Pool</description>
-		<res-ref-name>jdbc/EADC_XDR</res-ref-name>
-		<res-type>javax.sql.DataSource</res-type>
-		<res-auth>Container</res-auth>
-	</resource-ref>
+    <resource-ref>
+        <description>EADC XCA DB Pool</description>
+        <res-ref-name>jdbc/EADC_XCA</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
 
-	<resource-ref>
-		<description>Configuration Manager DB Pool</description>
-		<res-ref-name>jdbc/ConfMgr</res-ref-name>
-		<res-type>javax.sql.DataSource</res-type>
-		<res-auth>Container</res-auth>
-	</resource-ref>
-    
+    <resource-ref>
+        <description>EADC XDR DB Pool</description>
+        <res-ref-name>jdbc/EADC_XDR</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+    <resource-ref>
+        <description>Configuration Manager DB Pool</description>
+        <res-ref-name>jdbc/ConfMgr</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
 </web-app>

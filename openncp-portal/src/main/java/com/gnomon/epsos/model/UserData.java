@@ -6,14 +6,16 @@
 
 package com.gnomon.epsos.model;
 
+import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 /**
- *
  * @author karkaletsis
  */
-public class UserData {
+public class UserData implements Serializable {
+
+    private static final long serialVersionUID = -3527051298151100033L;
     private String userId;
     private int usertype;
     private String ret;
@@ -35,7 +37,7 @@ public class UserData {
     }
 
     public void setUserId(String userId) throws UnsupportedEncodingException {
-        userId=URLEncoder.encode(userId, "UTF-8");
+        userId = URLEncoder.encode(userId, "UTF-8");
         this.userId = userId;
     }
 
@@ -79,7 +81,5 @@ public class UserData {
         this.status = status;
     }
 
-   
-    
-    
+
 }
