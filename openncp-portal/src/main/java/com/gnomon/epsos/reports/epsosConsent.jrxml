@@ -1,373 +1,425 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="epsosConsent" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="640e7ab4-38a9-46e9-b277-681972d09d3a">
-	<property name="ireport.scriptlethandling" value="0"/>
-	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="330"/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
-	<parameter name="givenname" class="java.lang.String"/>
-	<parameter name="givenname_label_lang1" class="java.lang.String"/>
-	<parameter name="givenname_label_lang2" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="consent_text" class="java.lang.String"/>
-	<parameter name="familyname" class="java.lang.String"/>
-	<parameter name="streetaddress" class="java.lang.String"/>
-	<parameter name="zipcode" class="java.lang.String"/>
-	<parameter name="city" class="java.lang.String"/>
-	<parameter name="country" class="java.lang.String"/>
-	<parameter name="birthdate" class="java.lang.String"/>
-	<parameter name="birthdate_label_lang1" class="java.lang.String"/>
-	<parameter name="birthdate_label_lang2" class="java.lang.String"/>
-	<parameter name="country_label_lang1" class="java.lang.String"/>
-	<parameter name="country_label_lang2" class="java.lang.String"/>
-	<parameter name="city_label_lang1" class="java.lang.String"/>
-	<parameter name="city_label_lang2" class="java.lang.String"/>
-	<parameter name="streetaddress_label_lang1" class="java.lang.String"/>
-	<parameter name="streetaddress_label_lang2" class="java.lang.String"/>
-	<parameter name="familyname_label_lang1" class="java.lang.String"/>
-	<parameter name="familyname_label_lang2" class="java.lang.String"/>
-	<parameter name="zipcode_label_lang1" class="java.lang.String"/>
-	<parameter name="zipcode_label_lang2" class="java.lang.String"/>
-	<parameter name="printedby" class="java.lang.String"/>
-	<parameter name="lang1" class="java.lang.String"/>
-	<parameter name="lang2" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="date" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="consent_text_2" class="java.lang.String"/>
-	<queryString>
-		<![CDATA[SELECT count(*) as num FROM epsosdb.User_;]]>
-	</queryString>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<title>
-		<band height="41" splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band splitType="Stretch"/>
-	</columnHeader>
-	<detail>
-		<band height="529" splitType="Stretch">
-			<staticText>
-				<reportElement uuid="e570ee0d-7326-4bcd-bbdc-057b70df1748" key="staticText-14" mode="Transparent" x="0" y="0" width="230" height="35" forecolor="#000000" backcolor="#FFFFFF"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None">
-					<font fontName="Arial" size="22" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Patient Consent Form]]></text>
-			</staticText>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
-				<reportElement uuid="4970abac-5325-4ec6-9117-1d40907e7219" key="textField" x="0" y="169" width="532" height="39"/>
-				<textElement textAlignment="Left">
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{consent_text}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="9fc8427d-b65c-4cbf-bebd-7153314033b4" key="textField" x="0" y="39" width="184" height="18"/>
-				<textElement>
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{familyname_label_lang1}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="f35bd0de-8b30-4906-8ee7-bd2c1d517b1b" key="textField" x="0" y="57" width="184" height="18"/>
-				<textElement>
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{givenname_label_lang1}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="a037483f-9141-47c8-aad4-9ab1a38ffc5b" key="textField" x="0" y="75" width="184" height="18"/>
-				<textElement textAlignment="Left">
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{streetaddress_label_lang1}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="4bdd68fc-5c13-4a75-b313-d2022cd09f13" key="textField" x="0" y="93" width="184" height="18"/>
-				<textElement textAlignment="Left">
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{zipcode_label_lang1}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="51beff63-04ed-4a0c-b181-39a2ee8c578c" key="textField" x="195" y="111" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{city}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="f9601549-e2a2-4f7a-a3b1-8fb08536d6fb" key="textField" x="0" y="111" width="184" height="18"/>
-				<textElement textAlignment="Left">
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{city_label_lang1}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="1d959883-c89b-4595-8f0c-14da638ff936" key="textField" x="0" y="129" width="184" height="18"/>
-				<textElement textAlignment="Left">
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{country_label_lang1}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="c17a10ad-1e32-4430-bd27-6264a07b4acc" key="textField" x="0" y="147" width="184" height="18"/>
-				<textElement textAlignment="Left">
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{birthdate_label_lang1}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="423c668c-1eda-42a8-aa9a-ca4961abcbd6" key="textField" x="195" y="93" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{zipcode}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="02c336d8-5470-4c7f-842f-d7bfcd1d6177" key="textField" x="195" y="147" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{birthdate}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="a7c55d3f-5eb8-48fd-a608-ce06c187fddf" key="textField" x="195" y="129" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{country}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="cbcadef4-a5f5-4270-b606-7f737f02f6c2" key="textField" x="195" y="39" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{familyname}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="977c863d-edc6-42ac-8dd9-6549c7f46c33" key="textField" x="195" y="75" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{streetaddress}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="30891808-8d1c-4858-9f25-aa636c92d003" key="textField" x="195" y="57" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{givenname}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
-				<reportElement uuid="fcfc9e5d-7250-46c7-8d6e-37f060d6f11a" key="textField" x="0" y="419" width="530" height="70"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{consent_text_2}]]></textFieldExpression>
-			</textField>
-			<break>
-				<reportElement uuid="0d7ffa43-9eaf-4b46-932b-d384491a4309" key="element-1" x="0" y="239" width="535" height="1"/>
-			</break>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="e1aae7e6-e38b-4e88-b2d2-02010aef4fc4" key="textField-1" x="0" y="289" width="184" height="18"/>
-				<textElement>
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{familyname_label_lang2}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="32db6b04-0901-4602-bffb-a7d1d860c1fc" key="textField-2" x="0" y="307" width="184" height="18"/>
-				<textElement>
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{givenname_label_lang2}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="2b63c853-1cf6-49ba-b69f-cc53b42b5ed0" key="textField-3" x="0" y="325" width="184" height="18"/>
-				<textElement textAlignment="Left">
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{streetaddress_label_lang2}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="7c002c23-456f-4d15-ac7a-fd690e659f32" key="textField-4" x="0" y="343" width="184" height="18"/>
-				<textElement textAlignment="Left">
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{zipcode_label_lang2}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="d09c4222-5988-4f31-835d-7f602458cfac" key="textField-5" x="195" y="361" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{city}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="031ddd00-d6a9-4d40-a903-3d8fb30951c2" key="textField-6" x="0" y="361" width="184" height="18"/>
-				<textElement textAlignment="Left">
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{city_label_lang2}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="117baf9e-a0be-400a-98a6-99ccc1452d42" key="textField-7" x="0" y="379" width="184" height="18"/>
-				<textElement textAlignment="Left">
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{country_label_lang2}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="4fa0e2fa-1df5-426f-8a3f-4bb59bac52ec" key="textField-8" x="0" y="397" width="184" height="18"/>
-				<textElement textAlignment="Left">
-					<font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{birthdate_label_lang2}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="55e50b94-75b8-40ca-b390-08495db55f2b" key="textField-9" x="195" y="343" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{zipcode}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="135897e2-7089-4d08-9207-251c688cc075" key="textField-10" x="195" y="397" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{birthdate}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="a7bdf850-3e24-4ae2-8f6b-430c4e784748" key="textField-11" x="195" y="379" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{country}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="8b8a471a-54dc-4ad7-8ec3-c9e42ede8aaa" key="textField-12" x="195" y="289" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{familyname}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="e48d27a8-4fbc-4c34-b1af-d016b25088cb" key="textField-13" x="195" y="325" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{streetaddress}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="49573d10-869e-4d82-98e0-b81b68adb6a3" key="textField-14" x="195" y="307" width="329" height="18"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{givenname}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement uuid="63aaca65-09e2-497f-ba6f-18bdb0f5e5e8" key="staticText-19" mode="Transparent" x="0" y="249" width="230" height="35" forecolor="#000000" backcolor="#FFFFFF"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None">
-					<font fontName="Arial" size="22" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Patient Consent Form]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="44682ce3-4da1-4534-956f-2de36086895d" key="textField" x="430" y="9" width="100" height="20"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{lang1}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="9200142e-36fc-4787-97cc-14471d88b594" key="textField" x="430" y="254" width="100" height="20"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{lang2}]]></textFieldExpression>
-			</textField>
-		</band>
-	</detail>
-	<columnFooter>
-		<band splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="80" splitType="Stretch">
-			<staticText>
-				<reportElement uuid="30839a9f-4cf1-4479-862f-69a5e948b055" key="staticText-15" x="0" y="2" width="184" height="15"/>
-				<textElement textAlignment="Left">
-					<font fontName="SansSerif"/>
-				</textElement>
-				<text><![CDATA[Patient / Guardian Signature]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="5ff34e8d-2068-4170-8d4b-15d2f9f0a459" key="staticText-16" x="387" y="3" width="145" height="15"/>
-				<textElement>
-					<font fontName="SansSerif"/>
-				</textElement>
-				<text><![CDATA[Date]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="11086e32-d079-4f4b-93ab-063899e1f280" key="staticText-17" x="0" y="42" width="184" height="15"/>
-				<textElement textAlignment="Left">
-					<font fontName="SansSerif"/>
-				</textElement>
-				<text><![CDATA[Clerk Signatur]]></text>
-			</staticText>
-			<line>
-				<reportElement uuid="030a7f25-2d7c-4cf3-89a6-a51faebc6ee5" key="line-1" x="0" y="2" width="259" height="1"/>
-			</line>
-			<line>
-				<reportElement uuid="e11d9d33-40fa-4c74-b048-c63e8f65769a" key="line-2" x="0" y="42" width="259" height="1"/>
-			</line>
-			<line>
-				<reportElement uuid="44b988a2-0fa3-463d-ad49-f577b2c532e4" key="line-3" x="387" y="3" width="146" height="1"/>
-			</line>
-			<staticText>
-				<reportElement uuid="50bddd33-d8a6-4681-b48e-8049cc3d29a5" key="staticText-18" x="0" y="68" width="53" height="12"/>
-				<textElement>
-					<font fontName="SansSerif" isPdfEmbedded="true"/>
-				</textElement>
-				<text><![CDATA[Printed by]]></text>
-			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="0add1e72-fe69-486b-a76d-cf2b23ef6430" key="textField" x="62" y="68" width="204" height="12"/>
-				<textElement>
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{printedby}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="2819dbb7-afd9-4c80-92a5-3507c7d02176" key="textField" x="413" y="68" width="119" height="12"/>
-				<textElement textAlignment="Right">
-					<font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
-			</textField>
-		</band>
-	</pageFooter>
-	<summary>
-		<band splitType="Stretch"/>
-	</summary>
+<jasperReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="epsosConsent" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail"
+              columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20"
+              uuid="640e7ab4-38a9-46e9-b277-681972d09d3a">
+
+    <property name="ireport.scriptlethandling" value="0"/>
+    <property name="ireport.encoding" value="UTF-8"/>
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="330"/>
+    <import value="net.sf.jasperreports.engine.*"/>
+    <import value="java.util.*"/>
+    <import value="net.sf.jasperreports.engine.data.*"/>
+    <parameter name="givenname" class="java.lang.String"/>
+    <parameter name="givenname_label_lang1" class="java.lang.String"/>
+    <parameter name="givenname_label_lang2" class="java.lang.String" isForPrompting="false"/>
+    <parameter name="consent_text" class="java.lang.String"/>
+    <parameter name="familyname" class="java.lang.String"/>
+    <parameter name="streetaddress" class="java.lang.String"/>
+    <parameter name="zipcode" class="java.lang.String"/>
+    <parameter name="city" class="java.lang.String"/>
+    <parameter name="country" class="java.lang.String"/>
+    <parameter name="birthdate" class="java.lang.String"/>
+    <parameter name="birthdate_label_lang1" class="java.lang.String"/>
+    <parameter name="birthdate_label_lang2" class="java.lang.String"/>
+    <parameter name="country_label_lang1" class="java.lang.String"/>
+    <parameter name="country_label_lang2" class="java.lang.String"/>
+    <parameter name="city_label_lang1" class="java.lang.String"/>
+    <parameter name="city_label_lang2" class="java.lang.String"/>
+    <parameter name="streetaddress_label_lang1" class="java.lang.String"/>
+    <parameter name="streetaddress_label_lang2" class="java.lang.String"/>
+    <parameter name="familyname_label_lang1" class="java.lang.String"/>
+    <parameter name="familyname_label_lang2" class="java.lang.String"/>
+    <parameter name="zipcode_label_lang1" class="java.lang.String"/>
+    <parameter name="zipcode_label_lang2" class="java.lang.String"/>
+    <parameter name="printedby" class="java.lang.String"/>
+    <parameter name="lang1" class="java.lang.String"/>
+    <parameter name="lang2" class="java.lang.String" isForPrompting="false"/>
+    <parameter name="date" class="java.lang.String" isForPrompting="false"/>
+    <parameter name="consent_text_2" class="java.lang.String"/>
+    <queryString>
+        <![CDATA[SELECT count(*) as num FROM epsosdb.User_;]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="41" splitType="Stretch"/>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="529" splitType="Stretch">
+            <staticText>
+                <reportElement uuid="e570ee0d-7326-4bcd-bbdc-057b70df1748" key="staticText-14" mode="Transparent" x="0"
+                               y="0" width="230" height="35" forecolor="#000000" backcolor="#FFFFFF"/>
+                <box>
+                    <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+                    <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                </box>
+                <textElement textAlignment="Left" verticalAlignment="Top" rotation="None">
+                    <font fontName="Arial" size="22" isBold="true" isItalic="false" isUnderline="false"
+                          isStrikeThrough="false" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <text><![CDATA[Patient Consent Form]]></text>
+            </staticText>
+            <textField isStretchWithOverflow="true" isBlankWhenNull="false">
+                <reportElement uuid="4970abac-5325-4ec6-9117-1d40907e7219" key="textField" x="0" y="169" width="532"
+                               height="39"/>
+                <textElement textAlignment="Left">
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{consent_text}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="9fc8427d-b65c-4cbf-bebd-7153314033b4" key="textField" x="0" y="39" width="184"
+                               height="18"/>
+                <textElement>
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{familyname_label_lang1}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="f35bd0de-8b30-4906-8ee7-bd2c1d517b1b" key="textField" x="0" y="57" width="184"
+                               height="18"/>
+                <textElement>
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{givenname_label_lang1}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="a037483f-9141-47c8-aad4-9ab1a38ffc5b" key="textField" x="0" y="75" width="184"
+                               height="18"/>
+                <textElement textAlignment="Left">
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{streetaddress_label_lang1}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="4bdd68fc-5c13-4a75-b313-d2022cd09f13" key="textField" x="0" y="93" width="184"
+                               height="18"/>
+                <textElement textAlignment="Left">
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{zipcode_label_lang1}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="51beff63-04ed-4a0c-b181-39a2ee8c578c" key="textField" x="195" y="111" width="329"
+                               height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{city}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="f9601549-e2a2-4f7a-a3b1-8fb08536d6fb" key="textField" x="0" y="111" width="184"
+                               height="18"/>
+                <textElement textAlignment="Left">
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{city_label_lang1}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="1d959883-c89b-4595-8f0c-14da638ff936" key="textField" x="0" y="129" width="184"
+                               height="18"/>
+                <textElement textAlignment="Left">
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{country_label_lang1}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="c17a10ad-1e32-4430-bd27-6264a07b4acc" key="textField" x="0" y="147" width="184"
+                               height="18"/>
+                <textElement textAlignment="Left">
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{birthdate_label_lang1}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="423c668c-1eda-42a8-aa9a-ca4961abcbd6" key="textField" x="195" y="93" width="329"
+                               height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{zipcode}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="02c336d8-5470-4c7f-842f-d7bfcd1d6177" key="textField" x="195" y="147" width="329"
+                               height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{birthdate}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="a7c55d3f-5eb8-48fd-a608-ce06c187fddf" key="textField" x="195" y="129" width="329"
+                               height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{country}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="cbcadef4-a5f5-4270-b606-7f737f02f6c2" key="textField" x="195" y="39" width="329"
+                               height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{familyname}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="977c863d-edc6-42ac-8dd9-6549c7f46c33" key="textField" x="195" y="75" width="329"
+                               height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{streetaddress}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="30891808-8d1c-4858-9f25-aa636c92d003" key="textField" x="195" y="57" width="329"
+                               height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{givenname}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true" isBlankWhenNull="false">
+                <reportElement uuid="fcfc9e5d-7250-46c7-8d6e-37f060d6f11a" key="textField" x="0" y="419" width="530"
+                               height="70"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{consent_text_2}]]></textFieldExpression>
+            </textField>
+            <break>
+                <reportElement uuid="0d7ffa43-9eaf-4b46-932b-d384491a4309" key="element-1" x="0" y="239" width="535"
+                               height="1"/>
+            </break>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="e1aae7e6-e38b-4e88-b2d2-02010aef4fc4" key="textField-1" x="0" y="289" width="184"
+                               height="18"/>
+                <textElement>
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{familyname_label_lang2}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="32db6b04-0901-4602-bffb-a7d1d860c1fc" key="textField-2" x="0" y="307" width="184"
+                               height="18"/>
+                <textElement>
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{givenname_label_lang2}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="2b63c853-1cf6-49ba-b69f-cc53b42b5ed0" key="textField-3" x="0" y="325" width="184"
+                               height="18"/>
+                <textElement textAlignment="Left">
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{streetaddress_label_lang2}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="7c002c23-456f-4d15-ac7a-fd690e659f32" key="textField-4" x="0" y="343" width="184"
+                               height="18"/>
+                <textElement textAlignment="Left">
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{zipcode_label_lang2}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="d09c4222-5988-4f31-835d-7f602458cfac" key="textField-5" x="195" y="361" width="329"
+                               height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{city}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="031ddd00-d6a9-4d40-a903-3d8fb30951c2" key="textField-6" x="0" y="361" width="184"
+                               height="18"/>
+                <textElement textAlignment="Left">
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{city_label_lang2}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="117baf9e-a0be-400a-98a6-99ccc1452d42" key="textField-7" x="0" y="379" width="184"
+                               height="18"/>
+                <textElement textAlignment="Left">
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{country_label_lang2}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="4fa0e2fa-1df5-426f-8a3f-4bb59bac52ec" key="textField-8" x="0" y="397" width="184"
+                               height="18"/>
+                <textElement textAlignment="Left">
+                    <font fontName="Arial" isBold="true" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{birthdate_label_lang2}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="55e50b94-75b8-40ca-b390-08495db55f2b" key="textField-9" x="195" y="343" width="329"
+                               height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{zipcode}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="135897e2-7089-4d08-9207-251c688cc075" key="textField-10" x="195" y="397"
+                               width="329" height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{birthdate}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="a7bdf850-3e24-4ae2-8f6b-430c4e784748" key="textField-11" x="195" y="379"
+                               width="329" height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{country}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="8b8a471a-54dc-4ad7-8ec3-c9e42ede8aaa" key="textField-12" x="195" y="289"
+                               width="329" height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{familyname}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="e48d27a8-4fbc-4c34-b1af-d016b25088cb" key="textField-13" x="195" y="325"
+                               width="329" height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{streetaddress}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="49573d10-869e-4d82-98e0-b81b68adb6a3" key="textField-14" x="195" y="307"
+                               width="329" height="18"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{givenname}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement uuid="63aaca65-09e2-497f-ba6f-18bdb0f5e5e8" key="staticText-19" mode="Transparent" x="0"
+                               y="249" width="230" height="35" forecolor="#000000" backcolor="#FFFFFF"/>
+                <box>
+                    <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+                    <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                </box>
+                <textElement textAlignment="Left" verticalAlignment="Top" rotation="None">
+                    <font fontName="Arial" size="22" isBold="true" isItalic="false" isUnderline="false"
+                          isStrikeThrough="false" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <text><![CDATA[Patient Consent Form]]></text>
+            </staticText>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="44682ce3-4da1-4534-956f-2de36086895d" key="textField" x="430" y="9" width="100"
+                               height="20"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{lang1}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="9200142e-36fc-4787-97cc-14471d88b594" key="textField" x="430" y="254" width="100"
+                               height="20"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{lang2}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="80" splitType="Stretch">
+            <staticText>
+                <reportElement uuid="30839a9f-4cf1-4479-862f-69a5e948b055" key="staticText-15" x="0" y="2" width="184"
+                               height="15"/>
+                <textElement textAlignment="Left">
+                    <font fontName="SansSerif"/>
+                </textElement>
+                <text><![CDATA[Patient / Guardian Signature]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="5ff34e8d-2068-4170-8d4b-15d2f9f0a459" key="staticText-16" x="387" y="3" width="145"
+                               height="15"/>
+                <textElement>
+                    <font fontName="SansSerif"/>
+                </textElement>
+                <text><![CDATA[Date]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="11086e32-d079-4f4b-93ab-063899e1f280" key="staticText-17" x="0" y="42" width="184"
+                               height="15"/>
+                <textElement textAlignment="Left">
+                    <font fontName="SansSerif"/>
+                </textElement>
+                <text><![CDATA[Clerk Signatur]]></text>
+            </staticText>
+            <line>
+                <reportElement uuid="030a7f25-2d7c-4cf3-89a6-a51faebc6ee5" key="line-1" x="0" y="2" width="259"
+                               height="1"/>
+            </line>
+            <line>
+                <reportElement uuid="e11d9d33-40fa-4c74-b048-c63e8f65769a" key="line-2" x="0" y="42" width="259"
+                               height="1"/>
+            </line>
+            <line>
+                <reportElement uuid="44b988a2-0fa3-463d-ad49-f577b2c532e4" key="line-3" x="387" y="3" width="146"
+                               height="1"/>
+            </line>
+            <staticText>
+                <reportElement uuid="50bddd33-d8a6-4681-b48e-8049cc3d29a5" key="staticText-18" x="0" y="68" width="53"
+                               height="12"/>
+                <textElement>
+                    <font fontName="SansSerif" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[Printed by]]></text>
+            </staticText>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="0add1e72-fe69-486b-a76d-cf2b23ef6430" key="textField" x="62" y="68" width="204"
+                               height="12"/>
+                <textElement>
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{printedby}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement uuid="2819dbb7-afd9-4c80-92a5-3507c7d02176" key="textField" x="413" y="68" width="119"
+                               height="12"/>
+                <textElement textAlignment="Right">
+                    <font fontName="Arial" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
 </jasperReport>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-
-
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
 
     <listener>
         <listener-class>com.gnomon.epsos.MyServletContextListener</listener-class>
@@ -70,19 +70,18 @@
         <servlet-name>consentServlet</servlet-name>
         <url-pattern>/consentServlet</url-pattern>
     </servlet-mapping>
-
     <servlet-mapping>
         <servlet-name>jersey-serlvet</servlet-name>
         <url-pattern>/rest/*</url-pattern>
     </servlet-mapping>
 
-    <!--    <session-config>
-        <cookie-config>
-            <path>/</path>
-        </cookie-config>
-    </session-config>-->
-    <!-- To enable CORS for the FutureID client -->
+    <!--<session-config>-->
+    <!--<cookie-config>-->
+    <!--<path>/</path>-->
+    <!--</cookie-config>-->
+    <!--</session-config>-->
 
+    <!-- To enable CORS for the FutureID client -->
     <filter>
         <filter-name>CorsFilter</filter-name>
         <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
@@ -91,8 +90,6 @@
         <filter-name>CorsFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
-
     <filter>
         <filter-name>AuthenticationFilter</filter-name>
         <filter-class>com.gnomon.epsos.filter.RestAuthenticationFilter</filter-class>
@@ -101,5 +98,4 @@
         <filter-name>AuthenticationFilter</filter-name>
         <url-pattern>/rest/*</url-pattern>
     </filter-mapping>
-
 </web-app>

@@ -9,26 +9,27 @@ import epsos.openncp.protocolterminator.clientconnector.DocumentId;
 import epsos.openncp.protocolterminator.clientconnector.EpsosDocument1;
 import epsos.openncp.protocolterminator.clientconnector.GenericDocumentCode;
 import eu.epsos.util.IheConstants;
-import java.io.Serializable;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.opensaml.saml2.core.Assertion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import tr.com.srdc.epsos.util.Constants;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.portlet.PortletRequest;
 import javax.servlet.http.HttpServletRequest;
-import org.apache.commons.lang.exception.ExceptionUtils;
-import org.slf4j.Logger;
-import org.opensaml.saml2.core.Assertion;
-import org.slf4j.LoggerFactory;
-import tr.com.srdc.epsos.util.Constants;
+import java.io.Serializable;
 
 @ManagedBean
 @RequestScoped
 public class cdaModelBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private String cda;
     private static final Logger log = LoggerFactory.getLogger("cdaModelBean");
+    private String cda;
 
     public cdaModelBean() {
         log.info("CDA MODEL BEAN requesting");

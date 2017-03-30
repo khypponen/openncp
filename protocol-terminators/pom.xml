@@ -279,8 +279,8 @@
 			</dependency>
 			<dependency>
 				<groupId>javax.servlet</groupId>
-				<artifactId>servlet-api</artifactId>
-				<version>2.5</version>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${servlet-api.version}</version>
 				<!-- updated from 2.3 to 2.5 openncp-client-connector uses this version -->
 			</dependency>
 			<dependency>

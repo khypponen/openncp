@@ -5,14 +5,15 @@
  */
 package com.gnomon.epsos.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
- *
  * @author kostaskarkaletsis
  */
-public class DocumentExt {
+public class DocumentExt implements Serializable {
 
+    private static final long serialVersionUID = -213130244571753125L;
     private Patient patient;
     private List<PatientDocument> documents;
 

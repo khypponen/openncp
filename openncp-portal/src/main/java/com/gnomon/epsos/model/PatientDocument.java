@@ -5,9 +5,12 @@ import org.primefaces.model.StreamedContent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class PatientDocument {
+import java.io.Serializable;
+
+public class PatientDocument implements Serializable {
 
     private static final Logger log = LoggerFactory.getLogger("PatientDocument");
+    private static final long serialVersionUID = 2812911062938264973L;
     private String title;
     private String description;
     private String author;

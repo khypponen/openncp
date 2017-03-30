@@ -5,12 +5,14 @@
  */
 package com.gnomon.epsos.model;
 
+import java.io.Serializable;
+
 /**
- *
  * @author kostaskarkaletsis
  */
-public class DictionaryTerm {
+public class DictionaryTerm implements Serializable {
 
+    private static final long serialVersionUID = 2687999214270171113L;
     private String code;
     private String description;
 
@@ -29,5 +31,4 @@ public class DictionaryTerm {
     public void setDescription(String description) {
         this.description = description;
     }
-
 }

@@ -12,17 +12,16 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
 @ManagedBean
 @SessionScoped
-public class TranslationBean {
+public class TranslationBean implements Serializable {
+
 
     private static final Logger log = LoggerFactory.getLogger("TranslationBean");
+    private static final long serialVersionUID = -421731346650722469L;
     private Properties properties;
 
     public TranslationBean() {
