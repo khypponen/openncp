@@ -12,13 +12,15 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import java.io.*;
-import java.net.URISyntaxException;
 import java.net.URL;
 
 public class Utils {
 
     private static final Logger log = LoggerFactory.getLogger(Utils.class);
     private static final String EMPTY_VALUE = "";
+
+    private Utils() {
+    }
 
     public static String getProperty(String key) {
         return getProperty(key, EMPTY_VALUE);
@@ -88,12 +90,12 @@ public class Utils {
      * @param url            the url of the schema file
      * @return true/false if the source xml is valid against the rfc3881 xsd
      */
-    public static boolean validateSchema(String XmlDocumentUrl, URL url) throws SAXException, IOException,
-            URISyntaxException {
+    public static boolean validateSchema(String xmlDocumentUrl, URL url) throws SAXException, IOException {
+
         SchemaFactory factory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
         Schema schema = factory.newSchema(url);
         javax.xml.validation.Validator validator = schema.newValidator();
-        Source source = new StreamSource(StringToStream(XmlDocumentUrl));
+        Source source = new StreamSource(StringToStream(xmlDocumentUrl));
 
         try {
             validator.validate(source);

@@ -1017,7 +1017,7 @@ public class XCAServiceImpl implements XCAServiceInterface {
                 }
             }
 
-            logger.info("The client country code to be used by the PDP: " + countryCode);
+            logger.info("The client country code to be used by the PDP '{}' ", countryCode);
 
             // Then, it is the Policy Decision Point (PDP) that decides according to the consent of the patient
             if (!SAML2Validator.isConsentGiven(patientId, countryCode)) {
@@ -1038,7 +1038,7 @@ public class XCAServiceImpl implements XCAServiceInterface {
                         "NI_XCA_RETRIEVE_REQ",
                         DateUtil.getCurrentTimeGMT());
             } catch (Exception e) {
-                logger.error(ExceptionUtils.getStackTrace(e));
+                logger.error("createEvidenceREMNRO: " + ExceptionUtils.getStackTrace(e));
             }
 
             EPSOSDocument epsosDoc = documentSearchService.getDocument(DocumentFactory.createSearchCriteria()
@@ -1076,7 +1076,7 @@ public class XCAServiceImpl implements XCAServiceInterface {
                         "NI_XCA_RETRIEVE_RES_SUCC",
                         DateUtil.getCurrentTimeGMT());
             } catch (Exception e) {
-                logger.error(ExceptionUtils.getStackTrace(e));
+                logger.error("createEvidenceREMNRR() " + ExceptionUtils.getStackTrace(e));
             }
 
             classCodeValue = epsosDoc.getClassCode();

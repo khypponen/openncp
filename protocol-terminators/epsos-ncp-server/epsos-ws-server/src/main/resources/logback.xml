@@ -27,6 +27,11 @@
         <appender-ref ref="DB"/>
     </logger>
 
+    <logger name="eu.epsos.protocolterminators.ws.server.xca.impl" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="DB"/>
+    </logger>
+
     <logger name="_2007.xds_b.iti.ihe" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>
         <appender-ref ref="DB"/>
