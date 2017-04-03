@@ -45,10 +45,10 @@ public class EpsosXSLTransformer {
     private static final String MAIN_XSLT = "/resources/cda.xsl";
     private static final String STANDARD_XSLT = "/resources/def_cda.xsl";
     private static final Logger logger = LoggerFactory.getLogger(EpsosXSLTransformer.class);
-    Path path = Paths.get(System.getenv("EPSOS_PROPS_PATH"), "EpsosRepository");
+    private Path path = Paths.get(System.getenv("EPSOS_PROPS_PATH"), "EpsosRepository");
 
     /**
-     * @param input cda xml
+     * @param xml cda xml
      * @return
      */
     public String transformUsingStandardCDAXsl(String xml) {
@@ -97,6 +97,7 @@ public class EpsosXSLTransformer {
             Transformer transformer = transformerFactory.newTransformer(xslSource);
             transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
             transformer.setParameter("epsosLangDir", path);
+            //transformer.setParameter("epsosLangDir", xslUrl);
             transformer.setParameter("userLang", lang);
             transformer.setParameter("shownarrative", String.valueOf(shownarrative));
 

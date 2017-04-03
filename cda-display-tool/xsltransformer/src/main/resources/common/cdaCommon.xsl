@@ -1,9 +1,10 @@
 <?xml version="1.0"  encoding="utf-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:n1="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                version="2.0">
-    <xsl:output method="html" indent="yes" version="4.01"
-                doctype-system="http://www.w3.org/TR/html4/strict.dtd" doctype-public="-//W3C//DTD HTML 4.01//EN"/>
+                version="1.0">
+
+    <xsl:output method="html" indent="yes" version="4.01" doctype-system="http://www.w3.org/TR/html4/strict.dtd"
+                doctype-public="-//W3C//DTD HTML 4.01//EN"/>
     <xsl:param name="userLang" select="'en'"/>
     <xsl:param name="epsosLangDir" select="'../EpsosRepository'"/>
     <xsl:param name="defaultUserLang" select="'en'"/>
@@ -694,7 +695,7 @@
         <xsl:variable name="dirFile"
                       select="concat($epsosLangDir,'/NullFlavor.xml')"/>
         <xsl:variable name="foundKey"
-                      select="document($dirFile)/NullFlavorInformation/NullFlavorEntry[@code=$data]"/>
+                      select="document(concat('file://', $dirFile))/NullFlavorInformation/NullFlavorEntry[@code=$data]"/>
         <xsl:variable name="foundKeyLang"
                       select="$foundKey/displayName[@lang=$userLang]"/>
         <xsl:variable name="defFoundKeyLang"
@@ -719,7 +720,7 @@
         <xsl:variable name="dirFile"
                       select="concat($epsosLangDir,'/SNOMEDCT.xml')"/>
         <xsl:variable name="foundKey"
-                      select="document($dirFile)/SNOMEDCTInformation/SNOMEDCTEntry[@code=$data]"/>
+                      select="document(concat('file://', $dirFile))/SNOMEDCTInformation/SNOMEDCTEntry[@code=$data]"/>
         <xsl:variable name="foundKeyLang"
                       select="$foundKey/displayName[@lang=$userLang]"/>
         <xsl:variable name="defFoundKeyLang"
@@ -732,8 +733,6 @@
                 <xsl:value-of select="$foundKeyLang"/>
             </xsl:otherwise>
         </xsl:choose>
-
-
     </xsl:template>
 
     <!-- display Labels -->
@@ -742,7 +741,7 @@
         <xsl:variable name="dirFile"
                       select="concat($epsosLangDir,'/epSOSDisplayLabels.xml')"/>
         <xsl:variable name="foundKey"
-                      select="document($dirFile)/epSOSDisplayLabelsInformation/epSOSDisplayLabelsEntry[@code=$data]"/>
+                      select="document(concat('file://', $dirFile))/epSOSDisplayLabelsInformation/epSOSDisplayLabelsEntry[@code=$data]"/>
         <xsl:variable name="foundKeyLang"
                       select="$foundKey/displayName[@lang=$userLang]"/>
         <xsl:variable name="defFoundKeyLang"
@@ -1102,7 +1101,7 @@
         <xsl:variable name="dirFile"
                       select="concat($epsosLangDir,'/UCUMUnifiedCodeforUnitsofMeasure.xml')"/>
         <xsl:variable name="unitInfo"
-                      select="document($dirFile)/UCUMUnifiedCodeforUnitsofMeasureInformation"/>
+                      select="document(concat('file://', $dirFile))/UCUMUnifiedCodeforUnitsofMeasureInformation"/>
         <xsl:for-each select="$unitInfo/UCUMUnifiedCodeforUnitsofMeasureEntry">
             <!-- <xsl:variable name="foundKeyLang" select="./displayName[@lang=$userLang]"/> -->
             <!-- <xsl:variable name="defFoundKeyLang" select="./displayName[@lang=$defaultUserLang]"/> -->
@@ -1145,7 +1144,7 @@
         <xsl:variable name="dirFile"
                       select="concat($epsosLangDir,'/UCUMUnifiedCodeforUnitsofMeasure.xml')"/>
         <xsl:variable name="unitInfo"
-                      select="document($dirFile)/UCUMUnifiedCodeforUnitsofMeasureInformation"/>
+                      select="document(concat('file://', $dirFile))/UCUMUnifiedCodeforUnitsofMeasureInformation"/>
         <xsl:for-each select="$unitInfo/UCUMUnifiedCodeforUnitsofMeasureEntry">
             <xsl:variable name="foundKeyLang" select="./@code"/>
             <xsl:variable name="defFoundKeyLang" select="./@code"/>
@@ -1307,5 +1306,4 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-
 </xsl:stylesheet>

@@ -62,14 +62,14 @@ public class XcpdValidationService extends ValidationService {
             hl7v3XmlDetails = hl7v3Port.validateDocument(object, model); // Invocation of Web Service client.
         } catch (Exception ex) {
             LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);
-            return false;
+            //return false;
         }
 
         if (!hl7v3XmlDetails.isEmpty()) {
             return ReportBuilder.build(model, Hl7v3Model.checkModel(model).getObjectType().toString(), object, WsUnmarshaller.unmarshal(hl7v3XmlDetails), hl7v3XmlDetails.toString(), ncpSide); // Report generation.
         } else {
             LOG.error("The webservice response is empty.");
-            return false;
+            return ReportBuilder.build(model, Hl7v3Model.checkModel(model).getObjectType().toString(), object, null, null, ncpSide); // Report generation.
         }
     }
 

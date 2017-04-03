@@ -236,14 +236,14 @@ ALTER TABLE public.object_details OWNER TO openatna;
 --
 -- Name: objects; Type: TABLE; Schema: public; Owner: openatna; Tablespace: 
 --
-
+--     EHNCP-1104 ParticipantObjectID column size is not long enough 255 to 1000
 CREATE TABLE objects (
     id bigint NOT NULL,
-    objectid character varying(255),
-    objectname character varying(255),
+    objectid varchar(1000),
+    objectname varchar(255),
     objecttypecode smallint,
     objecttypecoderole smallint,
-    objectsensitivity character varying(255),
+    objectsensitivity varchar(255),
     version integer,
     objectidtypecode_id bigint
 );

@@ -20,6 +20,10 @@
         <appender-ref ref="FILE"/>
     </logger>
 
+    <logger name="org.openhealthtools.openatna.syslog.mina.tls.SyslogProtocolHandler" level="INFO" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
+
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>

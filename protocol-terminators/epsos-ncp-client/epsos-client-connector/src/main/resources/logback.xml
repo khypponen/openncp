@@ -22,9 +22,25 @@
         </connectionSource>
     </appender>
 
-    <!--<logger name="org.apache.axis2" level="ERROR" additivity="false">-->
-        <!--<appender-ref ref="FILE"/>-->
-    <!--</logger>-->
+    <logger name="tr.com.srdc.epsos.ws.xca.client" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="DB"/>
+    </logger>
+
+    <logger name="tr.com.srdc.epsos.ws.xcpd.client" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="DB"/>
+    </logger>
+
+    <logger name="tr.com.srdc.epsos.ws.xdr.client" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="DB"/>
+    </logger>
+
+    <logger name="eu.epsos.pt.ws.client.xdr" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="DB"/>
+    </logger>
 
     <logger name="eu.epsos.pt.cc" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>

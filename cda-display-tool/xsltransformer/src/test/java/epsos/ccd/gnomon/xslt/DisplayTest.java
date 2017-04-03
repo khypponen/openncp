@@ -13,42 +13,22 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
  * License for the specific language governing permissions and limitations under
  * the License.
- *//*
-    * To change this template, choose Tools | Templates
-	* and open the template in the editor.
-	*/
+ **/
 package epsos.ccd.gnomon.xslt;
-
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-import java.io.Writer;
-import java.nio.file.FileVisitResult;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.SimpleFileVisitor;
-import java.nio.file.attribute.BasicFileAttributes;
 
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.*;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
 
 /**
  * @author karkaletsis
  */
 public class DisplayTest {
     private static final Logger logger = LoggerFactory.getLogger(DisplayTest.class);
-
-    private enum TRANSFORMATION {
-        WithOutputAndUserHomePath, ForPDF, UsingStandardCDAXsl, WithOutputAndDefinedPath
-    }
-
-    ;
-
 
     //	@Test
     private void fileTest(String input, TRANSFORMATION type)
@@ -84,7 +64,6 @@ public class DisplayTest {
         }
 
         // xlsClass.transformForPDF(cda, "el-GR",true);
-
     }
 
     //	@Test
@@ -119,7 +98,6 @@ public class DisplayTest {
 
     }
 
-
     @Test
     public void readFile() throws Exception {
         EpsosXSLTransformer xlsClass = new EpsosXSLTransformer();
@@ -129,6 +107,11 @@ public class DisplayTest {
         try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(pt), "utf-8"))) {
             writer.write(out);
         }
+    }
+
+
+    private enum TRANSFORMATION {
+        WithOutputAndUserHomePath, ForPDF, UsingStandardCDAXsl, WithOutputAndDefinedPath
     }
 
 //	@Test
