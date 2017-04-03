@@ -178,7 +178,7 @@
                             <wsdlFiles>
                                 <wsdlFile>${basedir}/src/main/resources/gazelle.wsdls/CDAValidatorWS.xml</wsdlFile>
                             </wsdlFiles>
-                            <wsdlLocation>http://131.254.209.20:8080/CDAGenerator-CDAGenerator-ejb/CDAValidatorWS?wsdl
+                            <wsdlLocation>https://gazelle.ihe.net/CDAGenerator-ejb/ModelBasedValidationWSService/ModelBasedValidationWS?wsdl
                             </wsdlLocation>
                             <staleFile>${project.build.directory}/jaxws/stale/CDAValidatorWS.stale</staleFile>
                             <verbose>false</verbose>
