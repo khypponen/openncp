@@ -95,21 +95,20 @@ public abstract class ValidationService {
             return false;
         }
 
-        gazelleObjVal = new net.ihe.gazelle.sch.validator.ws.GazelleObjectValidatorService();
-        gazelleObjValPOrt = gazelleObjVal.getGazelleObjectValidatorPort();
-
-        try {
-            xmlDetails = gazelleObjValPOrt.validateObject(DatatypeConverter.printBase64Binary(object.getBytes()), schematron, schematron); // Invocation of Web Service.
-        } catch (Exception ex) {
-            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);
-            return false;
-        }
+//        try {
+//            gazelleObjVal = new net.ihe.gazelle.sch.validator.ws.GazelleObjectValidatorService();
+//            gazelleObjValPOrt = gazelleObjVal.getGazelleObjectValidatorPort();
+//            xmlDetails = gazelleObjValPOrt.validateObject(DatatypeConverter.printBase64Binary(object.getBytes()), schematron, schematron); // Invocation of Web Service.
+//        } catch (Exception ex) {
+//            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);
+//            return false;
+//        }
 
         if (!xmlDetails.isEmpty()) {
             return ReportBuilder.build(schematron, Hl7v3Schematron.checkSchematron(schematron).getObjectType().toString(), object, WsUnmarshaller.unmarshal(xmlDetails), xmlDetails, ncpSide); // Report generation.
         } else {
             LOG.error("The webservice response is empty.");
-            return false;
+            return ReportBuilder.build(schematron, Hl7v3Schematron.checkSchematron(schematron).getObjectType().toString(), object, null, null, ncpSide); // Report generation
         }
     }
 }
