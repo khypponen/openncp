@@ -21,6 +21,10 @@ package eu.epsos.validation.services;
 
 import eu.epsos.validation.datamodel.common.NcpSide;
 import javax.xml.bind.DatatypeConverter;
+
+import eu.epsos.validation.datamodel.dts.WsUnmarshaller;
+import eu.epsos.validation.datamodel.xd.XdModel;
+import eu.epsos.validation.reporting.ReportBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,19 +53,23 @@ public class AssertionValidationService extends ValidationService {
             LOG.info("Automated validation turned off, not validating.");
             return false;
         }
-        gazelleObjVal = new net.ihe.gazelle.sch.validator.ws.GazelleObjectValidatorService();
-        gazelleObjValPOrt = gazelleObjVal.getGazelleObjectValidatorPort();
 
-        try {
-            xmlDetails = gazelleObjValPOrt.validateObject(DatatypeConverter.printBase64Binary(object.getBytes()), schematron, schematron); // Invocation of Web Service.
-        } catch (Exception ex) {
-            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);
-            return false;
-        }
-
+//        try {
+//        gazelleObjVal = new net.ihe.gazelle.sch.validator.ws.GazelleObjectValidatorService();
+//        gazelleObjValPOrt = gazelleObjVal.getGazelleObjectValidatorPort();
+//            xmlDetails = gazelleObjValPOrt.validateObject(DatatypeConverter.printBase64Binary(object.getBytes()), schematron, schematron); // Invocation of Web Service.
+//        } catch (Exception ex) {
+//            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);
+//        }
         LOG.info("epSOS Assertion validation result, using " + schematron + " schematron:");
-        LOG.info(xmlDetails);
-        return true;
+
+        if (!xmlDetails.isEmpty()) {
+            LOG.info(xmlDetails);
+            return ReportBuilder.build(schematron, XdModel.checkModel(schematron).getObjectType().toString(), object, WsUnmarshaller.unmarshal(xmlDetails), xmlDetails.toString(), ncpSide); // Report generation.
+        } else {
+            LOG.error("The webservice response is empty, writing report without validation part.");
+            return ReportBuilder.build(schematron, XdModel.checkModel(schematron).getObjectType().toString(), object, null, null, ncpSide); // Report generation.
+        }
     }
 
 }

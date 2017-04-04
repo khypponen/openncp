@@ -56,20 +56,19 @@ public class CdaValidationService extends ValidationService {
             return false;
         }
 
-        cdaService = new ModelBasedValidationWSService();
-        cdaPort = cdaService.getModelBasedValidationWSPort();
-        try {
-            cdaXmlDetails = cdaPort.validateDocument(object, model); // Invocation of Web Service client.
-        } catch (SOAPException_Exception ex) {
-            LOG.error("An error has occurred during the invocation of remote validation service, please check the stach trace.", ex);
-            return false;
-        }
+//        try {
+//        cdaService = new ModelBasedValidationWSService();
+//        cdaPort = cdaService.getModelBasedValidationWSPort();
+//            cdaXmlDetails = cdaPort.validateDocument(object, model); // Invocation of Web Service client.
+//        } catch (SOAPException_Exception ex) {
+//            LOG.error("An error has occurred during the invocation of remote validation service, please check the stach trace.", ex);
+//        }
 
         if (!cdaXmlDetails.isEmpty()) {
             return ReportBuilder.build(model, CdaModel.checkModel(model).getObjectType().toString(), object, WsUnmarshaller.unmarshal(cdaXmlDetails), cdaXmlDetails.toString(), ncpSide); // Report generation.
         } else {
             LOG.error("The webservice response is empty.");
-            return false;
+            return ReportBuilder.build(model, CdaModel.checkModel(model).getObjectType().toString(), object, null, null, ncpSide); // Report generation.
         }
 
     }
