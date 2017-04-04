@@ -147,6 +147,12 @@
             <groupId>net.ihe.gazelle.epsos.validator</groupId>
             <artifactId>cdaepsos-validator-jar</artifactId>
             <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>net.sf.saxon</artifactId>
+                    <groupId>saxon9he</groupId>
+                </exclusion>
+            </exclusions>
             <type>jar</type>
             <version>1.6</version>
         </dependency>
