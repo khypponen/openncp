@@ -64,15 +64,14 @@ public class XcaValidationService extends ValidationService {
             return false;
         }
 
-        xdService = new ModelBasedValidationWSService();
-        xdPort = xdService.getModelBasedValidationWSPort();
 
-        try {
-            xdXmlDetails = xdPort.validateDocument(object, model); // Invocation of Web Service client.
-        } catch (Exception ex) {
-            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);
-//            return false;
-        }
+//        try {
+//        xdService = new ModelBasedValidationWSService();
+//        xdPort = xdService.getModelBasedValidationWSPort();
+//            xdXmlDetails = xdPort.validateDocument(object, model); // Invocation of Web Service client.
+//        } catch (Exception ex) {
+//            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);
+//        }
 
         if (!xdXmlDetails.isEmpty()) {
             return ReportBuilder.build(model, XdModel.checkModel(model).getObjectType().toString(), object, WsUnmarshaller.unmarshal(xdXmlDetails), xdXmlDetails.toString(), ncpSide); // Report generation.
