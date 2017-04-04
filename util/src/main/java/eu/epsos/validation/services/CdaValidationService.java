@@ -55,8 +55,6 @@ public class CdaValidationService extends ValidationService {
 
     @Override
     public boolean validateModel(String object, String model, NcpSide ncpSide) {
-        ModelBasedValidationWSService cdaService;
-        ModelBasedValidationWS cdaPort;
         String cdaXmlDetails = "";
 
         if (!ValidationService.isValidationOn()) {
@@ -71,8 +69,8 @@ public class CdaValidationService extends ValidationService {
 
         //TODO: Fix Gazelle timeout and validation error.
         //        try {
-        //        cdaService = new ModelBasedValidationWSService();
-        //        cdaPort = cdaService.getModelBasedValidationWSPort();
+        //        ModelBasedValidationWSService cdaService = new ModelBasedValidationWSService();
+        //        ModelBasedValidationWS cdaPort = cdaService.getModelBasedValidationWSPort();
         //            cdaXmlDetails = cdaPort.validateDocument(object, model); // Invocation of Web Service client.
         //        } catch (SOAPException_Exception ex) {
         //            LOG.error("An error has occurred during the invocation of remote validation service, please check the stach trace.", ex);

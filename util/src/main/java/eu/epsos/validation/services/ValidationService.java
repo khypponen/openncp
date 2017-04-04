@@ -85,9 +85,6 @@ public abstract class ValidationService {
      * @return the result of validation execution: false if errors occur.
      */
     protected boolean validateSchematron(String object, String schematron, NcpSide ncpSide) {
-        net.ihe.gazelle.sch.validator.ws.GazelleObjectValidatorService gazelleObjVal;
-        net.ihe.gazelle.sch.validator.ws.GazelleObjectValidator gazelleObjValPOrt;
-
         String xmlDetails = "";
 
         if (!ValidationService.isValidationOn()) {
@@ -96,8 +93,8 @@ public abstract class ValidationService {
         }
 
 //        try {
-//            gazelleObjVal = new net.ihe.gazelle.sch.validator.ws.GazelleObjectValidatorService();
-//            gazelleObjValPOrt = gazelleObjVal.getGazelleObjectValidatorPort();
+//            net.ihe.gazelle.sch.validator.ws.GazelleObjectValidatorService gazelleObjVal = new net.ihe.gazelle.sch.validator.ws.GazelleObjectValidatorService();
+//            net.ihe.gazelle.sch.validator.ws.GazelleObjectValidator gazelleObjValPOrt = gazelleObjVal.getGazelleObjectValidatorPort();
 //            xmlDetails = gazelleObjValPOrt.validateObject(DatatypeConverter.printBase64Binary(object.getBytes()), schematron, schematron); // Invocation of Web Service.
 //        } catch (Exception ex) {
 //            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);

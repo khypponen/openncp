@@ -55,8 +55,6 @@ public class XcpdValidationService extends ValidationService {
     @Override
     public boolean validateModel(String object, String model, NcpSide ncpSide) {
 
-        ModelBasedValidationWSService hl7Service;
-        ModelBasedValidationWS hl7v3Port;
         String hl7v3XmlDetails = "";
 
         if (!ValidationService.isValidationOn()) {
@@ -71,8 +69,8 @@ public class XcpdValidationService extends ValidationService {
 
         //TODO: Fix Gazelle timeout and validation error.
         //        try {
-        //        hl7Service = new net.ihe.gazelle.validator.mb.ws.ModelBasedValidationWSService();
-        //        hl7v3Port = hl7Service.getModelBasedValidationWSPort();
+        //        ModelBasedValidationWSService hl7Service = new net.ihe.gazelle.validator.mb.ws.ModelBasedValidationWSService();
+        //        ModelBasedValidationWS hl7v3Port = hl7Service.getModelBasedValidationWSPort();
         //            hl7v3XmlDetails = hl7v3Port.validateDocument(object, model); // Invocation of Web Service client.
         //        } catch (Exception ex) {
         //            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);

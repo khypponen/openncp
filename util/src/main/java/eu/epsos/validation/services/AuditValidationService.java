@@ -56,8 +56,6 @@ public class AuditValidationService extends ValidationService {
     @Override
     public boolean validateModel(String object, String model, NcpSide ncpSide) {
         boolean result;
-        AuditMessageValidationWSService amService;
-        AuditMessageValidationWS amPort;
         String amXmlDetails = "";
 
         if (!ValidationService.isValidationOn()) {
@@ -72,8 +70,8 @@ public class AuditValidationService extends ValidationService {
 
         //TODO: Fix Gazelle timeout and validation error.
         //        try {
-        //        amService = new AuditMessageValidationWSService();
-        //        amPort = amService.getAuditMessageValidationWSPort();
+        //        AuditMessageValidationWSService amService = new AuditMessageValidationWSService();
+        //        AuditMessageValidationWS amPort = amService.getAuditMessageValidationWSPort();
         //            amXmlDetails = amPort.validateDocument(object, model); // Invocation of Web Service client.
         //        } catch (SOAPException_Exception ex) {
         //            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);

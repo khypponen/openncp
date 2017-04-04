@@ -54,8 +54,6 @@ public class XcaValidationService extends ValidationService {
 
     @Override
     public boolean validateModel(String object, String model, NcpSide ncpSide) {
-        ModelBasedValidationWSService xdService;
-        ModelBasedValidationWS xdPort;
         String xdXmlDetails = "";
 
         if (!ValidationService.isValidationOn()) {
@@ -80,8 +78,8 @@ public class XcaValidationService extends ValidationService {
 
         //TODO: Fix Gazelle timeout and validation error.
         //        try {
-        //        xdService = new ModelBasedValidationWSService();
-        //        xdPort = xdService.getModelBasedValidationWSPort();
+        //        ModelBasedValidationWSService xdService = new ModelBasedValidationWSService();
+        //        ModelBasedValidationWS xdPort = xdService.getModelBasedValidationWSPort();
         //            xdXmlDetails = xdPort.validateDocument(object, model); // Invocation of Web Service client.
         //        } catch (Exception ex) {
         //            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);
