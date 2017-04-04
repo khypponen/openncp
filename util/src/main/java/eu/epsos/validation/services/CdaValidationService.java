@@ -26,7 +26,6 @@ import eu.epsos.validation.datamodel.dts.WsUnmarshaller;
 import eu.epsos.validation.reporting.ReportBuilder;
 import net.ihe.gazelle.document.ModelBasedValidationWS;
 import net.ihe.gazelle.document.ModelBasedValidationWSService;
-import net.ihe.gazelle.document.SOAPException_Exception;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,6 +38,20 @@ public class CdaValidationService extends ValidationService {
 
     private static final Logger LOG = LoggerFactory.getLogger(XcaValidationService.class);
     private static CdaValidationService instance;
+
+    /**
+     * Private constructor to avoid instantiation.
+     */
+    private CdaValidationService() {
+    }
+
+    public static CdaValidationService getInstance() {
+        if (instance == null) {
+
+            instance = new CdaValidationService();
+        }
+        return instance;
+    }
 
     @Override
     public boolean validateModel(String object, String model, NcpSide ncpSide) {
@@ -56,13 +69,14 @@ public class CdaValidationService extends ValidationService {
             return false;
         }
 
-//        try {
-//        cdaService = new ModelBasedValidationWSService();
-//        cdaPort = cdaService.getModelBasedValidationWSPort();
-//            cdaXmlDetails = cdaPort.validateDocument(object, model); // Invocation of Web Service client.
-//        } catch (SOAPException_Exception ex) {
-//            LOG.error("An error has occurred during the invocation of remote validation service, please check the stach trace.", ex);
-//        }
+        //TODO: Fix Gazelle timeout and validation error.
+        //        try {
+        //        cdaService = new ModelBasedValidationWSService();
+        //        cdaPort = cdaService.getModelBasedValidationWSPort();
+        //            cdaXmlDetails = cdaPort.validateDocument(object, model); // Invocation of Web Service client.
+        //        } catch (SOAPException_Exception ex) {
+        //            LOG.error("An error has occurred during the invocation of remote validation service, please check the stach trace.", ex);
+        //        }
 
         if (!cdaXmlDetails.isEmpty()) {
             return ReportBuilder.build(model, CdaModel.checkModel(model).getObjectType().toString(), object, WsUnmarshaller.unmarshal(cdaXmlDetails), cdaXmlDetails.toString(), ncpSide); // Report generation.
@@ -81,19 +95,5 @@ public class CdaValidationService extends ValidationService {
         }
 
         return super.validateSchematron(object, schematron, ncpSide);
-    }
-
-    public static CdaValidationService getInstance() {
-        if (instance == null) {
-
-            instance = new CdaValidationService();
-        }
-        return instance;
-    }
-
-    /**
-     * Private constructor to avoid instantiation.
-     */
-    private CdaValidationService() {
     }
 }

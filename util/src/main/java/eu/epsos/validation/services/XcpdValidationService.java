@@ -39,8 +39,22 @@ public class XcpdValidationService extends ValidationService {
     private static final Logger LOG = LoggerFactory.getLogger(XcpdValidationService.class);
     private static XcpdValidationService instance;
 
+    /**
+     * Private constructor to avoid instantiation.
+     */
+    private XcpdValidationService() {
+    }
+
+    public static XcpdValidationService getInstance() {
+        if (instance == null) {
+            instance = new XcpdValidationService();
+        }
+        return instance;
+    }
+
     @Override
     public boolean validateModel(String object, String model, NcpSide ncpSide) {
+
         ModelBasedValidationWSService hl7Service;
         ModelBasedValidationWS hl7v3Port;
         String hl7v3XmlDetails = "";
@@ -55,15 +69,15 @@ public class XcpdValidationService extends ValidationService {
             return false;
         }
 
-
-//        try {
-//        hl7Service = new net.ihe.gazelle.validator.mb.ws.ModelBasedValidationWSService();
-//        hl7v3Port = hl7Service.getModelBasedValidationWSPort();
-//            hl7v3XmlDetails = hl7v3Port.validateDocument(object, model); // Invocation of Web Service client.
-//        } catch (Exception ex) {
-//            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);
-//            //return false;
-//        }
+        //TODO: Fix Gazelle timeout and validation error.
+        //        try {
+        //        hl7Service = new net.ihe.gazelle.validator.mb.ws.ModelBasedValidationWSService();
+        //        hl7v3Port = hl7Service.getModelBasedValidationWSPort();
+        //            hl7v3XmlDetails = hl7v3Port.validateDocument(object, model); // Invocation of Web Service client.
+        //        } catch (Exception ex) {
+        //            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);
+        //            //return false;
+        //        }
 
         if (!hl7v3XmlDetails.isEmpty()) {
             return ReportBuilder.build(model, Hl7v3Model.checkModel(model).getObjectType().toString(), object, WsUnmarshaller.unmarshal(hl7v3XmlDetails), hl7v3XmlDetails.toString(), ncpSide); // Report generation.
@@ -81,18 +95,5 @@ public class XcpdValidationService extends ValidationService {
         }
 
         return super.validateSchematron(object, schematron, ncpSide);
-    }
-
-    public static XcpdValidationService getInstance() {
-        if (instance == null) {
-            instance = new XcpdValidationService();
-        }
-        return instance;
-    }
-
-    /**
-     * Private constructor to avoid instantiation.
-     */
-    private XcpdValidationService() {
     }
 }

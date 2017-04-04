@@ -26,7 +26,6 @@ import eu.epsos.validation.datamodel.dts.WsUnmarshaller;
 import eu.epsos.validation.reporting.ReportBuilder;
 import net.ihe.gazelle.am.AuditMessageValidationWS;
 import net.ihe.gazelle.am.AuditMessageValidationWSService;
-import net.ihe.gazelle.am.SOAPException_Exception;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,6 +38,20 @@ public class AuditValidationService extends ValidationService {
 
     private static final Logger LOG = LoggerFactory.getLogger(XcaValidationService.class);
     private static AuditValidationService instance;
+
+    /**
+     * Private constructor to avoid instantiation.
+     */
+    private AuditValidationService() {
+    }
+
+    public static AuditValidationService getInstance() {
+        if (instance == null) {
+
+            instance = new AuditValidationService();
+        }
+        return instance;
+    }
 
     @Override
     public boolean validateModel(String object, String model, NcpSide ncpSide) {
@@ -57,13 +70,14 @@ public class AuditValidationService extends ValidationService {
             return false;
         }
 
-//        try {
-//        amService = new AuditMessageValidationWSService();
-//        amPort = amService.getAuditMessageValidationWSPort();
-//            amXmlDetails = amPort.validateDocument(object, model); // Invocation of Web Service client.
-//        } catch (SOAPException_Exception ex) {
-//            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);
-//        }
+        //TODO: Fix Gazelle timeout and validation error.
+        //        try {
+        //        amService = new AuditMessageValidationWSService();
+        //        amPort = amService.getAuditMessageValidationWSPort();
+        //            amXmlDetails = amPort.validateDocument(object, model); // Invocation of Web Service client.
+        //        } catch (SOAPException_Exception ex) {
+        //            LOG.error("An error has occurred during the invocation of remote validation service, please check the stack trace.", ex);
+        //        }
 
         if (!amXmlDetails.isEmpty()) {
             result = ReportBuilder.build(model, AuditModel.checkModel(model).getObjectType().toString(), object, WsUnmarshaller.unmarshal(amXmlDetails), amXmlDetails.toString(), ncpSide); // Report generation.
@@ -83,19 +97,5 @@ public class AuditValidationService extends ValidationService {
         }
 
         return super.validateSchematron(object, schematron, ncpSide);
-    }
-
-    public static AuditValidationService getInstance() {
-        if (instance == null) {
-
-            instance = new AuditValidationService();
-        }
-        return instance;
-    }
-
-    /**
-     * Private constructor to avoid instantiation.
-     */
-    private AuditValidationService() {
     }
 }
