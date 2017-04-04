@@ -14,21 +14,22 @@ import epsos.openncp.protocolterminator.clientconnector.EpsosDocument1;
 import epsos.openncp.protocolterminator.clientconnector.GenericDocumentCode;
 import eu.epsos.util.EvidenceUtils;
 import eu.epsos.util.IheConstants;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.joda.time.DateTime;
+import org.opensaml.saml2.core.Assertion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import tr.com.srdc.epsos.util.Constants;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import org.apache.commons.lang.exception.ExceptionUtils;
-import org.slf4j.Logger;
-import org.joda.time.DateTime;
-import org.opensaml.saml2.core.Assertion;
-import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import tr.com.srdc.epsos.util.Constants;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 
 public class CDAServlet extends HttpServlet {
 
@@ -38,8 +39,8 @@ public class CDAServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static Logger log = LoggerFactory.getLogger(CDAServlet.class.getName());
 
-    public void doGet(HttpServletRequest req,
-            HttpServletResponse res)
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
 
         String exportType = ParamUtil.getString(req, "exportType");
@@ -53,9 +54,9 @@ public class CDAServlet extends HttpServlet {
             String hcid = req.getParameter("hcid");
 
             log.info("Retrieving XML document");
-            log.info("uuid: " + uuid);
-            log.info("repositoryId: " + repositoryId);
-            log.info("hcid: " + hcid);
+            log.info("uuid: '{}'", uuid);
+            log.info("repositoryId: '{}'", repositoryId);
+            log.info("hcid: '{}'", hcid);
 
             EpsosDocument selectedEpsosDocument = new EpsosDocument();
             String serviceUrl = EpsosHelperService.getConfigProperty(EpsosHelperService.PORTAL_CLIENT_CONNECTOR_URL);
@@ -68,9 +69,9 @@ public class CDAServlet extends HttpServlet {
             String selectedCountry = (String) session.getAttribute("selectedCountry");
 
             log.info("Getting assertions from session");
-            log.info("HCP ASS: " + hcpAssertion.getID());
+            log.info("HCP ASS: '{}'", hcpAssertion.getID());
             log.info("TRCA ASS: " + trcAssertion.getID());
-            log.info("SELECTED COUNTRY: " + selectedCountry);
+            log.info("SELECTED COUNTRY: '{}'", selectedCountry);
 
             User user = (User) session.getAttribute("user");
             if (Validator.isNotNull(user)) {
@@ -102,6 +103,7 @@ public class CDAServlet extends HttpServlet {
                 classCode.setValue(Constants.MRO_TITLE);
             }
 
+            //TODO: Fix languages management - or _.
             log.info("selectedCountry: " + selectedCountry);
             log.info("classCode: " + classCode);
 
@@ -244,6 +246,5 @@ public class CDAServlet extends HttpServlet {
             OutStream.close();
             log.error(ExceptionUtils.getStackTrace(ex));
         }
-
     }
 }
