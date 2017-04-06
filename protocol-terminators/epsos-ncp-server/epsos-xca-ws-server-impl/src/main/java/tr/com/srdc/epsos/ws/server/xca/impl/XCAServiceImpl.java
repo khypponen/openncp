@@ -639,9 +639,10 @@ public class XCAServiceImpl implements XCAServiceInterface {
 
     private String getLocation() {
         ConfigurationManagerService configManager = ConfigurationManagerService.getInstance();
-        String location = configManager.getServiceWSE(Constants.COUNTRY_CODE.toLowerCase(Locale.ENGLISH),
-                Constants.PatientService);
-
+        //String location = configManager.getServiceWSE(Constants.COUNTRY_CODE.toLowerCase(Locale.ENGLISH),
+        //                Constants.PatientService);
+        // EHNCP-1131
+        String location = "urn:oid:" + Constants.HOME_COMM_ID;
         return location;
     }
 
@@ -653,7 +654,6 @@ public class XCAServiceImpl implements XCAServiceInterface {
         re.setSeverity("urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:" + (isWarning ? "Warning" : "Error"));
         re.setCodeContext(codeContext);
         re.setValue(value);
-
         return re;
     }
 
@@ -664,6 +664,8 @@ public class XCAServiceImpl implements XCAServiceInterface {
         re.addAttribute(factory.createOMAttribute("errorCode", null, errorCode));
         String aux = "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:" + (isWarning ? "Warning" : "Error");
         re.addAttribute(factory.createOMAttribute("severity", null, aux));
+        // EHNCP-1131
+        re.addAttribute(factory.createOMAttribute("location", null, getLocation()));
         re.setText(value);
 
         return re;
