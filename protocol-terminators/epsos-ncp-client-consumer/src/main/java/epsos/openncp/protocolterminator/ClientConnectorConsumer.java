@@ -59,17 +59,45 @@ import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentDocument1;
 import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentRequest;
 import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentResponse;
 import epsos.openncp.pt.client.ClientConnectorServiceServiceStub;
+import eu.europa.ec.sante.ehdsi.openncp.evidence.utils.OutFlowEvidenceEmitterHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.apache.axis2.description.HandlerDescription;
+import org.apache.axis2.engine.AxisConfiguration;
+import org.apache.axis2.engine.Phase;
+import org.apache.axis2.phaseresolver.PhaseException;
 
 /*
  *  ClientConnectorServiceServiceTest Junit test case
  */
 public class ClientConnectorConsumer {
+    
+    private static final Logger logger = java.util.logging.Logger.getLogger(ClientConnectorConsumer.class.getName());
 
     private String epr;
     private final long TIMEOUT = 3 * 60 * 1000; // Three minutes
-
+    
     public ClientConnectorConsumer(String epr) {
-        this.epr = epr;
+            this.epr = epr;
+    }
+    
+    private void registerEvidenceEmitterHandler(ClientConnectorServiceServiceStub stub) throws AxisFault {        
+        /* Adding custom phase for evidence emitter processing */
+        logger.log(Level.INFO,"Adding custom phase for outflow evidence emitter processing");
+        HandlerDescription outFlowHandlerDescription = new HandlerDescription("OutFlowEvidenceEmitterHandler");
+        outFlowHandlerDescription.setHandler(new OutFlowEvidenceEmitterHandler());
+        AxisConfiguration axisConfiguration = stub._getServiceClient().getServiceContext().getConfigurationContext().getAxisConfiguration();
+        List<Phase> outFlowPhasesList = axisConfiguration.getOutFlowPhases();
+        Phase outFlowEvidenceEmitterPhase = new Phase("OutFlowEvidenceEmitterPhase");
+        try {
+            outFlowEvidenceEmitterPhase.addHandler(outFlowHandlerDescription);
+        } catch (PhaseException ex) {
+            java.util.logging.Logger.getLogger(ClientConnectorConsumer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        outFlowPhasesList.add(outFlowEvidenceEmitterPhase);
+        logger.log(Level.INFO,"Resetting global Out phases");
+        axisConfiguration.setGlobalOutPhase(outFlowPhasesList);
+        logger.log(Level.INFO,"Ended phases restrucruting");
     }
 
     /**
@@ -81,6 +109,7 @@ public class ClientConnectorConsumer {
         try {
             stub = new ClientConnectorServiceServiceStub(epr);
             stub._getServiceClient().getOptions().setTimeOutInMilliSeconds(TIMEOUT);
+            this.registerEvidenceEmitterHandler(stub);
         } catch (AxisFault ex) {
             throw new RuntimeException(ex);
         }
@@ -121,6 +150,7 @@ public class ClientConnectorConsumer {
         try {
             stub = new ClientConnectorServiceServiceStub(epr);
             stub._getServiceClient().getOptions().setTimeOutInMilliSeconds(TIMEOUT);
+            this.registerEvidenceEmitterHandler(stub);
         } catch (AxisFault ex) {
             throw new RuntimeException(ex);
         }
@@ -164,6 +194,7 @@ public class ClientConnectorConsumer {
         try {
             stub = new ClientConnectorServiceServiceStub(epr);
             stub._getServiceClient().getOptions().setTimeOutInMilliSeconds(TIMEOUT);
+            this.registerEvidenceEmitterHandler(stub);
         } catch (AxisFault ex) {
             throw new RuntimeException(ex);
         }
@@ -190,6 +221,7 @@ public class ClientConnectorConsumer {
         try {
             stub = new ClientConnectorServiceServiceStub(epr);
             stub._getServiceClient().getOptions().setTimeOutInMilliSeconds(TIMEOUT);
+            this.registerEvidenceEmitterHandler(stub);
         } catch (AxisFault ex) {
             throw new RuntimeException(ex);
         }
@@ -237,6 +269,7 @@ public class ClientConnectorConsumer {
         try {
             stub = new ClientConnectorServiceServiceStub(epr);
             stub._getServiceClient().getOptions().setTimeOutInMilliSeconds(TIMEOUT);
+            this.registerEvidenceEmitterHandler(stub);
         } catch (AxisFault ex) {
             throw new RuntimeException(ex);
         }

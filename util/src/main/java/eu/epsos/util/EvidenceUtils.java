@@ -199,7 +199,7 @@ public class EvidenceUtils {
         context.setSubmissionTime(submissionTime);
         context.setEvent(eventType);
         context.setMessageUUID(msguuid);
-        context.setAuthenticationMethod("http//:uri.etsi.org/REM/AuthMethod#Strong");
+        context.setAuthenticationMethod("http://uri.etsi.org/REM/AuthMethod#Strong");
         context.setRequest(request);
         context.setEnforcer(enforcePolicy);
 
@@ -387,7 +387,7 @@ public class EvidenceUtils {
         context.setSubmissionTime(submissionTime);
         context.setEvent(eventType);
         context.setMessageUUID(msguuid);
-        context.setAuthenticationMethod("http//:uri.etsi.org/REM/AuthMethod#Strong");
+        context.setAuthenticationMethod("http://uri.etsi.org/REM/AuthMethod#Strong");
         context.setRequest(request);
         context.setEnforcer(enforcePolicy);
         ObligationHandlerFactory handlerFactory = ObligationHandlerFactory

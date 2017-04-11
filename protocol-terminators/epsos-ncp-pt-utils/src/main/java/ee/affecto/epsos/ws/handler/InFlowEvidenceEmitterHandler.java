@@ -24,7 +24,7 @@ import org.w3c.dom.Document;
  * Currently supporting the generation of evidences in the following cases:
  *      NCP-B receives from Portal
  *      NCP-A receives from NCP-B
- *      NCP-B receives from NCP-A
+ *      NCP-B receives from NCP-A (left commented as the Evidence Emitter CP does not mandate generation of evidences on the response)
  *
  * @author jgoncalves
  */
@@ -129,27 +129,29 @@ public class InFlowEvidenceEmitterHandler extends AbstractHandler {
                     NRR
                     title = "NCPB_XCPD_RES"
                     eventType = ihe event
-                */
-                eventType = this.evidenceEmitterHandlerUtils.getEventTypeFromMessage(soapBody);
-                title = "NCPB_" + this.evidenceEmitterHandlerUtils.getTransactionNameFromMessage(soapBody);
-                //msgUUID = null; It stays as null because it's fetched from soap msg
-                LOG.debug("eventType: " + eventType);
-                LOG.debug("title: " + title);
                 
-                EvidenceUtils.createEvidenceREMNRR(envCanonicalized,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                            tr.com.srdc.epsos.util.Constants.SP_KEYSTORE_PATH,
-                            tr.com.srdc.epsos.util.Constants.SP_KEYSTORE_PASSWORD,
-                            tr.com.srdc.epsos.util.Constants.SP_PRIVATEKEY_ALIAS,
-                            tr.com.srdc.epsos.util.Constants.SC_KEYSTORE_PATH,
-                            tr.com.srdc.epsos.util.Constants.SC_KEYSTORE_PASSWORD,
-                            tr.com.srdc.epsos.util.Constants.SC_PRIVATEKEY_ALIAS,
-                            eventType,
-                            new DateTime(),
-                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                            title);
+                This will stay commented as the EE CP doesn't mandate the generation of evidences in the response
+                */
+//                eventType = this.evidenceEmitterHandlerUtils.getEventTypeFromMessage(soapBody);
+//                title = "NCPB_" + this.evidenceEmitterHandlerUtils.getTransactionNameFromMessage(soapBody);
+//                //msgUUID = null; It stays as null because it's fetched from soap msg
+//                LOG.debug("eventType: " + eventType);
+//                LOG.debug("title: " + title);
+//                
+//                EvidenceUtils.createEvidenceREMNRR(envCanonicalized,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                            tr.com.srdc.epsos.util.Constants.SP_KEYSTORE_PATH,
+//                            tr.com.srdc.epsos.util.Constants.SP_KEYSTORE_PASSWORD,
+//                            tr.com.srdc.epsos.util.Constants.SP_PRIVATEKEY_ALIAS,
+//                            tr.com.srdc.epsos.util.Constants.SC_KEYSTORE_PATH,
+//                            tr.com.srdc.epsos.util.Constants.SC_KEYSTORE_PASSWORD,
+//                            tr.com.srdc.epsos.util.Constants.SC_PRIVATEKEY_ALIAS,
+//                            eventType,
+//                            new DateTime(),
+//                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                            title);
             } else {
                 /* NCP-B receives from Portal, e.g.:
                     NRR
@@ -169,7 +171,7 @@ public class InFlowEvidenceEmitterHandler extends AbstractHandler {
 //                LOG.debug("msgUUID: " + msgUUID); //It stays as null because it's fetched from soap msg
                 
                 if (msgUUID != null) {
-                    // this is a Portal-NCPB interaction: msgUUID comes from IdA or is random
+                    // this is a Portal-NCPB interaction: msgUUID comes from IdA or TRCA or is random
                     EvidenceUtils.createEvidenceREMNRR(envCanonicalized,
                                 tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
                                 tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,

@@ -3,12 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ee.affecto.epsos.ws.handler;
+package eu.europa.ec.sante.ehdsi.openncp.evidence.utils;
 
-import epsos.ccd.gnomon.auditmanager.IHEEventType;
-import eu.epsos.util.xca.XCAConstants;
-import eu.epsos.util.xcpd.XCPDConstants;
-import eu.epsos.util.xdr.XDRConstants;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -29,7 +25,7 @@ import tr.com.srdc.epsos.util.Constants;
 import tr.com.srdc.epsos.util.XMLUtil;
 
 /**
- *  Ancillary methods to the In/Out-FlowEvidenceEmitter classes
+ *  Ancillary methods to the EvidenceEmitter class supporting In-Out flows in the Portal
  * 
  * @author jgoncalves
  */
@@ -61,51 +57,33 @@ public class EvidenceEmitterHandlerUtils {
         clientConnectorOperations = Collections.unmodifiableList(list);
     }
     
-    private static final Map<String,String> iheEvents; // maps the message type to its related IHE event
+    private static final Map<String,String> events; // maps the message type to its related ad-hoc event
     static {
         Map<String,String> map = new HashMap<>();
-        map.put(XCPDConstants.PATIENT_DISCOVERY_REQUEST, IHEEventType.epsosIdentificationServiceFindIdentityByTraits.getCode()); // ITI-55
-        map.put(XCPDConstants.PATIENT_DISCOVERY_RESPONSE, IHEEventType.epsosIdentificationServiceFindIdentityByTraits.getCode()); // ITI-55
-        map.put(XCAConstants.ADHOC_QUERY_REQUEST, IHEEventType.epsosPatientServiceList.getCode()); // ITI-38: same for PS or eP List
-        map.put(XCAConstants.ADHOC_QUERY_RESPONSE, IHEEventType.epsosPatientServiceList.getCode()); // ITI-38: same for PS or eP List
-        map.put(XCAConstants.RETRIEVE_DOCUMENTSET_REQUEST, IHEEventType.epsosPatientServiceRetrieve.getCode()); // ITI-39: same for PS or eP Retrieve
-        map.put(XCAConstants.RETRIEVE_DOCUMENTSET_RESPONSE, IHEEventType.epsosPatientServiceRetrieve.getCode()); // ITI-39: same for PS or eP Retrieve
-        map.put(XDRConstants.PROVIDE_AND_REGISTER_DOCUMENT_SET_REQ_STR, IHEEventType.epsosDispensationServiceInitialize.getCode()); // ITI-41: same for Dispensation Initialize/Discard
-        map.put(XDRConstants.DOC_RCP_PRVDANDRGSTDOCSETB_STR, IHEEventType.epsosConsentServicePut.getCode()); // ITI-41: same for Consent Put/Discard
-        map.put(XDRConstants.REGISTRY_RESPONSE_STR, IHEEventType.epsosDispensationServiceInitialize.getCode()); // ITI-41: same for Dispensation Initialize/Discard and Consent Put/Discard
         // Portal-NCP interactions
-        map.put(CLIENT_CONNECTOR_SUBMIT_DOCUMENT_REQUEST,"PORTAL_PD_REQ");
-        map.put(CLIENT_CONNECTOR_SUBMIT_DOCUMENT_RESPONSE, "NCPB_XDR_RES");
-        map.put(CLIENT_CONNECTOR_QUERY_PATIENT_REQUEST, "PORTAL_PD_REQ");
-        map.put(CLIENT_CONNECTOR_QUERY_PATIENT_RESPONSE, "NCPB_PD_RES");
-        map.put(CLIENT_CONNECTOR_QUERY_DOCUMENTS_REQUEST, "PORTAL_DQ_REQ");
-        map.put(CLIENT_CONNECTOR_QUERY_DOCUMENTS_RESPONSE, "NCPB_DQ_RES");
-        map.put(CLIENT_CONNECTOR_RETRIEVE_DOCUMENT_REQUEST, "PORTAL_DR_REQ");
-        map.put(CLIENT_CONNECTOR_RETRIEVE_DOCUMENT_RESPONSE, "NCPB_DR_RES");
-        iheEvents = Collections.unmodifiableMap(map);
+        map.put(CLIENT_CONNECTOR_SUBMIT_DOCUMENT_REQUEST,"NI_XDR_REQ");
+        map.put(CLIENT_CONNECTOR_SUBMIT_DOCUMENT_RESPONSE, "NI_XDR_RES");
+        map.put(CLIENT_CONNECTOR_QUERY_PATIENT_REQUEST, "NI_PD_REQ");
+        map.put(CLIENT_CONNECTOR_QUERY_PATIENT_RESPONSE, "NI_PD_RES");
+        map.put(CLIENT_CONNECTOR_QUERY_DOCUMENTS_REQUEST, "NI_DQ_REQ");
+        map.put(CLIENT_CONNECTOR_QUERY_DOCUMENTS_RESPONSE, "NI_DQ_RES");
+        map.put(CLIENT_CONNECTOR_RETRIEVE_DOCUMENT_REQUEST, "NI_DR_REQ");
+        map.put(CLIENT_CONNECTOR_RETRIEVE_DOCUMENT_RESPONSE, "NI_DR_RES");
+        events = Collections.unmodifiableMap(map);
     }
     
     private static final Map<String,String> transactionNames; // maps the message type to the ad-hoc transaction name to be placed in the evidence filename
     static {
         Map<String,String> map = new HashMap<>();
-        map.put(XCPDConstants.PATIENT_DISCOVERY_REQUEST, "XCPD_REQ");
-        map.put(XCPDConstants.PATIENT_DISCOVERY_RESPONSE, "XCPD_RES");
-        map.put(XCAConstants.ADHOC_QUERY_REQUEST, "XCA_LIST_REQ");
-        map.put(XCAConstants.ADHOC_QUERY_RESPONSE, "XCA_LIST_RES");
-        map.put(XCAConstants.RETRIEVE_DOCUMENTSET_REQUEST, "XCA_RETRIEVE_REQ");
-        map.put(XCAConstants.RETRIEVE_DOCUMENTSET_RESPONSE, "XCA_RETRIEVE_RES");
-        map.put(XDRConstants.PROVIDE_AND_REGISTER_DOCUMENT_SET_REQ_STR, "XDR_SUBMIT_REQ");
-        map.put(XDRConstants.DOC_RCP_PRVDANDRGSTDOCSETB_STR, "XDR_SUBMIT_REQ");
-        map.put(XDRConstants.REGISTRY_RESPONSE_STR, "XDR_SUBMIT_RES");
         // Portal-NCP interactions
-        map.put(CLIENT_CONNECTOR_SUBMIT_DOCUMENT_REQUEST,"PORTAL_XDR_REQ_RECEIVED");
-        map.put(CLIENT_CONNECTOR_SUBMIT_DOCUMENT_RESPONSE, "NCPB_XDR_RES_SENT");
-        map.put(CLIENT_CONNECTOR_QUERY_PATIENT_REQUEST, "PORTAL_PD_REQ_RECEIVED");
-        map.put(CLIENT_CONNECTOR_QUERY_PATIENT_RESPONSE, "NCPB_PD_RES_SENT");
-        map.put(CLIENT_CONNECTOR_QUERY_DOCUMENTS_REQUEST, "PORTAL_DQ_REQ_RECEIVED");
-        map.put(CLIENT_CONNECTOR_QUERY_DOCUMENTS_RESPONSE, "NCPB_DQ_RES_SENT");
-        map.put(CLIENT_CONNECTOR_RETRIEVE_DOCUMENT_REQUEST, "PORTAL_DR_REQ_RECEIVED");
-        map.put(CLIENT_CONNECTOR_RETRIEVE_DOCUMENT_RESPONSE, "NCPB_DR_RES_SENT");
+        map.put(CLIENT_CONNECTOR_SUBMIT_DOCUMENT_REQUEST,"NI_XDR_REQ_SENT");
+        map.put(CLIENT_CONNECTOR_SUBMIT_DOCUMENT_RESPONSE, "NI_XDR_RES_RECEIVED");
+        map.put(CLIENT_CONNECTOR_QUERY_PATIENT_REQUEST, "NI_PD_REQ_SENT");
+        map.put(CLIENT_CONNECTOR_QUERY_PATIENT_RESPONSE, "NI_PD_RES_RECEIVED");
+        map.put(CLIENT_CONNECTOR_QUERY_DOCUMENTS_REQUEST, "NI_DQ_REQ_SENT");
+        map.put(CLIENT_CONNECTOR_QUERY_DOCUMENTS_RESPONSE, "NI_DQ_RES_RECEIVED");
+        map.put(CLIENT_CONNECTOR_RETRIEVE_DOCUMENT_REQUEST, "NI_DR_REQ_SENT");
+        map.put(CLIENT_CONNECTOR_RETRIEVE_DOCUMENT_RESPONSE, "NI_DR_RES_RECEIVED");
         transactionNames = Collections.unmodifiableMap(map);
     }
     
@@ -114,22 +92,13 @@ public class EvidenceEmitterHandlerUtils {
     public String getEventTypeFromMessage(SOAPBody soapBody) {
         String messageElement = soapBody.getFirstElementLocalName();
         LOG.debug("Message body element: " + messageElement);
-        return iheEvents.get(messageElement);
+        return events.get(messageElement);
     }
     
     public String getTransactionNameFromMessage(SOAPBody soapBody) {
         String messageElement = soapBody.getFirstElementLocalName();
         LOG.debug("Message body element: " + messageElement);
         return transactionNames.get(messageElement);
-    }
-    
-    public String getServerSideTitle(SOAPBody soapBody) {
-        String operation = soapBody.getFirstElementLocalName();
-        String title = transactionNames.get(operation);
-        if (!this.isClientConnectorOperation(operation)) {
-            title = "NCPA_" + title;
-        }
-        return title;
     }
     
     private boolean isClientConnectorOperation(String operation) {

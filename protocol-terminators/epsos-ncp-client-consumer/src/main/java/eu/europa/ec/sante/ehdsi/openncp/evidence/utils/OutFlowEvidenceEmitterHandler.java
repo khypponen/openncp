@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ee.affecto.epsos.ws.handler;
+package eu.europa.ec.sante.ehdsi.openncp.evidence.utils;
 
 import epsos.ccd.gnomon.auditmanager.EventOutcomeIndicator;
 import eu.epsos.util.EvidenceUtils;
@@ -11,7 +11,6 @@ import org.apache.axiom.soap.SOAPBody;
 import org.apache.axiom.soap.SOAPHeader;
 import org.apache.axis2.AxisFault;
 import org.apache.axis2.context.MessageContext;
-import org.apache.axis2.description.AxisService;
 import org.apache.axis2.engine.Handler;
 import org.apache.axis2.handlers.AbstractHandler;
 import org.apache.log4j.Logger;
@@ -19,13 +18,10 @@ import org.joda.time.DateTime;
 import org.w3c.dom.Document;
 
 /**
- * OutFlowEvidenceEmitter
- * Generates all NROs
+ * EvidenceEmitterHandler
+ * Generates all NROs for the Portal
  * Currently supporting the generation of evidences in the following cases:
- *      NCP-B sends to NCP-A
- *      NCP-A replies to NCP-B (left commented as the Evidence Emitter CP does not mandate generation of evidences on the response)
- *      NCP-B replies to Portal (left commented as the Evidence Emitter CP does not mandate generation of evidences on the response)
- *
+ *      Portal sends request to NCP-B *
  * @author jgoncalves
  */
 public class OutFlowEvidenceEmitterHandler extends AbstractHandler {
@@ -116,96 +112,30 @@ public class OutFlowEvidenceEmitterHandler extends AbstractHandler {
         
             SOAPHeader soapHeader = msgcontext.getEnvelope().getHeader();
             SOAPBody soapBody = msgcontext.getEnvelope().getBody();
-            String eventType = null;
-            String title = null;
-            String msgUUID = null;
-            AxisService axisService = msgcontext.getServiceContext().getAxisService();
-            boolean isClientSide = axisService.isClientSide();
-            LOG.debug("AxisService name: " + axisService.getName());
-            LOG.debug("AxisService isClientSide: " + isClientSide);
-            if (isClientSide) {
-                /* NCP-B sends to NCP-A, e.g.: 
-                    NRO
-                    title = "NCPB_XCPD_REQ"
-                    eventType = ihe event 
-                */
-                eventType = this.evidenceEmitterHandlerUtils.getEventTypeFromMessage(soapBody);
-                title = "NCPB_" + this.evidenceEmitterHandlerUtils.getTransactionNameFromMessage(soapBody);
-                //msgUUID = null; It stays as null because it's fetched from soap msg
-                LOG.debug("eventType: " + eventType);
-                LOG.debug("title: " + title);
-                
-                EvidenceUtils.createEvidenceREMNRO(envCanonicalized,
+            String eventType = this.evidenceEmitterHandlerUtils.getEventTypeFromMessage(soapBody);
+            String title = this.evidenceEmitterHandlerUtils.getTransactionNameFromMessage(soapBody);
+            String msgUUID = this.evidenceEmitterHandlerUtils.getMsgUUID(soapHeader, soapBody);
+            LOG.debug("eventType: " + eventType);
+            LOG.debug("title: " + title);
+            LOG.debug("msgUUID: " + msgUUID);
+            
+            /* Portal sends request to NCP-B*/
+            EvidenceUtils.createEvidenceREMNRO(envCanonicalized,
+                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
                             tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
                             tr.com.srdc.epsos.util.Constants.SC_KEYSTORE_PATH,
                             tr.com.srdc.epsos.util.Constants.SC_KEYSTORE_PASSWORD,
                             tr.com.srdc.epsos.util.Constants.SC_PRIVATEKEY_ALIAS,
-                            tr.com.srdc.epsos.util.Constants.SP_KEYSTORE_PATH,
-                            tr.com.srdc.epsos.util.Constants.SP_KEYSTORE_PASSWORD,
-                            tr.com.srdc.epsos.util.Constants.SP_PRIVATEKEY_ALIAS,
                             eventType,
                             new DateTime(),
                             EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                            title);
-            } else {
-                /* NCP-A replies to NCP-B, e.g.: 
-                    NRO
-                    title = "NCPA_XCPD_RES"
-                    eventType = ihe event
-                NCP-B replies to Portal, e.g.: 
-                    NRO
-                    title = "NCPB_PD_RES_SENT"
-                    eventType = "NCPB_PD_RES"
-                    msguuid = random
-                */
-                /* Joao: as per the CP, evidence generation on the way back is optional,
-                so I leave it commented. If in the future it's decided that is mandatory,
-                just uncomment.
-                */
-//                eventType = this.evidenceEmitterHandlerUtils.getEventTypeFromMessage(soapBody);
-//                title = this.evidenceEmitterHandlerUtils.getServerSideTitle(soapBody);
-//                msgUUID = this.evidenceEmitterHandlerUtils.getMsgUUID(soapHeader, soapBody);
-//                LOG.debug("eventType: " + eventType);
-//                LOG.debug("title: " + title);
-//                LOG.debug("msgUUID: " + msgUUID);
-//                
-//                if (msgUUID != null) {
-//                    // this is a Portal-NCPB interaction: msgUUID comes from IdA or is random
-//                    EvidenceUtils.createEvidenceREMNRO(envCanonicalized,
-//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-//                                tr.com.srdc.epsos.util.Constants.SC_KEYSTORE_PATH,
-//                                tr.com.srdc.epsos.util.Constants.SC_KEYSTORE_PASSWORD,
-//                                tr.com.srdc.epsos.util.Constants.SC_PRIVATEKEY_ALIAS,
-//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-//                                eventType,
-//                                new DateTime(),
-//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-//                                title,
-//                                msgUUID);
-//                } else {
-//                    // this isn't a Portal-NCPB interaction (it's NCPB-NCPA), so msgUUID is retrieved from the soap header
-//                    EvidenceUtils.createEvidenceREMNRO(envCanonicalized,
-//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-//                                tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-//                                tr.com.srdc.epsos.util.Constants.SP_KEYSTORE_PATH,
-//                                tr.com.srdc.epsos.util.Constants.SP_KEYSTORE_PASSWORD,
-//                                tr.com.srdc.epsos.util.Constants.SP_PRIVATEKEY_ALIAS,
-//                                tr.com.srdc.epsos.util.Constants.SC_KEYSTORE_PATH,
-//                                tr.com.srdc.epsos.util.Constants.SC_KEYSTORE_PASSWORD,
-//                                tr.com.srdc.epsos.util.Constants.SC_PRIVATEKEY_ALIAS,
-//                                eventType,
-//                                new DateTime(),
-//                                EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-//                                title);        
-//                }
-            }
+                            title,
+                            msgUUID);
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
