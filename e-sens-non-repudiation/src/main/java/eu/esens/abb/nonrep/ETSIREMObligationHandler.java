@@ -165,7 +165,7 @@ public class ETSIREMObligationHandler implements ObligationHandler {
 				}
 				List<AttributeAssignmentType> listAttr = eSensObl.getAttributeAssignments();
 
-				type.setVersion(find(REM_NRO_PREFIX + ":version", listAttr));
+				type.setVersion(find(REM_NRR_PREFIX + ":version", listAttr));
 				type.setEventCode(outcome);
 
 				type.setEvidenceIdentifier(UUID.randomUUID().toString());
@@ -175,7 +175,7 @@ public class ETSIREMObligationHandler implements ObligationHandler {
 				 */
 				// This is the Pol field of the ISO13888 token
 				EvidenceIssuerPolicyID eipid = new EvidenceIssuerPolicyID();
-				eipid.getPolicyIDs().add(find(REM_NRO_PREFIX + ":PolicyID", listAttr));
+				eipid.getPolicyIDs().add(find(REM_NRR_PREFIX + ":PolicyID", listAttr));
 				type.setEvidenceIssuerPolicyID(eipid);
 
 				mapToIso(type);
