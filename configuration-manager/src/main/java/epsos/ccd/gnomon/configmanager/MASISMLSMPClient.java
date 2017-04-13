@@ -89,10 +89,11 @@ import java.util.concurrent.ConcurrentHashMap;
  *      Due to licensing problems, the available SML / SMP clients can't be
  *      used. They are usually licensed under EUPL or MPL, which clashes with
  *      the OpenNCP licensing. <br/>
- *
+ * @deprecated because of the usage of SMLSMPClient wrapping DIGIT implementation (@see SMLSMPClient.java)
  * @author max
  *
  */
+@Deprecated
 public class MASISMLSMPClient {
 
 	/** This contains that message digester, used to create the lookup. */

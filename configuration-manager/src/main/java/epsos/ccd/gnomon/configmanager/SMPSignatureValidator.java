@@ -27,6 +27,11 @@ import sun.misc.IOUtils;
 
 /**
  * This code was copied&pasted, apologizes for not refactoring.
+ * 
+ * This methods validates a signature. Note that in the setKeySaved, we should
+ * authenticate the key TODO TODO TODO
+ * 
+ * @author max
  */
 public class SMPSignatureValidator {
 	private X509Certificate savedKey;
@@ -127,7 +132,8 @@ public class SMPSignatureValidator {
 					"No key found! Either the namespaces are wrong, or there is a algorithm which is not sha 256.");
 		}
 
-		// Massi + Jerome + Joao 13/4/2017. Allow for RSA_SHA1 signatures because of the gazelle CA
+		// Massi + Jerome + Joao 13/4/2017. Allow for RSA_SHA1 signatures
+		// because of the gazelle CA
 		boolean algEquals(String algURI, String algName) {
 			if ((algName.equalsIgnoreCase("DSA") && algURI.equalsIgnoreCase(SignatureMethod.DSA_SHA1))
 					|| (algName.equalsIgnoreCase("RSA") && algURI.equalsIgnoreCase(SignatureMethod.RSA_SHA1))

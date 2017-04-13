@@ -8,7 +8,6 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.security.KeyStore;
-import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -30,17 +29,33 @@ import org.xml.sax.SAXException;
 import eu.europa.ec.dynamicdiscovery.core.security.impl.DefaultSignatureValidator;
 import eu.europa.ec.dynamicdiscovery.exception.TechnicalException;
 
+/**
+ * Customized signature validation code. This class uses the code from DIGIT to validate
+ * the signature of the SMP record, and adds the custom valiation to enforce the direct 
+ * brokered trust. Part of this code comes from Pawel Gutowsky from DIGIT.
+ * @author max
+ *
+ */
 public class CustomizedSignatureValidator extends DefaultSignatureValidator {
 	
-	
-	public CustomizedSignatureValidator(KeyStore trustStore) throws TechnicalException {
-		super(trustStore);
-		// TODO Auto-generated constructor stub
-	}
-
+	/** OASIS BDXR namespace. */
 	private static final String OASIS_NS = "http://docs.oasis-open.org/bdxr/ns/SMP/2016/05";
 
-	
+
+	/**
+	 * Constructor. 
+	 * @param trustStore The truststore which MUST contain the certificate and the CA path for the SMP signature.
+	 * @throws TechnicalException
+	 */
+	public CustomizedSignatureValidator(KeyStore trustStore) throws TechnicalException {
+		super(trustStore);
+	}
+
+
+	/**
+	 * Verify all the signatures. It calls the verify in the super() and then it applies the verification for the
+	 * OpenNCP signature. 
+	 */
 	@Override
 	public X509Certificate verify(Document arg0) throws TechnicalException {
 		try {
@@ -50,12 +65,9 @@ public class CustomizedSignatureValidator extends DefaultSignatureValidator {
 			 * the one in the extension.
 			 * 
 			 */
-			printDocument(arg0, System.out);
 			
-//			Element smpSigPointer = findSignatureByParentNode(arg0.getDocumentElement());
 			SMPSignatureValidator val = new SMPSignatureValidator();  /// validate SMP signature
-//			val.validateSignature(smpSigPointer);
-//			X509Certificate smpCert = val.getKeySaved();
+
 			Element smNode = findFirstElementByName(arg0, "ServiceMetadata"); // pointing to an element with the signature
 			Document docUnwrapped = buildDocWithGivenRoot(smNode); // building a new document out of it
 			Element siSigPointer = findServiceInfoSig(docUnwrapped);
@@ -68,6 +80,16 @@ public class CustomizedSignatureValidator extends DefaultSignatureValidator {
 
 	}
 
+	/**
+	 * We need to build a new document to validate the signature of the SMP. Probably it's a bug
+	 * of the jaxp parser. 
+	 * @param smNode The node for the service metadata
+	 * @return The newly created document with all the other values
+	 * @throws ParserConfigurationException 
+	 * @throws TransformerException
+	 * @throws IOException
+	 * @throws SAXException
+	 */
 	private Document buildDocWithGivenRoot(Element smNode)
 			throws ParserConfigurationException, TransformerException, IOException, SAXException {
 		Document docUnwrapped = getDocumentBuilder().newDocument();
@@ -79,21 +101,40 @@ public class CustomizedSignatureValidator extends DefaultSignatureValidator {
 		// _Probably_ SUN's implementation doesn't import correctly signatures
 		// between two different documents.
 		String strUnwrapped = marshall(docUnwrapped);
-		System.out.println(strUnwrapped);
 		return parseDocument(strUnwrapped);
 	}
 
+	/**
+	 * Parse an input stream into DOM
+	 * @param docContent 
+	 * @return the DOM
+	 * @throws IOException
+	 * @throws SAXException
+	 * @throws ParserConfigurationException
+	 */
 	private Document parseDocument(String docContent) throws IOException, SAXException, ParserConfigurationException {
 		InputStream inputStream = new ByteArrayInputStream(docContent.getBytes());
 		return getDocumentBuilder().parse(inputStream);
 	}
 
+	/**
+	 * 
+	 * @return the DocumentBuilderFactory
+	 * @throws ParserConfigurationException
+	 */
 	private DocumentBuilder getDocumentBuilder() throws ParserConfigurationException {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		dbf.setNamespaceAware(true);
 		return dbf.newDocumentBuilder();
 	}
 
+	/**
+	 * From DOM to String
+	 * @param doc the DOM
+	 * @return the string
+	 * @throws TransformerException
+	 * @throws UnsupportedEncodingException
+	 */
 	private String marshall(Document doc) throws TransformerException, UnsupportedEncodingException {
 		TransformerFactory tf = TransformerFactory.newInstance();
 		Transformer trans = tf.newTransformer();
@@ -102,11 +143,27 @@ public class CustomizedSignatureValidator extends DefaultSignatureValidator {
 		return stream.toString("UTF-8");
 	}
 
+	/** 
+	 * Searches for the ServiceInformation, element who holds the extension and the signature for the NCP
+	 * @param doc the DOM
+	 * @return the element with the signature
+	 * @throws ParserConfigurationException
+	 * @throws SAXException
+	 * @throws IOException
+	 */
 	private Element findServiceInfoSig(Document doc) throws ParserConfigurationException, SAXException, IOException {
 		Element extension = findExtensionInServiceInformation(doc);
 		return findSignatureByParentNode(extension);
 	}
 
+	/**
+	 * Get the Extension element (holding the NCP signature)
+	 * @param doc the DOM
+	 * @return the signature's encapsulated in the extension
+	 * @throws ParserConfigurationException
+	 * @throws SAXException
+	 * @throws IOException
+	 */
 	private Element findExtensionInServiceInformation(Document doc)
 			throws ParserConfigurationException, SAXException, IOException {
 		Element serviceInformation = findFirstElementByName(doc, "ServiceInformation");
@@ -125,11 +182,22 @@ public class CustomizedSignatureValidator extends DefaultSignatureValidator {
 		return extension;
 	}
 
+	/**
+	 * 
+	 * @param doc
+	 * @param elementName
+	 * @return
+	 */
 	private Element findFirstElementByName(Document doc, String elementName) {
 		NodeList elements = doc.getElementsByTagNameNS(OASIS_NS, elementName);
 		return (Element) elements.item(0);
 	}
 
+	/**
+	 * Find the Signature element
+	 * @param sigParent
+	 * @return
+	 */
 	private Element findSignatureByParentNode(Element sigParent) {
 		for (Node child = sigParent.getFirstChild(); child != null; child = child.getNextSibling()) {
 			if ("Signature".equals(child.getLocalName())

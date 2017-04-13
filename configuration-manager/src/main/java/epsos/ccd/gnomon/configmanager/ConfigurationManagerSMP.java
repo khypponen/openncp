@@ -2,11 +2,19 @@ package epsos.ccd.gnomon.configmanager;
 
 import eu.epsos.configmanager.database.HibernateUtil;
 import eu.epsos.configmanager.database.model.Property;
+
+import org.apache.commons.codec.binary.Base64;
 import org.hibernate.PropertyNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.net.URL;
+import java.security.KeyStore;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.List;
@@ -63,26 +71,9 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 	private static final HashMap<String, ServiceProcessItem> mapMap = new HashMap<>();
 
 	static {
-		mapMap.put("PatientIdentificationService", new ServiceProcessItem(new String[]{"ITI-55"}, new String[]{"ITI-55"}));
+		mapMap.put("PatientIdentificationService",
+				new ServiceProcessItem(new String[] { "ITI-55" }, new String[] { "ITI-55" }));
 	}
-//	static {
-//		mapMap.put("ConsentService",
-//				new ServiceProcessItem(new String[] { "epsosConsentService::Put", "epsosConsentService::Discard" },
-//						new String[] { "epsos-51", "epsos-52" }, null));
-//		mapMap.put("OrderService",
-//				new ServiceProcessItem(new String[] { "epsosOrderService::List" }, new String[] { "epsos-31" }, null));
-//		mapMap.put("PatientIdentificationService", new ServiceProcessItem(
-//				new String[] { "epsosIdentityService::FindIdentityByTraits" }, new String[] { "epsos-11" }, null));
-//		mapMap.put("PatientService", new ServiceProcessItem(new String[] { "epsosPatientService::List" },
-//				new String[] { "epsos-21" }, null));
-//		mapMap.put("DispensationService",
-//				new ServiceProcessItem(
-//						new String[] { "epsosDispensationService::Initialize", "epsosDispensationService::Discard" },
-//						new String[] { "epsos-41", "epsos-42" }, null));
-//		mapMap.put("VPNGateway", new ServiceProcessItem(new String[] { "urn:ehealth:ncp:vpngateway" },
-//				new String[] { "epsos-91" }, null)); // not
-//		// sure
-//	}
 
 	/** The hibernate session. */
 
@@ -125,10 +116,10 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 	private void populate() {
 		l.debug("Loading all the values");
 		long start = System.currentTimeMillis();
-		
+
 		@SuppressWarnings("unchecked")
 		List<Property> properties = session.createCriteria(Property.class).list();
-		
+
 		long end = System.currentTimeMillis();
 		long total = end - start;
 		l.debug("Getting all the properties took: " + total);
@@ -143,7 +134,7 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 			String value = property.getValue();
 			PropertySearchableContainer psc = new PropertySearchableContainer();
 			psc.setValue(value);
-//			psc.setSearchable(property.isSMP());
+			// psc.setSearchable(property.isSMP());
 			configuration.put(name, psc);
 			l.debug("Added the couple (name, value); " + name + ":" + value);
 		}
@@ -166,20 +157,22 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 		l.debug("Searching for " + key);
 		l.debug("Trying hashmap first");
 		PropertySearchableContainer psc = configuration.get(key);
-		
-		// Ok, here two things: one is that the entry does not exist, the second is that it is not 
-		// Searchable. So, if it does not exist, we try SMP anyway. If it exists, then we use it. 
-		// To update we remove first and we re-add it. 
+
+		// Ok, here two things: one is that the entry does not exist, the second
+		// is that it is not
+		// Searchable. So, if it does not exist, we try SMP anyway. If it
+		// exists, then we use it.
+		// To update we remove first and we re-add it.
 		if (psc == null) {
 			l.debug("Nothing found in the hashmap, let's try to SMP");
-				String value = query(key);
-				if (value != null) {
-					PropertySearchableContainer psc1 = new PropertySearchableContainer();
-					psc1.setSearchable(true);
-					psc1.setValue(value);
-					configuration.put(key, psc1);
-					psc = psc1;
-				}
+			String value = query(key);
+			if (value != null) {
+				PropertySearchableContainer psc1 = new PropertySearchableContainer();
+				psc1.setSearchable(true);
+				psc1.setValue(value);
+				configuration.put(key, psc1);
+				psc = psc1;
+			}
 		}
 		if (psc == null) {
 			l.debug("Value is still null, let's run TSLSynchronizer");
@@ -189,7 +182,6 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 			l.debug("Returning the value: " + psc.getValue());
 			return psc.getValue();
 		}
-		
 
 		// TODO
 		return null;
@@ -236,42 +228,73 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 		SMLSMPClient client = new SMLSMPClient();
 		try {
 			l.debug("Doing SML/SMP");
-			client.lookup(countryCode, documentType, false);
+			client.lookup(countryCode, documentType);
 			l.debug("Founda values!!!!");
 			/*
-			 * What to do with the property? One is to return to the caller the endpoint, 
-			 * the second is to put it into the certificate
+			 * What to do with the property? One is to return to the caller the
+			 * endpoint, the second is to put it into the certificate
 			 */
 			X509Certificate cert = client.getCertificate();
 			if (cert != null) {
-				l.debug("Storing certificate in truststore");
-//				String subject = cert.getSubjectDN().getName();
-//				String value = Base64.encodeBase64String(MessageDigest.getInstance("MD5").digest(subject.getBytes()));
-//				TSLUtils.storeCertificateToTrustStore(cert, value);
+				l.debug("Storing the certificate in the truststore");
+				String subject = cert.getSubjectDN().getName();
+				String value = Base64.encodeBase64String(MessageDigest.getInstance("MD5").digest(subject.getBytes()));
+				storeCertificateToTrustStore(cert, value);
 			}
 			URL endpoint = client.getEndpointReference();
+			l.debug("Found endpoint: " + endpoint);
 			if (endpoint != null) {
 				return endpoint.toString();
 			} else {
 				return null;
 			}
 		} catch (SMLSMPClientException e) {
-			l.error("SMP/SML Exception",e);
+			l.error("SMP/SML Exception", e);
+			return null;
+		} catch (NoSuchAlgorithmException e) {
+			l.error("Invalid exception in message digest", e);
 			return null;
 		}
 
+	}
 
+	private void storeCertificateToTrustStore(X509Certificate cert, String value) throws SMLSMPClientException {
+		ConfigurationManagerService cms = ConfigurationManagerService.getInstance();
+		String TRUST_STORE = cms.getProperty("TRUSTSTORE_PATH");
+		String TRUST_STORE_PASS = cms.getProperty("TRUSTSTORE_PASSWORD");
+		l.debug("Storing in truststore: " + TRUST_STORE);
+		l.debug("Storing the certificate with DN" + cert.getSubjectDN() + "and SN " + cert.getSerialNumber());
 
+		try {
+			KeyStore keystore = KeyStore.getInstance(KeyStore.getDefaultType());
+			File keystoreFile = new File(TRUST_STORE);
+			// Load the keystore contents
+			FileInputStream in = new FileInputStream(keystoreFile);
+			keystore.load(in, TRUST_STORE_PASS.toCharArray());
+			in.close();
+
+			keystore.setCertificateEntry(value, cert);
+			l.debug("CERTALIAS: " + value);
+			// Save the new keystore contents
+			FileOutputStream out = new FileOutputStream(keystoreFile);
+			keystore.store(out, TRUST_STORE_PASS.toCharArray());
+			out.close();
+			
+		} catch (Exception e) {
+			l.error("Unable to store the message in the truststore", e);
+			throw new SMLSMPClientException(e);
+		}
 	}
 
 	private ServiceProcessItem map(String value) {
 		l.debug("Trying to map" + value);
-		ServiceProcessItem myValue = mapMap.get(value); // always return the first, is it ok?????
-									// we assume they have the same
-									// cetificate for both services
+		ServiceProcessItem myValue = mapMap.get(value); // always return the
+														// first, is it ok?????
+		// we assume they have the same
+		// cetificate for both services
 		l.debug("found " + myValue.toString());
 		return myValue;
-		
+
 	}
 
 	/**
@@ -292,6 +315,9 @@ public final class ConfigurationManagerSMP implements ConfigurationManagerInt {
 		throw new IllegalArgumentException("Unable to set WSE: wrong concept in SMP");
 	}
 
+	/**
+	 * This method persists the updated property.
+	 */
 	@Override
 	public String updateProperty(String key, String value) {
 		OLDConfigurationManagerDb.getInstance().updateProperty(key, value);
