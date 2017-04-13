@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<parent>
 		<artifactId>openncp</artifactId>
@@ -7,82 +7,32 @@
 		<version>2.5.0.RC1-SNAPSHOT</version>
 	</parent>
 
-    <modelVersion>4.0.0</modelVersion>
-    <artifactId>openncp-consent</artifactId>
-    <name>OpenNCP Consent Manager</name>
-    <organization>
-        <name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
-        <url>www.srdc.com.tr</url>
-    </organization>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>openncp-consent</artifactId>
+	<name>OpenNCP Consent Manager</name>
+	<organization>
+		<name>SRDC Yazilim Arastirma ve Gelistirme ve Danismanlik Tic. Ltd. Sti.</name>
+		<url>www.srdc.com.tr</url>
+	</organization>
 
-    <dependencies>
-        <dependency>
-            <groupId>eu.europa.ec.sante.ehdsi</groupId>
-            <artifactId>openncp-util</artifactId>
-            <version>${project.version}</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <axiomReleaseVersion>1.2.13</axiomReleaseVersion>
-    </properties>
-
-    <build>
-        <plugins>
-            <!--<plugin>-->
-                <!--<groupId>org.jvnet.jaxb2.maven2</groupId>-->
-                <!--<artifactId>maven-jaxb2-plugin</artifactId>-->
-                <!--<version>0.13.1</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-
-                        <!--<id>set-additional-system-properties</id>-->
-
-                        <!--<goals>-->
-
-                            <!--<goal>set-system-properties</goal>-->
-
-                        <!--</goals>-->
-
-                    <!--</execution>-->
-                    <!--<execution>-->
-                        <!--<goals>-->
-                            <!--<goal>generate</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                    <!--&lt;!&ndash; The name of your generated source package &ndash;&gt;-->
-                    <!--<bindingDirectory>src/main/resources</bindingDirectory>-->
-                    <!--<accessExternalDTD>all</accessExternalDTD>-->
-                    <!--&lt;!&ndash;<bindingIncludes>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<include>bindings.xjb</include>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</bindingIncludes>&ndash;&gt;-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-            <!--<plugin>-->
-                <!--<groupId>org.codehaus.mojo</groupId>-->
-                <!--<artifactId>jaxb2-maven-plugin</artifactId>-->
-
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>xjc</id>-->
-                        <!--<goals>-->
-                            <!--<goal>xjc</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                    <!--&lt;!&ndash; The package of your generated sources &ndash;&gt;-->
-                    <!--<packageName>com.example.myschema</packageName>-->
-                    <!--<sources>-->
-                        <!--<source>src/main/resources</source>-->
-
-                    <!--</sources>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-        </plugins>
-    </build>
+	<dependencies>
+		<dependency>
+			<groupId>eu.europa.ec.sante.ehdsi</groupId>
+			<artifactId>openncp-util</artifactId>
+			<version>${project.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<!--<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4jVersion}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>-->
+	</dependencies>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<axiomReleaseVersion>1.2.13</axiomReleaseVersion>
+		<!--<log4jVersion>1.2.17</log4jVersion>-->
+	</properties>
 </project>
