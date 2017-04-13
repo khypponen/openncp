@@ -19,6 +19,7 @@ import com.liferay.portal.util.PortalUtil;
 import com.liferay.portlet.PortletURLFactoryUtil;
 import org.apache.commons.lang.LocaleUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,6 +30,7 @@ import javax.faces.context.FacesContext;
 import javax.portlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -298,6 +300,7 @@ public class FacesService {
         String str = key;
         try {
             str = rb.getString(key);
+            str = StringUtils.toEncodedString(str.getBytes(), StandardCharsets.UTF_8);
         } catch (Exception e) {
             log.error("Key: " + key + " not found in message bundle. Using key as value");
         }
@@ -320,6 +323,7 @@ public class FacesService {
         String str = key;
         try {
             str = rb.getString(key);
+            str = StringUtils.toEncodedString(str.getBytes(), StandardCharsets.UTF_8);
         } catch (Exception e) {
             log.error("Key: " + key + " not found in message bundle. Using key as value");
         }
