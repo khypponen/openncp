@@ -71,11 +71,7 @@ public class SPMSTestKeyStoreManager implements KeyStoreManager {
                 // Return a key pair
                 return new KeyPair(publicKey, (PrivateKey) key);
             }
-        } catch (UnrecoverableKeyException e) {
-            logger.error(null, e);
-        } catch (NoSuchAlgorithmException e) {
-            logger.error(null, e);
-        } catch (KeyStoreException e) {
+        } catch (UnrecoverableKeyException | NoSuchAlgorithmException | KeyStoreException e) {
             logger.error(null, e);
         }
         return null;
@@ -90,13 +86,7 @@ public class SPMSTestKeyStoreManager implements KeyStoreManager {
 
             return keyStore;
 
-        } catch (IOException ex) {
-            logger.error(null, ex);
-        } catch (NoSuchAlgorithmException ex) {
-            logger.error(null, ex);
-        } catch (CertificateException ex) {
-            logger.error(null, ex);
-        } catch (KeyStoreException ex) {
+        } catch (IOException | NoSuchAlgorithmException | CertificateException | KeyStoreException ex) {
             logger.error(null, ex);
         }
         return null;
@@ -123,13 +113,7 @@ public class SPMSTestKeyStoreManager implements KeyStoreManager {
 
             return trustStore;
 
-        } catch (IOException ex) {
-            logger.error(null, ex);
-        } catch (NoSuchAlgorithmException ex) {
-            logger.error(null, ex);
-        } catch (CertificateException ex) {
-            logger.error(null, ex);
-        } catch (KeyStoreException ex) {
+        } catch (IOException | NoSuchAlgorithmException | CertificateException | KeyStoreException ex) {
             logger.error(null, ex);
         }
         return null;
@@ -139,9 +123,8 @@ public class SPMSTestKeyStoreManager implements KeyStoreManager {
     @Override
     public Certificate getCertificate(String alias) {
         try {
-            java.security.cert.Certificate cert = keyStore
+            return keyStore
                     .getCertificate(alias);
-            return cert;
         } catch (KeyStoreException ex) {
             logger.error(null,
                     ex);

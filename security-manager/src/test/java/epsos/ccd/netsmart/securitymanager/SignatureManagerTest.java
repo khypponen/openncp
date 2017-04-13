@@ -98,16 +98,7 @@ public class SignatureManagerTest {
 
             smgr.verifyEnvelopedSignature(signedDoc);
 
-        } catch (SMgrException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (ParserConfigurationException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (SAXException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (IOException ex) {
+        } catch (SMgrException | ParserConfigurationException | SAXException | IOException ex) {
             logger.error(null, ex);
             fail(ex.getMessage());
         }
@@ -134,17 +125,7 @@ public class SignatureManagerTest {
             smgr.verifyEnvelopedSignature(doc);
 
 
-        } catch (SMgrException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (ParserConfigurationException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (SAXException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-
-        } catch (IOException ex) {
+        } catch (SMgrException | ParserConfigurationException | SAXException | IOException ex) {
             logger.error(null, ex);
             fail(ex.getMessage());
         }
@@ -161,8 +142,7 @@ public class SignatureManagerTest {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             dbf.setNamespaceAware(true);
 
-            Document doc;
-            doc = dbf.newDocumentBuilder().parse(ClassLoader.getSystemResourceAsStream("ePsample_stripped.xml"));
+            Document doc = dbf.newDocumentBuilder().parse(ClassLoader.getSystemResourceAsStream("ePsample_stripped.xml"));
 
             SignatureManager smgr = new SignatureManager(new SPMSTestKeyStoreManager());
             smgr.signXMLWithEnvelopedSig(doc, keyAlias, keyPassword.toCharArray());
@@ -170,17 +150,7 @@ public class SignatureManagerTest {
             smgr.verifyEnvelopedSignature(doc);
 
 
-        } catch (SMgrException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (ParserConfigurationException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (SAXException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-
-        } catch (IOException ex) {
+        } catch (SMgrException | ParserConfigurationException | SAXException | IOException ex) {
             logger.error(null, ex);
             fail(ex.getMessage());
         }
@@ -200,16 +170,7 @@ public class SignatureManagerTest {
             signedDoc = dbf.newDocumentBuilder().parse(ClassLoader.getSystemResourceAsStream("signed_ePsample_UNK.xml"));
             SignatureManager instance = new SignatureManager(new NSTestKeyStoreManager());
             instance.verifyEnvelopedSignature(signedDoc);
-        } catch (SMgrException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (ParserConfigurationException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (SAXException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (IOException ex) {
+        } catch (SMgrException | ParserConfigurationException | SAXException | IOException ex) {
             logger.error(null, ex);
             fail(ex.getMessage());
         }
@@ -231,13 +192,7 @@ public class SignatureManagerTest {
         } catch (SMgrException ex) {
             logger.error(null, ex);
 
-        } catch (ParserConfigurationException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (SAXException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (IOException ex) {
+        } catch (ParserConfigurationException | SAXException | IOException ex) {
             logger.error(null, ex);
             fail(ex.getMessage());
         }
@@ -259,13 +214,7 @@ public class SignatureManagerTest {
         } catch (SMgrException ex) {
             logger.error(null, ex);
 
-        } catch (ParserConfigurationException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (SAXException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        } catch (IOException ex) {
+        } catch (ParserConfigurationException | SAXException | IOException ex) {
             logger.error(null, ex);
             fail(ex.getMessage());
         }
