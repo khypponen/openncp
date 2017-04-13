@@ -45,11 +45,6 @@ public class DocumentSearchMockImpl extends NationalConnectorGateway implements 
     private List<DocumentAssociation<PSDocumentMetaData>> psDocumentMetaDatas = new ArrayList<DocumentAssociation<PSDocumentMetaData>>();
     private List<DocumentAssociation<MroDocumentMetaData>> mroDocumentMetaDatas = new ArrayList<DocumentAssociation<MroDocumentMetaData>>();
     private List<EPSOSDocument> documents = new ArrayList<EPSOSDocument>();
-
-    @Override
-    public void setSOAPHeader(Element shElement) {
-    	;
-    }
     
     public DocumentSearchMockImpl() {
         Collection<String> documentlist = ResourceList.getResources(Pattern.compile(PATTERN_EP));

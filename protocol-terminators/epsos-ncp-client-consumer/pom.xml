@@ -34,7 +34,7 @@
             <groupId>eu.europa.ec.sante.ehdsi</groupId>
             <artifactId>openncp-util</artifactId>
         </dependency>
-
+        
         <!-- axis2 -->
         <dependency>
             <groupId>org.apache.axis2</groupId>

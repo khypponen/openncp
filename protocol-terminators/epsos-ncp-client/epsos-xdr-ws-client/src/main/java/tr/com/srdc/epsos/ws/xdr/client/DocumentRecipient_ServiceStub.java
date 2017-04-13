@@ -67,12 +67,14 @@ import tr.com.srdc.epsos.util.XMLUtil;
 
 public class DocumentRecipient_ServiceStub extends org.apache.axis2.client.Stub {
 
-	static {
-		System.out.println("Loading the WS-Security init libraries in DocumentRecipient_ServiceStub");
+    private static final Logger LOG = Logger.getLogger(DocumentRecipient_ServiceStub.class);
+    
+    static {
+        LOG.debug("Loading the WS-Security init libraries in DocumentRecipient_ServiceStub");
 
-		org.apache.xml.security.Init.init(); // Massi added 3/1/2017. 
-	}
-    private static Logger LOG = Logger.getLogger(DocumentRecipient_ServiceStub.class);
+        org.apache.xml.security.Init.init(); // Massi added 3/1/2017. 
+    }
+    
     private static int counter = 0;
     // http://servicelocation/DocumentRecipient_Service
     private static final javax.xml.bind.JAXBContext wsContext;
@@ -234,32 +236,10 @@ public class DocumentRecipient_ServiceStub extends org.apache.axis2.client.Stub 
             _serviceClient.addHeader(id);
             _serviceClient.addHeadersToEnvelope(env);
 
-            // Massi changed for non repudiation
-            Document envCanonicalized = null;
-            try {
-            	LOG.debug("Step 1: marshall it to document, since no c14n are available in OM");
-            	Element envAsDom = XMLUtils.toDOM(env);
-            	LOG.debug("Step 2: canonicalize it");
-            	envCanonicalized = XMLUtil.canonicalize(envAsDom.getOwnerDocument());
-            	LOG.debug("Step 3: remarshall to OM");
-            	OMElement omCanonicalizedEnvelope = XMLUtils.toOM(envCanonicalized.getDocumentElement());
-            	LOG.debug("Step 4: reconstruct the message");
-            	SOAPEnvelope newEnv = toEnvelope(soapFactory);
-            	
-            	OMElement headerOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Header"));
-            	OMElement bodyOMElement = omCanonicalizedEnvelope.getFirstChildWithName(new QName(newEnv.getNamespaceURI(), "Body"));
-
-            	newEnv.getBody().addChild(bodyOMElement);
-            	newEnv.getHeader().addChild(headerOMElement);
-            	
-                _messageContext.setEnvelope(newEnv);
-			} catch (Exception e1) {
-				throw new IllegalArgumentException(e1);
-			}
             /*
              * Prepare request
              */
-//            _messageContext.setEnvelope(env);   // set the message context with that soap envelope
+            _messageContext.setEnvelope(env);   // set the message context with that soap envelope
             _operationClient.addMessageContext(_messageContext);    // add the message contxt to the operation client
 
             /* Log soap request */
@@ -274,18 +254,18 @@ public class DocumentRecipient_ServiceStub extends org.apache.axis2.client.Stub 
             }
 
             // NRO
-            try {
-                EvidenceUtils.createEvidenceREMNRO(envCanonicalized,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                        EventType.epsosDispensationServiceInitialize.getCode(),
-                        new DateTime(),
-                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                        "NCPB_XDR_SUBMIT_REQ");
-            } catch (Exception e) {
-                LOG.error(ExceptionUtils.getStackTrace(e));
-            }
+//            try {
+//                EvidenceUtils.createEvidenceREMNRO(envCanonicalized,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                        tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                        EventType.epsosDispensationServiceInitialize.getCode(),
+//                        new DateTime(),
+//                        EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                        "NCPB_XDR_SUBMIT_REQ");
+//            } catch (Exception e) {
+//                LOG.error(ExceptionUtils.getStackTrace(e));
+//            }
 
             /* Perform validation of request message */
             XdrValidationService.getInstance().validateModel(requestLogMsg, XdModel.obtainModelXdr(requestLogMsg).toString(), NcpSide.NCP_B);

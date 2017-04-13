@@ -34,6 +34,7 @@ public class XDRConstants {
     public static final String REGREP_EXT_IDENT = "urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalIdentifier";
     public static final String REGREP_HAS_MEMBER = "urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember";
     public static final String PROVIDE_AND_REGISTER_DOCUMENT_SET_REQ_STR = "ProvideAndRegisterDocumentSetRequest";
+    public static final String REGISTRY_RESPONSE_STR = "RegistryResponse";
     public static final String DOCUMENT_RECIPIENT_SERVICE_STR = "DocumentRecipient_Service";
     public static final String DOC_RCP_PRVDANDRGSTDOCSETB_STR = "documentRecipient_ProvideAndRegisterDocumentSetB";
     public static final String SUBMISSION_SET_STATUS_STR = "SubmissionSetStatus";

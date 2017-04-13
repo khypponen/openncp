@@ -470,6 +470,10 @@
             </handler>
         </phase>
         <phase name="soapmonitorPhase"/>
+        <phase name="EvidenceEmitterPhase">
+            <handler name="EvidenceEmitterHandler"
+                class="ee.affecto.epsos.ws.handler.InFlowEvidenceEmitterHandler"/>
+        </phase>
     </phaseOrder>
     <phaseOrder type="OutFlow">
         <!--      user can add his own phases to this area  -->
@@ -481,6 +485,10 @@
         <phase name="PolicyDetermination"/>
         <phase name="MessageOut"/>
         <phase name="Security"/>
+        <phase name="EvidenceEmitterPhase">
+            <handler name="EvidenceEmitterHandler"
+                class="ee.affecto.epsos.ws.handler.OutFlowEvidenceEmitterHandler"/>
+        </phase>
     </phaseOrder>
     <phaseOrder type="InFaultFlow">
         <phase name="Addressing">

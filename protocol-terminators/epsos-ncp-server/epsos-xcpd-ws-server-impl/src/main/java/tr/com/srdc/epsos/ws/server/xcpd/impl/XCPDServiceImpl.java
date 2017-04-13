@@ -24,12 +24,14 @@ import epsos.ccd.gnomon.auditmanager.EventActionCode;
 import epsos.ccd.gnomon.auditmanager.EventLog;
 import epsos.ccd.gnomon.auditmanager.EventOutcomeIndicator;
 import epsos.ccd.gnomon.auditmanager.EventType;
+import epsos.ccd.gnomon.auditmanager.IHEEventType;
 import epsos.ccd.gnomon.auditmanager.TransactionName;
 import eu.epsos.protocolterminators.ws.server.xcpd.PatientSearchInterface;
 import eu.epsos.protocolterminators.ws.server.xcpd.PatientSearchInterfaceWithDemographics;
 import eu.epsos.protocolterminators.ws.server.xcpd.XCPDServiceInterface;
 import eu.epsos.util.EvidenceUtils;
 import java.io.Serializable;
+import java.io.StringReader;
 import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -41,6 +43,8 @@ import java.util.ServiceLoader;
 import java.util.UUID;
 import javax.xml.bind.JAXBElement;
 import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import org.apache.axiom.soap.SOAPHeader;
 import org.apache.axis2.util.XMLUtils;
 import org.apache.log4j.Logger;
@@ -85,7 +89,9 @@ import org.hl7.v3.TS;
 import org.hl7.v3.XActMoodDefEvn;
 import org.hl7.v3.XActMoodIntentEvent;
 import org.joda.time.DateTime;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.xml.sax.InputSource;
 import tr.com.srdc.epsos.data.model.PatientDemographics;
 import tr.com.srdc.epsos.data.model.PatientId;
 import tr.com.srdc.epsos.securityman.SAML2Validator;
@@ -542,11 +548,6 @@ public class XCPDServiceImpl implements XCPDServiceInterface {
 
         // Set interaction id
         outputMessage.setInteractionId(of.createII());
-        System.out.println("MASSI checks the interaction ID: " + outputMessage);
-        System.out.println("MASSI checks the interaction ID: " + outputMessage.getInteractionId());
-        System.out.println("MASSI checks the interaction ID: " + inputMessage);
-        System.out.println("MASSI checks the interaction ID: " + inputMessage.getInteractionId());
-        System.out.println("MASSI checks the interaction ID: " + inputMessage.getInteractionId().getRoot());
 
         outputMessage.getInteractionId().setRoot(inputMessage.getInteractionId().getRoot());
         outputMessage.getInteractionId().setExtension("PRPA_IN201306UV02");
@@ -637,26 +638,42 @@ public class XCPDServiceImpl implements XCPDServiceInterface {
                 logger.debug("patientIdList.size: " + patientIdList.size());
 
                 // call to NI
-//                try {
-//                    EvidenceUtils.createEvidenceREMNRO(sb.toString(),
-//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-//                            EventType.epsosIdentificationServiceFindIdentityByTraits.getCode(),
-//                            new DateTime(),
-//                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-//                            "NI_XCPD_REQ",
-//                            Helper.getHCPAssertion(shElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
-//                } catch (Exception e) {
-//                    logger.error(ExceptionUtils.getStackTrace(e));
-//                }
+                // Joao: we have an adhoc XML document, so we can generate this evidence correctly
+                try {
+                    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                    factory.setNamespaceAware(true);
+                    DocumentBuilder builder = factory.newDocumentBuilder();
+                    Document doc = builder.parse(new InputSource(new StringReader(sb.toString())));
+                    EvidenceUtils.createEvidenceREMNRO(doc,
+                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+                            tr.com.srdc.epsos.util.Constants.SP_KEYSTORE_PATH,
+                            tr.com.srdc.epsos.util.Constants.SP_KEYSTORE_PASSWORD,
+                            tr.com.srdc.epsos.util.Constants.SP_PRIVATEKEY_ALIAS,
+                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+                            IHEEventType.epsosIdentificationServiceFindIdentityByTraits.getCode(),
+                            new DateTime(),
+                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+                            "NI_XCPD_REQ",
+                            Helper.getHCPAssertion(shElement).getID() + "__" + DateUtil.getCurrentTimeGMT());
+                } catch (Exception e) {
+                    logger.error(ExceptionUtils.getStackTrace(e));
+                }
                 List<PatientDemographics> pdList = patientSearchService.getPatientDemographics(patientIdList);
+                // Joao: the NRR is being generated based on the request data, not on the response. This NRR is optional as per the CP, so it's left commented
 //                try {
-//                    EvidenceUtils.createEvidenceREMNRR(sb.toString(),
+//                    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+//                    factory.setNamespaceAware(true);
+//                    DocumentBuilder builder = factory.newDocumentBuilder();
+//                    Document doc = builder.parse(new InputSource(new StringReader(sb.toString())));
+//                    EvidenceUtils.createEvidenceREMNRR(doc,
 //                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
 //                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
 //                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-//                            EventType.epsosIdentificationServiceFindIdentityByTraits.getCode(),
+//                            IHEEventType.epsosIdentificationServiceFindIdentityByTraits.getCode(),
 //                            new DateTime(),
 //                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
 //                            "NI_XCPD_RES",

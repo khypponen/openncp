@@ -66,6 +66,11 @@ import tr.com.srdc.epsos.util.XMLUtil;
 public class ClientConnectorServiceMessageReceiverInOut extends AbstractInOutMessageReceiver {
 
     protected static final Logger LOG = LoggerFactory.getLogger(ClientConnectorServiceMessageReceiverInOut.class);
+    
+    static {
+        LOG.debug("Loading the WS-Security init libraries in ClientConnectorServiceMessageReceiverInOut 2009");
+        org.apache.xml.security.Init.init(); // Joao added 10/03/2017. 
+    }
 
     @Override
     public void invokeBusinessLogic(MessageContext msgContext, MessageContext newMsgContext) throws AxisFault {

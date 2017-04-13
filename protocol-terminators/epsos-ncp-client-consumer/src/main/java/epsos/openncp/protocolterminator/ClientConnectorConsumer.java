@@ -41,6 +41,10 @@ import epsos.openncp.protocolterminator.clientconnector.EpsosDocument1;
 import epsos.openncp.protocolterminator.clientconnector.GenericDocumentCode;
 import epsos.openncp.protocolterminator.clientconnector.PatientDemographics;
 import epsos.openncp.protocolterminator.clientconnector.PatientId;
+import epsos.openncp.protocolterminator.clientconnector.QueryDocumentRequest;
+import epsos.openncp.protocolterminator.clientconnector.QueryDocuments;
+import epsos.openncp.protocolterminator.clientconnector.QueryDocumentsDocument;
+import epsos.openncp.protocolterminator.clientconnector.QueryDocumentsResponseDocument;
 import epsos.openncp.protocolterminator.clientconnector.QueryPatientDocument;
 import epsos.openncp.protocolterminator.clientconnector.QueryPatientRequest;
 import epsos.openncp.protocolterminator.clientconnector.QueryPatientResponseDocument;
@@ -55,17 +59,45 @@ import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentDocument1;
 import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentRequest;
 import epsos.openncp.protocolterminator.clientconnector.SubmitDocumentResponse;
 import epsos.openncp.pt.client.ClientConnectorServiceServiceStub;
+import eu.europa.ec.sante.ehdsi.openncp.evidence.utils.OutFlowEvidenceEmitterHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.apache.axis2.description.HandlerDescription;
+import org.apache.axis2.engine.AxisConfiguration;
+import org.apache.axis2.engine.Phase;
+import org.apache.axis2.phaseresolver.PhaseException;
 
 /*
  *  ClientConnectorServiceServiceTest Junit test case
  */
 public class ClientConnectorConsumer {
+    
+    private static final Logger logger = java.util.logging.Logger.getLogger(ClientConnectorConsumer.class.getName());
 
     private String epr;
     private final long TIMEOUT = 3 * 60 * 1000; // Three minutes
-
+    
     public ClientConnectorConsumer(String epr) {
-        this.epr = epr;
+            this.epr = epr;
+    }
+    
+    private void registerEvidenceEmitterHandler(ClientConnectorServiceServiceStub stub) throws AxisFault {        
+        /* Adding custom phase for evidence emitter processing */
+        logger.log(Level.INFO,"Adding custom phase for outflow evidence emitter processing");
+        HandlerDescription outFlowHandlerDescription = new HandlerDescription("OutFlowEvidenceEmitterHandler");
+        outFlowHandlerDescription.setHandler(new OutFlowEvidenceEmitterHandler());
+        AxisConfiguration axisConfiguration = stub._getServiceClient().getServiceContext().getConfigurationContext().getAxisConfiguration();
+        List<Phase> outFlowPhasesList = axisConfiguration.getOutFlowPhases();
+        Phase outFlowEvidenceEmitterPhase = new Phase("OutFlowEvidenceEmitterPhase");
+        try {
+            outFlowEvidenceEmitterPhase.addHandler(outFlowHandlerDescription);
+        } catch (PhaseException ex) {
+            java.util.logging.Logger.getLogger(ClientConnectorConsumer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        outFlowPhasesList.add(outFlowEvidenceEmitterPhase);
+        logger.log(Level.INFO,"Resetting global Out phases");
+        axisConfiguration.setGlobalOutPhase(outFlowPhasesList);
+        logger.log(Level.INFO,"Ended phases restrucruting");
     }
 
     /**
@@ -73,48 +105,37 @@ public class ClientConnectorConsumer {
      */
     public List<EpsosDocument1> queryDocuments(Assertion idAssertion, Assertion trcAssertion, String countryCode,
                                                PatientId patientId, GenericDocumentCode classCode) {
-    	
-    	
-//    	SPITianiCode.query();, everything will be in SVN. 
-//    	
-//    	Status of the SVN: bad, we need to copy, in which extent we copy it. 
-//    	ZPI, with one patient, ask harry to check the g4. 
-//    	ONe test facade with some document. type name = new type();
-//    	ETS, KBS. 
-//    	
-    	
+        ClientConnectorServiceServiceStub stub;
+        try {
+            stub = new ClientConnectorServiceServiceStub(epr);
+            stub._getServiceClient().getOptions().setTimeOutInMilliSeconds(TIMEOUT);
+            this.registerEvidenceEmitterHandler(stub);
+        } catch (AxisFault ex) {
+            throw new RuntimeException(ex);
+        }
+        try {
+            addAssertions(stub, idAssertion, trcAssertion);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
 
-//        ClientConnectorServiceServiceStub stub;
-//        try {
-//            stub = new ClientConnectorServiceServiceStub(epr);
-//            stub._getServiceClient().getOptions().setTimeOutInMilliSeconds(TIMEOUT);
-//        } catch (AxisFault ex) {
-//            throw new RuntimeException(ex);
-//        }
-//        try {
-//            addAssertions(stub, idAssertion, trcAssertion);
-//        } catch (Exception ex) {
-//            throw new RuntimeException(ex);
-//        }
-//
-//        QueryDocumentsDocument queryDocumentsDocument = QueryDocumentsDocument.Factory.newInstance();
-//        QueryDocuments queryDocuments = queryDocumentsDocument.addNewQueryDocuments();
-//        QueryDocumentRequest queryDocumentRequest = queryDocuments.addNewArg0();
-//        queryDocumentRequest.setClassCode(classCode);
-//        queryDocumentRequest.setPatientId(patientId);
-//        queryDocumentRequest.setCountryCode(countryCode);
-//
-//        QueryDocumentsResponseDocument queryDocumentsResponseDocument;
-//        try {
-//            queryDocumentsResponseDocument = stub.queryDocuments(queryDocumentsDocument);
-//        } catch (RemoteException ex) {
-//            throw new RuntimeException(ex.getMessage(), ex);
-//        }
-//
-//        EpsosDocument1[] docArray = queryDocumentsResponseDocument.getQueryDocumentsResponse().getReturnArray();
-//        List<EpsosDocument1> result = Arrays.asList(docArray);
-//        return result;
-    	return null;
+        QueryDocumentsDocument queryDocumentsDocument = QueryDocumentsDocument.Factory.newInstance();
+        QueryDocuments queryDocuments = queryDocumentsDocument.addNewQueryDocuments();
+        QueryDocumentRequest queryDocumentRequest = queryDocuments.addNewArg0();
+        queryDocumentRequest.setClassCode(classCode);
+        queryDocumentRequest.setPatientId(patientId);
+        queryDocumentRequest.setCountryCode(countryCode);
+
+        QueryDocumentsResponseDocument queryDocumentsResponseDocument;
+        try {
+            queryDocumentsResponseDocument = stub.queryDocuments(queryDocumentsDocument);
+        } catch (RemoteException ex) {
+            throw new RuntimeException(ex.getMessage(), ex);
+        }
+
+        EpsosDocument1[] docArray = queryDocumentsResponseDocument.getQueryDocumentsResponse().getReturnArray();
+        List<EpsosDocument1> result = Arrays.asList(docArray);
+        return result;
     }
 
     /**
@@ -129,6 +150,7 @@ public class ClientConnectorConsumer {
         try {
             stub = new ClientConnectorServiceServiceStub(epr);
             stub._getServiceClient().getOptions().setTimeOutInMilliSeconds(TIMEOUT);
+            this.registerEvidenceEmitterHandler(stub);
         } catch (AxisFault ex) {
             throw new RuntimeException(ex);
         }
@@ -172,6 +194,7 @@ public class ClientConnectorConsumer {
         try {
             stub = new ClientConnectorServiceServiceStub(epr);
             stub._getServiceClient().getOptions().setTimeOutInMilliSeconds(TIMEOUT);
+            this.registerEvidenceEmitterHandler(stub);
         } catch (AxisFault ex) {
             throw new RuntimeException(ex);
         }
@@ -198,6 +221,7 @@ public class ClientConnectorConsumer {
         try {
             stub = new ClientConnectorServiceServiceStub(epr);
             stub._getServiceClient().getOptions().setTimeOutInMilliSeconds(TIMEOUT);
+            this.registerEvidenceEmitterHandler(stub);
         } catch (AxisFault ex) {
             throw new RuntimeException(ex);
         }
@@ -245,6 +269,7 @@ public class ClientConnectorConsumer {
         try {
             stub = new ClientConnectorServiceServiceStub(epr);
             stub._getServiceClient().getOptions().setTimeOutInMilliSeconds(TIMEOUT);
+            this.registerEvidenceEmitterHandler(stub);
         } catch (AxisFault ex) {
             throw new RuntimeException(ex);
         }

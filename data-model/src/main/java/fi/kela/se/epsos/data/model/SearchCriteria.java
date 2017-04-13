@@ -1,6 +1,7 @@
 package fi.kela.se.epsos.data.model;
 
 import java.util.Iterator;
+import org.w3c.dom.Document;
 
 /**
  * SearchCriteria class will be used for XCAService interface to allow search of documents with
@@ -25,4 +26,6 @@ public interface SearchCriteria {
 	String getCriteriaValue(Criteria c);
 	
 	Iterator<Criteria> getSearchCriteriaKeys();
+        
+        Document asXml();
 }

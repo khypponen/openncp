@@ -60,12 +60,14 @@ import tr.com.srdc.epsos.util.http.HTTPUtil;
  * XDR_ServiceMessageReceiverInOut message receiver
  */
 public class XDR_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.AbstractInOutMessageReceiver {
-	static {
-		System.out.println("Loading the WS-Security init libraries in XDR 2007");
+    
+    public static final Logger logger = Logger.getLogger(XDR_ServiceMessageReceiverInOut.class);
+    
+    static {
+        logger.debug("Loading the WS-Security init libraries in XDR 2007");
 
-		org.apache.xml.security.Init.init(); // Massi added 3/1/2017. 
-	}
-    public static Logger logger = Logger.getLogger(XDR_ServiceMessageReceiverInOut.class);
+        org.apache.xml.security.Init.init(); // Massi added 3/1/2017. 
+    }
 
     private String getIPofSender(org.apache.axis2.context.MessageContext msgContext) {
         String remoteAddress_IPConsumer = (String) msgContext.getProperty("REMOTE_ADDR");
@@ -125,30 +127,20 @@ public class XDR_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.
 
                 logger.debug("Incoming XDR Request Message:\n" + XMLUtil.prettyPrint(XMLUtils.toDOM(msgContext.getEnvelope())));
 
-                logger.info("XDR Request Received. EVIDENCE NRR");
+//                logger.info("XDR Request Received. EVIDENCE NRR");
                 // Send NRR
-                try {
-                	 Document envCanonicalized = null;
-                     try {
-                     	logger.debug("Step 1: marshall it to document, since no c14n are available in OM");
-                     	Element envAsDom = XMLUtils.toDOM(msgContext.getEnvelope());
-                     	logger.debug("Step 2: canonicalize it");
-                     	envCanonicalized = XMLUtil.canonicalize(envAsDom.getOwnerDocument());
-                     	
-         			} catch (Exception e1) {
-         				throw new IllegalArgumentException(e1);
-         			}
-                    EvidenceUtils.createEvidenceREMNRR(envCanonicalized,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
-                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
-                            EventType.epsosDispensationServiceInitialize.getCode(),
-                            new DateTime(),
-                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
-                            "NCPA_XDR_REQ");
-                } catch (Exception e) {
-                    log.error(ExceptionUtils.getStackTrace(e));
-                }
+//                try {
+//                    EvidenceUtils.createEvidenceREMNRR(XMLUtil.prettyPrint(XMLUtils.toDOM(msgContext.getEnvelope()),
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PATH,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_KEYSTORE_PASSWORD,
+//                            tr.com.srdc.epsos.util.Constants.NCP_SIG_PRIVATEKEY_ALIAS,
+//                            EventType.epsosDispensationServiceInitialize.getCode(),
+//                            new DateTime(),
+//                            EventOutcomeIndicator.FULL_SUCCESS.getCode().toString(),
+//                            "NCPA_XDR_REQ");
+//                } catch (Exception e) {
+//                    log.error(ExceptionUtils.getStackTrace(e));
+//                }
 
                 if ("documentRecipient_ProvideAndRegisterDocumentSetB"
                         .equals(methodName)) {
@@ -180,7 +172,7 @@ public class XDR_ServiceMessageReceiverInOut extends org.apache.axis2.receivers.
 
                     logger.debug("Response Header:\n" + envelope.getHeader().toString());
                     logger.debug("Outgoing XDR Response Message:\n" + XMLUtil.prettyPrint(XMLUtils.toDOM(envelope)));
-                    logger.info("XDR Response going to be sent. EVIDENCE NRO");
+//                    logger.info("XDR Response going to be sent. EVIDENCE NRO");
                     // Call to Evidence Emitter
                     
                     // Massi commented out: call to NI
