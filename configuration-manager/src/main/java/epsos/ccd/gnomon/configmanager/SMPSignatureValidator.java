@@ -66,8 +66,7 @@ public class SMPSignatureValidator {
 
 	}
 
-	private void printErrorDetails(DOMValidateContext valContext, XMLSignature signature)
-			throws XMLSignatureException {
+	private void printErrorDetails(DOMValidateContext valContext, XMLSignature signature) throws XMLSignatureException {
 		System.err.println("Signature failed core validation");
 		boolean sv = signature.getSignatureValue().validate(valContext);
 		System.out.println("signature validation status: " + sv);
@@ -80,6 +79,7 @@ public class SMPSignatureValidator {
 			}
 		}
 	}
+
 	public X509Certificate getKeySaved() {
 		synchronized (LOCK_2) {
 			return savedKey;
@@ -91,6 +91,7 @@ public class SMPSignatureValidator {
 			this.savedKey = key;
 		}
 	}
+
 	private class X509KeySelector extends KeySelector {
 
 		public KeySelectorResult select(KeyInfo keyInfo, Purpose purpose, AlgorithmMethod method,
@@ -126,15 +127,12 @@ public class SMPSignatureValidator {
 					"No key found! Either the namespaces are wrong, or there is a algorithm which is not sha 256.");
 		}
 
-		
-
+		// Massi + Jerome + Joao 13/4/2017. Allow for RSA_SHA1 signatures because of the gazelle CA
 		boolean algEquals(String algURI, String algName) {
 			if ((algName.equalsIgnoreCase("DSA") && algURI.equalsIgnoreCase(SignatureMethod.DSA_SHA1))
-					// || (algName.equalsIgnoreCase("RSA") &&
-					// algURI.equalsIgnoreCase(SignatureMethod.RSA_SHA1))) {
+					|| (algName.equalsIgnoreCase("RSA") && algURI.equalsIgnoreCase(SignatureMethod.RSA_SHA1))
 					|| (algName.equalsIgnoreCase("RSA")
 							&& algURI.equalsIgnoreCase("http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"))) {
-
 				return true;
 			} else {
 				return false;
