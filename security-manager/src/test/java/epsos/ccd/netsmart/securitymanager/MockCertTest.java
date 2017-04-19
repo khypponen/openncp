@@ -36,10 +36,7 @@ import static org.junit.Assert.fail;
  */
 public class MockCertTest {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(MockCertTest.class);
-
-    public MockCertTest() {
-    }
+	protected static final Logger LOG = LoggerFactory.getLogger(MockCertTest.class);
 
     @BeforeClass
     public static void setUpClass() throws Exception {
@@ -101,22 +98,6 @@ public class MockCertTest {
         try {
             KeyStoreManager ksm = new TianiTestKeyStoreManager();
             X509Certificate cert = (X509Certificate) ksm.getCertificate("server1");
-            boolean[] ku = cert.getKeyUsage();
-
-            CertificateValidator cv = new CertificateValidator(ksm.getTrustStore());
-            cv.validateCertificate(cert);
-            assertNull(ku);
-        } catch (SMgrException ex) {
-            LOG.error(null, ex);
-            fail(ex.getMessage());
-        }
-    }
-
-    @Test
-    public void SPMSCertTest() throws IOException {
-        try {
-            KeyStoreManager ksm = new SPMSTestKeyStoreManager();
-            X509Certificate cert = (X509Certificate) ksm.getCertificate("ppt.ncp-signature.epsos.spms.pt");
             boolean[] ku = cert.getKeyUsage();
 
             CertificateValidator cv = new CertificateValidator(ksm.getTrustStore());

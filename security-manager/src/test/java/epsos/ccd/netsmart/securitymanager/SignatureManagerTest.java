@@ -16,207 +16,95 @@
  */
 package epsos.ccd.netsmart.securitymanager;
 
-import epsos.ccd.netsmart.securitymanager.exceptions.SMgrException;
-import epsos.ccd.netsmart.securitymanager.key.impl.NSTestKeyStoreManager;
-import epsos.ccd.netsmart.securitymanager.key.impl.SPMSTestKeyStoreManager;
-import epsos.ccd.netsmart.securitymanager.key.impl.TianiTestKeyStoreManager;
+import junit.framework.TestCase;
+
 import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.*;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.File;
-import java.io.FileOutputStream;
+import epsos.ccd.gnomon.configmanager.ConfigurationManagerInt;
+import epsos.ccd.gnomon.configmanager.ConfigurationManagerService;
+import epsos.ccd.netsmart.securitymanager.key.KeyStoreManager;
+
 import java.io.IOException;
-
-import static org.junit.Assert.fail;
+import java.security.KeyPair;
+import java.security.KeyStore;
+import java.security.cert.Certificate;
 
 /**
- * @author jerouris
+ * The original tested class was not unit-testable. It was fixed so that the
+ * class can be constructed without hard dependencies to external resource (at
+ * 'init' -method). Class constructor structure has been changed a bit so that a
+ * constructor providing the required class parameters exist now.<br/>
+ * The tests originally in this class are moved to SignatureManagerIntegratioTest -class.
+ * 
+ * @author fivilmyrs
  */
-public class SignatureManagerTest {
+@RunWith(MockitoJUnitRunner.class)
+public class SignatureManagerTest extends TestCase {
 
-    private static final Logger logger = LoggerFactory.getLogger(SignatureManagerTest.class);
+	private static final Logger logger = LoggerFactory.getLogger(SignatureManagerTest.class);
 
-    public SignatureManagerTest() {
-    }
+	@BeforeClass
+	public static void setUpClass() throws Exception {
 
-    @BeforeClass
-    public static void setUpClass() throws Exception {
+	}
 
-    }
+	@AfterClass
+	public static void tearDownClass() throws Exception {
+	}
 
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
+	@Before
+	public void setUp() {
 
-    @Before
-    public void setUp() {
+		XMLUnit.setNormalizeWhitespace(true);
+		XMLUnit.setIgnoreWhitespace(true);
+	}
 
-        XMLUnit.setNormalizeWhitespace(true);
-        XMLUnit.setIgnoreWhitespace(true);
-    }
+	@After
+	public void tearDown() {
+	}
 
-    @After
-    public void tearDown() {
-    }
+	@Test
+	public void testConstructing() {
 
-    /**
-     * Test of signXMLWithEnvelopedSig method, of class SignatureManager.
-     */
-    @Ignore
-    @Test
-    public void testSignXMLWithEnvelopedSig() {
-        try {
-
-            System.out.println("signXMLWithEnvelopedSig");
-            String keyAlias = "testncp";
-            String keyPassword = "epsos123";
-
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            dbf.setNamespaceAware(true);
-
-            File f = new File("mySignedFile.xml");
-            //f.deleteOnExit();
-
-            Document doc;
-            doc = dbf.newDocumentBuilder().parse(ClassLoader.getSystemResourceAsStream("ePsample_stripped.xml"));
-
-            SignatureManager smgr = new SignatureManager(new NSTestKeyStoreManager());
-            smgr.signXMLWithEnvelopedSig(doc, keyAlias, keyPassword.toCharArray());
-
-            XMLUtils.sendXMLtoStream(doc, new FileOutputStream(f));
-
-            smgr.verifyEnvelopedSignature(doc);
-
-            Document signedDoc;
-            signedDoc = dbf.newDocumentBuilder().parse(f);
-
-            smgr.verifyEnvelopedSignature(signedDoc);
-
-        } catch (SMgrException | ParserConfigurationException | SAXException | IOException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        }
-    }
-
-    @Ignore
-    @Test
-    public void testSignXMLWithEnvelopedSigTiani() {
-        try {
-
-            System.out.println("signXMLWithEnvelopedSigTiani");
-            String keyAlias = "server1";
-            String keyPassword = "spirit";
-
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            dbf.setNamespaceAware(true);
-
-            Document doc;
-            doc = dbf.newDocumentBuilder().parse(ClassLoader.getSystemResourceAsStream("ePsample_stripped.xml"));
-
-            SignatureManager smgr = new SignatureManager(new TianiTestKeyStoreManager());
-            smgr.signXMLWithEnvelopedSig(doc, keyAlias, keyPassword.toCharArray());
-
-            smgr.verifyEnvelopedSignature(doc);
-
-
-        } catch (SMgrException | ParserConfigurationException | SAXException | IOException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        }
-    }
-
-    @Test
-    public void testSignXMLWithEnvelopedSigSPMS() {
-        try {
-
-            System.out.println("signXMLWithEnvelopedSigSPMS");
-            String keyAlias = "ppt.ncp-signature.epsos.spms.pt";
-            String keyPassword = "changeit";
-
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            dbf.setNamespaceAware(true);
-
-            Document doc = dbf.newDocumentBuilder().parse(ClassLoader.getSystemResourceAsStream("ePsample_stripped.xml"));
-
-            SignatureManager smgr = new SignatureManager(new SPMSTestKeyStoreManager());
-            smgr.signXMLWithEnvelopedSig(doc, keyAlias, keyPassword.toCharArray());
-
-            smgr.verifyEnvelopedSignature(doc);
-
-
-        } catch (SMgrException | ParserConfigurationException | SAXException | IOException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        }
-    }
-
-    /**
-     * Test of verifyEnvelopedSignature method, of class SignatureManager.
-     */
-    @Ignore
-    @Test
-    public void testSuccessfulVerifyEnvelopedSignature() {
-        try {
-            System.out.println("verifyEnvelopedSignature");
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            dbf.setNamespaceAware(true);
-            Document signedDoc;
-            signedDoc = dbf.newDocumentBuilder().parse(ClassLoader.getSystemResourceAsStream("signed_ePsample_UNK.xml"));
-            SignatureManager instance = new SignatureManager(new NSTestKeyStoreManager());
-            instance.verifyEnvelopedSignature(signedDoc);
-        } catch (SMgrException | ParserConfigurationException | SAXException | IOException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        }
-    }
-
-    @Ignore
-    @Test
-    public void testFailedVerifyEnvelopedSignatureTiani() {
-        try {
-            System.out.println("failedVerifyEnvelopedSignature");
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            dbf.setNamespaceAware(true);
-            Document signedDoc;
-            signedDoc = dbf.newDocumentBuilder().parse(ClassLoader.getSystemResourceAsStream("signed_ePsample_UNK.xml"));
-
-            // Provide a wrong keystore. This should make the signature invalid
-            SignatureManager instance = new SignatureManager(new TianiTestKeyStoreManager());
-            instance.verifyEnvelopedSignature(signedDoc);
-        } catch (SMgrException ex) {
-            logger.error(null, ex);
-
-        } catch (ParserConfigurationException | SAXException | IOException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        }
-    }
-
-    @Ignore
-    @Test
-    public void testFailedVerifyEnvelopedSignatureSPMS() {
-        try {
-            System.out.println("failedVerifyEnvelopedSignatureSPMS");
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            dbf.setNamespaceAware(true);
-            Document signedDoc;
-            signedDoc = dbf.newDocumentBuilder().parse(ClassLoader.getSystemResourceAsStream("signed_ePsample_UNK.xml"));
-
-            // Provide a wrong keystore. This should make the signature invalid
-            SignatureManager instance = new SignatureManager(new SPMSTestKeyStoreManager());
-            instance.verifyEnvelopedSignature(signedDoc);
-        } catch (SMgrException ex) {
-            logger.error(null, ex);
-
-        } catch (ParserConfigurationException | SAXException | IOException ex) {
-            logger.error(null, ex);
-            fail(ex.getMessage());
-        }
-    }
+		KeyStoreManager ksmMock = Mockito.mock(KeyStoreManager.class);
+		String sigAlg = "SHA-256";
+		String digAlg = "SHA-512";
+		SignatureManager sm1 = null;
+		try {
+			sm1 = new SignatureManager(ksmMock, sigAlg, digAlg);
+		} catch (IOException e) {
+			e.printStackTrace();
+			fail("Could not initialize signature manager");
+		}
+		// Basically just tests that the new constructor injection replacing the
+		// old 'init' method is ok.
+		assertNotNull(sm1);
+		assertEquals(ksmMock, sm1.getKeyManager());
+		assertEquals(sigAlg, sm1.getSignatureAlgorithm());
+		assertEquals(digAlg, sm1.getDigestAlgorithm());
+		
+		// Test also that the required properties are asked from the Configuration manager
+		ConfigurationManagerService cfmMock = Mockito.mock(ConfigurationManagerService.class);
+		Mockito.when(cfmMock.getProperty(SignatureManager.SIG_ALG_PROP)).thenReturn(sigAlg);
+		Mockito.when(cfmMock.getProperty(SignatureManager.DGST_ALG_PROP)).thenReturn(digAlg);
+		SignatureManager sm2 = null;
+		try {
+			sm2 = new SignatureManager(ksmMock, cfmMock);
+		} catch (IOException e) {
+			e.printStackTrace();
+			fail("Could not initialize signature manager");
+		}
+		// Basically just tests that the new constructor injection replacing the
+		// old 'init' method is ok.
+		assertNotNull(sm2);
+		assertEquals(ksmMock, sm2.getKeyManager());
+		assertEquals(sigAlg, sm2.getSignatureAlgorithm());
+		assertEquals(digAlg, sm2.getDigestAlgorithm());
+	}
 }
