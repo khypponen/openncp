@@ -7,7 +7,8 @@
 *    epSOS-WEB is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 *
 *    You should have received a copy of the GNU General Public License along with epSOS-WEB. If not, see http://www.gnu.org/licenses/.
-**/package se.sb.epsos.web.pages;
+**/
+package se.sb.epsos.web.pages;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,6 +29,7 @@ import org.apache.wicket.extensions.markup.html.repeater.data.table.DefaultDataT
 import org.apache.wicket.extensions.markup.html.repeater.data.table.IColumn;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.PropertyColumn;
 import org.apache.wicket.extensions.markup.html.repeater.util.SortableDataProvider;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.ChoiceRenderer;
 import org.apache.wicket.markup.html.form.DropDownChoice;
@@ -43,7 +45,6 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.model.ResourceModel;
 import org.apache.wicket.model.StringResourceModel;
-import org.apache.wicket.validation.ValidationError;
 import org.apache.wicket.validation.validator.StringValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -68,7 +69,6 @@ import se.sb.epsos.web.util.Feature;
 import se.sb.epsos.web.util.FeatureFlagsManager;
 import se.sb.epsos.web.util.SessionUtils;
 
-
 @AuthorizeInstantiation({ "ROLE_PHARMACIST", "ROLE_DOCTOR", "ROLE_NURSE" })
 public class QueryPersonPage extends BasePage {
 	private static final long serialVersionUID = 1L;
@@ -79,78 +79,93 @@ public class QueryPersonPage extends BasePage {
 	private DefaultDataTable<Person> datatablePersonList;
 
 	private ModalWindow personInfoModalWindow;
+	private List<PatientIdVO> patientIdVOList = null;
 
 	public QueryPersonPage() {
-		final CompoundPropertyModel<QueryPerson> queryPerson = new CompoundPropertyModel<QueryPerson>(new QueryPerson());
+		final CompoundPropertyModel<QueryPerson> queryPerson = new CompoundPropertyModel<QueryPerson>(
+				new QueryPerson());
 		getSession().clearBreadCrumbList();
 		getSession().addToBreadCrumbList(new BreadCrumbVO<QueryPersonPage>(getString("queryPersonPage.title"), this));
 		add(new QueryPersonForm("form", queryPerson)).setOutputMarkupId(true);
 
 		personInfoModalWindow = new ModalWindow("personInfoModalWindow");
-		PersonInfoPanel personInfoPanel = new PersonInfoPanel(personInfoModalWindow.getContentId(), new CompoundPropertyModel<Person>(
-				new LoadablePersonModel(new Person())));
+		PersonInfoPanel personInfoPanel = new PersonInfoPanel(personInfoModalWindow.getContentId(),
+				new CompoundPropertyModel<Person>(new LoadablePersonModel(new Person())));
 		personInfoModalWindow.setContent(personInfoPanel);
 		personInfoModalWindow.setCookieName("personInfoModalWindow");
 		add(personInfoModalWindow);
 
 		List<IColumn<Person>> columns = new ArrayList<IColumn<Person>>();
 
-		columns.add(new PropertyColumn<Person>(new StringResourceModel("person.firstname", this, null), null, "firstname"));
-		columns.add(new PropertyColumn<Person>(new StringResourceModel("person.lastname", this, null), null, "lastname"));
-		PropertyColumn<Person> sexColumn = new PropertyColumn<Person>(new StringResourceModel("person.gender", this, null), null, "gender") {
+		columns.add(
+				new PropertyColumn<Person>(new StringResourceModel("person.firstname", this, null), null, "firstname"));
+		columns.add(
+				new PropertyColumn<Person>(new StringResourceModel("person.lastname", this, null), null, "lastname"));
+		PropertyColumn<Person> sexColumn = new PropertyColumn<Person>(
+				new StringResourceModel("person.gender", this, null), null, "gender") {
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void populateItem(Item<ICellPopulator<Person>> item, String componentId, IModel<Person> rowModel) {
-				item.add(new Label(componentId, new StringResourceModel("person.gender." + rowModel.getObject().getGender(), QueryPersonPage.this, null)));
+				item.add(new Label(componentId, new StringResourceModel(
+						"person.gender." + rowModel.getObject().getGender(), QueryPersonPage.this, null)));
 			}
 		};
 
 		columns.add(sexColumn);
-		columns.add(new PropertyColumn<Person>(new StringResourceModel("person.birthdate", this, null), null, "birthdate"));
+		columns.add(
+				new PropertyColumn<Person>(new StringResourceModel("person.birthdate", this, null), null, "birthdate"));
 		columns.add(new PropertyColumn<Person>(new StringResourceModel("person.id", this, null), null, "id"));
 		columns.add(new AbstractColumn<Person>(new Model<String>()) {
 			private static final long serialVersionUID = 0L;
 
-			public void populateItem(Item<ICellPopulator<Person>> item, String componentId, final IModel<Person> rowModel) {
+			public void populateItem(Item<ICellPopulator<Person>> item, String componentId,
+					final IModel<Person> rowModel) {
 				item.add(new SimpleAttributeModifier("style", "width: 10%"));
 				item.add(new SimpleAttributeModifier("nowrap", "true"));
 				List<LinkAction> actions = new ArrayList<LinkAction>();
-				actions.add(new LinkAction(new StringResourceModel("person.actions.details", QueryPersonPage.this, null)) {
-					private static final long serialVersionUID = 1L;
+				actions.add(
+						new LinkAction(new StringResourceModel("person.actions.details", QueryPersonPage.this, null)) {
+							private static final long serialVersionUID = 1L;
 
-					@Override
-					public void onClick(AjaxRequestTarget target) {
-						Person person = rowModel.getObject();
-						personInfoModalWindow.setTitle(person.getCommonName());
-						personInfoModalWindow.setContent(new PersonInfoPanel(personInfoModalWindow.getContentId(), new CompoundPropertyModel<Person>(
-								new LoadablePersonModel(person))));
-						personInfoModalWindow.show(target);
-					}
+							@Override
+							public void onClick(AjaxRequestTarget target) {
+								Person person = rowModel.getObject();
+								personInfoModalWindow.setTitle(person.getCommonName());
+								personInfoModalWindow
+										.setContent(new PersonInfoPanel(personInfoModalWindow.getContentId(),
+												new CompoundPropertyModel<Person>(new LoadablePersonModel(person))));
+								personInfoModalWindow.show(target);
+							}
 
-				});
-				if (getSession().getUserDetails().isDoctor() || getSession().getUserDetails().isNurse() || getSession().getUserDetails().isAdmin()) {
-					actions.add(new LinkAction(new StringResourceModel("person.actions.patientsummary", QueryPersonPage.this, null)) {
+						});
+				if (getSession().getUserDetails().isDoctor() || getSession().getUserDetails().isNurse()
+						|| getSession().getUserDetails().isAdmin()) {
+					actions.add(new LinkAction(
+							new StringResourceModel("person.actions.patientsummary", QueryPersonPage.this, null)) {
 						private static final long serialVersionUID = 1L;
 
 						@Override
 						public void onClick(AjaxRequestTarget target) {
 							final Person person = rowModel.getObject();
 							LOGGER.info("EpsosId: " + person.getEpsosId());
-							setResponsePage(new QueryDocumentsPage(new PageParameters("docType=PS,personId=" + person.getEpsosId())));
+							setResponsePage(new QueryDocumentsPage(
+									new PageParameters("docType=PS,personId=" + person.getEpsosId())));
 						}
 
 					});
 				}
 				if (getSession().getUserDetails().isPharmaceut() || getSession().getUserDetails().isAdmin()) {
- 					actions.add(new LinkAction(new StringResourceModel("person.actions.prescriptions", QueryPersonPage.this, null)) {
+					actions.add(new LinkAction(
+							new StringResourceModel("person.actions.prescriptions", QueryPersonPage.this, null)) {
 						private static final long serialVersionUID = 1L;
 
 						@Override
 						public void onClick(AjaxRequestTarget target) {
 							Person person = rowModel.getObject();
 							LOGGER.info("EpsosId: " + person.getEpsosId());
-							setResponsePage(new QueryDocumentsPage(new PageParameters("docType=EP,personId=" + person.getEpsosId())));
+							setResponsePage(new QueryDocumentsPage(
+									new PageParameters("docType=EP,personId=" + person.getEpsosId())));
 						}
 
 					});
@@ -159,7 +174,8 @@ public class QueryPersonPage extends BasePage {
 					private static final long serialVersionUID = 1L;
 
 					public void populateItem(String componentId, final ListItem<LinkAction> item) {
-						item.add(new ActionLinkPanel<LinkAction>(componentId, new Model<LinkAction>(item.getModelObject())));
+						item.add(new ActionLinkPanel<LinkAction>(componentId,
+								new Model<LinkAction>(item.getModelObject())));
 					}
 				});
 			}
@@ -170,7 +186,7 @@ public class QueryPersonPage extends BasePage {
 
 			public Iterator<Person> iterator(int start, int count) {
 				if (personList.isEmpty()) {
-					return Collections.<Person> emptyList().iterator();
+					return Collections.<Person>emptyList().iterator();
 				} else {
 					List<Person> newList = new ArrayList<Person>();
 					for (LoadablePersonModel p : personList.subList(start, start + count)) {
@@ -194,7 +210,8 @@ public class QueryPersonPage extends BasePage {
 			}
 		};
 		provider.setSort("id", true);
-		datatablePersonList = new DefaultDataTable<Person>("dataTable", columns, provider, EpsosWebConstants.DATATABLE_DEFAULT_PAGE_SIZE);
+		datatablePersonList = new DefaultDataTable<Person>("dataTable", columns, provider,
+				EpsosWebConstants.DATATABLE_DEFAULT_PAGE_SIZE);
 		datatablePersonList.setOutputMarkupId(true);
 		add(datatablePersonList);
 	}
@@ -204,21 +221,24 @@ public class QueryPersonPage extends BasePage {
 		LOGGER.info("Clear current page information from session.");
 		SessionUtils.setSessionMetaData(CustomDataTableCurrentPageMetaDataKey.KEY, -1);
 	}
-	
+
 	public class QueryPersonForm extends Form<QueryPerson> {
 		private static final long serialVersionUID = 1L;
 
 		private DropDownChoice<CountryVO> country;
-		private ListView<PatientIdVO> patientIds;
+		// encapsulate the ListView in a WebMarkupContainer in order for it to
+		// update
+		private final WebMarkupContainer patientContainer;
+		private final ListView<PatientIdVO> patientIds;
 
 		public QueryPersonForm(String id, CompoundPropertyModel<QueryPerson> queryPerson) {
-			super(id, queryPerson);	
+			super(id, queryPerson);
 			List<CountryVO> countries = CountryConfigManager.getCountries();
-                        for(CountryVO country: countries){
-                            country.setName(getString("country."+country.getId()));
-                        }
+			for (CountryVO country : countries) {
+				country.setName(getString("country." + country.getId()));
+			}
 			ChoiceRenderer<CountryVO> countryRenderer = new ChoiceRenderer<CountryVO>("name", "id");
-			
+
 			country = new DropDownChoice<CountryVO>("country", countries, countryRenderer);
 			country.add(new AjaxFormComponentUpdatingBehavior("onchange") {
 				private static final long serialVersionUID = 9036401857071497613L;
@@ -232,10 +252,10 @@ public class QueryPersonPage extends BasePage {
 
 					QueryPerson query = (QueryPerson) QueryPersonForm.this.getDefaultModelObject();
 					CountryVO selectedCountry = query.getCountry();
-					List<PatientIdVO> countryPatientIds = CountryConfigManager.getPatientIdentifiers(selectedCountry);
+					List<PatientIdVO> countryPatientIds = QueryPersonPage.this.getPatientVOList(selectedCountry);
 					query.setPatientIds(countryPatientIds);
 					String info = CountryConfigManager.getText(selectedCountry);
-					if(info == null)
+					if (info == null)
 						info = "";
 					if (FeatureFlagsManager.check(Feature.SHOW_HELP_TEXT_FOR_TEST)) {
 						info = info + "<br/>" + CountryConfigManager.getHelpTextForTest(selectedCountry);
@@ -243,11 +263,16 @@ public class QueryPersonPage extends BasePage {
 					query.setHelpLabel(getString("queryperson.help"));
 					query.setHelpLink(CountryConfigManager.getIdentificationHelpLink(selectedCountry));
 					query.setCountryInfo(info);
-					
-					// TODO - different external link for different country, maybe put in countryconfig. Where is this information?
+
+					patientIds.setList(countryPatientIds);
+
 					ajaxRequestTarget.addComponent(getFeedback());
-					ajaxRequestTarget.addComponent(QueryPersonForm.this);
+					// Order the update of the patient ids container
+					ajaxRequestTarget.addComponent(patientContainer);
+					// TODO - different external link for different country,
+					// maybe put in countryconfig. Where is this information?
 					ajaxRequestTarget.addComponent(datatablePersonList);
+					ajaxRequestTarget.addComponent(QueryPersonForm.this);
 				}
 
 				@Override
@@ -255,11 +280,16 @@ public class QueryPersonPage extends BasePage {
 					clearErrorList(target);
 					target.addComponent(getFeedback());
 				}
-				
+
 			});
 			country.setRequired(true);
-            country.setMarkupId("country");
-			add(country);
+			country.setMarkupId("country");
+			patientContainer = new WebMarkupContainer("patientContainer");
+			patientContainer.add(country);
+			// generate a markup-id so the contents can be updated through an
+			// AJAX call
+			patientContainer.setOutputMarkupId(true);
+			patientContainer.setOutputMarkupPlaceholderTag(true);
 			patientIds = new ListView<PatientIdVO>("patientIds") {
 				private static final long serialVersionUID = 2849670383290897403L;
 
@@ -267,7 +297,8 @@ public class QueryPersonPage extends BasePage {
 				protected void populateItem(ListItem<PatientIdVO> patientIdVOListItem) {
 					PatientIdVO id = patientIdVOListItem.getModelObject();
 					patientIdVOListItem.add(new Label("idLabel", getString(id.getLabel(), null, id.getLabel())));
-					TextField<String> idTextField = new TextField<String>("idTextField", new PropertyModel<String>(id, "value"));
+					TextField<String> idTextField = new TextField<String>("idTextField",
+							new PropertyModel<String>(id, "value"));
 					idTextField.setLabel(new ResourceModel(id.getLabel(), id.getLabel()));
 					if (id.getMin() != null && id.getMax() != null) {
 						idTextField.add(StringValidator.lengthBetween(id.getMin(), id.getMax()));
@@ -276,7 +307,9 @@ public class QueryPersonPage extends BasePage {
 					patientIdVOListItem.add(idTextField);
 				}
 			};
-			add(patientIds);
+			patientIds.setOutputMarkupId(true);
+			patientIds.setOutputMarkupPlaceholderTag(true);
+			patientContainer.add(patientIds);
 			add(new Label("countryInfo").setEscapeModelStrings(false));
 			ExternalLink link = new ExternalLink("helpLink", queryPerson.getObject().getHelpLink()) {
 				private static final long serialVersionUID = 1L;
@@ -286,7 +319,8 @@ public class QueryPersonPage extends BasePage {
 					String helpLink = ((QueryPerson) getParent().getDefaultModelObject()).getHelpLink();
 					if (helpLink == null || helpLink.isEmpty())
 						return false;
-					else return true;
+					else
+						return true;
 				}
 			};
 			link.add(new Label("helpLabel").setEscapeModelStrings(false));
@@ -296,7 +330,7 @@ public class QueryPersonPage extends BasePage {
 
 				@Override
 				protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
-                    clearErrorList(target);
+					clearErrorList(target);
 					AuthenticatedUser userDetails = ((EpsosAuthenticatedWebSession) getSession()).getUserDetails();
 					CountryVO countryVO = ((QueryPerson) form.getDefaultModelObject()).getCountry();
 					List<PatientIdVO> patientList = ((QueryPerson) form.getDefaultModelObject()).getPatientIds();
@@ -314,14 +348,15 @@ public class QueryPersonPage extends BasePage {
 							getSession().invalidate();
 							throw new RestartResponseAtInterceptPageException(getApplication().getHomePage());
 						}
-						if(e.isKnownEpsosError()){
-							handleKnownNcpExceptionAfterAjax(e, getLocalizer().getString("error.ncpservice.query", this), target);
+						if (e.isKnownEpsosError()) {
+							handleKnownNcpExceptionAfterAjax(e,
+									getLocalizer().getString("error.ncpservice.query", this), target);
 						} else {
-							error(getLocalizer().getString("error.ncpservice.query", this) + ": " + e.getMessage());							
+							error(getLocalizer().getString("error.ncpservice.query", this) + ": " + e.getMessage());
 						}
 						LOGGER.error("Failed to query for patient, " + e.getMessage(), e);
 					}
-					
+
 					target.addComponent(getFeedback());
 					target.addComponent(datatablePersonList);
 				}
@@ -333,8 +368,10 @@ public class QueryPersonPage extends BasePage {
 				}
 
 			};
-            searchButton.setMarkupId("submit");
-            add(searchButton);
+			searchButton.setMarkupId("submit");
+			add(searchButton);
+			patientContainer.add(searchButton);
+			add(patientContainer);
 		}
 
 		private List<LoadablePersonModel> wrapPersonListIntoLoadableModel(List<Person> qResult) {
@@ -344,6 +381,32 @@ public class QueryPersonPage extends BasePage {
 				newList.add(new LoadablePersonModel(p));
 			}
 			return newList;
+		}
+	}
+
+	/**
+	 * Do not use as needed only for tests.
+	 */
+	@Deprecated
+	protected void setPatientVOList(List<PatientIdVO> testContent) {
+
+		this.patientIdVOList = testContent;
+	}
+
+	/**
+	 * Added as an explicit method for the content to be substituted in test
+	 * (QueryPersonPageTest).
+	 * 
+	 * @param selectedCountry
+	 *            The country to load the data for
+	 * @return A list of PatientIdVO objects
+	 */
+	protected List<PatientIdVO> getPatientVOList(CountryVO selectedCountry) {
+
+		if (this.patientIdVOList == null) {
+			return CountryConfigManager.getPatientIdentifiers(selectedCountry);
+		} else {
+			return this.patientIdVOList;
 		}
 	}
 }
