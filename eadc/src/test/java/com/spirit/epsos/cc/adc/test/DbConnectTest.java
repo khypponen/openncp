@@ -21,16 +21,21 @@ public class DbConnectTest extends BaseEadcTest {
     private static Logger log = LoggerFactory.getLogger(DbConnectTest.class);
 
     @Test
-    public void eadcReceiverTest() throws ClassNotFoundException, SQLException, ParserConfigurationException, NamingException {
-        //DOMConfigurator.configureAndWatch("log4j.xml", 60 * 1000);
-        //BasicConfigurator.configure();
+    public void eadcReceiverTest() throws ClassNotFoundException, SQLException, ParserConfigurationException, NamingException, InterruptedException {
+
+        // TODO: check and validate, adding dummy Thread.sleep(500); in order to prevent the JDBC Exception
+        // Unique index or primary key violation: "PRIMARY_KEY_E ON PUBLIC.TEST_ADC(PK)"; SQL statement:
+        // during the Unit Test plan execution caused by the System.currentTimeMillis() as a Primary Key
         for (int i = 0; i < 3; i++) {
             new DbConnectTest().tryDbConnect(false);
+            Thread.sleep(500);
         }
+        Thread.sleep(500);
         new DbConnectTest().tryDbConnect(true);
     }
 
-    public void tryDbConnect(boolean dropTable) throws NamingException, SQLException, ParserConfigurationException, ClassNotFoundException {
+    private void tryDbConnect(boolean dropTable) throws NamingException, SQLException, ParserConfigurationException, ClassNotFoundException {
+
         log.info("create new  DBConnect_epSOS");
         EadcDbConnect con = EadcFactory.INSTANCE.createEadcDbConnect(DS_NAME);
         log.info("DBConnect_epSOS created .......");
@@ -67,5 +72,4 @@ public class DbConnectTest extends BaseEadcTest {
             con.closeConnection();
         }
     }
-
 }

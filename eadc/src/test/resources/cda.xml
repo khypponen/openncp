@@ -1,879 +1,938 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ClinicalDocument xsi:schemaLocation="  urn:hl7-org:v3 http://pub.e-tervis.ee/standards2/Schema/V3/HL7-ORG-V3-2005-NORMATIVE-EE-DL-Ext-V1/infrastructure/cda/CDA_EE01.xsd  urn:hl7-EE-DL-Ext:v1 http://pub.e-tervis.ee/standards2/Schema/V3/HL7-ORG-V3-2006-NORMATIVE-EE-DL-Ext-V1/processable/multicacheschemas/POCD_MT000040_EE01_Extension.xsd"
-      xmlns="urn:hl7-org:v3"
-      xmlns:sch="http://www.ascc.net/xml/schematron"
-      xmlns:mif="urn:hl7-org:v3/mif"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns:ext="urn:hl7-EE-DL-Ext:v1"
-      xmlns:epsos="urn:epsos-org:ep:medication">
-  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
-  <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3"/>
-  <id root="1.3.6.1.4.1.28284.6.2.4.75" extension="20120519234435746"/>
-  <code code="60591-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" displayName="Patient Summary"/>
-  <title>Patient Summary</title>
-  <effectiveTime value="20120519234435+0300"/>
-  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="HL7:Confidentiality" displayName="normal"/>
-  <languageCode code="et-EE"/>
-  <recordTarget typeCode="RCT" contextControlCode="OP">
-    <patientRole classCode="PAT">
-      <id root="1.3.6.1.4.1.28284.6.2.2.1" extension="48905059995"/>
-      <addr use="PHYS">
-        <country>EE</country>
-        <city>Tartu</city>
-        <postalCode>50706</postalCode>
-        <streetAddressLine>Tallinna mnt 23</streetAddressLine>
-        <state nullFlavor="NA"/>
-      </addr>
-      <telecom value="tel:+8888888888888" use="H"/>
-      <telecom value="mailto:ly@cuusk.ee" use="H"/>
-      <patient>
-        <name>
-          <given>LY</given>
-          <family>CUUSK</family>
-        </name>
-        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7:AdministrativeGender" displayName="naine"/>
-        <birthTime value="19890505"/>
-      </patient>
-    </patientRole>
-  </recordTarget>
-  <author>
-    <time value="20120519234435+0300"/>
-    <assignedAuthor classCode="ASSIGNED">
-      <id root="1.3.6.1.4.1.28284.6.2.4.32" assigningAuthorityName="Digilugu"/>
-      <assignedAuthoringDevice>
-        <manufacturerModelName>Tervise infosüsteem</manufacturerModelName>
-        <softwareName>Tervise infosüsteem</softwareName>
-      </assignedAuthoringDevice>
-      <representedOrganization>
-        <id root="1.3.6.1.4.1.28284.6.2.4.1" extension="90009016"/>
-        <name>Eesti E-Tervise SA</name>
-        <telecom use="WP" value="tel:+3726943900"/>
-        <telecom use="WP" value="mailto:e-tervis@e-tervis.ee"/>
-        <addr>
-          <country>EE</country>
-          <city>Tallinn</city>
-          <postalCode>10134</postalCode>
-          <streetAddressLine>Uus-Tatari 25 / Veerenni 13</streetAddressLine>
-          <state nullFlavor="NI"/>
-        </addr>
-      </representedOrganization>
-    </assignedAuthor>
-  </author>
-  <custodian>
-    <assignedCustodian>
-      <representedCustodianOrganization>
-        <id root="1.3.6.1.4.1.28284.6.2.4.1" extension="90009016"/>
-        <name>Eesti E-Tervise SA</name>
-        <addr>
-          <country>EE</country>
-          <city>Tallinn</city>
-          <postalCode>10134</postalCode>
-          <streetAddressLine>Uus-Tatari 25 / Veerenni 13</streetAddressLine>
-          <state nullFlavor="NI"/>
-        </addr>
-      </representedCustodianOrganization>
-    </assignedCustodian>
-  </custodian>
-  <legalAuthenticator>
-    <time value="20120519234435+0300"/>
-    <signatureCode nullFlavor="NI"/>
-    <assignedEntity>
-      <id root="1.3.6.1.4.1.28284.6.2.4.32" assigningAuthorityName="Digilugu"/>
-      <assignedPerson nullFlavor="NI"/>
-      <representedOrganization>
-        <id root="1.3.6.1.4.1.28284.6.2.4.1" extension="90009016"/>
-        <name>Eesti E-Tervise SA</name>
-        <telecom use="WP" value="tel:+3726943900"/>
-        <telecom use="WP" value="mailto:e-tervis@e-tervis.ee"/>
-        <addr>
-          <country>EE</country>
-          <city>Tallinn</city>
-          <postalCode>10134</postalCode>
-          <streetAddressLine>Uus-Tatari 25 / Veerenni 13</streetAddressLine>
-          <state nullFlavor="NI"/>
-        </addr>
-      </representedOrganization>
-    </assignedEntity>
-  </legalAuthenticator>
-  <participant typeCode="IND">
-    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
-    <associatedEntity classCode="ECON">
-      <code code="NBOR" codeSystem="2.16.840.1.113883.5.111" codeSystemName="HL7:PersonalRelationshipRoleType" displayName="naaber"/>
-      <addr nullFlavor="NI"/>
-      <telecom use="H" value="tel:+37250123456"/>
-      <associatedPerson>
-        <name>
-          <given>Heli</given>
-          <family>Lepik</family>
-        </name>
-      </associatedPerson>
-    </associatedEntity>
-  </participant>
-  <participant typeCode="IND">
-    <associatedEntity classCode="CAREGIVER">
-      <addr use="WP">
-        <country>EE</country>
-        <city>Tallinn</city>
-        <postalCode>13517</postalCode>
-        <streetAddressLine>Ehitajate tee 137</streetAddressLine>
-        <state nullFlavor="NA"/>
-      </addr>
-      <telecom use="WP" value="tel:+3726747240"/>
-      <telecom use="WP" value="mailto:info@tohter.ee"/>
-      <associatedPerson>
-        <name>
-          <given>Heldur</given>
-          <family>Loogus</family>
-        </name>
-      </associatedPerson>
-      <scopingOrganization classCode="ORG">
-        <name>OÜ Järveotsa Perearstikeskus</name>
-        <telecom use="WP" value="tel:+3726747240"/>
-        <telecom use="WP" value="mailto:info@tohter.ee"/>
-        <addr use="WP">
-          <country>EE</country>
-          <city>Tallinn</city>
-          <postalCode>13517</postalCode>
-          <streetAddressLine>Ehitajate tee 137</streetAddressLine>
-          <state nullFlavor="NA"/>
-        </addr>
-      </scopingOrganization>
-    </associatedEntity>
-  </participant>
-  <documentationOf>
-    <serviceEvent>
-      <effectiveTime>
-        <high value="20120519234435+0300"/>
-      </effectiveTime>
-    </serviceEvent>
-  </documentationOf>
-  <relatedDocument typeCode="XFRM">
-    <parentDocument>
-      <id root="1.3.6.1.4.1.28284.6.2.4.75" extension="20120519234435746"/>
-    </parentDocument>
-  </relatedDocument>
-  <component>
-    <structuredBody>
-      <component>
-        <section>
-          <templateId root="2.16.840.1.113883.10.20.1.8"/>
-          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
-          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
-          <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" displayName="Kasutatud ravimid"/>
-          <title>Kasutatud ravimid</title>
-          <text>
-            <table border="1">
-              <tbody>
-                <tr>
-                  <th>Retsepti number</th>
-                  <th>Manustamise sagedus</th>
-                  <th>Ühekordne annus</th>
-                  <th>Ravimvorm</th>
-                  <th>Toimeaine</th>
-                </tr>
-                <tr ID="med1">
-                  <td>CM-00555551114</td>
-                  <td>8.0 h</td>
-                  <td>500 mg</td>
-                  <td></td>
-                  <td>amoksitsiliin</td>
-                </tr>
-                <tr ID="med2">
-                  <td>CM-00555551113</td>
-                  <td>12.0 h</td>
-                  <td>750 mg</td>
-                  <td>tablett</td>
-                  <td>Etorikoksiib</td>
-                </tr>
-              </tbody>
-            </table>
-          </text>
-          <entry typeCode="DRIV">
-            <substanceAdministration classCode="SBADM" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.24"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
-              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
-              <id root="1.3.6.1.4.1.28284.6.2.4.4" extension="CM-00555551114"/>
-              <text>
-                <reference value="#med1"/>
-              </text>
-              <statusCode code="completed"/>
-              <effectiveTime xsi:type="IVL_TS">
-                <low nullFlavor="UNK"/>
-                <high nullFlavor="UNK"/>
-              </effectiveTime>
-              <effectiveTime operator="A" xsi:type="PIVL_TS">
-                <period value="8.0" unit="h"/>
-              </effectiveTime>
-              <doseQuantity>
-                <low value="500" unit="mg"/>
-                <high value="500" unit="mg"/>
-              </doseQuantity>
-              <consumable>
-                <manufacturedProduct>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
-                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
-                  <manufacturedMaterial>
-                    <code nullFlavor="NI"/>
-                    <name nullFlavor="NI"/>
-                    <epsos:formCode nullFlavor="NI"/>
-                    <epsos:ingredient classCode="ACTI">
-                      <epsos:quantity>
-                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
-                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
-                      </epsos:quantity>
-                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
-                        <epsos:code code="J01CA04" codeSystem="2.16.840.1.113883.6.73" codeSystemName="Anatomical Therapeutic Chemical" displayName="amoksitsiliin"/>
-                      </epsos:ingredient>
-                    </epsos:ingredient>
-                  </manufacturedMaterial>
-                </manufacturedProduct>
-              </consumable>
-            </substanceAdministration>
-          </entry>
-          <entry typeCode="DRIV">
-            <substanceAdministration classCode="SBADM" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.24"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
-              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
-              <id root="1.3.6.1.4.1.28284.6.2.4.4" extension="CM-00555551113"/>
-              <text>
-                <reference value="#med2"/>
-              </text>
-              <statusCode code="completed"/>
-              <effectiveTime xsi:type="IVL_TS">
-                <low nullFlavor="UNK"/>
-                <high nullFlavor="UNK"/>
-              </effectiveTime>
-              <effectiveTime operator="A" xsi:type="PIVL_TS">
-                <period value="12.0" unit="h"/>
-              </effectiveTime>
-              <doseQuantity>
-                <low value="750" unit="mg"/>
-                <high value="750" unit="mg"/>
-              </doseQuantity>
-              <consumable>
-                <manufacturedProduct>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
-                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
-                  <manufacturedMaterial>
-                    <code nullFlavor="NI"/>
-                    <name nullFlavor="NI"/>
-                    <epsos:formCode code="10219000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="tablett"/>
-                    <epsos:ingredient classCode="ACTI">
-                      <epsos:quantity>
-                        <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
-                        <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
-                      </epsos:quantity>
-                      <epsos:ingredient classCode="MMAT" determinerCode="KIND">
-                        <epsos:code code="M01AH05" codeSystem="2.16.840.1.113883.6.73" codeSystemName="Anatomical Therapeutic Chemical" displayName="Etorikoksiib"/>
-                      </epsos:ingredient>
-                    </epsos:ingredient>
-                  </manufacturedMaterial>
-                </manufacturedProduct>
-              </consumable>
-            </substanceAdministration>
-          </entry>
-        </section>
-      </component>
-      <component>
-        <section>
-          <templateId root="2.16.840.1.113883.10.20.1.11"/>
-          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
-          <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" displayName="Kaebuste loetelu"/>
-          <title>Kaebuste loetelu</title>
-          <text>
-            <table border="1">
-              <tbody>
-                <tr>
-                  <th>Diagnoos</th>
-                  <th>Kuupäev</th>
-                  <th>Tüüp</th>
-                  <th>Kirjeldus</th>
-                </tr>
-                <tr ID="dgn1">
-                  <td ID="dgn1_diagnosis">K72.1 - Krooniline maksapuudulikkus</td>
-                  <td>04.08.2008</td>
-                  <td ID="dgn1_type">haigus</td>
-                  <td ID="dgn1_description">Maksapuudulikkus &amp; maolaienemus krooniline</td>
-                </tr>
-                <tr ID="dgn2">
-                  <td ID="dgn2_diagnosis">E13 - muu täpsustatud suhkrutõbi</td>
-                  <td>04.03.2007</td>
-                  <td ID="dgn2_type">haigus</td>
-                  <td ID="dgn2_description">muu täpsustatud suhkrutõbi</td>
-                </tr>
-                <tr ID="dgn3">
-                  <td ID="dgn3_diagnosis">E10 - Insuliinisõltuv suhkurtõbi</td>
-                  <td>07.11.2011</td>
-                  <td ID="dgn3_type">haigus</td>
-                  <td ID="dgn3_description">Arsti sõnaline diagnoos siin</td>
-                </tr>
-              </tbody>
-            </table>
-          </text>
-          <entry typeCode="DRIV">
-            <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.27"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
-              <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134752"/>
-              <code nullFlavor="NA"/>
-              <statusCode code="active"/>
-              <effectiveTime>
-                <low value="20080804"/>
-              </effectiveTime>
-              <entryRelationship typeCode="SUBJ" inversionInd="false">
-                <observation classCode="OBS" moodCode="EVN" negationInd="false">
-                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                  <id root="1.3.6.1.4.1.28284.1.3.2.2.4" extension="134752"/>
-                  <code code="64572001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="haigus" codeSystemVersion="July 2009">
-                    <originalText>
-                      <reference value="#dgn1_type"/>
-                    </originalText>
-                  </code>
-                  <text>
-                    <reference value="#dgn1_description"/>
-                  </text>
-                  <statusCode code="completed"/>
-                  <effectiveTime>
-                    <low value="20080804"/>
-                  </effectiveTime>
-                  <value code="K72.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" displayName="Krooniline maksapuudulikkus" xsi:type="CD">
-                    <originalText>
-                      <reference value="#dgn1_diagnosis"/>
-                    </originalText>
-                  </value>
-                </observation>
-              </entryRelationship>
-            </act>
-          </entry>
-          <entry typeCode="DRIV">
-            <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.27"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
-              <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134848"/>
-              <code nullFlavor="NA"/>
-              <statusCode code="active"/>
-              <effectiveTime>
-                <low value="20070304"/>
-              </effectiveTime>
-              <entryRelationship typeCode="SUBJ" inversionInd="false">
-                <observation classCode="OBS" moodCode="EVN" negationInd="false">
-                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                  <id root="1.3.6.1.4.1.28284.1.3.2.2.4" extension="134848"/>
-                  <code code="64572001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="haigus" codeSystemVersion="July 2009">
-                    <originalText>
-                      <reference value="#dgn2_type"/>
-                    </originalText>
-                  </code>
-                  <text>
-                    <reference value="#dgn2_description"/>
-                  </text>
-                  <statusCode code="completed"/>
-                  <effectiveTime>
-                    <low value="20070304"/>
-                  </effectiveTime>
-                  <value code="E13" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" displayName="muu täpsustatud suhkrutõbi" xsi:type="CD">
-                    <originalText>
-                      <reference value="#dgn2_diagnosis"/>
-                    </originalText>
-                  </value>
-                </observation>
-              </entryRelationship>
-            </act>
-          </entry>
-          <entry typeCode="DRIV">
-            <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.27"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
-              <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134836"/>
-              <code nullFlavor="NA"/>
-              <statusCode code="active"/>
-              <effectiveTime>
-                <low value="20111107"/>
-              </effectiveTime>
-              <entryRelationship typeCode="SUBJ" inversionInd="false">
-                <observation classCode="OBS" moodCode="EVN" negationInd="false">
-                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                  <id root="1.3.6.1.4.1.28284.1.3.2.2.4" extension="134836"/>
-                  <code code="64572001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="haigus" codeSystemVersion="July 2009">
-                    <originalText>
-                      <reference value="#dgn3_type"/>
-                    </originalText>
-                  </code>
-                  <text>
-                    <reference value="#dgn3_description"/>
-                  </text>
-                  <statusCode code="completed"/>
-                  <effectiveTime>
-                    <low value="20111107"/>
-                  </effectiveTime>
-                  <value code="E10" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" displayName="Insuliinisõltuv suhkurtõbi" xsi:type="CD">
-                    <originalText>
-                      <reference value="#dgn3_diagnosis"/>
-                    </originalText>
-                  </value>
-                </observation>
-              </entryRelationship>
-            </act>
-          </entry>
-        </section>
-      </component>
-      <component>
-        <section>
-          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
-          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
-          <templateId root="2.16.840.1.113883.10.20.1.12"/>
-          <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" displayName="Teostatud protseduurid"/>
-          <title>Teostatud protseduurid</title>
-          <text>
-            <table border="1">
-              <tbody>
-                <tr>
-                  <th>Operatsioon</th>
-                  <th>Kuupäev</th>
-                  <th>Kirjeldus</th>
-                </tr>
-                <tr ID="proc1">
-                  <td>Andmed puuduvad</td>
-                  <td/>
-                  <td/>
-                </tr>
-              </tbody>
-            </table>
-          </text>
-          <entry>
-            <procedure classCode="PROC" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.29"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
-              <id nullFlavor="NA"/>
-              <code nullFlavor="NA"/>
-              <text>
-                <reference value="#proc1"/>
-              </text>
-              <statusCode code="completed"/>
-              <effectiveTime nullFlavor="NA"/>
-            </procedure>
-          </entry>
-        </section>
-      </component>
-      <component>
-        <section>
-          <templateId root="2.16.840.1.113883.10.20.1.2"/>
-          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
-          <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" displayName="Allergiad, soovimatud kõrvalnähud, ohud"/>
-          <title>Allergiad, soovimatud kõrvalnähud, ohud</title>
-          <text>
-            <table border="1">
-              <tbody>
-                <tr>
-                  <th>Allergia RHK-10 kood</th>
-                  <th>Diagnoosimise kuupäev</th>
-                  <th>Allergia ilming</th>
-                </tr>
-                <tr ID="allergy1">
-                  <td ID="allergy1_code">T78.4 - Teisiti täpsustamata ülitundlikkus</td>
-                  <td>15.06.2011</td>
-                  <td ID="manifest-1">Arsti sõnaline diagnoos</td>
-                </tr>
-                <tr ID="allergy2">
-                  <td ID="allergy2_code">Z88.0 - Penitsilliiniallergia anamneesis</td>
-                  <td>15.06.2011</td>
-                  <td ID="manifest-2">Penitsilliiniallergia põhjustab hingamisraskusi</td>
-                </tr>
-                <tr ID="allergy3">
-                  <td ID="allergy3_code">L23.2 - Kosmeetikumide põhjustatud allergiline kontaktdermatiit</td>
-                  <td>30.05.2011</td>
-                  <td ID="manifest-3">Äge reaktsioon kosmeetikatoodetele</td>
-                </tr>
-                <tr ID="allergy4">
-                  <td ID="allergy4_code">J45.0 - Heinapalavik koos astmaga</td>
-                  <td>30.05.2011</td>
-                  <td ID="manifest-4">Aevastamine, nina kinnisus</td>
-                </tr>
-                <tr ID="allergy5">
-                  <td ID="allergy5_code">L29.9 - Teisiti täpsustamata sügelus</td>
-                  <td>06.03.2007</td>
-                  <td ID="manifest-5">Naha sügelemine, nahk on punane</td>
-                </tr>
-                <tr ID="allergy6">
-                  <td ID="allergy6_code">Z88.7 - Seerumite ja vaktsiinide allergia</td>
-                  <td>17.02.2007</td>
-                  <td ID="manifest-6">Seerumite ja vaktsiinide allergia</td>
-                </tr>
-              </tbody>
-            </table>
-          </text>
-          <entry>
-            <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.27"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
-              <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134564"/>
-              <code nullFlavor="NA"/>
-              <statusCode code="active"/>
-              <effectiveTime>
-                <low value="20110615"/>
-              </effectiveTime>
-              <entryRelationship typeCode="SUBJ" inversionInd="false">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                  <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134564"/>
-                  <code code="419199007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Allergy, unspecified"/>
-                  <text>
-                    <reference value="#allergy1"/>
-                  </text>
-                  <statusCode code="completed"/>
-                  <effectiveTime>
-                    <low value="20110615"/>
-                  </effectiveTime>
-                  <value xsi:type="CD" nullFlavor="NA"/>
-                  <entryRelationship typeCode="MFST">
-                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.1.54"/>
-                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                      <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                      <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134564"/>
-                      <code code="418799008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Finding reported by subject or history provider" codeSystemVersion="July 2009"/>
-                      <text>
-                        <reference value="#manifest-1"/>
-                      </text>
-                      <statusCode code="completed"/>
-                      <effectiveTime>
-                        <low value="20110615"/>
-                        <high nullFlavor="UNK"/>
-                      </effectiveTime>
-                      <value code="T78.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" displayName="Teisiti täpsustamata ülitundlikkus" xsi:type="CD">
-                        <originalText mediaType="text/xml">
-                          <reference value="#allergy1_code"/>
-                        </originalText>
-                      </value>
-                    </observation>
-                  </entryRelationship>
-                </observation>
-              </entryRelationship>
-            </act>
-          </entry>
-          <entry>
-            <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.27"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
-              <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134565"/>
-              <code nullFlavor="NA"/>
-              <statusCode code="active"/>
-              <effectiveTime>
-                <low value="20110615"/>
-              </effectiveTime>
-              <entryRelationship typeCode="SUBJ" inversionInd="false">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                  <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134565"/>
-                  <code code="419199007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Allergy, unspecified"/>
-                  <text>
-                    <reference value="#allergy2"/>
-                  </text>
-                  <statusCode code="completed"/>
-                  <effectiveTime>
-                    <low value="20110615"/>
-                  </effectiveTime>
-                  <value xsi:type="CD" nullFlavor="NA"/>
-                  <entryRelationship typeCode="MFST">
-                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.1.54"/>
-                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                      <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                      <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134565"/>
-                      <code code="418799008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Finding reported by subject or history provider" codeSystemVersion="July 2009"/>
-                      <text>
-                        <reference value="#manifest-2"/>
-                      </text>
-                      <statusCode code="completed"/>
-                      <effectiveTime>
-                        <low value="20110615"/>
-                        <high nullFlavor="UNK"/>
-                      </effectiveTime>
-                      <value code="Z88.0" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" displayName="Penitsilliiniallergia anamneesis" xsi:type="CD">
-                        <originalText mediaType="text/xml">
-                          <reference value="#allergy2_code"/>
-                        </originalText>
-                      </value>
-                    </observation>
-                  </entryRelationship>
-                </observation>
-              </entryRelationship>
-            </act>
-          </entry>
-          <entry>
-            <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.27"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
-              <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134908"/>
-              <code nullFlavor="NA"/>
-              <statusCode code="active"/>
-              <effectiveTime>
-                <low value="20110530"/>
-              </effectiveTime>
-              <entryRelationship typeCode="SUBJ" inversionInd="false">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                  <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134908"/>
-                  <code code="419199007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Allergy, unspecified"/>
-                  <text>
-                    <reference value="#allergy3"/>
-                  </text>
-                  <statusCode code="completed"/>
-                  <effectiveTime>
-                    <low value="20110530"/>
-                  </effectiveTime>
-                  <value xsi:type="CD" nullFlavor="NA"/>
-                  <entryRelationship typeCode="MFST">
-                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.1.54"/>
-                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                      <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                      <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134908"/>
-                      <code code="418799008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Finding reported by subject or history provider" codeSystemVersion="July 2009"/>
-                      <text>
-                        <reference value="#manifest-3"/>
-                      </text>
-                      <statusCode code="completed"/>
-                      <effectiveTime>
-                        <low value="20110530"/>
-                        <high nullFlavor="UNK"/>
-                      </effectiveTime>
-                      <value code="L23.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" displayName="Kosmeetikumide põhjustatud allergiline kontaktdermatiit" xsi:type="CD">
-                        <originalText mediaType="text/xml">
-                          <reference value="#allergy3_code"/>
-                        </originalText>
-                      </value>
-                    </observation>
-                  </entryRelationship>
-                </observation>
-              </entryRelationship>
-            </act>
-          </entry>
-          <entry>
-            <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.27"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
-              <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134906"/>
-              <code nullFlavor="NA"/>
-              <statusCode code="active"/>
-              <effectiveTime>
-                <low value="20110530"/>
-              </effectiveTime>
-              <entryRelationship typeCode="SUBJ" inversionInd="false">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                  <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134906"/>
-                  <code code="419199007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Allergy, unspecified"/>
-                  <text>
-                    <reference value="#allergy4"/>
-                  </text>
-                  <statusCode code="completed"/>
-                  <effectiveTime>
-                    <low value="20110530"/>
-                  </effectiveTime>
-                  <value xsi:type="CD" nullFlavor="NA"/>
-                  <entryRelationship typeCode="MFST">
-                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.1.54"/>
-                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                      <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                      <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134906"/>
-                      <code code="418799008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Finding reported by subject or history provider" codeSystemVersion="July 2009"/>
-                      <text>
-                        <reference value="#manifest-4"/>
-                      </text>
-                      <statusCode code="completed"/>
-                      <effectiveTime>
-                        <low value="20110530"/>
-                        <high nullFlavor="UNK"/>
-                      </effectiveTime>
-                      <value code="J45.0" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" displayName="Heinapalavik koos astmaga" xsi:type="CD">
-                        <originalText mediaType="text/xml">
-                          <reference value="#allergy4_code"/>
-                        </originalText>
-                      </value>
-                    </observation>
-                  </entryRelationship>
-                </observation>
-              </entryRelationship>
-            </act>
-          </entry>
-          <entry>
-            <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.27"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
-              <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134853"/>
-              <code nullFlavor="NA"/>
-              <statusCode code="active"/>
-              <effectiveTime>
-                <low value="20070306"/>
-              </effectiveTime>
-              <entryRelationship typeCode="SUBJ" inversionInd="false">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                  <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134853"/>
-                  <code code="419199007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Allergy, unspecified"/>
-                  <text>
-                    <reference value="#allergy5"/>
-                  </text>
-                  <statusCode code="completed"/>
-                  <effectiveTime>
-                    <low value="20070306"/>
-                  </effectiveTime>
-                  <value xsi:type="CD" nullFlavor="NA"/>
-                  <entryRelationship typeCode="MFST">
-                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.1.54"/>
-                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                      <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                      <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134853"/>
-                      <code code="418799008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Finding reported by subject or history provider" codeSystemVersion="July 2009"/>
-                      <text>
-                        <reference value="#manifest-5"/>
-                      </text>
-                      <statusCode code="completed"/>
-                      <effectiveTime>
-                        <low value="20070306"/>
-                        <high nullFlavor="UNK"/>
-                      </effectiveTime>
-                      <value code="L29.9" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" displayName="Teisiti täpsustamata sügelus" xsi:type="CD">
-                        <originalText mediaType="text/xml">
-                          <reference value="#allergy5_code"/>
-                        </originalText>
-                      </value>
-                    </observation>
-                  </entryRelationship>
-                </observation>
-              </entryRelationship>
-            </act>
-          </entry>
-          <entry>
-            <act classCode="ACT" moodCode="EVN">
-              <templateId root="2.16.840.1.113883.10.20.1.27"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
-              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
-              <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134763"/>
-              <code nullFlavor="NA"/>
-              <statusCode code="active"/>
-              <effectiveTime>
-                <low value="20070217"/>
-              </effectiveTime>
-              <entryRelationship typeCode="SUBJ" inversionInd="false">
-                <observation classCode="OBS" moodCode="EVN">
-                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
-                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                  <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134763"/>
-                  <code code="419199007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Allergy, unspecified"/>
-                  <text>
-                    <reference value="#allergy6"/>
-                  </text>
-                  <statusCode code="completed"/>
-                  <effectiveTime>
-                    <low value="20070217"/>
-                  </effectiveTime>
-                  <value xsi:type="CD" nullFlavor="NA"/>
-                  <entryRelationship typeCode="MFST">
-                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
-                    <observation classCode="OBS" moodCode="EVN">
-                      <templateId root="2.16.840.1.113883.10.20.1.54"/>
-                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                      <templateId root="2.16.840.1.113883.10.20.1.28"/>
-                      <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134763"/>
-                      <code code="418799008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Finding reported by subject or history provider" codeSystemVersion="July 2009"/>
-                      <text>
-                        <reference value="#manifest-6"/>
-                      </text>
-                      <statusCode code="completed"/>
-                      <effectiveTime>
-                        <low value="20070217"/>
-                        <high nullFlavor="UNK"/>
-                      </effectiveTime>
-                      <value code="Z88.7" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2" codeSystemName="ICD-10" displayName="Seerumite ja vaktsiinide allergia" xsi:type="CD">
-                        <originalText mediaType="text/xml">
-                          <reference value="#allergy6_code"/>
-                        </originalText>
-                      </value>
-                    </observation>
-                  </entryRelationship>
-                </observation>
-              </entryRelationship>
-            </act>
-          </entry>
-        </section>
-      </component>
-      <component>
-        <section>
-          <templateId root="2.16.840.1.113883.10.20.1.7"/>
-          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
-          <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4"/>
-          <code code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" displayName="History of medical device use"/>
-          <title>Meditsiiniseadmed</title>
-          <text>
-            <table border="1">
-              <tbody>
-                <tr>
-                  <th>Meditsiiniseade</th>
-                  <th>Kuupäev</th>
-                </tr>
-                <tr ID="dev-1">
-                  <td>Andmed puuduvad</td>
-                  <td/>
-                </tr>
-              </tbody>
-            </table>
-          </text>
-          <entry>
-            <supply classCode="SPLY" moodCode="EVN">
-              <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5"/>
-              <effectiveTime nullFlavor="NA"/>
-              <participant typeCode="DEV">
-                <participantRole classCode="MANU">
-                  <playingDevice classCode="DEV" determinerCode="INSTANCE">
-                    <code nullFlavor="NA"/>
-                  </playingDevice>
-                </participantRole>
-              </participant>
-            </supply>
-          </entry>
-        </section>
-      </component>
-    </structuredBody>
-  </component>
+<ClinicalDocument
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:epsos="urn:epsos-org:ep:medication"
+        xsi:schemaLocation="urn:hl7-org:v3 http://pub.e-tervis.ee/standards2/Schema/V3/HL7-ORG-V3-2005-NORMATIVE-EE-DL-Ext-V1/infrastructure/cda/CDA_EE01.xsd"
+        xmlns="urn:hl7-org:v3">
+    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+    <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3"/>
+    <id root="1.3.6.1.4.1.28284.6.2.4.75" extension="20120519234435746"/>
+    <code code="60591-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC" displayName="Patient Summary"/>
+    <title>Patient Summary</title>
+    <effectiveTime value="20120519234435+0300"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="HL7:Confidentiality"
+                         displayName="normal"/>
+    <languageCode code="et-EE"/>
+    <recordTarget typeCode="RCT" contextControlCode="OP">
+        <patientRole classCode="PAT">
+            <id root="1.3.6.1.4.1.28284.6.2.2.1" extension="48905059995"/>
+            <addr use="PHYS">
+                <country>EE</country>
+                <city>Tartu</city>
+                <postalCode>50706</postalCode>
+                <streetAddressLine>Tallinna mnt 23</streetAddressLine>
+                <state nullFlavor="NA"/>
+            </addr>
+            <telecom value="tel:+8888888888888" use="H"/>
+            <telecom value="mailto:ly@cuusk.ee" use="H"/>
+            <patient>
+                <name>
+                    <given>LY</given>
+                    <family>CUUSK</family>
+                </name>
+                <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"
+                                          codeSystemName="HL7:AdministrativeGender" displayName="naine"/>
+                <birthTime value="19890505"/>
+            </patient>
+        </patientRole>
+    </recordTarget>
+    <author>
+        <time value="20120519234435+0300"/>
+        <assignedAuthor classCode="ASSIGNED">
+            <id root="1.3.6.1.4.1.28284.6.2.4.32" assigningAuthorityName="Digilugu"/>
+            <assignedAuthoringDevice>
+                <manufacturerModelName>Tervise infosüsteem</manufacturerModelName>
+                <softwareName>Tervise infosüsteem</softwareName>
+            </assignedAuthoringDevice>
+            <representedOrganization>
+                <id root="1.3.6.1.4.1.28284.6.2.4.1" extension="90009016"/>
+                <name>Eesti E-Tervise SA</name>
+                <telecom use="WP" value="tel:+3726943900"/>
+                <telecom use="WP" value="mailto:e-tervis@e-tervis.ee"/>
+                <addr>
+                    <country>EE</country>
+                    <city>Tallinn</city>
+                    <postalCode>10134</postalCode>
+                    <streetAddressLine>Uus-Tatari 25 / Veerenni 13</streetAddressLine>
+                    <state nullFlavor="NI"/>
+                </addr>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="1.3.6.1.4.1.28284.6.2.4.1" extension="90009016"/>
+                <name>Eesti E-Tervise SA</name>
+                <addr>
+                    <country>EE</country>
+                    <city>Tallinn</city>
+                    <postalCode>10134</postalCode>
+                    <streetAddressLine>Uus-Tatari 25 / Veerenni 13</streetAddressLine>
+                    <state nullFlavor="NI"/>
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <legalAuthenticator>
+        <time value="20120519234435+0300"/>
+        <signatureCode nullFlavor="NI"/>
+        <assignedEntity>
+            <id root="1.3.6.1.4.1.28284.6.2.4.32" assigningAuthorityName="Digilugu"/>
+            <assignedPerson nullFlavor="NI"/>
+            <representedOrganization>
+                <id root="1.3.6.1.4.1.28284.6.2.4.1" extension="90009016"/>
+                <name>Eesti E-Tervise SA</name>
+                <telecom use="WP" value="tel:+3726943900"/>
+                <telecom use="WP" value="mailto:e-tervis@e-tervis.ee"/>
+                <addr>
+                    <country>EE</country>
+                    <city>Tallinn</city>
+                    <postalCode>10134</postalCode>
+                    <streetAddressLine>Uus-Tatari 25 / Veerenni 13</streetAddressLine>
+                    <state nullFlavor="NI"/>
+                </addr>
+            </representedOrganization>
+        </assignedEntity>
+    </legalAuthenticator>
+    <participant typeCode="IND">
+        <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+        <associatedEntity classCode="ECON">
+            <code code="NBOR" codeSystem="2.16.840.1.113883.5.111" codeSystemName="HL7:PersonalRelationshipRoleType"
+                  displayName="naaber"/>
+            <addr nullFlavor="NI"/>
+            <telecom use="H" value="tel:+37250123456"/>
+            <associatedPerson>
+                <name>
+                    <given>Heli</given>
+                    <family>Lepik</family>
+                </name>
+            </associatedPerson>
+        </associatedEntity>
+    </participant>
+    <participant typeCode="IND">
+        <associatedEntity classCode="CAREGIVER">
+            <addr use="WP">
+                <country>EE</country>
+                <city>Tallinn</city>
+                <postalCode>13517</postalCode>
+                <streetAddressLine>Ehitajate tee 137</streetAddressLine>
+                <state nullFlavor="NA"/>
+            </addr>
+            <telecom use="WP" value="tel:+3726747240"/>
+            <telecom use="WP" value="mailto:info@tohter.ee"/>
+            <associatedPerson>
+                <name>
+                    <given>Heldur</given>
+                    <family>Loogus</family>
+                </name>
+            </associatedPerson>
+            <scopingOrganization classCode="ORG">
+                <name>OÜ Järveotsa Perearstikeskus</name>
+                <telecom use="WP" value="tel:+3726747240"/>
+                <telecom use="WP" value="mailto:info@tohter.ee"/>
+                <addr use="WP">
+                    <country>EE</country>
+                    <city>Tallinn</city>
+                    <postalCode>13517</postalCode>
+                    <streetAddressLine>Ehitajate tee 137</streetAddressLine>
+                    <state nullFlavor="NA"/>
+                </addr>
+            </scopingOrganization>
+        </associatedEntity>
+    </participant>
+    <documentationOf>
+        <serviceEvent>
+            <effectiveTime>
+                <high value="20120519234435+0300"/>
+            </effectiveTime>
+        </serviceEvent>
+    </documentationOf>
+    <relatedDocument typeCode="XFRM">
+        <parentDocument>
+            <id root="1.3.6.1.4.1.28284.6.2.4.75" extension="20120519234435746"/>
+        </parentDocument>
+    </relatedDocument>
+    <component>
+        <structuredBody>
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.8"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+                    <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+                    <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC"
+                          displayName="Kasutatud ravimid"/>
+                    <title>Kasutatud ravimid</title>
+                    <text>
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <th>Retsepti number</th>
+                                    <th>Manustamise sagedus</th>
+                                    <th>Ühekordne annus</th>
+                                    <th>Ravimvorm</th>
+                                    <th>Toimeaine</th>
+                                </tr>
+                                <tr ID="med1">
+                                    <td>CM-00555551114</td>
+                                    <td>8.0 h</td>
+                                    <td>500 mg</td>
+                                    <td/>
+                                    <td>amoksitsiliin</td>
+                                </tr>
+                                <tr ID="med2">
+                                    <td>CM-00555551113</td>
+                                    <td>12.0 h</td>
+                                    <td>750 mg</td>
+                                    <td>tablett</td>
+                                    <td>Etorikoksiib</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                            <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                            <id root="1.3.6.1.4.1.28284.6.2.4.4" extension="CM-00555551114"/>
+                            <text>
+                                <reference value="#med1"/>
+                            </text>
+                            <statusCode code="completed"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low nullFlavor="UNK"/>
+                                <high nullFlavor="UNK"/>
+                            </effectiveTime>
+                            <effectiveTime operator="A" xsi:type="PIVL_TS">
+                                <period value="8.0" unit="h"/>
+                            </effectiveTime>
+                            <doseQuantity>
+                                <low value="500" unit="mg"/>
+                                <high value="500" unit="mg"/>
+                            </doseQuantity>
+                            <consumable>
+                                <manufacturedProduct>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                    <manufacturedMaterial>
+                                        <code nullFlavor="NI"/>
+                                        <name nullFlavor="NI"/>
+                                        <epsos:formCode nullFlavor="NI"/>
+                                        <epsos:ingredient classCode="ACTI">
+                                            <epsos:quantity>
+                                                <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                                                <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                                            </epsos:quantity>
+                                            <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                                                <epsos:code code="J01CA04" codeSystem="2.16.840.1.113883.6.73"
+                                                            codeSystemName="Anatomical Therapeutic Chemical"
+                                                            displayName="amoksitsiliin"/>
+                                            </epsos:ingredient>
+                                        </epsos:ingredient>
+                                    </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                        </substanceAdministration>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                            <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                            <id root="1.3.6.1.4.1.28284.6.2.4.4" extension="CM-00555551113"/>
+                            <text>
+                                <reference value="#med2"/>
+                            </text>
+                            <statusCode code="completed"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low nullFlavor="UNK"/>
+                                <high nullFlavor="UNK"/>
+                            </effectiveTime>
+                            <effectiveTime operator="A" xsi:type="PIVL_TS">
+                                <period value="12.0" unit="h"/>
+                            </effectiveTime>
+                            <doseQuantity>
+                                <low value="750" unit="mg"/>
+                                <high value="750" unit="mg"/>
+                            </doseQuantity>
+                            <consumable>
+                                <manufacturedProduct>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                    <manufacturedMaterial>
+                                        <code nullFlavor="NI"/>
+                                        <name nullFlavor="NI"/>
+                                        <epsos:formCode code="10219000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1"
+                                                        codeSystemName="EDQM" displayName="tablett"/>
+                                        <epsos:ingredient classCode="ACTI">
+                                            <epsos:quantity>
+                                                <epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                                                <epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+                                            </epsos:quantity>
+                                            <epsos:ingredient classCode="MMAT" determinerCode="KIND">
+                                                <epsos:code code="M01AH05" codeSystem="2.16.840.1.113883.6.73"
+                                                            codeSystemName="Anatomical Therapeutic Chemical"
+                                                            displayName="Etorikoksiib"/>
+                                            </epsos:ingredient>
+                                        </epsos:ingredient>
+                                    </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                        </substanceAdministration>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.11"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+                    <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC"
+                          displayName="Kaebuste loetelu"/>
+                    <title>Kaebuste loetelu</title>
+                    <text>
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <th>Diagnoos</th>
+                                    <th>Kuupäev</th>
+                                    <th>Tüüp</th>
+                                    <th>Kirjeldus</th>
+                                </tr>
+                                <tr ID="dgn1">
+                                    <td ID="dgn1_diagnosis">K72.1 - Krooniline maksapuudulikkus</td>
+                                    <td>04.08.2008</td>
+                                    <td ID="dgn1_type">haigus</td>
+                                    <td ID="dgn1_description">Maksapuudulikkus &amp; maolaienemus krooniline</td>
+                                </tr>
+                                <tr ID="dgn2">
+                                    <td ID="dgn2_diagnosis">E13 - muu täpsustatud suhkrutõbi</td>
+                                    <td>04.03.2007</td>
+                                    <td ID="dgn2_type">haigus</td>
+                                    <td ID="dgn2_description">muu täpsustatud suhkrutõbi</td>
+                                </tr>
+                                <tr ID="dgn3">
+                                    <td ID="dgn3_diagnosis">E10 - Insuliinisõltuv suhkurtõbi</td>
+                                    <td>07.11.2011</td>
+                                    <td ID="dgn3_type">haigus</td>
+                                    <td ID="dgn3_description">Arsti sõnaline diagnoos siin</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134752"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20080804"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <id root="1.3.6.1.4.1.28284.1.3.2.2.4" extension="134752"/>
+                                    <code code="64572001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                                          displayName="haigus" codeSystemVersion="July 2009">
+                                        <originalText>
+                                            <reference value="#dgn1_type"/>
+                                        </originalText>
+                                    </code>
+                                    <text>
+                                        <reference value="#dgn1_description"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20080804"/>
+                                    </effectiveTime>
+                                    <value code="K72.1" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                           codeSystemName="ICD-10" displayName="Krooniline maksapuudulikkus"
+                                           xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#dgn1_diagnosis"/>
+                                        </originalText>
+                                    </value>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134848"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20070304"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <id root="1.3.6.1.4.1.28284.1.3.2.2.4" extension="134848"/>
+                                    <code code="64572001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                                          displayName="haigus" codeSystemVersion="July 2009">
+                                        <originalText>
+                                            <reference value="#dgn2_type"/>
+                                        </originalText>
+                                    </code>
+                                    <text>
+                                        <reference value="#dgn2_description"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20070304"/>
+                                    </effectiveTime>
+                                    <value code="E13" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                           codeSystemName="ICD-10" displayName="muu täpsustatud suhkrutõbi"
+                                           xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#dgn2_diagnosis"/>
+                                        </originalText>
+                                    </value>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134836"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20111107"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <id root="1.3.6.1.4.1.28284.1.3.2.2.4" extension="134836"/>
+                                    <code code="64572001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                                          displayName="haigus" codeSystemVersion="July 2009">
+                                        <originalText>
+                                            <reference value="#dgn3_type"/>
+                                        </originalText>
+                                    </code>
+                                    <text>
+                                        <reference value="#dgn3_description"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20111107"/>
+                                    </effectiveTime>
+                                    <value code="E10" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                           codeSystemName="ICD-10" displayName="Insuliinisõltuv suhkurtõbi"
+                                           xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#dgn3_diagnosis"/>
+                                        </originalText>
+                                    </value>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+                    <templateId root="2.16.840.1.113883.10.20.1.12"/>
+                    <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC"
+                          displayName="Teostatud protseduurid"/>
+                    <title>Teostatud protseduurid</title>
+                    <text>
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <th>Operatsioon</th>
+                                    <th>Kuupäev</th>
+                                    <th>Kirjeldus</th>
+                                </tr>
+                                <tr ID="proc1">
+                                    <td>Andmed puuduvad</td>
+                                    <td/>
+                                    <td/>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry>
+                        <procedure classCode="PROC" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.29"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+                            <id nullFlavor="NA"/>
+                            <code nullFlavor="NA"/>
+                            <text>
+                                <reference value="#proc1"/>
+                            </text>
+                            <statusCode code="completed"/>
+                            <effectiveTime nullFlavor="NA"/>
+                        </procedure>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.2"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+                    <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC"
+                          displayName="Allergiad, soovimatud kõrvalnähud, ohud"/>
+                    <title>Allergiad, soovimatud kõrvalnähud, ohud</title>
+                    <text>
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <th>Allergia RHK-10 kood</th>
+                                    <th>Diagnoosimise kuupäev</th>
+                                    <th>Allergia ilming</th>
+                                </tr>
+                                <tr ID="allergy1">
+                                    <td ID="allergy1_code">T78.4 - Teisiti täpsustamata ülitundlikkus</td>
+                                    <td>15.06.2011</td>
+                                    <td ID="manifest-1">Arsti sõnaline diagnoos</td>
+                                </tr>
+                                <tr ID="allergy2">
+                                    <td ID="allergy2_code">Z88.0 - Penitsilliiniallergia anamneesis</td>
+                                    <td>15.06.2011</td>
+                                    <td ID="manifest-2">Penitsilliiniallergia põhjustab hingamisraskusi</td>
+                                </tr>
+                                <tr ID="allergy3">
+                                    <td ID="allergy3_code">L23.2 - Kosmeetikumide põhjustatud allergiline
+                                        kontaktdermatiit
+                                    </td>
+                                    <td>30.05.2011</td>
+                                    <td ID="manifest-3">Äge reaktsioon kosmeetikatoodetele</td>
+                                </tr>
+                                <tr ID="allergy4">
+                                    <td ID="allergy4_code">J45.0 - Heinapalavik koos astmaga</td>
+                                    <td>30.05.2011</td>
+                                    <td ID="manifest-4">Aevastamine, nina kinnisus</td>
+                                </tr>
+                                <tr ID="allergy5">
+                                    <td ID="allergy5_code">L29.9 - Teisiti täpsustamata sügelus</td>
+                                    <td>06.03.2007</td>
+                                    <td ID="manifest-5">Naha sügelemine, nahk on punane</td>
+                                </tr>
+                                <tr ID="allergy6">
+                                    <td ID="allergy6_code">Z88.7 - Seerumite ja vaktsiinide allergia</td>
+                                    <td>17.02.2007</td>
+                                    <td ID="manifest-6">Seerumite ja vaktsiinide allergia</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134564"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20110615"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134564"/>
+                                    <code code="419199007" codeSystem="2.16.840.1.113883.6.96"
+                                          codeSystemName="SNOMED CT" displayName="Allergy, unspecified"/>
+                                    <text>
+                                        <reference value="#allergy1"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20110615"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
+                                    <entryRelationship typeCode="MFST">
+                                        <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                            <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134564"/>
+                                            <code code="418799008" codeSystem="2.16.840.1.113883.6.96"
+                                                  codeSystemName="SNOMED CT"
+                                                  displayName="Finding reported by subject or history provider"
+                                                  codeSystemVersion="July 2009"/>
+                                            <text>
+                                                <reference value="#manifest-1"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime>
+                                                <low value="20110615"/>
+                                                <high nullFlavor="UNK"/>
+                                            </effectiveTime>
+                                            <value code="T78.4" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                                   codeSystemName="ICD-10"
+                                                   displayName="Teisiti täpsustamata ülitundlikkus" xsi:type="CD">
+                                                <originalText mediaType="text/xml">
+                                                    <reference value="#allergy1_code"/>
+                                                </originalText>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134565"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20110615"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134565"/>
+                                    <code code="419199007" codeSystem="2.16.840.1.113883.6.96"
+                                          codeSystemName="SNOMED CT" displayName="Allergy, unspecified"/>
+                                    <text>
+                                        <reference value="#allergy2"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20110615"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
+                                    <entryRelationship typeCode="MFST">
+                                        <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                            <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134565"/>
+                                            <code code="418799008" codeSystem="2.16.840.1.113883.6.96"
+                                                  codeSystemName="SNOMED CT"
+                                                  displayName="Finding reported by subject or history provider"
+                                                  codeSystemVersion="July 2009"/>
+                                            <text>
+                                                <reference value="#manifest-2"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime>
+                                                <low value="20110615"/>
+                                                <high nullFlavor="UNK"/>
+                                            </effectiveTime>
+                                            <value code="Z88.0" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                                   codeSystemName="ICD-10"
+                                                   displayName="Penitsilliiniallergia anamneesis" xsi:type="CD">
+                                                <originalText mediaType="text/xml">
+                                                    <reference value="#allergy2_code"/>
+                                                </originalText>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134908"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20110530"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134908"/>
+                                    <code code="419199007" codeSystem="2.16.840.1.113883.6.96"
+                                          codeSystemName="SNOMED CT" displayName="Allergy, unspecified"/>
+                                    <text>
+                                        <reference value="#allergy3"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20110530"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
+                                    <entryRelationship typeCode="MFST">
+                                        <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                            <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134908"/>
+                                            <code code="418799008" codeSystem="2.16.840.1.113883.6.96"
+                                                  codeSystemName="SNOMED CT"
+                                                  displayName="Finding reported by subject or history provider"
+                                                  codeSystemVersion="July 2009"/>
+                                            <text>
+                                                <reference value="#manifest-3"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime>
+                                                <low value="20110530"/>
+                                                <high nullFlavor="UNK"/>
+                                            </effectiveTime>
+                                            <value code="L23.2" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                                   codeSystemName="ICD-10"
+                                                   displayName="Kosmeetikumide põhjustatud allergiline kontaktdermatiit"
+                                                   xsi:type="CD">
+                                                <originalText mediaType="text/xml">
+                                                    <reference value="#allergy3_code"/>
+                                                </originalText>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134906"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20110530"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134906"/>
+                                    <code code="419199007" codeSystem="2.16.840.1.113883.6.96"
+                                          codeSystemName="SNOMED CT" displayName="Allergy, unspecified"/>
+                                    <text>
+                                        <reference value="#allergy4"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20110530"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
+                                    <entryRelationship typeCode="MFST">
+                                        <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                            <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134906"/>
+                                            <code code="418799008" codeSystem="2.16.840.1.113883.6.96"
+                                                  codeSystemName="SNOMED CT"
+                                                  displayName="Finding reported by subject or history provider"
+                                                  codeSystemVersion="July 2009"/>
+                                            <text>
+                                                <reference value="#manifest-4"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime>
+                                                <low value="20110530"/>
+                                                <high nullFlavor="UNK"/>
+                                            </effectiveTime>
+                                            <value code="J45.0" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                                   codeSystemName="ICD-10" displayName="Heinapalavik koos astmaga"
+                                                   xsi:type="CD">
+                                                <originalText mediaType="text/xml">
+                                                    <reference value="#allergy4_code"/>
+                                                </originalText>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134853"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20070306"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134853"/>
+                                    <code code="419199007" codeSystem="2.16.840.1.113883.6.96"
+                                          codeSystemName="SNOMED CT" displayName="Allergy, unspecified"/>
+                                    <text>
+                                        <reference value="#allergy5"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20070306"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
+                                    <entryRelationship typeCode="MFST">
+                                        <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                            <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134853"/>
+                                            <code code="418799008" codeSystem="2.16.840.1.113883.6.96"
+                                                  codeSystemName="SNOMED CT"
+                                                  displayName="Finding reported by subject or history provider"
+                                                  codeSystemVersion="July 2009"/>
+                                            <text>
+                                                <reference value="#manifest-5"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime>
+                                                <low value="20070306"/>
+                                                <high nullFlavor="UNK"/>
+                                            </effectiveTime>
+                                            <value code="L29.9" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                                   codeSystemName="ICD-10" displayName="Teisiti täpsustamata sügelus"
+                                                   xsi:type="CD">
+                                                <originalText mediaType="text/xml">
+                                                    <reference value="#allergy5_code"/>
+                                                </originalText>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134763"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime>
+                                <low value="20070217"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ" inversionInd="false">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134763"/>
+                                    <code code="419199007" codeSystem="2.16.840.1.113883.6.96"
+                                          codeSystemName="SNOMED CT" displayName="Allergy, unspecified"/>
+                                    <text>
+                                        <reference value="#allergy6"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime>
+                                        <low value="20070217"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD" nullFlavor="NA"/>
+                                    <entryRelationship typeCode="MFST">
+                                        <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                            <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                            <id root="1.3.6.1.4.1.28284.6.2.4.71" extension="134763"/>
+                                            <code code="418799008" codeSystem="2.16.840.1.113883.6.96"
+                                                  codeSystemName="SNOMED CT"
+                                                  displayName="Finding reported by subject or history provider"
+                                                  codeSystemVersion="July 2009"/>
+                                            <text>
+                                                <reference value="#manifest-6"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime>
+                                                <low value="20070217"/>
+                                                <high nullFlavor="UNK"/>
+                                            </effectiveTime>
+                                            <value code="Z88.7" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.2"
+                                                   codeSystemName="ICD-10"
+                                                   displayName="Seerumite ja vaktsiinide allergia" xsi:type="CD">
+                                                <originalText mediaType="text/xml">
+                                                    <reference value="#allergy6_code"/>
+                                                </originalText>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.7"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+                    <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4"/>
+                    <code code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="epSOS LOINC"
+                          displayName="History of medical device use"/>
+                    <title>Meditsiiniseadmed</title>
+                    <text>
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <th>Meditsiiniseade</th>
+                                    <th>Kuupäev</th>
+                                </tr>
+                                <tr ID="dev-1">
+                                    <td>Andmed puuduvad</td>
+                                    <td/>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry>
+                        <supply classCode="SPLY" moodCode="EVN">
+                            <templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5"/>
+                            <effectiveTime nullFlavor="NA"/>
+                            <participant typeCode="DEV">
+                                <participantRole classCode="MANU">
+                                    <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                                        <code nullFlavor="NA"/>
+                                    </playingDevice>
+                                </participantRole>
+                            </participant>
+                        </supply>
+                    </entry>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
 </ClinicalDocument>
