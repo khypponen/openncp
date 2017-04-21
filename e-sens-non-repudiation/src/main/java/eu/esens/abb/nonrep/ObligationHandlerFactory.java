@@ -8,69 +8,70 @@ import java.util.List;
 
 public class ObligationHandlerFactory {
 
-    private static ObligationHandlerFactory instance = null;
-    private static Logger l = LoggerFactory.getLogger(ObligationHandlerFactory.class);
+	private static ObligationHandlerFactory instance = null;
+	private static Logger l = LoggerFactory.getLogger(ObligationHandlerFactory.class);
 
-    public static ObligationHandlerFactory getInstance() {
-        if (instance == null) {
-            synchronized (ObligationHandlerFactory.class) {
-                if (instance == null) {
-                    try {
-                        instance = new ObligationHandlerFactory();
-                    } catch (Exception e) {
-                        e.printStackTrace();
+	public static ObligationHandlerFactory getInstance() {
+		if (instance == null) {
+			synchronized (ObligationHandlerFactory.class) {
+				if (instance == null) {
+					try {
+						instance = new ObligationHandlerFactory();
+					} catch (Exception e) {
+						e.printStackTrace();
 
-                        throw new IllegalStateException(
-                                "Unable to instantiate the ObligationHandlerFactory: "
- 
-                                		+ e.getMessage(), e);
-                    }
-                }
-            }
-        }
-        return instance;
-    }
+						throw new IllegalStateException("Unable to instantiate the ObligationHandlerFactory: "
 
-    private ObligationHandlerFactory() {
-        l.debug("In the ObligationHandlerFactory constructor");
-    }
+								+ e.getMessage(), e);
+					}
+				}
+			}
+		}
+		return instance;
+	}
 
-    /**
-     * Dispatch the correct obligation handler based, on the family of message types
-     *
-     * @param messageType
-     * @param obligations
-     * @return
-     * @throws ObligationDischargeException
-     */
-    public List<ObligationHandler> createHandler(MessageType messageType,
-                                                 List<ESensObligation> obligations, Context context) throws ObligationDischargeException {
+	private ObligationHandlerFactory() {
+		l.debug("In the ObligationHandlerFactory constructor");
+	}
 
-        if (messageType == null) {
-            throw new ObligationDischargeException("Message Type is null");
-        }
+	/**
+	 * Dispatch the correct obligation handler based, on the family of message
+	 * types
+	 *
+	 * @param messageType
+	 * @param obligations
+	 * @return
+	 * @throws ObligationDischargeException
+	 */
+	public synchronized List<ObligationHandler> createHandler(MessageType messageType,
+			List<ESensObligation> obligations, Context context) throws ObligationDischargeException {
 
-        int size = obligations.size();
+		if (messageType == null) {
+			throw new ObligationDischargeException("Message Type is null");
+		}
 
-        LinkedList<ObligationHandler> list = new LinkedList<ObligationHandler>();
-        for (int i = 0; i < size; i++) {
-            ESensObligation obligation = obligations.get(i);
-            String obligationId = obligation.getObligationID();
+		int size = obligations.size();
 
-            // Here it is static, but it will be a factory upon a configuration file
-            if (obligationId.equals("urn:eSENS:obligations:nrr:ATNA")) {
-                list.add(new ATNAObligationHandler(messageType, obligations, context));
-            } else if (obligationId.equals("urn:eSENS:obligations:nrr:ETSIREM")) {
-                list.add(new ETSIREMObligationHandler(messageType, obligations, context));
-            } else if (obligationId.equals("urn:eSENS:obligations:nro:ETSIREM")) {
-                list.add(new ETSIREMObligationHandler(messageType, obligations, context));
-            } else if (obligationId.equals("urn:eSENS:obligations:nrd:ETSIREM")) {
-                list.add(new ETSIREMObligationHandler(messageType, obligations, context));
-            } else {
+		LinkedList<ObligationHandler> list = new LinkedList<ObligationHandler>();
+		for (int i = 0; i < size; i++) {
+			ESensObligation obligation = obligations.get(i);
+			String obligationId = obligation.getObligationID();
 
-                list.add(new NullObligationHandler());
-            }
-        }
-        return list;
-    }
+			// Here it is static, but it will be a factory upon a
+			// configuration file
+			if (obligationId.equals("urn:eSENS:obligations:nrr:ATNA")) {
+				list.add(new ATNAObligationHandler(messageType, obligations, context));
+			} else if (obligationId.equals("urn:eSENS:obligations:nrr:ETSIREM")) {
+				list.add(new ETSIREMObligationHandler(messageType, obligations, context));
+			} else if (obligationId.equals("urn:eSENS:obligations:nro:ETSIREM")) {
+				list.add(new ETSIREMObligationHandler(messageType, obligations, context));
+			} else if (obligationId.equals("urn:eSENS:obligations:nrd:ETSIREM")) {
+				list.add(new ETSIREMObligationHandler(messageType, obligations, context));
+			} else {
+
+				list.add(new NullObligationHandler());
+			}
+		}
+		return list;
+	}
 }

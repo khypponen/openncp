@@ -1,9 +1,5 @@
 package eu.esense.test.abb.nonrep;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -28,8 +24,11 @@ import org.herasaf.xacml.core.policy.PolicyMarshaller;
 import org.herasaf.xacml.core.simplePDP.SimplePDPFactory;
 import org.herasaf.xacml.core.utils.JAXBMarshallerConfiguration;
 import org.joda.time.DateTime;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
@@ -50,18 +49,20 @@ import eu.esens.abb.nonrep.TOElementException;
 import eu.esens.abb.nonrep.Utilities;
 import eu.esens.abb.nonrep.XACMLAttributes;
 import eu.esens.abb.nonrep.XACMLRequestCreator;
+import junit.framework.TestCase;
 
-public class EvidenceEmitterTest {
+@RunWith(JUnit4.class)
+public class EvidenceEmitterTest extends TestCase {
 
     public static final String DATATYPE_STRING = "http://www.w3.org/2001/XMLSchema#string";
     public static final String DATATYPE_DATETIME = "http://www.w3.org/2001/XMLSchema#dateTime";
     public static final String IHE_ITI_XCA_RETRIEVE = "urn:ihe:iti:2007:CrossGatewayRetrieve";
-    private static PDP simplePDP;
-    private static X509Certificate cert;
-    private static PrivateKey key;
+    private PDP simplePDP;
+    private X509Certificate cert;
+    private PrivateKey key;
 
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
+    @Before
+    public void setUpBeforeClass() throws Exception {
 
         /*
          * the polrep is here because an adHoc implementation can have more
@@ -353,10 +354,8 @@ public class EvidenceEmitterTest {
         context.setMessageUUID(messageInspector.getMessageUUID());
         context.setAuthenticationMethod("3");
         context.setRequest(request); // here I pass the XML in order to give to
-        // the developers the posisbility
-        // to use their own implementation. Although an object is easier to get
-        // the relevant types (e.g., action
-        // environment
+        // the developers the possibility to use their own implementation.
+        // Although an object is easier to get the relevant types (e.g., action environment
         context.setEnforcer(enforcePolicy);
         context.setUsername("demo2");
         context.setCurrentHost("127.0.0.1");
